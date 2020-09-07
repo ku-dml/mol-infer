@@ -1,0 +1,504 @@
+\documentclass[11pt,titlepage,dvipdfmx,twoside]{jarticle}
+\linespread{1.1}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\usepackage{algorithm}  
+\usepackage{algorithmic}  
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} 
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{color}
+\usepackage{url}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    %backgroundcolor=\color{backcolour},   
+    frame=single,
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\renewcommand{\lstlistingname}{図}
+\lstset{style=mystyle}
+
+\title{\Huge{2-Branch構造に基づく非環式化学グラフの生成プログラムの使用説明書}}
+
+\begin{document}
+
+% The following makeatletter must be after begin{document}
+\makeatletter 
+\let\c@lstlisting\c@figure
+\makeatother
+
+\西暦
+\date{\today}
+
+\maketitle
+
+% \cleardoublepage
+
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
+\section{概要}
+この冊子では，2-branch構造~\cite{branch}に基づく非環式化学グラフの生成アルゴリズムを実装した二つのプログラムについて説明する．
+一つのプログラムでは，入力の特徴ベクトルに対して，その特徴ベクトルを持つ2-branch-numberが２の非環式化学グラフを出力する．
+もう一つのプログラムでは，入力の特徴ベクトルを持つ2-branch-numberが４の非環式化学グラフを出力する．
+
+また，このフォルダにはこの冊子，{\tt README.txt}と{\tt License.txt}以外に以下のファイルとフォルダが含まれている．
+\begin{itemize}
+\item フォルダ{\tt 2\_2-branches}\\
+	2-branch-numberが2の非環式化合物を生成するためのプログラムのフォルダである．
+	\begin{itemize}
+	\item フォルダ{\tt include}\\
+		このプログラムに使われるヘッダファイルのフォルダである．
+		\begin{itemize}
+			\item{cross\_timer.h}\\
+				計算時間を計測するためのヘッダファイルである．
+				
+			\item{data\_structures.hpp}\\
+				化学グラフのデータ構造を定義するヘッダファイルである． 
+				
+			\item{debug.h}\\
+				デバッグのためのヘッダファイルである．
+				
+			\item{fringe\_tree.hpp}\\
+				ヘリ木（fringe tree）\cite{branch}を列挙する関数のヘッダファイルである．
+				
+			\item{tools.hpp}\\
+				便利なツール関数のヘッダファイルである．		
+		\end{itemize}
+	\item フォルダ{\tt instances}\\
+		入力のインスタンスのフォルダである．
+		\begin{itemize}
+			\item{\tt ha\_tv3500\_n15\_dia10\_dmax3\_k2\_bn2\_bh1.txt}\\
+				原子化熱~(Heat of Atomization)の活性値が3500，
+				節点数が15，直径が10，次数上限が3，branch-parameterが2，2-branch-numberが2，2-branch-heightが1
+				となる特徴ベクトルが記載されている入力データである．
+				
+			\item{\tt ha\_tv4500\_n20\_dia12\_dmax4\_k2\_bn2\_bh1.txt}\\
+				原子化熱の活性値が4500，
+				節点数が20，直径が12，次数上限が4，branch-parameterが2，2-branch-numberが2，2-branch-heightが1
+				となる特徴ベクトルが記載されている入力データである．
+				
+			\item{\tt ha\_tv7000\_n30\_dia15\_dmax3\_k2\_bn2\_bh1.txt}\\
+				原子化熱の活性値が7000，
+				節点数が30，直径が15，次数上限が3，branch-parameterが2，2-branch-numberが2，2-branch-heightが1
+				となる特徴ベクトルが記載されている入力データである．
+				
+			\item{\tt ha\_tv8500\_n40\_dia30\_dmax4\_k2\_bn2\_bh1.txt}\\
+				原子化熱の活性値が8500，
+				節点数が40，直径が30，次数上限が4，branch-parameterが2，2-branch-numberが2，2-branch-heightが1
+				となる特徴ベクトルが記載されている入力データである．
+				
+			\item{\tt ha\_tv11000\_n50\_dia40\_dmax3\_k2\_bn2\_bh1.txt}\\
+				原子化熱の活性値が11000，
+				節点数が50，直径が40，次数上限が3，branch-parameterが2，2-branch-numberが2，2-branch-heightが1
+				となる特徴ベクトルが記載されている入力データである．
+		\end{itemize}
+		
+	\item {\tt main.cpp}\\
+	2-branch-numberが2の非環式化合物を生成するためのプログラムである．
+	\end{itemize}
+		
+\item フォルダ{\tt 4\_2-branches}\\
+	2-branch-numberが4の非環式化合物を生成するためのプログラムのフォルダである．
+	\begin{itemize}
+	\item フォルダ{\tt include}\\
+		このプログラムに使われるヘッダファイルのフォルダである．
+		\begin{itemize}
+			\item{cross\_timer.h}\\
+				計算時間を計測するためのヘッダファイルである．
+				
+			\item{data\_structures.hpp}\\
+				化学グラフのデータ構造を定義するヘッダファイルである． 
+				
+			\item{debug.h}\\
+				デバッグのためのヘッダファイルである．
+				
+			\item{fringe\_tree.hpp}\\
+				ヘリ木（fringe tree）を列挙する関数のヘッダファイルである．
+				
+			\item{tools.hpp}\\
+				便利なツール関数のヘッダファイルである．						
+		\end{itemize}
+	\item フォルダ{\tt instances}\\
+		入力のインスタンスのフォルダである．
+		\begin{itemize}
+
+			\item{\tt ha\_tv3500\_n15\_dia10\_dmax3\_k2\_bn4\_bh2.txt}\\
+				原子化熱の活性値が3500，
+				節点数が15，直径が10，次数上限が3，branch-parameterが2，2-branch-numberが4，2-branch-heightが2
+				となる特徴ベクトルが記載されている入力データである．
+				
+			\item{\tt ha\_tv4500\_n20\_dia12\_dmax4\_k2\_bn4\_bh2.txt}\\
+				原子化熱の活性値が4500，
+				節点数が15，直径が10，次数上限が4，branch-parameterが2，2-branch-numberが4，2-branch-heightが2
+				となる特徴ベクトルが記載されている入力データである．
+				
+			\item{\tt ha\_tv8000\_n30\_dia20\_dmax3\_k2\_bn4\_bh2.txt}\\
+				原子化熱の活性値が8000，
+				節点数が30，直径が20，次数上限が3，branch-parameterが2，2-branch-numberが4，2-branch-heightが2
+				となる特徴ベクトルが記載されている入力データである．
+				
+			\item{\tt ha\_tv8000\_n35\_dia20\_dmax4\_k2\_bn4\_bh2.txt}\\
+				原子化熱の活性値が8000，
+				節点数が40，直径が30，次数上限が4，branch-parameterが2，2-branch-numberが4，2-branch-heightが2
+				となる特徴ベクトルが記載されている入力データである．
+				
+			\item{\tt ha\_tv8500\_n40\_dia20\_dmax3\_k2\_bn4\_bh2.txt}\\
+				原子化熱の活性値が8500，
+				節点数が50，直径が40，次数上限が3，branch-parameterが2，2-branch-numberが4，2-branch-heightが2
+				となる特徴ベクトルが記載されている入力データである．
+
+		\end{itemize}
+	\item {\tt main.cpp}\\
+	2-branch-numberが4の非環式化合物を生成するためのプログラムである．
+	\end{itemize}
+
+\end{itemize}
+
+次に，この冊子の構成について説明する．
+第\ref{sec:term}節では，この冊子およびプログラム内で使用している用語について説明する．
+第\ref{sec:InOut}節では，プログラムの入力と出力について説明する．
+第\ref{sec:Example}節では，実際の計算例を示す．
+
+
+\newpage
+
+\section{用語の説明}
+\label{sec:term}
+
+この節では，用語について説明する．
+\begin{itemize}
+\item 特徴ベクトル\\
+各種類の元素の原子数等の化学物質を説明する数値やグラフの直径等の化学グラフのトポロジーに基づいて計算される数値のベクトル．
+これら二つのプログラムに使われる特徴ベクトルの内容は\ref{sec:InputFormat}に具体例を用いて説明する．
+
+\item 非環式化学グラフ\\
+化学グラフは節点集合と枝集合の組で化合物の構造を表すものである．
+各節点には原子の種類が割り当てられており，各枝には結合の多重度が割り当てられている．
+非環式化学グラフは環が一つもない分子構造の化合物を表すものである．
+この冊子では水素原子が省略された化学グラフを扱っていく．
+
+\item branch-parameter, $k$-branch, $k$-branch-number, $k$-branch-height, 
+ヘリ木（fringe tree），
+内部・外部節点（internal/external vertex），
+内部・外部原子結合（internal/external adjacency-configuration），
+内部・外部次数結合（internal/external bond-configuration）
+について参考文献\cite{branch}に参考すること．
+
+\end{itemize}
+
+\section{プログラムの入力と出力}
+\label{sec:InOut}
+
+この節では，プログラムの入力と出力について説明する．
+\ref{sec:Input}節では，プログラムの入力情報について説明する．
+\ref{sec:InputFormat}節では，計算機上で入力する際のデータ形式について説明する．
+\ref{sec:Output}節では，プログラムの出力情報について説明する．
+\ref{sec:OutputFormat}節では，計算機上でプログラムを実行した際に出力されるデータ形式について説明する．
+
+\subsection{プログラムの入力}
+\label{sec:Input}
+
+これら二つのプログラムでは四つの情報を入力とする．
+%また，入力の方法については第\ref{sec:Example}節を参照すること．
+一つ目は特徴ベクトルが記入されたテキストファイルである．
+このテキストファイルのフォーマットは\ref{sec:InputFormat}節に示す．
+二つ目はプログラムの計算時間の上限秒である．
+三つ目は出力する化学グラフの個数の上限である．
+四つ目は出力される化学グラフを保存するSDFファイル名である．
+
+\bigskip
+
+\newpage
+\subsection{入力データの形式}
+\label{sec:InputFormat}
+
+この節では，\ref{sec:Input}節に説明していた入力ファイルの形式について説明する．
+入力するファイルの具体例を以下に示す．
+
+\bigskip
+
+\begin{oframed}
+{\bf 入力データの形式}\\\\
+%\bigskip\bigskip
+{\tt 2\\
+C 120 4 5 8\\
+O 160 2 2 0\\
+3\\
+C C 2 0 3\\
+C O 1 4 0\\
+C C 1 2 5\\
+0 6\\
+4 1\\
+3 1\\
+0 0\\
+10\\
+3\\
+1 2 1 0 1\\
+1 2 2 0 0\\
+1 2 3 0 0\\
+1 3 1 0 2\\
+1 3 2 0 3\\
+1 4 1 0 0\\
+2 2 1 2 0\\
+2 2 2 0 0\\
+2 2 3 0 0\\
+2 3 1 4 1\\
+2 3 2 0 0\\
+2 4 1 0 0\\
+3 3 1 0 1\\
+3 3 2 0 0\\
+3 4 1 0 0\\
+4 4 1 0 0\\}
+\end{oframed}
+
+
+この具体例を用いて，各行の内容を説明する．
+数値例とそれぞれの内容の対応を表~\ref{tab:InputFormat}に示す．
+
+\bigskip
+\begin{table}[H]
+\begin{center} \caption{入力トファイルの構成}
+\label{tab:InputFormat}
+  \begin{tabular}{l|l}
+  数値例 & 内容\\ \hline \hline
+{\tt  2} & 原子の種類\\ \hline
+{\tt  C 120 4 5 8} & それぞれの原子シンボル，質量の十倍，価数，原子の内部節点数，原子の外部節点数\\
+{\tt  O 160 2 2 0} & \\ \hline
+{\tt  3} & 原子結合の種類　\\ \hline
+{\tt  C C 2 0 3} & \\
+{\tt  C O 1 4 0} &  それぞれの原子結合の原子，原子，多重度，内部原子結合の数，外部原子結合の数　\\
+{\tt  C C 1 2 5} & \\ \hline
+{\tt  0 6} & 次数が１の内部節点数，次数が１の外部節点数　\\ 
+{\tt  4 1} & 次数が２の内部節点数，次数が２の外部節点数 \\
+{\tt  3 1} & 次数が３の内部節点数，次数が３の外部節点数　\\
+{\tt  0 0} & 次数が４の内部節点数，次数が４の外部節点数　\\ \hline
+{\tt  10} & 直径　\\ \hline
+{\tt  3} & 次数の上限　\\ \hline
+{\tt  1 2 1 0 1} & \\
+{\tt  1 2 2 0 0} & \\
+{\tt  1 2 3 0 0} & \\
+{\tt  1 3 1 0 2} & \\
+{\tt  1 3 2 0 3} & \\
+{\tt  1 4 1 0 0} & \\
+{\tt  2 2 1 2 0} & それぞれの次数結合の次数，次数，多重度，内部次数結合の数，外部次数結合の数 \\
+{\tt  2 2 2 0 0} & \\
+{\tt  2 2 3 0 0} & \\
+{\tt  2 3 1 4 1} & \\
+{\tt  2 3 2 0 0} & \\
+{\tt  2 4 1 0 0} & \\
+{\tt  3 3 1 0 1} & \\
+{\tt  3 3 2 0 0} & \\
+{\tt  3 4 1 0 0} & \\
+{\tt  4 4 1 0 0} & \\ \hline
+  \end{tabular}
+\end{center}
+\end{table}
+
+\subsection{プログラムの出力}
+\label{sec:Output}
+
+これら二つのプログラムの出力は，
+入力された特徴ベクトルを持つ化学グラフの個数の下限，
+生成された化学グラフの個数，
+プログラムの計算時間と
+入力された特徴ベクトルを持つ化学グラフである．
+化学グラフはファイル名が入力されたSDFファイルに出力される．
+
+\subsection{出力データの形式}
+\label{sec:OutputFormat}
+
+これら二つのプログラムの出力するSDFファイルのフォーマットについて，
+\url{https://www.chem-station.com/blog/2012/04/sdf.html}などの解説が分かりやすい．
+さらに，正確な定義書として，公式資料 \url{http://help.accelrysonline.com/ulm/onelab/1.0/content/ulm_pdfs/direct/reference/ctfileformats2016.pdf} を参照するとよい．
+
+
+
+\bigskip
+
+%\newpage
+
+%\section{プログラムの説明}
+%\label{sec:section4}
+%この節ではプログラムの流れについて説明する．
+
+%\newpage
+
+\section{プログラムの実行と計算例}
+\label{sec:Example}
+
+ここでは二つのプログラムの実行方法と，具体例を入力した場合の計算結果を示す．
+
+\subsection{実行方法}
+\label{sec:compile}
+二つのプログラムの実行方法は同じである．
+\begin{itemize}
+	\item {\em 環境確認}\\
+		ISO C++ 2011標準に対応するC++コンパイラーがあれば問題ないと考えられる．
+		%
+		Linux Mint 18 \& 19, コンパイラー g++ ver 5 \& 7 で確認したが，g++がインストールされていない場合は，次のようにインストールできる．\\
+		\verb|$ sudo apt install g++|
+	\item {\em コンパイル}\\
+		\verb|$ g++ -o main main.cpp -O3 -std=c++11|\\
+		(g++ 7の場合は \verb|-std=c++11| を省略できる．)
+	\item {\em 実行}\\
+		\verb|$ ./main instance.txt a b output.sdf|\\
+		\verb|instance.txt| で入力のテキストファイル，
+		\verb|a| で計算時間の上限，
+		\verb|b|で出力する化学グラフの個数の上限，
+	\verb|output.txt| で化学グラフの出力のSDFファイルを指定する．
+\end{itemize}
+
+
+\subsection{計算例}
+\label{sec:instance}
+
+具体例として，2-branch-numberが２のプログラムを以下のような条件で実行する．
+
+\begin{itemize}
+\item 入力ファイル: フォルダー{\tt instances}内の{\tt ha\_tv3500\_n15\_dia10\_dmax3\_k2\_bn2\_bh1.txt}
+\item 計算時間上限: 10秒
+\item 出力する化学グラフの個数上限: 2
+\item 化学グラフの指定出力ファイル: {\tt output.sdf}
+\end{itemize}
+
+実行のコマンドは以下のようになる．
+
+\bigskip
+
+{\tt ./main ../instances/ha\_tv3500\_n15\_dia10\_dmax3\_k2\_bn2\_bh1.txt 10 2 output.sdf}
+
+\bigskip
+
+このコマンドを実行して場合，以下のような出力結果が得られる．
+
+\begin{oframed}
+{\bf ターミナルに実行結果の具体例}\\\\
+{\tt A lower bound on the number of graphs = 56\\
+Number of generated graphs = 2\\
+Time : 0.00842078s.}
+\end{oframed}
+
+\begin{oframed}
+{\bf output.sdfの内容}\\\\
+{\tt 1\\
+2-branches\\
+2-branches\\
+ 15 14  0  0  0  0  0  0  0  0999 V2000 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+  1  2  2  0  0  0  0\\
+  1  3  1  0  0  0  0\\
+  1  6  1  0  0  0  0\\
+  3  4  1  0  0  0  0\\
+  3  5  1  0  0  0  0\\
+  6  7  1  0  0  0  0\\
+  7  8  2  0  0  0  0\\
+  7  9  1  0  0  0  0\\
+  9 10  1  0  0  0  0\\
+ 10 11  1  0  0  0  0\\
+ 11 12  1  0  0  0  0\\
+ 12 13  2  0  0  0  0\\
+ 12 14  1  0  0  0  0\\
+ 14 15  1  0  0  0  0\\
+M  END\\
+\$\$\$\$\\
+2\\
+2-branches\\
+2-branches\\
+ 15 14  0  0  0  0  0  0  0  0999 V2000 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+  1  2  1  0  0  0  0\\
+  1  4  1  0  0  0  0\\
+  1  5  1  0  0  0  0\\
+  2  3  1  0  0  0  0\\
+  5  6  1  0  0  0  0\\
+  6  7  2  0  0  0  0\\
+  6  8  1  0  0  0  0\\
+  8  9  1  0  0  0  0\\
+  9 10  1  0  0  0  0\\
+ 10 11  1  0  0  0  0\\
+ 11 12  2  0  0  0  0\\
+ 11 13  1  0  0  0  0\\
+ 13 14  2  0  0  0  0\\
+ 13 15  1  0  0  0  0\\
+M  END\\
+\$\$\$\$\\}
+\end{oframed}
+
+\addcontentsline{toc}{section}{\refname} 
+\begin{thebibliography}{10}
+	\bibitem{branch}
+		N.~A.~Azam, J.~Zhu, Y.~Sun, Y.~Shi, A.~Shurbevski, L.~Zhao, H.~Nagamochi and T.~Akutsu.
+		A Novel Method for Inference of Acyclic Chemical Compounds with Bounded Branch-height Based on Artificial Neural Networks and Integer Programming.
+\end{thebibliography}
+
+\end{document}

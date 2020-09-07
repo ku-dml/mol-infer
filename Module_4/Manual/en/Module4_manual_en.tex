@@ -1,0 +1,503 @@
+\documentclass[11pt,titlepage,dvipdfmx,twoside]{article}
+\linespread{1.1}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\usepackage{algorithm}  
+\usepackage{algorithmic}  
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} 
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{url}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+
+\title{\Huge{
+Instructions on How to use the Programs for 
+Generating Acyclic Chemical Graphs Based on 2-Branch Structure Characterization
+}}
+
+\begin{document}
+
+% The following makeatletter must be after begin{document}
+\makeatletter 
+\let\c@lstlisting\c@figure
+\makeatother
+
+\date{\today}
+
+\maketitle
+
+% \cleardoublepage
+
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
+\section{Outline}
+In this text we explain the two programs that implement
+algorithms for generating acyclic chemical graphs based on 
+2-branch structure characterization~\cite{branch}.
+One program takes a feature vector as input and outputs acyclic chemical graphs 
+with 2-branch-number~2 that satisfies the feature vector.
+The other program takes a feature vector as input and outputs acyclic chemical graphs 
+with 2-branch-number~4 that satisfies the feature vector.
+
+% The structure of this folder is as follows:
+In addition to this document, {\tt README.txt} and {\tt License.txt},
+the following folders and files are included in the same folder:
+
+\begin{itemize}
+
+\item folder {\tt 2\_2-branches}\\
+	The folder including the program for generating acyclic chemical graphs with 2-branch-number~2.
+	\begin{itemize}
+	\item folder {\tt include}
+		\begin{itemize}
+			\item{cross\_timer.h}\\
+				A header file used for calculating the computational time.
+				
+			\item{data\_structures.hpp}\\
+				A header file containing the settings of data structures.
+				
+			\item{debug.h}\\
+				A header file used for debug.
+				
+			\item{fringe\_tree.hpp}\\
+				A header file containing the functions of enumerating fringe trees~\cite{branch}.		
+						
+			\item{tools.hpp}\\
+				A header file containing several minor functions used in this program.
+	
+		\end{itemize}
+	\item folder {\tt instances}
+		\begin{itemize}
+			\item{\tt ha\_tv3500\_n15\_dia10\_dmax3\_k2\_bn2\_bh1.txt}\\
+				An input file describing a feature vector satisfying Ha~(Heat of Atomization) property value 3500, 
+				vertex number 15, diameter 10, vertex degree upper bound 3, branch-parameter 2,
+				2-branch-number 2, 2-branch-height 1.
+
+			\item{\tt ha\_tv4500\_n20\_dia12\_dmax4\_k2\_bn2\_bh1.txt}\\
+				An input file describing a feature vector satisfying Ha property value 4500, 
+				vertex number 20, diameter 12, vertex degree upper bound 4, branch-parameter 2,
+				2-branch-number 2, 2-branch-height 1.
+				
+			\item{\tt ha\_tv7000\_n30\_dia15\_dmax3\_k2\_bn2\_bh1.txt}\\
+				An input file describing a feature vector satisfying Ha property value 7000, 
+				vertex number 30, diameter 15, vertex degree upper bound 3, branch-parameter 2,
+				2-branch-number 2, 2-branch-height 1.
+
+			\item{\tt ha\_tv8500\_n40\_dia30\_dmax4\_k2\_bn2\_bh1.txt}\\
+				An input file describing a feature vector satisfying Ha property value 8500, 
+				vertex number 40, diameter 30, vertex degree upper bound 4, branch-parameter 2,
+				2-branch-number 2, 2-branch-height 1.
+				
+			\item{\tt ha\_tv11000\_n50\_dia40\_dmax3\_k2\_bn2\_bh1.txt}\\
+			    An input file describing a feature vector satisfying Ha property value 11000, 
+				vertex number 50, diameter 40, vertex degree upper bound 3, branch-parameter 2,
+				2-branch-number 2, 2-branch-height 1.
+
+		\end{itemize}
+		
+	\item {\tt main.cpp}\\
+	Source file of the program generating acyclic chemical graphs with 2-branch-number 2.
+	\end{itemize}
+		
+\item folder {\tt 4\_2-branches}\\
+	The folder including the program for generating acyclic chemical graphs with 2-branch-number~4.
+	\begin{itemize}
+	\item folder {\tt include}
+		\begin{itemize}
+			\item{cross\_timer.h}\\
+				A header file used for calculating the computational time.
+				
+			\item{data\_structures.hpp}\\
+				A header file containing the settings of data structures.
+				
+			\item{debug.h}\\
+				A header file used for debug.
+				
+			\item{fringe\_tree.hpp}\\
+				A header file containing the functions of enumerating fringe trees.		
+						
+			\item{tools.hpp}\\
+				A header file containing several minor functions used in this program.
+				
+		\end{itemize}
+	\item folder {\tt instances}
+		\begin{itemize}
+		
+			\item{\tt ha\_tv3500\_n15\_dia10\_dmax3\_k2\_bn4\_bh2.txt}\\
+				An input file describing a feature vector satisfying Ha property value 3500, 
+				vertex number 15, diameter 10, vertex degree upper bound 3, branch-parameter 2,
+				2-branch-number 4, 2-branch-height 2.
+				
+			\item{\tt ha\_tv4500\_n20\_dia12\_dmax4\_k2\_bn4\_bh2.txt}\\
+				An input file describing a feature vector satisfying Ha property value 4500, 
+				vertex number 20, diameter 12, vertex degree upper bound 4, branch-parameter 2,
+				2-branch-number 4, 2-branch-height 2.
+				
+			\item{\tt ha\_tv8000\_n30\_dia20\_dmax3\_k2\_bn4\_bh2.txt}\\
+				An input file describing a feature vector satisfying Ha property value 8000, 
+				vertex number 30, diameter 20, vertex degree upper bound 3, branch-parameter 2,
+				2-branch-number 4, 2-branch-height 2.
+				
+			\item{\tt ha\_tv8000\_n35\_dia20\_dmax4\_k2\_bn4\_bh2.txt}\\
+				An input file describing a feature vector satisfying Ha property value 8000, 
+				vertex number 35, diameter 20, vertex degree upper bound 4, branch-parameter 2,
+				2-branch-number 4, 2-branch-height 2.
+				
+			\item{\tt ha\_tv8500\_n40\_dia20\_dmax3\_k2\_bn4\_bh2.txt}\\
+				An input file describing a feature vector satisfying Ha property value 8500, 
+				vertex number 40, diameter 20, vertex degree upper bound 3, branch-parameter 2,
+				2-branch-number 4, 2-branch-height 2.
+
+		\end{itemize}
+	\item {\tt main.cpp}\\
+	Source file of the program generating acyclic chemical graphs with 2-branch-number 4.
+	\end{itemize}
+
+\end{itemize}
+
+The remainder of this text is organized as follows:
+Section~\ref{sec:term} gives basic terminology used throughout the text.
+Section~\ref{sec:InOut} explains the format of the input and output of the program.
+Section~\ref{sec:Example} shows the results of an experiment example.
+
+
+\newpage
+
+\section{Terminology}
+\label{sec:term}
+
+In this section, the terminology used throughout the text and the programs are explained.
+
+\begin{itemize}
+\item Feature vector\\
+A vector of numerical values describing a chemical compound
+such as the number of atoms of each type,
+or numerical values calculated based on the topology of graph representation of a chemical compound 
+such as the diameter of the graph.
+The contents of feature vectors used in these two programs 
+are explained with some examples in Section~\ref{sec:InputFormat}.
+
+\item Acyclic chemical graphs\\
+A chemical graph constructed by a set of vertices and a set of edges
+represents the structure of a chemical compound.
+Each vertex is assigned an atom type, while each edge is assigned 
+a multiplicity of a chemical bond.
+An acyclic chemical graph represents a chemical compound without any cycle in its molecular structure.
+This text deals with hydrogen-suppressed chemical graphs.
+
+\item Please refer to the reference~\cite{branch} for related terminology: \\
+2-branch, 2-branch-number, fringe trees, internal vertices, external vertices, 
+internal edges, external edges, adjacency-configurations, bond-configurations.
+
+\end{itemize}
+
+\section{Program Input and Output}
+\label{sec:InOut}
+
+In this section, the input and output of the programs are explained.
+Section~\ref{sec:Input} describes the input information of the programs.
+Section~\ref{sec:InputFormat} gives the details of the input data format.
+Section~\ref{sec:Output} and Section~\ref{sec:OutputFormat} explain 
+the output information and the output data format of the programs, respectively.
+
+
+\subsection{Program Input}
+\label{sec:Input}
+
+These two programs each take four arguments as input.
+The first argument is a text file describing a feature vector.
+The format of this text file is explained in Section~\ref{sec:InputFormat}.
+The second argument is an upper bound of computational time input in seconds.
+The third argument is an upper bound of the number of output chemical graphs.
+The last argument is the name of an SDF file used to store the output chemical graphs.
+
+\bigskip
+
+\newpage
+\subsection{Input Data Format}
+\label{sec:InputFormat}
+
+This section describes the data format of the first text file input 
+to the programs as explained in Section~\ref{sec:Input}.
+An example of the input file is as follows:
+
+\bigskip
+
+\begin{oframed}
+{\bf Input Data Format}\\\\
+%\bigskip\bigskip
+{\tt 2\\
+C 120 4 5 8\\
+O 160 2 2 0\\
+3\\
+C C 2 0 3\\
+C O 1 4 0\\
+C C 1 2 5\\
+0 6\\
+4 1\\
+3 1\\
+0 0\\
+10\\
+3\\
+1 2 1 0 1\\
+1 2 2 0 0\\
+1 2 3 0 0\\
+1 3 1 0 2\\
+1 3 2 0 3\\
+1 4 1 0 0\\
+2 2 1 2 0\\
+2 2 2 0 0\\
+2 2 3 0 0\\
+2 3 1 4 1\\
+2 3 2 0 0\\
+2 4 1 0 0\\
+3 3 1 0 1\\
+3 3 2 0 0\\
+3 4 1 0 0\\
+4 4 1 0 0\\}
+\end{oframed}
+
+
+We use this instance to explain the contents of each row of input text files
+in Table~\ref{tab:InputFormat}.
+
+\bigskip
+\begin{table}[H]
+\begin{center} \caption{Meaning of the input text file}
+\label{tab:InputFormat}
+  \begin{tabular}{l|l}
+  Numerical values  & Contents \\ \hline \hline
+ {\tt 2} & \#types of atoms\\ \hline
+{\tt C 120 4 5 8} & Atom symbol, 10 times of atomic mass, Valence,\\
+{\tt O 160 2 2 0} &  \phantom{Atom symbol, } \#internal vertices, \#external vertices \\ \hline
+{\tt 3} & \#types of atom bonds　\\ \hline
+{\tt C C 2 0 3} & \\
+{\tt C O 1 4 0} &  AC (atom, atom, multiplicity), \#internal AC, \#external AC\\
+{\tt C C 1 2 5} & \\ \hline
+{\tt 0 6} & \#internal vertices of degree 1, \# external vertices of degree 1\\ 
+{\tt 4 1} & \#internal vertices of degree 2, \# external vertices of degree 2\\ 
+{\tt 3 1} & \#internal vertices of degree 3, \# external vertices of degree 3\\ 
+{\tt 0 0} & \#internal vertices of degree 4, \# external vertices of degree 4\\  \hline
+{\tt 10} & Diameter　\\ \hline
+{\tt 3} & Upper bound on the vertex degree　\\ \hline
+{\tt 1 2 1 0 1} & \\
+{\tt 1 2 2 0 0} & \\
+{\tt 1 2 3 0 0} & \\
+{\tt 1 3 1 0 2} & \\
+{\tt 1 3 2 0 3} & \\
+{\tt 1 4 1 0 0} & \\
+{\tt 2 2 1 2 0} & BC (degree, degree, multiplicity), \#internal BC, \#external BC\\
+{\tt 2 2 2 0 0} & \\
+{\tt 2 2 3 0 0} & \\
+{\tt 2 3 1 4 1} & \\
+{\tt 2 3 2 0 0 }& \\
+{\tt 2 4 1 0 0 }& \\
+{\tt 3 3 1 0 1} & \\
+{\tt 3 3 2 0 0} & \\
+{\tt 3 4 1 0 0} & \\
+{\tt 4 4 1 0 0} & \\ \hline
+  \end{tabular}
+\vspace{-4mm}
+\end{center}
+\begin{tabbing}
+~\hspace{15mm} \= \#$\triangle$ stands for the number of $\triangle$.\\
+\> AC stands for adjacency-configuration.\\
+\> BC stands for bond-configuration.
+\end{tabbing}
+\end{table}
+
+
+
+\subsection{Program Output}
+\label{sec:Output}
+
+The output information of these two programs contains
+a lower bound on the number of chemical graphs that satisfy the input feature vector,
+the number of generated graphs,
+the computational time of the program and
+several chemical graphs that satisfy the input feature vector.
+The chemical graphs are saved in an SDF file with filename that has been provided as input.
+
+
+\subsection{Output Data Format}
+\label{sec:OutputFormat}
+
+About the format of SDF files please refer to 
+\url{https://www.chem-station.com/blog/2012/04/sdf.html} for an
+explanation in Japanese or 
+the official definition (in English)
+\url{http://help.accelrysonline.com/ulm/onelab/1.0/content/ulm_pdfs/direct/reference/ctfileformats2016.pdf}  for detail.
+
+
+
+\bigskip
+
+
+
+\section{Program Execution and a Computational Example}
+\label{sec:Example}
+
+This section shows how to execute the programs and the computational results of an example.
+
+\subsection{Executing the Program}
+\label{sec:compile}
+Both programs are executed as follows:
+\begin{itemize}
+	\item {\em Confirm the development environment}\\
+		Any compiler compatible with the ISO C++ 2011 standard should work.
+		%
+		The g++ compiler version 5 \& 7 on Linux Mint 18 \& 19 have been tested, 
+		which can be installed from the command line by the next command.\\
+		\verb|$ sudo apt install g++|
+	\item {\em Compile}\\
+		\verb|$ g++ -o main main.cpp -O3 -std=c++11|\\
+		(The option \verb|-std=c++11| can be omitted for g++ ver 7.)
+	\item {\em Run}\\
+		\verb|$ ./main instance.txt a b output.sdf|\\
+		The first argument, \verb|instance.txt|, specifies the input text file, 
+		the second argument, \verb|a|, gives an upper bound of computational time in seconds,
+		the third argument, \verb|b|, gives an upper bound of the number of output chemical graphs and
+	\verb|output.sdf| specifies the filename where to save the output chemical graphs.
+\end{itemize}
+
+
+\subsection{Computational Example}
+\label{sec:instance}
+
+Here we show the results of running the program of 2-branch-number 2 with the following input information:
+
+\begin{itemize}
+\item Input file: {\tt ha\_tv3500\_n15\_dia10\_dmax3\_k2\_bn2\_bh1.txt} in the folder {\tt instances}
+\item Upper bound of computational time: 10 seconds
+\item Upper bound of the number of output chemical graphs: 2
+\item Name of the SDF file to save the output chemical graphs: {\tt output.sdf}
+\end{itemize}
+
+The commands to run the program is as follows:
+
+\bigskip
+
+{\tt ./main ../instances/ha\_tv3500\_n15\_dia10\_dmax3\_k2\_bn2\_bh1.txt 10 2 output.sdf}
+
+\bigskip
+
+The output results on the terminal and in the SDF file {\tt output.sdf} are as follows:
+
+\begin{oframed}
+{\bf Results shown on the terminal}\\\\
+{\tt A lower bound on the number of graphs = 56\\
+Number of generated graphs = 2\\
+Time : 0.00842078s.}
+\end{oframed}
+
+\begin{oframed}
+{\bf Content of output.sdf}\\\\
+{\tt 1\\
+2-branches\\
+2-branches\\
+ 15 14  0  0  0  0  0  0  0  0999 V2000 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+  1  2  2  0  0  0  0\\
+  1  3  1  0  0  0  0\\
+  1  6  1  0  0  0  0\\
+  3  4  1  0  0  0  0\\
+  3  5  1  0  0  0  0\\
+  6  7  1  0  0  0  0\\
+  7  8  2  0  0  0  0\\
+  7  9  1  0  0  0  0\\
+  9 10  1  0  0  0  0\\
+ 10 11  1  0  0  0  0\\
+ 11 12  1  0  0  0  0\\
+ 12 13  2  0  0  0  0\\
+ 12 14  1  0  0  0  0\\
+ 14 15  1  0  0  0  0\\
+M  END\\
+\$\$\$\$\\
+2\\
+2-branches\\
+2-branches\\
+ 15 14  0  0  0  0  0  0  0  0999 V2000 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0\\
+  1  2  1  0  0  0  0\\
+  1  4  1  0  0  0  0\\
+  1  5  1  0  0  0  0\\
+  2  3  1  0  0  0  0\\
+  5  6  1  0  0  0  0\\
+  6  7  2  0  0  0  0\\
+  6  8  1  0  0  0  0\\
+  8  9  1  0  0  0  0\\
+  9 10  1  0  0  0  0\\
+ 10 11  1  0  0  0  0\\
+ 11 12  2  0  0  0  0\\
+ 11 13  1  0  0  0  0\\
+ 13 14  2  0  0  0  0\\
+ 13 15  1  0  0  0  0\\
+M  END\\
+\$\$\$\$\\}
+\end{oframed}
+
+\newpage
+\addcontentsline{toc}{section}{\refname} 
+\begin{thebibliography}{10}
+	\bibitem{branch}
+		N.~A.~Azam, J.~Zhu, Y.~Sun, Y.~Shi, A.~Shurbevski, L.~Zhao, H.~Nagamochi and T.~Akutsu.
+		A Novel Method for Inference of Acyclic Chemical Compounds with Bounded Branch-height Based on Artificial Neural Networks and Integer Programming. {\em In preparation}.
+\end{thebibliography}
+
+\end{document}
