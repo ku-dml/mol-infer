@@ -2,9 +2,6 @@
 title: "Readme for the Mol-Infer project"
 date: "September 8th 2020"
 author: "Discrete Mathematics Lab, Kyoto University"
-<!---
-bibliography: reference.bib
--->
 ---
 
 WARN: at the current point (Sep. 8, 2020) this repository has not been fully prepared. Please wait for some days before we can finish the final development and documentation for a release.
