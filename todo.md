@@ -1,12 +1,12 @@
 ---
 title: "Todo"
-date: "September 9th, 2020"
+date: "September 8th, 2020"
 ---
 # Todo
 
 1. Decide the address of the paper on arxiv and use it to update the links in documents.
 1. Decide who to acknowledge and update the list in Readme.md.
-1. Can the directories "include" and "instances" of Module 4 be merged safely? => decide the structure of Module 4.
+1. ~~Can the directories "include" and "instances" of Module 4 be merged safely?~~ => No. Let's keep the current structure as the two programs are quite different in principle.
 1. Remove Error/Warning messages for the source files (see the following).
 1. Create Markdown versions of the manuals and use them to generate PDF files.
 1. Feature fix (i.e., fix the algorithms) and code polishing (e.g., to use more comments for self-documentation, etc)

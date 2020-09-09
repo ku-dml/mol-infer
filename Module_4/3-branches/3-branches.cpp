@@ -9,10 +9,10 @@
 #include <algorithm>
 #include <set>
 
-#include "../include/cross_timer.h"
-#include "../include/data_structures.hpp"
-#include "../include/fringe_tree.hpp"
-#include "../include/debug.h"
+#include "include/cross_timer.h"
+#include "include/data_structures.hpp"
+#include "include/fringe_tree.hpp"
+#include "include/debug.h"
 
 using namespace std;
 
