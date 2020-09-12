@@ -1,6 +1,6 @@
 ---
 title: "Todo"
-date: "September 11th, 2020"
+date: "September 12th, 2020"
 ---
 # Todo
 
@@ -8,7 +8,10 @@ date: "September 11th, 2020"
 1. ~~Decide who to acknowledge and update the list in Readme.md.~~
 1. ~~Can the directories "include" and "instances" of Module 4 be merged safely?~~ => No. Let's keep the current structure as the two programs are quite different in principle.
 1. Remove Error/Warning messages for the source files (see the following).
-1. Create Markdown versions of the manuals and use them to generate PDF files.
+1. ~~Create Markdown versions of manuals for Module 1~~
+1. Create Markdown versions of manuals for Module 2
+1. Create Markdown versions of manuals for Module 3
+1. Create Markdown versions of manuals for Module 4
 1. Feature fix (i.e., fix the algorithms) and code polishing (e.g., to use more comments for self-documentation, etc)
 
 **Error**

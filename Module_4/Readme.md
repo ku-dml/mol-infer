@@ -6,6 +6,12 @@ Last-updated: September 11th, 2020
 
 See [Module4_manual_en.pdf](Module4_manual_en.pdf), or [Module4_manual_jp.pdf](Module4_manual_jp.pdf) for Japanese.
 
+Compile
+```
+g++ -std=c++11 -Wall -O3 -o 2-branches/2-branches 2-branches/2-branches.cpp 
+g++ -std=c++11 -Wall -O3 -o 3-branches/3-branches 3-branches/3-branches.cpp 
+```
+
 Here is an example of commands to run the program:
 
 ```

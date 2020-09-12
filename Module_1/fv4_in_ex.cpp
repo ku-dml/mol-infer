@@ -1,6 +1,6 @@
 /*===========================================================================
 Feature vector generation
-Author : Discrete Mathematics Lab
+Author : Discrete Mathematics Lab, Kyoto University
 
 	This file implements functions that given an sdf file
 	of acyclic molecular graphs, calculates the feature vector
@@ -133,7 +133,7 @@ init_MassMap() {
 	M["I"]  = 1270;
 	M["Hg"] = 2006;
 	M["Pb"] = 2072;
-    M["Al"] = 269;
+	M["Al"] = 269;
 	// Finally return the the initialized map
 	return M;
 }

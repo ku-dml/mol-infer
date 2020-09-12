@@ -1,6 +1,6 @@
 ---
 title: "Readme for the Mol-Infer project"
-date: "September 11th 2020"
+date: "September 12th 2020"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
@@ -50,24 +50,9 @@ $ sudo apt install python3-sklearn python3-pulp python3-pandas python3-numpy
 
 ### Other OS
 
-#### Windows
-
 To be provided.
 
-#### Mac OS
-
-To be provided.
-
-## Compile
-
-This is only needed for Modules 1 and 4. On Linux Mint 18/19/20, it can be done by the following command (supposing the working directory is the root of the package).
-```
-g++ -std=c++11 -Wall -O3 -o Module_1/fv4_in_ex Module_1/fv4_in_ex.cpp 
-g++ -std=c++11 -Wall -O3 -o Module_4/2-branches/2-branches Module_4/2-branches/2-branches.cpp 
-g++ -std=c++11 -Wall -O3 -o Module_4/3-branches/3-branches Module_4/3-branches/3-branches.cpp 
-```
-
-## Usage
+## Compile and Usage
 
 See the user's manual in each module.
 
