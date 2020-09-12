@@ -1,6 +1,6 @@
 # Manual for Module 1
 
-*todo: full document in Markdown*
+*todo: document in Markdown for easy online reading*
 
 Last-updated: September 11th, 2020
 
