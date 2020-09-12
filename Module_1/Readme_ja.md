@@ -46,7 +46,7 @@ CID,n,M,C_in,C_ex,O_in,O_ex,N_in,N_ex,H,C1O_in,C1O_ex,C2O_in,C2O_ex,C1N_in,C1N_e
 構成要素の説明
 + CID:  PubChem (https://pubchem.ncbi.nlm.nih.gov) におけるCID。例えば sample1.sdf にある要素は、https://pubchem.ncbi.nlm.nih.gov/compound/128703 である。
 + n: 水素を除く原子の数
-+ M: 平均分子質量
++ M: 平均分子質量  
 ![M = \frac{1}{n}\sum_{a}\lfloor 10 \cdot mass(a)\rfloor](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+M+%3D+%5Cfrac%7B1%7D%7Bn%7D%5Csum_%7Ba%7D%5Clfloor+10+%5Ccdot+mass%28a%29%5Crfloor)
 + C_in, O_in, N_in: 内部原子の数
 + C_ex, O_ex, N_ex: 外部原子の数
