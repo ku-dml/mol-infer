@@ -1,19 +1,19 @@
 ---
 title: "Readme for the Mol-Infer project"
-date: "September 12th 2020"
+date: "September 23, 2020"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
-WARN: at the current point (Sep. 11, 2020) this repository has not been fully prepared. Please wait for some days before we can finish the final development and documentation for a release.
+WARN: at the current point (Sep. 23, 2020) this repository has not been fully prepared. Please wait for some days before we can finish the final development and documentation for a full release.
 
 # mol-infer: Molecular Infering
 
-Mol-infer is a project developed by ku-dml, the Discrete Mathematics Lab at Kyoto Univerisity.
+Mol-infer is a project developed by the Discrete Mathematics Lab at Kyoto Univerisity (ku-dml).
 After many years research on original graph algorithms for infering molecular,
 we decided to open-source our programs for public use.
 If you found it was useful in your research, please consider to cite our following paper as well as this GitHub repository.
 
-> N.A. Azam, J. Zhu, Y. Sun, Y. Shi, A. Shurbevski, L. Zhao, H. Nagamochi and T. Akutsu, A Novel Method for Inference of Acyclic Chemical Compounds with Bounded Branch-height Based on Artificial Neural Networks and Integer Programming, Preprint (arxiv), 2020.
+> N.A. Azam, J. Zhu, Y. Sun, Y. Shi, A. Shurbevski, L. Zhao, H. Nagamochi and T. Akutsu, A Novel Method for Inference of Acyclic Chemical Compounds with Bounded Branch-height Based on Artificial Neural Networks and Integer Programming, 2020, https://arxiv.org/abs/2009.09646.
 
 ## Introduction
 
@@ -27,11 +27,11 @@ This project consists of four modules who are illustrated in the following pictu
 that infers **a vector of graph descriptors** given a target property and the
 ANN trained by Module 2. See [Module 3](Module_3/) for detail.
 + Module 4 provides two programs that, given a FV, generates (??enumerates??)
-acyclic chemical graphs that satisfy the FV based on the *2-branch structure characterization* (see [our paper](arxiv)).
+acyclic chemical graphs that satisfy the FV based on the *2-branch structure characterization* (see [our paper](https://arxiv.org/abs/2009.09646)).
 The difference is that the first program outputs graphs of 2-branch-number *2*,
 whereas the second outputs graphs of 2-branch-number *4*. See [Module 4](Module_4/) for detail.
 
-In order to understand how they deal with these tasks, one may need to read [our paper](arxiv).
+In order to understand how they deal with these tasks, one may need to read [our paper](https://arxiv.org/abs/2009.09646).
 
 ## Requirement
 
