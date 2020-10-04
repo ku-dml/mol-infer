@@ -26,8 +26,7 @@ This project consists of four modules who are illustrated in the following pictu
 + Module 3 implements a *Mixed-Integer Linear Programming* (MILP) formulation
 that infers **a vector of graph descriptors** given a target property and the
 ANN trained by Module 2. See [Module 3](Module_3/) for detail.
-+ Module 4 provides two programs that, given a FV, generates (??enumerates??)
-acyclic chemical graphs that satisfy the FV based on the *2-branch structure characterization* (see [our paper](https://arxiv.org/abs/2009.09646)).
++ Module 4 provides two programs that, given a FV, generates acyclic chemical graphs that satisfy the FV based on the *2-branch structure characterization* (see [our paper](https://arxiv.org/abs/2009.09646)).
 The difference is that the first program outputs graphs of 2-branch-number *2*,
 whereas the second outputs graphs of 2-branch-number *4*. See [Module 4](Module_4/) for detail.
 
