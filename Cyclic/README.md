@@ -29,7 +29,7 @@ This package consists of four modules.
 [Module 3](Module_3/) for detail.
 + Module 4 generates graphs (partial enumeration). See [Module 4](Module_4/) for detail.
 
-In order to understand how they deal with these tasks, one may need to read our paper (will by uploaded soon).
+In order to understand how they deal with these tasks, one may need to read our paper (will be uploaded soon).
 
 ## Compile and Usage
 
