@@ -9,9 +9,9 @@ author: "Discrete Mathematics Lab, Kyoto University"
 At the point of writing, this repository has not been fully prepared (see the status below). Please wait for some days before we can finish the final development and documentation for a full release.
 
 * Module 1: complete
-* Module 2: lack of English document
-* Module 3: lack of Japanese document
-* Module 4: under preparation
+* Module 2: lack of English manual
+* Module 3: lack of Japanese manual
+* Module 4: lack of manual
 
 ---
 
@@ -29,7 +29,7 @@ This package consists of four modules.
 [Module 3](Module_3/) for detail.
 + Module 4 generates graphs (partial enumeration). See [Module 4](Module_4/) for detail.
 
-In order to understand how they deal with these tasks, one may need to read our paper (will be uploaded soon).
+In order to understand how they deal with these tasks, one may need to read our [paper](https://arxiv.org/abs/2010.09203).
 
 ## Compile and Usage
 
