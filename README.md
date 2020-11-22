@@ -19,7 +19,7 @@ If you found it was useful in your research, please consider to cite our followi
 
 ## Introduction
 
-This project consists of two packages: one for [Acyclic](acyclic graphs) and another for [Cycle](cyclic graphs). They has similar algorithm structure, thus may have modules with the same names. However, their modules are NOT compatible since they use different algorithms. So you should think these two packges are two different projects.
+This project consists of two packages: [Acyclic/](Acyclic package for graphs with no cycle) and [Cyclic/](Cyclic package for graphs with cycle(s)). They has similar algorithm structure, thus may have modules with the same names. However, their modules are NOT compatible since they use different algorithms. So you should think these two packges are two different projects.
 
 ## Requirement
 
