@@ -17,7 +17,7 @@ At the point of writing, this repository has not been fully prepared (see the st
 
 ## General info: mol-infer: Molecular Infering
 
-Mol-infer is a project developed by the Discrete Mathematics Lab at Kyoto Univerisity (ku-dml). See [Readme](../) for more detail.
+Mol-infer is a project developed by the Discrete Mathematics Lab at Kyoto Univerisity (ku-dml). See [the top page](https://github.com/ku-dml/mol-infer) for more detail.
 
 ## Introduction of the Cyclic Package
 
