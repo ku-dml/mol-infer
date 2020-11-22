@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Latex intermediate files
+*.aux
+*.log
+*.toc
+*.dvi
