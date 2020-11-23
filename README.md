@@ -15,7 +15,7 @@ If you found it was useful in your research, please consider to cite our followi
 
 > (Acyclic package) N.A. Azam, J. Zhu, Y. Sun, Y. Shi, A. Shurbevski, L. Zhao, H. Nagamochi and T. Akutsu, A Novel Method for Inference of Acyclic Chemical Compounds with Bounded Branch-height Based on Artificial Neural Networks and Integer Programming, 2020, https://arxiv.org/abs/2009.09646.
 
-> (Cyclic package) TBA
+> (Cyclic package) T. Akutsu and H. Nagamochi, A novel method for inference of chemical compounds with prescribed topological substructures based on integer programming, 2020, https://arxiv.org/abs/2010.09203.
 
 ## Introduction
 
