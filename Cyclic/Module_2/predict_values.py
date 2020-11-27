@@ -159,10 +159,13 @@ class ANN:
                         ])
             
             vec_x = np.dot(weight_matrix, vec_y) + bias_vector
-            vec_y = np.array([
-                        self.activation(x)
-                        for x in vec_x
-                    ])
+            if next_layer == self.output_layer:
+                vec_y = np.array([x for x in vec_x])
+            else:
+                vec_y = np.array([
+                    self.activation(x)
+                    for x in vec_x
+                ])
             # update current layer
             cur_layer = next_layer
 
