@@ -1,6 +1,6 @@
 ---
 title: "Readme for the Mol-Infer project"
-date: "Nov 22, 2020"
+date: "Jan 22, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
@@ -17,11 +17,14 @@ If you found it was useful in your research, please consider to cite our followi
 
 > (Cyclic package) T. Akutsu and H. Nagamochi, A novel method for inference of chemical compounds with prescribed topological substructures based on integer programming, 2020, https://arxiv.org/abs/2010.09203.
 
+> (Cyclic improved) J. Zhu, N.A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, An Improved Integer Programming Formulation for Inferring Chemical Compounds with Prescribed Topological Structures, 2021, submitted.
+
 ## Introduction
 
 This project consists of two packages:
 + [Acyclic package for graphs with no cycle](Acyclic/) and
 + [Cyclic package for graphs with cycle(s)](Cyclic/).
++ [Cyclic improved package for graphs with cycle(s)](Cyclic_improved/).
 
 They has similar algorithm structure, thus have modules with the same names. However, their modules are NOT compatible since they use different algorithms. So you should think these two packges are two different projects.
 
