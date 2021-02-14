@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%%%%
+%
+% File Module4_manual_en.txt
+% English manual for the program fo rgenerating chemical isomers
+% Edited: Feb 8, 2021, Alex
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[11pt,titlepage,dvipdfmx,twoside]{article}
 \linespread{1.1}
 
@@ -27,10 +35,14 @@
 \usepackage{color}
 \usepackage{url}
 
+\newcommand{\project}{{\tt mol-infer/Cyclic}}
 
-\title{\Huge{
-Program Manual: \\
+
+\title{\huge{
+Module 4:
 Listing Chemical Isomers of a Given 2-Lean Cyclic Chemical Graph}}
+
+\author{\project}
 
 \begin{document}
 
@@ -59,16 +71,22 @@ Listing Chemical Isomers of a Given 2-Lean Cyclic Chemical Graph}}
 This text explains how to use the program for listing
 chemical isomers of a given 2-lean cyclic chemical graph~\cite{branch}.
 
-In addition to this text, a {\tt README.txt} and a {\tt License.txt} file,
-you will find accompanying the following files and folders.
+The following files and folders accompany this text.
 %
-\begin{itemize}
-\item Folder{\tt isomers}\\
-	Containing source code files of the program for generating chemical isomers of a cyclic chemical graph.
-	The program is written in the C++ programming language.
-	\begin{itemize}
-	\item Folder{\tt include}\\
-		A folder that contains related header files.
+\begin{itemize}		
+    \item Folder {\tt main}\\
+	    Folder containing source files written in the C++ programming language.
+	    \begin{itemize}
+		    \item{gen\_partition.cpp}\\
+			    Functions for calculating a partition of a cyclic chemical graph into
+			    acyclic subgraphs.
+			    
+		    \item{generate\_isomers.cpp}\\
+			    Implements an algorithm for listing chemical isomers of
+			    a 2-lean cyclic chemical graph.
+
+	\item Folder {\tt include}\\
+		A folder that contains related header files, written in C++.
 		\begin{itemize}
 			\item{chemical\_graph.hpp}\\
 			  A header file that contains functions for manipulating 
@@ -88,62 +106,50 @@ you will find accompanying the following files and folders.
 			\item{tools.hpp}\\
 				Various functions used in the implementation.
 		\end{itemize}
-	\item Folder{\tt instances}\\
+	\item Folder {\tt instances}\\
 		A folder containing sample input instances.
 		\begin{itemize}
 			\item{\tt sample\_1.sdf}\\
-			  A cyclic chemical graph with 20 vertices (non-Hydrogen atoms).
+			  A cyclic chemical graph with 20 vertices (non-Hydrogen atoms),
 			    core size 18 and core height~1.
 			\item{\tt sample\_1\_partition.txt}\\
 			  A file containing partition information into acyclic subgraphs 
 				of the cyclic chemical graph given in {\tt sample\_1.sdf}.
 			\item{\tt sample\_2.sdf}\\
-			  A cyclic chemical graph with 50 vertices (non-Hydrogen atoms).
+			  A cyclic chemical graph with 50 vertices, 
 			    core size 24 and core height~6.
 			\item{\tt sample\_2\_partition.txt}\\
 			  A file containing partition information into acyclic subgraphs 
 				of the cyclic chemical graph given in {\tt sample\_2.sdf}.
 			\item{\tt sample\_3.sdf}\\
-			  A cyclic chemical graph with 60 vertices (non-Hydrogen atoms).
+			  A cyclic chemical graph with 60 vertices, 
 			    core size 31 and core height~4.
 			\item{\tt sample\_3\_partition.txt}\\
 			  A file containing partition information into acyclic subgraphs 
 				of the cyclic chemical graph given in {\tt sample\_3.sdf}.
 			\item{\tt sample\_4.sdf}\\
-			  A cyclic chemical graph with 120 vertices (non-Hydrogen atoms).
+			  A cyclic chemical graph with 120 vertices, 
 			    core size 60 and core height~4.
 			\item{\tt sample\_4\_partition.txt}\\
 			  A file containing partition information into acyclic subgraphs 
 				of the cyclic chemical graph given in {\tt sample\_4.sdf}.
 		\end{itemize}
-		
-	\item Folder{\tt main}\\
-		Folder containing source files.
-		\begin{itemize}
-			\item{gen\_partition.cpp}\\
-				Functions for calculating a partition of a cyclic chemical graph into
-				acyclic subgraphs.
-				
-			\item{generate\_isomers.cpp}\\
-				Implements an algorithm for listing chemical isomers of
-				a 2-lean cyclic chemical graph.
 			
-			\item{Pseudocode\_Graph\_Generation.pdf}\\
-			  A pdf files showing Pseudo-codes for Graph Search Algorithms.
+			\item{file {\tt Pseudocode\_Graph\_Generation.pdf}}\\
+			  A pdf file with Pseudo-codes for the graph search algorithm.
 		\end{itemize}
 
 	\end{itemize}
-\end{itemize}
 
 The remainder of this text is organized as follows.
 Section~\ref{sec:term} explains some of the terminology used throughout the text.
-Section~\ref{sec: partition} gives an explanation of the input and output of
+Section~\ref{sec: partition} gives an explanation of the input and the output of
 the program for calculating a partition of a cyclic chemical graph into
-acyclic subgraphs, providing a computational example.
+acyclic subgraphs, and provides a computational example.
 Section~\ref{sec: main}
 gives an explanation of the program for generating chemical isomers of
 a given 2-lean cyclic chemical graph, explaining the input, output, and
-presenting a computational example.
+presents a computational example.
 
 
 % \newpage
@@ -307,9 +313,9 @@ as well as a concrete computational example of the program's execution.
 \label{sec:compile_p}
 \begin{itemize}
 	\item {\em Computation environment}\\
-		There should not be any problems when using a ISO C++ compatible compiler. %
-		There program has been tested on 
-		Ubuntu Linux 20.04,  with the  g++ compiler ver 9.3.
+		There should not be any problems when using an ISO C++11 compatible compiler. %
+		The program has been tested on 
+		Ubuntu Linux 20.04,  with the  g++ compiler version 9.3.
 		If the compiler is not installed on the system, it can be installed with
 		the following command.\\
 		\verb|$ sudo apt install g++|
@@ -392,14 +398,15 @@ The input to the {\tt Generate Isomers} program
 consists of six necessary and one optional item. \\
 First, comes information of a 2-lean chemical graph (in SDF format).\\
 Second, comes a time limit in seconds on each of the stages of the program 
-(for details, check the accompanying file with pseudo-codes of the program).\\
-Third is an upper bound on the number of {\em partial} feature vectors, that the program stores
+(for details, check the accompanying file with pseudo-codes of the algorithm).\\
+Third is an upper bound on the number of {\em partial} feature vectors that the program stores
 during its computation. \\
 Fourth is the number of ``sample graphs'' that are stored per one feature vector.\\
 Fifth is an upper limit on the number of generated output chemical graphs. \\
 Sixth is a filename (SDF) where the output graphs will be written.\\
 An optional parameter is a filename with a partition information of
-the chemical graph given as the first parameter.
+the chemical graph given as the first parameter, and if given, it must be last
+in the list of parameters.
 
 
 
@@ -427,14 +434,14 @@ This section gives a concrete computational example of the {\tt Generate Isomers
 \begin{itemize}
 	\item {\em Computation environment}\\
 		There should not be any problems when using a ISO C++ compatible compiler. %
-		There program has been tested on 
-		Ubuntu Linux 20.04,  with the  g++ compiler ver 9.3.
+		The program has been tested on 
+		Ubuntu Linux 20.04,  with the  g++ compiler version 9.3.
 		If the compiler is not installed on the system, it can be installed with
 		the following command.\\
 		\verb|$ sudo apt install g++|
 	\item {\em Compiling the program}\\
 		Please run the following command in the terminal.\\
-		\verb|$ g++ -o generate_isomers generate\_isomers.cpp -O3 -std=c++11|\\
+		\verb|$ g++ -o generate_isomers generate_isomers.cpp -O3 -std=c++11|\\
 	\item {\em Executing the program}\\
 		The program can be executed by running the following command in the terminal.\\
 		\verb|$ ./generate_isomers instance.txt a b c d output.sdf instance_partition.txt|\\

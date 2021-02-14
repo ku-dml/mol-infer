@@ -1,5 +1,5 @@
 % Manual_MILP_BH_cyclic_en.txt
-% ver1: Nov 17, 2020
+% ver2: Feb 04, 2021
 
 \documentclass[11pt, titlepage, dvipdfmx, twoside]{article}
 \linespread{1.1}
@@ -34,9 +34,12 @@
 %%  target name used for the example 
 
 \newcommand{\dist}{\mathrm{dist}}
+\newcommand{\project}{{\tt mol-infer/Cyclic}}
 
-\title{\Huge{Inferring a 2-Lean Cyclic Chemical Graph with Bounded Branch-Height
-			  from a Trained ANN using MILP}}
+\title{\huge{Module 3: Inferring a 2-Lean Cyclic Chemical Graph with Bounded Branch-Height
+			  from a Trained ANN Using MILP}}
+
+\author{\project}
 
 \begin{document}
 
@@ -75,7 +78,7 @@ To begin with, we give a list of the files that accompany this note.
 \begin{itemize}
 
 \item Folder {\tt source\_code}\\
-A folder containing four python scripts that implement
+A folder containing four Python scripts that implement
 an MILP formulation for inferring feature vectors
 of cyclic chemical graphs from a trained ANN,
 and files containing minimum and maximum values
@@ -89,19 +92,19 @@ An implementation of an MILP formulation
 for the Inverse problem on  ANNs~\cite{AN19}.
 
 \item {\tt cyclic\_graphs\_MILP\_ec\_id.py}\\
-A python script that contains functions to initialize the variables and prepare 
+A Python script that contains functions to initialize the variables and prepare 
 the constraints for an MILP
 formulation for inferring cyclic chemical graphs with 
 a prescribed topological structure~\cite{cyclic_BH_arxiv}.
 
 \item {\tt infer\_cyclic\_graphs\_ec\_id.py}\\
-A python script that prepares the data and executes 
+A Python script that prepares the data and executes 
 the MILP formulation for given input data.
 Further details on the use of this script
 are given in Section~\ref{sec:Exp}.
 
 \item {\tt read\_instance\_BH\_cyclic\_v05.py}\\
-A python script that contains necessary functions
+A Python script that contains necessary functions
 to read the topological specification from a given textual file.
 
 \item Folder {\tt topological\_description}\\
@@ -142,7 +145,7 @@ and an actual example is given in Section~\ref{sec:Exp}.
 A C++ program that calculates the feature vector of 
 a chemical graph stored in SDF format.
 The input and output of this program are customized to work with 
-the python script {\tt infer\_cyclic\_graphs\_ec\_id.py}
+the Python script {\tt infer\_cyclic\_graphs\_ec\_id.py}
 in order to verify the descriptor values
 of the graph inferred as a solution to the MILP (if one exists).
 This source file should be compiled into an executable file
@@ -165,7 +168,7 @@ of the used terms and notation.
 %
 Section~\ref{sec:InOut} explains the 
 input and output data of the program,
-and Sec.~\ref{sec:Exp} gives a concrete
+and Section~\ref{sec:Exp} gives a concrete
 example of input data and the results form the computation.
 
 % \newpage
@@ -278,14 +281,15 @@ Next, comes the target value for which we wish to infer
 a chemical graph based on the trained ANN given above.
 Following is a chemical specification given in a textual file,
 as described in~\cite{cyclic_BH_arxiv}, 
-as well as a filename prefix for the output files,  which are described in Sec.~\ref{sec:section3_4}
+as well as a filename prefix for the output files,  which are described in Section~\ref{sec:section3_4}
 
 Finally, comes a choice of MILP solver program to be used.
 We can choose \\
 ~~~~- 1: CPLEX, a commercial MILP solver~\cite{cplex}. \\
 (Note, in this case the parameter {\tt CPLEX\_PATH} in the file {\tt infer\_acyclic\_graphs.py}
 must be set to the correct path of the CPLEX program executable file.) \\
-~~~~- 2: CBC, a free and open-source MILP solver. Comes together with the PuLP package for python~\cite{PuLP1}.
+~~~~- 2: CBC, a free and open-source MILP solver. 
+It comes together with the PuLP package for Python~\cite{PuLP1}.
 
 
 
@@ -361,7 +365,7 @@ The first line of this file contains the names of the descriptors used in the fe
 Following form the second row onward, are the numerical values of the descriptors for each chemical graph
 in the training dataset, one row per chemical graph.
 For an example, please check one of the files  {\tt TT\_desc.csv},  in the folder {\tt ANN},
-where ${\tt property} \in \{{\tt BP, MP, KOW}\}$.
+where ${\tt TT} \in \{{\tt BP, MP, KOW}\}$.
 
 
 
@@ -447,7 +451,7 @@ program {\tt infer\_cyclic\_graphs\_ec\_id.py}.
 
 First make sure that the terminal is 
 correctly directed to the location
-of the {\tt source\_code} folder, as described in Sec.~\ref{sec:Intro}. \\
+of the {\tt source\_code} folder, as described in Section~\ref{sec:Intro}. \\
 
 \noindent
 {\tt 

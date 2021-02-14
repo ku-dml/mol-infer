@@ -1,6 +1,6 @@
 ---
 title: "Readme for the Cyclic Package of Project Mol-Infer"
-date: "Nov 22, 2020"
+date: "Jan 28, 2020"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
@@ -11,7 +11,7 @@ At the point of writing, this repository has not been fully prepared (see the st
 * Module 1: complete
 * Module 2: lack of English manual
 * Module 3: lack of Japanese manual
-* Module 4: lack of manual
+* Module 4: lack of Japanese manual
 
 ---
 
