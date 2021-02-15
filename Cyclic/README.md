@@ -1,18 +1,7 @@
 ---
 title: "Readme for the Cyclic Package of Project Mol-Infer"
-date: "Jan 28, 2020"
+date: "Feb 15, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
----
-
-**STATUS**
-
-At the point of writing, this repository has not been fully prepared (see the status below). Please wait for some days before we can finish the final development and documentation for a full release.
-
-* Module 1: complete
-* Module 2: lack of English manual
-* Module 3: lack of Japanese manual
-* Module 4: lack of Japanese manual
-
 ---
 
 ## General info: mol-infer: Molecular Infering
