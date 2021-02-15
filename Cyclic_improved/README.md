@@ -1,17 +1,13 @@
 ---
 title: "Readme for the Cyclic Improved Package of Project Mol-Infer"
-date: "Japn 28, 2020"
+date: "Feb 15, 2020"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
 **STATUS**
 
-At the point of writing, this repository has not been fully prepared. Please wait for some days before we can finish the final development and documentation for a full release.
-
-* Module 1: complete
-* Module 2: lack of English manual
-* Module 3: lack of Japanese manual
-* Module 4: lack of Japanese manual
+We have carefully prepared this repository. If one finds bugs or mistakes, please contact us so that we can fix them
+in the next release. Thank you.
 
 ---
 
@@ -19,7 +15,7 @@ At the point of writing, this repository has not been fully prepared. Please wai
 
 Mol-infer is a project developed by the Discrete Mathematics Lab at Kyoto Univerisity (ku-dml). See [the top page](https://github.com/ku-dml/mol-infer) for more detail.
 
-## Introduction of the Cyclic Improved Package
+## Introduction of the Cyclic Package
 
 This package consists of four modules.
 
@@ -28,6 +24,8 @@ This package consists of four modules.
 + Module 3 implements a *Mixed-Integer Linear Programming* (MILP) that solves the inverse ANN problem.
 [Module 3](Module_3/) for detail.
 + Module 4 generates graphs (partial enumeration). See [Module 4](Module_4/) for detail.
+
+In order to understand how they deal with these tasks, one may need to read our [paper](https://arxiv.org/abs/2010.09203).
 
 ## Compile and Usage
 

@@ -1,0 +1,553 @@
+%%%%%%%%%%%%%%%%%
+% File: Manual_Module_1_Cyclic_improved_en.tex
+% manual for module 1 of the cyclic part, mol-infer project
+% edit: Feb 10, 2021
+%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt, titlepage, dvipdfmx, twoside]{article}
+\linespread{1.1}
+%\documentclass[11pt,dvipdfmx,twoside]{jarticle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% style definitions
+%
+% following setting makes 3cm spaces for top and bottom, and
+% 2.5cm spaces for left and right
+%
+                                         % default setting
+\setlength{\oddsidemargin}{22pt}         % 62pt
+\setlength{\evensidemargin}{22pt}        % 62pt
+\setlength{\headheight}{12pt}            % 12pt
+\setlength{\textheight}{662pt}           % 592pt
+\setlength{\marginparsep}{10pt}          % 10pt
+\setlength{\footskip}{30pt}              % 30pt
+\setlength{\hoffset}{-13pt}              % 0pt
+\setlength{\paperwidth}{597pt}           % 597pt
+\setlength{\topmargin}{20pt}             % 20pt
+\setlength{\headsep}{25pt}               % 25pt
+\setlength{\textwidth}{427pt}            % 327pt
+\setlength{\marginparwidth}{106pt}       % 106pt
+\setlength{\marginparpush}{5pt}          % 5pt
+\setlength{\voffset}{-37pt}              % 0pt
+\setlength{\paperheight}{845pt}          % 845pt
+
+
+% 1 inch = 2.54 cm = 72.27 pt
+
+\renewcommand{\baselinestretch}{1.20}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{framed}
+\usepackage{url}
+\usepackage{color}
+\newenvironment{myframe}{\begin{trivlist}\item[]
+    \hrule
+    \hbox to \linewidth\bgroup
+    \advance\linewidth by -30pt
+    \hsize=\linewidth
+    \vrule\hfill
+    \vbox\bgroup
+    \vskip15pt
+    \def\thempfootnote{\arabic{mpfootnote}}
+    \begin{minipage}{\linewidth}}{%
+    \end{minipage}\vskip15pt
+    \egroup\hfill\vrule
+    \egroup\hrule
+\end{trivlist}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\project}{{\tt mol-infer/Cyclic\_improved}}
+%\newcommand{\project}{{\tt mol-infer/Cyclic}}
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\huge Module 1: Calculating a Feature Vector from an SDF File}
+\author{\project}
+\begin{document}
+\makeatletter 
+\let\c@lstlisting\c@figure
+\makeatother
+% \西暦
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+
+\section{Introduction}
+This note serves as a manual and
+explains the procedures to run Module~1 of the \project project.
+The input and output of Module~1 are as follows.
+
+\begin{oframed}
+\begin{description}
+\item[Input:] 
+A set $D=\{G_1, G_2, \dots, G_p\}$ of cyclic chemical graphs. 
+%
+\item[Output:] 
+A set ${\mathcal F}(D)\triangleq\{f(G_1), f(G_2), \dots, f(G_p)\}$
+of feature vectors, such that $f(\cdot)$ is a feature vector of
+chemical graphs as details in the accompanying article~\cite{BH_cyclic_arxiv}.
+%
+\end{description}
+\end{oframed}
+%
+The output is written to a csv (comma-separated value) file.
+This csv file is used in Module~2 of the project.
+
+
+The remainder of this note is organized as follows
+\begin{itemize}
+\item \secref{preparation}: 
+Summary of essential terminology, as well, as the file organization
+in this package.
+
+\item \secref{quick}: 
+A short computational example.
+
+\item \secref{io}: 
+Detailed explanations of the program's input and output.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{Preliminaries}
+\label{sec:preparation}
+
+\subsection{Terminology}
+\paragraph{Chemical Graph.}
+A {\bf graph} is an abstract combinatorial construction
+comprising a set of {\bf nodes} and a set of {\bf edges},
+where an edge is an unordered pair of nodes.
+A {\bf cycle} in a graph is a sequence of
+nodes such that except for the first and the last node,
+each node is unique, and there is an edge for each pair of consecutive 
+nodes in the sequence.
+
+A graph where each node is assigned a chemical element
+(such as carbon, nitrogen, oxygen, etc.) and each
+edge is assigned a multiplicity between 1 and 4,
+is called a {\bf chemical graph}.
+
+
+\paragraph{Descriptor.}
+A {\bf descriptor} is a numerical value that 
+indicates a certain characteristic of a chemical graph.
+In this project, among others, descriptors include
+the number of non-hydrogen atoms, the number of atoms in the core of the 
+chemical graph, the core height, etc.
+For a complete list of descriptors, please refer to the 
+accompanying article~\cite{BH_cyclic_arxiv}.
+
+
+\paragraph{Feature vector.}
+A vector that comprises the numerical values for
+the descriptors of a chemical graph.
+
+
+
+
+\subsection{File Structure}
+The following set of files accompany this note.
+\begin{itemize}
+\item {\tt Makefile}: 
+A makefile for compiling the programs. 
+%
+\item {\tt cycle\_checker.cpp}: 
+Source code written in C++ that for a given chemical compound checks if 
+the chemical graph contains a cycle or not
+%.  
+\item {\tt eliminate.py}: 
+A Python script that screens chemical compounds that are not
+considered under this project, such us inorganic
+compounds with less than four carbon atoms, 
+that contain charged atoms, etc.
+%
+\item {\tt fv\_ec.cpp}: 
+Source code written in C++ 
+of the mail program of Module~1,
+calculating a feature vector.
+%
+\item {\tt fv\_proj.cpp}: 
+Source code (C++) of a program
+that given a feature vector function $f$
+calculated over a set $D$ of chemical graphs,
+and a set $D'$ of chemical graphs that does not necessarily have the same
+descriptors as $D$ does, 
+calculates the set ${\mathcal F}(D')$ of feature vectors
+projected onto the domain of~$f$.
+This is an auxiliary program, 
+and usually not essential to the flow of the entire project.
+%
+\item Folder {\tt data} 
+Contains sample input and output files
+used to test and demonstrate the execution of the
+programs in Module~1.
+The files in this folder as as follows.
+%
+\begin{itemize}
+  \item {\tt sample1.sdf}: 
+  An SDF file that contains a single chemical compound.
+  (Please check \secref{io} for more details on SDF files.)
+  %
+  \item {\tt sample1\_eli.sdf}: 
+  An SDF file obtained as the output of the Python script 
+  {\tt eliminate.py} when invoked on the file {\tt sample1.sdf}.
+  The contents of the files {\tt sample1.sdf} and {\tt sample1\_eli.sdf}
+  should be identical.
+  %
+  \item {\tt sample1.csv}: 
+  Contains a single feature vector
+  constructed from the file
+  {\tt sample1\_eli.sdf}.
+  %
+  \item {\tt sample2.sdf}: 
+  An SDF file that contains data on 175 chemical graphs.
+%
+  \item {\tt sample2\_eli.sdf}: 
+    An SDF file obtained as the output of the Python script 
+  {\tt eliminate.py} when invoked on the file {\tt sample2.sdf}.
+  The contents of the files {\tt sample2.sdf} and {\tt sample2\_eli.sdf}
+  should be identical.
+  %
+  \item {\tt sample2.csv}: 
+  Contains the set of feature vectors
+  constructed from the file
+  {\tt sample2\_eli.sdf}.
+  %
+  \item {\tt sample1\_on\_2.csv}: 
+  Contains a single feature vector whose values are calculated
+  from the file
+  {\tt sample1\_eli.sdf},
+  however, the dimensions of the vector are projected 
+  on the domain of the feature vector obtained from
+  the file {\tt sample2\_eli.sdf}. 
+  \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{Execution Example}
+\label{sec:quick}
+
+\subsection{Validation of the Data}
+%
+Data on chemical compounds (equivalently, chemical graphs) is stored in a standard SDF file
+(more information on the structure of SDF files is given in \secref{io}).
+Each chemical graph~$G$ 
+must satisfy the following conditions
+%
+\begin{description}
+\item[(i)] 
+ $G$ must contain a cycle;
+%
+\item[(ii)] 
+ $G$ must contain at least four carbon atoms,
+ none of the atoms is allowed to be charged,
+ and each atom must have atomic mass as listed
+ in~\secref{caution}; and
+ %
+\item[(iii)] Must not include an aromatic edge.
+\end{description}
+%
+
+The Python script {\tt eliminate.py}
+included in Module~1 can be used to 
+remove the graphs that do not satisfy 
+condition~(ii).% and~(iii).
+For condition (iii),
+the user must confirm whether it is satisfied or not
+on his/her own. 
+
+\paragraph{Confirming that a chemical graph contains a cycle.}
+%
+Please use the program compiled from the source file  
+{\tt cycle\_checker.cpp}
+included in Module~1 to confirm whether each chemical graph in a given
+SDF file contains a cycle.
+
+To compile the program, the included {\tt Makefile}
+can be used by issuing the following command in the command prompt.
+\begin{oframed}
+{\small
+\verb|$ make CHECKER|
+}
+\end{oframed}
+%
+In case the {\tt make} command is not available on the system,
+then the program can be compiled in the following way.
+\begin{oframed}
+{\small
+\verb|$ g++ -std=c++11 -Wall -O3 -o CHECKER cycle_checker.cpp|
+}
+\end{oframed}
+
+In order to check if a given
+SDF file {\tt input.sdf} contains a chemical graph that does not include
+a cycle by issuing the following command on the terminal.
+\begin{oframed}
+{\small
+\verb|$ ./CHECKER input.sdf|
+}
+\end{oframed}
+
+
+\begin{itemize}
+\item If all chemical graphs have cycles
+  (i.e., all satisfy (i)),
+  then the program CHECKER does not output any message.
+  In this case, one can go to the next step. 
+\item Otherwise, (i.e., there is a chemical graph that does not satisfy (i)),
+  CID of such a chemical graph is output.
+  Before going to the next step,
+  such a graph must be removed from the SDF file manually.  
+\end{itemize}
+
+\paragraph{Elimination of chemical graphs that are out-of-scope.}
+To check whether each chemical graph in a given SDF file
+satisfies condition (ii) or not,
+please use the Python script named 
+{\tt eliminate.py}.
+The script generates a new SDF file
+that consists of all chemical graphs in the input SDF file
+that satisfy (ii). 
+
+To use {\tt eliminate.py}, execute the following command. 
+
+\begin{oframed}
+{\small
+\verb|$ python eliminate.py input.sdf|
+}
+\end{oframed}
+
+If the {\tt input.sdf} constains a chemical graph
+that does not satisfy (ii), the CID is output.
+
+After the execution of {\tt eliminate.py},
+a new SDF file {\tt input\_eli.sdf} is output.
+The file consists of all chemical graphs in {\tt input.sdf}
+that satisfy condition (ii).
+%
+This means that, if all chemical graphs in {\tt input.sdf}
+satisfy (ii), 
+{\tt input.sdf} and {\tt input\_eli.sdf} are equivalent. 
+
+
+\subsection{Calculating a Feature Vector}
+Please use the program compiled from the source file
+{\tt fv\_ec.cpp} included in Module~1
+to calculate feature vectors for an SDF file
+such that every chemical 
+satisfies conditions (i), (ii) and (iii).
+
+To compile the program, the included {\tt Makefile}
+can be used by issuing the following command in the
+command prompt. 
+\begin{oframed}
+{\small
+\verb|$ make FV_ec|
+}
+\end{oframed}
+%
+In case the {\tt make} command is not
+available on the system,
+then the program can be compiled in the following way. 
+\begin{oframed}
+{\small
+\verb|$ g++ -std=c++11 -Wall -O3 -o FV_ec fv_ec.cpp|
+}
+\end{oframed}
+
+
+In order to calculate feature vectors from {\tt input\_eli.sdf} and to output the result in {\tt output.csv},
+issue the following command on the terminal. 
+\begin{oframed}
+{\small
+\verb|$ ./FV_ec input_eli.sdf output.csv|
+}
+\end{oframed}
+The program {\tt FV\_ec} prints on the terminal instructions on how to provide the arguments
+and halts if the arguments are not provided appropriately.
+
+\subsection{Calculating a Feature Vector from Other SDF (Not Mandatory)}
+
+The mapping $f$ that transforms a chemical graph
+into a feature vector is constructed from a given
+set $D$ of chemical graphs.
+To calculate a feature vector
+of a chemical graph in another set $D'\ne D$
+using $f$, please use the program compiled from 
+{\tt fv\_proj.cpp}. 
+
+To compile the program, the included {\tt Makefile}
+can be used by issuing the following command in the command prompt.
+\begin{oframed}
+{\small
+\verb|$ make FV_proj|
+}
+\end{oframed}
+In case the {\tt make} command is not available on the system,
+then the program can be compiled in the following way.
+\begin{oframed}
+{\small
+\verb|$ g++ -std=c++11 -Wall -O3 -o FV_proj fv_proj.cpp|
+}
+\end{oframed}
+
+Let {\tt descriptor.csv}
+be the name of the csv file that is obtained by
+executing {\tt FV\_ec} on the original SDF containing $D$.
+That is, the mapping $f$ constructed from $D$.
+Let {\tt input.sdf} be the SDF file
+that contains the data on $D'\ne D$.
+To calculate ${\mathcal F}(D')$ and
+obtain the result in {\tt output.csv},
+issue the following command on the terminal. 
+\begin{oframed}
+{\small
+\verb|$ ./FV_proj descriptor.csv input.sdf output.csv|
+}
+\end{oframed}
+
+For example, one can run the program in the following way,
+using the sample files in Module~1.  
+\begin{oframed}
+{\small
+\verb|$ ./FV_proj data/sample2.csv data/sample1.sdf data/sample1_on_2.csv|
+}
+\end{oframed}
+
+It is not mandatory to execute {\tt FV\_proj} to proceed to Module~2 and afterwards.
+
+Let us describe an example of when to use {\tt FV\_proj}.
+Suppose that a neural network has been constructed from
+{\tt descriptor.csv} in Module~2,
+and the neural network can be used to predict
+the value of a certain chemical property, say $\pi$.
+When one uses the neural network to predict
+the value of $\pi$ for a chemical graph in {\tt input.sdf},
+the chemical graph must be converted into
+a feature vector by the mapping $f$.
+The program {\tt FV\_proj} can be used for this. 
+
+
+\clearpage
+\section{Details in the Input and Output of the Program}
+\label{sec:io}
+
+
+\subsection{Input}
+
+The programs in Module~1
+use SDF (Structure Data File),
+a standard format, for input.
+For the detail of SDF, splease check the following reference: 
+\begin{itemize}
+\item \url{http://help.accelrysonline.com/ulm/onelab/1.0/content/ulm_pdfs/direct/reference/ctfileformats2016.pdf} (accessible on Feb 1, 2021)
+%\item \url{https://www.chem-station.com/blog/2012/04/sdf.html} (accessible on Feb 1, 2021)
+\end{itemize}
+%例として、sample1.sdf (https://pubchem.ncbi.nlm.nih.gov/compound/6140) を添付した。
+
+
+
+\subsection{Output}
+The output is in an original FV (Feature Vector) format, which is just a CSV file so that can
+be opened by many spreadsheet softwares.
+The first line shows the components of FV and the following lines show the values
+for those components of FV.
+For example, let us have a look at the FV file {\tt sample1.csv} that is obtained by running {\tt FV\_ec} for
+{\tt sample1.sdf}.
+
+\begin{myframe}
+\begin{verbatim}
+CID,n,cs,ch,bl_2,ms,dg_co_1,dg_co_2,dg_co_3,dg_co_4,dg_nc_1,\
+dg_nc_2,dg_nc_3,dg_nc_4,bd_co_2,bd_co_3,bd_in_2,bd_in_3,\
+bd_ex_2,bd_ex_3,ns_co_C3,ns_co_C2,ns_nc_O1,ns_nc_N1,ns_nc_C2,ns_nc_C3,\
+ec_co_C2_C3_2,ec_co_C2_C2_1,ec_co_C2_C3_1,ec_co_C2_C2_2,\
+ec_in_C2_C3_1,ec_in_C3_C2_1,\
+ec_ex_C3_N1_1,ec_ex_C3_C3_1,ec_ex_C3_O1_1,ec_ex_C3_O1_2,nsH
+6140,12,6,4,1,128.333,0,5,1,0,3,1,2,0,3,0,0,0,1,0,1,5,2,\
+1,1,2,1,2,1,2,1,1,1,1,1,1,11
+\end{verbatim}
+\end{myframe}
+
+The symbol $\backslash$ at the end of a line
+indicates that there is no line break between the two lines.
+Here is the overview of descriptors. See \cite{BH_cyclic_arxiv} for details. 
+
+\begin{itemize}
+\item {\bf CID:} Compound ID. In this example ({\tt sample1.sdf}), it is 6140. The molecule is Phenylalanine, which is taken from \url{https://pubchem.ncbi.nlm.nih.gov/compound/6140}.
+\item {\bf n:}  Number of atoms except for the hydrogen.
+\item {\bf cs:} Number of atoms in the core.
+\item {\bf ch:} Core height.
+\item {\bf bl:} Number of 2-leaves.
+\item {\bf ms:} Average molecular mass defined by $\textrm{ms}\triangleq\frac{1}{n}\sum_{a}\lfloor 10 \cdot \textrm{mass}(a)$, where $\textrm{mass}(a)$ represents the mass of an atom $a$.
+\item {\bf dg\_co\_1, \dots, dg\_co\_4:} Number of atoms in the core such that the degree is 1, 2, 3 and 4, resp.
+\item {\bf dg\_nc\_1, \dots, dg\_nc\_4:} Number of atoms not in the core such that the degree is 1, 2, 3 and 4, resp.
+\item {\bf bd\_co\_2, bd\_co\_3:} Number of double and triple bonds in the core paths, resp.
+\item {\bf bd\_in\_2, bd\_in\_3:} Number of double and triple bonds in the internal paths, resp.
+\item {\bf bd\_ex\_2, bd\_ex\_3:} Number of double and triple bonds in the external paths, resp.
+\item {\bf ns\_co\_Xd:} Number of atoms in the core such that the element symbol is X and the degree is d. For example, {\tt ns\_co\_C3} represents the number of carbon atoms in the core such that the degree is 3. 
+\item {\bf ns\_nc\_Xd:} Number of atoms not in the core such that the element symbol is X and the degree is d.
+\item {\bf ec\_co\_Xx\_Yy\_2, ec\_co\_Xx\_Yy\_3:} Number of double and triple bonds in the core paths such that the end nodes have X and Y as element symbols and the degrees x and y, resp. For example, {\tt ec\_co\_C2\_C3\_2} represents the number of double bonds in the core paths such that both end nodes are carbon atoms and have the degrees 2 and 3, resp. 
+\item {\bf ec\_in\_Xx\_Yy\_2, ec\_in\_Xx\_Yy\_3:}
+  Number of double and triple bonds in the internal paths such that the end nodes have X and Y as element symbols and the degrees x and y, resp.
+\item {\bf ec\_ex\_Xx\_Yy\_2, ec\_ex\_Xx\_Yy\_3:}
+  Number of double and triple bonds in the external paths such that the end nodes have X and Y as element symbols and the degrees x and y, resp.
+\item {\bf nsH:} Number of the hydrogen atoms. 
+\end{itemize}
+
+For the descriptors whose names begin with {\tt ns\_} and {\tt ec\_},
+only those appearing the input SDF
+are written in the output CSV file. 
+
+\subsection{Attention}
+\label{sec:caution}
+
+The mass of each atom is hard-coded in the program.
+They are written in the function {\tt init\_MassMap()}
+in {\tt fv\_ec.cpp} as follows.
+If one needs to change values or to add another atoms,
+edit the source code directly and compile again.
+
+\begin{myframe}
+\begin{verbatim}
+M["B"]  = 108;
+M["C"]  = 120;
+M["O"]  = 160;
+M["N"]  = 140;
+M["F"]  = 190;
+M["Si"] = 280;
+M["P"]  = 310;
+M["S"]  = 320;
+M["Cl"] = 355;
+M["V"]  = 510;
+M["Br"] = 800;
+M["Cd"] = 1124;
+M["I"]  = 1270;
+M["Hg"] = 2006;
+M["Pb"] = 2072;
+M["Al"] = 269;
+\end{verbatim}
+\end{myframe}
+
+\begin{thebibliography}{9}
+ \bibitem{BH_cyclic_arxiv}
+   T.~Akutsu and H.~Nagamochi.
+   \newblock A Novel Method for Inference of Chemical Compounds with Prescribed Topological Substructures Based on Integer Programming.
+   \newblock Arxiv preprint, arXiv:2010.09203
+\end{thebibliography}
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
