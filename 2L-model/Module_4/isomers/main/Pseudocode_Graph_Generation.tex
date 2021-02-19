@@ -1,0 +1,1950 @@
+
+\documentclass[12pt]{article}
+\linespread{1.1}
+\pagestyle{myheadings}\markboth{Pseudo-code: \today}{Pseudo-code: \today}
+
+\usepackage{authblk}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{framed}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\usepackage{multirow}
+
+\usepackage{mdframed}
+\usepackage{mathtools}
+\usepackage{algorithm}  
+\usepackage{algorithmic} 
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} 
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{observation}[theorem]{Observation}
+ 
+\newcommand{\dmax}{d_\mathrm{max}}
+
+\newcommand{\intt}{\mathrm{int}}
+\newcommand{\inn}{\mathrm{in}}
+\newcommand{\ex}{\mathrm{ex}}
+\newcommand{\co}{\mathrm{co}}
+
+\newcommand{\ext}{\mathrm{ex}}
+
+\newcommand{\typ}{\mathrm{t}}
+
+\newcommand{\ce}{\mathrm{ce}}
+\newcommand{\ac}{\mathrm{ac}}
+\newcommand{\bt}{\mathrm{bt}}
+\newcommand{\ft}{\mathrm{ft}}
+\newcommand{\bd}{\mathrm{bd}}
+\newcommand{\bh}{\mathrm{bh}}
+\newcommand{\bn}{\mathrm{bn}}
+\newcommand{\bl}{\mathrm{bl}}% {\mathrm{b\ell}}
+\newcommand{\bc}{\mathrm{bc}}
+\newcommand{\Bc}{\mathrm{Bc}}
+ 
+\newcommand{\tail}{{\mathrm{tail}}}
+\newcommand{\head}{{\mathrm{head}}}
+ 
+\newcommand{\ntreeS}{n_{\mathrm{tree}}^{\mathrm{S}}}
+\newcommand{\ntreeT}{n_{\mathrm{tree}}^{\mathrm{T}}}
+
+\providecommand{\MSG}{\mathrm{MSG}}
+\providecommand{\true}{\mathtt{True}}
+\providecommand{\false}{\mathtt{False}}
+
+\renewcommand{\d}{${\rm d}$}
+\newcommand{\prt}{${\rm prt}$}
+\newcommand{\V}{{\rm V}}
+\newcommand{\E}{{\rm E}}
+\newcommand{\G}{\mathcal{G}} 
+
+
+\newcommand{\ta}{{\tt a}}
+\newcommand{\tb}{{\tt b}}
+\newcommand{\tB}{{\tt B}}
+\newcommand{\tC}{{\tt C}}
+\newcommand{\tO}{{\tt O}}
+\newcommand{\tN}{{\tt N}}
+\newcommand{\tS}{{\tt S}}
+\newcommand{\tF}{{\tt F}}
+\newcommand{\tSi}{{\tt Si}}
+\newcommand{\tCl}{{\tt Cl}}
+\newcommand{\tI}{{\tt I}}
+\newcommand{\tHg}{{\tt Hg}}
+
+\newcommand{\f}{\pmb{f}}
+\newcommand{\w}{\pmb{w}}
+\newcommand{\vv}{\pmb{v}}
+%\newcommand{\u}{\pmb{u}}
+%\newcommand{\y}{\pmb{y}}
+\newcommand{\y}{\pmb{y}}
+\newcommand{\x}{\pmb{x}}
+\newcommand{\z}{\pmb{z}}
+\newcommand{\s}{\pmb{s}}
+\newcommand{\1}{\pmb{1}}
+\newcommand{\0}{\pmb{0}}
+\newcommand{\rms}{\pmb{rm}}
+
+
+\newcommand{\val}{\mathrm{val}}
+\newcommand{\dia}{\mathrm{dia}}
+\newcommand{\nec}{\mathrm{nec}}
+\newcommand{\Tl}{\mathrm{Tl}} 
+\newcommand{\LG}{\mathrm{\Lambda\cup \Gamma}} 
+\newcommand{\pred}{\mathrm{pred}}
+\newcommand{\mul}{\mathrm{mul}}
+\newcommand{\smp}{\mathrm{smp}}
+\newcommand{\inl}{\mathrm{inl}}
+\newcommand{\en}{\mathrm{end}}
+\newcommand{\pair}{\mathrm{pair}}
+
+\newcommand{\LGB}{\mathrm{\Lambda\cup \Gamma\cup \Bc}}
+\newcommand{\LtoD}{\mathrm{\Lambda\cup \Gamma\cup \Bc\cup \Dg}}
+ 
+\newcommand{\FT}{\mathcal{FT}} 
+\newcommand{\T}{\mathcal{T}}  
+\newcommand{\W}{\mathrm{W}} 
+\newcommand{\Ww}{\mathcal{W}}
+\newcommand{\Vv}{\mathcal{V}}
+\newcommand{\I}{\mathrm{I}} 
+\newcommand{\Pa}{\mathrm{P}} 
+\newcommand{\SEQ}{\mathrm{SEQ}} 
+\newcommand{\Ds}{\mathrm{Ds}} 
+\newcommand{\fq}{\mathrm{fq}} 
+\newcommand{\Fq}{\mathrm{Fq}} 
+\newcommand{\col}{\mathrm{col}} 
+\newcommand{\nb}{\mathrm{nb}}
+\newcommand{\Dg}{\mathrm{Dg}}
+\newcommand{\dg}{\mathrm{dg}}
+
+\renewcommand{\d}{\mathrm d}
+%\newcommand{\col}{\mathrm col}
+%\newcommand{\prt}{\mathrm {prt}}
+
+%\newcommand{\pred}{{\rm pred}}
+
+\begin{document}  
+ 
+\begin{center}
+ {\Large\bf Pseudo-codes for Graph Search Algorithm}
+\end{center} 
+For each base vertex $v$ or edge $e$, we are given a set
+$\mathcal{F}$ of fringe trees. 
+For each $T \in \mathcal{F}$, \\
+- identify the root information
+such as root label, multiplicity and degree. 
+Let $\ta, m, d$ be label, multiplicity and degree of the root of 
+the tree $T$. \\
+- obtain $T[+\Delta]$ and vector $\w$ of 
+$T[+\Delta]$ 
+for each $\Delta \in [1, \val(\ta) - d]$ and 
+include $\w$ in the respective sets
+$\V_{\en}^{(0)}(\ta, d, m; \x^*), V_{\inl}^{(0)}(a, d, m; \x^*), 
+\V_{\co+\Delta}^{(0)}(a, d, m, h; \x^*)$, $h \leq 2$, 
+$\V_{\co+(\Delta+1)}^{(0)}(a, d, m, p; \x^*)$
+
+
+ 
+
+% \newpage
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% 
+%                 Getting Half-portions
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\section{Computing Frequency Vectors of End-Subtrees }
+%
+%We here give an outline of procedures 
+%to generate the sets of frequency vector of bi-rooted nc-trees. 
+For an integer $h \geq 1$, element 
+$\ta \in \Lambda$,
+integers $d  \in [1,\val(\ta)-1]$, and 
+$m\in [d,\val(\ta)-1]$ 
+ we give a procedure to 
+compute the set $\V_{\en}^{(h)}(\ta, d, m; \x^*)$.
+\bigskip\\
+\noindent {\sc ComputeEndSubtreeOne($\ta, d, m, h$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+%
+{\bf Input:}
+Element $\ta \in \Lambda$, 
+integer $d \in[1,\val(a)-1]$, 
+$m \in [d, \val(a)-1]$, $h \geq 1$. \\
+\hspace{3mm}  /* Global data: A vector $\x^* = (\x^*_{\intt}, \x^*_{\ex}, b)$ 
+%with 
+%$\x^*_{\co} \in \mathbb{Z}^{\Lambda^{\co}}$, 
+%$\x^*_{{\tt t}} \in \mathbb{Z}^{\Lambda^{{\tt t}}}$,
+%${\tt t} \in \{\inn, \ex\}$, 
+\+ \\
+a non-negative integer $b$,
+                 the collection  \\
+                 $\Vv_{\inl}$ vector sets 
+                 $\V_{\inl}(\ta, d-1, m_{\ta}; \x^*)$, 
+                 %$d_{\ta} \in [0, \val(\ta)-3]$,
+                 $m_{\ta} \in [d-1, \val(\ta) -2]$\\
+                 $\Vv_{\en}^{(h-1)}$ of vector sets  
+                 $\V_{\en}^{(h-1)}(\ta_1, d_1, m_1; \x^*)$, 
+                 $\ta_1 \in \Lambda$,
+                  $d_1 \in [1, \val(\ta_1)-1]$, \\
+                  $m_1 \in [d_1, \val(\ta_1) - 1]$. */ \- \\
+{\bf Output:} The set $\V_{\en}^{(h)}(\ta, d, m; \x^*)$, where 
+we store these vectors in a trie. \\
+$\W := \emptyset$; \\
+{\bf for each} triplet  $(\tb, d_{\tb}, m_{\tb})$ {\bf do} \+ \\
+%with $\tb \in \Lambda$, $d_{\tb} \in [1, 3]$ {\bf do} \+ \\
+    {\bf for each} triplet $(\ta, d-1, m_{\ta})$ {\bf do} \+ \\
+    %{\bf if} $\delta = 1$ \+ \\
+    %{\bf for each} $m' \in [1, 3]$ such that \+ \+ \\ 
+    {\bf for each} $\y^{\tb} = (\y^{\tb}_{\intt}, 
+    \y^{\tb}_{\ex}, 0) \in 
+    \V_{\en}^{(h-1)}(\tb, d_{\tb}, m_{\tb}; \x^*)$
+                         {\bf do} \+ \\
+            {\bf for each} $m' \in [1, 3]$ such that \+ \+ \\ 
+                      - $\gamma^{\intt} = (\ta \{d+1\}, \tb  \{d_{\tb} + 1\},
+                       m') \in \Gamma^{\intt}$ and\\
+                      - $m_{\ta} + m' = m, 
+                      m_{\ta} + m' + 1\leq \val(\ta)$ and 
+                      $m' +m_{\tb} \leq \val(\tb)$
+                      
+                       {\bf do} \- \\
+                      {\bf for each} $\y^{\ta} = (\y^{\ta}_{\intt}, \y^{\ta}_{\ex}, 0) \in 
+                      \V_{\inl}^{(0)}(\ta, d-1,m_{\ta}; \x^*)$ 
+                      {\bf do} \+\\                      
+                     $\y_{\intt} := \y^{\ta}_{\intt} + \y^{\tb}_{\intt} + \1_{\gamma^{\intt}}$;  \\
+                     $\y_{\ex} := \y^{\ta}_{\ex} + \y^{\tb}_{\ex}$;  
+                     $\y:=(\y_{\intt}, \y_{\ex}, 0)$;\\
+                     {\bf if } $\y \leq \x^*$ {\bf then} \+ \\  
+                                          $\W := \W \cup \{ \y \}$; \- \\              
+                      {\bf end if} \- \\
+                 {\bf end for} \- \\
+            {\bf end for} \- \\
+        {\bf end for} \- \\
+    {\bf end for} \- \\
+{\bf end for}; \\
+Output $\W$ as $\V_{\en}^{(h)}(\ta, d, m; \x^*)$.
+\end{tabbing}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Generating Frequency Vectors of Rooted 
+Core-subtrees }
+%
+%We here give an outline of procedures 
+%to generate the sets of frequency vector of bi-rooted nc-trees. 
+For an integer $h \geq 1$, element 
+$\ta \in \Lambda$, integers
+$\Delta \in [2, 3]$, 
+ $d  \in [1, \val(\ta) - \Delta]$, and 
+$m\in [d,\val(\ta)-1]$ 
+ we give a procedure to 
+compute the set $\V_{\co + \Delta}^{(0)}(\ta, d, m, h; \x^*)$.
+\bigskip\\
+\noindent {\sc ComputCoreSubtreeOne($\ta, d, m, h$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+%
+
+%%% Important %% In the next 2 can be replaced by \rho to 
+%%% make the algorithm general
+{\bf Input:}
+Element $\ta \in \Lambda$, 
+integer $d \in[1,\val(a)-\Delta]$, 
+$m \in [d, \val(a)-1]$, $h \geq 1$. \\
+\hspace{3mm}  /* Global data: A vector $\x^* = (\x^*_{\intt}, \x^*_{\ex}, b)$, \+ \\
+a non-negative integer $b$,
+                 the collection  \\
+                 $\Vv_{\co+ \Delta + 1}^{(0)}$  vector sets 
+                 $\V_{\co + \Delta  +1}^{(0)}(\ta, d-1, m_{\ta}, 
+                 p; 
+                 \x^*)$, 
+                 %$d_{\ta} \in [0, \val(\ta)-3]$,
+                 $m_{\ta} \in [d-1, \val(\ta) -\Delta -1]$, \\
+                 $p \in [0, 2 (= \rho)]$\\
+                 $\Vv_{\en}^{(h-2-1)}$ of vector sets  
+                 $\V_{\en}^{(h-2-1)}(\ta_1, d_1, m_1; \x^*)$, 
+                 $\ta_1 \in \Lambda$,
+                  $d_1 \in [1, \val(\ta_1)-1]$, \\
+                  $m_1 \in [d_1, \val(\ta_1) - 1]$,
+                  integer $g \geq 1$. */ \- \\
+{\bf Output:} The set $\V_{\co + \Delta}^{(0)}(\ta, d, m, h; \x^*)$, where 
+we store vectors $\V_{\co + \Delta}^{(0)}(\ta, d, m, h; \x^*)$, \\
+ ~~~in a trie.  \\
+$\W := \emptyset$; \\
+{\bf for each} triplet  $(\tb, d_{\tb}, m_{\tb})$ {\bf do} \+ \\
+%with $\tb \in \Lambda$, $d_{\tb} \in [1, 3]$ {\bf do} \+ \\
+    {\bf for each} triplet $(\ta, d-1, m_{\ta}, p)$ {\bf do} \+ \\
+    %{\bf if} $\delta = 1$ \+ \\
+    %{\bf for each} $m' \in [1, 3]$ such that \+ \+ \\ 
+    {\bf for each} $\y^{\tb} = (\y^{\tb}_{\intt}, \y^{\tb}_{\ex}, 0) \in 
+    \V_{\en}^{(h-2-1)}(\tb, d_{\tb}, m_{\tb}; \x^*)$
+                         {\bf do} \+ \\
+            {\bf for each} $m' \in [1, 3]$ such that  \\ 
+                      	~~~- $\gamma^{\intt} = (\ta \{d+\Delta\}, \tb  \{d_{\tb} + 1\},
+                       m') \in \Gamma^{\intt}$ and\\
+                      ~~~- $m_{\ta} + m' = m, 
+                      m_{\ta} + m' + \Delta \leq \val(\ta)$ and 
+                      $m' +m_{\tb} \leq \val(\tb)$
+                      
+                       {\bf do} \+ \\
+                      {\bf for each} $\w^{\ta} = (\w^{\ta}_{\intt}, \w^{\ta}_{\ex}, 0) \in 
+                      \W_{\inl}^{(0)}(\ta, d-1,m_{\ta}, p; \x^*)$ 
+                      {\bf do} \+\\                      
+                     $\w_{\intt} := \w^{\ta}_{\intt} + \y^{\tb}_{\intt} + \1_{\gamma^{\intt}}$;  \\
+                     $\w_{\ex} := \w^{\ta}_{\ex} + \y^{\tb}_{\ex}$;  
+                     $\y:=(\y_{\intt}, \y_{\ex}, 1)$;\\
+{\bf if } $\y \leq \x^*$ {\bf then} \+ \\  
+                                          $\W := \W \cup \{ \y \}$; \- \\              
+                      {\bf end if} \- \\
+                     %{\bf end if} \- \\
+                 {\bf end for} \- \\
+            {\bf end for} \- \\
+        {\bf end for} \-\\
+    {\bf end for} \-\\
+{\bf end for};  \\
+Output $\W$ as $\V_{\co + \Delta}^{(0)}(\ta, d, m, h; \x^*)$.
+\end{tabbing}
+
+%%%%%%%%%%%%%
+
+% \newpage
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% 
+%     Computing DAG
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\section{Computing DAG Representation for $v$-Components}
+
+%For an integer $h \geq 1$, element 
+%$\ta \in \Lambda$,
+%integers $d  \in [1,\val(\ta)-1]$, and 
+%$m\in [d,\val(\ta)-1]$ 
+% we give a procedure to 
+%compute the set $\V_{\en}^{(h)}(\ta, d, m; \x^*)$.
+%\bigskip\\
+\noindent {\sc DAGRepresentationVertex($\ta_v, d_v, m_v, t,\Delta_v,  \x^*$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+%
+{\bf Input:}
+%Element $\ta \in \Lambda$, 
+%integer $d \in[1,\val(a)-1]$, 
+%$m \in [d, \val(a)-1]$, $h \geq 1$. \\
+\hspace{3mm}  /* Global data: A vector $\x^* = (\x^*_{\intt}, \x^*_{\ex}, b)$, \+ \\
+a non-negative integer $b$,\\
+integers $t$, 
+$\Delta_v \in [2, 3]$,  
+element
+$\ta_v \in \Lambda$,  \\
+integers
+$d_v \in [0, \val(\ta_v) - \Delta_v-1]$, 
+$m_v \in [d_{v}, \val(\ta_v) - \Delta_v-1]$, \\
+                 the collection  
+                 $\Vv^{(0)}_{\inl}$ vector sets 
+                 $\V^{(0)}_{\inl}(\ta, d, m; \x^*)$, \\
+                 %$d_{\ta} \in [0, \val(\ta)-3]$,
+                 %$m_{\ta} \in [d-1, \val(\ta) -2]$\\
+                 an integer $t \geq 0$, \\
+                 $\Vv^{(h)}_{\en}$ of vector sets 
+                 $\V_{\en}^{(h)}(\ta_1, d_1, m_1; \x^*)$, 
+                 $\ta_1 \in \Lambda$,
+                  $d_1 \in [1, \val(\ta_1)-1]$, \\
+                  $m_1 \in [d_1, \val(\ta_1) - 1]$, 
+                  $1 \leq h \leq t$, \\
+                  the collection 
+                   $\Vv_{\en}^{(0)}$ of sets 
+                  $\V_{\en}^{(0)}(\ta_1, d_1, m_1; \x^*)$, 
+                  $\ta_1 \in \Lambda$,
+                  $d_1 \in [1, \val(\ta_1)-1]$, \\
+%                  $m_1 \in [d_1, \val(\ta_1) - 1]$,\\
+%                 the collection $\Vv^{(h)}_{\inl+\Delta}$ of vector sets  
+%                $\V_{\inl+\Delta}^{(h)}
+%                (\tb, d_{\tb}, m_{\tb}; \x^*)$, \\
+%                 $\tb \in \Lambda$,
+%                  $d_{\tb} \in [1, \val(\tb)-1]$, 
+%                  $m_{\tb} \in [d_{\tb}, \val(\tb) - 1]$, 
+%                  $1 \leq h \leq \delta_1$, \\
+                  the collection $\Vv_{\co+(\Delta_v + 1)}^{(0)}$ of sets 
+                 $\V_{\co+(\Delta_v + 1)}^{(0)}(\ta_v, d_{v} -1, 
+                 m'', p; \x^*)$
+                  for $p \leq 2$.                 
+                  */ \- \\
+{\bf Output:} A vertex-labeled and edge-labeled DAG representation.\\
+%
+$F:= \emptyset$;\\
+$G := (N, A)$; $A:= \emptyset$; 
+$N:= \emptyset;$\\
+%{\bf if } $t \geq 2$ {\bf then} \+ \\%1
+	{\bf for each} $\w \in \V_{\co+(\Delta_v + 1)}^{(0)}(\ta_v, d_{v} -1, 
+                 m', p; \x^*)$ for each possible 
+                $(m', p)$ {\bf do} \+ \\%2
+                {\bf for each} $\y \in 
+                \V_{\en}^{(t)}(\ta_1, d_1, m_1; \x^*)$ 
+                for each possible $(\ta_1, d_1, m_1)$ {\bf do}\+ \\%3
+                % /* Test if $\y_i, i=1, 2$ is a feasible pair */ \\
+                 {\bf if} there exists  
+                 $\gamma:=(\ta_{v}\{d_v+\Delta_v\}, \ta_1\{d_{1}+1\}, m_v - m')
+                  \in \Gamma^{\co}$\\
+%                   with \\
+% ~~~~~$m'' \in [1, \min\{3, \val(\ta)-m_{1}, \val(\tb)-m_{\tb}\}]$
+ ~~~~~such that  $ \y + \w + \1_{\gamma} = \x^*$ {\bf then}
+ \+ \\ % 4
+ 		%$N: = N \cup \{ (\y, t-3; \tb, d_{\tb}, m_{\tb} )$;
+ 		%\\
+ 		$N : = N \cup \{ (\x^*, t+1; 
+ 		\ta_v, d_v, m_v)\}$;\\
+ 		$N : = N \cup \{ (\y, t; 
+ 		\ta_1, d_1, m_1)\}$; \\
+ 		$A:= A \cup \{a_{\x^*\y}\}$ and\\
+ 	 let the label of the arc 
+ 		$a_{\x^*\y}$ to be $(\w, m_v - m')$; \- \\
+% 		$F: = F \cup \{(\x^*, \y; \w, m_v-m'; \ta_v, d_v-1, m_v; 
+% 		\ta_1, d_1, m_1)\}$\- \\
+				{\bf end if}\- \\ %4  
+				{\bf end for} \- \\ %3 end of y1
+	{\bf end for}; \\ %2 end of y1
+%	$G' := G$;\\
+ %%%%%
+	{\bf for each} $\ell \in (t, \ldots, 1)$ {\bf do}\+ \\ % 4
+		$G'':=(N'', A'') :=$ DAGSublayer($\Vv_{\en}^{(\ell-1)}, G,
+		 \ell-1, \Vv^{(0)}_{\inl}$);\\
+		~~~$N:= N \cup N''; A:= A_2 \cup A''$\- \\		
+	{\bf end for}; \\
+	%
+%	$G' := G_1$;\\
+%	{\bf for each} $\ell \in (\delta_1, \ldots, 1)$ {\bf do}\+ \\ % 4
+%		$G'':=(N'', A'') :=$ DAGSublayer($\Vv_{\inn +\Delta}^{(\ell-1)}, G', \ell-1, \Vv^{(0)}_{\inl}$), \\
+%		~~~where we use 
+%		$\V_{\co+(\Delta + 1)}^{(0)}(\ta_v, d_{v} -1, 
+%                 m'', p; \x^*)$ when $\ell = \delta_1$;\\
+%		~~~$N_1:= N_1 \cup N''; A_1:= A_1 \cup A''$\- \\		
+%	{\bf end for} \\
+	
+%	{\bf else} /* $\delta_1 + \delta_2 + 1 = 1$*/\+  \\
+%	%
+%	 This case can be handled analogously to the above case,
+%	 \\
+%	 ~~~where we take 
+%	 $\y_1 \in \V_{\co+(\Delta + 1)}^{(0)}(\ta_v, d_{v} -1, 
+%                 m'', p; \x^*)$ and 
+%                 $\y_2 \in \V_{\en}^{(0)}(\ta_1, d_1, m_1; \x^*)$ \- \\
+%{\bf end if}; \\ %1 end of if
+Output $G$ as DAG representations and the set 
+$F$ of feasible pairs of $v$-component.
+\end{tabbing}
+%%%%%
+%%%%%
+%%%%%
+\bigskip
+\noindent {\sc DAGSublayer($\Vv, G, \ell, \Vv'$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+{\bf Input:} 
+A family $\Vv$ of set of vectors of trees 
+with root label $\ta_1$, degree \+ \\
+$d_1$ and multiplicity $m_1$, 
+$G = (N, A)$,  \\
+a family of   
+                 $\Vv'$ vector sets of fringe-trees, \\
+                 %$\V_{\inl}(\ta, d, m; \x^*)$, \\
+                 $\ell$ (the height of the layer  
+                 that we add in $G$ at this stage).\- \\
+%                 
+{\bf Output:}  A DAG $G'$ that is a super-graph of $G$.\\
+%
+$G':= G$;\\
+{\bf for each} $\y_1 \in \Vv$ {\bf do} \+ \\%1
+	{\bf for each} $\w \in \Vv'$ {\bf do} \+ \\%2
+		{\bf if } there exists $\gamma \in \Gamma^{\inn}$ and 
+		some $\y_2 \in N$ such that \\
+		~~~$\y_i, i=1,2$ are feasible, i.e., 
+		$\y_1 +\w+1_{\gamma} = \y_2$ {\bf then}\+\\%4
+%		{\bf for each} $\gamma=(\ta\{d+2\}, \ta_1\{d_{1}+1\}, m'')
+%                  \in \Gamma^{\inn}$ with \\
+%                 ~~~~~$m'' \in [1, \min\{3, \val(\ta)-m, \val(\tb)-m_{\tb}\}]$ {\bf do}\+ \\ %3
+%		 {\bf if} there exists  
+				{\bf if} $\y_1 \not\in N$ {\bf then} 
+				$N:= N \cup \{(\y_1, \ell;  \ta_1, 
+				d_1, m_1)\}$;\\
+				$A:= A \cup \{a_{\y_2\y_1}\}$ and \\
+			~~~label the arc from 
+				$\y_2$ to $\y_1$ by $(\w, m)$, \\
+				~~~where $m$ is 
+				the bond multiplicity in $\gamma$\- \\
+                 
+               {\bf end if} \-\\%4    
+		%	{\bf end for} \- \\%3
+	{\bf end for} \- \\%2
+{\bf end for};  \\%1
+Output $G'$ as a required DAG.
+\end{tabbing}
+
+% \newpage
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% 
+%     Enumerating paths from DAG
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\section{Enumerating Paths in DAG}
+\noindent {\sc EnumPaths(DAG)}
+\begin{tabbing}
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+%
+{\bf Input:} A rooted vertex-labeled and edge-labeled DAG 
+$G = (N, A)$.\\
+%
+{\bf Output:} All directed paths from sources to leaves.\\
+We consider $G$ a rooted DAG with a virtual root $r$ that is 
+adjacent with all source vertices; \\
+We consider dsf ordering on the vertices of $G$ starting from root with index $0$ and \\
+~~~traverse $G$ in left-right ordering on the children of each vertex;\\
+$\mathcal{P}:= \emptyset$;\\
+Let $Q_i :=$ set dfs label of all children of the vertex with dfs label 
+$i$, $i \in |N|$;\\
+{\bf if} $|Q_1| = 0$ {\bf then} \+ \\
+$\mathcal{P}:= \mathcal{P} \cup 
+\{1\}$\- \\
+{\bf else}\+ \\
+	{\bf while} $Q_1 \neq \emptyset$ {\bf do} \+ \\
+		Let $i$ be the smallest integer in $Q_1$;\\
+		%$P: = \emptyset$; 
+		%$P' := P$;\\
+		Let $\y_1,$  and $\y_i$ be the label of vertices with 
+		dfs label $1$ and $i$, respectively, and\\
+		 ~~~the label of arc between $y_1$ and $\y_i$ is 
+		 $(\w, m)$\\
+		$P:= ((\y_1, \y_i, \w, m))$;\\
+		$\mathcal{P'}:=$ PathRecursion$(P, i, \mathcal{P}, G)$;
+		$Q_1 := Q_1 \setminus \{i\}$;
+		$\mathcal{P}: = \mathcal{P} \cup \mathcal{P'}$ \- \\		
+	{\bf end while}\-\\
+{\bf end if}; \\
+Output $\mathcal{P}$ as the required family of paths.
+\end{tabbing}
+\bigskip
+\noindent {\sc PathRecursion$(P, i, \mathcal{P}, G)$}
+\begin{tabbing}
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+{\bf Input: } A DAG $G = (N, A)$ with dfs ordering, a path $P$,\\
+~~~a family of paths $\mathcal{P}$ 
+an integer $i \in [2, |N|]$.\\
+%
+{\bf Output: } Family  of paths in $G$ that can be extended from 
+$P$.\\
+$\mathcal{P}' := \emptyset$;\\
+Let $Q_i :=$ set of dfs label of all children of the vertex with dfs label $i$;\\
+{\bf if} $|Q_i| = 0$ {\bf then} $\mathcal{P}' := \mathcal{P}' \cup \{P\}$;\\
+{\bf else}\+ \\
+	{\bf while} $Q_i \neq \emptyset$ {\bf do} \+ \\
+		Let $j$ be the smallest integer in $Q_i$;\\
+		%$P: = \emptyset$; 
+		%$P' := P$;\\
+		Let $\y_i,$  and $\y_j$ be the labels of the vertices with 
+		dfs label $i$ and $j$, respectively, and\\
+		 ~~~the label of arc between $y_i$ and $\y_j$ is 
+		 $(\w, m)$\\
+		$P':= P \oplus ((\y_i, \y_j, \w, m))$;
+		/* sequence concatenation */\\ 
+		$\mathcal{P''}:=$ PathRecursion$(P', j, \mathcal{P}', G)$;
+		$Q_i := Q_i \setminus \{j\}$;
+		$\mathcal{P'}: = \mathcal{P'} \cup \mathcal{P''}$ \- \\		
+	{\bf end while}\-\\
+{\bf end if};\\
+Output $\mathcal{P}'$ as the required family of extended paths.
+\end{tabbing}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %  
+% 
+%             Complete Algorithm for three leaf 2-branches
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\section{A Complete Algorithm to Compute Target $v$-components}
+
+We briefly summarize how to use the procedures described thus far 
+to obtain an algorithm.
+Our global constants are 
+vector $\x^* = (\x^*_{\intt}, \x^*_{\ex}, b)$, 
+a non-negative integer $b$,
+integer  
+$\Delta_v \in [2, 3]$,  
+element
+$\ta_v \in \Lambda$,  \\
+integers
+$d_v \in [0, \val(\ta_v) - \Delta_v-1]$, 
+$m_v \in [d_{v}, \val(\ta_v) - \Delta_v-1]$. \bigskip\\
+%
+\noindent {\sc CompleteAlgorithmVertex}(Global constants: 
+$\ta_v, d_v, m_v, \Delta_v, \x^*_v$, ${\rm core~height}$)
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+%
+% the collection  
+                
+
+Let $\ell:= |\Gamma^{\inn}| + 2$;\\
+%Let $\delta_1 := \lfloor (\ell - 2-1)/2 \rfloor$,  
+%$\delta_2 := \lceil (\ell - 2-1)/2 \rceil$ ;\\
+%{\bf for each} base-vertex $v \in V_B$ {\do} \+ \\
+$t : = {\rm core~height} -3$;\\
+	Compute $\V^{(0)}_{\co + \Delta_v}
+	(\ta_v, d_v, m_v, h; \x^*_v)$ for a fixed 
+	$(\ta_v, d_v, m_v, \Delta_v)$, \\
+	~~and for each 
+	$h \leq \ell  $ if 
+	$\ell \leq 2$ and $\x^*_v(\tt bc)$ = 0;\\
+	%
+	Compute $\V^{(0)}_{\co + (\Delta_v + 1)}
+	(\ta_v, d_v, m, h; \x^*_v)$ for a fixed 
+	$(\ta_v, d_v, \Delta_v)$, \\
+	~~for each $m \in [d_v -1, \val(\ta_v) - \Delta_v -1]$, 
+	$h \leq 2$ if 
+	$\ell > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%
+	Compute 
+	$\V_{\en}^{(0)}(\ta, d, m; \x^*_v)$ for each 
+$\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+~~$m \in [d, \val(\ta)-1]$ if 
+	$\ell > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%
+	Compute $\V_{\inl}^{(0)}(\ta, d, m; \x^*_v)$ for each 
+	$\ta \in \Lambda$, $d \in [0, \val(\ta)-2]$, \\
+~~$m \in [d, \val(\ta)-2]$
+	if 
+	$\ell > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%
+	Compute 
+	$\V_{\en}^{(h)}(\tb, d', m'; \x^*_v)$ for each 
+$\tb \in \Lambda$, $d' \in [1, \val(\tb)-1]$, \\
+~~$m' \in [d', \val(\tb)-1]$, $1 \leq h \leq t$, 
+     if 
+	$\ell > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%	
+%	Compute $\V_{\co+(\Delta_v + 1)}^{(0)}(\ta', d_{\ta'}, m_{\ta'}; \x_v^*)$ , for  
+%$\ta' \in \Lambda$, \\
+%~~integers
+%$d_{\ta'} \in [1, \val(\ta') - 1]$, \\
+%~~$m_{\ta'} \in [d_{\ta'}, \val(\ta')-1]$, if $\ell > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+%Compute the set FP of feasible pairs 
+%$(\y, \y')$ such that $\y  +\y' + \1_{\gamma} = \x^*$;\\
+Compute the DAG $G$ representation of $\x^*_v$;\\
+Enumerate the set $\mathcal{P}$ of paths 
+from sources to leaves in $G$;\\
+{\bf for each} path $P$ in $G$ {\bf do}\+ \\
+ Let $P := ((\x^*, \y_h, \w_h, m_h), (\y_h, \y_{h-1}, \w_{h-1}, m_{h-1}), \ldots, (\y_1, \y_{0}, \w_{0}, m_{0}))$;\\
+~~where 
+$\w_h \in \V_{\co+(\Delta_v + 1)}^{(\delta_1)}$, 
+$\w_{h-1}, \ldots, \w_{1}\in 
+\V_{\inl}^{(0)}$,
+$\w'_0 \in \V_{\en}^{(0)} $, $h = t$;\\
+Get a target $v$-component by using the trees 
+corresponding to\\
+~~ $\w_h, \w_{h-1}, \ldots, \w_0 $\\
+Get the number of $v$-components obtained by the path 
+$P$ \\
+~~ $n(\w_h)\times \cdots \times n(\w_0)$, where 
+$n(\w_h), \ldots, n(\w_0),$ 
+are the number of trees with vector \\
+~~ $\w_h, \ldots, \w_0$, respectively\- \\
+{\bf end for}.
+\end{tabbing}
+
+
+
+% \newpage
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% 
+%                 Getting Vectors of bi-rooted core-subtrees
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\section{Generation of Frequency Vectors of Bi-rooted Core-subtrees}
+For an integer $h \in [h_1, h_2]$, elements
+$\ta, \ta^{e} \in \Lambda$, integers
+$d  \in [1, \val(\ta) - 1]$, 
+$m\in [d,\val(\ta)-1]$, 
+$\Delta^e \in [1, \val(\ta^e) -1] $, 
+$m^e \leq \val(\ta^e) - \Delta^e$,
+and $q \geq 1$, 
+ we give a procedure to 
+compute the set $\V_{\co+1, \Delta^e}^{(q)}(\ta, d, m, \ta^e, 1, m^e, h; \x^*)$.
+\bigskip\\
+\noindent {\sc ComputeBiRootedCoreSubtree($\ta, d, m, \ta^e, 1, m^e, h, q$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+%
+
+%%% Important %% In the next 2 can be replaced by \rho to 
+%%% make the algorithm general
+{\bf Input:}
+An integer $h\geq 0$, elements  
+$\ta, \ta^{e} \in \Lambda$, integers
+$d  \in [1, \val(\ta) - 1]$, 
+$m\in [d,\val(\ta)-1]$,  \+ \\
+$\Delta^e \in [1, \val(\ta^e) -1] $, 
+$m^e \leq \val(\ta^e) - \Delta^e$,
+and $q \geq 1$.\- \\
+\hspace{3mm}  /* Global data: A vector $\x^* = (\x^*_{\intt}, \x^*_{\ex}, b)$, \+ \\
+a non-negative integer $b$,
+                 the collection \\
+                 $\Vv_{\co+ 2}^{(0)}$  vector sets 
+                 $\V_{\co + 2}^{(0)}(\ta, d-1, m_{\ta}, p; 
+                 \x^*)$, 
+                 %$d_{\ta} \in [0, \val(\ta)-3]$,
+                 $m_{\ta} \in [d-1, \val(\ta) -\Delta -1]$, 
+                 $p \in [0,h]$,\\
+                 for $q \geq 2$, 
+                 $\Vv_{\en}^{(q-1)}$ of vector sets  
+                 $\V_{\co+1, \Delta^e}^{(q-1)}
+                 (\tb, d', m', \ta^e, 1, m^e, h'; \x^*)$, \\
+                 $\tb \in \Lambda$,
+                  $d' \in [1, \val(\tb)-1]$, 
+                  $m' \in [d', \val(\tb) - 1]$, 
+                  $h' \in [0, h]$, integer $g \geq 1$. */ \- \\
+{\bf Output:} The set $\V_{\co+1, \Delta^e}^{(q)}(\ta, d, m, \ta^e, 1, m^e, h; \x^*)$, where 
+we store these vectors in a trie. \\
+$\W := \emptyset$; \\
+{\bf for each} triplet $(\ta, d-1, m_{\ta}, p)$ {\bf do} \+ \\
+	{\bf if} $q = 1$ {\bf then}\+ \\
+		{\bf if} $p = h$ and 
+	     $\val(\ta) \geq m_{\ta} + m^e$ {\bf then} \+ \\
+	     	{\bf for each} $\w^{\ta}  \in 
+                      \V_{\co +2}^{(0)}(\ta, d-1,m_{\ta}, p; \x^*)$ 
+                      {\bf do} \+\\                
+				$\gamma^{\intt} := (\ta d, \ta^e 1, m^e )$; 
+				$\y := \y^{\ta} + \1_{\gamma^{\intt}}$\\
+				  {\bf if}  $\gamma^{\intt} \in \Gamma^{\intt}$ and 
+						$\y \leq \x^*$ {\bf then}\+ \\
+						                     {\bf if} $\y \in 
+                     \V$ {\bf then} \+ \\
+                              
+                     $\V := \V \cup \{ \y \}$ \- \\
+				{\bf end if} \- \\
+			{\bf end if} \- \\
+			{\bf end for} \- \\
+		{\bf end if} \- \\
+	{\bf else} /* $q>1$ */ \+ \\
+		{\bf for each} triplet  $(\tb, d_{\tb}, m_{\tb}, h')$ {\bf do} \+ \\
+		  {\bf for each} $\y^{\tb} \in 
+   \V_{\co+1, \Delta^e}^{(q-1)}
+                 (\tb,d_{\tb}, m_{\tb}, \ta^e, 1, m^e, h'; \x^*)$
+                         {\bf do} \+ \\
+            {\bf for each} $m' \in [1, 3]$ such that  \\ 
+                      ~~~- $\gamma^{\intt} := (\ta d, \tb  \{d_{\tb} + 1\},
+                       m') \in \Gamma^{\intt}$ and\\
+                      ~~~- $m_{\ta} + m' = m, 
+                      m_{\ta} + m' + 1 \leq \val(\ta)$, 
+                      $m' +m_{\tb} \leq \val(\tb)$, \\
+                     ~~~- $h = \max\{p, h'\}$ and \\
+                      ~~~- $\y:= \y_{\ta} + \y_{\tb} + 
+                      \1_{\gamma^{\intt}} \leq \x^*$
+                                             {\bf do} \+ \\
+                                      {\bf if} $\y \in 
+                     \V$ {\bf then} \+ \\                         
+                     $\V := \V \cup \{ \y \}$; \- \\
+                      {\bf end if} \- \\  
+		{\bf end for} \- \\  
+		{\bf end for} \- \\
+		{\bf end for} \- \\
+	{\bf end if} \- \\
+{\bf end for}; \\
+Output $\W$ as 
+$\V_{\co+1, \Delta^e}^{(q)}(\ta, d, m, \ta^e, 1, m^e, h; \x^*)$.
+\end{tabbing}
+% \newpage
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% 
+%     Computing DAG
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\section{Computing DAG Representation for $e$-Components}
+
+%For an integer $h \geq 1$, element 
+%$\ta \in \Lambda$,
+%integers $d  \in [1,\val(\ta)-1]$, and 
+%$m\in [d,\val(\ta)-1]$ 
+% we give a procedure to 
+%compute the set $\V_{\en}^{(h)}(\ta, d, m; \x^*)$.
+%\bigskip\\
+\noindent {\sc DAGRepresentationEdge($\ta^e_i, m^e_i, \Delta^e_i,  \delta_i, h_i\x^*$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+%
+{\bf Input:}
+%Element $\ta \in \Lambda$, 
+%integer $d \in[1,\val(a)-1]$, 
+%$m \in [d, \val(a)-1]$, $h \geq 1$. \\
+\hspace{3mm}  /* Global data: A vector $\x^* = (\x^*_{\intt}, \x^*_{\ex}, b)$, \+ \\
+a non-negative integer $b$,\\ 
+$\ta_i^{e} \in \Lambda$, integers
+$\Delta_i^e \in [1, \val(\ta_i^e) -1] $, 
+$m_i^e \leq \val(\ta_i^e) - \Delta_i^e$,\\
+                 the collection  
+                 $\Vv^{(0)}_{\inl}$ vector sets 
+                 $\V^{(0)}_{\inl}(\ta, d, m; \x^*)$, \\
+                 %$d_{\ta} \in [0, \val(\ta)-3]$,
+                 %$m_{\ta} \in [d-1, \val(\ta) -2]$\\
+                 integers $\delta_i\geq 0$, $h_i \geq 1$, $i = 1, 2$, \\
+                 $\Vv^{(h)}_{\en}$ of vector sets 
+                 $\V_{\en}^{(h)}(\ta_1, d_1, m_1; \x^*)$, 
+                 $\ta_1 \in \Lambda$,
+                  $d_1 \in [1, \val(\ta_1)-1]$, \\
+                  $m_1 \in [d_1, \val(\ta_1) - 1]$, 
+                  $1 \leq h \leq \max\{\delta_1, \delta_2\}$, \\
+                  the collection 
+                   $\Vv_{\en}^{(0)}$ of sets 
+                  $\V_{\en}^{(0)}(\ta_1, d_1, m_1; \x^*)$, 
+                  $\ta_1 \in \Lambda$,
+                  $d_1 \in [1, \val(\ta_1)-1]$, \\
+                  $m_1 \in [d_1, \val(\ta_1) - 1]$,\\
+                  the collection $\Vv_{\co+2}^{(0)}$ of sets 
+                 $\V_{\co+2}^{(0)}(\ta, d , 
+                 m, h; \x^*)$
+                  for all possible $\ta, d, m$ and 
+                  $h \leq \max\{h_1, h_2\}$,\\
+                  $\Vv_{\co+(\Delta + 1)}^{(0)}$ of sets 
+                 $\V_{\co+(\Delta + 1)}^{(0)}(\ta, d -1, 
+                 m'', p; \x^*)$
+                  for $p \leq 2$,\\
+                  for $2 \leq q_i \leq \delta_i, i=1, 2$, 
+                 families $\Vv_{\en, i}^{(q_i)}(\ta^e_i, m^e_i)$ 
+                 of vector sets  
+                 $\V_{\co+1, \Delta_i^e}^{(q_i)}
+                (\ta_i,d_i, m_i, \ta_i^e, 1,m_i^e, h_i; \x^* )$.             
+                  */ \- \\
+{\bf Output:} A set of feasible pairs $\y_i, i=1, 2$ of length 
+$\delta_i, i = 1, 2$, respectively, \+ \\
+two vertex-labeled and edge-labeled DAG representation of 
+these feasible pairs of e-component, \\
+and DAG representations of 
+frequency vector of each non-core part of the e-component\\ 
+with frequency vector $\x^*$. \- \\
+%
+$F:= \emptyset$; /* to store feasible pairs for core part */\\
+$G_i := (N_i, A_i)$; $A_i:= \emptyset$; 
+$N_i:= \emptyset, i = 1, 2;$/*  core part */\\
+%{\bf if } $\delta_1 + \delta_2 + 1 \geq 2$ {\bf then} \+ \\%1
+{\bf for each} $(\ta_i,d_i, m_i), i = 1, 2$\+ \\
+{\bf for each} $\gamma=(\ta_1\{d_1+1\}, \ta_2\{d_2+1\}, m) \in \Gamma^{\intt}$
+ with \\
+ ~~~~~$m \in [1, \min\{3, \val(\ta_1)-m_1, \val(\ta_2)-m_2\}]$   {\bf do} \+ \\
+ Let
+   $L_1$ denote the sorted  list of vectors in 
+   $\V_{\co+1, \Delta_1^e}^{(\delta_1)}
+                (\ta_1,d_1, m_1, \ta_1^e, 1,m_1^e, h_1; \x^* )$; \\
+ Construct the set $\overline{\W}:=
+ \{\overline{\z} \mid \z \in \V_{\co+1, \Delta_2^e}^{(\delta_2)}
+                (\ta_2,d_2, m_2, \ta_2^e, 1,m_2^e, h_2; \x^* )\}$
+ of  the $\gamma$-complement vectors; \\ 
+ Sort the vectors in  $\overline{\W}$ to
+obtain a sorted list $L_2$;\\
+Merge $L_1$ and $L_2$ into a single sorted list 
+$L_{\gamma}$
+of vectors in both lists (as a multiset);\\
+Trace the list  $L_{\gamma}$ and for each consecutive pair 
+$\z^1, \z^2$ of vectors 
+       with $\z^1 = \z^2$\\
+$\y_1: = \z^1, \y_2: = \overline{\z^2}$ is a feasible pair;\\
+$N_i: = N_i \cup \{ (\y_i, \delta_i;\ta_i, d_{i}, m_{i}, h_i )$;
+ 		\\
+ 		%$A:= A \cup \{a_{\y_1\y_2}\}$ and\\
+ 	 Let the label of the arc from 
+ 		$\y_1$ to $\y_2$ is $(\0, m)$; \\
+ 		$F: = F \cup \{(\y_1, \y_2; \0, m';  
+ 		\ta_1, d_1, m_1, h_1; \ta_2, d_{2}, m_{2}, h_2)\}$\-  \\
+ {\bf end for} \- \\% gamma
+ {\bf end for}; \\%triplet   
+$\mathcal{C}:= \emptyset$; \\/* a set of vectors of rooted core subtrees for which we calculate DAG in second phase */	\\	
+
+	$G' := G_2$;\\
+	{\bf for each} $\ell \in (\delta_2, \ldots, 1)$ {\bf do}\+ \\ % 4
+		$(G'':=(N'', A''), \mathcal{D}) :=$ 
+		CoreDAGSublayer($\Vv_{\co+1, 2}^{(\ell-1)}, G',
+		 \ell-1, \Vv_{\co+2}^{(0)}, h_2$);\\
+		~~~$N_2:= N_2 \cup N''; A_2:= A_2 \cup A''$; 
+		$\mathcal{C}:= \mathcal{C} \cup \mathcal{D}$\- \\		
+	{\bf end for};\\
+	%
+	$G' := G_1$;\\
+	{\bf for each} $\ell \in (\delta_1, \ldots, 1)$ {\bf do}\+ \\ % 4
+		$(G'':=(N'', A''), \mathcal{D}) :=$ 
+		CoreDAGSublayer($\Vv_{\co+1, 1}^{(\ell-1)}, G',
+		 \ell-1, \Vv_{\co+2}^{(0)}, h_1$);\\
+		~~~$N_1:= N_1 \cup N''; A_1:= A_1 \cup A''$; 
+		$\mathcal{C}:= \mathcal{C} \cup \mathcal{D}$\- \\		
+	{\bf end for};\\
+	{\bf for each} $(\y, \ta, d, m, t ) \in \mathcal{C}$ {\bf do}\+ \\
+	$G''' := (N''', A''')$; $N''':= \{\y\}; A''':= \emptyset$;\\
+	{\bf for each} $\ell \in (t-2, \ldots, 1)$ {\bf do}\+ \\ % 4
+	{\bf if} $\ell = t-2$ {\bf then} \+ \\
+		$G^*:=(N^*, A^*) :=$ 
+		DAGSublayer($\Vv_{\co + 2}^{(0)}(\ell - 1, \y), G''',
+		 \ell-1,\Vv_{\co+\Delta + 1}^{(0)}(\ta, d, m; \y)$),\\
+		 ~~where $\Vv_{\co + 2}^{(0)}(\ell - 1, \y)$ 
+		 is a family of 
+		 vectors of end-subtrees under $\y$\\
+		 ~~  with core height 
+		 $\ell - 1$, 	\\	 
+		~~ $\Vv_{\co+\Delta + 1}^{(0)}(\ta, d, m; \y)$ is the 
+		 family of sets $\V_{\co+\Delta + 1}^{(0)}(\ta, d, m, p; \y)$;\\
+		~~~$N''':= N''' \cup N^*; A''':= A''' \cup A^*$;	\- \\	
+		%%%%%%
+		{\bf else} /* $\ell < t-2 $ */ \+\\
+			$G^*:=(N^*, A^*) :=$ 
+			DAGSublayer($\Vv_{\co + 2}^{(0)}(\ell - 1, \y), G''',
+		 \ell-1,\Vv_{\inl}$),\\
+		 ~~ where $\Vv_{\co + 2}^{(0)}(\ell - 1, \y)$ 
+		 is a family of 
+		 vectors of end-subtrees under $\y$ \\
+		 ~~ with core height $\ell - 1$;\\
+		~~~$N''':= N''' \cup N^*; A''':= A''' \cup A^*$;	\- \\	
+		{\bf end if}\-\\
+	{\bf end for}; \\
+	Output $(\y, G'''')$\- \\
+	{\bf end for};\\
+Output $G_i, i= 1, 2$ as DAG representations and 
+the set $F$.
+\end{tabbing}
+
+\noindent {\sc CoreDAGSublayer($\Vv, G, \ell, \Vv', h$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+{\bf Input:} 
+A family $\Vv'$ of vectors rooted core-subtrees with a root label $\ta_1$, \+ \\
+degree 
+$d_1$ and multiplicity $m_1$ and core height $t \leq h$, 
+$G = (N, A)$,  \\
+a family   
+                 $\Vv$ of vectors of bi-rooted core subtrees with core height at most $h$ and         \\
+                 $\ell$ (the height of the layer  
+                 that we add in $G$ at this stage).\- \\
+%                 
+{\bf Output:}  A DAG $G'$ that is a super-graph of $G$, and 
+a set of vectors of rooted core subtrees.\\
+%
+$G':= G$; $\mathcal{C}:= \emptyset;$\\
+{\bf for each} $\y_1 \in \Vv$ {\bf do} \+ \\%1
+	{\bf for each} $\y_1' \in \Vv'$ {\bf do} \+ \\%2
+	 Let the height of $\y_1$  and $\y'_1$ be $t$ and $t'$,
+	  respectively;\\
+		{\bf if } there exists $\gamma \in \Gamma^{\inn}$ and 
+		some $\y_2 \in N$ such that \\
+		~~~$\y_i, i=1,2$ are feasible, i.e., 
+		$\y_1 +\y'_1+1_{\gamma} = \y_2$ and 
+		$\max\{t, t'\} = h$ {\bf then}\+\\%4
+%		{\bf for each} $\gamma=(\ta\{d+2\}, \ta_1\{d_{1}+1\}, m'')
+%                  \in \Gamma^{\inn}$ with \\
+%                 ~~~~~$m'' \in [1, \min\{3, \val(\ta)-m, \val(\tb)-m_{\tb}\}]$ {\bf do}\+ \\ %3
+%		 {\bf if} there exists  
+				{\bf if} $\y_1 \not\in N$ {\bf then} 
+				$N:= N \cup \{(\y_1, \ell;  \ta_1, 
+				d_1, m_1, t')\}$;\\
+				$A:= A \cup \{a_{\y_2\y_1}\}$ and \\
+			~~~label the arc from 
+				$\y_2$ to $\y_1$ by $(\y', m)$, \\
+				~~~where $m$ is 
+				the bond multiplicity in $\gamma$; \\
+				$\mathcal{C}:= \mathcal{C} \cup
+				\{(\y'_1, \ta_1, d_1, m_1, t' )\}$\- \\
+               {\bf end if} \-\\%4    
+		%	{\bf end for} \- \\%3
+	{\bf end for} \- \\%2
+{\bf end for};  \\%1
+Output $G'$ as a required DAG and $\mathcal{C}$ the required set of rooted core subtrees.
+\end{tabbing}
+
+%%%
+%%%
+%%%
+%%%
+\newpage
+\section{A Complete Algorithm to Compute Target $e$-components}
+
+We briefly summarize how to use the procedures described thus far 
+to obtain an algorithm.
+Our global constants are a frequency vector $\x^*_{\rm e}$ of an e-component, 
+two fixed tuples $(\ta^e_j, m^e_j, \Delta^e_j), j = 1, 2$
+a lower bound 
+${\rm ch}_{{\rm LB}}(e)$ and an upper bound
+${\rm ch}_{{\rm UB}}(e)$ on core height, where we take 
+$\rho = 2$. \bigskip\\
+%
+\noindent {\sc CompleteAlgorithmEdge}(Global constants: 
+$\ta^e_j, m^e_j, \Delta^e_j, \x^*_e, {\rm core~height~bounds}$)
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+%{\bf for each} base-edge $e \in E_B$ {\do} \+ \\
+$\Gamma^{\inn}_e: = \text{The set internal edges in 
+	$\x^*_e$}$;\\
+Compute $\V^{(0)}_{\co + (\Delta+1)}
+	(\ta, d, m, h; \x_e^*)$ for each \\
+		~~
+		$\Delta \in [2,3]$, 
+		$\ta \in \Lambda$, $d \in [0, \val(\ta)-\Delta]$,
+		$m \in [d, \val(\ta) -\Delta]$, 
+	$h \in [0, 	\min \{2, {\rm ch}_{{\rm UB}}(e)  \} ]$;\\
+	%
+	Compute 
+	$\V_{\en}^{(0)}(\ta, d, m; \x^*_e)$ for each 
+	$\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$,
+ 	$m \in [d, \val(\ta)-1]$;\\
+	%
+	Compute $\V_{\inl}^{(0)}(\ta, d, m; \x^*_e)$ for each 
+	$\ta \in \Lambda$, $d \in [0, \val(\ta)-2]$, 
+	$m \in [d, \val(\ta)-2]$;\\
+	%
+	
+	Compute 
+	$\V_{\en}^{(h)}(\ta, d, m; \x^*_e)$ for each 
+	$\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+~~$m \in [d, \val(\ta)-1]$, 
+     $1 \leq h \leq \min\{|\Gamma^{\inn}_e| -1, 
+     {\rm ch}_{{\rm UB}}(e)-2-1\}$
+     if 
+	${\rm ch}_{{\rm UB}}(e) > 2$;\\
+	%
+	Compute 
+	$\V_{\co + \Delta}^{(0)}(\ta, d, m, h; \x^*_v)$ for each 
+     $\Delta \in [2, 3]$, 
+     $\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+~~$m \in [d, \val(\ta)-1]$, 
+     $h \leq \min\{|\Gamma^{\inn}_e| +2, 
+     {\rm ch}_{{\rm UB}}(e)\}$, 
+     if 
+	${\rm ch}_{{\rm UB}}(e) > 2$ ;\\
+	%
+	Compute $\V_{\co+1, \Delta^e_j}^{(q)}(\ta, d, m, \ta^e_j, 1,
+	 m^e_j, h; \x^*_e)$ for fixed 
+	$(\ta^e_j, m^e_j, \Delta^e_j)$, 
+	$\ta, \in \Lambda$, \\
+	~~integers
+	$d  \in [1, \val(\ta) - 1]$, 
+	$m\in [d,\val(\ta)-1]$, 
+	$q = \Delta_j ^e, j = 1, 2$;\\
+	%
+%	{\bf for each} two tuples $(\ta_j, d_j, m_j, \ta^e_j, 1,
+%	 m^e_j, h; \x^*_e)$, $j = 1, 2$ {\bf do} \+ \\
+%      search for a feasible vector pair
+%            in the pair of sets 
+%            $\W_{\co+1, \Delta^e_j}^{(q)}(\ta_j, d_j, m_j, 
+%            \ta^e_j, 1,  m^e_j, h_j; \x^*_e)$  \- \\
+%            
+%{\bf end for}.\\
+Compute the set FP of feasible pairs 
+$(\z, \z')$ such that $\z  +\z' + \1_{\gamma} = \x_e^*$;\\
+Compute the DAG $G_1$ (resp., $G_2$) representation of 
+all vectors $\z$ (resp., $\z'$)\\
+~~ such that $(\z, \z') \in {\rm FG}$ 
+(resp., $\z' \in {\rm FG}$);\\
+Enumerate the set $\mathcal{P}_1$ (resp., $\mathcal{P}_2$) of paths
+from sources to sinks in $G_1$ (resp., $G_2$);\\
+{\bf for each } feasible pair $(\z, \z') \in {\rm FG}$ {\bf do}\+ \\
+Let $P := ((\z, \z_h, \y_h, m_h), (\z_h, \z_{h-1}, \y_{h-1}, m_{h-1}), \ldots, (\z_1, \z_{0}, \y_{0}, m_{0}))$;\\
+$P' := ((\z', \z'_{h'}, \y'_{h'}, m'_{h'}), (\z'_{h'}, \z'_{h'-1}, \y'_{h'-1}, m'_{h'-1}), \ldots, (\z'_1, \z'_{0}, \y'_{0}, m'_{0}))$, \\
+%~~where 
+%$\w_h \in \V_{\co+(\Delta_v + 1)}^{(\delta_1)}$, 
+%$\w_{h-1}, \ldots, \w_0, \w'_{h'}, \ldots, \w'_{1}\in 
+%\V_{\inl}^{(0)}$,
+%$\w'_0 \in \V_{\en}^{(0)} $;\\
+Compute DAG representation $G^i$ (resp., $(G')^{i}$ of each 
+$\y_i$ (resp., $\y'_i$). \\
+%Let $n(\y_i)$ (resp., $n(\y'_i)$) denote the the number of 
+%graphs that can be obtained from $\y_i$ (resp., $\y'_i$)\\
+% as explained in {\sc CompleteAlgorithmVertex}. \\
+Get a target $e$-component by using the trees corresponding to\\
+~~ $\y_h, \y_{h-1}, \ldots, \y_0, \y'_{h'}, \ldots, \y'_{0}$ \\
+Get the number of target $e$-components obtained by paths 
+$P$ and $P'$ as \\
+~~ $(n(\y_h)\times \cdots \times n(\y_0)) \times 
+(n(\y'_{h'})\times \cdots \times n(\y'_{0}))$, \\
+~~ where 
+$n(\y_i)$ (resp., $n(\y'_i)$) denote the number of 
+graphs that can be obtained\\
+~~ from $\y_i$ (resp., $\y'_i$)
+as explained in {\sc CompleteAlgorithmVertex}\- \\
+{\bf end for}.
+
+\end{tabbing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Canonical Representation of Fringe Trees}
+
+For a graph $G$, let $V(G)$ and $E(G)$ denote the vertex set and edge set of $G$, respectively. 
+We denote by $(u, v)$ a directed edge from vertex $u$ to vertex $v$ in 
+a graph. 
+However, we denote by $uv$ an undirected edge between $u$ and $v$ in a graph, where we assume that $uv =vu$. 
+For a vertex $v$, we denote by $N_G(v)$ neighbors of $v$. 
+%For a vertex and edge colored graph $G$, a vertex $v \in V(G)$ and 
+%$e \in E(G)$, let col$(v)$ and col$(e)$ denote the 
+%color of $v$ and $e$, respectively. 
+For an edge weighted graph $(G, w)$ with weight function $w$ and an edge 
+$e \in E(G)$, we denote by $w(e)$ the weight of the edge  $e$. 
+For a rooted tree $T$ and a non-root vertex $v \in V(T)$, we denote by ${\rm prt}_T(v)$ the parent of $v$ in $T$. 
+For a rooted tree $T$ and a vertex $v \in V(T)$, we denote by ${\rm d}_T(v)$ 
+depth of $v$ in $T$, i.e., the length of the path between $v$ and the root of $T$. 
+When the underlaying tree $T$ is fixed, then we simply denote parent and 
+depth by ${\rm prt}(v)$ and~${\rm d}(v)$. 
+ 
+ 
+ Let $(T,w, \lambda)$ be a tree with $n$ vertices, 
+ rooted at $r$ with weight function
+ $w : E(T) \to \{1, 2, 3\}$, a  coloring function 
+ $\lambda : V(T) \to \{1, 2, \ldots, k\}$ for some 
+ $k$. 
+Let $K= (T, \pi)$ be an ordered tree of $T$ with a left-to-right ordering $\pi$ 
+on the children of each vertex, and 
+$v_1, v_2, \ldots, v_n$ indexing on the vertices of $H$ obtained by 
+depth-first-search starting from the root $r$ and 
+visiting children following $\pi$. 
+We define, a (color, depth)-sequence $\psi(K)$ to be the sequence
+\[
+\psi(K) \triangleq (( \lambda(v_1), \d(v_1)), (\lambda(v_2), \d(v_2)), \ldots, (\lambda(v_n), \d(v_n)))), 
+\]
+a weight-sequence $\sigma(K)$ to be the sequence 
+$$
+\sigma(K) \triangleq (w_2, w_3,\ldots, w_n), 
+$$ where 
+$w_i = w(v_i\prt(v_i))$ for $i \in [2, n]$.
+We define a canonical representation C$(T)$ of $T$ to the pair 
+$(\psi(K), \sigma(K))$ such that $\psi(K)$ is lexicographically maximum among  
+the (color, depth)-sequence of all ordered trees of $T$ and 
+$\sigma(K)$ is lexicographically maximum among the 
+weight- sequence of all ordered trees of $T$. 
+In such a case, we call $K$ the left-heavy representation of $T$. 
+For a vertex $v \in T,$ we denote by $T\langle v \rangle$ the subtree of $T$ rooted at $v$ that consists of $v$ and all its 
+descendants. 
+
+For two sequences $S$ and $S'$, we denote by 
+$S \oplus  S'$ the concatenation of $S$ with $S'$. 
+ 
+We present a procedure to compute the frequencies of 2-fringes in 
+a given set $\mathcal{G}$ of chemical graphs, where 
+for a vertex $v$, we use atomic number of an atom as color 
+$\lambda(v)$ and 
+$w$ as the multiplicity between the edges. \newpage
+%%%%%
+\noindent 
+{\bf Algorithm}{~\sc CompFreq ($\mathcal{G}$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+{\bf Input: } A set of chemical graphs $\mathcal{G}$.\\
+{\bf Output: } Frequencies of 2-fringe trees in $\mathcal{G}$.\\
+Let $\mathcal{C}:= \emptyset;$ 
+/* canonical representation of distinct 2-fringe trees */\\
+%
+{\bf for each} $G \in \mathcal{G}$ {\bf do}\+\\
+	Let $G' := G$; Remove all leaves from $G'$ in two rounds to get roots of 2-fringe trees;\\
+	{\bf for each} $v\in V(G')$ such that 
+	     $N_G(v) \setminus N_{G'}(v) \neq \emptyset$ {\bf do}\+ \\
+	      Let $(T, w, \lambda)$ be the tree rooted at $v$
+	      obtained by performing dfs 
+	      from $v$ to \\
+	      ~~its descendants and $T$ 
+	      satisfies the degree condition of
+	      2-fringe trees; \\
+	      ~~/* $|V(T)| \leq 2d +2$ where $d$ is the
+	      number of children of $v$ /*\\
+			C[T] := {~\sc CanonRecur($T, v$)}\\
+			{\bf if} $C[T] \not\in \mathcal{C}$ {\bf then} 
+					${f_{C[T]} : = 1}$\\
+			{\bf else} $f_{C[T]} : = f_{C[T]} + 1$ \\
+			{\bf endif};\\
+			 $\mathcal{C} := \mathcal{C} \cup \{C[T]\}$; \- \\
+	{\bf endfor}\- \\ % v
+{\bf endfor}\\ % \G
+Output $C[T]$ and  $f_{C[T]}$ as the canonical representation and\\
+~~frequency of fringe tree $T$, respectively, for each 
+$C[T] \in \mathcal{C}$.
+\end{tabbing}\bigskip
+%%%
+{\bf Algorithm}{{~\sc CanonRecur($T, v$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+{\bf Input: } A vertex colored and edge weighted tree rooted 
+tree $(T, w, \lambda)$ and a vertex $v$.\\
+{\bf Output: } The canonical representation 
+$C(T\langle v \rangle)$.\\
+{\bf if} $v$ is a leaf {\bf then} 
+	%%{\bf if}  $|V(T)| = 1$ {\bf then} 
+  %%$C[T\langle v \rangle]:= (\lambda(v), 0)$\\
+   $C[T\langle v \rangle] := 
+  		(\lambda(v), \d(v))$ 
+  {\bf endif}\\
+%
+{\bf else}\+ \\
+	{\bf for each} child $u$ of $v$ {\bf do} \+ \\
+		$C[T\langle u \rangle] := (\psi[T\langle u \rangle], 
+		\sigma[T\langle u \rangle]) := $
+		{\sc CanonRecur($T, u$)}\- \\
+	{\bf endfor}	\\
+	Let $v_1, v_2, \ldots v_n$ be the indexing of children of 
+	$v$ such that for each $i \in [1, n-1]$,\\
+	~~it holds that 
+	$(\psi[T\langle v_i \rangle], w(v_iv) \oplus
+		\sigma[T\langle v_i \rangle])$ is lexicographically 
+		larger or equal to \\
+		~~$(\psi[T\langle v_{i+1} \rangle], w(v_{i+1}v) \oplus
+		\sigma[T\langle v_{i+1} \rangle])$\\
+		Let $\psi[T\langle v \rangle]:= 
+		(\lambda(v), \d(v)) \oplus
+		\psi[T\langle v_1 \rangle]\oplus \cdots \oplus 
+		((\lambda(v_n), \d(v_n))) \oplus
+		\psi[T\langle v_n \rangle]$ and \\
+		~~$\sigma[T\langle v \rangle]:= 
+		w(v_{1}v) \oplus
+		\sigma[T\langle v_1 \rangle]\oplus \cdots \oplus 
+		w(v_{n}v) \oplus
+		\sigma[T\langle v_n \rangle]$;
+		$C[T\langle v \rangle] := (\psi[T\langle v \rangle], 
+		\sigma[T\langle v \rangle])$	\- \\
+{\bf endif};\\
+Output $C[T\langle v \rangle]$ as $C(T\langle v \rangle)$. 
+
+\end{tabbing}
+
+
+\end{document}
+
+\newpage
+\section{Counting Paths}
+\noindent
+{\sc CountPaths}$(G=(N,A))$
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+{\bf Input:}
+A DAG $G = (N,A)$. \\
+{\bf Output:} 
+For each source $\vv \in N$, the number of paths from $\vv$ to sinks in $G$.\\
+Let $N_h$ denote the set of vertices $\vv \in N$ such that 
+${\rm ht}(\vv) = h, h \in [0, {\rm ht}(G)]$
+\\
+$p(\vv) := 1$ for each $\vv \in N_0$; \\
+$p(\vv) := 0$ for each $\vv \in N \backslash N_0$;\\
+{\bf for each} $h \in [0, \mathrm{ht}(G) -1]$ {\bf do} \+ \\
+	{\bf for each} $\vv \in N_h$ {\bf do} \+ \\
+		Let $\vv_1,\vv_2,\dots,\vv_k \in N_{h+1}$ such 
+			that $\vv_i\vv \in A$ with $\vv_i = \vv + \x_i + \gamma$; \\
+		{\bf for each} $i \in [1,k]$ {\bf do}\+ \\
+			$p(\vv_i) := x(i)p(\vv_i) + p(\vv)$, \\
+			~~~~where $x(i)$ is the number of paths in the DAG corresponding to $\x_i$\- \\
+		{\bf end for}\- \\
+	{\bf end for} \- \\
+{\bf end for}; \\
+Output $p(\vv)$, for each $\vv \in N_{{\rm ht(G)}}$,  as
+the number of paths from source $\vv$ to sinks in $G$.
+\end{tabbing}
+- The number of all paths from sources to sinks in $G = (N, A)$
+is $\sum_{\vv \in N_{{\rm ht(G)}}} p(\vv)$, where
+$p(\vv)$ is the number of paths obtained by 
+{\sc CountPaths}$(G=(N,A))$. \\
+- Let $G = (N, A)$ and $G' = (N', A')$ denote the two DAGs for core part for a base vertex $e$ and $V_{{\rm pair}}(e)$ denote the set of feasible vector pairs. 
+Then the number of all paths that correspond to  
+$e$-component is 
+$\sum \limits_{\substack{ (\z, \z') \in V_{{\rm pair}}(e)\\
+\z \in N, \z' \in N'}} p(\z)p(\z')$ where $p(\z)$ and 
+$p(\z')$ are the number of paths from $\z$ and $\z'$ to sinks in 
+$G$ and $G'$, respectively.
+
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+% \newpage
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% 
+%     Computing Feasible Vector Pairs
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\subsection{Computing Feasible Vector Pairs for a 
+v-component}
+For given $ \Delta, \ta, d, m, h$ and frequency vector $\x^*$
+of a v-component, a feasible pair  $(\z_1,\z_2)$ is defined to be vectors $\z_1 \in \W_{\co+(\Delta + 1)}^{(0)}(\ta, d-1, m_{\ta},\ta', d_{\ta'}, m_{\ta'}, \delta_2; \x^*)$ and 
+$\z_2 \in \W_{\en}^{(\delta_1)}(\tb, d', m'; \x^*)$,\\
+where $\delta_1=\lfloor\frac{h - 2-1}{2} \rfloor$
+ and $\delta_2 =\lceil \frac{h- 2-1}{2} \rceil$, $ m_{\ta} < m$ such that there exists at least one 
+ $\gamma=(\tb\{d'+1\}, \ta'\{d_{\ta'}+1\}, m'') \in \Gamma^{\inn}$
+ with 
+$m'' \in [1, \min\{3, \val(\ta')-m_{\ta'}, \val(\tb)-m'\}]$ for which it holds that $\x^* = \z_1 + \z_2 + \1_{\gamma}$.
+We give a procedure to compute feasible vector pairs for a v-component to generate frequency vectors of rooted core-subtrees  $\W_{\co + \Delta}^{(0)}(\ta, d, m, h; \x^*)$. 
+
+
+\begin{tabbing}
+{\bf Algorithm}~{\sc CombineVertexComp}$(\mbox{global data:~}\ta, d, m, h, \x^*)$\\
+{\bf Input:} 
+A tuple $(\ta, d, m, h, \x^*)$,
+two sets $\W_1$ and $\W_2$ such that for 
+$i = 1, 2$, \\ 
+\hspace{3mm}
+$\W_1 = \W_{\co+(\Delta + 1)}^{(0)}(\ta, d-1, m_{\ta},\ta', d_{\ta'}, m_{\ta'}, \delta_2; \x^*)$ and 
+$\W_2 = \W_{\en}^{(\delta_1)}(\tb, d', m'; \x^*)$,\\
+\hspace{3mm} where $\delta_1=\lfloor\frac{h - 2-1}{2} \rfloor$
+ and $\delta_2 =\lceil \frac{h- 2-1}{2} \rceil$, $ m_{\ta} < m$. \\
+{\bf Output:} 
+All  feasible pairs $(\z_1,\z_2)$ of vectors
+with $\z_i \in \W_i, i=1,2$
+\\
+\hspace{3mm} and a lower number $q$ on the total number of graph that satisfy all \\
+\hspace{3mm} feasible pairs of vectors. \\
+%
+$q := 0$; \\
+{\bf for each} pair   of $\gamma=(\tb\{d'+1\}, \ta'\{d_{\ta'}+1\}, m'') \in \Gamma^{\inn}$
+ with \\
+ ~~~~~$m'' \in [1, \min\{3, \val(\ta')-m_{\ta'}, \val(\tb)-m'\}]$   {\bf do} \\
+ \hspace{3mm} Let
+   $L_1$ denote the sorted  list of vectors in $\W_1$; \\
+ \hspace{3mm} 
+ Construct the set $\overline{\W}:=
+ \{\overline{\z} \mid \z \in \W_2\}$
+ of  the $\gamma$-complement vectors; \\ 
+ \hspace{3mm} Sort the vectors in  $\overline{\W}$ to
+obtain a sorted list $L_2$;\\
+\hspace{3mm} Merge $L_1$ and $L_2$ into a single sorted list $L_{\gamma}$
+of vectors in both lists (as a multiset);\\
+\hspace{3mm} Trace the list  $L_{\gamma}$ and for each consecutive pair 
+$\z^1, \z^2$ of vectors 
+       with $\z^1 = \z^2$\\
+    \hspace{8mm} Output $(\z^1, \overline{\z^2})$ as a feasible pair; \\
+      \hspace{8mm} Let $T$ be a tree obtained by joining the roots of $T_{\z^1}$ and $T_{\overline{\z^2}}$ with edge- configuration $\gamma$;\\
+        \hspace{8mm} $q := q + n_{\z^1} \cdot
+      n_{\overline{\z^2}} $\\  
+%      	\hspace{8mm} $\delta := \dia^*-4-\delta_1 -1-1$;\\
+%      	\hspace{8mm} {\bf if} $\delta =\delta_3$ {\bf then} \\
+%      	  \hspace{11mm} {\bf if} $\delta_1= \delta$ 	  {\bf then} \\
+%      	   \hspace{14mm}$\ell := \ell + \lceil (n_{\z^1} \cdot n_{\overline{\z^2}} )/6 \rceil$\\      	  
+%      	   \hspace{11mm} {\bf else}\\
+%      	     \hspace{14mm} $\ell := \ell + \lceil (n_{\z^1} \cdot n_{\overline{\z^2}} )/2 \rceil$\\
+%      	      \hspace{11mm} {\bf endif}\\
+%      	       \hspace{8mm} {\bf else if} $\delta_1-1= \delta$ 
+%      	       {\bf then}\\
+%      	        \hspace{11mm} $\ell := \ell + \lceil (n_{\z^1} \cdot n_{\overline{\z^2}} )/2 \rceil$\\
+%      	       \hspace{8mm} {\bf else}\\
+%        \hspace{11mm} $\ell := \ell + n_{\z^1} \cdot
+%       n_{\overline{\z^2}}  $\\
+%      \hspace{8mm} {\bf endif}\\      
+{\bf endfor}; \\
+Output all feasible pairs and $q$ as a lower bound $q$ .
+
+\end{tabbing}
+
+%%%%%%%%%%%%%%
+\subsection{Computing Feasible Vector Pairs for an 
+e-component}
+We give a procedure to compute feasible vector pairs.
+
+
+\begin{tabbing}
+{\bf Algorithm}~{\sc CombineEdgeComp}$(\mbox{global data:~} \x^*, \ell)$\\
+{\bf Input:} 
+An integer $\ell \geq 2$, 
+two sets $\W_1$ and $\W_2$ such that for 
+$i = 1, 2$, \\ 
+\hspace{3mm}
+$\W_i(\ta_i,d_i, m_i, \ta_i^e, 1,m_i^e, h_i; \x^* ) = 
+\W_{\co+1, \Delta_i}^{(\delta_i)}(\ta_i,d_i, m_i, \ta_i^e, 1,m_i^e, h_i; \x^* )$,\\
+\hspace{3mm} where $\delta_1=\lfloor\frac{\ell - 1}{2} \rfloor$
+ and $\delta_2 =\lceil \frac{\ell- 1}{2} \rceil$. \\
+{\bf Output:} 
+All  feasible pairs $(\z_1,\z_2)$ of vectors
+with $\z_i \in \W_i(\ta_i,d_i, m_i), i=1,2$
+\\
+\hspace{3mm} and a lower number $q$ on the total number of graph that satisfy all \\
+\hspace{3mm} feasible pairs of vectors. \\
+%
+$q := 0$; \\
+{\bf for} each pair   of $\gamma=(\ta_1\{d_1+1\}, \ta_2\{d_2+1\}, m) \in \Gamma^{\co}$
+ with \\
+ ~~~~~$m \in [1, \min\{3, \val(\ta_1)-m_1, \val(\ta_2)-m_2\}]$   {\bf do} \\
+ \hspace{3mm} Let
+   $L_1$ denote the sorted  list of vectors in $\W_1(\ta_1,d_1, m_1)$; \\
+ \hspace{3mm} 
+ Construct the set $\overline{\W}:=
+ \{\overline{\z} \mid \z \in \W_2(\ta_2, d_2, m_2)\}$
+ of  the $\gamma$-complement vectors; \\ 
+ \hspace{3mm} Sort the vectors in  $\overline{\W}$ to
+obtain a sorted list $L_2$;\\
+\hspace{3mm} Merge $L_1$ and $L_2$ into a single sorted list $L_{\gamma}$
+of vectors in both lists (as a multiset);\\
+\hspace{3mm} Trace the list  $L_{\gamma}$ and for each consecutive pair 
+$\z^1, \z^2$ of vectors 
+       with $\z^1 = \z^2$\\
+    \hspace{8mm} Output $(\z^1, \overline{\z^2})$ as a feasible pair; \\
+      \hspace{8mm} Let $T$ be a tree obtained by joining the roots of $T_{\z^1}$ and $T_{\overline{\z^2}}$ with edge- configuration $\gamma$;\\
+        \hspace{8mm} $q := q + \lceil (n_{\z^1} \cdot
+      n_{\overline{\z^2}} )/2 \rceil$\\  
+%      	\hspace{8mm} $\delta := \dia^*-4-\delta_1 -1-1$;\\
+%      	\hspace{8mm} {\bf if} $\delta =\delta_3$ {\bf then} \\
+%      	  \hspace{11mm} {\bf if} $\delta_1= \delta$ 	  {\bf then} \\
+%      	   \hspace{14mm}$\ell := \ell + \lceil (n_{\z^1} \cdot n_{\overline{\z^2}} )/6 \rceil$\\      	  
+%      	   \hspace{11mm} {\bf else}\\
+%      	     \hspace{14mm} $\ell := \ell + \lceil (n_{\z^1} \cdot n_{\overline{\z^2}} )/2 \rceil$\\
+%      	      \hspace{11mm} {\bf endif}\\
+%      	       \hspace{8mm} {\bf else if} $\delta_1-1= \delta$ 
+%      	       {\bf then}\\
+%      	        \hspace{11mm} $\ell := \ell + \lceil (n_{\z^1} \cdot n_{\overline{\z^2}} )/2 \rceil$\\
+%      	       \hspace{8mm} {\bf else}\\
+%        \hspace{11mm} $\ell := \ell + n_{\z^1} \cdot
+%       n_{\overline{\z^2}}  $\\
+%      \hspace{8mm} {\bf endif}\\      
+{\bf endfor}; \\
+Output all feasible pairs and $q$ as a lower bound $q$ .
+
+\end{tabbing}
+
+ 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %  
+% 
+%             Complete Algorithm for three leaf 2-branches
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\subsection{A Complete Algorithm to compute frequency vectors of v-components}
+
+We briefly summarize how to use the procedures described thus far 
+to obtain an algorithm.
+Our global constants are a frequency vector $\x^*_{\rm v}$ of a v-component rooted at a base vertex $v$, 
+a fixed tuple $(\ta, d, m)$,  
+a lower bound 
+${\rm ch}_{{\rm LB}}(v)$ and an upper bound
+${\rm ch}_{{\rm UB}}(v)$ on core height, where we take 
+$\rho = 2$. \bigskip\\
+%
+\noindent {\sc CompleteAlgorithmVertex}(Global constants: 
+$\ta_v, d_v, m_v, \x^*_v$, ${\rm core~height~bounds}$)
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+%
+Let $h:= |\Gamma^{\inn}| + 2$;\\
+Let $\delta_1 := \lfloor (h - 2-1)/2 \rfloor$,  
+$\delta_2 := \lceil (h - 2-1)/2 \rceil$ ;\\
+%{\bf for each} base-vertex $v \in V_B$ {\do} \+ \\
+	Compute $\W^{(0)}_{\co + \Delta_v}
+	(\ta_v, d_v, m_v, h; \x^*_v)$ for a fixed 
+	$(\ta_v, d_v, m_v, \Delta_v)$, \\
+	~~and for each 
+	$h \in [{\rm ch}_{{\rm LB}}(v), 
+	\min \{2, {\rm ch}_{{\rm UB}}(v)  \} ]$ if 
+	${\rm ch}_{{\rm LB}}(v) \leq 2$ and $\x^*_v(\tt bc)$ = 0;\\
+	%
+	Compute $\W^{(0)}_{\co + \Delta_v + 1}
+	(\ta_v, d_v, m, h; \x^*_v)$ for a fixed 
+	$(\ta_v, d_v, \Delta_v)$, \\
+	~~for each $m \in [d_v -1, \val(\ta_v) - \Delta_v -1]$, 
+	$h \leq 2$ if 
+	${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%
+	Compute 
+	$\W_{\en}^{(0)}(\ta, d, m; \x^*_v)$ for each 
+$\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+~~$m \in [d, \val(\ta)-1]$ if 
+	${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%
+	Compute $\W_{\inl}^{(0)}(\ta, d, m; \x^*_v)$ for each 
+	$\ta \in \Lambda$, $d \in [0, \val(\ta)-2]$, \\
+~~$m \in [d, \val(\ta)-2]$
+	if 
+	${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%
+	Compute 
+	$\W_{\en}^{(\delta_1)}(\tb, d', m'; \x^*_v)$ for each 
+$\tb \in \Lambda$, $d' \in [1, \val(\tb)-1]$, \\
+~~$m' \in [d', \val(\tb)-1]$, 
+     if 
+	${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%	
+	Compute $\W_{\co+(\Delta + 1)}^{(0)}(\ta_v, d_v-1, m_{\ta}, \ta', d_{\ta'}, m_{\ta'}, \delta_2; \x_v^*)$ , for 
+$\Delta \in [2, 3]$,  
+$\ta, \ta' \in \Lambda$, \\
+~~integers
+$d_{\ta} \in [0, \val(\ta) - \Delta-1]$, 
+$m_{\ta} \in [d_{\ta}, \val(\ta) - \Delta-1]$, $m_{\ta_v} < m_{v}$,
+$d_{\ta'} \in [1, \val(\ta') - 1]$, \\
+~~$m_{\ta'} \in [d_{\ta'}, \val(\ta')-1]$, if ${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+{\bf for each} two tuples $(\ta_v, d_v-1, m_{\ta}, \ta', d_{\ta'}, m_{\ta'}, \delta_2; \x_v^*)$, $(\tb, d', m'; \x^*_v)$ {\bf do} \+ \\
+      search for a feasible vector pair
+            in the pair of sets\\ 
+            $\W_{\co+(\Delta + 1)}^{(0)}(\ta_v, d_v-1, m_{\ta}, \ta', d_{\ta'}, m_{\ta'}, \delta_2; \x_v^*)$ and  $\W_{\en}^{(\delta_1)}(\tb, d', m'; \x^*_v)$ \- \\
+    {\bf end for}.
+%	Compute 
+%	$\W_{\co + \Delta}^{(0)}(\ta, d, m, h; \x^*_v)$ for each 
+%     $\Delta \in [2, 3]$, 
+%     $\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+%~~$m \in [d, \val(\ta)-1]$, 
+%     $h = \text{number of internal edges in $\x^*_v$} + 2$, 
+%     if 
+%	${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%	
+%{\bf end for}
+\end{tabbing}
+%%%%%%%%%%%%%%%%%%
+% \newpage
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% 
+%                 Getting Vectors of bi-rooted core-subtrees
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\subsection{Generation of Frequency Vectors of Bi-rooted Core-subtrees}
+For an integer $h \in [h_1, h_2]$, elements
+$\ta, \ta^{e} \in \Lambda$, integers
+$d  \in [1, \val(\ta) - 1]$, 
+$m\in [d,\val(\ta)-1]$, 
+$\Delta^e \in [1, \val(\ta^e) -1] $, 
+$m^e \leq \val(\ta^e) - \Delta^e$,
+and $q \geq 1$, 
+ we give a procedure to 
+compute the set $\W_{\co+1, \Delta^e}^{(q)}(\ta, d, m, \ta^e, 1, m^e, h; \x^*)$.
+\bigskip\\
+\noindent {\sc ComputeBiRootedCoreSubtree($\ta, d, m, \ta^e, 1, m^e, h, q$)}
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+%
+
+%%% Important %% In the next 2 can be replaced by \rho to 
+%%% make the algorithm general
+{\bf Input:}
+An integer $h\geq 0$, elements  
+$\ta, \ta^{e} \in \Lambda$, integers
+$d  \in [1, \val(\ta) - 1]$, 
+$m\in [d,\val(\ta)-1]$,  \+ \\
+$\Delta^e \in [1, \val(\ta^e) -1] $, 
+$m^e \leq \val(\ta^e) - \Delta^e$,
+and $q \geq 1$. \\
+\hspace{3mm}  /* Global data: A vector $\x^* = (\x^*_{\co}, \x^*_{\inn}, \x^*_{\ex}, b)$ with 
+$\x^*_{\co} \in \mathbb{Z}^{\Lambda^{\co}}$, 
+$\x^*_{{\tt t}} \in \mathbb{Z}^{\Lambda^{{\tt t}}}$,
+${\tt t} \in \{\inn, \ex\}$, \+ \\
+a non-negative integer $b$,
+                 the collection \\
+                 $\Ww_{\co+ 2}^{(0)}$  vector sets 
+                 $\W_{\co + 2}^{(0)}(\ta, d-1, m_{\ta}, p; 
+                 \x^*)$, 
+                 %$d_{\ta} \in [0, \val(\ta)-3]$,
+                 $m_{\ta} \in [d-1, \val(\ta) -\Delta -1]$, 
+                 $p \in [0,h]$,\\
+                 for $q \geq 2$, 
+                 $\Ww_{\en}^{(q-1)}$ of vector sets  
+                 $\W_{\co+1, \Delta^e}^{(q-1)}
+                 (\tb, d', m', \ta^e, 1, m^e, h'; \x^*)$, \\
+                 $\tb \in \Lambda$,
+                  $d' \in [1, \val(\tb)-1]$, 
+                  $m' \in [d', \val(\tb) - 1]$, 
+                  $h' \in [0, h]$, integer $g \geq 1$ 
+                  and \\
+                  for each vector $w$ in these sets, 
+                  a set $\mathcal{T}_{\w}$ of sample trees  
+      $T_{\w}$ of size at most $g$ and \\and the number $n_{\w}$  of 
+                  samples trees\\
+                   with vector $\w$. */ \- \\
+{\bf Output:} The set $\W_{\co+1, \Delta^e}^{(q)}(\ta, d, m, \ta^e, 1, m^e, h; \x^*)$, where 
+we store each vector \+ \\
+$\w \in \W_{\co+1, \Delta^e}^{(q)}(\ta, d, m, \ta^e, 1, m^e, h; \x^*)$,\\
+       a set $\mathcal{T}_{\w}$ of sample trees  
+      $T_{\w}$ of size at most $g$ and \\
+number $n_{\w}$ of trees with vector $\w$ in a trie.\- \\
+$\W := \emptyset$; \\
+{\bf for each} triplet $(\ta, d-1, m_{\ta}, p)$ {\bf do} \+ \\
+	{\bf if} $q = 1$ {\bf then}\+ \\
+		{\bf if} $p = h$ and 
+	     $\val(\ta) \geq m_{\ta} + m^e$ {\bf then} \+ \\
+	     	{\bf for each} $\w^{\ta}  \in 
+                      \W_{\inl}^{(0)}(\ta, d-1,m_{\ta}, p; \x^*)$ 
+                      {\bf do} \+\\                
+				$\gamma^{\co} := (\ta d, \ta^e 1, m^e )$; 
+				$\w := \w^{\ta} + \1_{\gamma^{\co}}$\\
+				  {\bf if}  $\gamma^{\co} \in \Gamma^{\co}$ and 
+						$\w \leq \x^*$ {\bf then}\+ \\
+						                     {\bf if} $\w \in 
+                     \W$ {\bf then} 
+                $n_{\w}  = n_{\w} +  n_{\w^{\ta}} \cdot n_{\w^{\tb}}$\\
+               {\bf else}      \+ \\                         
+                     $\W := \W \cup \{ \w \}$; 
+                     $\mathcal{T}_{\w}: =\emptyset$; 
+                     $n_{\w} := n_{\w^{\ta}} \cdot n_{\w^{\tb}}$ \- \\
+                       {\bf end if}  \\
+                        {\bf if} $\w \in 
+                     \W$ {\bf then} \+ \\
+                     {\bf for each } $T_{\w^{\ta}} \in 
+                     \mathcal{T}_{\w^{\ta}}$ and $T_{\w ^{\tb}}\in 
+                     \mathcal{T}_{\w^{\tb}}$ {\bf do} \+ \\
+                     	Let $T$ be the tree obtained by 
+                      joining the roots of 
+			  $T_{\w^{\ta}}$ and $T_{\w ^{\tb}}$ \\
+			 ~~ by an edge of multiplicity $m'$;\\
+			 {\bf if } $|\mathcal{T}_{\w}| < g$ {\bf then}
+ 				$\mathcal{T}_{\w}: = \mathcal{T}_{\w} \cup 
+ 				\{T\}$\- \\
+                     {\bf end for} \- \\
+                      {\bf end if} \- \\
+				{\bf end if} \- \\
+			{\bf end for} \- \\
+		{\bf end if} \- \\
+	{\bf else} /* $q>1$ */ \+ \\
+		{\bf for each} triplet  $(\tb, d_{\tb}, m_{\tb}, h')$ {\bf do} \+ \\
+		  {\bf for each} $\w^{\tb} \in 
+   \W_{\co+1, \Delta^e}^{(q-1)}
+                 (\tb,d_{\tb}, m_{\tb}, \ta^e, 1, m^e, h'; \x^*)$
+                         {\bf do} \+ \\
+            {\bf for each} $m' \in [1, 3]$ such that \+  \\ 
+                      - $\gamma^{\co} := (\ta d, \tb  \{d_{\tb} + 1\},
+                       m') \in \Gamma^{\co}$ and\\
+                      - $m_{\ta} + m' = m, 
+                      m_{\ta} + m' + 1 \leq \val(\ta)$, 
+                      $m' +m_{\tb} \leq \val(\tb)$, \\
+                      - $h = \max\{p, h'\}$ and \\
+                      - $\w:= \w_{\ta} + \w_{\tb} + 
+                      \1_{\gamma^{\co}} \leq \x^*$
+                                             {\bf do} \+ \\
+                                      {\bf if} $\w \in 
+                     \W$ {\bf then} 
+                $n_{\w}  = n_{\w} +  n_{\w^{\ta}} \cdot n_{\w^{\tb}}$\\
+               {\bf else}      \+ \\                         
+                     $\W := \W \cup \{ \w \}$; 
+                     $\mathcal{T}_{\w}: =\emptyset$; 
+                     $n_{\w} := n_{\w^{\ta}} \cdot n_{\w^{\tb}}$ \- \\
+                       {\bf end if}  \\
+                        {\bf if} $\w \in 
+                     \W$ {\bf then} \+ \\
+                     {\bf for each } $T_{\w^{\ta}} \in 
+                     \mathcal{T}_{\w^{\ta}}$ and $T_{\w ^{\tb}}\in 
+                     \mathcal{T}_{\w^{\tb}}$ {\bf do} \+ \\
+                     	Let $T$ be the tree obtained by 
+                      joining the roots of 
+			  $T_{\w^{\ta}}$ and $T_{\w ^{\tb}}$ \\
+			 ~~ by an edge of multiplicity $m'$;\\
+			 {\bf if } $|\mathcal{T}_{\w}| < g$ {\bf then}
+ 				$\mathcal{T}_{\w}: = \mathcal{T}_{\w} \cup 
+ 				\{T\}$\- \\
+                     {\bf end for} \- \\
+                      {\bf end if} \- \\  
+		{\bf end for} \- \\  
+		{\bf end for} \- \\
+		{\bf end for} \- \\
+	{\bf end if} \- \\
+{\bf end for;} \\
+Output $\W$ as 
+$\W_{\co+1, \Delta^e}^{(q)}(\ta, d, m, \ta^e, 1, m^e, h; \x^*)$,
+and for each $\w \in \W$, $\mathcal{T}_{\w}$ and $n_{\w}$.
+\end{tabbing}
+
+
+
+\newpage
+\subsection{A Complete Algorithm to compute frequency vectors of e-components}
+
+We briefly summarize how to use the procedures described thus far 
+to obtain an algorithm.
+Our global constants are a frequency vector $\x^*_{\rm e}$ of an e-component, 
+two fixed tuples $(\ta^e_j, m^e_j, \Delta^e_j), j = 1, 2$
+a lower bound 
+${\rm ch}_{{\rm LB}}(e)$ and an upper bound
+${\rm ch}_{{\rm UB}}(e)$ on core height, where we take 
+$\rho = 2$. \bigskip\\
+%
+\noindent {\sc CompleteAlgorithmEdge}(Global constants: 
+$\ta^e_j, m^e_j, \Delta^e_j, \x^*_e, {\rm core~height~bounds}$)
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+%{\bf for each} base-edge $e \in E_B$ {\do} \+ \\
+$\Gamma^{\inn}_e: = \text{The set internal edges in 
+	$\x^*_e$}$;\\
+Compute $\W^{(0)}_{\co + \Delta}
+	(\ta, d, m, h; \x_e^*)$ for each \\
+		~~
+		$\Delta \in [2,3]$, 
+		$\ta \in \Lambda$, $d \in [0, \val(\ta)-\Delta]$,
+		$m \in [d, \val(\ta) -\Delta]$, 
+	$h \in [0, 	\min \{2, {\rm ch}_{{\rm UB}}(e)  \} ]$;\\
+	%
+	Compute 
+	$\W_{\en}^{(0)}(\ta, d, m; \x^*_e)$ for each 
+	$\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$,
+ 	$m \in [d, \val(\ta)-1]$;\\
+	%
+	Compute $\W_{\inl}^{(0)}(\ta, d, m; \x^*_e)$ for each 
+	$\ta \in \Lambda$, $d \in [0, \val(\ta)-2]$, 
+	$m \in [d, \val(\ta)-2]$;\\
+	%
+	
+	Compute 
+	$\W_{\en}^{(h)}(\ta, d, m; \x^*_e)$ for each 
+	$\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+~~$m \in [d, \val(\ta)-1]$, 
+     $h = \min\{|\Gamma^{\inn}_e| -1, 
+     {\rm ch}_{{\rm UB}}(e)-2-1\}$
+     if 
+	${\rm ch}_{{\rm UB}}(e) > 2$;\\
+	%
+	Compute 
+	$\W_{\co + \Delta}^{(0)}(\ta, d, m, h; \x^*_v)$ for each 
+     $\Delta \in [2, 3]$, 
+     $\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+~~$m \in [d, \val(\ta)-1]$, 
+     $h = \min\{|\Gamma^{\inn}_e| +2, 
+     {\rm ch}_{{\rm UB}}(e)\}$, 
+     if 
+	${\rm ch}_{{\rm UB}}(e) > 2$ ;\\
+	%
+	Compute $\W_{\co+1, \Delta^e_j}^{(q)}(\ta, d, m, \ta^e_j, 1,
+	 m^e_j, h; \x^*_e)$ for fixed 
+	$(\ta^e_j, m^e_j, \Delta^e_j)$, 
+	$\ta, \in \Lambda$, \\
+	~~integers
+	$d  \in [1, \val(\ta) - 1]$, 
+	$m\in [d,\val(\ta)-1]$, 
+	$q = \Delta_j ^e, j = 1, 2$;\\
+	%
+	{\bf for each} two tuples $(\ta_j, d_j, m_j, \ta^e_j, 1,
+	 m^e_j, h; \x^*_e)$, $j = 1, 2$ {\bf do} \+ \\
+      search for a feasible vector pair
+            in the pair of sets 
+            $\W_{\co+1, \Delta^e_j}^{(q)}(\ta_j, d_j, m_j, 
+            \ta^e_j, 1,  m^e_j, h_j; \x^*_e)$  \- \\
+            
+{\bf end for}.\\
+\end{tabbing}
+
+%%%%%%%%%%%%%%%%%%%%
+\pagebreak 
+\subsection{A Complete Algorithm to compute frequency vectors of isomers of a given graph $G^{\dagger}$}
+
+We briefly summarize how to use the procedures described thus far 
+to obtain an algorithm.
+Our global constants are a  graph $G^{\dagger}$, 
+a path partition $\mathcal{P} =\{P_1, P_2, \ldots, P_p\}$, and 
+for each base-vertex $t$ or base-edge $t$, a lower bound 
+${\rm ch}_{{\rm LB}}(t)$ and an upper bound
+${\rm ch}_{{\rm UB}}(t)$ on core height,where we take 
+~$\rho = 2$. \\
+%
+\noindent {\sc CompleteAlgorithm}(Global constants: $G^{\dagger},\mathcal{P}, {\rm core~height~bounds}$)
+\begin{tabbing}
+%
+% First, we set a tab stop every 3 mm
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= %
+\hspace{3mm} \= \hspace{3mm} \= \hspace{3mm} \= \hspace{3mm}  \kill
+% Throughout the description we use \+ and \- to advance and reduce by one tab stop
+% the indent of the following lines, and by necessity, use \> to advance the indent 
+% of the current line
+%
+Let $\ell_i := \ell(P_i)$ for each $i \in [1, p]$;\\
+Let $\delta_1^i := \lfloor (\ell_i - 1)/2 \rfloor$,  
+$\delta_2^i := \lceil (\ell_i - 1)/2 \rceil$ for each $i \in [1, p]$ ;\\
+Compute frequency vector $\x^*_t$ for each base-vertex 
+$t$ or and base-edge $t$;\\
+{\bf for each} base-vertex $v \in V_B$ {\do} \+ \\
+Let $h:= |\Gamma^{\inn}| + 2$;\\
+Let $\delta'_1 := \lfloor (h - 2-1)/2 \rfloor$,  
+$\delta'_2 := \lceil (h - 2-1)/2 \rceil$ ;\\
+	Compute $\W^{(0)}_{\co + \Delta_v}
+	(\ta_v, d_v, m_v, h; \x^*_v)$ for a fixed 
+	$(\ta_v, d_v, m_v, \Delta_v)$, \\
+	~~and for each 
+	$h \in [{\rm ch}_{{\rm LB}}(v), 
+	\min \{2, {\rm ch}_{{\rm UB}}(v)  \} ]$ if 
+	${\rm ch}_{{\rm LB}}(v) \leq 2$ and $\x^*_v(\tt bc)$ = 0;\\
+	%
+	Compute $\W^{(0)}_{\co + \Delta_v + 1}
+	(\ta_v, d_v, m, h; \x^*_v)$ for a fixed 
+	$(\ta_v, d_v, \Delta_v)$, \\
+	~~for each $m \in [d_v -1, \val(\ta_v) - \Delta_v -1]$, 
+	$h \leq 2$ if 
+	${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%
+	Compute 
+	$\W_{\en}^{(0)}(\ta, d, m; \x^*_v)$ for each 
+$\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+~~$m \in [d, \val(\ta)-1]$ if 
+	${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%
+	Compute 
+	$\W_{\en}^{(\delta'_1)}(\tb, d', m'; \x^*_v)$ for each 
+$\tb \in \Lambda$, $d' \in [1, \val(\tb)-1]$, \\
+~~$m' \in [d', \val(\tb)-1]$, 
+     if 
+	${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+	%	
+	Compute $\W_{\co+(\Delta + 1)}^{(0)}(\ta_v, d_v-1, m_{\ta}, \ta', d_{\ta'}, m_{\ta'}, \delta'_2; \x_v^*)$ , for 
+$\Delta \in [2, 3]$,  
+$\ta, \ta' \in \Lambda$, \\
+~~integers
+$d_{\ta} \in [0, \val(\ta) - \Delta-1]$, 
+$m_{\ta} \in [d_{\ta}, \val(\ta) - \Delta-1]$, $m_{\ta_v} < m_{v}$,
+$d_{\ta'} \in [1, \val(\ta') - 1]$, \\
+~~$m_{\ta'} \in [d_{\ta'}, \val(\ta')-1]$, if ${\rm ch}_{{\rm UB}}(v) > 2$ and $\x^*_v(\tt bc)$ = 1;\\
+{\bf for each} two tuples $(\ta_v, d_v-1, m_{\ta}, \ta', d_{\ta'}, m_{\ta'}, \delta'_2; \x_v^*)$, $(\tb, d', m'; \x^*_v)$ {\bf do} \+ \\
+      search for a feasible vector pair
+            in the pair of sets\\ 
+            $\W_{\co+(\Delta + 1)}^{(0)}(\ta_v, d_v-1, m_{\ta}, \ta', d_{\ta'}, m_{\ta'}, \delta'_2; \x_v^*)$ and  $\W_{\en}^{(\delta'_1)}(\tb, d', m'; \x^*_v)$ \- \\
+    {\bf end for}\- \\
+	%	
+{\bf end for};\\
+%
+{\bf for each} base-edge $e \in E_B$ {\do} \+ \\
+Compute $\W^{(0)}_{\co + \Delta}
+	(\ta, d, m, h; \x_e^*)$ for each \\
+		~~
+		$\Delta \in [2,3]$, 
+		$\ta \in \Lambda$, $d \in [0, \val(\ta)-\Delta]$,
+		$m \in [d, \val(\ta) -\Delta]$, 
+	$h \in [0, 	\min \{2, {\rm ch}_{{\rm UB}}(e)  \} ]$;\\
+	%
+	Compute 
+	$\W_{\en}^{(0)}(\ta, d, m; \x^*_e)$ for each 
+	$\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$,
+ 	$m \in [d, \val(\ta)-1]$;\\
+	%
+	Compute $\W_{\inl}^{(0)}(\ta, d, m; \x^*_e)$ for each 
+	$\ta \in \Lambda$, $d \in [0, \val(\ta)-2]$, 
+	$m \in [d, \val(\ta)-2]$;\\
+	%
+	$\Gamma^{\inn}_e: = \text{number of internal edges in 
+	$\x^*_e$}$;\\
+	Compute 
+	$\W_{\en}^{(h)}(\ta, d, m; \x^*_e)$ for each 
+	$\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+~~$m \in [d, \val(\ta)-1]$, 
+     $h = \min\{|\Gamma^{\inn}_e| -1, 
+     {\rm ch}_{{\rm UB}}(e)-2-1\}$
+     if 
+	${\rm ch}_{{\rm UB}}(e) > 2$;\\
+	%
+	Compute 
+	$\W_{\co + \Delta}^{(0)}(\ta, d, m, h; \x^*_v)$ for each 
+     $\Delta \in [2, 3]$, 
+     $\ta \in \Lambda$, $d \in [1, \val(\ta)-1]$, \\
+~~$m \in [d, \val(\ta)-1]$, 
+     $h = \min\{|\Gamma^{\inn}_e| +2, 
+     {\rm ch}_{{\rm UB}}(e)\}$, 
+     if 
+	${\rm ch}_{{\rm UB}}(e) > 2$ ;\\
+	%
+	Compute $\W_{\co+1, \Delta^e_j}^{(q)}(\ta, d, m, \ta^e_j, 1,
+	 m^e_j, h; \x^*_e)$ for fixed 
+	$(\ta^e_j, m^e_j, \Delta^e_j)$, 
+	$\ta, \in \Lambda$, \\
+	~~integers
+	$d  \in [1, \val(\ta) - 1]$, 
+	$m\in [d,\val(\ta)-1]$, 
+	$q = \Delta_j ^e, j = 1, 2$;\\
+	%
+	{\bf for each} two tuples $(\ta_j, d_j, m_j, \ta^e_j, 1,
+	 m^e_j, h; \x^*_e)$, $j = 1, 2$ {\bf do} \+ \\
+      search for a feasible vector pair
+            in the pair of sets 
+            $\W_{\co+1, \Delta^e_j}^{(q)}(\ta_j, d_j, m_j, 
+            \ta^e_j, 1,  m^e_j, h_j; \x^*_e)$  \\
+            /* We store feasible pairs with $\max \{h_1, h_2\} = 
+   {\rm ch}(G^\dagger)$ and\\
+  ~~feasible pairs $\max \{h_1, h_2\} \neq 
+    {\rm ch}(G^\dagger)$ in different sets */\- \\
+    {\bf end for}\-\\
+{\bf end for}.\\
+\end{tabbing}
+%\end{document}  
+ 
