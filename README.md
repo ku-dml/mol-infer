@@ -17,7 +17,9 @@ If you found it was useful in your research, please consider to cite our followi
 
 > (Cyclic package) T. Akutsu and H. Nagamochi, A novel method for inference of chemical compounds with prescribed topological substructures based on integer programming, 2020, https://arxiv.org/abs/2010.09203.
 
-> (Cyclic improved) J. Zhu, N.A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, An Improved Integer Programming Formulation for Inferring Chemical Compounds with Prescribed Topological Structures, 2021, submitted.
+> (Cyclic_improved package) J. Zhu, N.A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, An Improved Integer Programming Formulation for Inferring Chemical Compounds with Prescribed Topological Structures, 2021, submitted.
+
+> (2L-model package) Y. Shi, J. Zhu, N.A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi, T. Akutsu, A Two-layered Model for Inferring Chemical Compounds with Integer Programming, 2021, submitted.
 
 ## Introduction
 
