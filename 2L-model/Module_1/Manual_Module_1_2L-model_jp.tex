@@ -1,0 +1,463 @@
+\documentclass[11pt, titlepage, dvipdfmx, twoside]{jarticle}
+\linespread{1.1}
+%\documentclass[11pt,dvipdfmx,twoside]{jarticle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% style definitions
+%
+% following setting makes 3cm spaces for top and bottom, and
+% 2.5cm spaces for left and right
+%
+                                         % default setting
+\setlength{\oddsidemargin}{22pt}         % 62pt
+\setlength{\evensidemargin}{22pt}        % 62pt
+\setlength{\headheight}{12pt}            % 12pt
+\setlength{\textheight}{662pt}           % 592pt
+\setlength{\marginparsep}{10pt}          % 10pt
+\setlength{\footskip}{30pt}              % 30pt
+\setlength{\hoffset}{-13pt}              % 0pt
+\setlength{\paperwidth}{597pt}           % 597pt
+\setlength{\topmargin}{20pt}             % 20pt
+\setlength{\headsep}{25pt}               % 25pt
+\setlength{\textwidth}{427pt}            % 327pt
+\setlength{\marginparwidth}{106pt}       % 106pt
+\setlength{\marginparpush}{5pt}          % 5pt
+\setlength{\voffset}{-37pt}              % 0pt
+\setlength{\paperheight}{845pt}          % 845pt
+
+
+% 1 inch = 2.54 cm = 72.27 pt
+\long\def\invis#1{}
+\renewcommand{\baselinestretch}{1.20}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{framed}
+\usepackage{url}
+\usepackage{color}
+\newenvironment{myframe}{\begin{trivlist}\item[]
+    \hrule
+    \hbox to \linewidth\bgroup
+    \advance\linewidth by -30pt
+    \hsize=\linewidth
+    \vrule\hfill
+    \vbox\bgroup
+    \vskip15pt
+    \def\thempfootnote{\arabic{mpfootnote}}
+    \begin{minipage}{\linewidth}}{%
+    \end{minipage}\vskip15pt
+    \egroup\hfill\vrule
+    \egroup\hrule
+\end{trivlist}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\project}{{\tt mol-infer/2L-model}}
+%\newcommand{\project}{{\tt mol-infer/Cyclic}}
+\newcommand{\secref}[1]{第\ref{sec:#1}節}
+\newcommand{\tabref}[1]{表\ref{tab:#1}}
+\newcommand{\figref}[1]{図\ref{fig:#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\huge Module 1における特徴ベクトル生成の手順}
+\author{\project}
+\begin{document}
+\makeatletter 
+\let\c@lstlisting\c@figure
+\makeatother
+\西暦
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+
+\section{はじめに}
+本稿では, 本プロジェクト (\project) における Module 1の手順を解説する. 
+この Module 1 の入力と出力は以下の通りである. 
+
+\begin{oframed}
+\begin{description}
+\item[入力:] 化学グラフの集合 $D=\{G_1,G_2,\dots,G_p\}$.
+\item[出力:] 特徴ベクトルの集合 ${\mathcal F}(D)\triangleq\{f(G_1),f(G_2),\dots,f(G_p)\}$.
+  ただし $f$ は化学グラフを特徴ベクトルに変換する関数で,
+  論文~\cite{BH_2L-model}において提案されたものである. 
+\end{description}
+\end{oframed}
+
+なお入力される化学グラフはいくつかの条件を満たさなければならない. 
+たとえば四つ以上の炭素原子を持つ必要がある.
+(したがって水 (H$_2$O) は不可である.)
+また電荷のある原子, 価数が我々の定める標準値と異なる原子を持ってはならない.
+詳しくは\secref{quick}を参照されたい.
+ただしこれまでのバージョンと異なり, {\bf 連結でさえあれば,
+環構造・非環構造の別を問わずに取り扱うことができる}. 
+
+出力は, 具体的には以下の三つのファイルで与えられる.
+\begin{description}
+\item[(1)] 外縁木情報が記されたテキストファイル. 
+\item[(2)] 特徴ベクトルが記されたcsvファイル. 
+\item[(3)] 正規化された特徴ベクトルが記されたcsvファイル. 
+\end{description}
+このうち (3) は, Module 2 (ニューラルネットワークによる順方向予測)
+の入力として必要となる. また (1), (2), (3) のすべてが,
+Module 3 (混合整数線形計画法による逆方向予測) の入力として必要となる. 
+
+本稿の構成は以下の通りである. 
+\begin{itemize}
+\item \secref{preparation}: 基本的な用語, およびパッケージのファイル構成の説明. 
+\item \secref{quick}: 実行例. 
+\item \secref{io}: プログラムの入出力に関する詳細. 
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{準備}
+\label{sec:preparation}
+
+\subsection{用語の説明}
+\paragraph{化学グラフ.}
+{\bf 節点} (node) の集合と, 節点と節点を結ぶ{\bf 辺} (edge) の集合
+の対を{\bf グラフ} (graph) という.
+グラフにおける{\bf 閉路} (cycle) とは,
+ある節点を出発し, 辺を次々になぞって得られる節点の系列
+(ただし始点と終点以外の節点は二度以上訪れない) のうち, 始点と終点が一致するものをいう.
+
+節点に対する元素 (炭素, 窒素, 酸素など) の割当, 
+辺に対する多重度 (一般に1以上4以下の整数) の割当が
+与えられたグラフを{\bf 化学グラフ} (chemical graph) という. 
+
+\paragraph{記述子.}
+化学グラフの文脈における{\bf 記述子} (descriptor) とは, 化学グラフの特徴を表す指標をいう.
+一般に, 化学グラフは一つの記述子に対して一つの数値を取る.
+本プロジェクトで用いられる記述子の例として,
+水素を除く原子の数, コアに属する原子の数, コアの高さ, などがある. 
+詳細は論文~\cite{BH_2L-model}を参照のこと. 
+
+\paragraph{特徴ベクトル.}
+化学グラフと記述子の系列が与えられたとき,
+その化学グラフが各記述子に対して取る数値を順に並べたベクトルを{\bf 特徴ベクトル} (feature vector)
+という. 
+
+
+%各元素の種類の原子数等の化学物質を説明する数値, 
+%あるいはグラフの直径等の化学物質のグラフ表現のトポロジーに基づいて
+%計算される数値のベクトル. 
+
+
+\subsection{ファイル構成}
+パッケージに含まれるファイルとその役割は以下の通りである. 
+\begin{itemize}
+\item {\tt Makefile}: コンパイルのための makefile. 
+%\item {\tt cycle\_checker.cpp}: 化学グラフに閉路が存在するか否かを判定するためのプログラムのソースコード (C++).  
+\item {\tt eliminate.py}: 炭素原子の数が4未満など, 本プロジェクトが想定していない化学グラフを除去するための Python スクリプト. 
+\item {\tt 2L\_fv\_main.cpp}: {\bf 特徴ベクトル生成を行うメインプログラム}のソースコード (C++). 
+\item {\tt fringe}: 特徴生成プログラムにインクルードされる hpp ファイルを含むサブディレクトリ.
+  中身は以下の通り.
+  \begin{itemize}
+  \item {\tt ChemicalGraph.hpp}
+  \item {\tt RootedGraph.hpp}
+  \item {\tt TopologyGraph.hpp}
+  \item {\tt commonused.hpp}
+  \item {\tt cross\_timer.h}
+  \end{itemize}
+\item {\tt bin}: 特徴生成プログラムの実行形式ファイルを含むサブディレクトリ.
+  中身は以下の通り.
+  \begin{itemize}
+  \item {\tt 2L\_FV\_macos.bin}: macOS.
+  \item {\tt 2L\_FV\_ubuntu.bin}: Linux (Ubuntu).
+  \item {\tt 2L\_FV\_win.exe}: Windows.
+  \end{itemize}
+\item {\tt sample\_data}: 実行テストのためのデータファイルを含むサブディレクトリ. 中身は以下の通り.
+  \begin{itemize}
+  \item {\tt Sl\_all.sdf}: 
+    水可溶性に関するデータ (\url{http://moleculenet.ai/datasets-1}) に
+    記された1128個の化合物に関するデータ.  
+  \item {\tt Sl\_all\_eli.sdf}: {\tt Sl\_all.sdf}に{\tt eliminate.py}を適用して得られた SDF ファイル. 922個の化合物を含む.
+  \item {\tt Sl\_all\_eli\_fringe.txt}: {\tt Sl\_all\_eli.sdf} に特徴生成プログラムを適用して得られたファイルで, 外縁木情報が記されたテキストファイル. 
+  \item {\tt Sl\_all\_eli\_desc.csv}: {\tt Sl\_all\_eli.sdf} に特徴生成プログラムを適用して得られたファイルで, 特徴ベクトルが記されたcsvファイル. 
+  \item {\tt Sl\_all\_eli\_desc\_norm.csv}: {\tt Sl\_all\_eli.sdf} に特徴生成プログラムを適用して得られたファイルで, 正規化された特徴ベクトルが記されたcsvファイル. 
+  \end{itemize}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{実行例}
+\label{sec:quick}
+
+\subsection{データの妥当性を確認}
+化合物データは標準的なSDFファイルによって与えられなければならない.
+
+また各化学グラフ $G\in D$ は以下の条件を満たす必要がある.
+\begin{description}
+\item[(i)] $G$は4つ以上の炭素原子を持つ.
+  また電荷のある原子, 価数が標準値\footnote{\secref{caution}を参照せよ.}と異なる原子を持たない.
+\item[(ii)] 芳香辺 (aromatic edge) を含まない. 
+\end{description}
+
+(i) については, すべての化学グラフが条件を満たすかどうか,
+パッケージ内のプログラムを用いて判定し,
+条件を満たさないものを除去することができる. 
+
+(ii) について, 芳香辺は事前に単結合もしくは二重結合に変換しておく必要がある. 
+
+
+\paragraph{対象外の化学グラフを除去.}
+すべての化学グラフが条件 (i) を満たすか否かを判定し,
+満たすもののみを別のSDFファイルにまとめるには
+{\tt eliminate.py}を用いる.
+
+\begin{oframed}
+{\small
+\verb|$ python eliminate.py input.sdf|
+}
+\end{oframed}
+
+もし条件 (i) を満たさない化学グラフがあれば, その化学グラフの CID が
+警告として出力される.
+
+実行後, 条件 (i) を満たす化学グラフのみをまとめた
+{\tt input\_eli.sdf}というSDFファイルが生成される.
+もしすべての化学グラフが (i) を満たす場合は,
+{\tt input.sdf} と {\tt input\_eli.sdf} の中身は同一となる. 
+
+
+\subsection{特徴ベクトルの生成}
+すべての化学グラフが上記 (i), (ii) を満たすようなSDFファイルに対して
+特徴ベクトルを生成するには {\tt 2L\_fv\_main.cpp} をコンパイルして用いる. 
+なお当方の maxOS, Linux (Ubuntu), Windows 環境において
+コンパイルした実行形式ファイルを {\tt bin} ディレクトリに
+置いているので, それを用いても構わない. 
+
+ユーザが自分でコンパイルする場合, {\tt Makefile} が使用可能な環境では, 
+\begin{oframed}
+{\small
+\verb|$ make 2L_FV|
+}
+\end{oframed}
+とすればよい. そうでなければ
+\begin{oframed}
+{\small
+\verb|$ g++ -O2 -Wall -std=c++11 -o 2L_FV 2L_fv_main.cpp|
+}
+\end{oframed}
+とする.
+
+{\tt input\_eli.sdf} に対して特徴ベクトルを生成し,
+その結果を{\tt output\_fringe.txt}, {\tt output\_desc.csv}, {\tt output\_desc\_norm.csv} に出力するには,
+\begin{oframed}
+{\small
+\verb|$ ./2L_FV input_eli.sdf output|
+}
+\end{oframed}
+とする. 
+引数を与えずに実行すれば (もしくは引数が適切に与えられなかった場合), 
+指定すべき引数が出力されて終了する. 
+
+\invis{
+\subsection{別の化学グラフデータを特徴ベクトル化 (必須ではない)}
+
+本プロジェクトで構成する特徴ベクトル変換関数 $f$ は,
+元となる化学グラフデータ $D$ に依存する.
+別の化学グラフデータ $D'\ne D$ を,
+$f$ を用いて特徴ベクトルに変換するには,
+{\tt fv\_proj.cpp}を用いる. 
+
+
+コンパイルの方法は, {\tt Makefile} が使用可能な環境では, 
+\begin{oframed}
+{\small
+\verb|$ make FV_proj|
+}
+\end{oframed}
+とすればよい. そうでなければ
+\begin{oframed}
+{\small
+\verb|$ g++ -std=c++11 -Wall -O3 -o FV_proj fv_proj.cpp|
+}
+\end{oframed}
+とする.
+
+化学グラフデータ $D$ を{\tt FV\_ec}によって
+変換して得られた特徴ベクトルファイルを{\tt descriptor.csv}
+とする. すなわち変換写像 $f$ は $D$ から作られたものとする. 
+一方, $D$ とは別の化学グラフデータ $D'$ が記された
+SDFファイルを {\tt input.sdf} とする.
+${\mathcal F}(D')$ を {\tt output.csv}に出力するには以下を実行する.  
+\begin{oframed}
+{\small
+\verb|$ ./FV_proj descriptor.csv input.sdf output.csv|
+}
+\end{oframed}
+
+たとえば, テスト用のファイルに対して以下のように実行することができる. 
+\begin{oframed}
+{\small
+\verb|$ ./FV_proj data/sample2.csv data/sample1.sdf data/sample1_on_2.csv|
+}
+\end{oframed}
+
+なお{\tt FV\_proj}の実行は, Module 2 以降に進むために必須の操作ではない.
+{\tt FV\_proj}の用途として,
+すでに {\tt descriptor.csv} からニューラルネットワークが作られていて,
+そのニューラルネットワークを使って, {\tt input.sdf} に含まれる化学グラフの化学的性質の値を
+推定したい状況などが考えられる. 
+}
+
+\clearpage
+\section{プログラムの入出力に関する詳細}
+\label{sec:io}
+
+ここでは特徴ベクトル生成のメインプログラム{\tt 2L\_FV}
+(ソースコードは {\tt 2L\_fv\_main.cpp})
+の入出力および実行に関する注意を述べる. 
+
+\subsection{入力}
+
+このプログラムは入力のフォーマットとして標準的な SDF (Structure Data File) を使用している.
+SDF の書式について, 以下を参考資料として挙げておく. 
+\begin{itemize}
+\item \url{http://help.accelrysonline.com/ulm/onelab/1.0/content/ulm_pdfs/direct/reference/ctfileformats2016.pdf} (2021年2月1日 アクセス確認)
+\item \url{https://www.chem-station.com/blog/2012/04/sdf.html} (2021年2月1日 アクセス確認)
+\end{itemize}
+%例として、sample1.sdf (https://pubchem.ncbi.nlm.nih.gov/compound/6140) を添付した。
+
+
+
+\subsection{出力}
+プログラムは三つのファイルを出力する. 具体的には, 
+\begin{oframed}
+{\small
+\verb|$ ./2L_FV input_eli.sdf output|
+}
+\end{oframed}
+と実行した場合, 
+\begin{description}
+\item[(1)] 外縁木情報が記されたテキストファイル (\verb|output_fringe.txt|);
+\item[(2)] 特徴ベクトルが記されたcsvファイル (\verb|output_desc.csv|);
+\item[(3)] 正規化された特徴ベクトルが記されたcsvファイル (\verb|output_desc_norm.csv|);
+\end{description}
+  が出力される. 
+このうち (3) は, Module 2 (ニューラルネットワークによる順方向予測)
+の入力として必要となる. また (1), (2), (3) のすべてが,
+Module 3 (混合整数線形計画法による逆方向予測) の入力として必要となる.
+
+
+なお本プログラムが出力する (2), (3) の csv ファイルは,
+独自の FV フォーマットを採用している.
+このテキストファイルは, カンマで区切った CSV ファイルであり,
+Excelなどの表計算ソフトで開くことができる.
+具体的には, 一行目には特徴ベクトルの記述子が,
+二行目以降の各行には特徴ベクトルの数値データが記入される.
+
+\invis{
+例として、{\tt sample1.sdf} に対して {\tt FV\_ec} を実行した結果得られる
+{\tt sample1.csv} を示す.
+それぞれの構成要素はそのあとに説明する. 
+
+\begin{myframe}
+\begin{verbatim}
+CID,n,cs,ch,bl_2,ms,dg_co_1,dg_co_2,dg_co_3,dg_co_4,dg_nc_1,\
+dg_nc_2,dg_nc_3,dg_nc_4,bd_co_2,bd_co_3,bd_in_2,bd_in_3,\
+bd_ex_2,bd_ex_3,ns_co_C3,ns_co_C2,ns_nc_O1,ns_nc_N1,ns_nc_C2,ns_nc_C3,\
+ec_co_C2_C3_2,ec_co_C2_C2_1,ec_co_C2_C3_1,ec_co_C2_C2_2,\
+ec_in_C2_C3_1,ec_in_C3_C2_1,\
+ec_ex_C3_N1_1,ec_ex_C3_C3_1,ec_ex_C3_O1_1,ec_ex_C3_O1_2,nsH
+6140,12,6,4,1,128.333,0,5,1,0,3,1,2,0,3,0,0,0,1,0,1,5,2,\
+1,1,2,1,2,1,2,1,1,1,1,1,1,11
+\end{verbatim}
+\end{myframe}
+
+なお上記のバックスラッシュ \verb|\| とそれに続く改行は
+紙面の都合上挿入したものであり, 実際のファイル内では\verb|\|も現れなければ改行もされない. 
+記述子の概要は以下の通りである．詳しい説明は論文~\cite{BH_cyclic_arxiv}を参照せよ.
+
+\begin{itemize}
+\item {\bf CID:} 化合物の識別子 (Compound ID).
+  この例 ({\tt sample1.sdf}) では 6140 だが, これは\url{https://pubchem.ncbi.nlm.nih.gov/compound/6140} から取得可能なフェニルアラニン (Phenylalanine) である.
+\item {\bf n:} 水素を除く原子の数.
+\item {\bf cs:} コアに属する原子の数.
+\item {\bf ch:} コアの高さ.
+\item {\bf bl:} 2-leafの個数.
+\item {\bf ms:} 平均分子質量 $\textrm{ms}\triangleq\frac{1}{n}\sum_{a}\lfloor 10 \cdot \textrm{mass}(a)$, ただし $\textrm{mass}(a)$ は原子 $a$ の原子量を表す.
+\item {\bf dg\_co\_1, \dots, dg\_co\_4:} コアに属する原子で, 次数が 1,2,3,4 のものの個数.
+\item {\bf dg\_nc\_1, \dots, dg\_nc\_4:} コアに属さない原子で, 次数が 1,2,3,4 のものの個数. 
+\item {\bf bd\_co\_2, bd\_co\_3:} コア二重結合およびコア三重結合の数.
+\item {\bf bd\_in\_2, bd\_in\_3:} 内部二重結合および内部三重結合の数.
+\item {\bf bd\_ex\_2, bd\_ex\_3:} 外部二重結合および外部三重結合の数.
+\item {\bf ns\_co\_Xd:} コアに属する元素記号 X の原子で,
+  次数が d のものの個数.
+  たとえば {\tt ns\_co\_C3} は, コアに属する炭素原子 C で次数が3のものの個数を示す.
+\item {\bf ns\_nc\_Xd:} コアに属さない元素記号 X の原子で, 次数がdのものの個数.
+\item {\bf ec\_co\_Xx\_Yy\_2, ec\_co\_Xx\_Yy\_3:}
+  コア二重結合およびコア三重結合であって (無向辺),
+  次数 x の原子 X と次数 y の原子 Y を結ぶものの本数.
+  たとえば {\tt ec\_co\_C2\_C3\_2} は,
+  次数2の炭素原子 C および次数3の炭素原子 C を結ぶコア二重結合の本数を示す.
+\item {\bf ec\_in\_Xx\_Yy\_2, ec\_in\_Xx\_Yy\_3:}
+  内部二重結合および内部三重結合であって (親から子への有向辺),
+  次数 x の原子 X と次数 y の原子 Y を結ぶものの本数.
+\item {\bf ec\_ex\_Xx\_Yy\_2, ec\_ex\_Xx\_Yy\_3:}
+  外部二重結合および外部三重結合であって (親から子への有向辺),
+  次数 x の原子 X と次数 y の原子 Y を結ぶものの本数.
+\item {\bf nsH:} 水素原子の個数.
+\end{itemize}
+
+なお ns, ecで始まる記述子,
+、入力SDF内の化合物に現れるもののみがFVファイルに出力される.
+}
+
+\subsection{注意}
+\label{sec:caution}
+
+原子の質量の標準値は, プログラムの中に記載するハードコード仕様になっている.
+具体的には
+\begin{itemize}
+\item {\tt 2L\_fv\_main.cpp} 内の関数 {\tt init\_mass()}
+\item {\tt fringe/commonused.hpp} 内のオブジェクト {\tt map\_atomic\_number} および
+  {\tt map\_int2atomic}
+\end{itemize}
+で定められているが,
+質量の変更や, ほかの原子が必要な場合には,
+編集して再度コンパイルすることで利用できる.
+
+\invis{
+\begin{myframe}
+\begin{verbatim}
+M["B"]  = 108;
+M["C"]  = 120;
+M["O"]  = 160;
+M["N"]  = 140;
+M["F"]  = 190;
+M["Si"] = 280;
+M["P"]  = 310;
+M["S"]  = 320;
+M["Cl"] = 355;
+M["V"]  = 510;
+M["Br"] = 800;
+M["Cd"] = 1124;
+M["I"]  = 1270;
+M["Hg"] = 2006;
+M["Pb"] = 2072;
+M["Al"] = 269;
+\end{verbatim}
+\end{myframe}
+}
+
+\begin{thebibliography}{9}
+\bibitem{BH_2L-model}
+  Y.~Shi, J.~Zhu, N.A.~Azam, K.~Haraguchi, L.~Zhao, H.~Nagamochi and T.~Akutsu.
+  \newblock A Two-layered Model for Inferring Chemical Compounds with Integer Programming.
+  \newblock 2021, submitted.
+\end{thebibliography}
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
