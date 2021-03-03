@@ -625,7 +625,7 @@ def prepare_fv(
     min_dcp = dict()
     avg_dcp = dict()
     sd_dcp = dict()
-    for i in range(num_fv):
+    for i in range(1,num_fv):
         max_dcp[i] = fv.iloc[:, i].max()
         min_dcp[i] = fv.iloc[:, i].min()
         avg_dcp[i] = fv.iloc[:, i].mean()
