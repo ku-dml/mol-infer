@@ -23,10 +23,11 @@ If you found it was useful in your research, please consider to cite our followi
 
 ## Introduction
 
-This project consists of two packages:
-+ [Acyclic package for graphs with no cycle](Acyclic/) and
-+ [Cyclic package for graphs with cycle(s)](Cyclic/).
-+ [Cyclic improved package for graphs with cycle(s)](Cyclic_improved/).
+This project consists of four packages:
++ [Acyclic package for graphs with no cycle](Acyclic/);
++ [Cyclic package for graphs with cycle(s)](Cyclic/);
++ [Cyclic improved package for graphs with cycle(s)](Cyclic_improved/); and
++ [Two-layered model package](2L-model/).
 
 They has similar algorithm structure, thus have modules with the same names. However, their modules are NOT compatible since they use different algorithms. So you should think these two packges are two different projects.
 
