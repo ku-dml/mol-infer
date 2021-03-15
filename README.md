@@ -44,7 +44,7 @@ We have uploaded our programs on the following packages, where each package is a
 ### Package [Cyclic_improved](Cyclic_improved/) (Jan 2021)
 - **Input graphs:** Cyclic graphs.
 - **Reference:**
-  - J. Zhu, N.A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu: An Improved Integer Programming Formulation for Inferring Chemical Compounds with Prescribed Topological Structures, Proceedings of IEA/AIE 2021 conference, 2021, accepted.
+  - J. Zhu, N.A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu: An Improved Integer Programming Formulation for Inferring Chemical Compounds with Prescribed Topological Structures, *Proceedings of IEA/AIE 2021 conference* (https://ieaaie2021.wordpress.com), 2021, accepted.
 
 ### Package [Cyclic](Cyclic/) (Nov 2020)
 - **Input graphs:** Cyclic graphs.
