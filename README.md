@@ -31,7 +31,7 @@ This project consists of four packages:
 + [Cyclic improved package for graphs with cycle(s)](Cyclic_improved/); and
 + [Two-layered model package](2L-model/).
 
-They have a similar algorithmic structure, thus have modules with the same names.
+All packages have a similar algorithmic structure, thus have modules with the same names.
 However, their modules are NOT compatible, since they use different algorithms.
 You should think of different packages as different projects.
 
