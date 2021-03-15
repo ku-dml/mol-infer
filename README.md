@@ -33,7 +33,7 @@ We have uploaded our programs on the following packages, where each package is a
 
 **Notice:** Please visit each package for detail.
 - Some packages may not be fully prepared. 
-- In addition to structural assumptions, we may make other assumptions on input chemical graphs. For example, in [Cyclic](Cyclic/) and [Cyclic_improved](Cyclic_improved/), the graphs should be *2-lean*. 
+- In addition to structural assumptions, we may make other assumptions on input chemical graphs. For example, in [Cyclic](Cyclic/) and [Cyclic_improved](Cyclic_improved/), the graphs should be *2-lean* as well as cyclic. 
 
 
 ### Package [2L-model](2L-model/) (Mar 2021)
