@@ -1,6 +1,6 @@
 ---
 title: "Readme for the Mol-Infer project"
-date: "Mar 14, 2021"
+date: "March 15, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
 <STYLE TYPE="text/css">
 h1{
@@ -17,18 +17,12 @@ body{
 }</STYLE>
 ---
 
+
 # mol-infer: Molecular Infering
 
 Mol-infer is a project developed by the Discrete Mathematics Lab at Kyoto Univerisity (ku-dml).
-After many years research on original graph algorithms for infering molecular,
+After many years of research on original graph algorithms for infering molecular structures,
 we decided to open-source our programs for public use.
-If you found it was useful in your research,
-please consider to cite our paper(s) as well as this GitHub repository.
-
-
-## Overview of packages
-
-We have uploaded our programs on the following packages, where each package is assigned one subfolder. All packages have similar algorithm structure and consist of four modules. However, their modules are **NOT** compatible between packages since they use different algorithms. So you should think any two packages are two different projects.
 
 
 **Notice:** Please visit each package for detail.
