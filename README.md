@@ -35,7 +35,8 @@ we decided to open-source our programs for public use.
 
 ### Package [Acyclic](Acyclic/) (Sep 2020)
 - **Input graphs:** Graphs with no cycle (i.e., tree structured graphs)
-- **References:** N.A. Azam, J. Zhu, Y. Sun, Y. Shi, A. Shurbevski, L. Zhao, H. Nagamochi and T. Akutsu, A Novel Method for Inference of Acyclic Chemical Compounds with Bounded Branch-height Based on Artificial Neural Networks and Integer Programming, 2020, https://arxiv.org/abs/2009.09646.
+- **Reference:**
+  - N.A. Azam, J. Zhu, Y. Sun, Y. Shi, A. Shurbevski, L. Zhao, H. Nagamochi and T. Akutsu, A Novel Method for Inference of Acyclic Chemical Compounds with Bounded Branch-height Based on Artificial Neural Networks and Integer Programming, 2020, https://arxiv.org/abs/2009.09646.
 
 
 ## Requirement
