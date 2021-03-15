@@ -1,6 +1,6 @@
 ---
 title: "Readme for the Mol-Infer project"
-date: "Jan 22, 2021"
+date: "March 15, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
