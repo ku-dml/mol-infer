@@ -2,19 +2,6 @@
 title: "Readme for the Mol-Infer project"
 date: "March 15, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
-<STYLE TYPE="text/css">
-h1{
-	background-color: #d1f1ff;
-}
-h2{
-	background-color: #ddf8ff;
-}
-h3{
-	background-color: #eeffff;
-}
-body{
-	font-size: 20pt;
-}</STYLE>
 ---
 
 
