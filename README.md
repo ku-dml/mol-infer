@@ -15,7 +15,7 @@ please consider citing our paper(s) as well as this GitHub repository.
 
 ## Overview of packages
 
-We have uploaded our programs on the following packages, where each package is assigned one subfolder. 
+We have uploaded our programs in the following packages, where each package is assigned one subfolder. 
 All packages have a similar algorithmic structure and consist of four modules.
 However, modules are **NOT** compatible between packages, since they use different algorithms.
 You should think of different packages as different projects.
