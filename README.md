@@ -21,7 +21,7 @@ However, modules are **NOT** compatible between packages, since they use differe
 You should think of different packages as different projects.
 
 
-**Notice:** Please visit each package for detail.
+**Notice:** Please visit each package for details.
 - Some packages may not be fully prepared. 
 - In addition to structural assumptions, we may make other assumptions on input chemical graphs. For example, in [Cyclic](Cyclic/) and [Cyclic_improved](Cyclic_improved/), the graphs should be *2-lean* as well as cyclic. 
 
