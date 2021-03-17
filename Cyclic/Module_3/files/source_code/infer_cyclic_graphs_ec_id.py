@@ -488,16 +488,15 @@ usage: {} (ANNfile_prefix) (target_value) (chemical_specification_file) (outputf
         # for dd, var in ann_descriptor_variables.items():
         #     print(dd, var.value())
         
-        dv_dict = {d:v for d, v in zip(fv_names, fv_values)}
-        
         x_star = list()
-            
+        
         for desc_name in des:
             x_star.append(ann_descriptor_variables[desc_name].value())
+            
         y_star = ann.propagate(x_star)[0]
         
         print("ANN propagated y*:", "{:.3f}".format(y_star))
-
+        
     print("Solving Time:", "{:.3f}".format(solve_end - init_end))
         
 
