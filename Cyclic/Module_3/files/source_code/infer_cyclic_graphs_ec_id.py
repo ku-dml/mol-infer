@@ -1,5 +1,5 @@
 from cyclic_graphs_MILP_ec_id import *
-from read_instance_BH_cyclic_v05 import *
+from read_instance_BH_cyclic import *
 import ann_inverter
 
 import subprocess
@@ -488,49 +488,15 @@ usage: {} (ANNfile_prefix) (target_value) (chemical_specification_file) (outputf
         # for dd, var in ann_descriptor_variables.items():
         #     print(dd, var.value())
         
-        ## Check the feature vector of the inferred graph
-        # call subprocess externally to calculate 
-        # the fv of the calculated graph
-        fv_result = subprocess.run(
-            ["./fv", outputfileprefix + ".sdf"], 
-                capture_output=True, text=True
-            )  
-        fv_output = fv_result.stdout.split("\n")
-        fv_names = fv_output[0].split(",")[1:]
-        fv_values = [float(v) for v in fv_output[1].split(",")[1:]]
-        
         dv_dict = {d:v for d, v in zip(fv_names, fv_values)}
         
-        x_dagger = list()
         x_star = list()
-        x_different = False
-        x_difference = dict()
             
         for desc_name in des:
-            if (desc_name in fv_names):
-                x_dagger.append(dv_dict[desc_name])                
-            else:
-                x_dagger.append(0)
             x_star.append(ann_descriptor_variables[desc_name].value())
-            if abs(x_dagger[-1] - x_star[-1]) > 0.001:
-                x_different = True
-                x_difference[desc_name] = (x_dagger[-1], x_star[-1])
-                
-        y_dagger = ann.propagate(x_dagger)[0]
         y_star = ann.propagate(x_star)[0]
         
         print("ANN propagated y*:", "{:.3f}".format(y_star))
-        if x_different:
-            print("Descriptor mismatch:")
-            print("Descriptor: (x*, x)")
-            for dname, dval in x_difference.items():
-                print(f"{dname}:", dval)
-            print("="*20)
-            print("Inferred graph y:", "{:.3f}".format(y_dagger))
-            print("Deviation:", 
-                  "{:.3f}".format(abs(target_value - y_dagger)*100/target_value), "%")
-        else:
-            print("All descriptors match")
 
     print("Solving Time:", "{:.3f}".format(solve_end - init_end))
         
