@@ -95,7 +95,7 @@ ANNの逆問題に対する定式化したMILPを実装したスクリプト~\ci
 データを用意し，指定の入力データに対して定式化したMILPを実行するPythonスクリプト．
 このスクリプトの使用に関する詳細は，第\ref{sec:Exp}節に記載されている．
 
-\item {\tt read\_instance\_BH\_cyclic\_v05.py}\\
+\item {\tt read\_instance\_BH\_cyclic.py}\\
 与えられたテキストファイルからトポロジカル仕様を読み取るために必要な関数を含むPythonスクリプト．
 
 \item フォルダ {\tt topological\_description}\\
@@ -129,17 +129,17 @@ ANNの学習で使用されるデスクリプタを含むコンマ区切り形�
 %
 各ファイルのデータ形式は第\ref{sec:InOut}節で説明されており，実際の例は第\ref{sec:Exp}節で説明されてる．
 
-\item {\tt fv4\_cyclic\_stdout.cpp}\\
-SDF形式で保存された化学グラフの特徴ベクトルを計算するC ++プログラム．
-このプログラムの入力と出力は，MILPの解として推定されるグラフのデスクリプタ値
-を検証するためにPythonスクリプト{\tt infer\_cyclic\_graphs\_ec\_id.py}
-で動作するようにカスタマイズされている（解が存在する場合）．
-このソースファイルは，{\tt fv}という名前の実行ファイルにコンパイルする必要がある．
-
-\item {\tt fv}\\
-上記のC ++プログラムの実行可能なバイナリファイル．
-この実行可能ファイルは，オペレーティングシステム
-Linux Mint 18.3を実行しているPC上で{\tt gcc}バージョン5.4.0によってコンパイルされている．
+% \item {\tt fv4\_cyclic\_stdout.cpp}\\
+% SDF形式で保存された化学グラフの特徴ベクトルを計算するC ++プログラム．
+% このプログラムの入力と出力は，MILPの解として推定されるグラフのデスクリプタ値
+% を検証するためにPythonスクリプト{\tt infer\_cyclic\_graphs\_ec\_id.py}
+% で動作するようにカスタマイズされている（解が存在する場合）．
+% このソースファイルは，{\tt fv}という名前の実行ファイルにコンパイルする必要がある．
+% 
+% \item {\tt fv}\\
+% 上記のC ++プログラムの実行可能なバイナリファイル．
+% この実行可能ファイルは，オペレーティングシステム
+% Linux Mint 18.3を実行しているPC上で{\tt gcc}バージョン5.4.0によってコンパイルされている．
 %
 \end{itemize}
 \end{itemize}
@@ -409,7 +409,6 @@ Start Solving Using CPLEX...\\
 Status: Feasible 		\\
 MILP y*: 223.856 		\\
 ANN propagated y*: 223.856 \\
-All descriptors match    	\\
 Solving Time: 52.534       
 \end{oframed}
 
