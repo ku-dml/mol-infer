@@ -1,10 +1,15 @@
 ---
-title: "Readme for the Cyclic Improved Package of Project Mol-Infer"
-date: "Feb 15, 2021"
+title: "Readme for the 2L-model Package of Project Mol-Infer"
+date: "March 20, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
 **STATUS**
+
+Todo:
+
++ English manual of Modules 1 and 2
++ Japanese manual of Module 3
 
 We have carefully prepared this repository. If one finds bugs or mistakes, please contact us so that we can fix them
 in the next release. Thank you.
@@ -15,7 +20,7 @@ in the next release. Thank you.
 
 Mol-infer is a project developed by the Discrete Mathematics Lab at Kyoto Univerisity (ku-dml). See [the top page](https://github.com/ku-dml/mol-infer) for more detail.
 
-## Introduction of the Cyclic Package
+## Introduction of the 2L-model Package
 
 This package consists of four modules.
 
@@ -25,7 +30,7 @@ This package consists of four modules.
 [Module 3](Module_3/) for detail.
 + Module 4 generates graphs (partial enumeration). See [Module 4](Module_4/) for detail.
 
-In order to understand how they deal with these tasks, one may need to read our [paper](https://arxiv.org/abs/2010.09203).
+In order to understand how they deal with these tasks, one may need to read our [paper](https://doi.org/10.3390/ijms22062847). There is also an illustration of the flow in Japanese: see [JPEG file](illustration.jpg) or [PDF file](flow-jp.pdf).
 
 ## Compile and Usage
 
