@@ -30,7 +30,7 @@ This package consists of four modules.
 [Module 3](Module_3/) for detail.
 + Module 4 generates graphs (partial enumeration). See [Module 4](Module_4/) for detail.
 
-In order to understand how they deal with these tasks, one may need to read our [paper](https://doi.org/10.3390/ijms22062847). There is also an illustration of the flow in Japanese: see [JPEG file](illustration.jpg) or [PDF file](flow-jp.pdf).
+In order to understand how they deal with these tasks, one may need to read our [paper](https://doi.org/10.3390/ijms22062847). There is also an illustration of the flow in Japanese: see [JPEG file](illustration.jpg) or [PDF file](flow_jp.pdf).
 
 ## Compile and Usage
 
