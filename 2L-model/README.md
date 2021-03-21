@@ -35,3 +35,7 @@ In order to understand how they deal with these tasks, one may need to read our 
 ## Compile and Usage
 
 See the user's manual in each module please.
+
+## How Input and Output Files Are Used
+![how input and output files are used](illustration.jpg)
+
