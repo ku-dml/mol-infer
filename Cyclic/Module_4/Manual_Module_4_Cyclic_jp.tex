@@ -3,6 +3,7 @@
 % File: Module4_manual_jp.tex
 % Japanese manual for the program for generating chemical isomers
 % Edited: March 22, 2021, Alex
+% Checked: March 25, 2021, Haraguchi
 %
 %%%%%%%%%%%%%%%%%%%%
 
@@ -74,7 +75,7 @@
 
 
 
-当モーデュールに含まれているファイル及びフォルダの構造は以下の通りである．\\
+当モジュールに含まれているファイル及びフォルダの構造は以下の通りである．\\
 \dirtree{%
 .1 ./Module\_4.
 .2 Manual\_Module\_4\_Cyclic\_jp.pdf.
@@ -116,26 +117,26 @@
 %
 \begin{itemize}
  \item {\tt Manual\_Module\_4\_Cyclic\_jp.pdf}\\
-  この用紙．
+  %この用紙．
+  この冊子．
  \item {\tt Manual\_Module\_4\_Cyclic\_jp.tex}\\
-  この用紙の\LaTeX のソースファイル．
+  %この用紙の\LaTeX のソースファイル．
+  この冊子の\LaTeX のソースファイル．
  \item {\tt Manual\_Module\_4\_Cyclic\_en.pdf}\\
-  この用紙の英語版．
+  この冊子の英語版．
  \item {\tt Manual\_Module\_4\_Cyclic\_en.tex}\\
- 英語版の用紙の\LaTeX のソースファイル．
+   英語版の冊子の\LaTeX のソースファイル．
 \item{ {\tt Pseudocode\_Graph\_Generation.pdf}}\\
- グラフ探索アルゴリズムの疑似コードを記したpdfファイルである.
+  グラフ探索アルゴリズムの疑似コードを記したpdfファイル.
  
  \item フォルダ {\tt files}
  \begin{itemize}
  \item {\tt Makefile} \\
-    当モデュールに含まれているC++プログラムを簡易コンパイル
-    するためのファイル
+    当モジュールに含まれているC++プログラムを簡易コンパイルするためのファイル
     
     \item フォルダ {\tt executables}\\
-    コンパイルされたの実行ファイルが入れているのフォルダ．
-    サブフォルダとして三つのメインOS：linux，osx，及びwindows
-    に分けている．
+      コンパイルされた実行ファイルが入ったフォルダ．
+      サブフォルダとして三つのメインOS：linux，osx，及びwindowsに分かれている．
  
 \item フォルダ {\tt instances}\\
 	入力のインスタンスのフォルダである．
@@ -340,15 +341,15 @@
 \subsection{プログラムの実行と計算例}
 \label{sec:Example_p}
 
-ここでは分割プログラムの実行方法と，具体例を入力した場合の計算結果を示す．
+ここでは入力グラフを非環状部分グラフに分割するためのプログラムの実行方法と，
+サンプルファイルを入力として用いた場合の計算結果を示す．
 
-コンパイルされた実行ファイルは以下のOS上で
-実行試みるのは済みである\\
-- linux \\
-- osx \\
-- windows (cygwin)．\\
-また，当パッケージに含まれているのソースファイルは
-以下のようにコンパイルできる．
+コンパイルされた実行ファイルは, 以下のOS上で動作確認済みである.
+\begin{itemize}
+\item[-] linux
+\item[-] osx 
+\item[-] windows (cygwin)
+\end{itemize}
 
 \subsubsection{実行方法}
 \label{sec:compile_p}
@@ -359,12 +360,12 @@
 % 		Linux Ubuntu 20.04, コンパイラー g++ ver 9.3 で確認したが，g++がインストールされていない場合は，次のようにインストールできる．\\
 % 		\verb|$ sudo apt install g++|
 	\item {\em コンパイル}\\
-	      ターミナル上では{\tt files}のフォルダへ移動する．
-	      その次，システム上では{\tt make}のコマンド
-	      が含まれていれば，以下のコマンドで簡易コンパルできる．
+	      ターミナル上で{\tt files}のフォルダへ移動する．
+	      もしシステム上で{\tt make}のコマンドが使用可能であれば，
+	      以下のコマンドで簡易コンパイルできる．
 	      \verb|$ make generate_partition|\\
-	      もし{\tt make}のコマンドが使えない状態であれば，
-	      以下のコンパンドでコンパイルできる． \\	
+	      もし{\tt make}のコマンドが使えなければ，
+	      以下のコマンドでコンパイルできる． \\	
 		\verb|$ g++ -o generate_partition ./main/generate_partition.cpp -O3 -std=c++11|
 	\item {\em 実行}\\
 		\verb|$ ./generate_partition instance.sdf instance_partition.txt|\\
@@ -481,16 +482,15 @@
 \subsection{異性体生成プログラムの実行と計算例}
 \label{sec:Example_m}
 
-ここで異性体生成プログラムの実行方法と，具体例を入力した場合の計算結果を示す．
+ここで異性体生成プログラムの実行方法と，サンプルファイルを入力として実行した場合の計算結果を示す．
 
-コンパイルされた実行ファイルは以下のOS上で
-実行試みるのは済みである\\
-- linux \\
-- osx \\
-- windows (cygwin)．\\
-また，当パッケージに含まれているのソースファイルは
-以下のようにコンパイルできる．
 
+コンパイルされた実行ファイルは, 以下のOS上で動作確認済みである.
+\begin{itemize}
+\item[-] linux
+\item[-] osx 
+\item[-] windows (cygwin)
+\end{itemize}
 
 
 \subsubsection{実行方法}
@@ -503,12 +503,12 @@
 % 		\verb|$ sudo apt install g++|
 	\item {\em コンパイル}\\
 	
-	      ターミナル上では{\tt files}のフォルダへ移動する．
-	      その次，システム上では{\tt make}のコマンド
-	      が含まれていれば，以下のコマンドで簡易コンパルできる．
+	      ターミナル上で{\tt files}のフォルダへ移動する．
+	      もしシステム上で{\tt make}のコマンド
+	      が使用可能であれば，以下のコマンドで簡易コンパイルできる．
 	      \verb|$ make generate_isomers|\\
 	      もし{\tt make}のコマンドが使えない状態であれば，
-	      以下のコンパンドでコンパイルできる． \\  
+	      以下のコマンドでコンパイルできる． \\  
 		\verb|$ g++ -o generate_isomers ./main/generate_isomers.cpp -O3 -std=c++11| 
 	\item {\em 実行}\\
 		\verb|$ ./generate_isomers instance.txt a b c d output.sdf instance_partition.txt|\\
