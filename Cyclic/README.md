@@ -29,5 +29,5 @@ In order to understand how they deal with these tasks, one may need to read our 
 
 ## Compile and Usage
 
-For quick instructions on how to get started please check the [Graphical Instruction](flow_cyclic.pdf).
+For quick instructions on how to get started please check the [Graphical Instruction](cyclic_flow.pdf).
 For more detailed information, please see the user's manual in each module please.
