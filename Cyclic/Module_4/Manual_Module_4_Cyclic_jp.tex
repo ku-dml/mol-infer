@@ -35,6 +35,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{url}
+\usepackage{dirtree}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -70,85 +71,144 @@
 \section{概要}
 この冊子では，与えられた2-lean環状化学グラフの構造異性体を列挙する~\cite{branch}プログラムの使い方を説明する.
 
-また，このフォルダにはこの冊子以外に以下のファイルとフォルダが含まれている．
+******************************************************
+The structure of files and folders of this module are 
+as follows\\
+\dirtree{%
+.1 ./Module\_4.
+.2 Manual\_Module\_4\_Cyclic\_jp.pdf.
+.2 Manual\_Module\_4\_Cyclic\_jp.tex.
+.2 Manual\_Module\_4\_Cyclic\_en.pdf.
+.2 Manual\_Module\_4\_Cyclic\_en.tex.
+.2 Pseudocode\_Graph\_Generation.pdf.
+.2 files.
+.3 Makefile.
+.3 executables.
+.4 linux.
+.5 generate\_isomers.
+.5 generate\_partition.
+.4 osx.
+.5 generate\_isomers.
+.5 generate\_partition.
+.4 windows.
+.5 generate\_partition.exe.
+.5 generate\_isomers.exe.
+.3 instances.
+.4 sample\_1\_partition.txt.
+.4 sample\_1.png.
+.4 sample\_1.sdf.
+.3 main.
+.4 readme.txt.
+.4 generate\_partition.cpp.
+.4 output.sdf.
+.4 generate\_isomers.cpp.
+.3 include.
+.4 chemical\_graph.hpp.
+.4 data\_structures.hpp.
+.4 tools.hpp.
+.4 cross\_timer.h.
+.4 fringe\_tree.hpp.
+}
+
+また，この冊子以外に含まれているファイルとフォルダの
+内容は以下のとおりである．
 %
+\begin{itemize}
+ \item {\tt Manual\_Module\_4\_Cyclic\_jp.pdf}\\
+  この用紙．
+ \item {\tt Manual\_Module\_4\_Cyclic\_jp.tex}\\
+  この用紙の\LaTeX のソースファイル．
+ \item {\tt Manual\_Module\_4\_Cyclic\_en.pdf}\\
+  この用紙の英語版．
+ \item {\tt Manual\_Module\_4\_Cyclic\_en.tex}\\
+ 英語版の用紙の\LaTeX のソースファイル．
+\item{ {\tt Pseudocode\_Graph\_Generation.pdf}}\\
+ グラフ探索アルゴリズムの疑似コードを記したpdfファイルである.
+ 
+ \item フォルダ {\tt files}
+ \begin{itemize}
+ \item {\tt Makefile} \\
+    ******************************\\
+    Compilation directives for the C++ programs of this module.
+    
+    \item Folder {\tt executables}\\
+    ********************************\\
+    A folder that contains compiled executable files for 
+    each of the architectures: linux, osx, and windows.
+ 
+\item フォルダ {\tt instances}\\
+	入力のインスタンスのフォルダである．
 	\begin{itemize}
-		
-	\item フォルダ{\tt main}\\
-		プログラムを走らせるmainフォルダである.
-		\begin{itemize}
-			\item{gen\_partition.cpp}\\
-				環状化学グラフを, 非環状部分グラフに分割するためのプログラムである.
-				
-			\item{main.cpp}\\
-				2-lean環状化学グラフの構造異性体を列挙するためのプログラムである.
-
-			\item{Presudocode\_Graph\_Generation.pdf}\\
-			グラフ探索アルゴリズムの疑似コードを記したpdfファイルである.
-		\end{itemize}
-		
-	\item フォルダ{\tt include}\\
-		このプログラムに使われるヘッダファイルのフォルダである．
-		\begin{itemize}
-			\item{chemical\_graph.hpp}\\
-			  化学グラフためのヘッダファイルである.
-			\item{cross\_timer.h}\\
-				計算時間を計測するためのヘッダファイルである．
-				
-			\item{data\_structures.hpp}\\
-				化学グラフのデータ構造を定義するヘッダファイルである． 
-				
-			\item{debug.h}\\
-				デバッグのためのヘッダファイルである．
-				
-			\item{fringe\_tree.hpp}\\
-				外縁木(fringe tree)~\cite{branch}を列挙する関数のヘッダファイルである．
-				
-			\item{tools.hpp}\\
-				便利なツール関数のヘッダファイルである．		
-		\end{itemize}
-	\item フォルダ{\tt instances}\\
-		入力のインスタンスのフォルダである．
-		\begin{itemize}
-			\item{\tt sample\_1.sdf}\\
-				節点数が20, 核サイズが18，核高が1
-				となる化合物が記載されている入力データである．
-			\item{\tt sample\_1\_partition.txt}\\
-				sample\_1の分割情報ファイルである.
-				\item{\tt sample\_2.sdf}\\
-				節点数が50, 核サイズが24，核高が6
-				となる化合物が記載されている入力データである.
-			\item{\tt sample\_2\_partition.txt}\\
-			sample\_2の分割情報ファイルである.
-			\item{\tt sample\_3.sdf}\\
-			節点数が60, 核サイズが31，核高が4
+		\item{\tt sample\_1.sdf}\\
+			節点数が20, 核サイズが18，核高が1
+			となる化合物が記載されている入力データである．
+		\item{\tt sample\_1\_partition.txt}\\
+			sample\_1の分割情報ファイルである.
+			\item{\tt sample\_2.sdf}\\
+			節点数が50, 核サイズが24，核高が6
 			となる化合物が記載されている入力データである.
-			\item{\tt sample\_3\_partition.txt}\\
-			sample\_3の分割情報ファイルである.
-			\item{\tt sample\_4.sdf}\\
-			節点数が120, 核サイズが60，核高が4
-			となる化合物が記載されている入力データである.
-			\item{\tt sample\_4\_partition.txt}\\
-			sample\_4の分割情報ファイルである.
-
-		\end{itemize}
-
+		\item{\tt sample\_2\_partition.txt}\\
+		sample\_2の分割情報ファイルである.
+		\item{\tt sample\_3.sdf}\\
+		節点数が60, 核サイズが31，核高が4
+		となる化合物が記載されている入力データである.
+		\item{\tt sample\_3\_partition.txt}\\
+		sample\_3の分割情報ファイルである.
+		\item{\tt sample\_4.sdf}\\
+		節点数が120, 核サイズが60，核高が4
+		となる化合物が記載されている入力データである.
+		\item{\tt sample\_4\_partition.txt}\\
+		sample\_4の分割情報ファイルである.
+      \end{itemize}
+\item フォルダ{\tt main}\\
+	プログラムを走らせるmainフォルダである.
+	\begin{itemize}
+		\item{\tt generate\_partition.cpp}\\
+			環状化学グラフを, 非環状部分グラフに分割するためのプログラムである.
+		\item{\tt generate\_isomers.cpp}\\
+			2-lean環状化学グラフの構造異性体を列挙するためのプログラムである.
 	\end{itemize}
+	
+\item フォルダ{\tt include}\\
+	このプログラムに使われるヘッダファイルのフォルダである．
+	\begin{itemize}
+		\item{\tt chemical\_graph.hpp}\\
+		  化学グラフためのヘッダファイルである.
+		\item{\tt cross\_timer.h}\\
+			計算時間を計測するためのヘッダファイルである．
+			
+		\item{\tt data\_structures.hpp}\\
+			化学グラフのデータ構造を定義するヘッダファイルである． 
+			
+		\item{\tt debug.h}\\
+			デバッグのためのヘッダファイルである．
+			
+		\item{\tt fringe\_tree.hpp}\\
+			外縁木(fringe tree)~\cite{branch}を列挙する関数のヘッダファイルである．
+			
+		\item{\tt tools.hpp}\\
+			便利なツール関数のヘッダファイルである．		
+	\end{itemize}
+    \end{itemize}
+\end{itemize}
 
 次に，この冊子の構成について説明する．
 第\ref{sec:term}節では，この冊子およびプログラム内で使用している用語について説明する．
-第\ref{sec: partition}節では, 環状化学グラフを非環状部分グラフに分割するプログラムの入力と出力について説明し, 実際の計算例を示す．
-第\ref{sec: main}節では，与えられた2-lean環状化学グラフの構造異性体を生成するプログラムの入力と出力について説明し, 実際の計算例を示す．
+第\ref{sec: partition}節では, 
+環状化学グラフを非環状部分グラフに分割するプログラムの入力と出力について説明し, 
+実際の計算例を示す．
+第\ref{sec: main}節では，
+与えられた2-lean環状化学グラフの構造異性体を生成するプログラムの入力と出力について説明し, 
+実際の計算例を示す．
 
 
-\newpage
+% \newpage
 
 \section{用語の説明}
 \label{sec:term}
 
 この節では，用語について説明する．
-\begin{itemize}
-
+\begin{itemize}	
 \item 化学グラフ\\
 	化学グラフは節点集合と枝集合の組で化合物の構造を表すものである．
 	各節点には原子の種類が割り当てられており，各枝には結合の多重度が割り当てられている．
@@ -157,7 +217,7 @@
 
 \item 特徴ベクトル\\
 化学グラフにおける各化学元素の数などの情報を与える数値ベクトル．
-本プロジェクトの特徴ベクトルに使われるディスクリプターの詳細な情報は, ~\cite{branch}を参照.
+本プロジェクトの特徴ベクトルに使われるディスクリプターの詳細な情報は,~\cite{branch}を参照.
 
 
 \item 分割情報\\
@@ -191,9 +251,12 @@
 %\newpage
 %\subsubsection{入力データの形式}
 %\label{sec:InputFormat_p}
-この分割プログラムの入力するSDFファイルのフォーマットについて，
-\url{https://www.chem-station.com/blog/2012/04/sdf.html}などの解説が分かりやすい．
-さらに，正確な定義書として，公式資料 \url{http://help.accelrysonline.com/ulm/onelab/1.0/content/ulm_pdfs/direct/reference/ctfileformats2016.pdf} を参照するとよい．
+この分割プログラムの入力するSDFファイルのフォーマットについて，\\
+\url{https://www.chem-station.com/blog/2012/04/sdf.html}\\
+などの解説が分かりやすい．
+さらに，正確な定義書として，公式資料\\
+\url{http://help.accelrysonline.com/ulm/onelab/1.0/content/ulm_pdfs/direct/reference/ctfileformats2016.pdf}\\
+を参照するとよい．
 
 二つ目は出力される分割情報を保存するtxtファイル名である.
 \bigskip
@@ -276,6 +339,14 @@
 \subsection{プログラムの実行と計算例}
 \label{sec:Example_p}
 
+*********************************\\
+A compiled executable that has been tested on\\
+- linux \\
+- osx \\
+- windows (cygwin) \\
+is included in the set of files.
+In addition, we describe how the accompanying source files can be compiled.
+
 ここでは分割プログラムの実行方法と，具体例を入力した場合の計算結果を示す．
 
 \subsubsection{実行方法}
@@ -284,12 +355,17 @@
 	\item {\em 環境確認}\\
 		ISO C++ 2011標準に対応するC++コンパイラーがあれば問題ないと考えられる．
 		%
-		Linux Ubuntu 20.04, コンパイラー g++ ver 9.3 で確認したが，g++がインストールされていない場合は，次のようにインストールできる．\\
-		\verb|$ sudo apt install g++|
+% 		Linux Ubuntu 20.04, コンパイラー g++ ver 9.3 で確認したが，g++がインストールされていない場合は，次のようにインストールできる．\\
+% 		\verb|$ sudo apt install g++|
 	\item {\em コンパイル}\\
-		\verb|$ g++ -o gen_partition gen_partition.cpp -O3 -std=c++11|
+	      ************************************* \\
+	      In the terminal, navigate to the {\tt files} subfolder.
+	      Then, if the {\tt make} command is available on the system, the program can be simply compiled by typing \\
+	      \verb|$ make generate_partition|\\
+	      In case the {\tt make} command is not available, then the program can be compiled as \\	
+		\verb|$ g++ -o generate_partition ./main/generate_partition.cpp -O3 -std=c++11|
 	\item {\em 実行}\\
-		\verb|$ ./gen_partition instance.sdf instance_partition.txt|\\
+		\verb|$ ./generate_partition instance.sdf instance_partition.txt|\\
 		\verb|instance.sdf| で入力の化学グラフファイル，
 	  \verb|instance_partition.txt| で分割情報の出力txtファイルを指定する．
 \end{itemize}
@@ -301,7 +377,7 @@
 具体例として，以下のような条件で実行する．
 
 \begin{itemize}
-\item 入力ファイル: フォルダー{\tt instances}内の{\tt sample\_1.sdf}
+\item 入力ファイル: フォルダ{\tt instances}内の{\tt sample\_1.sdf}
 \item 分割情報の指定出力ファイル: {\tt partition.txt}
 \end{itemize}
 
@@ -309,7 +385,7 @@
 
 \bigskip
 
-{\tt ./main ../instances/sample\_1.sdf partition.txt}
+{\tt ./generate\_isomers ./instances/sample\_1.sdf partition.txt}
 
 \bigskip
 
@@ -405,18 +481,32 @@
 
 ここで異性体生成プログラムの実行方法と，具体例を入力した場合の計算結果を示す．
 
+*****************\\
+A compiled executable that has been tested on\\
+- linux \\
+- osx \\
+- windows (cygwin) \\
+is included in the set of files.
+In addition, we describe how the accompanying source files can be compiled.
+
+
 \subsubsection{実行方法}
 \label{sec:compile_m}
 \begin{itemize}
 	\item {\em 環境確認}\\
 		ISO C++ 2011標準に対応するC++コンパイラーがあれば問題ないと考えられる．
 		%
-		Linux Ubuntu~20.04, コンパイラー g++ ver 9.3 で確認したが，g++がインストールされていない場合は，次のようにインストールできる．\\
-		\verb|$ sudo apt install g++|
+% 		Linux Ubuntu~20.04, コンパイラー g++ ver 9.3 で確認したが，g++がインストールされていない場合は，次のようにインストールできる．\\
+% 		\verb|$ sudo apt install g++|
 	\item {\em コンパイル}\\
-		\verb|$ g++ -o main main.cpp -O3 -std=c++11| 
+	**************************\\
+	      In the terminal, navigate to the {\tt files} subfolder.
+	      Then, if the {\tt make} command is available on the system, the program can be simply compiled by typing \\
+	      \verb|$ make generate_partition|\\
+	      In case the {\tt make} command is not available, then the program can be compiled as \\	  
+		\verb|$ g++ -o generate_isomers ./main/generate_isomers.cpp -O3 -std=c++11| 
 	\item {\em 実行}\\
-		\verb|$ ./main instance.txt a b c d output.sdf instance_partition.txt|\\
+		\verb|$ ./generate_isomers instance.txt a b c d output.sdf instance_partition.txt|\\
 		\verb|instance.txt| で入力のテキストファイル，
 		\verb|a| で計算時間の上限，
 		\verb|b| で特徴ベクトルサイズの上限,
@@ -428,18 +518,18 @@
 
 
 \subsubsection{計算例}
-\label{sec:instance_p}
+\label{sec:instance_g}
 
 具体例として，異性体生成プログラムを以下のような条件で実行する．
 
 \begin{itemize}
-\item 入力ファイル: フォルダー{\tt instances}内の{\tt sample\_1.sdf}
+\item 入力ファイル: フォルダ{\tt instances}内の{\tt sample\_1.sdf}
 \item 計算時間上限: 10秒
 \item 特徴ベクトルサイズの上限: 10000000
 \item 特徴ベクトルあたりのサンプルツリーの数: 5
 \item 出力する化学グラフの個数上限: 2
 \item 化学グラフの指定出力ファイル: {\tt output.sdf}
-\item 分割情報ファイル: フォルダー{\tt instances}内の{\tt sample\_1\_partition.txt}
+\item 分割情報ファイル: フォルダ{\tt instances}内の{\tt sample\_1\_partition.txt}
 \end{itemize}
 
 実行のコマンドは以下のようになる．
@@ -447,8 +537,8 @@
 \bigskip
 
 
-{\tt ./generate\_isomers ../instances/sample\_1.sdf 10 10000000 5 2} \\
-\phantom{{\tt ./generate\_isomers ~~\,}} {\tt output.sdf ../instances/sample\_1\_partition.txt}	
+{\tt ./generate\_isomers ./instances/sample\_1.sdf 10 10000000 5 2} \\
+\phantom{{\tt ./generate\_isomers ~~\,}} {\tt output.sdf ./instances/sample\_1\_partition.txt}	
 
 
 \bigskip

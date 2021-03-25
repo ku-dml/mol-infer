@@ -2,7 +2,7 @@
 %
 % File Module4_manual_en.txt
 % English manual for the program fo rgenerating chemical isomers
-% Edited: Feb 8, 2021, Alex
+% Edited: March 19, 2021, Alex
 %
 %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -34,6 +34,8 @@
 \usepackage{subcaption}
 \usepackage{color}
 \usepackage{url}
+
+\usepackage{dirtree}
 
 \newcommand{\project}{{\tt mol-infer/Cyclic}}
 
@@ -71,41 +73,66 @@ Listing Chemical Isomers of a Given 2-Lean Cyclic Chemical Graph}}
 This text explains how to use the program for listing
 chemical isomers of a given 2-lean cyclic chemical graph~\cite{branch}.
 
-The following files and folders accompany this text.
+The structure of files and folders of this module are 
+as follows\\
+\dirtree{%
+.1 ./Module\_4.
+.2 Manual\_Module\_4\_Cyclic\_en.pdf.
+.2 Manual\_Module\_4\_Cyclic\_en.tex.
+.2 Manual\_Module\_4\_Cyclic\_jp.pdf.
+.2 Manual\_Module\_4\_Cyclic\_jp.tex.
+.2 Pseudocode\_Graph\_Generation.pdf.
+.2 files.
+.3 Makefile.
+.3 executables.
+.4 linux.
+.5 generate\_isomers.
+.5 generate\_partition.
+.4 osx.
+.5 generate\_isomers.
+.5 generate\_partition.
+.4 windows.
+.5 generate\_partition.exe.
+.5 generate\_isomers.exe.
+.3 instances.
+.4 sample\_1\_partition.txt.
+.4 sample\_1.png.
+.4 sample\_1.sdf.
+.3 main.
+.4 readme.txt.
+.4 generate\_partition.cpp.
+.4 output.sdf.
+.4 generate\_isomers.cpp.
+.3 include.
+.4 chemical\_graph.hpp.
+.4 data\_structures.hpp.
+.4 tools.hpp.
+.4 cross\_timer.h.
+.4 fringe\_tree.hpp.
+}
+
+\smallskip
+The contents of each of the files is as follows.
 %
 \begin{itemize}		
-    \item Folder {\tt main}\\
-	    Folder containing source files written in the C++ programming language.
-	    \begin{itemize}
-		    \item{gen\_partition.cpp}\\
-			    Functions for calculating a partition of a cyclic chemical graph into
-			    acyclic subgraphs.
-			    
-		    \item{generate\_isomers.cpp}\\
-			    Implements an algorithm for listing chemical isomers of
-			    a 2-lean cyclic chemical graph.
-
-	\item Folder {\tt include}\\
-		A folder that contains related header files, written in C++.
-		\begin{itemize}
-			\item{chemical\_graph.hpp}\\
-			  A header file that contains functions for manipulating 
-			  chemical graphs.
-			\item{cross\_timer.h}\\
-				A header file that contains functions for measuring execution time.
-				
-			\item{data\_structures.hpp}\\
-				Data structures implemented for storing chemical graphs.
-				
-			\item{debug.h}\\
-				Used for debugging purposes.
-				
-			\item{fringe\_tree.hpp}\\
-				Header file with functions for enumerating 2-fringe trees~\cite{branch}.
-				
-			\item{tools.hpp}\\
-				Various functions used in the implementation.
-		\end{itemize}
+ \item {\tt Manual\_Module\_4\_Cyclic\_en.pdf}\\
+ This file.
+ \item {\tt Manual\_Module\_4\_Cyclic\_en.tex}\\
+ A \LaTeX~source file of this manual.
+ \item {\tt Manual\_Module\_4\_Cyclic\_jp.pdf}\\
+ The Japanese version of this manual.
+ \item {\tt Manual\_Module\_4\_Cyclic\_jp.tex}\\
+ A \LaTeX~source file of the Japanese version of the manual.
+\item{ {\tt Pseudocode\_Graph\_Generation.pdf}}\\
+  A pdf file with Pseudo-codes for the graph search algorithm.
+ \item Folder {\tt files}
+ \begin{itemize}
+ \item {\tt Makefile} \\
+	    Compilation directives for the C++ programs of this module.
+    \item Folder {\tt executables}\\
+    A folder that contains compiled executable files for 
+    each of the architectures: linux, osx, and windows.
+    
 	\item Folder {\tt instances}\\
 		A folder containing sample input instances.
 		\begin{itemize}
@@ -134,12 +161,41 @@ The following files and folders accompany this text.
 			  A file containing partition information into acyclic subgraphs 
 				of the cyclic chemical graph given in {\tt sample\_4.sdf}.
 		\end{itemize}
-			
-			\item{file {\tt Pseudocode\_Graph\_Generation.pdf}}\\
-			  A pdf file with Pseudo-codes for the graph search algorithm.
-		\end{itemize}
+    \item Folder {\tt main}\\
+	    Folder containing source files written in the C++ programming language.
+	    \begin{itemize}
+		    \item{ \tt generate\_partition.cpp}\\
+			    Functions for calculating a partition of a cyclic chemical graph into
+			    acyclic subgraphs.
+			    
+		    \item{ \tt generate\_isomers.cpp}\\
+			    Implements an algorithm for listing chemical isomers of
+			    a 2-lean cyclic chemical graph.
 
-	\end{itemize}
+	\item Folder {\tt include}\\
+		A folder that contains related header files, written in C++.
+		\begin{itemize}
+			\item{chemical\_graph.hpp}\\
+			  A header file that contains functions for manipulating 
+			  chemical graphs.
+			\item{cross\_timer.h}\\
+				A header file that contains functions for measuring execution time.
+				
+			\item{data\_structures.hpp}\\
+				Data structures implemented for storing chemical graphs.
+				
+			\item{debug.h}\\
+				Used for debugging purposes.
+				
+			\item{fringe\_tree.hpp}\\
+				Header file with functions for enumerating 2-fringe trees~\cite{branch}.
+				
+			\item{tools.hpp}\\
+				Various functions used in the implementation.
+		\end{itemize}
+		\end{itemize}
+	  \end{itemize}
+      \end{itemize}
 
 The remainder of this text is organized as follows.
 Section~\ref{sec:term} explains some of the terminology used throughout the text.
@@ -305,24 +361,39 @@ above output file.
 \subsection{Program Execution and Computation Example}
 \label{sec:Example_p}
 
-This section gives an explenation on how to compile and run the program,
+This section gives an explanation on how to compile and run the program,
 as well as a concrete computational example of the program's execution.
 
 
-\subsubsection{Compiling and Executing the {\tt Partition} Program}
+\subsubsection{
+Compiling and Executing the Program for Generating
+a Decomposition of a Cyclic Graph  into Acyclic Graphs
+}
 \label{sec:compile_p}
+
+A compiled executable that has been tested on\\
+- linux \\
+- osx \\
+- windows (cygwin) \\
+is included in the set of files.
+In addition, we describe how the accompanying source files can be compiled.
+
 \begin{itemize}
 	\item {\em Computation environment}\\
 		There should not be any problems when using an ISO C++11 compatible compiler. %
-		The program has been tested on 
-		Ubuntu Linux 20.04,  with the  g++ compiler version 9.3.
-		If the compiler is not installed on the system, it can be installed with
-		the following command.\\
-		\verb|$ sudo apt install g++|
+% 		The program has been tested on 
+% 		Ubuntu Linux 20.04,  with the  g++ compiler version 9.3.
+% 		If the compiler is not installed on the system, it can be installed with
+% 		the following command.\\
+% 		\verb|$ sudo apt install g++|
 	\item {\em Compiling the program}\\
-		\verb|$ g++ -o gen_partition gen_partition.cpp -O3 -std=c++11|\\
+	      In the terminal, navigate to the {\tt files} subfolder.
+	      Then, if the {\tt make} command is available on the system, the program can be simply compiled by typing \\
+	      \verb|$ make generate_partition|\\
+	      In case the {\tt make} command is not available, then the program can be compiled as \\	      
+		\verb|$ g++ -o generate_partition ./main/generate_partition.cpp -O3 -std=c++11|\\
 	\item {\em Executing the program}\\
-		\verb|$ ./gen_partition instance.sdf instance_partition.txt|\\
+		\verb|$ ./generate_partition instance.sdf instance_partition.txt|\\
 		\verb|instance.sdf|  is an input SDF, 
 		and a partition information as the output of the program is stored in the file
 	  \verb|instance_partition.txt| .
@@ -345,7 +416,7 @@ Run the following command in the terminal to execute the program.
 
 \bigskip
 
-{\tt ./gen\_partition ../instances/sample\_1.sdf partition.txt}
+{\tt ./generate\_partition ./instances/sample\_1.sdf partition.txt}
 
 \bigskip
 
@@ -386,7 +457,7 @@ After successfully executing the program, the contents of the file
 This section gives an explanation of the input and output
 of the program that generates chemical isomers
 of a given 2-lean chemical graph.
-We call the program {\tt Generate Isomers}.
+We call the program {\tt generate\_isomers}.
 Section~\ref{sec:Input_m} gives an explanation of the program's input, and
 Sec.~\ref{sec:Output_m} of the program's output.
 
@@ -394,7 +465,7 @@ Sec.~\ref{sec:Output_m} of the program's output.
 \label{sec:Input_m}
 
 
-The input to the {\tt Generate Isomers} program
+The input to the {\tt generate\_isomers} program
 consists of six necessary and one optional item. \\
 First, comes information of a 2-lean chemical graph (in SDF format).\\
 Second, comes a time limit in seconds on each of the stages of the program 
@@ -413,7 +484,7 @@ in the list of parameters.
 \subsubsection{The Program's Output}
 \label{sec:Output_m}
 
-After executing the {\tt Generate Isomers} program,
+After executing the {\tt generate\_isomers} program,
 the chemical isomers of the input graph will be written
 in the specified SDF, and some information on the execution will be output on 
 the terminal.
@@ -427,21 +498,35 @@ The information printed on the terminal includes:\\
 \subsection{Executing the Program and a Computational Example}
 \label{sec:Example_m}
 
-This section gives a concrete computational example of the {\tt Generate Isomers} program.
+This section gives a concrete computational example of the {\tt generate\_isomers} program.
 
-\subsubsection{Compiling and Executing the {\tt Generate} Program}
+
+\subsubsection{Compiling and Executing the {\tt generate\_isomers} Program}
 \label{sec:compile_m}
+
+A compiled executable that has been tested on \\
+- linux \\
+- osx \\
+- windows (cygwin) \\
+is included in the set of files.
+In addition, we describe how the accompanying source files can be compiled.
+
 \begin{itemize}
 	\item {\em Computation environment}\\
 		There should not be any problems when using a ISO C++ compatible compiler. %
-		The program has been tested on 
-		Ubuntu Linux 20.04,  with the  g++ compiler version 9.3.
-		If the compiler is not installed on the system, it can be installed with
-		the following command.\\
-		\verb|$ sudo apt install g++|
+% 		The program has been tested on 
+% 		Ubuntu Linux 20.04,  with the  g++ compiler version 9.3.
+% 		If the compiler is not installed on the system, it can be installed with
+% 		the following command.\\
+% 		\verb|$ sudo apt install g++|
 	\item {\em Compiling the program}\\
-		Please run the following command in the terminal.\\
-		\verb|$ g++ -o generate_isomers generate_isomers.cpp -O3 -std=c++11|\\
+		If the {\tt make} command is available on the system, 
+		then the program can be compiled in the {\tt files} folder by typing \\
+		\verb|$ make generate_isomers|\\
+		in the terminal.
+		If the {\tt make} command is not available, then
+		please run the following command in the terminal.\\
+		\verb|$ g++ -o generate_isomers ./main/generate_isomers.cpp -O3 -std=c++11|\\
 	\item {\em Executing the program}\\
 		The program can be executed by running the following command in the terminal.\\
 		\verb|$ ./generate_isomers instance.txt a b c d output.sdf instance_partition.txt|\\
@@ -460,7 +545,7 @@ This section gives a concrete computational example of the {\tt Generate Isomers
 \subsubsection{Computational Example}
 \label{sec:instance_p}
 
-We execute the {\tt Generate Isomers} program with the following parameters.
+We execute the {\tt generate\_isomers} program with the following parameters.
 
 \begin{itemize}
 \item Input graph: File {\tt sample\_1.sdf} from the folder {\tt instances} (see Sec.~\ref{sec:intro})
@@ -477,13 +562,13 @@ Execute the program by typing the following command into the terminal (without a
 \bigskip
 
 
-{\tt ./generate\_isomers ../instances/sample\_1.sdf 10 10000000 5 2} \\
-\phantom{{\tt ./generate\_isomers ~~\,}} {\tt output.sdf ../instances/sample\_1\_partition.txt}	
+{\tt ./generate\_isomers ./instances/sample\_1.sdf 10 10000000 5 2} \\
+\phantom{{\tt ./generate\_isomers ~~\,}} {\tt output.sdf ./instances/sample\_1\_partition.txt}	
 
 
 \bigskip
 
-Upon succesfull execution of the program, the following text should appear on the terminal.
+Upon successful execution of the program, the following text should appear on the terminal.
 
 \begin{oframed}
 {\bf Output Written on the Terminal}\\\\
