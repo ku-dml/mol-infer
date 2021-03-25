@@ -2,7 +2,7 @@
 %
 % File: Module4_manual_jp.tex
 % Japanese manual for the program for generating chemical isomers
-% Edited: Feb 8, 2021, Alex
+% Edited: March 22, 2021, Alex
 %
 %%%%%%%%%%%%%%%%%%%%
 
@@ -69,11 +69,12 @@
 \pagenumbering{arabic}
 
 \section{概要}
-この冊子では，与えられた2-lean環状化学グラフの構造異性体を列挙する~\cite{branch}プログラムの使い方を説明する.
+この冊子では，与えられた2-lean環状化学グラフの構造異性体
+を列挙する~\cite{branch}プログラムの使い方を説明する.
 
-******************************************************
-The structure of files and folders of this module are 
-as follows\\
+
+
+当モーデュールに含まれているファイル及びフォルダの構造は以下の通りである．\\
 \dirtree{%
 .1 ./Module\_4.
 .2 Manual\_Module\_4\_Cyclic\_jp.pdf.
@@ -110,7 +111,7 @@ as follows\\
 .4 fringe\_tree.hpp.
 }
 
-また，この冊子以外に含まれているファイルとフォルダの
+また，このパッケージに含まれているファイルとフォルダの
 内容は以下のとおりである．
 %
 \begin{itemize}
@@ -128,13 +129,13 @@ as follows\\
  \item フォルダ {\tt files}
  \begin{itemize}
  \item {\tt Makefile} \\
-    ******************************\\
-    Compilation directives for the C++ programs of this module.
+    当モデュールに含まれているC++プログラムを簡易コンパイル
+    するためのファイル
     
-    \item Folder {\tt executables}\\
-    ********************************\\
-    A folder that contains compiled executable files for 
-    each of the architectures: linux, osx, and windows.
+    \item フォルダ {\tt executables}\\
+    コンパイルされたの実行ファイルが入れているのフォルダ．
+    サブフォルダとして三つのメインOS：linux，osx，及びwindows
+    に分けている．
  
 \item フォルダ {\tt instances}\\
 	入力のインスタンスのフォルダである．
@@ -339,15 +340,15 @@ as follows\\
 \subsection{プログラムの実行と計算例}
 \label{sec:Example_p}
 
-*********************************\\
-A compiled executable that has been tested on\\
+ここでは分割プログラムの実行方法と，具体例を入力した場合の計算結果を示す．
+
+コンパイルされた実行ファイルは以下のOS上で
+実行試みるのは済みである\\
 - linux \\
 - osx \\
-- windows (cygwin) \\
-is included in the set of files.
-In addition, we describe how the accompanying source files can be compiled.
-
-ここでは分割プログラムの実行方法と，具体例を入力した場合の計算結果を示す．
+- windows (cygwin)．\\
+また，当パッケージに含まれているのソースファイルは
+以下のようにコンパイルできる．
 
 \subsubsection{実行方法}
 \label{sec:compile_p}
@@ -358,11 +359,12 @@ In addition, we describe how the accompanying source files can be compiled.
 % 		Linux Ubuntu 20.04, コンパイラー g++ ver 9.3 で確認したが，g++がインストールされていない場合は，次のようにインストールできる．\\
 % 		\verb|$ sudo apt install g++|
 	\item {\em コンパイル}\\
-	      ************************************* \\
-	      In the terminal, navigate to the {\tt files} subfolder.
-	      Then, if the {\tt make} command is available on the system, the program can be simply compiled by typing \\
+	      ターミナル上では{\tt files}のフォルダへ移動する．
+	      その次，システム上では{\tt make}のコマンド
+	      が含まれていれば，以下のコマンドで簡易コンパルできる．
 	      \verb|$ make generate_partition|\\
-	      In case the {\tt make} command is not available, then the program can be compiled as \\	
+	      もし{\tt make}のコマンドが使えない状態であれば，
+	      以下のコンパンドでコンパイルできる． \\	
 		\verb|$ g++ -o generate_partition ./main/generate_partition.cpp -O3 -std=c++11|
 	\item {\em 実行}\\
 		\verb|$ ./generate_partition instance.sdf instance_partition.txt|\\
@@ -481,13 +483,14 @@ In addition, we describe how the accompanying source files can be compiled.
 
 ここで異性体生成プログラムの実行方法と，具体例を入力した場合の計算結果を示す．
 
-*****************\\
-A compiled executable that has been tested on\\
+コンパイルされた実行ファイルは以下のOS上で
+実行試みるのは済みである\\
 - linux \\
 - osx \\
-- windows (cygwin) \\
-is included in the set of files.
-In addition, we describe how the accompanying source files can be compiled.
+- windows (cygwin)．\\
+また，当パッケージに含まれているのソースファイルは
+以下のようにコンパイルできる．
+
 
 
 \subsubsection{実行方法}
@@ -499,11 +502,13 @@ In addition, we describe how the accompanying source files can be compiled.
 % 		Linux Ubuntu~20.04, コンパイラー g++ ver 9.3 で確認したが，g++がインストールされていない場合は，次のようにインストールできる．\\
 % 		\verb|$ sudo apt install g++|
 	\item {\em コンパイル}\\
-	**************************\\
-	      In the terminal, navigate to the {\tt files} subfolder.
-	      Then, if the {\tt make} command is available on the system, the program can be simply compiled by typing \\
-	      \verb|$ make generate_partition|\\
-	      In case the {\tt make} command is not available, then the program can be compiled as \\	  
+	
+	      ターミナル上では{\tt files}のフォルダへ移動する．
+	      その次，システム上では{\tt make}のコマンド
+	      が含まれていれば，以下のコマンドで簡易コンパルできる．
+	      \verb|$ make generate_isomers|\\
+	      もし{\tt make}のコマンドが使えない状態であれば，
+	      以下のコンパンドでコンパイルできる． \\  
 		\verb|$ g++ -o generate_isomers ./main/generate_isomers.cpp -O3 -std=c++11| 
 	\item {\em 実行}\\
 		\verb|$ ./generate_isomers instance.txt a b c d output.sdf instance_partition.txt|\\
