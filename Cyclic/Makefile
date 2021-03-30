@@ -8,24 +8,26 @@ RM = rm -f
 # Starting with default Unix
 OS = Unix
 ifneq ($(shell uname -a | grep -i Darwin),)
-	OS = MacOS
+	OS = osx
 endif
 ifneq ($(shell uname -a | grep -i Windows),)
-	OS = Windows
+	OS = win
 endif
 ifneq ($(shell uname -a | grep -i Linux),)
-	OS = Linux
+	OS = linux
 endif
 ifneq ($(shell uname -a | grep -i Cygwin),)
-	OS = Cygwin
+	OS = cygwin
 endif
 
 # Executable files prefix
-BIN = executable_programs
+BIN = bin
 
 # Compiled Program folder
 SUBF = $(BIN)/$(OS)
 
+# Source folder
+SRC = src
 
 # Compile everything with a single make
 all: directories generate_isomers generate_partition FV_ec FV_proj CHECKER clean
@@ -33,20 +35,20 @@ all: directories generate_isomers generate_partition FV_ec FV_proj CHECKER clean
 clean:
 	$(RM) *.o *~ \#*
 
-generate_isomers: ./source_code/Module_4/main/generate_isomers.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/generate_isomers ./source_code/Module_4/main/generate_isomers.cpp
+generate_isomers: ./$(SRC)/Module_4/main/generate_isomers.cpp
+	$(CC) $(CFLAGS) -o ./$(SUBF)/generate_isomers ./$(SRC)/Module_4/main/generate_isomers.cpp
 
-generate_partition: ./source_code/Module_4/main/generate_partition.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/generate_partition ./source_code/Module_4/main/generate_partition.cpp
+generate_partition: ./$(SRC)/Module_4/main/generate_partition.cpp
+	$(CC) $(CFLAGS) -o ./$(SUBF)/generate_partition ./$(SRC)/Module_4/main/generate_partition.cpp
 
-FV_ec: ./source_code/Module_1/fv_ec.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/FV_ec ./source_code/Module_1/fv_ec.cpp
+FV_ec: ./$(SRC)/Module_1/fv_ec.cpp
+	$(CC) $(CFLAGS) -o ./$(SUBF)/FV_ec ./$(SRC)/Module_1/fv_ec.cpp
 
-FV_proj: ./source_code/Module_1/fv_proj.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/FV_proj ./source_code/Module_1/fv_proj.cpp
+FV_proj: ./$(SRC)/Module_1/fv_proj.cpp
+	$(CC) $(CFLAGS) -o ./$(SUBF)/FV_proj ./$(SRC)/Module_1/fv_proj.cpp
 
-CHECKER: ./source_code/Module_1/cycle_checker.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/CHECKER ./source_code/Module_1/cycle_checker.cpp
+CHECKER: ./$(SRC)/Module_1/cycle_checker.cpp
+	$(CC) $(CFLAGS) -o ./$(SUBF)/CHECKER ./$(SRC)/Module_1/cycle_checker.cpp
 
 directories: $(SUBF)
 
