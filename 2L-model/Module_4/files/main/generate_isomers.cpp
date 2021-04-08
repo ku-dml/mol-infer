@@ -94,7 +94,8 @@ int main(int argc, char** argv) {
   H_suppressed_convert(h, g);
   vector<Vertex> core_set;
   vector<Vertex> internal_set;
-  calcCoreVertexSet(g, core_set);
+  core_set.clear();
+  // calcCoreVertexSet(g, core_set);
   calcInternalVertexSet(g, internal_set);
   // size_t g_n = calcEffectiveVertexNum(g);
   size_t g_n = 1000;
@@ -124,7 +125,7 @@ int main(int argc, char** argv) {
     // get_partition(g, core_set, internal_set, base_vertices, base_edges);
   } else {
     get_partition(base_vertices, base_edges, chLB_v, chUB_v, chLB_e, chUB_e,
-                  fixed_v, fixed_e, fringe_tree_indices_v, fringe_tree_indices_e, partitionfilename);
+                  fixed_v, fixed_e, fringe_tree_indices_v, fringe_tree_indices_e, core_set, partitionfilename);
   }
 
   if (_DEBUG) {

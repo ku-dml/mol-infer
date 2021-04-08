@@ -539,6 +539,8 @@ void get_partition(vector<Vertex>& base_vertices, vector_2D<Vertex>& base_edges,
                    vector_2D <size_t>& fringe_tree_indices_v,
                    vector_2D <size_t>& fringe_tree_indices_e,  
 
+                   vector <Vertex>& core_set,
+
                    string inFileName) {
   ifstream infile;
   try {
@@ -624,6 +626,9 @@ void get_partition(vector<Vertex>& base_vertices, vector_2D<Vertex>& base_edges,
     vector<Vertex> tmp;
     while (st1 >> u) {
       tmp.push_back(u - 1);
+      if (find(core_set.begin(), core_set.end(), u - 1) == core_set.end()){
+        core_set.push_back(u - 1);
+      }
     }
     base_edges.push_back(tmp);
     st1.clear();
