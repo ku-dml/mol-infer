@@ -27,6 +27,10 @@ This package consists of four modules.
 
 In order to understand how they deal with these tasks, one may need to read our [paper](https://arxiv.org/abs/2010.09203).
 
-## Compile and Usage
+## Quickstart visual guide
 
-See the user's manual in each module please.
+Please check the image below on how data and files are used and passed through different modules
+of the Cyclic Package.
+For more details on usage and compiling, please see the user's manual in each module
+
+![Data flow illustration](/Cyclic/doc/cyclic_flow.png)
