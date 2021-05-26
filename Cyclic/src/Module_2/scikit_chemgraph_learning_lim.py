@@ -1,4 +1,3 @@
-#for target of melting point with elements C,N,O when ANN=(42,10,1)
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
