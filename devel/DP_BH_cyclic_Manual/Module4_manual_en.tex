@@ -1,0 +1,586 @@
+\documentclass[11pt,titlepage,dvipdfmx,twoside]{article}
+\linespread{1.1}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\usepackage{algorithm}  
+\usepackage{algorithmic}  
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} 
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{color}
+\usepackage{url}
+
+
+\title{\Huge{
+Program Manual: \\
+Listing Chemical Isomers of a Given 2-Lean Cyclic Chemical Graph}}
+
+\begin{document}
+
+% % The following makeatletter must be after begin{document}
+% \makeatletter 
+% \let\c@lstlisting\c@figure
+% \makeatother
+
+% \西暦
+\date{\today}
+
+\maketitle
+
+% \cleardoublepage
+
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
+
+\section{Introduction}
+\label{sec:intro}
+
+This text explains how to use the program for listing
+chemical isomers of a given 2-lean cyclic chemical graph~\cite{branch}.
+
+%In addition to this text, a {\tt README.txt} and a {\tt License.txt} file,
+%you will find accompanying the following files and folders.
+%
+\begin{itemize}
+\item Folder{\tt isomers}\\
+	Containing source code files of the program for generating chemical isomers of a cyclic chemical graph.
+	The program is written in the C++ programming language.
+	\begin{itemize}
+	\item Folder{\tt include}\\
+		A folder that contains related header files.
+		\begin{itemize}
+			\item{chemical\_graph.hpp}\\
+			  A header file that contains functions for manipulating 
+			  chemical graphs.
+			\item{cross\_timer.h}\\
+				A header file that contains functions for measuring execution time.
+				
+			\item{data\_structures.hpp}\\
+				Data structures implemented for storing chemical graphs.
+				
+			%\item{debug.h}\\
+				%Used for debugging purposes.
+				
+			\item{fringe\_tree.hpp}\\
+				Header file with functions for enumerating 2-fringe trees~\cite{branch}.
+				
+			\item{tools.hpp}\\
+				Various functions used in the implementation.
+		\end{itemize}
+	\item Folder{\tt instances}\\
+		A folder containing sample input instances.
+		\begin{itemize}
+			\item{\tt sample.sdf}\\
+			  A cyclic chemical graph.
+			\item{\tt sample\_partition.txt}\\
+			  A file containing partition information of acyclic
+			   subgraphs 
+				of the cyclic chemical graph given in {\tt sample.sdf}.
+		\end{itemize}
+		
+	\item Folder{\tt main}\\
+		Folder containing source files.
+		\begin{itemize}
+			\item{gen\_partition.cpp}\\
+				Functions for calculating a partition of a cyclic chemical graph into
+				acyclic subgraphs.
+				
+			\item{generate\_isomers.cpp}\\
+				Implements an algorithm for listing chemical isomers of
+				a 2-lean cyclic chemical~graph.
+			
+			\item{Pseudocode\_Graph\_Generation.pdf}\\
+			  A PDF file with pseudo codes of the graph search algorithms.
+		\end{itemize}
+
+	\end{itemize}
+\end{itemize}
+
+The remainder of this text is organized as follows.
+Section~\ref{sec:term} explains some of the terminology used throughout the text.
+Section~\ref{sec: partition} gives an explanation of the input and output of
+the program for calculating a partition of a cyclic chemical graph into
+acyclic subgraphs, providing a computational example.
+Section~\ref{sec: main}
+gives an explanation of the program for generating chemical isomers of
+a given 2-lean cyclic chemical graph, explaining the input, output, and
+presenting a computational example.
+
+
+% \newpage
+
+\section{Terminology}
+\label{sec:term}
+
+This section gives an overview of the terminology used in the text.
+%
+\begin{itemize}
+%
+\item Chemical Graph\\
+A graph-theoretical description of a chemical compound, 
+where the graph's vertices correspond to atoms, and
+its (multi) edges to chemical bonds.
+Each vertex is colored with the chemical element of the atom it corresponds to,
+and edges have multiplicity according to the corresponding bond order.
+We deal with ``hydrogen-suppressed'' graphs, 
+where none of the graph's vertices is colored as hydrogen.
+This can be done without loss of generality,
+since there is a unique way to saturate a hydrogen-suppressed chemical graph 
+with hydrogen atoms subject to a fixed valence of each chemical element.
+
+
+\item Feature vector\\
+A numerical vector giving information such as the count of
+each chemical element in a chemical graph.
+For a complete information on the descriptors used in feature vectors for
+this project, please see~\cite{branch}.
+
+
+
+\item Partition Information\\
+Information necessary to specify the base vertices and edges, as well as the vertex and edge components
+of a chemical graph.
+For more details, please check~\cite{branch}.
+
+
+% \item branch-height, core size, core height, 
+% ヘリ木（fringe tree），
+% 核(core) ,
+% 基底頂点・辺(base vertex/edge)
+% 内部・外部節点（internal/external vertex），
+% 内部・外部原子結合（internal/external adjacency-configuration），
+% について参考文献\cite{branch}に参考すること．
+
+\end{itemize}
+
+\section{Program for Calculating a Partition Into Acyclic Subgraphs}
+\label{sec: partition}
+
+\subsection{Input and Output}
+\label{sec:InOut_p}
+
+This section explains the input and output information of the 
+program that is used to calculate a partition of a cyclic chemical graph
+into acyclic subgraphs.
+We call this program {\tt Partition}.
+Following,
+Sec.~\ref{sec:Input_p} explains the input format, and
+Sec.~\ref{sec:Output_p} gives an explanation the output information of the program.
+
+
+\subsubsection{The Program's Input}
+\label{sec:Input_p}
+
+
+The program {\tt Partition} takes two items as its input.
+
+First, is a cyclic chemical graph, given as a ``structured data file,'' in  SDF format.
+This is a standard format for representing chemical graphs.
+For more details, please check the documentation at \\
+\url{ http://help.accelrysonline.com/ulm/onelab/1.0/content/ulm_pdfs/direct/reference/} \\
+\phantom{\url{ http://help.accelrysonline.com}}\url{/ctfileformats2016.pdf} 
+
+Next,  is a filename of a text file where the information on 
+a partition of the graph given in the SDF into acyclic subgraphs
+calculated by the program will be saved.
+
+
+\subsubsection{The Program's Output}
+\label{sec:Output_p}
+
+The output of this program is a 
+partition into acyclic subgraphs of the cyclic chemical graph given in
+the input.
+The partition information is stored as a text file with filename as provided
+in the input parameters.
+
+
+\begin{oframed}
+{\bf Output Format Example}\\\\
+{\tt 4 \\
+7 \# C \\
+0 0 0 \\
+15 \# C \\
+0 0 0 \\
+10 \# C \\
+0 0 0 \\
+16 \# C \\
+0 0 0 \\
+5 \\
+7 4 3 5 6 9 2 15 \# C1C1N1C1C1C1O1C \\
+0 1 0 \\
+7 10 \# C2C \\
+0 0 1 \\
+10 12 14 13 11 7 \# C1C2C1C2C1C \\
+0 0 1 \\
+15 16 \# C2C \\
+0 0 1 \\
+16 18 20 19 17 15 \# C1C2C1C2C1C \\
+0 0 1 \\}
+\end{oframed}
+\newpage
+Following, Table~\ref{tab:PartitionFormat}
+gives a row-by-row explanation of the numerical information in the
+above output file.
+
+
+\bigskip
+\begin{table}[H]
+\begin{center} \caption{Structure of an Output File with Partition Information}
+\label{tab:PartitionFormat}
+  \begin{tabular}{l|l}
+  Value in the file & Explanation \\ \hline \hline
+{\tt  4} & Number of base vertices \\ \hline
+{\tt  7 \# C} & The index of a base vertex in the input SDF and its element\\
+{\tt  0 0 0} & Core height lower and upper bound; \\
+ & \hspace{10mm} the vertex component can be created or not (0/1)\\
+{\tt  15 \# C} &  \\
+{\tt  0 0 0} & \\
+{\tt  10 \# C} & \\
+{\tt  0 0 0} & \\ 
+{\tt  16 \# C} &\\ 
+{\tt  0 0 0} & \\ \hline
+{\tt  5} & Number of base edges\\ \hline
+{\tt  7 4 3 5 6 9 2 15 \# C1C1N1C1C1C1O1C} & Indices of vertices in the base edge from the input SDF,\\
+&  \hspace{10mm} their elements and bond multiplicities\\
+{\tt  0 1 0} & \\
+{\tt  7 10 \# C2C} &\\ 
+{\tt  0 0 1} &Core height lower and upper bound,\\
+& \hspace{10mm} the edge component can be created or not 
+(0/1)\\
+{\tt  10 12 14 13 11 7 \# C1C2C1C2C1C} & \\
+{\tt  0 0 1} & \\
+{\tt  15 16 \# C2C} & \\
+{\tt  0 0 1} & \\
+{\tt  16 18 20 19 17 15 \# C1C2C1C2C1C} & \\
+{\tt  0 0 1} & \\ \hline
+  \end{tabular}
+\end{center}
+\end{table}
+
+
+
+\subsection{Program Execution and Computation Example}
+\label{sec:Example_p}
+
+This section gives an explenation on how to compile and run the program,
+as well as a concrete computational example of the program's execution.
+
+
+\subsubsection{Compiling and Executing the {\tt Partition} Program}
+\label{sec:compile_p}
+\begin{itemize}
+	\item {\em Computation environment}\\
+		There should not be any problems when using a ISO C++ compatible compiler. %
+		There program has been tested on 
+		Ubuntu Linux 20.04,  with the  g++ compiler ver 9.3.
+		If the compiler is not installed on the system, it can be installed with
+		the following command.\\
+		\verb|$ sudo apt install g++|
+	\item {\em Compiling the program}\\
+		\verb|$ g++ -o gen_partition gen_partition.cpp -O3 -std=c++11|\\
+	\item {\em Executing the program}\\
+		\verb|$ ./gen_partition instance.sdf instance_partition.txt|\\
+		\verb|instance.sdf|  is an input SDF, 
+		and a partition information as the output of the program is stored in the file
+	  \verb|instance_partition.txt| .
+\end{itemize}
+
+
+\subsubsection{Computational Example}
+\label{sec:instance_p}
+
+This section illustrates a concrete computational 
+example of running the {\tt Partition} program.
+We assume the following:
+%
+\begin{itemize}
+\item Input file: {\tt sample.sdf} from the folder {\tt instances} (see Sec.~\ref{sec:intro})
+\item Output file to store the partition information: {\tt partition.txt}
+\end{itemize}
+
+Run the following command in the terminal to execute the program.
+
+\bigskip
+
+{\tt ./gen\_partition ../instances/sample.sdf partition.txt}
+
+\bigskip
+
+After successfully executing the program, the contents of the file 
+{\tt partition.txt} should be as follows.
+
+\begin{oframed}
+{\bf Contents of the file {\tt partition.txt}}\\\\
+{\tt 4 \\
+7 \# C \\
+0 0 0 \\
+15 \# C \\
+0 0 0 \\
+10 \# C \\
+0 0 0 \\
+16 \# C \\
+0 0 0 \\
+5 \\
+7 4 3 5 6 9 2 15 \# C1C1N1C1C1C1O1C \\
+0 1 0 \\
+7 10 \# C2C \\
+0 0 0 \\
+10 12 14 13 11 7 \# C1C2C1C2C1C \\
+0 0 0 \\
+15 16 \# C2C \\
+0 0 0 \\
+16 18 20 19 17 15 \# C1C2C1C2C1C \\
+0 0 0 \\}
+\end{oframed}
+
+
+\section{Program for Generating Chemical Isomers}
+\label{sec: main}
+
+\subsection{Input and Output of the Program}
+\label{sec:InOut_m}
+
+This section gives an explanation of the input and output
+of the program that generates chemical isomers
+of a given 2-lean chemical graph.
+We call the program {\tt Generate Isomers}.
+Section~\ref{sec:Input_m} gives an explanation of the program's input, and
+Sec.~\ref{sec:Output_m} of the program's output.
+
+\subsubsection{The Program's Input}
+\label{sec:Input_m}
+
+
+The input to the {\tt Generate Isomers} program
+consists of six necessary and one optional item. \\
+First, comes information of a 2-lean chemical graph (in SDF format).\\
+Second, comes a time limit in seconds on each of the stages of the program 
+(for details, check the accompanying file with pseudo-codes of the program).\\
+Third is an upper bound on the number of {\em partial} feature vectors, that the program stores
+during its computation. \\
+Fourth is the number of ``sample graphs'' that are stored per one feature vector.\\
+Fifth is an upper limit on the number of generated output chemical graphs. \\
+Sixth is a filename (SDF) where the output graphs will be written.\\
+An optional parameter is a filename with a partition information of
+the chemical graph given as the first parameter.
+
+
+
+\subsubsection{The Program's Output}
+\label{sec:Output_m}
+
+After executing the {\tt Generate Isomers} program,
+the chemical isomers of the input graph will be written
+in the specified SDF, and some information on the execution will be output on 
+the terminal.
+The information printed on the terminal includes:\\
+ - the number of possible graphs to generate, \\
+ - the number of graphs that the program generated under the given parameters, and \\
+ - the program's execution time.
+ 
+
+
+\subsection{Executing the Program and a Computational Example}
+\label{sec:Example_m}
+
+This section gives a concrete computational example of the {\tt Generate Isomers} program.
+
+\subsubsection{Compiling and Executing the {\tt Generate} Program}
+\label{sec:compile_m}
+\begin{itemize}
+	\item {\em Computation environment}\\
+		There should not be any problems when using a ISO C++ compatible compiler. %
+		There program has been tested on 
+		Ubuntu Linux 20.04,  with the  g++ compiler ver 9.3.
+		If the compiler is not installed on the system, it can be installed with
+		the following command.\\
+		\verb|$ sudo apt install g++|
+	\item {\em Compiling the program}\\
+		Please run the following command in the terminal.\\
+		\verb|$ g++ -o generate_isomers generate\_isomers.cpp -O3 -std=c++11|\\
+	\item {\em Executing the program}\\
+		The program can be executed by running the following command in the terminal.\\
+		\verb|$ ./generate_isomers instance.txt a b c d output.sdf instance_partition.txt|\\
+		Above, {\tt generate\_isomers} is the name of the program's executable file, and the remaining command-line
+		parameters are as follows: \\
+		\verb|instance.txt|  a text file containing a chemical specification \\
+		\verb|a| upper bound (in seconds) on the computation time per iteration, \\
+		\verb|b| upper bound on the number of stored partial feature vectors, \\
+		\verb|c| upper bound on the number of sample graphs stored per feature vector, \\
+		\verb|d| upper bound (in seconds) on the global computation time, \\
+		\verb|e| upper bound on the number of global paths in DAGs, \\
+		\verb|f| upper bound on the number of local paths in each DAG, \\
+		\verb|g| upper bound on the number of output graphs, \\
+		\verb|output.sdf| filename to store the output chemical graphs (SDF format), \\
+		\verb|instance_partition.txt|  partition information of the input chemical graph.
+\end{itemize}
+
+
+\subsubsection{Computational Example}
+\label{sec:instance_p}
+
+We execute the {\tt Generate Isomers} program with the following parameters.
+
+\begin{itemize}
+\item Input graph: File {\tt sample.sdf} from the folder {\tt instances} (see Sec.~\ref{sec:intro})
+\item Local time limit: 10 seconds
+\item Upper limit on the number of partial feature vectors: 10000000
+\item Number of sample graphs per feature vector: 5
+\item Global time limit: 10 seconds
+\item Upper limit on number of global path in DAGs: 100
+\item Upper limit on number of local path in DAG: 100
+\item Upper limit on the number of output graphs: 2
+\item Filename to store the output graphs: {\tt output.sdf}
+\item Partition information of the input graph: File {\tt sample\_partition.txt} from the folder {\tt instances}.
+\end{itemize}
+
+Execute the program by typing the following command into the terminal (without a line break).
+
+\bigskip
+
+
+{\tt ./generate\_isomers ../instances/sample.sdf 10 10000000 5 10 100 100 2} \\
+\phantom{{\tt ./generate\_isomers ~~\,}} {\tt output.sdf ../instances/sample\_partition.txt}	
+
+
+\bigskip
+
+Upon successful execution of the program, the following text should appear on the terminal.
+
+\begin{oframed}
+{\bf Output Written on the Terminal}\\\\
+{\tt Number of possible graphs to generate = 53 \\
+Number of generated graphs = 2 \\
+Total time : 0.00691s.}
+\end{oframed}
+
+\begin{oframed}
+{\bf Contents of the file output.sdf}\\\\
+{1 \\
+BH-cyclic \\
+BH-cyclic \\
+ 20 21  0  0  0  0  0  0  0  0999 V2000 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+  1  3  2  0  0  0  0 \\
+  1  8  1  0  0  0  0 \\
+  1 13  1  0  0  0  0 \\
+  2  4  2  0  0  0  0 \\
+  2 12  1  0  0  0  0 \\
+  2 20  1  0  0  0  0 \\
+  3  5  1  0  0  0  0 \\
+  4  9  1  0  0  0  0 \\
+  5  6  2  0  0  0  0 \\
+  6  7  1  0  0  0  0 \\
+  7  8  2  0  0  0  0 \\
+  9 10  2  0  0  0  0 \\
+ 10 11  1  0  0  0  0 \\
+ 11 12  2  0  0  0  0 \\
+ 13 14  1  0  0  0  0 \\
+ 13 15  1  0  0  0  0 \\
+ 15 16  1  0  0  0  0 \\
+ 16 17  1  0  0  0  0 \\
+ 17 18  1  0  0  0  0 \\
+ 17 19  1  0  0  0  0 \\
+ 19 20  1  0  0  0  0 \\
+M  END \\
+\$\$\$\$
+2 \\
+BH-cyclic \\
+BH-cyclic \\
+ 20 21  0  0  0  0  0  0  0  0999 V2000  \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0 \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0 \\
+  1  3  2  0  0  0  0 \\
+  1  8  1  0  0  0  0 \\
+  1 13  1  0  0  0  0 \\
+  2  4  2  0  0  0  0 \\
+  2 12  1  0  0  0  0 \\
+  2 20  1  0  0  0  0 \\
+  3  5  1  0  0  0  0 \\
+  4  9  1  0  0  0  0 \\
+  5  6  2  0  0  0  0 \\
+  6  7  1  0  0  0  0 \\
+  7  8  2  0  0  0  0 \\
+  9 10  2  0  0  0  0 \\
+ 10 11  1  0  0  0  0 \\
+ 11 12  2  0  0  0  0 \\
+ 13 14  1  0  0  0  0 \\
+ 13 15  1  0  0  0  0 \\
+ 15 16  1  0  0  0  0 \\
+ 16 17  1  0  0  0  0 \\
+ 17 18  1  0  0  0  0 \\
+ 17 19  1  0  0  0  0 \\
+ 19 20  1  0  0  0  0 \\
+M  END \\
+\$\$\$\$
+}
+\end{oframed}
+
+\addcontentsline{toc}{section}{\refname} 
+\begin{thebibliography}{10}
+	\bibitem{branch}
+	  T.~Akutsu and H.~Nagamochi.
+	  A Novel Method for Inference of Chemical Compounds with Prescribed Topological Substructures Based on Integer Programming.
+	  Arxiv preprint, arXiv:2010.09203
+\end{thebibliography}
+
+\end{document}
