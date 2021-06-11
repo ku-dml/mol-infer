@@ -1,0 +1,584 @@
+\documentclass[11pt,titlepage,dvipdfmx,twoside]{jarticle}
+\linespread{1.1}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\usepackage{algorithm}  
+\usepackage{algorithmic}  
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} 
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{color}
+\usepackage{url}
+
+
+\title{\Huge{
+プログラムマニュアル: \\
+与えられた化学グラフの構造異性体の列挙}}
+
+\begin{document}
+
+% % The following makeatletter must be after begin{document}
+% \makeatletter 
+% \let\c@lstlisting\c@figure
+% \makeatother
+
+% \西暦
+\date{\today}
+
+\maketitle
+
+% \cleardoublepage
+
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
+
+\section{イントロダクション}
+\label{sec:intro}
+
+この冊子では，2-branch構造~\cite{branch}に基づく非環式化学グラフの生成アルゴリズムを実装した二つのプログラムについて説明する．
+
+%In addition to this text, a {\tt README.txt} and a {\tt License.txt} file,
+%you will find accompanying the following files and folders.
+%
+
+
+\begin{itemize}
+\item フォルダ{\tt isomers}\\
+環状化学グラフの構造異性体を生成するプログラムのソースコードが含まれている.
+	このプログラムはC++で書かれている.
+	\begin{itemize}
+	\item フォルダ{\tt include}\\
+  このプログラムに使われるヘッダファイルのフォルダである
+  		\begin{itemize}
+
+      \item{chemical\_graph.hpp}\\
+			  化学グラフを操作するためのヘッダファイルである.
+        
+      \item{cross\_timer.h}\\
+				計算時間を計測するためのヘッダファイルである．
+				
+			\item{data\_structures.hpp}\\
+				化学グラフのデータ構造を定義するヘッダファイルである． 
+
+			\item{fringe\_tree.hpp}\\
+				ヘリ木（fringe tree）\cite{branch}を列挙する関数のヘッダファイルである．
+				
+			\item{tools.hpp}\\
+				便利なツール関数のヘッダファイルである．
+				
+				
+			\item{tree\_signature}\\
+			外縁木の正規表現を計算し読み取るための関数のヘッダファイルである.
+					
+		\end{itemize}
+	\item フォルダ{\tt instance}\\
+		このフォルダはいくつかの入力のサンプルが含まれている.
+		\begin{itemize}
+			\item{\tt sample.sdf}\\
+			 節点数45 (水素原子はのぞく) の環状化学グラフ.
+
+			\item{\tt sample\_partition.txt}\\
+      {\tt sample.sdf}で与えられた環状化学グラフを非環状化学グラフに分割するための情報が含まれているファイル.
+
+			\item{\tt sample\_fringe\_trees.sdf}\\
+      {\tt sample.sdf}で与えられた環状化学グラフに付随する2-外縁木の集合.
+		\end{itemize}
+	\item フォルダ{\tt main}\\
+		このフォルファはいくつかのソースファイルが含まれている.
+		\begin{itemize}
+				
+			\item{generate\_isomers.cpp}\\
+      2-lean環状化学グラフの構造異性体を列挙するためのプログラム.
+			
+			\item{Pseudocode\_Graph\_Generation.pdf}\\
+			  グラフ探索アルゴリズムの疑似コードを記したpdfファイルである..
+		\end{itemize}
+
+	\end{itemize}
+\end{itemize}
+
+% The remainder of this text is organized as follows.
+% Section~\ref{sec:term} explains some of the terminology used throughout the text.
+% Section~\ref{sec: main}
+% gives an explanation of the program for generating chemical isomers of
+% a given 2-lean cyclic chemical graph, explaining the input, output, and
+% presenting a computational example.
+
+
+次に，この冊子の構成について説明する．
+第\ref{sec:term}章では，この冊子およびプログラム内で使用している用語について説明する．
+第\ref{sec: main}章では，与えられた2-lean環状化学グラフの構造異性体を生成するプログラムの入力と出力について説明し, 実際の計算例を示す
+% \newpage
+
+\section{用語の説明}
+\label{sec:term}
+
+この章では，本冊子で使用する専門用語について説明する．
+%
+\begin{itemize}
+%
+\item 化学グラフ\\
+	化学グラフは節点集合と枝集合の組で化合物の構造を表すものである．
+	各節点には原子の種類が割り当てられており，各枝には結合の多重度が割り当てられている．
+	この冊子では水素原子が省略された化学グラフを扱っていく．
+
+
+\item 特徴ベクトル\\
+化学グラフにおける各化学元素の数などの情報を与える数値ベクトル．
+本プロジェクトの特徴ベクトルに使われるディスクリプターの詳細な情報は, ~\cite{branch}を参照.
+
+
+\item 分割情報\\
+入力する化学グラフの基底節点・枝 (base vertex/edge) の指定とその節点・枝成分(vertex/edge component)[1]を固定するか可変にするかの情報.
+より詳細な情報は, ~\cite{branch}を参照.
+
+\item 外縁木情報\\
+構造異性体を組み立てる際に使用する2-外縁木のリスト.
+より詳細な情報は, ~\cite{branch}を参照.
+
+
+\end{itemize}
+
+
+\section{異性体プログラムの実行と計算例}
+\label{sec: main}
+
+\subsection{プログラムの入力と出力}
+\label{sec:InOut_m}
+
+この節では異性体生成プログラムの実行方法と，具体例を入力した場合の計算結果を示す．
+ここではプログラムのことを, {\bf 異性体生成プログラム}と呼ぶ.
+\ref{sec:Input_m}節ではプログラムの入力の, ~\ref{sec:Output_m}節では出力の説明を与える.
+
+
+\subsubsection{プログラムの入力}
+\label{sec:Input_m}
+
+異性体生成プログラムでは六つの情報の入力を必要としている．\\
+一つ目は2-lean化学グラフの情報 (SDFフォーマット) である.\\
+二つ目はプログラムの計算時間の上限秒である．(より詳細な情報はプログラムの疑似コードを参照).\\
+三つ目は蓄える特徴ベクトルの数の上限である．\\
+四つ目は基底接点・枝当たりに蓄えるグラフの数である.\\
+五つ目はパスを列挙する時間の上限である.\\
+六つ目はDAGから列挙するパスの数の上限である.
+七つ目は出力する化学グラフの個数の上限である．\\
+八つ目は出力される化学グラフを保存するSDFファイル名である．\\
+九つ目は入力する化学グラフの分割情報である. \\
+十個目は外縁木のリストのファイル名である. \\
+
+
+
+化学グラフはSDFファイルの形式で入力する.
+SDFファイルのフォーマットについて，\\
+\url{https://www.chem-station.com/blog/2012/04/sdf.html}\\
+などの解説が分かりやすい．
+さらに，正確な定義書として，公式資料 \\
+\url{ http://help.accelrysonline.com/ulm/onelab/1.0/content/ulm_pdfs/direct/reference/} \\
+\phantom{\url{ http://help.accelrysonline.com}}\url{/ctfileformats2016.pdf} \\
+を参照するとよい.
+
+分割情報はStage~4の出力であり, テキストファイルとして蓄えられいる. \\
+{\tt sample\_partition.txt} 
+は以下のようになっている: 
+\begin{oframed}
+{\bf 分割情報ファイル}\\\\
+{\tt 2				\\
+14              \\
+0 45            \\
+1 2 3 4 5 6 7 8 \\
+15              \\
+0 45            \\
+1 2 3 4 5 6 7 8 \\
+2               \\
+14 1 2 3 5 6 15 \\
+0 45            \\
+1 2 3 4 5 6 7 8 \\
+14 10 15        \\
+0 45            \\
+1 2 3 4 5 6 7 8 \\
+}
+\end{oframed}
+
+以下の表~\ref{tab:PartitionFormat}
+では, 上記の分割ファイルの数値の意味を一行毎に説明する.
+
+\bigskip
+\begin{table}[H]
+\begin{center} \caption{Structure of a Partition Information}
+\label{tab:PartitionFormat}
+  \begin{tabular}{l|l}
+  ファイル中の値 & 説明 \\ \hline \hline
+{\tt  2} & 基底節点の数 \\ \hline
+{\tt 14}          & 入力したSDFファイルにおける基底節点の指数     \\
+{\tt0 45 }       & 核高の下限と上限   \\
+{\tt 1 2 3 4 5 6 7 8} & 外縁木ファイルにおける外縁木の指数\\
+{\tt15}              &\\
+{\tt 0 45}            &\\
+{\tt1 2 3 4 5 6 7 8} \\ \hline
+{\tt2}         & 基底枝の数     \\ \hline
+{\tt 14 1 2 3 5 6 15}  & Indices of vertices in the base edge from the input SDF \\
+{\tt 0 45}       &核高の下限と上限      \\
+{\tt 1 2 3 4 5 6 7 8}  & 外縁木ファイルにおける外縁木の指数\\
+{\tt 14 10 15}    &    \\
+{\tt 0 45}            &\\
+{\tt 1 2 3 4 5 6 7 8} & \\ \hline
+
+  \end{tabular}
+\end{center}
+\end{table}
+%%%%
+外縁木のリストはテキストファイルに保存されている.
+{\tt sample\_fringe\_trees.sdf} は以下のように与えられている: 
+
+\begin{oframed}
+{\bf 外縁木ファイル}\\\\
+{\tt1, C 0 C 1, 1            \\
+2, C 0 O 1, 2            \\
+3, N 0 C 1, 1            \\
+4, C 0 C 1 C 2, 1 1      \\
+5, C 0 C 1 C 2 C 2, 1 1 1\\
+6, C 0 C 1 O 2 O 2, 1 1 2\\
+7, N 0 C 1 N 2 N 2, 2 1 1\\
+8, C 0 C 1 C 2 C 1, 1 1 1}\\
+\end{oframed}
+%%
+
+以下の表~\ref{tab:fringeFormat}
+では, 上記の外縁木ファイルの数値の意味を一行毎に説明する.
+
+\bigskip
+\begin{table}[H]
+\begin{center} \caption{外縁木ファイルの構造}
+\label{tab:fringeFormat}
+  \begin{tabular}{l|l}
+  ファイル中の値 & 説明 \\ \hline \hline
+{\tt  1, C 0 C 1, 1} & 外縁木の指数, (元素, 深さ)-順序, 重み \\
+      & より詳細については \\
+      & Pseudocode\_Graph\_Generation.pdf を参照\\  \hline
+{\tt 2, C 0 O 1, 2            } &\\
+{\tt 3, N 0 C 1, 1            } &\\
+{\tt 4, C 0 C 1 C 2, 1 1      } &\\
+{\tt 5, C 0 C 1 C 2 C 2, 1 1 1} &\\
+{\tt 6, C 0 C 1 O 2 O 2, 1 1 2} &\\
+{\tt 7, N 0 C 1 N 2 N 2, 2 1 1} &\\
+{\tt 8, C 0 C 1 C 2 C 1, 1 1 1} &\\ \hline
+  \end{tabular}
+\end{center}
+\end{table}
+
+
+\subsubsection{プログラムの出力}
+\label{sec:Output_m}
+
+異性体生成プログラムを実行した後, 
+入力グラフの構造異性体は指定のSDFファイルに書き込まれ, 実行に関する幾つかの情報がターミナル上に出力される.
+ターミナルに出力される情報は以下である:\\
+- 与えられた化学グラフの構造異性体の数 \\
+- 与えられたパラメーター下での生成したグラフの個数\\
+- プログラムの実行時間
+ 
+
+
+\subsection{プログラムの実行と計算例}
+\label{sec:Example_m}
+
+この節では異性体生成プログラムの具体的な計算例を与える.
+
+\subsubsection{生成プログラムのコンパイルと実行}
+\label{sec:compile_m}
+\begin{itemize}
+  \item {\em 環境確認}\\
+  ISO C++ 2011標準に対応するC++コンパイラーがあれば問題ないと考えられる．
+  %
+  Linux Ubuntu~20.04, コンパイラー g++ ver 9.3 で確認したが，g++がインストールされていない場合は，次のようにインストールできる．\\
+  \verb|$ sudo apt install g++|
+  \item {\em コンパイル}\\
+  このプログラムは以下コマンドでコンパイルできる.\\
+  \verb|$ g++ -o generate_isomers generate_isomers.cpp -O3 -std=c++11| 
+	\item {\em プログラムの実行}\\
+  このプログラムは以下コマンドで実行できる.\\
+		\verb|$ ./generate_isomers instance.txt a b c d e f output.sdf instance_partition.txt|\\
+		上記において, {\tt generate\_isomers} はプログラムの実行ファイルの名前であり, 残りのコマンドライン上のパラメーターは以下である: \\
+		\verb|instance.txt|  入力のテキストファイル, \\
+		\verb|a| 計算時間の上限 (sec),  \\
+		\verb|b| で蓄える特徴ベクトルの数の上限,  \\
+		\verb|c| 基底接点・枝当たりに蓄えるグラフの数, \\
+		\verb|d| パスを列挙する時間の上限 (sec),\\
+		\verb|e| DAGから列挙するパスの数の上限,\\
+		\verb|f| 出力する化学グラフの個数の上限, \\
+		\verb|output.sdf| 出力する化学グラフを蓄えるSDFファイル, \\
+		\verb|instance_partition.txt|  入力する化学グラフの分割情報,\\
+		\verb|instance_fringe_trees.txt| 外縁木のリスト.\\
+\end{itemize}
+
+
+\subsubsection{計算例}
+\label{sec:instance_p}
+
+具体例として，異性体生成プログラムを以下のような条件で実行する.
+
+\begin{itemize}
+\item 入力グラフ: フォルダー{\tt instances}内の{\tt sample.sdf}
+\item 計算時間上限: 10秒
+\item 特徴ベクトルの個数の上限: 10000
+\item 基底接点・枝当たりに蓄えるグラフの数: 5
+\item パスを列挙する時間の上限: 10秒
+\item 列挙するパスの数の上限: 10000
+\item 出力する化学グラフの個数の上限: 2
+\item 出力する化学グラフを蓄えるファイル名: {\tt output.sdf}
+\item 入力する化学グラフの分割情報: 
+フォルダー{\tt instances}内の{\tt sample\_partition.txt}
+\item 入出力グラフの外縁木: 
+フォルダー{\tt instances}内の{\tt sample\_fringe\_tree.txt}.
+\end{itemize}
+
+実行のコマンドは以下のようになる.
+
+\bigskip
+
+
+{\tt ./generate\_isomers ../instance/sample.sdf 10 10000 5 10 10000 2} \\
+\phantom{{\tt ./generate\_isomers ~~\,}} {\tt output.sdf ../instance/sample\_partition.txt }\\
+\phantom{{\tt ./generate\_isomers ~~\,}} {\tt../instance/sample\_fringe\_tree.txt}
+%
+\bigskip
+
+プログラムの実行が成功した場合，以下のようなテキストがターミナル上に現れる.
+
+\begin{oframed}
+{\bf ターミナル上の出力}\\\\
+{\tt A lower bound on the number of graphs = 10512\\
+Number of generated graphs = 2\\
+Total time : 34.1s.}
+\end{oframed}
+
+\begin{oframed}
+{\bf output.sdfの内容}\\\\
+{1                                                                          \\
+BH-2L                                                                      \\
+BH-2L                                                                      \\
+ 45 45  0  0  0  0  0  0  0  0999 V2000                                    \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+  1  9  1  0  0  0  0                                                      \\
+  1 27  1  0  0  0  0                                                      \\
+  2  3  1  0  0  0  0                                                      \\
+  2  9  1  0  0  0  0                                                      \\
+  2 13  1  0  0  0  0                                                      \\
+  3  4  1  0  0  0  0                                                      \\
+  4  5  1  0  0  0  0                                                      \\
+  5  6  1  0  0  0  0                                                      \\
+  6  7  1  0  0  0  0                                                      \\
+  6  8  2  0  0  0  0                                                      \\
+  9 10  1  0  0  0  0                                                      \\
+ 10 11  1  0  0  0  0                                                      \\
+ 10 12  1  0  0  0  0                                                      \\
+ 13 14  1  0  0  0  0                                                      \\
+ 13 21  1  0  0  0  0                                                      \\
+ 14 15  2  0  0  0  0                                                      \\
+ 14 16  1  0  0  0  0                                                      \\
+ 16 17  2  0  0  0  0                                                      \\
+ 16 18  1  0  0  0  0                                                      \\
+ 18 19  1  0  0  0  0                                                      \\
+ 19 20  1  0  0  0  0                                                      \\
+ 21 22  1  0  0  0  0                                                      \\
+ 21 23  1  0  0  0  0                                                      \\
+ 23 24  1  0  0  0  0                                                      \\
+ 23 25  1  0  0  0  0                                                      \\
+ 25 26  1  0  0  0  0                                                      \\
+ 25 27  1  0  0  0  0                                                      \\
+ 27 28  1  0  0  0  0                                                      \\
+ 28 29  1  0  0  0  0                                                      \\
+ 29 30  1  0  0  0  0                                                      \\
+ 29 33  1  0  0  0  0                                                      \\
+ 30 31  1  0  0  0  0                                                      \\
+ 30 32  1  0  0  0  0                                                      \\
+ 33 34  1  0  0  0  0                                                      \\
+ 33 35  1  0  0  0  0                                                      \\
+ 35 36  2  0  0  0  0                                                      \\
+ 35 37  1  0  0  0  0                                                      \\
+ 37 38  1  0  0  0  0                                                      \\
+ 38 39  2  0  0  0  0                                                      \\
+ 38 40  1  0  0  0  0                                                      \\
+ 40 41  1  0  0  0  0                                                      \\
+ 41 42  1  0  0  0  0                                                      \\
+ 42 43  1  0  0  0  0                                                      \\
+ 43 44  1  0  0  0  0                                                      \\
+ 43 45  2  0  0  0  0                                                      \\
+M  END                                                                     \\
+\$\$\$\$                                                                       \\
+2                                                                          \\
+BH-2L                                                                      \\
+BH-2L                                                                      \\
+ 46 46  0  0  0  0  0  0  0  0999 V2000                                    \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  N  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  C  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+    0.0000    0.0000    0.0000  O  0  0  0  0  0  0  0  0  0  0  0  0      \\
+  1  9  1  0  0  0  0                                                      \\
+  1 28  1  0  0  0  0                                                      \\
+  2  3  1  0  0  0  0                                                      \\
+  2  9  1  0  0  0  0                                                      \\
+  2 13  1  0  0  0  0                                                      \\
+  3  4  1  0  0  0  0                                                      \\
+  4  5  1  0  0  0  0                                                      \\
+  5  6  1  0  0  0  0                                                      \\
+  6  7  1  0  0  0  0                                                      \\
+  6  8  2  0  0  0  0                                                      \\
+  9 10  1  0  0  0  0                                                      \\
+ 10 11  1  0  0  0  0                                                      \\
+ 10 12  1  0  0  0  0                                                      \\
+ 13 14  1  0  0  0  0                                                      \\
+ 13 21  1  0  0  0  0                                                      \\
+ 14 15  2  0  0  0  0                                                      \\
+ 14 16  1  0  0  0  0                                                      \\
+ 16 17  2  0  0  0  0                                                      \\
+ 16 18  1  0  0  0  0                                                      \\
+ 18 19  1  0  0  0  0                                                      \\
+ 19 20  1  0  0  0  0                                                      \\
+ 21 22  1  0  0  0  0                                                      \\
+ 21 23  1  0  0  0  0                                                      \\
+ 23 24  1  0  0  0  0                                                      \\
+ 23 25  1  0  0  0  0                                                      \\
+ 25 26  1  0  0  0  0                                                      \\
+ 25 28  1  0  0  0  0                                                      \\
+ 26 27  1  0  0  0  0                                                      \\
+ 28 29  1  0  0  0  0                                                      \\
+ 29 30  1  0  0  0  0                                                      \\
+ 30 31  1  0  0  0  0                                                      \\
+ 30 32  1  0  0  0  0                                                      \\
+ 32 33  1  0  0  0  0                                                      \\
+ 32 34  1  0  0  0  0                                                      \\
+ 34 35  1  0  0  0  0                                                      \\
+ 34 38  1  0  0  0  0                                                      \\
+ 35 36  1  0  0  0  0                                                      \\
+ 35 37  1  0  0  0  0                                                      \\
+ 38 39  1  0  0  0  0                                                      \\
+ 39 40  2  0  0  0  0                                                      \\
+ 39 41  1  0  0  0  0                                                      \\
+ 41 42  1  0  0  0  0                                                      \\
+ 42 43  1  0  0  0  0                                                      \\
+ 43 44  1  0  0  0  0                                                      \\
+ 44 45  1  0  0  0  0                                                      \\
+ 44 46  2  0  0  0  0                                                      \\
+M  END                                                                     \\
+\$\$\$\$                                                                                                                                                 \\
+}
+\end{oframed}
+\addcontentsline{toc}{section}{\refname} 
+\begin{thebibliography}{10}
+	\bibitem{branch}
+	  Y.~Shi, J.~Zhu, N.~ A.~Azam, K.~Haraguchi, 
+	  L.~Zhao, H.~Nagamochi, and T.~Akutsu. 
+	  A two-layered model for inferring chemical
+compounds with integer programming, 
+	  J.~Mol. Sci. [submitted]. 
+\end{thebibliography}
+
+\end{document}
