@@ -110,7 +110,7 @@ Atom2Int init_valence(){
   Val["P"]  = 3;
   Val["S"]  = 2;
   Val["Cl"] = 1;
-  Val["Val"]  = 3;
+  Val["V"]  = 3;
   Val["Br"] = 1;
   Val["Cd"] = 2;
   Val["I"]  = 1;
