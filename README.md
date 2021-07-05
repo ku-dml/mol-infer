@@ -26,6 +26,10 @@ You should think of different packages as different projects.
 - In addition to structural assumptions, we may make other assumptions on input chemical graphs. For example, in [Cyclic](Cyclic/) and [Cyclic_improved](Cyclic_improved/), the graphs should be *2-lean* as well as cyclic. 
 
 
+### Package [2LMM-LLR] (2LMM-LLR/) (Jul 2021)
+- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
+- **Reference:** TBA
+
 ### Package [2L-model](2L-model/) (Mar 2021)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
 - **Reference:**
