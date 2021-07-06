@@ -33,4 +33,4 @@ Please check the image below on how data and files are used and passed through d
 of the 2LM-M-LR Package.
 For more details on usage and compiling, please see the user's manual in each module
 
-![Data flow illustration](/2LMM-LLR/doc/2LMM-LLR_flow.png)
+![Data flow illustration](/2LMM-LLR/doc/2LMM-LLR_flow.PNG)
