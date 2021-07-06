@@ -30,7 +30,7 @@ In order to understand how they deal with these tasks, one may need to read our 
 ## Quickstart visual guide
 
 Please check the image below on how data and files are used and passed through different modules
-of the 2LM-M-LR Package.
+of the 2LMM-LLR Package.
 For more details on usage and compiling, please see the user's manual in each module
 
 ![Data flow illustration](/2LMM-LLR/doc/2LMM-LLR_flow.PNG)
