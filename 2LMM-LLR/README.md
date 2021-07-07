@@ -25,7 +25,7 @@ This package consists of four modules.
 [Module 3](Module_3/) for detail.
 + Module 4 generates graphs (partial enumeration). See [Module 4](Module_4/) for detail.
 
-In order to understand how they deal with these tasks, one may need to read our [paper](TBA).
+In order to understand how they deal with these tasks, one may need to read our [paper](https://arxiv.org/abs/2107.02381).
 
 ## Quickstart visual guide
 
