@@ -92,4 +92,4 @@ M["Hg"] = 2006;
 M["Pb"] = 2072;
 M["Al"] = 269;
 ```
-2. Change bool debug to true in line 27 of the source file fv4_in_ex.cpp to enable verbose output.
+2. Change bool debug to true in fv4_in_ex.cpp to enable verbose output.
