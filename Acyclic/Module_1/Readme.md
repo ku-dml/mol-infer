@@ -2,21 +2,21 @@
 
 # Module 1: Calculating Feature Vector from SDF file
 
-Last-updated: September 12th, 2020
+Last-updated: September 22th, 2021
 
 ## Quick start
 
 Module 1 calculates the *feature vector* (FV) for given chemical compound(s).
 One or more compounds can be given by a standard SDF file,
-and feature vectors are outputted in an original FV format.
+and feature vectors are outputted into an original FV format (which is a CSV file).
 These formats are covered by the following sections.
 Here we show how to use the program.
 
-Compile  
+Compile
 ```
 g++ -std=c++11 -Wall -O3 -o fv4_in_ex fv4_in_ex.cpp
 ```
-Run  
+Run
 ```
 $ ./fv4_in_ex input.sdf output.csv
 ```
@@ -30,7 +30,7 @@ $ ./fv4_in_ex sample1.sdf sample1.csv
 
 This program uses SDF (Structure Data File), a standard format, for input.
 See the official definition http://help.accelrysonline.com/ulm/onelab/1.0/content/ulm_pdfs/direct/reference/ctfileformats2016.pdf for detail.
-or, e.g., https://www.chem-station.com/blog/2012/04/sdf.html for an explanation in Japanese.
+Or, https://www.chem-station.com/blog/2012/04/sdf.html for an explanation in Japanese.
 A sample (sample1.sdf) is attached in this module whose detail can be found from https://pubchem.ncbi.nlm.nih.gov/compound/128703.
 
 ## FV format
