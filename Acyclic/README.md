@@ -1,10 +1,10 @@
 ---
 title: "Readme for the Mol-Infer project"
-date: "September 23, 2020"
+date: "September 22, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
-WARN: at the current point (Sep. 23, 2020) this repository has not been fully prepared. Please wait for some days before we can finish the final development and documentation for a full release.
+Notice: at the current point (Sep. 22, 2021) this repository is almost complete. We are checking the documentation.
 
 # mol-infer: Molecular Infering
 
@@ -24,11 +24,11 @@ This project consists of four modules who are illustrated in the following pictu
 + Module 1 calculates a *feature vector* (FV) for chemical compound(s) given by a standard *Structure Data File* (SDF), where FV is a mapping from compound to vector data. See [Module 1](Module_1/) for detail.
 + Module 2 constructs an *Artificial Neural Network* (ANN) that learns from known chemical compounds (given by FVs) and their properties. Thus this ANN can be used to infer the property of a given chemical compound. See [Module 2](Module_2/) for detail.
 + Module 3 implements a *Mixed-Integer Linear Programming* (MILP) formulation
-that infers **a vector of graph descriptors** given a target property and the
+that infers **a vector of graph descriptors** (i.e., FV) given a target property and the
 ANN trained by Module 2. See [Module 3](Module_3/) for detail.
-+ Module 4 provides two programs that, given a FV, generates acyclic chemical graphs that satisfy the FV based on the *2-branch structure characterization* (see [our paper](https://arxiv.org/abs/2009.09646)).
++ Module 4 provides two programs which, given a FV, generate acyclic chemical graphs that satisfy the FV based on the *2-branch structure characterization* (see [our paper](https://arxiv.org/abs/2009.09646)).
 The difference is that the first program outputs graphs of 2-branch-number *2*,
-whereas the second outputs graphs of 2-branch-number *4*. See [Module 4](Module_4/) for detail.
+whereas the second program outputs graphs of 2-branch-number *4*. See [Module 4](Module_4/) for detail.
 
 In order to understand how they deal with these tasks, one may need to read [our paper](https://arxiv.org/abs/2009.09646).
 
@@ -49,7 +49,7 @@ $ sudo apt install python3-sklearn python3-pulp python3-pandas python3-numpy
 
 ### Other OS
 
-To be provided.
+We welcome information about how to run other programs on other OS.
 
 ## Compile and Usage
 
