@@ -57,8 +57,6 @@ usage: {} (ANNfile_prefix) (target_value) (chemical_specification_file) (outputf
         ann, ann_a, ann_b)
     ann_descriptor_variables = ann_inverter.get_input_layer_variables(
         ann, milp_ann_vars, des)
-
-    solver_type = 1 # change 1 to 2 if use CBC solver
     
     V_C, E_C, E_ge_two, E_ge_one, E_zero_one, E_equal_one, \
     I_ge_two, I_ge_one, I_zero_one, I_equal_one, \
