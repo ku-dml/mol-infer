@@ -259,7 +259,8 @@ read_graph_sdf(const string& inFileName) {
 
       int n, m;
       stringstream st;
-      char *threeChars = new char[3];
+      char *threeChars = new char[4];
+      threeChars[3] = '\0';
       getline(infile, line);
       st << line;
       st.read(threeChars, 3);

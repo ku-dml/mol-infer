@@ -159,7 +159,8 @@ vector < ChemGraph > read_sdf(const string& fname){
 
       int n, m;
       stringstream st;
-      char *threeChars = new char[3];
+      char *threeChars = new char[4];
+      threeChars[3] = '\0';
       getline(infile, line);
       st << line;
       st.read(threeChars, 3);
