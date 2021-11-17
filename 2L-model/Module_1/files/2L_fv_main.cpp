@@ -156,7 +156,8 @@ vector < ChemGraph > read_sdf(const string& fname){
 
       int n, m;
       stringstream st;
-      char *threeChars = new char[3];
+      char *threeChars = new char[4];
+      threeChars[3] = '\0';
       getline(infile, line);
       st << line;
       st.read(threeChars, 3);
@@ -196,7 +197,8 @@ vector < ChemGraph > read_sdf(const string& fname){
 	int v1, v2, mul;
 	getline(infile, line);
 	stringstream st2;
-	char *vChars = new char[3];
+	char *vChars = new char[4];
+  vChars[3] = '\0';
 	st2 << line;
 	st2.read(vChars, 3);
 	v1 = atoi(vChars); // id, 1-n of vertex
