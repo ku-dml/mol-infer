@@ -25,6 +25,11 @@ You should think of different packages as different projects.
 - Some packages may not be fully prepared. 
 - In addition to structural assumptions, we may make other assumptions on input chemical graphs. For example, in [Cyclic](Cyclic/) and [Cyclic_improved](Cyclic_improved/), the graphs should be *2-lean* as well as cyclic. 
 
+### Package [Grid-neighbor-search](Grid-neighbor-search/) (Dec 2021)
+- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
+- **Reference:** 
+  - N. A. Azam, J. Zhu, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu. Molecular Design Based on Artificial Neural Networks, Integer Programming and Grid Neighbor Search, *Proceedings of IEEE International Conference on Bioinformatics and Biomedicine (BIBM)*, 2021.
+
 
 ### Package [2LMM-LLR](2LMM-LLR/) (Jul 2021)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
