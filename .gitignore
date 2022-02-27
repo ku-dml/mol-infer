@@ -27,7 +27,7 @@
 *.lib
 
 # Executables
-*.exe
+#*.exe
 *.out
 *.app
 
@@ -36,3 +36,18 @@
 *.log
 *.toc
 *.dvi
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# MacOS
+*.DS_Store
+
+# Python venv
+python-venv
+
+# Experiments
+experiments/*
+!experiments/mol-infer_config.sh

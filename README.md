@@ -62,6 +62,45 @@ You should think of different packages as different projects.
 
 A standard C++ compiler and Python with some standard packages. See each package for detail please.
 
+## Quick Start
+
+0. Python>=3.7 and a CPLEX solver are required.
+1. Fow Windows users: download https://mega.nz/file/uZ00nIIB#F_FwWtImYLBBFxgVP0aai0pCW1xmDli5i5VeTcKE_Rc and extract it to project root.
+2. Edit `experiments/mol-infer_config.sh`, set mol-infer path, CPLEX path and operating system.
+3. In terminal:
+
+```
+# Windows
+cd mol-infer
+python -m venv python-venv
+python-venv\Scripts\pip install -r requirements.txt
+cd experiments
+..\cygwin\bin\bash.exe ..\mol-infer.sh
+
+# Linux and MacOS
+cd mol-infer
+python -m venv python-venv
+python-venv/bin/pip install -r requirements.txt
+cd experiments
+bash ../mol-infer.sh
+```
+
+Instructions should appear on your terminal.\
+Each package includes two procedure: `train` and `infer`.
+- `train`\
+  Calculate descriptors for molecules and train an ANN or LLR.
+- `infer`\
+  Takes the output of `train` as input.\
+  Generate molecules with desired properties.
+
+To run examples, leave it blank and press enter when asked to provide input files or parameters. Default values will be used.
+
+For details about how to prepare the input files and parameters, please see the documents in each package.
+
+## Known Issues
+
+Missing MacOS pre-built binaries.
+
 ## Acknowledgement
 
 This project is partially supported by JSPS Grant (KAKENHI) 18H04113.
