@@ -110,9 +110,10 @@ class toEliminate():
 
         return cidSet, sdfString, lambdaDict
 
-    def writeSdf(self, sdfString, cidSet, inFile):
+    def writeSdf(self, sdfString, cidSet, inFile, filename=None):
         #filename = inFile.split('.')[0] + '_eli_' + str(len(cidSet)) + '.sdf' 
-        filename = inFile.split('.')[0] + '_eli.sdf' 
+        if not filename:
+            filename = inFile.split('.')[0] + '_eli.sdf' 
         with open(filename, 'w') as f:
             f.write(sdfString)
 
@@ -125,7 +126,7 @@ def main(argv):
     valDict = c.valDict()
     with open(SDFfile,'r') as inFile:
         cidSet, sdfString, lambdaDict = c.toEli(inFile, valDict)
-    c.writeSdf(sdfString, cidSet, SDFfile)
+    c.writeSdf(sdfString, cidSet, SDFfile, argv[2] if 2 < len(argv) else None)
     print("Done.")
                 
 main(sys.argv)

@@ -18,6 +18,7 @@ get a vector of resources for constructing
 an acyclic graph
 """
 
+import os
 from acyclic_graphs_MILP import *
 
 ####################################################
@@ -41,6 +42,10 @@ def main(argv):
 
     prop = argv[9]                  # name of the chemical property
 
+    # for bash script
+    if len(sys.argv) >= 11:
+        CPLEX_PATH = sys.argv[10]
+
     #input file of bias
     ann_bias_filename = "{}_biases.txt".format(prop) 
     #input file of weight
@@ -48,10 +53,10 @@ def main(argv):
      #input file of fv
     ann_training_data_filename = "{}_desc.csv".format(prop)
     
-    #AD min filename  used in AD
-    ad_min_filename = "AD_min.txt"
-    #AD max filename  used in AD
-    ad_max_filename = "AD_max.txt"
+    #AD min and max filename used in AD
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    ad_min_filename = os.path.join(script_dir, "AD_min.txt")
+    ad_max_filename = os.path.join(script_dir, "AD_max.txt")
     
     training_data = ann_inverter.read_training_data(
         ann_training_data_filename)
@@ -412,7 +417,7 @@ def main(argv):
     layer_num = len(weights)
     
     if solver_type == 1:
-        CPLEX = pulp.CPLEX(CPLEX_PATH,msg=None)
+        CPLEX = pulp.CPLEX(path=CPLEX_PATH, msg=None)
         # print("Start Solving Using CPLEX...")
         init_end = time.time()
         MILP.solve(CPLEX)
@@ -441,6 +446,10 @@ def main(argv):
     # print(strtemp)
 
     outputfileprefix = "{}_tv{}_n{}_dia{}_k{}_dmax{}_bl{}_bh{}_solver{}".format(prop, target_value, n_star, dia_star, k_star, d_max, bl_star, bh_star, solver_type)
+
+    # for bash script
+    if len(sys.argv) >= 12:
+        outputfileprefix = sys.argv[11]
     
     # ############################################
     # # The following block of code is used to print out the value of feature vector #

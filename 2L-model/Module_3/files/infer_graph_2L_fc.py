@@ -8,11 +8,14 @@ import subprocess
 # IMPORTANT:
 # Please specify the path of the cplex solver here
 CPLEX_PATH= \
-"/Applications/CPLEX_Studio1210/cplex/bin/x86-64_osx/cplex"
+"/opt/ibm/ILOG/CPLEX_Studio201/cplex/bin/x86-64_linux/cplex"
+# "/Applications/CPLEX_Studio1210/cplex/bin/x86-64_osx/cplex"
 # CPLEX_PATH= \
 # "/opt/cplex_12.10/cplex/bin/x86-64_linux/cplex"
 
-
+# for bash script
+if len(sys.argv) == 8:
+    CPLEX_PATH = sys.argv[7]
 
 CPLEX_MSG = False
 CPLEX_TIMELIMIT = 3600
