@@ -326,7 +326,8 @@ read_graph_sdf(const string& inFileName) {
 	int v1, v2, mul;
 	getline(infile, line);
 	stringstream st2;
-	char *vChars = new char[3];
+	char *vChars = new char[4];
+  vChars[3] = 0;
 	st2 << line;
 	st2.read(vChars, 3);
 	v1 = atoi(vChars); // id, 1-n of vertex
@@ -345,7 +346,7 @@ read_graph_sdf(const string& inFileName) {
       flag = 2;
     }
     // The end of the graph information in the file is marked with a "$$$$"
-    if (line == "$$$$" && flag == 2) {
+    if (line.rfind("$$$$", 0) == 0 && flag == 2) {	// line starts with $$$$
       flag = 0;
     }
   }
