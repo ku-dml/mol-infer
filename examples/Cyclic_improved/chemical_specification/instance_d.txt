@@ -1,0 +1,198 @@
+### seed graph ###
+# |V_C|
+2
+# |E_C|
+2
+# edges (index followed by list of extreme points)
+1 1 2
+2 2 1
+#
+### core specification ###
+#
+# index, ell_LB and ell_UB
+1 2 9
+2 2 9
+# cs_LB and cs_UB
+18
+18
+#
+### non-core specification ###
+#
+# n_LB, n_star
+40
+45
+# rho
+2
+# dg4_UB_nc
+0
+# index of V_C, bl_LB and bl_UB
+1 0 1
+2 0 1
+# index of E_ge_two | E_ge_one, bl_LB and bl_UB
+1 0 15
+2 0 15
+# index of V_C, ch_LB and ch_UB
+1 0 5
+2 0 5
+# index of E_ge_two | E_ge_one, ch_LB and ch_UB
+1 0 5
+2 0 5
+### chemical specification ###
+# Lambda
+C O N
+# Lambda_dg_co
+5
+O 2
+N 2
+C 3
+C 2
+N 3
+# Lambda_dg_nc
+7
+O 1
+N 2
+N 1
+C 3
+C 2
+C 1
+N 3
+# Gamma_co_ac ### v4 ###
+3
+C N 1
+C C 1
+C O 1
+# Gamma_in_ac ### v4 ###
+2
+C C 1
+C N 1
+# Gamma_ex_ac ### v4 ###
+6
+N C 2
+C C 1
+C O 2
+C O 1
+C N 1
+N C 1
+# Gamma_co
+7
+C 3 N 2 1
+C 3 C 3 1
+C 2 N 2 1
+C 2 C 3 1
+C 2 O 2 1
+C 3 N 3 1
+C 3 O 2 1
+# Gamma_in
+4
+C 3 C 2 1
+C 2 C 2 1
+C 2 N 2 1
+C 3 C 3 1
+# Gamma_ex
+11
+N 2 C 3 2
+C 3 C 3 1
+C 3 C 1 1
+C 3 O 1 2
+C 2 C 3 1
+C 3 O 1 1
+C 3 N 1 1
+N 3 C 1 1
+C 3 C 2 1
+C 2 C 1 1
+C 2 C 2 1
+# na_LB and na_UB ### v4 ###
+3
+C 0 45
+O 0 45
+N 0 45
+# na_LB_co and na_UB_co ### v4 ###
+3
+O 0 45
+N 0 45
+C 0 45
+# na_LB_nc and na_UB_nc ### v4 ###
+3
+O 0 45
+N 0 45
+C 0 45
+# ns_LB and ns_UB
+8
+O 2 0 45
+N 2 0 45
+C 3 0 45
+C 2 0 45
+N 3 0 45
+O 1 0 45
+N 1 0 45
+C 1 0 45
+# ns_LB_co and ns_UB_co
+5
+O 2 0 45
+N 2 0 45
+C 3 0 45
+C 2 0 45
+N 3 0 45
+# ns_LB_nc and ns_UB_nc
+7
+O 1 0 45
+N 2 0 45
+N 1 0 45
+C 3 0 45
+C 2 0 45
+C 1 0 45
+N 3 0 45
+# ac_LB_co and ac_UB_co ### v4 ###
+3
+1 0 47
+2 0 47
+3 0 47
+# ac_LB_in and ac_UB_in ### v4 ###
+2
+1 0 47
+2 0 47
+# ac_LB_ex and ac_UB_ex ### v4 ###
+6
+1 0 47
+2 0 47
+3 0 47
+4 0 47
+5 0 47
+6 0 47
+# ec_LB_co and ec_UB_co ### v4 ###
+7
+1 2 7
+2 3 6
+3 0 1
+4 0 3
+5 0 2
+6 1 5
+7 1 5
+# ec_LB_in and ec_UB_in ### v4 ###
+4
+1 1 2
+2 1 2
+3 0 1
+4 0 3
+# ec_LB_ex and ec_UB_ex ### v4 ###
+11
+1 0 1
+2 0 2
+3 2 5
+4 6 7
+5 0 1
+6 0 2
+7 0 2
+8 0 3
+9 0 3
+10 1 3
+11 0 1
+# Lambda_star ### v5 ###
+1 O N C
+2 O N C
+# bd2_LB and bd2_UB
+1 0 0
+2 0 0
+# bd3_LB and bd3_UB
+1 0 0
+2 0 0

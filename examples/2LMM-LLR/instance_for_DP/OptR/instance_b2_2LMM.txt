@@ -1,0 +1,177 @@
+### seed graph ###
+# |V_C|
+4
+# |E_C|
+5
+# edges (index followed by list of extreme points)
+1 1 2
+2 3 4
+3 2 3
+4 1 2
+5 3 4
+### Path-replacement specification pr###
+# index, ell_LB and ell_UB
+1 2 50
+2 2 50
+3 1 50
+4 1 1
+5 1 1
+# n_LB_int and n_UB_int
+25
+30
+### Path-replacement specification ta###
+# n_LB, n_star
+45
+50
+# rho
+2
+# index of V_C, ch_LB and ch_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+# index of E_ge_two | E_ge_one, ch_LB and ch_UB
+1 0 50
+2 0 50
+3 0 50
+# index of V_C, bl_LB and bl_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+# index of E_ge_two | E_ge_one, bl_LB and bl_UB
+1 0 50
+2 0 50
+3 0 50
+### chemical specification ###
+# Lambda
+H1 C4 N3 O2 S2 F1
+# Lambda_dg_int
+8
+C4 2
+C4 3
+C4 4
+N3 2
+N3 3
+N3 4
+O2 2
+S2 2
+# Gamma_int_ac
+8
+C4 C4 1	
+C4 C4 2	
+C4 N3 1	
+C4 N3 2	
+C4 O2 1	
+C4 S2 1	
+N3 N3 1	
+S2 S2 1
+# Gamma_int
+25
+C4 2 C4 2 1	
+C4 2 C4 2 2	
+C4 2 C4 3 1
+C4 2 C4 3 2	
+C4 2 C4 4 1	
+C4 2 N3 2 1	
+C4 2 N3 2 2	
+C4 2 N3 3 1	
+C4 2 N3 3 2	
+C4 2 N3 4 1	
+C4 2 O2 2 1	
+C4 2 S2 2 1	
+C4 3 C4 3 1	
+C4 3 C4 3 2	
+C4 3 C4 4 1	
+C4 3 N3 2 1	
+C4 3 N3 2 2	
+C4 3 N3 3 1	
+C4 3 N3 4 1	
+C4 3 O2 2 1	
+C4 3 S2 2 1	
+C4 4 C4 4 1	
+C4 4 O2 2 1	
+N3 2 N3 2 1	
+S2 2 S2 2 1
+# Lambda_star
+1 C4 N3 O2 S2 F1
+2 C4 N3 O2 S2 F1
+3 C4 N3 O2 S2 F1
+4 C4 N3 O2 S2 F1
+# na_LB and na_UB
+6
+H1 0 50
+C4 0 50
+N3 0 50
+O2 0 50
+S2 0 50
+F1 0 50
+# na_LB_int and na_UB_int
+5
+C4 0 50
+N3 0 50
+O2 0 50
+S2 0 50
+F1 0 50
+# ns_LB_int and ns_UB_int
+8
+C4 2 0 50
+C4 3 0 50
+C4 4 0 50
+N3 2 0 50
+N3 3 0 50
+N3 4 0 50
+O2 2 0 50
+S2 2 0 50
+# ac_LB_int and ac_UB_int
+8
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+6 0 50
+7 0 50
+8 0 50
+# ec_LB_int and ec_UB_int
+25
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+6 0 50
+7 0 50
+8 0 50
+9 0 50
+10 0 50
+11 0 50
+12 0 50
+13 0 50
+14 0 50
+15 0 50
+16 0 50
+17 0 50
+18 0 50
+19 0 50
+20 0 50
+21 0 50
+22 0 50
+23 0 50
+24 0 50
+25 0 50
+# bd2_LB and bd2_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+# bd3_LB and bd3_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+# ac_LB_lf and ac_UB_lf
+0
+0 50

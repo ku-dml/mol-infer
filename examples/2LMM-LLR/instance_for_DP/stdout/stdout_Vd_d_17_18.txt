@@ -1,0 +1,15 @@
+{1: {'C4', 'O2', 'N3'}, 2: {'C4', 'O2', 'N3'}}
+2
+{1: 10, 2: 11, 3: 12, 4: 9, 5: 4, 7: 2, 13: 13, 19: 1, 35: 6, 48: 14, 52: 3, 74: 5, 150: 8}
+Initializing Time: 0.476
+Number of variables: 5693
+ - Integer : 5178
+ - Binary  : 3992
+Number of constraints: 6942
+Status: Feasible
+Solving Time: 2.065
+MILP y*: 0.706
+MILP y* (scaled): 17.944
+n_G : 41.0, n_G_int : 23.0
+Inspection value:   0.7055965001059452
+Inspection value (scaled):   17.944131341611126
