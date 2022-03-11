@@ -10,7 +10,11 @@ import subprocess
 CPLEX_PATH= \
 "/Applications/CPLEX_Studio1210/cplex/bin/x86-64_osx/cplex"
 # CPLEX_PATH= \
+# "/Applications/CPLEX_Studio128/cplex/bin/x86-64_osx/cplex"
+# CPLEX_PATH= \
 # "/opt/cplex_12.10/cplex/bin/x86-64_linux/cplex"
+# CPLEX_PATH= \
+# "/usr/local/cplex/bin/cplex"
 
 
 
@@ -358,7 +362,7 @@ def main(argv):
     )
 
     milp_ann_vars = ann_inverter.initialize_lp_variables(
-        ann, ann_a, ann_b, forbidden_node, prop)
+        ann, ann_a, ann_b, forbidden_node)
     # ann_descriptor_variables = ann_inverter.get_input_layer_variables(
     #     ann, milp_ann_vars, des, forbidden_node)
 
@@ -370,8 +374,7 @@ def main(argv):
         milp_ann_constants,
         target_value,
         eps,
-        forbidden_node,
-        prop
+        forbidden_node
     )
 
     _, y, _ = milp_ann_vars
@@ -393,8 +396,7 @@ def main(argv):
                         num_fv,
                         y, mass_ind,
                         mass_n,
-                        forbidden_node,
-                        prop)
+                        forbidden_node)
 
     # Output all MILP variables and constraints
     MILP.writeLP("./MILP_2L_fc.lp")
