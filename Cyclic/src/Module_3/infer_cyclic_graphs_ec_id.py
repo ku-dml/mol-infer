@@ -1,6 +1,7 @@
 from cyclic_graphs_MILP_ec_id import *
 from read_instance_BH_cyclic import *
 import ann_inverter
+from NeosClient import solveNeosMILP
 
 import subprocess
 
@@ -13,10 +14,6 @@ CPLEX_PATH= \
 # "/opt/cplex_12.10/cplex/bin/x86-64_linux/cplex"
 # "/Applications/CPLEX_Studio1210/cplex/bin/x86-64_osx/cplex"
 # "/opt/cplex_12.10/cplex/bin/x86-64_linux/cplex"
-
-# for bash script
-if len(sys.argv) == 7:
-    CPLEX_PATH = sys.argv[6]
 
 CPLEX_MSG = False
 CPLEX_TIMELIMIT = 0
@@ -39,6 +36,13 @@ usage: {} (ANNfile_prefix) (target_value) (chemical_specification_file) (outputf
 
 '''.format(sys.argv[0]))
         exit(1)
+
+    # for bash script
+    if len(sys.argv) >= 7:
+        if solver_type == 1:
+            CPLEX_PATH = sys.argv[6]
+        elif solver_type == 3:  # NEOS solver
+            USER_EMAIL = sys.argv[6]
 
     #input file of bias
     ann_bias_filename = "{}_biases.txt".format(prop) 
@@ -411,17 +415,46 @@ usage: {} (ANNfile_prefix) (target_value) (chemical_specification_file) (outputf
                 file = sys.stderr, flush = True)        
         MILP.solve(CPLEX)
         solve_end = time.time()
-    else:
+    elif solver_type == 2:
         print("Start Solving Using Coin-OR...",
                 file = sys.stderr, flush = True)
         MILP.solve()
         solve_end = time.time()
+    elif solver_type == 3: # online NEOS solver
+        print("Start solving using NEOS...")
+        lp_filename = outputfileprefix+'.lp'
+        MILP.writeLP(lp_filename)
+        variables_dict = solveNeosMILP(USER_EMAIL, lp_filename)
+        x = variables_dict['x']
+        y = variables_dict['y']
+        n_G = variables_dict['n_G']
+        v_C = variables_dict['v_C']
+        v_T = variables_dict['v_T']
+        v_F = variables_dict['v_F']
+        alpha_C = variables_dict['alpha_C']
+        alpha_T = variables_dict['alpha_T']
+        alpha_F = variables_dict['alpha_F']
+        beta_C = variables_dict['beta_C']
+        beta_T = variables_dict['beta_T']
+        beta_F = variables_dict['beta_F']
+        beta_CT = variables_dict['beta_CT']
+        beta_TC = variables_dict['beta_TC']
+        beta_CF = variables_dict['beta_CF']
+        beta_TF = variables_dict['beta_TF']
+        delta_chi_T = variables_dict['delta_chi_T']
+        delta_chi_F = variables_dict['delta_chi_F']
+        e_T = variables_dict['e_T']
+        e_F = variables_dict['e_F']
+        chi_T = variables_dict['chi_T']
+        solve_end = time.time()
+    else:
+        raise Exception("Unknown solver type: " + solver_type)
 
     layer_num = len(weights)
 
     # Output result of solving MILP to command-line
     # print("# -------- solve status --------")
-    if pulp.LpStatus[MILP.status] == "Optimal":
+    if pulp.LpStatus[MILP.status] == "Optimal" or solver_type == 3:
         output_status = "Feasible"
         y_star = (y[(layer_num + 1, 1)].value())        
         print("Status:", output_status)
@@ -462,7 +495,7 @@ usage: {} (ANNfile_prefix) (target_value) (chemical_specification_file) (outputf
     #
     # #############################################
 
-    if MILP.status == 1:
+    if MILP.status == 1 or solver_type == 3:
 
         # Output SDF file
         outputfilename = outputfileprefix + ".sdf"
@@ -490,14 +523,14 @@ usage: {} (ANNfile_prefix) (target_value) (chemical_specification_file) (outputf
         # for dd, var in ann_descriptor_variables.items():
         #     print(dd, var.value())
         
-        x_star = list()
+        #x_star = list()
         
-        for desc_name in des:
-            x_star.append(ann_descriptor_variables[desc_name].value())
+        #for desc_name in des:
+        #    x_star.append(ann_descriptor_variables[desc_name].value())
             
-        y_star = ann.propagate(x_star)[0]
+        #y_star = ann.propagate(x_star)[0]
         
-        print("ANN propagated y*:", "{:.3f}".format(y_star))
+        #print("ANN propagated y*:", "{:.3f}".format(y_star))
         
     print("Solving Time:", "{:.3f}".format(solve_end - init_end))
         

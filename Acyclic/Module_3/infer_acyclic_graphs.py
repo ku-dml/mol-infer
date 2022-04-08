@@ -20,6 +20,7 @@ an acyclic graph
 
 import os
 from acyclic_graphs_MILP import *
+from NeosClient import solveNeosMILP
 
 ####################################################
 # IMPORTANT:
@@ -38,13 +39,17 @@ def main(argv):
     d_max = int(argv[5])            # only can be 3 or 4
     bl_star = int(argv[6])
     bh_star = int(argv[7])
-    solver_type = int(argv[8])      # 1 for CPLEX, 2 for COIN-OR
+    solver_type = int(argv[8])      # 1 for CPLEX, 2 for COIN-OR, 3 for NEOS
 
     prop = argv[9]                  # name of the chemical property
 
     # for bash script
-    if len(sys.argv) >= 11:
-        CPLEX_PATH = sys.argv[10]
+    if len(sys.argv) >= 12:
+        if solver_type == 1:
+            CPLEX_PATH = sys.argv[10]
+        elif solver_type == 3:  # NEOS solver
+            USER_EMAIL = sys.argv[10]
+        TASK_PERFIX = sys.argv[11]
 
     #input file of bias
     ann_bias_filename = "{}_biases.txt".format(prop) 
@@ -422,12 +427,35 @@ def main(argv):
         init_end = time.time()
         MILP.solve(CPLEX)
         solve_end = time.time()
-    else:
+    elif solver_type == 2:
         # print("Start Solving Using Coin-OR...")
         init_end = time.time()
         MILP.solve()
         solve_end = time.time()
-    
+    elif solver_type == 3: # online NEOS solver
+        print("Start solving using NEOS solver...")
+        init_end = time.time()
+        lp_filename = TASK_PERFIX+'.lp'
+        MILP.writeLP(lp_filename)
+        variables_dict = solveNeosMILP(USER_EMAIL, lp_filename)
+        x = variables_dict['x']
+        y = variables_dict['y']
+        ce_in = variables_dict['ce_in']
+        ce_ex = variables_dict['ce_ex']
+        ac_in = variables_dict['ac_in']
+        ac_ex = variables_dict['ac_ex']
+        bc_in = variables_dict['bc_in']
+        bc_ex = variables_dict['bc_ex']
+        dg_in = variables_dict['dg_in']
+        dg_ex = variables_dict['dg_ex']
+        u = variables_dict['u']
+        v = variables_dict['v']
+        alpha_tilde = variables_dict['alpha_tilde']
+        beta_tilde = variables_dict['beta_tilde']
+        beta_hat = variables_dict['beta_hat']
+        solve_end = time.time()
+    else:
+        raise Exception("Unknown solver type: " + solver_type)
     
     print("Status:" + pulp.LpStatus[MILP.status] + "\n")
     print("Initializing Time: " + str(init_end - start) + "\n")
@@ -446,11 +474,9 @@ def main(argv):
     # print(strtemp)
 
     outputfileprefix = "{}_tv{}_n{}_dia{}_k{}_dmax{}_bl{}_bh{}_solver{}".format(prop, target_value, n_star, dia_star, k_star, d_max, bl_star, bh_star, solver_type)
+    if TASK_PERFIX:
+        outputfileprefix = TASK_PERFIX
 
-    # for bash script
-    if len(sys.argv) >= 12:
-        outputfileprefix = sys.argv[11]
-    
     # ############################################
     # # The following block of code is used to print out the value of feature vector #
     # # and the value of all variables used in MILP in to a file "test.txt" #
