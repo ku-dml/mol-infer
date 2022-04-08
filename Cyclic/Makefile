@@ -1,56 +1,39 @@
-# Makefile
+CC=g++
+CFLAGS=-O3 -std=c++11
 
-CC = g++
-CFLAGS = -O3 -std=c++11
-RM = rm -f
+all: bin/CHECKER bin/FV_ec bin/FV_proj \
+     bin/generate_isomers bin/generate_partition
 
-# Determine the OS
-# Starting with default Unix
-OS = Unix
-ifneq ($(shell uname -a | grep -i Darwin),)
-	OS = osx
-endif
-ifneq ($(shell uname -a | grep -i Windows),)
-	OS = win
-endif
-ifneq ($(shell uname -a | grep -i Linux),)
-	OS = linux
-endif
-ifneq ($(shell uname -a | grep -i Cygwin),)
-	OS = cygwin
-endif
+bin/CHECKER: ./src/Module_1/cycle_checker.cpp
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) $< -o $@
 
-# Executable files prefix
-BIN = bin
+bin/FV_ec: ./src/Module_1/fv_ec.cpp
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) $< -o $@
 
-# Compiled Program folder
-SUBF = $(BIN)/$(OS)
+bin/FV_proj: ./src/Module_1/fv_proj.cpp
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) $< -o $@
 
-# Source folder
-SRC = src
+bin/generate_isomers: ./src/Module_4/main/generate_isomers.cpp \
+                      ./src/Module_4/include/chemical_graph.hpp \
+                      ./src/Module_4/include/cross_timer.h \
+                      ./src/Module_4/include/data_structures.hpp \
+                      ./src/Module_4/include/fringe_tree.hpp \
+                      ./src/Module_4/include/tools.hpp
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) $< -o $@
 
-# Compile everything with a single make
-all: directories generate_isomers generate_partition FV_ec FV_proj CHECKER clean
-	
+bin/generate_partition: ./src/Module_4/main/generate_partition.cpp \
+                        ./src/Module_4/include/chemical_graph.hpp \
+                        ./src/Module_4/include/cross_timer.h \
+                        ./src/Module_4/include/data_structures.hpp \
+                        ./src/Module_4/include/fringe_tree.hpp \
+                        ./src/Module_4/include/tools.hpp
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) $< -o $@
+
+.PHONY: clean
 clean:
-	$(RM) *.o *~ \#*
-
-generate_isomers: ./$(SRC)/Module_4/main/generate_isomers.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/generate_isomers ./$(SRC)/Module_4/main/generate_isomers.cpp
-
-generate_partition: ./$(SRC)/Module_4/main/generate_partition.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/generate_partition ./$(SRC)/Module_4/main/generate_partition.cpp
-
-FV_ec: ./$(SRC)/Module_1/fv_ec.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/FV_ec ./$(SRC)/Module_1/fv_ec.cpp
-
-FV_proj: ./$(SRC)/Module_1/fv_proj.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/FV_proj ./$(SRC)/Module_1/fv_proj.cpp
-
-CHECKER: ./$(SRC)/Module_1/cycle_checker.cpp
-	$(CC) $(CFLAGS) -o ./$(SUBF)/CHECKER ./$(SRC)/Module_1/cycle_checker.cpp
-
-directories: $(SUBF)
-
-$(SUBF):
-	mkdir -p $(SUBF)
+	rm -rf bin
