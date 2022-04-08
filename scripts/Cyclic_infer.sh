@@ -13,6 +13,31 @@ White='\033[0;37m'        # White
 
 # Read configuration
 . ./mol-infer_config.sh
+. ./mol-infer_default_values.sh
+
+# OS-specific configurations
+if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
+    OS="windows"
+    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
+elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
+    OS="linux"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+elif [ $OS = "MacOS" ] || [ $OS = "macos" ]; then
+    OS="macos"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+fi
+
+# Solver configurations
+#if [ $SOLVER_TYPE = "CPLEX" ]; then
+#    SOLVER_INDICATOR=1
+#    SOLVER_PARAM=$CPLEX_PATH
+#elif [ $SOLVER_TYPE = "NEOS" ]; then
+#    SOLVER_INDICATOR=3
+#    SOLVER_PARAM=$NEOS_EMAIL_ADDR
+#fi
+
+SOLVER_INDICATOR=1
+SOLVER_PARAM=$CPLEX_PATH
 
 echo "------"
 echo "Parameters for MILP (Module 3)."
@@ -74,9 +99,9 @@ echo -e "${Yellow}"
 echo "Solving MILP..."
 echo ""
 
-$PYTHON $MOLINFER_ROOT/Cyclic/bin/infer_cyclic_graphs_ec_id.py \
+$PYTHON $MOLINFER_ROOT/Cyclic/src/Module_3/infer_cyclic_graphs_ec_id.py \
     "$TASK_PREFIX" $TARGET_VALUE "$SPEC_FILE" \
-    "${TASK_PREFIX}_MILP" 1 "$CPLEX_PATH"
+    "${TASK_PREFIX}_MILP" $SOLVER_INDICATOR "$SOLVER_PARAM"
 if [ "$?" != "0" ]; then
     echo -e "${Red}"
     echo "MILP is infesable or error occured while solving."
@@ -89,7 +114,7 @@ echo ""
 echo "Generating isomers..."
 echo ""
 
-$MOLINFER_ROOT/Cyclic/bin/$OS/generate_partition \
+$MOLINFER_ROOT/Cyclic/bin/generate_partition \
     "${TASK_PREFIX}_MILP.sdf" \
     "${TASK_PREFIX}_MILP_partition.txt"
 if [ "$?" != "0" ]; then
@@ -100,7 +125,7 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-$MOLINFER_ROOT/Cyclic/bin/$OS/generate_isomers \
+$MOLINFER_ROOT/Cyclic/bin/generate_isomers \
     "${TASK_PREFIX}_MILP.sdf" \
     $MODULE_4_A $MODULE_4_B $MODULE_4_C $MODULE_4_D \
     "${TASK_PREFIX}_output.sdf" \

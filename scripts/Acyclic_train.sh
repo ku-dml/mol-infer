@@ -13,6 +13,31 @@ White='\033[0;37m'        # White
 
 # Read configuration
 . ./mol-infer_config.sh
+. ./mol-infer_default_values.sh
+
+# OS-specific configurations
+if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
+    OS="windows"
+    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
+elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
+    OS="linux"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+elif [ $OS = "MacOS" ] || [ $OS = "macos" ]; then
+    OS="macos"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+fi
+
+# Solver configurations
+#if [ $SOLVER_TYPE = "CPLEX" ]; then
+#    SOLVER_INDICATOR=1
+#    SOLVER_PARAM=$CPLEX_PATH
+#elif [ $SOLVER_TYPE = "NEOS" ]; then
+#    SOLVER_INDICATOR=3
+#    SOLVER_PARAM=$NEOS_EMAIL_ADDR
+#fi
+
+SOLVER_INDICATOR=1
+SOLVER_PARAM=$CPLEX_PATH
 
 echo "Please supply molecules used for training (sdf format)."
 echo "Default: ${ACYCLIC_DEFAULT_MOLECULES_FILE}"
@@ -45,7 +70,7 @@ echo -e "${Yellow}"
 echo "Calculating molecule descriptors..."
 echo ""
 
-$MOLINFER_ROOT/Acyclic/bin/$OS/fv4_in_ex \
+$MOLINFER_ROOT/Acyclic/bin/fv4_in_ex \
     "$MOLECULES_FILE" "${TASK_PREFIX}_desc.csv"
 if [ "$?" != "0" ]; then
     echo -e "${Red}"
@@ -59,7 +84,7 @@ echo ""
 echo "Training ANN..."
 echo ""
 
-$PYTHON $MOLINFER_ROOT/Acyclic/bin/scikit_chemgraph_learning.py \
+$PYTHON $MOLINFER_ROOT/Acyclic/Module_2/scikit_chemgraph_learning.py \
     "${TASK_PREFIX}_desc.csv" "$TARGET_VALUES_FILE" \
     "$TASK_PREFIX" $ANN_LAYERS
 if [ "$?" != "0" ]; then

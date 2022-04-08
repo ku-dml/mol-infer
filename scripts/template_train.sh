@@ -13,6 +13,31 @@ White='\033[0;37m'        # White
 
 # Read configuration
 . ./mol-infer_config.sh
+. ./mol-infer_default_values.sh
+
+# OS-specific configurations
+if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
+    OS="windows"
+    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
+elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
+    OS="linux"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+elif [ $OS = "MacOS" ] || [ $OS = "macos" ]; then
+    OS="macos"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+fi
+
+# Solver configurations
+#if [ $SOLVER_TYPE = "CPLEX" ]; then
+#    SOLVER_INDICATOR=1
+#    SOLVER_PARAM=$CPLEX_PATH
+#elif [ $SOLVER_TYPE = "NEOS" ]; then
+#    SOLVER_INDICATOR=3
+#    SOLVER_PARAM=$NEOS_EMAIL_ADDR
+#fi
+
+SOLVER_INDICATOR=1
+SOLVER_PARAM=$CPLEX_PATH
 
 # Guide users to enter other files and parameters.
 # The following 5 lines asks users to input the file containing input molecules
@@ -44,7 +69,7 @@ echo ""
 # Example for running python scripts.
 # Call python using $PYTHON. This variable points to the python executable in
 # python virtual environment created by user.
-$PYTHON $MOLINFER_ROOT/2LMM-LLR/bin/eliminate.py \
+$PYTHON $MOLINFER_ROOT/2LMM-LLR/Module_1/eliminate.py \
     "$MOLECULES_FILE" "${TASK_PREFIX}_elimanated.sdf"
 
 # Check return value.
@@ -65,7 +90,7 @@ then
     FV_INPUT="${TASK_PREFIX}_elimanated.sdf"
     echo "SDF file for calculating descriptors: $FV_INPUT"
 else
-    $PYTHON $MOLINFER_ROOT/2LMM-LLR/bin/limit_atoms.py \
+    $PYTHON $MOLINFER_ROOT/2LMM-LLR/Module_1/limit_atoms.py \
         "${TASK_PREFIX}_elimanated.sdf" $ATOM_LIMIT
     if [ "$?" != "0" ]; then
         echo -e "${Red}"
@@ -82,7 +107,7 @@ echo ""
 # Example for calling binaries.
 # Binary files corresponding to users' operating system should be in
 # $MOLINFER_ROOT/<package_name>/bin/$OS/.
-$MOLINFER_ROOT/2LMM-LLR/bin/$OS/FV_2LMM_V018 "${FV_INPUT}" "${TASK_PREFIX}"
+$MOLINFER_ROOT/2LMM-LLR/bin/FV_2LMM_V018 "${FV_INPUT}" "${TASK_PREFIX}"
 
 # Check return value.
 if [ "$?" != "0" ]; then

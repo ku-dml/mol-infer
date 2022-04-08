@@ -13,6 +13,31 @@ White='\033[0;37m'        # White
 
 # Read configuration
 . ./mol-infer_config.sh
+. ./mol-infer_default_values.sh
+
+# OS-specific configurations
+if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
+    OS="windows"
+    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
+elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
+    OS="linux"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+elif [ $OS = "MacOS" ] || [ $OS = "macos" ]; then
+    OS="macos"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+fi
+
+# Solver configurations
+#if [ $SOLVER_TYPE = "CPLEX" ]; then
+#    SOLVER_INDICATOR=1
+#    SOLVER_PARAM=$CPLEX_PATH
+#elif [ $SOLVER_TYPE = "NEOS" ]; then
+#    SOLVER_INDICATOR=3
+#    SOLVER_PARAM=$NEOS_EMAIL_ADDR
+#fi
+
+SOLVER_INDICATOR=1
+SOLVER_PARAM=$CPLEX_PATH
 
 echo "Please supply molecules used for training (sdf format)."
 echo "Default: ${TWOLMMLLR_DEFAULT_MOLECULES_FILE}"
@@ -50,7 +75,7 @@ echo -e "${Yellow}"
 echo "Calculating molecule descriptors..."
 echo ""
 
-$PYTHON $MOLINFER_ROOT/2LMM-LLR/bin/eliminate.py \
+$PYTHON $MOLINFER_ROOT/2LMM-LLR/src/Module_1/eliminate.py \
     "$MOLECULES_FILE" "${TASK_PREFIX}_elimanated.sdf"
 if [ "$?" != "0" ]; then
     echo -e "${Red}"
@@ -67,7 +92,7 @@ then
     FV_INPUT="${TASK_PREFIX}_elimanated.sdf"
     echo "SDF file for calculating descriptors: $FV_INPUT"
 else
-    $PYTHON $MOLINFER_ROOT/2LMM-LLR/bin/limit_atoms.py \
+    $PYTHON $MOLINFER_ROOT/2LMM-LLR/src/Module_1/limit_atoms.py \
         "${TASK_PREFIX}_elimanated.sdf" $ATOM_LIMIT
     if [ "$?" != "0" ]; then
         echo -e "${Red}"
@@ -81,7 +106,7 @@ else
 fi
 echo ""
 
-$MOLINFER_ROOT/2LMM-LLR/bin/$OS/FV_2LMM_V018 "${FV_INPUT}" "${TASK_PREFIX}"
+$MOLINFER_ROOT/2LMM-LLR/bin/FV_2LMM_V018 "${FV_INPUT}" "${TASK_PREFIX}"
 if [ "$?" != "0" ]; then
     echo -e "${Red}"
     echo "Error occured while calculating descriptors."
@@ -94,7 +119,7 @@ echo ""
 echo "Training LLR..."
 echo ""
 
-$PYTHON $MOLINFER_ROOT/2LMM-LLR/bin/lasso_eval_linreg.py \
+$PYTHON $MOLINFER_ROOT/2LMM-LLR/src/Module_2/lasso_eval_linreg.py \
     "${TASK_PREFIX}_desc_norm.csv" "$TARGET_VALUES_FILE" \
     "${TASK_PREFIX}_linreg.txt" $LLR_LAMBDA
 if [ "$?" != "0" ]; then

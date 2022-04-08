@@ -13,6 +13,31 @@ White='\033[0;37m'        # White
 
 # Read configuration
 . ./mol-infer_config.sh
+. ./mol-infer_default_values.sh
+
+# OS-specific configurations
+if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
+    OS="windows"
+    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
+elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
+    OS="linux"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+elif [ $OS = "MacOS" ] || [ $OS = "macos" ]; then
+    OS="macos"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+fi
+
+# Solver configurations
+#if [ $SOLVER_TYPE = "CPLEX" ]; then
+#    SOLVER_INDICATOR=1
+#    SOLVER_PARAM=$CPLEX_PATH
+#elif [ $SOLVER_TYPE = "NEOS" ]; then
+#    SOLVER_INDICATOR=3
+#    SOLVER_PARAM=$NEOS_EMAIL_ADDR
+#fi
+
+SOLVER_INDICATOR=1
+SOLVER_PARAM=$CPLEX_PATH
 
 echo "------"
 echo "Parameters for MILP (Module 3)."
@@ -98,10 +123,10 @@ echo -e "${Yellow}"
 echo "Solving MILP..."
 echo ""
 
-$PYTHON $MOLINFER_ROOT/Acyclic/bin/infer_acyclic_graphs.py $TARGET_VALUE \
+$PYTHON $MOLINFER_ROOT/Acyclic/Module_3/infer_acyclic_graphs.py $TARGET_VALUE \
     $PARAM_N $PARAM_DIA $PARAM_K \
     $PARAM_DMAX $PARAM_BLK $PARAM_BHK \
-    1 $TASK_PREFIX "$CPLEX_PATH" "${TASK_PREFIX}_MILP"
+    $SOLVER_INDICATOR $TASK_PREFIX "$SOLVER_PARAM" "${TASK_PREFIX}_MILP"
 if [ "$?" != "0" ]; then
     echo -e "${Red}"
     echo "MILP is infesable or error occured while solving."
@@ -114,7 +139,7 @@ echo ""
 echo "2 branches..."
 echo ""
 
-$MOLINFER_ROOT/Acyclic/bin/$OS/2-branches \
+$MOLINFER_ROOT/Acyclic/bin/2-branches \
     "${TASK_PREFIX}_MILP.txt" $MODULE_4_A $MODULE_4_B $MODULE_4_C \
     "${TASK_PREFIX}_output_2_branches.sdf" "${TASK_PREFIX}_MILP.sdf"
 if [ "$?" != "0" ]; then
@@ -129,7 +154,7 @@ echo ""
 echo "3 branches..."
 echo ""
 
-$MOLINFER_ROOT/Acyclic/bin/$OS/3-branches \
+$MOLINFER_ROOT/Acyclic/bin/3-branches \
     "${TASK_PREFIX}_MILP.txt" $MODULE_4_A $MODULE_4_B $MODULE_4_C \
     "${TASK_PREFIX}_output_3_branches.sdf" "${TASK_PREFIX}_MILP.sdf"
 if [ "$?" != "0" ]; then

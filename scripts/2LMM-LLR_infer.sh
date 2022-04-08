@@ -13,6 +13,31 @@ White='\033[0;37m'        # White
 
 # Read configuration
 . ./mol-infer_config.sh
+. ./mol-infer_default_values.sh
+
+# OS-specific configurations
+if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
+    OS="windows"
+    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
+elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
+    OS="linux"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+elif [ $OS = "MacOS" ] || [ $OS = "macos" ]; then
+    OS="macos"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+fi
+
+# Solver configurations
+#if [ $SOLVER_TYPE = "CPLEX" ]; then
+#    SOLVER_INDICATOR=1
+#    SOLVER_PARAM=$CPLEX_PATH
+#elif [ $SOLVER_TYPE = "NEOS" ]; then
+#    SOLVER_INDICATOR=3
+#    SOLVER_PARAM=$NEOS_EMAIL_ADDR
+#fi
+
+SOLVER_INDICATOR=1
+SOLVER_PARAM=$CPLEX_PATH
 
 echo "------"
 echo "Parameters for MILP (Module 3)."
@@ -99,7 +124,7 @@ echo -e "${Yellow}"
 echo "Solving MILP..."
 echo ""
 
-$PYTHON $MOLINFER_ROOT/2LMM-LLR/bin/infer_2LMM_LLR.py "$TASK_PREFIX" \
+$PYTHON $MOLINFER_ROOT/2LMM-LLR/src/Module_3/infer_2LMM_LLR.py "$TASK_PREFIX" \
     $TARGET_LOWER $TARGET_UPPER "$SPEC_FILE" "$FRINGE_FILE" \
     "${TASK_PREFIX}_MILP" "$CPLEX_PATH"
 if [ "$?" != "0" ]; then
@@ -114,7 +139,7 @@ echo ""
 echo "Generating isomers..."
 echo ""
 
-$MOLINFER_ROOT/2LMM-LLR/bin/$OS/generate_isomers \
+$MOLINFER_ROOT/2LMM-LLR/bin/generate_isomers \
     "${TASK_PREFIX}_MILP.sdf" \
     $MODULE_4_A $MODULE_4_B $MODULE_4_C $MODULE_4_D $MODULE_4_E $MODULE_4_F \
     "${TASK_PREFIX}_output.sdf" "${TASK_PREFIX}_MILP_partition.txt" \

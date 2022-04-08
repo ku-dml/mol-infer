@@ -40,18 +40,9 @@ else
     exit 1
 fi
 
-if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
-    UNIX_TOOLS_PATH="${MOLINFER_ROOT}/cygwin/bin/"
-elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
-    UNIX_TOOLS_PATH=""
-else
-    echo "Unknown Operating system $OS."
-    exit 1
-fi
-
 while true; do
 
-    ${UNIX_TOOLS_PATH}clear
+    clear
     print_header
 
     echo ""
@@ -95,7 +86,7 @@ while true; do
 
     while true; do
 
-        ${UNIX_TOOLS_PATH}clear
+        clear
         print_header
 
         echo ""
@@ -117,7 +108,7 @@ while true; do
                     echo "See Module 1 & 2."
                     echo "-----------------------------------------------------"
                     echo ""
-                    ${UNIX_TOOLS_PATH}bash ${MOLINFER_ROOT}/scripts/${PACKAGE_NAME}_train.sh
+                    bash ${MOLINFER_ROOT}/scripts/${PACKAGE_NAME}_train.sh
                     break
                     ;;
                 "Infer")
@@ -127,7 +118,7 @@ while true; do
                     echo "See Module 3 & 4."
                     echo "-----------------------------------------------------"
                     echo ""
-                    ${UNIX_TOOLS_PATH}bash ${MOLINFER_ROOT}/scripts/${PACKAGE_NAME}_infer.sh
+                    bash ${MOLINFER_ROOT}/scripts/${PACKAGE_NAME}_infer.sh
                     break
                     ;;
                 "Back")

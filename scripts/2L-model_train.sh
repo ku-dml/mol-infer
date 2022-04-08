@@ -13,6 +13,31 @@ White='\033[0;37m'        # White
 
 # Read configuration
 . ./mol-infer_config.sh
+. ./mol-infer_default_values.sh
+
+# OS-specific configurations
+if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
+    OS="windows"
+    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
+elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
+    OS="linux"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+elif [ $OS = "MacOS" ] || [ $OS = "macos" ]; then
+    OS="macos"
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+fi
+
+# Solver configurations
+#if [ $SOLVER_TYPE = "CPLEX" ]; then
+#    SOLVER_INDICATOR=1
+#    SOLVER_PARAM=$CPLEX_PATH
+#elif [ $SOLVER_TYPE = "NEOS" ]; then
+#    SOLVER_INDICATOR=3
+#    SOLVER_PARAM=$NEOS_EMAIL_ADDR
+#fi
+
+SOLVER_INDICATOR=1
+SOLVER_PARAM=$CPLEX_PATH
 
 echo "Please supply molecules used for training (sdf format)."
 echo "Default: ${TWOLMODEL_DEFAULT_MOLECULES_FILE}"
@@ -51,7 +76,7 @@ echo -e "${Yellow}"
 echo "Calculating molecule descriptors..."
 echo ""
 
-$PYTHON $MOLINFER_ROOT/2L-model/bin/eliminate.py \
+$PYTHON $MOLINFER_ROOT/2L-model/Module_1/files/eliminate.py \
     "$MOLECULES_FILE" "${TASK_PREFIX}_elimanated.sdf"
 if [ "$?" != "0" ]; then
     echo -e "${Red}"
@@ -61,7 +86,7 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-$MOLINFER_ROOT/2L-model/bin/$OS/2L_FV \
+$MOLINFER_ROOT/2L-model/bin/2L_FV \
     "${TASK_PREFIX}_elimanated.sdf" "${TASK_PREFIX}"
 if [ "$?" != "0" ]; then
     echo -e "${Red}"
@@ -75,7 +100,7 @@ echo ""
 echo "Training ANN..."
 echo ""
 
-$PYTHON $MOLINFER_ROOT/2L-model/bin/2L_ANN.py \
+$PYTHON $MOLINFER_ROOT/2L-model/Module_2/files/2L_ANN.py \
     "${TASK_PREFIX}_desc_norm.csv" "$TARGET_VALUES_FILE" \
     "$TASK_PREFIX" $ANN_ITERS $ANN_LAYERS
 if [ "$?" != "0" ]; then
