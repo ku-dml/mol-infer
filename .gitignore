@@ -51,3 +51,4 @@ python-venv
 # Experiments
 experiments/*
 !experiments/mol-infer_config.sh
+!experiments/mol-infer_default_values.sh
