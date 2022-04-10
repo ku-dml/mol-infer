@@ -62,6 +62,42 @@ You should think of different packages as different projects.
 
 A standard C++ compiler and Python with some standard packages. See each package for detail please.
 
+## クイックスタート
+
+0. Python>=3.7とCPLEXソルバーが必要である。\
+   Windowsユーザーには、Cygwinをインストール必要がある。\
+   そして、Cygwinをインストールする時、`make`機能が有効であることが必要である。
+1. `experiments/mol-infer_config.sh`を編集し、mol-inferのパス、CPLEXのパス、とオペレーティングシステムを設定する。
+2. WindowsユーザーはCygwin Terminalで：
+   ```
+   cd mol-infer
+   make
+   python -m venv python-venv
+   python-venv\Scripts\pip install -r requirements.txt
+   cd experiments
+   bash ../mol-infer.sh
+   ```
+   LinuxとMacOSユーザーはターミナルで：
+   ```
+   cd mol-infer
+   make
+   python -m venv python-venv
+   python-venv/bin/pip install -r requirements.txt
+   cd experiments
+   bash ../mol-infer.sh
+   ```
+
+ターミナルに指示が表示されるはず。\
+各パッケージには2つのオプションが含まれている：`train`と`infer`。
+- `train`\
+  分子の特徴ベクトルを計算し、ANNやLLRを学習させる（訓練する）。
+- `infer`\
+  `train`の出力を入力とする。\
+  必要なプロパティを持つ分子を生成する。
+
+計算例を実行するには、すべての入力を空欄にしてenterキーを押してください。デフォルトの値が使用されます。\
+入力ファイルの準備や適切なパラメータの選択方法については、各パッケージのドキュメントを参照してください。
+
 ## Quick Start
 
 0. Python>=3.7 and a CPLEX solver are required.\
@@ -87,15 +123,14 @@ A standard C++ compiler and Python with some standard packages. See each package
    ```
 
 Instructions should appear on your terminal.\
-Each package includes two procedure: `train` and `infer`.
+Each package includes two options: `train` and `infer`.
 - `train`\
   Calculate descriptors for molecules and train an ANN or LLR.
 - `infer`\
   Takes the output of `train` as input.\
   Generate molecules with desired properties.
 
-To run examples, leave it blank and press enter when asked to provide input files or parameters. Default values will be used.
-
+To run examples, leave every input blank and press enter. Default values will be used.\
 Please see the documents in each package for details about how to prepare input files and choose the proper parameters.
 
 ## Acknowledgement
