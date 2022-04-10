@@ -98,10 +98,6 @@ To run examples, leave it blank and press enter when asked to provide input file
 
 Please see the documents in each package for details about how to prepare input files and choose the proper parameters.
 
-## Known Issues
-
-Missing MacOS pre-built binaries.
-
 ## Acknowledgement
 
 This project is partially supported by JSPS Grant (KAKENHI) 18H04113.
