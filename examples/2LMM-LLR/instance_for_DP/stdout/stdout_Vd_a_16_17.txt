@@ -1,0 +1,15 @@
+{1: {'N3', 'C4'}, 2: {'C4'}, 3: {'C4'}, 4: {'C4'}, 5: {'C4'}, 6: {'C4'}, 7: {'C4'}, 8: {'N3', 'C4'}, 9: {'C4', 'O2'}, 10: {'C4'}, 11: {'C4'}, 12: {'C4'}, 13: {'C4'}}
+5
+{1: 6, 2: 11, 3: 2, 4: 1, 7: 18, 13: 8, 14: 3, 19: 15, 23: 20, 30: 28, 33: 16, 37: 22, 43: 17, 98: 27, 127: 21}
+Initializing Time: 0.825
+Number of variables: 9481
+ - Integer : 8966
+ - Binary  : 7379
+Number of constraints: 9358
+Status: Feasible
+Solving Time: 1.590
+MILP y*: 0.652
+MILP y* (scaled): 16.629
+n_G : 38.0, n_G_int : 23.0
+Inspection value:   0.6522359721526445
+Inspection value (scaled):   16.629007769674075

@@ -1,0 +1,15 @@
+{1: {'C4', 'N3', 'P3', 'Cl1', 'O2', 'P5'}, 2: {'C4', 'N3', 'P3', 'Cl1', 'O2', 'P5'}, 3: {'C4', 'N3', 'P3', 'Cl1', 'O2', 'P5'}, 4: {'C4', 'N3', 'P3', 'Cl1', 'O2', 'P5'}}
+4
+{1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16, 17: 17, 18: 18, 19: 19, 20: 20, 21: 21, 22: 22, 32: 32, 60: 60, 143: 143}
+Initializing Time: 1.061
+Number of variables: 11945
+ - Integer : 11430
+ - Binary  : 9617
+Number of constraints: 10107
+Status: Feasible
+Solving Time: 8.072
+MILP y*: 0.844
+MILP y* (scaled): 21.358
+n_G : 48.0, n_G_int : 25.0
+Inspection value:   0.8441146662469551
+Inspection value (scaled):   21.358050064322455

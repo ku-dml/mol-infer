@@ -1,0 +1,15 @@
+{1: {'O2', 'Si4', 'C4'}, 2: {'O2', 'Si4', 'C4'}, 3: {'O2', 'Si4', 'C4'}, 4: {'O2', 'Si4', 'C4'}}
+4
+{1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16, 17: 17, 18: 18, 19: 19, 20: 20, 21: 21, 22: 22, 23: 23, 24: 24, 25: 25}
+Initializing Time: 0.666
+Number of variables: 8498
+ - Integer : 8243
+ - Binary  : 6732
+Number of constraints: 9518
+Status: Feasible
+Solving Time: 8.137
+MILP y*: 1.097
+MILP y* (scaled): 1.851
+n_G : 45.0, n_G_int : 25.0
+Inspection value:   1.0974627116637306
+Inspection value (scaled):   1.8512403554766683

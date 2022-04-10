@@ -140,7 +140,8 @@ vector < ChemGraph > read_sdf(const string& fname){
     for (int j = 0; j < m; ++j) {
       stringstream str;
       int v1, v2, mul;
-      char *vChars = new char[3];
+      char *vChars = new char[4];
+      vChars[3] = 0;
       getline(infile, line);
       str << line;
       str.read(vChars, 3);
@@ -175,7 +176,7 @@ vector < ChemGraph > read_sdf(const string& fname){
     while(getline(infile, line)){
       stringstream str;
       string st;
-      if (line == "$$$$") {
+      if (line.rfind("$$$$", 0) == 0) {   // line starts with $$$$
 	// compute deg, bondsum, valence and alpha of each vertex
 	for (int i = 0; i < n; ++i){
 	  g.V[i].deg = g.V[i].edge.size();

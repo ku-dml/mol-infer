@@ -1,0 +1,15 @@
+{1: {'C4'}, 2: {'C4'}, 3: {'C4'}, 4: {'C4'}, 5: {'C4'}, 6: {'O2'}, 7: {'N3'}, 8: {'C4'}, 9: {'O2'}, 10: {'C4'}, 11: {'C4'}, 12: {'C4'}, 13: {'C4'}, 14: {'C4'}, 15: {'N3'}, 16: {'C4'}, 17: {'O2'}, 18: {'C4'}, 19: {'C4'}, 20: {'N3'}, 21: {'O2'}, 22: {'C4'}, 23: {'C4'}, 24: {'C4'}}
+24
+{1: 5, 2: 1, 4: 3, 10: 6, 14: 2, 22: 9}
+Initializing Time: 0.432
+Number of variables: 6813
+ - Integer : 6558
+ - Binary  : 5089
+Number of constraints: 7162
+Status: Feasible
+Solving Time: 0.953
+MILP y*: 1.499
+MILP y* (scaled): 2.763
+n_G : 50.0, n_G_int : 33.0
+Inspection value:   1.498985999042135
+Inspection value (scaled):   2.7626982178256463
