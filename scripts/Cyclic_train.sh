@@ -22,7 +22,7 @@ if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
 elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
     OS="linux"
     PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
-elif [ $OS = "MacOS" ] || [ $OS = "macos" ]; then
+elif [ $OS = "MacOS" ] || [ $OS = "macOS" ] || [ $OS = "macos" ]; then
     OS="macos"
     PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
 fi
