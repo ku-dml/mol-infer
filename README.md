@@ -73,7 +73,7 @@ A standard C++ compiler and Python with some standard packages. See each package
    cd mol-infer
    make
    python -m venv python-venv
-   python-venv\Scripts\pip install -r requirements.txt
+   python-venv/Scripts/pip install -r requirements.txt
    cd experiments
    bash ../mol-infer.sh
    ```
