@@ -329,14 +329,14 @@ public:
 };
 
 ChemicalGraph RemoveNullVertex(ChemicalGraph& graph){
-    int EAN = graph.EffectiveAtomNum();
+    // int EAN = graph.EffectiveAtomNum();
     vector <Vertex> efflist = graph.calcEffectiveAtom();
     ChemicalGraph new_graph(graph, efflist); 
     return new_graph;
 }
 
 RootedTree RemoveNullVertex(RootedTree& RT){
-    int EAN = RT.graph.EffectiveAtomNum();
+    // int EAN = RT.graph.EffectiveAtomNum();
     vector <Vertex> efflist = RT.graph.calcEffectiveAtom();
     ChemicalGraph new_graph(RT.graph, efflist);
     int new_root = -1;
