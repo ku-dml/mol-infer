@@ -48,7 +48,8 @@ __pycache__/
 # Python venv
 python-venv
 
-# Experiments
+# Binary files
+*/bin/*
+
+# Result files
 experiments/*
-!experiments/mol-infer_config.sh
-!experiments/mol-infer_default_values.sh

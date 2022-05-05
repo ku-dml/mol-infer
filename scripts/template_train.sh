@@ -11,21 +11,13 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 White='\033[0;37m'        # White
 
-# Read configuration
-. ./mol-infer_config.sh
-. ./mol-infer_default_values.sh
+# Read arguments
+MOLINFER_ROOT="$1"
+PYTHON="$2"
 
-# OS-specific configurations
-if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
-    OS="windows"
-    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
-elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
-    OS="linux"
-    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
-elif [ $OS = "MacOS" ] || [ $OS = "macOS" ] || [ $OS = "macos" ]; then
-    OS="macos"
-    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
-fi
+# Read configuration
+. ${MOLINFER_ROOT}/mol-infer_config.sh
+. ${MOLINFER_ROOT}/mol-infer_default_values.sh
 
 # Solver configurations
 #if [ $SOLVER_TYPE = "CPLEX" ]; then
@@ -43,7 +35,7 @@ SOLVER_PARAM=$CPLEX_PATH
 # The following 5 lines asks users to input the file containing input molecules
 # and store the filename to MOLECULES_FILE.
 # TEMPLATE_DEFAULT_MOLECULES_FILE is used as default filename and it is defined
-# in experiments/mol-infer_config.sh.
+# in mol-infer_config.sh.
 # Duplicate the following 5 lines to add more parameters or input files.
 echo "Please supply molecules used for training (sdf format)."
 echo "Default: ${TEMPLATE_DEFAULT_MOLECULES_FILE}"
@@ -54,12 +46,27 @@ echo ""
 # Ask users to provide a prefix for output files.
 # This prefix will be added to all output files and it is also the identifier
 # used in the next stage (infer) to search for input files.
-# Default value is defined in experiments/mol-infer_config.sh.
+# Default value is defined in mol-infer_config.sh.
 echo "Please enter the prefix for result files."
 echo "Default: ${TEMPLATE_DEFAULT_TASK_PREFIX}"
 read -e -p "$(echo -e "[${Green}prefix${Color_Off}]: ")" TASK_PREFIX
 TASK_PREFIX=${TASK_PREFIX:-$TEMPLATE_DEFAULT_TASK_PREFIX}
 echo ""
+
+# The following lines prints out all values for users to double check
+echo "-----------------------------------------------------"
+echo "molecules file  ${MOLECULES_FILE}"
+echo "prefix          ${TASK_PREFIX}"
+echo "-----------------------------------------------------"
+
+while true; do
+    read -p "Proceed? [y/n] " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please enter yes (y) or no (n).";;
+    esac
+done
 
 # Generate and execute corresponding commands.
 echo -e "${Yellow}"
@@ -105,8 +112,7 @@ fi
 echo ""
 
 # Example for calling binaries.
-# Binary files corresponding to users' operating system should be in
-# $MOLINFER_ROOT/<package_name>/bin/$OS/.
+# Binary files should be located in $MOLINFER_ROOT/<package_name>/bin/.
 $MOLINFER_ROOT/2LMM-LLR/bin/FV_2LMM_V018 "${FV_INPUT}" "${TASK_PREFIX}"
 
 # Check return value.
@@ -118,20 +124,29 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 
-# Call unix tools from ${UNIX_TOOLS_PATH}.
-${UNIX_TOOLS_PATH}cp "$TARGET_VALUES_FILE" "${TASK_PREFIX}_values.txt"
+# Additional operations
+cp "$TARGET_VALUES_FILE" "${TASK_PREFIX}_values.txt"
 
 # Informs users that the program has ended successfully.
-# Show the location of output files.
 echo -e "${Green}"
 echo "Done."
 echo -e "${Color_Off}"
-echo "Results have been saved to:"
-echo "${TASK_PREFIX}_eliminated.sdf"
-echo "${TASK_PREFIX}_desc.csv"
-echo "${TASK_PREFIX}_desc_norm.csv"
-echo "${TASK_PREFIX}_fringe.txt"
-echo "${TASK_PREFIX}_linreg.txt"
-echo "${TASK_PREFIX}_values.txt (copied from ${TARGET_VALUES_FILE})"
+
+# clear stdin
+while read -r -t 0; do read -r; done
+read -p "Press enter to continue."
+
+# Show the output files.
 echo ""
+echo "Results have been saved to:"
+echo "${TASK_PREFIX}_eliminated.sdf  This file contains molecules that satisfy condition (ii) in documents."
+echo "${TASK_PREFIX}_desc.csv        This file contains descriptors for input molecules."
+echo "${TASK_PREFIX}_weights.txt     This file contains weights for the trained ANN."
+echo "${TASK_PREFIX}_biases.txt      This file contains biases for the trained ANN."
+echo "These files will be used in the [Infer] part."
+echo "See documents in Cylic folder for details about output files."
+echo ""
+
+# clear stdin
+while read -r -t 0; do read -r; done
 read -p "Press enter to continue."

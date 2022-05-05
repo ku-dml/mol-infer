@@ -25,21 +25,53 @@ print_header () {
     echo "====================================================="
     echo ""
     echo "-----------------------------------------------------"
-    echo "Current configuration:"
-    echo "mol-infer root   = $MOLINFER_ROOT"
-    echo "CPLEX path       = $CPLEX_PATH"
-    echo "Operating System = $OS"
+    echo "CPLEX executable  = $CPLEX_PATH"
+    echo "Python executable = $PYTHON"
     echo "-----------------------------------------------------"
 }
 
+# mol-infer root
+MOLINFER_ROOT=$(dirname "$0")
+
 # Read configuration
-if [ -f "./mol-infer_config.sh" ]; then
-    . ./mol-infer_config.sh
+if [ -f "${MOLINFER_ROOT}/mol-infer_config.sh" ]; then
+    . ${MOLINFER_ROOT}/mol-infer_config.sh
 else
+    echo ""
     echo "Missing mol-infer_config.sh"
     exit 1
 fi
 
+# Check default values file
+if [ ! -f "${MOLINFER_ROOT}/mol-infer_default_values.sh" ]; then
+    echo ""
+    echo "Missing mol-infer_default_values.sh"
+    exit 1
+fi
+
+# Check CPLEX
+if [ ! -f "${CPLEX_PATH}" ]; then
+    echo ""
+    echo "Cannot find ${CPLEX_PATH}"
+    echo "Wrong CPLEX executable path?"
+    exit 1
+fi
+
+# Detect Python executable path
+if [ -f "${MOLINFER_ROOT}/python-venv/Scripts/python.exe" ]; then
+    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python.exe"
+elif [ -f "${MOLINFER_ROOT}/python-venv/bin/python" ]; then
+    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
+else
+    echo ""
+    echo "Cannot find Python executable."
+    echo ""
+    echo "Please see the instruction and create a python virtual"
+    echo "environment first."
+    exit 1
+fi
+
+# Menu
 while true; do
 
     clear
@@ -108,7 +140,8 @@ while true; do
                     echo "See Module 1 & 2."
                     echo "-----------------------------------------------------"
                     echo ""
-                    bash ${MOLINFER_ROOT}/scripts/${PACKAGE_NAME}_train.sh
+                    bash ${MOLINFER_ROOT}/scripts/${PACKAGE_NAME}_train.sh \
+                        "${MOLINFER_ROOT}" "${PYTHON}"
                     break
                     ;;
                 "Infer")
@@ -118,7 +151,8 @@ while true; do
                     echo "See Module 3 & 4."
                     echo "-----------------------------------------------------"
                     echo ""
-                    bash ${MOLINFER_ROOT}/scripts/${PACKAGE_NAME}_infer.sh
+                    bash ${MOLINFER_ROOT}/scripts/${PACKAGE_NAME}_infer.sh \
+                        "${MOLINFER_ROOT}" "${PYTHON}"
                     break
                     ;;
                 "Back")

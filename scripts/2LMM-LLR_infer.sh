@@ -11,21 +11,13 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 White='\033[0;37m'        # White
 
-# Read configuration
-. ./mol-infer_config.sh
-. ./mol-infer_default_values.sh
+# Read arguments
+MOLINFER_ROOT="$1"
+PYTHON="$2"
 
-# OS-specific configurations
-if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
-    OS="windows"
-    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
-elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
-    OS="linux"
-    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
-elif [ $OS = "MacOS" ] || [ $OS = "macOS" ] || [ $OS = "macos" ]; then
-    OS="macos"
-    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
-fi
+# Read configuration
+. ${MOLINFER_ROOT}/mol-infer_config.sh
+. ${MOLINFER_ROOT}/mol-infer_default_values.sh
 
 # Solver configurations
 #if [ $SOLVER_TYPE = "CPLEX" ]; then
@@ -120,6 +112,29 @@ read -e -p "$(echo -e "[${Green}value${Color_Off}]: ")" MODULE_4_F
 MODULE_4_F=${MODULE_4_F:-$TWOLMMLLR_DEFAULT_MODULE_4_F}
 echo ""
 
+echo "-----------------------------------------------------"
+echo "prefix                        ${TASK_PREFIX}"
+echo "target value lower bound      ${TARGET_LOWER}"
+echo "target value upper bound      ${TARGET_UPPER}"
+echo "chem specification file       ${SPEC_FILE}"
+echo "fringe tree file              ${SPEC_FILE}"
+echo "time limit for each stage     ${MODULE_4_A}"
+echo "num stored feature vectors    ${MODULE_4_B}"
+echo "num graphs per vertex / edge  ${MODULE_4_C}"
+echo "time limit for enum paths     ${MODULE_4_D}"
+echo "num stored paths              ${MODULE_4_E}"
+echo "num output graphs             ${MODULE_4_F}"
+echo "-----------------------------------------------------"
+
+while true; do
+    read -p "Proceed? [y/n] " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please enter yes (y) or no (n).";;
+    esac
+done
+
 echo -e "${Yellow}"
 echo "Solving MILP..."
 echo ""
@@ -155,7 +170,19 @@ fi
 echo -e "${Green}"
 echo "Done."
 echo -e "${Color_Off}"
+
+
+# clear stdin
+while read -r -t 0; do read -r; done
+read -p "Press enter to continue."
+
+echo ""
 echo "Result has been saved to:"
 echo "${TASK_PREFIX}_output.sdf"
+echo "These file contains generated molecules with desired property."
+echo "See documents in 2LMM-LLR folder for details about output files."
 echo ""
-read -p "Press enter to continue"
+
+# clear stdin
+while read -r -t 0; do read -r; done
+read -p "Press enter to continue."

@@ -11,21 +11,13 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 White='\033[0;37m'        # White
 
-# Read configuration
-. ./mol-infer_config.sh
-. ./mol-infer_default_values.sh
+# Read arguments
+MOLINFER_ROOT="$1"
+PYTHON="$2"
 
-# OS-specific configurations
-if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
-    OS="windows"
-    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
-elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
-    OS="linux"
-    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
-elif [ $OS = "MacOS" ] || [ $OS = "macOS" ] || [ $OS = "macos" ]; then
-    OS="macos"
-    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
-fi
+# Read configuration
+. ${MOLINFER_ROOT}/mol-infer_config.sh
+. ${MOLINFER_ROOT}/mol-infer_default_values.sh
 
 # Solver configurations
 #if [ $SOLVER_TYPE = "CPLEX" ]; then
@@ -70,6 +62,23 @@ echo "Default: ${TWOLMMLLR_DEFAULT_TASK_PREFIX}"
 read -e -p "$(echo -e "[${Green}prefix${Color_Off}]: ")" TASK_PREFIX
 TASK_PREFIX=${TASK_PREFIX:-$TWOLMMLLR_DEFAULT_TASK_PREFIX}
 echo ""
+
+echo "-----------------------------------------------------"
+echo "molecules file    ${MOLECULES_FILE}"
+echo "atom limitations  ${ATOM_LIMIT}"
+echo "values file       ${TARGET_VALUES_FILE}"
+echo "λ                 ${LLR_LAMBDA}"
+echo "prefix            ${TASK_PREFIX}"
+echo "-----------------------------------------------------"
+
+while true; do
+    read -p "Proceed? [y/n] " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please enter yes (y) or no (n).";;
+    esac
+done
 
 echo -e "${Yellow}"
 echo "Calculating molecule descriptors..."
@@ -135,12 +144,23 @@ ${UNIX_TOOLS_PATH}cp "$TARGET_VALUES_FILE" "${TASK_PREFIX}_values.txt"
 echo -e "${Green}"
 echo "Done."
 echo -e "${Color_Off}"
-echo "Results have been saved to:"
-echo "${TASK_PREFIX}_eliminated.sdf"
-echo "${TASK_PREFIX}_desc.csv"
-echo "${TASK_PREFIX}_desc_norm.csv"
-echo "${TASK_PREFIX}_fringe.txt"
-echo "${TASK_PREFIX}_linreg.txt"
-echo "${TASK_PREFIX}_values.txt (copied from ${TARGET_VALUES_FILE})"
+
+# clear stdin
+while read -r -t 0; do read -r; done
+read -p "Press enter to continue."
+
 echo ""
+echo "Results have been saved to:"
+echo "${TASK_PREFIX}_eliminated.sdf  This file contains molecules that satisfy condition (ii) in documents."
+echo "${TASK_PREFIX}_desc.csv        This file contains descriptors for input molecules."
+echo "${TASK_PREFIX}_desc_norm.csv   This file contains normalized descriptors for input molecules."
+echo "${TASK_PREFIX}_fringe.txt      This file contains generated fringe trees."
+echo "${TASK_PREFIX}_linreg.txt      This file contains parameters for the LLR."
+echo "${TASK_PREFIX}_values.txt      This file is copied from ${TARGET_VALUES_FILE}."
+echo "These files will be used in the [Infer] part."
+echo "See documents in 2LMM-LLR folder for details about output files."
+echo ""
+
+# clear stdin
+while read -r -t 0; do read -r; done
 read -p "Press enter to continue."

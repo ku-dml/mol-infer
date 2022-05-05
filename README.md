@@ -67,22 +67,15 @@ A standard C++ compiler and Python with some standard packages. See each package
 0. Python>=3.7とCPLEXソルバーが必要である。\
    Windowsユーザーには、Cygwinをインストール必要がある。\
    そして、Cygwinをインストールする時、`make`機能が有効であることが必要である。
-1. `experiments/mol-infer_config.sh`を編集し、mol-inferのパス、CPLEXのパス、とオペレーティングシステムを設定する。
-2. WindowsユーザーはCygwin Terminalで：
+1. `mol-infer_config.sh`を編集し、CPLEXのパスを設定する。
+2. ターミナル（WindowsユーザーはCygwin Terminal）で：
    ```
    cd mol-infer
    make
    python -m venv python-venv
-   python-venv/Scripts/pip install -r requirements.txt
-   cd experiments
-   bash ../mol-infer.sh
-   ```
-   LinuxとMacOSユーザーはターミナルで：
-   ```
-   cd mol-infer
-   make
-   python -m venv python-venv
-   python-venv/bin/pip install -r requirements.txt
+   (Windows):       python-venv\Scripts\pip install -r requirements.txt
+   (Linux & MacOS): python-venv/bin/pip install -r requirements.txt
+   mkdir experiments
    cd experiments
    bash ../mol-infer.sh
    ```
@@ -102,22 +95,15 @@ A standard C++ compiler and Python with some standard packages. See each package
 
 0. Python>=3.7 and a CPLEX solver are required.\
    Fow Windows users: Cygwin installed with `make` enabled is required.
-1. Edit `experiments/mol-infer_config.sh`, set mol-infer path, CPLEX path and operating system.
-2. Windows - In Cygwin Terminal:
+1. Edit `mol-infer_config.sh`, set CPLEX path.
+2. In terminal (Use Cygwin Terminal if you are using Windows):
    ```
    cd mol-infer
    make
    python -m venv python-venv
-   python-venv\Scripts\pip install -r requirements.txt
-   cd experiments
-   bash ../mol-infer.sh
-   ```
-   Linux and MacOS - In your preferred terminal:
-   ```
-   cd mol-infer
-   make
-   python -m venv python-venv
-   python-venv/bin/pip install -r requirements.txt
+   (Windows):       python-venv\Scripts\pip install -r requirements.txt
+   (Linux & MacOS): python-venv/bin/pip install -r requirements.txt
+   mkdir experiments
    cd experiments
    bash ../mol-infer.sh
    ```

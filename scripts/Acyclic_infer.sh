@@ -11,21 +11,13 @@ Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 White='\033[0;37m'        # White
 
-# Read configuration
-. ./mol-infer_config.sh
-. ./mol-infer_default_values.sh
+# Read arguments
+MOLINFER_ROOT="$1"
+PYTHON="$2"
 
-# OS-specific configurations
-if [ $OS = "Windows" ] || [ $OS = "windows" ]; then
-    OS="windows"
-    PYTHON="${MOLINFER_ROOT}/python-venv/Scripts/python"
-elif [ $OS = "Linux" ] || [ $OS = "linux" ]; then
-    OS="linux"
-    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
-elif [ $OS = "MacOS" ] || [ $OS = "macOS" ] || [ $OS = "macos" ]; then
-    OS="macos"
-    PYTHON="${MOLINFER_ROOT}/python-venv/bin/python"
-fi
+# Read configuration
+. ${MOLINFER_ROOT}/mol-infer_config.sh
+. ${MOLINFER_ROOT}/mol-infer_default_values.sh
 
 # Solver configurations
 #if [ $SOLVER_TYPE = "CPLEX" ]; then
@@ -94,6 +86,26 @@ echo "Default: ${ACYCLIC_DEFAULT_PARAM_BHK}"
 read -e -p "$(echo -e "[${Green}bh_k*${Color_Off}]: ")" PARAM_BHK
 PARAM_BHK=${PARAM_BHK:-$ACYCLIC_DEFAULT_PARAM_BHK}
 echo ""
+
+echo "-----------------------------------------------------"
+echo "prefix        ${TASK_PREFIX}"
+echo "target value  ${TARGET_VALUE}"
+echo "n*            ${PARAM_N}"
+echo "dia*          ${PARAM_DIA}"
+echo "k*            ${PARAM_K}"
+echo "d_max         ${PARAM_DMAX}"
+echo "bl_k*         ${PARAM_BLK}"
+echo "bh_k*         ${PARAM_BHK}"
+echo "-----------------------------------------------------"
+
+while true; do
+    read -p "Proceed? [y/n] " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please enter yes (y) or no (n).";;
+    esac
+done
 
 echo "------"
 echo "Parameters for Graph Generation (Module 4)."
@@ -168,8 +180,19 @@ fi
 echo -e "${Green}"
 echo "Done."
 echo -e "${Color_Off}"
+
+# clear stdin
+while read -r -t 0; do read -r; done
+read -p "Press enter to continue."
+
+echo ""
 echo "Result has been saved to:"
 echo "${TASK_PREFIX}_output_2_branches.sdf"
 echo "${TASK_PREFIX}_output_3_branches.sdf"
+echo "These two files contain generated molecules with desired property."
+echo "See documents in Acyclic folder for details about output files."
 echo ""
+
+# clear stdin
+while read -r -t 0; do read -r; done
 read -p "Press enter to continue."
