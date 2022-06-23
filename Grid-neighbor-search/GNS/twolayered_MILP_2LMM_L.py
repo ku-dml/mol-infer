@@ -3523,7 +3523,7 @@ def print_gstar_file(
     # print(base_edges)
     # print(base_edges_color)
 
-    with open(outputfilename, "w") as f:
+    with open(outputfilename, "w", newline='\n') as f:
         f.write(f"{t_C}\n")
         # print(t_C)
         for i in range(t_C):
@@ -3838,7 +3838,7 @@ def print_sdf_file(
     #             # print("beta_F_FT", ind1, ind2)
 
     n = graph_index
-    with open(outputfilename, "w") as f:
+    with open(outputfilename, "w", newline='\n') as f:
         f.write("1\n")
         f.write("MILP_2LMM\n")
         f.write("MILP_2LMM_Linear_Reg\n")

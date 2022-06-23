@@ -70,10 +70,9 @@ A standard C++ compiler and Python with some standard packages. See each package
 1. `mol-infer_config.sh`を編集し、CPLEXのパスを設定する。
 2. ターミナル（WindowsユーザーはCygwin Terminal）で：
    ```
-   cd mol-infer
    make
    python -m venv python-venv
-   (Windows):       python-venv\Scripts\pip install -r requirements.txt
+   (Windows):       python-venv/Scripts/pip install -r requirements.txt
    (Linux & MacOS): python-venv/bin/pip install -r requirements.txt
    mkdir experiments
    cd experiments
@@ -91,17 +90,19 @@ A standard C++ compiler and Python with some standard packages. See each package
 計算例を実行するには、すべての入力を空欄にしてenterキーを押してください。デフォルトの値が使用されます。\
 入力ファイルの準備や適切なパラメータの選択方法については、各パッケージのドキュメントを参照してください。
 
+**Notice:** All input file should be converted into LF (Unix-style) line endings.
+
 ## Quick Start
 
 0. Python>=3.7 and a CPLEX solver are required.\
-   Fow Windows users: Cygwin installed with `make` enabled is required.
-1. Edit `mol-infer_config.sh`, set CPLEX path.
+   Fow Windows users: Cygwin is required.
+   In `Select Packages` step during Cygwin installation, please find `Devel` category and enable `make` and `gcc-g++` by changing the `Skip` to any listed version.
+1. Edit `mol-infer_config.sh` and set CPLEX path.
 2. In terminal (Use Cygwin Terminal if you are using Windows):
    ```
-   cd mol-infer
    make
    python -m venv python-venv
-   (Windows):       python-venv\Scripts\pip install -r requirements.txt
+   (Windows):       python-venv/Scripts/pip install -r requirements.txt
    (Linux & MacOS): python-venv/bin/pip install -r requirements.txt
    mkdir experiments
    cd experiments
@@ -118,6 +119,8 @@ Each package includes two options: `train` and `infer`.
 
 To run examples, leave every input blank and press enter. Default values will be used.\
 Please see the documents in each package for details about how to prepare input files and choose the proper parameters.
+
+**Notice:** All input file should be converted into LF (Unix-style) line endings.
 
 ## Acknowledgement
 

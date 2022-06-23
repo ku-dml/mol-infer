@@ -618,7 +618,7 @@ def main(argv):
 
     best_regressor = Result[(ANN_seed,split_seed)]["reg"][best_fold][best_t]
 
-    with open(output_filename + f"{llambda}_var1_elinreg.txt", 'w') as f:
+    with open(output_filename + f"{llambda}_var1_elinreg.txt", 'w', newline='\n') as f:
         f.write(f"# Avg for all:\t{avg_all}\n")
         f.write(f"# Med for all:\t{mid_all}\n")
         f.write(f"{numfeature}\n")

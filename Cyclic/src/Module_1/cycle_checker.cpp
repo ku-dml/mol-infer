@@ -231,7 +231,7 @@ vector < ChemGraph > read_sdf(const string& fname){
     }
 
     // The end of the graph information in the file is marked with a "$$$$"
-		if (line.rfind("$$$$", 0) == 0 && flag == 2) {	// line starts with $$$$
+		if (line == "$$$$" && flag == 2) {
 			flag = 0;
 		}
   }

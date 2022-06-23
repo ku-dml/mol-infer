@@ -63,7 +63,7 @@ def write_weights_biases(reg, filename):
     num_features = weights[0].shape[0]
     
     # Write the weights to file weights_filename
-    with open(weights_filename, 'w') as f:
+    with open(weights_filename, 'w', newline='\n') as f:
         f.write(str(num_features) + ' ')
         for i in range(len(reg.hidden_layer_sizes)):
             f.write(str(reg.hidden_layer_sizes[i]) + ' ')
@@ -78,7 +78,7 @@ def write_weights_biases(reg, filename):
                 f.write('\n')
     
     # Write the biases to a file biases_filename
-    with open(biases_filename, 'w') as f:
+    with open(biases_filename, 'w', newline='\n') as f:
         for item in biases:
             for i in range(item.shape[0]):
                 f.write(str(item[i])+ '\n')

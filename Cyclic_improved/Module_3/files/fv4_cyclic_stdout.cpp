@@ -332,7 +332,8 @@ read_graph_sdf(const string& inFileName) {
 	int v1, v2, mul;
 	getline(infile, line);
 	stringstream st2;
-	char *vChars = new char[3];
+	char *vChars = new char[4];
+  vChars[3] = 0;
 	st2 << line;
 	st2.read(vChars, 3);
 	v1 = atoi(vChars); // id, 1-n of vertex
@@ -1765,7 +1766,6 @@ int main(int argc, char **argv){
       // cout << valence_sum << " " << bond_sum << "\n";
     }
   /* ----- Haraguchi: END -----*/
-  
 
   // A vector that stores the descriptor names
   vector < string > f_name;

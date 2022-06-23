@@ -472,7 +472,7 @@ usage: {} (ANNfile_prefix) (target_value) (chemical_specification_file) (outputf
     # # an input parameter
     # ############################################
     # #
-    # with open(outputfileprefix + "_test_all.txt", "w") as f:
+    # with open(outputfileprefix + "_test_all.txt", "w", newline='\n') as f:
     #     # f.write("######### Feature Vector ############\n")
     #     # for i in range(1, num_fv):
     #     #     f.write(stringoutput[i] + str(y[(1, i)].value()) + "\n")

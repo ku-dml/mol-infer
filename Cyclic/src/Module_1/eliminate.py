@@ -114,7 +114,7 @@ class toEliminate():
         #filename = inFile.split('.')[0] + '_eli_' + str(len(cidSet)) + '.sdf' 
         if not filename:
             filename = inFile.split('.')[0] + '_eli.sdf' 
-        with open(filename, 'w') as f:
+        with open(filename, 'w', newline='\n') as f:
             f.write(sdfString)
 
 def main(argv):

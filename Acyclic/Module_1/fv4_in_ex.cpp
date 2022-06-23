@@ -319,7 +319,7 @@ read_graph_sdf(const string& inFileName) {
 			flag = 2;
 		}
 		// The end of the graph information in the file is marked with a "$$$$"
-		if (line.rfind("$$$$", 0) == 0 && flag == 2) {	// line starts with $$$$
+		if (line == "$$$$" && flag == 2) {
 			flag = 0;
 		}
 	}

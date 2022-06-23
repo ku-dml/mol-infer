@@ -1480,7 +1480,7 @@ class LpProblem(object):
         :param kwargs: additional keyword arguments for json function
         :return: None
         """
-        with open(filename, "w") as f:
+        with open(filename, "w", newline='\n') as f:
             json.dump(self.toDict(), f, *args, **kwargs)
 
     to_json = toJson

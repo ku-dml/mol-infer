@@ -2142,7 +2142,7 @@ def print_gstar_file(
 
     ''' A function to output input file for g* program '''
 
-    with open(outputfilename, "w") as f:
+    with open(outputfilename, "w", newline='\n') as f:
         f.write(str(round(len(set_Lambda))) + "\n")
         for atom in set_Lambda:
             f.write("{} {} {} {} {}\n".format(atom.symbol, 
@@ -2256,7 +2256,7 @@ def print_sdf_file(
     #         if graph_adj[(i, j)] != 0:
     #             print("{}_{}:{}".format(i, j, graph_adj[(i, j)]))
 
-    with open(outputfilename, "w") as f:
+    with open(outputfilename, "w", newline='\n') as f:
         f.write("1\n")
         f.write("MILP\n")
         f.write("acyclic graph\n")

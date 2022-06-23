@@ -443,7 +443,7 @@ class GUROBI_CMD(LpSolver_CMD):
         rows = []
         for name, value in values:
             rows.append("{} {}".format(name, value))
-        with open(filename, "w") as f:
+        with open(filename, "w", newline='\n') as f:
             f.write("\n".join(rows))
         return True
 

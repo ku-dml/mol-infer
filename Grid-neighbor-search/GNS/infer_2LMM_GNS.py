@@ -611,7 +611,7 @@ def main(argv):
     # # and the value of all variables used in MILP in to a file "test.txt" #
     # ############################################
     # #
-    # with open(output_prefix + "_test_all.txt", "w") as f:
+    # with open(output_prefix + "_test_all.txt", "w", newline='\n') as f:
     #     # f.write("######### Feature Vector ############\n")
     #     # for i in range(1, num_fv):
     #     #     f.write(stringoutput[i] + str(y[(1, i)].value()) + "\n")
@@ -678,7 +678,7 @@ def main(argv):
             except:
                 pass
 
-        with open(output_prefix + "_GS_log.csv", "w") as f:
+        with open(output_prefix + "_GS_log.csv", "w", newline='\n') as f:
             f.write(f"p_max, {p_max}\n")
             f.write(f"VecDelta, {Vecdelta}\n")
             f.write(f"Vecr, {Vecr}\n")
@@ -760,7 +760,7 @@ def main(argv):
                 # # and the value of all variables used in MILP in to a file "test.txt" #
                 # ############################################
                 # #
-                # with open(output_prefix + f"_{z_counter}_test_all.txt", "w") as f:
+                # with open(output_prefix + f"_{z_counter}_test_all.txt", "w", newline='\n') as f:
                 #     # f.write("######### Feature Vector ############\n")
                 #     # for i in range(1, num_fv):
                 #     #     f.write(stringoutput[i] + str(y[(1, i)].value()) + "\n")
@@ -864,7 +864,7 @@ def main(argv):
     else:
         if output_status == "Timeout":
             # Timeout_counter += 1
-            with open(output_prefix + "_GS_log.csv", "w") as f:
+            with open(output_prefix + "_GS_log.csv", "w", newline='\n') as f:
                 f.write(f"p_max, {p_max}\n")
                 f.write(f"VecDelta, {Vecdelta}\n")
                 f.write(f"Vecr, {Vecr}\n")
@@ -878,7 +878,7 @@ def main(argv):
                 f.close()
         else:
             # Infeasible_counter += 1
-            with open(output_prefix + "_GS_log.csv", "w") as f:
+            with open(output_prefix + "_GS_log.csv", "w", newline='\n') as f:
                 f.write(f"p_max, {p_max}\n")
                 f.write(f"VecDelta, {Vecdelta}\n")
                 f.write(f"Vecr, {Vecr}\n")

@@ -100,7 +100,7 @@ def main(argv):
     outf = "_".join([outf, *input_set])
     counter = 0
     print(outf)
-    with open(outf, "w") as off:
+    with open(outf, "w", newline='\n') as off:
         with open(inf) as iff:
             sdfString = getSdfString(iff)
             while (sdfString):
@@ -113,7 +113,7 @@ def main(argv):
     new_outf = outf + f".sdf"
     os.rename(outf, new_outf)
     # comment out on 20201201
-    #with open(new_outf+"memo", "w") as ff:
+    #with open(new_outf+"memo", "w", newline='\n') as ff:
     #    pass
     #    # just keep a memo of the output result...
    

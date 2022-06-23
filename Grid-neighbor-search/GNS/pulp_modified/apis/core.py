@@ -409,7 +409,7 @@ class LpSolver:
     to_dict = toDict
 
     def toJson(self, filename, *args, **kwargs):
-        with open(filename, "w") as f:
+        with open(filename, "w", newline='\n') as f:
             json.dump(self.toDict(), f, *args, **kwargs)
 
     to_json = toJson

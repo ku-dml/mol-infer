@@ -279,7 +279,7 @@ class COIN_CMD(LpSolver_CMD):
         lines = ["Stopped on time - objective value 0\n"]
         lines += ["{0:>7} {1} {2:>15} {3:>23}\n".format(*tup) for tup in value_lines]
 
-        with open(filename, "w") as f:
+        with open(filename, "w", newline='\n') as f:
             f.writelines(lines)
 
         return True

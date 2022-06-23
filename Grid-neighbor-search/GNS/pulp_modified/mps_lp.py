@@ -242,7 +242,7 @@ def writeMPS(LpProblem, filename, mpsSense=0, rename=0, mip=1):
     for v in vs:
         bound_lines.extend(writeMPSBoundLines(varNames[v.name], v, mip))
 
-    with open(filename, "w") as f:
+    with open(filename, "w", newline='\n') as f:
         f.write("*SENSE:" + const.LpSenses[mpsSense] + "\n")
         f.write("NAME          " + model_name + "\n")
         f.write("ROWS\n")

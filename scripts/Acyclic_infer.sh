@@ -87,26 +87,6 @@ read -e -p "$(echo -e "[${Green}bh_k*${Color_Off}]: ")" PARAM_BHK
 PARAM_BHK=${PARAM_BHK:-$ACYCLIC_DEFAULT_PARAM_BHK}
 echo ""
 
-echo "-----------------------------------------------------"
-echo "prefix        ${TASK_PREFIX}"
-echo "target value  ${TARGET_VALUE}"
-echo "n*            ${PARAM_N}"
-echo "dia*          ${PARAM_DIA}"
-echo "k*            ${PARAM_K}"
-echo "d_max         ${PARAM_DMAX}"
-echo "bl_k*         ${PARAM_BLK}"
-echo "bh_k*         ${PARAM_BHK}"
-echo "-----------------------------------------------------"
-
-while true; do
-    read -p "Proceed? [y/n] " yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please enter yes (y) or no (n).";;
-    esac
-done
-
 echo "------"
 echo "Parameters for Graph Generation (Module 4)."
 echo "------"
@@ -130,6 +110,29 @@ echo "Default: ${ACYCLIC_DEFAULT_MODULE_4_C}"
 read -e -p "$(echo -e "[${Green}number graphs${Color_Off}]: ")" MODULE_4_C
 MODULE_4_C=${MODULE_4_C:-$ACYCLIC_DEFAULT_MODULE_4_C}
 echo ""
+
+echo "-----------------------------------------------------"
+echo "prefix        ${TASK_PREFIX}"
+echo "target value  ${TARGET_VALUE}"
+echo "n*            ${PARAM_N}"
+echo "dia*          ${PARAM_DIA}"
+echo "k*            ${PARAM_K}"
+echo "d_max         ${PARAM_DMAX}"
+echo "bl_k*         ${PARAM_BLK}"
+echo "bh_k*         ${PARAM_BHK}"
+echo "time limit    ${MODULE_4_A}"
+echo "num features  ${MODULE_4_B}"
+echo "num graphs    ${MODULE_4_C}"
+echo "-----------------------------------------------------"
+
+while true; do
+    read -p "Proceed? [y/n] " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please enter yes (y) or no (n).";;
+    esac
+done
 
 echo -e "${Yellow}"
 echo "Solving MILP..."
