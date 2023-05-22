@@ -57,6 +57,11 @@ You should think of different packages as different projects.
 - **Reference:**
   - N.A. Azam, J. Zhu, Y. Sun, Y. Shi, A. Shurbevski, L. Zhao, H. Nagamochi and T. Akutsu, A Novel Method for Inference of Acyclic Chemical Compounds with Bounded Branch-height Based on Artificial Neural Networks and Integer Programming, 2020, https://arxiv.org/abs/2009.09646.
 
+### Package [RMLRQ](RMLRQ/) (May 2023)
+- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
+- **Reference:**
+  - Jianshen Zhu, Naveed Ahmed Azam, Shengjuan Cao, Ryota Ido, Kazuya, Haraguchi, Liang Zhao, Hiroshi Nagamochi and Tatsuya Akutsu, “Molecular Design Based on Integer Programming and Quadratic Descriptors in a Two-layered Model”, arXiv 2209.13527, 2022, https://arxiv.org/abs/2209.13527.
+
 
 ## Requirement
 
