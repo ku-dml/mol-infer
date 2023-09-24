@@ -1,0 +1,28 @@
+output_prefix: ./output/test
+instance_file: ./sample_instance/instance_b4_test_2LMM.txt
+fringe_tree_file: ./sample_instance/ins_b4_test_fringe_2LMM.txt
+normalized_dataset_filename: ./sample_instance/Hc_desc_norm.csv
+# instance_file: ./ANN/topological_description/instance_a.txt
+# fringe_tree_file: ./ANN/fringe_set/ins_a_fringe.txt
+
+# model can be ANN or LR
+input_data:
+  - model: ANN
+    prefix: ANN/ANN/KOW
+    target_value: 3.2
+  # - model: ANN
+  #   prefix: ANN/ANN/LP
+  #   target_value: 2.5
+  # - model: LR
+  #   prefix: ./sample_instance/Hc
+  #   target_value_lower_bound: 1900
+  #   target_value_upper_bound: 1920
+  # - model: LR
+  #   prefix: sample_instance/Hc
+  #   target_value_lower_bound: 1910
+  #   target_value_upper_bound: 1930
+  # - model: LR
+  #   prefix: ./sample_instance/Hc
+  #   target_value_lower_bound: 1900
+  #   target_value_upper_bound: 1910
+    

@@ -1,0 +1,175 @@
+### seed graph ###
+# |V_C|
+4
+# |E_C|
+5
+# edges (index followed by list of extreme points)
+1 1 2
+2 3 4
+3 2 3
+4 1 2
+5 3 4
+### Path-replacement specification pr###
+# index, ell_LB and ell_UB
+1 2 50
+2 2 50
+3 1 50
+4 1 1
+5 1 1
+# n_LB_int and n_UB_int
+30
+30
+### Path-replacement specification ta###
+# n_LB, n_star
+50
+50
+# rho
+2
+# index of V_C, ch_LB and ch_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+# index of E_ge_two | E_ge_one, ch_LB and ch_UB
+1 0 50
+2 0 50
+3 0 50
+# index of V_C, bl_LB and bl_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+# index of E_ge_two | E_ge_one, bl_LB and bl_UB
+1 0 50
+2 0 50
+3 0 50
+### chemical specification ###
+# Lambda
+C N O
+# Lambda_dg_int
+6
+C 2
+C 3
+C 4
+N 2
+N 3
+O 2
+# Gamma_int_ac
+10
+C C 1
+C C 2
+C C 3
+C N 1
+C N 2
+C O 1
+N N 1
+N N 2
+N O 1
+O O 1
+# Gamma_int
+28
+C 2 C 2 1
+C 2 C 2 2
+C 2 C 2 3
+C 2 C 3 1
+C 2 C 3 2
+C 2 C 4 1
+C 3 C 3 1
+C 3 C 3 2
+C 3 C 4 1
+C 4 C 4 1
+C 2 N 2 1
+C 2 N 2 2
+C 2 N 3 1
+C 3 N 2 1
+C 3 N 2 2
+C 3 N 3 1
+C 4 N 2 1
+C 4 N 3 1
+C 2 O 2 1
+C 3 O 2 1
+C 4 O 2 1
+N 2 N 2 1
+N 2 N 2 2
+N 2 N 3 1
+N 3 N 3 1
+N 2 O 2 1
+N 3 O 2 1
+O 2 O 2 1
+# Lambda_star
+1 C N O
+2 C N O
+3 C N O
+4 C N O
+# na_LB and na_UB
+3
+C 0 50
+N 0 50
+O 0 50
+# na_LB_int and na_UB_int
+3
+C 0 50
+N 0 50
+O 0 50
+# ns_LB_int and ns_UB_int
+6
+C 2 0 50
+C 3 0 50
+C 4 0 50
+N 2 0 50
+N 3 0 50
+O 2 0 50
+# ac_LB_int and ac_UB_int
+10
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+6 0 50
+7 0 50
+8 0 50
+9 0 50
+10 0 50
+# ec_LB_int and ec_UB_int
+28
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+6 0 50
+7 0 50
+8 0 50
+9 0 50
+10 0 50
+11 0 50
+12 0 50
+13 0 50
+14 0 50
+15 0 50
+16 0 50
+17 0 50
+18 0 50
+19 0 50
+20 0 50
+21 0 50
+22 0 50
+23 0 50
+24 0 50
+25 0 50
+26 0 50
+27 0 50
+28 0 50
+# bd2_LB and bd2_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+# bd3_LB and bd3_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
