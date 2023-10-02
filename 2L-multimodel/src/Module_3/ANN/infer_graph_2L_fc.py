@@ -27,7 +27,7 @@ def ANN_add_vars_constraints_to_MILP(config, index, MILP, base_var):
     ann_weights_filename = f"{prop}_weights.txt" 
     #input file of fv
     ann_training_data_filename = f"{prop}_desc.csv"
-    ann_training_data_norm_filename = f"{prop}_desc_norm.csv"
+    ann_training_data_norm_filename = f"{prop}_desc_norm_selected.csv"
     # all fringe trees used in learning
     fv_fringe_tree_filename = f"{prop}_fringe.txt"  
     # value file
@@ -53,8 +53,6 @@ def ANN_add_vars_constraints_to_MILP(config, index, MILP, base_var):
     )
 
     max_dcp, min_dcp, avg_dcp, sd_dcp = prepare_max_min(ann_training_data_filename)
-
-    # tmp_MILP = pulp.LpProblem(name="ANN")
 
     std_eps = 1e-5
     x_hat, x_tilde = prepare_variables_nor_std_fv(num_fv, prop=index)

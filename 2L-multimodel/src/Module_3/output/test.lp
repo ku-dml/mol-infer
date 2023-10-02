@@ -2,374 +2,362 @@
 Minimize
 OBJ: __dummy
 Subject To
-LR_connect_x_100_0: LR_x_100_0 - x_hat0(100) = 0
 LR_connect_x_100_1: LR_x_100_1 - x_hat1(100) = 0
-LR_connect_x_101_0: LR_x_101_0 - x_hat0(101) = 0
+LR_connect_x_100_2: LR_x_100_2 - x_hat2(100) = 0
 LR_connect_x_101_1: LR_x_101_1 - x_hat1(101) = 0
-LR_connect_x_102_0: LR_x_102_0 - x_hat0(102) = 0
+LR_connect_x_101_2: LR_x_101_2 - x_hat2(101) = 0
 LR_connect_x_102_1: LR_x_102_1 - x_hat1(102) = 0
-LR_connect_x_103_0: LR_x_103_0 - x_hat0(103) = 0
+LR_connect_x_102_2: LR_x_102_2 - x_hat2(102) = 0
 LR_connect_x_103_1: LR_x_103_1 - x_hat1(103) = 0
-LR_connect_x_104_0: LR_x_104_0 - x_hat0(104) = 0
+LR_connect_x_103_2: LR_x_103_2 - x_hat2(103) = 0
 LR_connect_x_104_1: LR_x_104_1 - x_hat1(104) = 0
-LR_connect_x_105_0: LR_x_105_0 - x_hat0(105) = 0
+LR_connect_x_104_2: LR_x_104_2 - x_hat2(104) = 0
 LR_connect_x_105_1: LR_x_105_1 - x_hat1(105) = 0
-LR_connect_x_106_0: LR_x_106_0 - x_hat0(106) = 0
+LR_connect_x_105_2: LR_x_105_2 - x_hat2(105) = 0
 LR_connect_x_106_1: LR_x_106_1 - x_hat1(106) = 0
-LR_connect_x_107_0: LR_x_107_0 - x_hat0(107) = 0
+LR_connect_x_106_2: LR_x_106_2 - x_hat2(106) = 0
 LR_connect_x_107_1: LR_x_107_1 - x_hat1(107) = 0
-LR_connect_x_108_0: LR_x_108_0 - x_hat0(108) = 0
+LR_connect_x_107_2: LR_x_107_2 - x_hat2(107) = 0
 LR_connect_x_108_1: LR_x_108_1 - x_hat1(108) = 0
-LR_connect_x_109_0: LR_x_109_0 - x_hat0(109) = 0
+LR_connect_x_108_2: LR_x_108_2 - x_hat2(108) = 0
 LR_connect_x_109_1: LR_x_109_1 - x_hat1(109) = 0
-LR_connect_x_10_0: LR_x_10_0 - x_hat0(10) = 0
+LR_connect_x_109_2: LR_x_109_2 - x_hat2(109) = 0
 LR_connect_x_10_1: LR_x_10_1 - x_hat1(10) = 0
-LR_connect_x_110_0: LR_x_110_0 - x_hat0(110) = 0
+LR_connect_x_10_2: LR_x_10_2 - x_hat2(10) = 0
 LR_connect_x_110_1: LR_x_110_1 - x_hat1(110) = 0
-LR_connect_x_111_0: LR_x_111_0 - x_hat0(111) = 0
+LR_connect_x_110_2: LR_x_110_2 - x_hat2(110) = 0
 LR_connect_x_111_1: LR_x_111_1 - x_hat1(111) = 0
-LR_connect_x_112_0: LR_x_112_0 - x_hat0(112) = 0
+LR_connect_x_111_2: LR_x_111_2 - x_hat2(111) = 0
 LR_connect_x_112_1: LR_x_112_1 - x_hat1(112) = 0
-LR_connect_x_113_0: LR_x_113_0 - x_hat0(113) = 0
+LR_connect_x_112_2: LR_x_112_2 - x_hat2(112) = 0
 LR_connect_x_113_1: LR_x_113_1 - x_hat1(113) = 0
-LR_connect_x_114_0: LR_x_114_0 - x_hat0(114) = 0
+LR_connect_x_113_2: LR_x_113_2 - x_hat2(113) = 0
 LR_connect_x_114_1: LR_x_114_1 - x_hat1(114) = 0
-LR_connect_x_115_0: LR_x_115_0 - x_hat0(115) = 0
+LR_connect_x_114_2: LR_x_114_2 - x_hat2(114) = 0
 LR_connect_x_115_1: LR_x_115_1 - x_hat1(115) = 0
-LR_connect_x_116_0: LR_x_116_0 - x_hat0(116) = 0
+LR_connect_x_115_2: LR_x_115_2 - x_hat2(115) = 0
 LR_connect_x_116_1: LR_x_116_1 - x_hat1(116) = 0
-LR_connect_x_117_0: LR_x_117_0 - x_hat0(117) = 0
+LR_connect_x_116_2: LR_x_116_2 - x_hat2(116) = 0
 LR_connect_x_117_1: LR_x_117_1 - x_hat1(117) = 0
-LR_connect_x_118_0: LR_x_118_0 - x_hat0(118) = 0
+LR_connect_x_117_2: LR_x_117_2 - x_hat2(117) = 0
 LR_connect_x_118_1: LR_x_118_1 - x_hat1(118) = 0
-LR_connect_x_119_0: LR_x_119_0 - x_hat0(119) = 0
+LR_connect_x_118_2: LR_x_118_2 - x_hat2(118) = 0
 LR_connect_x_119_1: LR_x_119_1 - x_hat1(119) = 0
-LR_connect_x_11_0: LR_x_11_0 - x_hat0(11) = 0
+LR_connect_x_119_2: LR_x_119_2 - x_hat2(119) = 0
 LR_connect_x_11_1: LR_x_11_1 - x_hat1(11) = 0
-LR_connect_x_120_0: LR_x_120_0 - x_hat0(120) = 0
+LR_connect_x_11_2: LR_x_11_2 - x_hat2(11) = 0
 LR_connect_x_120_1: LR_x_120_1 - x_hat1(120) = 0
-LR_connect_x_121_0: LR_x_121_0 - x_hat0(121) = 0
+LR_connect_x_120_2: LR_x_120_2 - x_hat2(120) = 0
 LR_connect_x_121_1: LR_x_121_1 - x_hat1(121) = 0
-LR_connect_x_122_0: LR_x_122_0 - x_hat0(122) = 0
+LR_connect_x_121_2: LR_x_121_2 - x_hat2(121) = 0
 LR_connect_x_122_1: LR_x_122_1 - x_hat1(122) = 0
-LR_connect_x_123_0: LR_x_123_0 - x_hat0(123) = 0
+LR_connect_x_122_2: LR_x_122_2 - x_hat2(122) = 0
 LR_connect_x_123_1: LR_x_123_1 - x_hat1(123) = 0
-LR_connect_x_124_0: LR_x_124_0 - x_hat0(124) = 0
+LR_connect_x_123_2: LR_x_123_2 - x_hat2(123) = 0
 LR_connect_x_124_1: LR_x_124_1 - x_hat1(124) = 0
-LR_connect_x_125_0: LR_x_125_0 - x_hat0(125) = 0
+LR_connect_x_124_2: LR_x_124_2 - x_hat2(124) = 0
 LR_connect_x_125_1: LR_x_125_1 - x_hat1(125) = 0
-LR_connect_x_126_0: LR_x_126_0 - x_hat0(126) = 0
+LR_connect_x_125_2: LR_x_125_2 - x_hat2(125) = 0
 LR_connect_x_126_1: LR_x_126_1 - x_hat1(126) = 0
-LR_connect_x_127_0: LR_x_127_0 - x_hat0(127) = 0
+LR_connect_x_126_2: LR_x_126_2 - x_hat2(126) = 0
 LR_connect_x_127_1: LR_x_127_1 - x_hat1(127) = 0
-LR_connect_x_128_0: LR_x_128_0 - x_hat0(128) = 0
+LR_connect_x_127_2: LR_x_127_2 - x_hat2(127) = 0
 LR_connect_x_128_1: LR_x_128_1 - x_hat1(128) = 0
-LR_connect_x_129_0: LR_x_129_0 - x_hat0(129) = 0
+LR_connect_x_128_2: LR_x_128_2 - x_hat2(128) = 0
 LR_connect_x_129_1: LR_x_129_1 - x_hat1(129) = 0
-LR_connect_x_12_0: LR_x_12_0 - x_hat0(12) = 0
+LR_connect_x_129_2: LR_x_129_2 - x_hat2(129) = 0
 LR_connect_x_12_1: LR_x_12_1 - x_hat1(12) = 0
-LR_connect_x_130_0: LR_x_130_0 - x_hat0(130) = 0
+LR_connect_x_12_2: LR_x_12_2 - x_hat2(12) = 0
 LR_connect_x_130_1: LR_x_130_1 - x_hat1(130) = 0
-LR_connect_x_131_0: LR_x_131_0 - x_hat0(131) = 0
+LR_connect_x_130_2: LR_x_130_2 - x_hat2(130) = 0
 LR_connect_x_131_1: LR_x_131_1 - x_hat1(131) = 0
-LR_connect_x_132_0: LR_x_132_0 - x_hat0(132) = 0
+LR_connect_x_131_2: LR_x_131_2 - x_hat2(131) = 0
 LR_connect_x_132_1: LR_x_132_1 - x_hat1(132) = 0
-LR_connect_x_133_0: LR_x_133_0 - x_hat0(133) = 0
+LR_connect_x_132_2: LR_x_132_2 - x_hat2(132) = 0
 LR_connect_x_133_1: LR_x_133_1 - x_hat1(133) = 0
-LR_connect_x_134_0: LR_x_134_0 - x_hat0(134) = 0
+LR_connect_x_133_2: LR_x_133_2 - x_hat2(133) = 0
 LR_connect_x_134_1: LR_x_134_1 - x_hat1(134) = 0
-LR_connect_x_135_0: LR_x_135_0 - x_hat0(135) = 0
+LR_connect_x_134_2: LR_x_134_2 - x_hat2(134) = 0
 LR_connect_x_135_1: LR_x_135_1 - x_hat1(135) = 0
-LR_connect_x_136_0: LR_x_136_0 - x_hat0(136) = 0
+LR_connect_x_135_2: LR_x_135_2 - x_hat2(135) = 0
 LR_connect_x_136_1: LR_x_136_1 - x_hat1(136) = 0
-LR_connect_x_137_0: LR_x_137_0 - x_hat0(137) = 0
+LR_connect_x_136_2: LR_x_136_2 - x_hat2(136) = 0
 LR_connect_x_137_1: LR_x_137_1 - x_hat1(137) = 0
-LR_connect_x_138_0: LR_x_138_0 - x_hat0(138) = 0
+LR_connect_x_137_2: LR_x_137_2 - x_hat2(137) = 0
 LR_connect_x_138_1: LR_x_138_1 - x_hat1(138) = 0
-LR_connect_x_139_0: LR_x_139_0 - x_hat0(139) = 0
+LR_connect_x_138_2: LR_x_138_2 - x_hat2(138) = 0
 LR_connect_x_139_1: LR_x_139_1 - x_hat1(139) = 0
-LR_connect_x_13_0: LR_x_13_0 - x_hat0(13) = 0
+LR_connect_x_139_2: LR_x_139_2 - x_hat2(139) = 0
 LR_connect_x_13_1: LR_x_13_1 - x_hat1(13) = 0
-LR_connect_x_140_0: LR_x_140_0 - x_hat0(140) = 0
+LR_connect_x_13_2: LR_x_13_2 - x_hat2(13) = 0
 LR_connect_x_140_1: LR_x_140_1 - x_hat1(140) = 0
-LR_connect_x_141_0: LR_x_141_0 - x_hat0(141) = 0
+LR_connect_x_140_2: LR_x_140_2 - x_hat2(140) = 0
 LR_connect_x_141_1: LR_x_141_1 - x_hat1(141) = 0
-LR_connect_x_142_0: LR_x_142_0 - x_hat0(142) = 0
+LR_connect_x_141_2: LR_x_141_2 - x_hat2(141) = 0
 LR_connect_x_142_1: LR_x_142_1 - x_hat1(142) = 0
-LR_connect_x_143_0: LR_x_143_0 - x_hat0(143) = 0
+LR_connect_x_142_2: LR_x_142_2 - x_hat2(142) = 0
 LR_connect_x_143_1: LR_x_143_1 - x_hat1(143) = 0
-LR_connect_x_144_0: LR_x_144_0 - x_hat0(144) = 0
+LR_connect_x_143_2: LR_x_143_2 - x_hat2(143) = 0
 LR_connect_x_144_1: LR_x_144_1 - x_hat1(144) = 0
-LR_connect_x_145_0: LR_x_145_0 - x_hat0(145) = 0
+LR_connect_x_144_2: LR_x_144_2 - x_hat2(144) = 0
 LR_connect_x_145_1: LR_x_145_1 - x_hat1(145) = 0
-LR_connect_x_146_0: LR_x_146_0 - x_hat0(146) = 0
+LR_connect_x_145_2: LR_x_145_2 - x_hat2(145) = 0
 LR_connect_x_146_1: LR_x_146_1 - x_hat1(146) = 0
-LR_connect_x_147_0: LR_x_147_0 - x_hat0(147) = 0
+LR_connect_x_146_2: LR_x_146_2 - x_hat2(146) = 0
 LR_connect_x_147_1: LR_x_147_1 - x_hat1(147) = 0
-LR_connect_x_148_0: LR_x_148_0 - x_hat0(148) = 0
+LR_connect_x_147_2: LR_x_147_2 - x_hat2(147) = 0
 LR_connect_x_148_1: LR_x_148_1 - x_hat1(148) = 0
-LR_connect_x_149_0: LR_x_149_0 - x_hat0(149) = 0
+LR_connect_x_148_2: LR_x_148_2 - x_hat2(148) = 0
 LR_connect_x_149_1: LR_x_149_1 - x_hat1(149) = 0
-LR_connect_x_14_0: LR_x_14_0 - x_hat0(14) = 0
+LR_connect_x_149_2: LR_x_149_2 - x_hat2(149) = 0
 LR_connect_x_14_1: LR_x_14_1 - x_hat1(14) = 0
-LR_connect_x_150_0: LR_x_150_0 - x_hat0(150) = 0
+LR_connect_x_14_2: LR_x_14_2 - x_hat2(14) = 0
 LR_connect_x_150_1: LR_x_150_1 - x_hat1(150) = 0
-LR_connect_x_151_0: LR_x_151_0 - x_hat0(151) = 0
+LR_connect_x_150_2: LR_x_150_2 - x_hat2(150) = 0
 LR_connect_x_151_1: LR_x_151_1 - x_hat1(151) = 0
-LR_connect_x_152_0: LR_x_152_0 - x_hat0(152) = 0
+LR_connect_x_151_2: LR_x_151_2 - x_hat2(151) = 0
 LR_connect_x_152_1: LR_x_152_1 - x_hat1(152) = 0
-LR_connect_x_153_0: LR_x_153_0 - x_hat0(153) = 0
+LR_connect_x_152_2: LR_x_152_2 - x_hat2(152) = 0
 LR_connect_x_153_1: LR_x_153_1 - x_hat1(153) = 0
-LR_connect_x_154_0: LR_x_154_0 - x_hat0(154) = 0
+LR_connect_x_153_2: LR_x_153_2 - x_hat2(153) = 0
 LR_connect_x_154_1: LR_x_154_1 - x_hat1(154) = 0
-LR_connect_x_155_0: LR_x_155_0 - x_hat0(155) = 0
+LR_connect_x_154_2: LR_x_154_2 - x_hat2(154) = 0
 LR_connect_x_155_1: LR_x_155_1 - x_hat1(155) = 0
-LR_connect_x_156_0: LR_x_156_0 - x_hat0(156) = 0
+LR_connect_x_155_2: LR_x_155_2 - x_hat2(155) = 0
 LR_connect_x_156_1: LR_x_156_1 - x_hat1(156) = 0
-LR_connect_x_157_0: LR_x_157_0 - x_hat0(157) = 0
+LR_connect_x_156_2: LR_x_156_2 - x_hat2(156) = 0
 LR_connect_x_157_1: LR_x_157_1 - x_hat1(157) = 0
-LR_connect_x_158_0: LR_x_158_0 - x_hat0(158) = 0
+LR_connect_x_157_2: LR_x_157_2 - x_hat2(157) = 0
 LR_connect_x_158_1: LR_x_158_1 - x_hat1(158) = 0
-LR_connect_x_159_0: LR_x_159_0 - x_hat0(159) = 0
+LR_connect_x_158_2: LR_x_158_2 - x_hat2(158) = 0
 LR_connect_x_159_1: LR_x_159_1 - x_hat1(159) = 0
-LR_connect_x_15_0: LR_x_15_0 - x_hat0(15) = 0
+LR_connect_x_159_2: LR_x_159_2 - x_hat2(159) = 0
 LR_connect_x_15_1: LR_x_15_1 - x_hat1(15) = 0
-LR_connect_x_160_0: LR_x_160_0 - x_hat0(160) = 0
+LR_connect_x_15_2: LR_x_15_2 - x_hat2(15) = 0
 LR_connect_x_160_1: LR_x_160_1 - x_hat1(160) = 0
-LR_connect_x_161_0: LR_x_161_0 - x_hat0(161) = 0
+LR_connect_x_160_2: LR_x_160_2 - x_hat2(160) = 0
 LR_connect_x_161_1: LR_x_161_1 - x_hat1(161) = 0
-LR_connect_x_162_0: LR_x_162_0 - x_hat0(162) = 0
+LR_connect_x_161_2: LR_x_161_2 - x_hat2(161) = 0
 LR_connect_x_162_1: LR_x_162_1 - x_hat1(162) = 0
-LR_connect_x_163_0: LR_x_163_0 - x_hat0(163) = 0
+LR_connect_x_162_2: LR_x_162_2 - x_hat2(162) = 0
 LR_connect_x_163_1: LR_x_163_1 - x_hat1(163) = 0
-LR_connect_x_164_0: LR_x_164_0 - x_hat0(164) = 0
+LR_connect_x_163_2: LR_x_163_2 - x_hat2(163) = 0
 LR_connect_x_164_1: LR_x_164_1 - x_hat1(164) = 0
-LR_connect_x_165_0: LR_x_165_0 - x_hat0(165) = 0
+LR_connect_x_164_2: LR_x_164_2 - x_hat2(164) = 0
 LR_connect_x_165_1: LR_x_165_1 - x_hat1(165) = 0
-LR_connect_x_166_0: LR_x_166_0 - x_hat0(166) = 0
+LR_connect_x_165_2: LR_x_165_2 - x_hat2(165) = 0
 LR_connect_x_166_1: LR_x_166_1 - x_hat1(166) = 0
-LR_connect_x_167_0: LR_x_167_0 - x_hat0(167) = 0
+LR_connect_x_166_2: LR_x_166_2 - x_hat2(166) = 0
 LR_connect_x_167_1: LR_x_167_1 - x_hat1(167) = 0
-LR_connect_x_168_0: LR_x_168_0 - x_hat0(168) = 0
+LR_connect_x_167_2: LR_x_167_2 - x_hat2(167) = 0
 LR_connect_x_168_1: LR_x_168_1 - x_hat1(168) = 0
-LR_connect_x_169_0: LR_x_169_0 - x_hat0(169) = 0
+LR_connect_x_168_2: LR_x_168_2 - x_hat2(168) = 0
 LR_connect_x_169_1: LR_x_169_1 - x_hat1(169) = 0
-LR_connect_x_16_0: LR_x_16_0 - x_hat0(16) = 0
+LR_connect_x_169_2: LR_x_169_2 - x_hat2(169) = 0
 LR_connect_x_16_1: LR_x_16_1 - x_hat1(16) = 0
-LR_connect_x_170_0: LR_x_170_0 - x_hat0(170) = 0
+LR_connect_x_16_2: LR_x_16_2 - x_hat2(16) = 0
 LR_connect_x_170_1: LR_x_170_1 - x_hat1(170) = 0
-LR_connect_x_171_0: LR_x_171_0 - x_hat0(171) = 0
+LR_connect_x_170_2: LR_x_170_2 - x_hat2(170) = 0
 LR_connect_x_171_1: LR_x_171_1 - x_hat1(171) = 0
-LR_connect_x_172_0: LR_x_172_0 - x_hat0(172) = 0
+LR_connect_x_171_2: LR_x_171_2 - x_hat2(171) = 0
 LR_connect_x_172_1: LR_x_172_1 - x_hat1(172) = 0
-LR_connect_x_173_0: LR_x_173_0 - x_hat0(173) = 0
+LR_connect_x_172_2: LR_x_172_2 - x_hat2(172) = 0
 LR_connect_x_173_1: LR_x_173_1 - x_hat1(173) = 0
-LR_connect_x_174_0: LR_x_174_0 - x_hat0(174) = 0
+LR_connect_x_173_2: LR_x_173_2 - x_hat2(173) = 0
 LR_connect_x_174_1: LR_x_174_1 - x_hat1(174) = 0
-LR_connect_x_175_0: LR_x_175_0 - x_hat0(175) = 0
+LR_connect_x_174_2: LR_x_174_2 - x_hat2(174) = 0
 LR_connect_x_175_1: LR_x_175_1 - x_hat1(175) = 0
-LR_connect_x_176_0: LR_x_176_0 - x_hat0(176) = 0
+LR_connect_x_175_2: LR_x_175_2 - x_hat2(175) = 0
 LR_connect_x_176_1: LR_x_176_1 - x_hat1(176) = 0
-LR_connect_x_177_0: LR_x_177_0 - x_hat0(177) = 0
+LR_connect_x_176_2: LR_x_176_2 - x_hat2(176) = 0
 LR_connect_x_177_1: LR_x_177_1 - x_hat1(177) = 0
-LR_connect_x_17_0: LR_x_17_0 - x_hat0(17) = 0
+LR_connect_x_177_2: LR_x_177_2 - x_hat2(177) = 0
 LR_connect_x_17_1: LR_x_17_1 - x_hat1(17) = 0
-LR_connect_x_18_0: LR_x_18_0 - x_hat0(18) = 0
+LR_connect_x_17_2: LR_x_17_2 - x_hat2(17) = 0
 LR_connect_x_18_1: LR_x_18_1 - x_hat1(18) = 0
-LR_connect_x_19_0: LR_x_19_0 - x_hat0(19) = 0
+LR_connect_x_18_2: LR_x_18_2 - x_hat2(18) = 0
 LR_connect_x_19_1: LR_x_19_1 - x_hat1(19) = 0
-LR_connect_x_1_0: LR_x_1_0 - x_hat0(1) = 0
+LR_connect_x_19_2: LR_x_19_2 - x_hat2(19) = 0
 LR_connect_x_1_1: LR_x_1_1 - x_hat1(1) = 0
-LR_connect_x_20_0: LR_x_20_0 - x_hat0(20) = 0
+LR_connect_x_1_2: LR_x_1_2 - x_hat2(1) = 0
 LR_connect_x_20_1: LR_x_20_1 - x_hat1(20) = 0
-LR_connect_x_21_0: LR_x_21_0 - x_hat0(21) = 0
+LR_connect_x_20_2: LR_x_20_2 - x_hat2(20) = 0
 LR_connect_x_21_1: LR_x_21_1 - x_hat1(21) = 0
-LR_connect_x_22_0: LR_x_22_0 - x_hat0(22) = 0
+LR_connect_x_21_2: LR_x_21_2 - x_hat2(21) = 0
 LR_connect_x_22_1: LR_x_22_1 - x_hat1(22) = 0
-LR_connect_x_23_0: LR_x_23_0 - x_hat0(23) = 0
+LR_connect_x_22_2: LR_x_22_2 - x_hat2(22) = 0
 LR_connect_x_23_1: LR_x_23_1 - x_hat1(23) = 0
-LR_connect_x_24_0: LR_x_24_0 - x_hat0(24) = 0
+LR_connect_x_23_2: LR_x_23_2 - x_hat2(23) = 0
 LR_connect_x_24_1: LR_x_24_1 - x_hat1(24) = 0
-LR_connect_x_25_0: LR_x_25_0 - x_hat0(25) = 0
+LR_connect_x_24_2: LR_x_24_2 - x_hat2(24) = 0
 LR_connect_x_25_1: LR_x_25_1 - x_hat1(25) = 0
-LR_connect_x_26_0: LR_x_26_0 - x_hat0(26) = 0
+LR_connect_x_25_2: LR_x_25_2 - x_hat2(25) = 0
 LR_connect_x_26_1: LR_x_26_1 - x_hat1(26) = 0
-LR_connect_x_27_0: LR_x_27_0 - x_hat0(27) = 0
+LR_connect_x_26_2: LR_x_26_2 - x_hat2(26) = 0
 LR_connect_x_27_1: LR_x_27_1 - x_hat1(27) = 0
-LR_connect_x_28_0: LR_x_28_0 - x_hat0(28) = 0
+LR_connect_x_27_2: LR_x_27_2 - x_hat2(27) = 0
 LR_connect_x_28_1: LR_x_28_1 - x_hat1(28) = 0
-LR_connect_x_29_0: LR_x_29_0 - x_hat0(29) = 0
+LR_connect_x_28_2: LR_x_28_2 - x_hat2(28) = 0
 LR_connect_x_29_1: LR_x_29_1 - x_hat1(29) = 0
-LR_connect_x_2_0: LR_x_2_0 - x_hat0(2) = 0
+LR_connect_x_29_2: LR_x_29_2 - x_hat2(29) = 0
 LR_connect_x_2_1: LR_x_2_1 - x_hat1(2) = 0
-LR_connect_x_30_0: LR_x_30_0 - x_hat0(30) = 0
+LR_connect_x_2_2: LR_x_2_2 - x_hat2(2) = 0
 LR_connect_x_30_1: LR_x_30_1 - x_hat1(30) = 0
-LR_connect_x_31_0: LR_x_31_0 - x_hat0(31) = 0
+LR_connect_x_30_2: LR_x_30_2 - x_hat2(30) = 0
 LR_connect_x_31_1: LR_x_31_1 - x_hat1(31) = 0
-LR_connect_x_32_0: LR_x_32_0 - x_hat0(32) = 0
+LR_connect_x_31_2: LR_x_31_2 - x_hat2(31) = 0
 LR_connect_x_32_1: LR_x_32_1 - x_hat1(32) = 0
-LR_connect_x_33_0: LR_x_33_0 - x_hat0(33) = 0
+LR_connect_x_32_2: LR_x_32_2 - x_hat2(32) = 0
 LR_connect_x_33_1: LR_x_33_1 - x_hat1(33) = 0
-LR_connect_x_34_0: LR_x_34_0 - x_hat0(34) = 0
+LR_connect_x_33_2: LR_x_33_2 - x_hat2(33) = 0
 LR_connect_x_34_1: LR_x_34_1 - x_hat1(34) = 0
-LR_connect_x_35_0: LR_x_35_0 - x_hat0(35) = 0
+LR_connect_x_34_2: LR_x_34_2 - x_hat2(34) = 0
 LR_connect_x_35_1: LR_x_35_1 - x_hat1(35) = 0
-LR_connect_x_36_0: LR_x_36_0 - x_hat0(36) = 0
+LR_connect_x_35_2: LR_x_35_2 - x_hat2(35) = 0
 LR_connect_x_36_1: LR_x_36_1 - x_hat1(36) = 0
-LR_connect_x_37_0: LR_x_37_0 - x_hat0(37) = 0
+LR_connect_x_36_2: LR_x_36_2 - x_hat2(36) = 0
 LR_connect_x_37_1: LR_x_37_1 - x_hat1(37) = 0
-LR_connect_x_38_0: LR_x_38_0 - x_hat0(38) = 0
+LR_connect_x_37_2: LR_x_37_2 - x_hat2(37) = 0
 LR_connect_x_38_1: LR_x_38_1 - x_hat1(38) = 0
-LR_connect_x_39_0: LR_x_39_0 - x_hat0(39) = 0
+LR_connect_x_38_2: LR_x_38_2 - x_hat2(38) = 0
 LR_connect_x_39_1: LR_x_39_1 - x_hat1(39) = 0
-LR_connect_x_3_0: LR_x_3_0 - x_hat0(3) = 0
+LR_connect_x_39_2: LR_x_39_2 - x_hat2(39) = 0
 LR_connect_x_3_1: LR_x_3_1 - x_hat1(3) = 0
-LR_connect_x_40_0: LR_x_40_0 - x_hat0(40) = 0
+LR_connect_x_3_2: LR_x_3_2 - x_hat2(3) = 0
 LR_connect_x_40_1: LR_x_40_1 - x_hat1(40) = 0
-LR_connect_x_41_0: LR_x_41_0 - x_hat0(41) = 0
+LR_connect_x_40_2: LR_x_40_2 - x_hat2(40) = 0
 LR_connect_x_41_1: LR_x_41_1 - x_hat1(41) = 0
-LR_connect_x_42_0: LR_x_42_0 - x_hat0(42) = 0
+LR_connect_x_41_2: LR_x_41_2 - x_hat2(41) = 0
 LR_connect_x_42_1: LR_x_42_1 - x_hat1(42) = 0
-LR_connect_x_43_0: LR_x_43_0 - x_hat0(43) = 0
+LR_connect_x_42_2: LR_x_42_2 - x_hat2(42) = 0
 LR_connect_x_43_1: LR_x_43_1 - x_hat1(43) = 0
-LR_connect_x_44_0: LR_x_44_0 - x_hat0(44) = 0
+LR_connect_x_43_2: LR_x_43_2 - x_hat2(43) = 0
 LR_connect_x_44_1: LR_x_44_1 - x_hat1(44) = 0
-LR_connect_x_45_0: LR_x_45_0 - x_hat0(45) = 0
+LR_connect_x_44_2: LR_x_44_2 - x_hat2(44) = 0
 LR_connect_x_45_1: LR_x_45_1 - x_hat1(45) = 0
-LR_connect_x_46_0: LR_x_46_0 - x_hat0(46) = 0
+LR_connect_x_45_2: LR_x_45_2 - x_hat2(45) = 0
 LR_connect_x_46_1: LR_x_46_1 - x_hat1(46) = 0
-LR_connect_x_47_0: LR_x_47_0 - x_hat0(47) = 0
+LR_connect_x_46_2: LR_x_46_2 - x_hat2(46) = 0
 LR_connect_x_47_1: LR_x_47_1 - x_hat1(47) = 0
-LR_connect_x_48_0: LR_x_48_0 - x_hat0(48) = 0
+LR_connect_x_47_2: LR_x_47_2 - x_hat2(47) = 0
 LR_connect_x_48_1: LR_x_48_1 - x_hat1(48) = 0
-LR_connect_x_49_0: LR_x_49_0 - x_hat0(49) = 0
+LR_connect_x_48_2: LR_x_48_2 - x_hat2(48) = 0
 LR_connect_x_49_1: LR_x_49_1 - x_hat1(49) = 0
-LR_connect_x_4_0: LR_x_4_0 - x_hat0(4) = 0
+LR_connect_x_49_2: LR_x_49_2 - x_hat2(49) = 0
 LR_connect_x_4_1: LR_x_4_1 - x_hat1(4) = 0
-LR_connect_x_50_0: LR_x_50_0 - x_hat0(50) = 0
+LR_connect_x_4_2: LR_x_4_2 - x_hat2(4) = 0
 LR_connect_x_50_1: LR_x_50_1 - x_hat1(50) = 0
-LR_connect_x_51_0: LR_x_51_0 - x_hat0(51) = 0
+LR_connect_x_50_2: LR_x_50_2 - x_hat2(50) = 0
 LR_connect_x_51_1: LR_x_51_1 - x_hat1(51) = 0
-LR_connect_x_52_0: LR_x_52_0 - x_hat0(52) = 0
+LR_connect_x_51_2: LR_x_51_2 - x_hat2(51) = 0
 LR_connect_x_52_1: LR_x_52_1 - x_hat1(52) = 0
-LR_connect_x_53_0: LR_x_53_0 - x_hat0(53) = 0
+LR_connect_x_52_2: LR_x_52_2 - x_hat2(52) = 0
 LR_connect_x_53_1: LR_x_53_1 - x_hat1(53) = 0
-LR_connect_x_54_0: LR_x_54_0 - x_hat0(54) = 0
+LR_connect_x_53_2: LR_x_53_2 - x_hat2(53) = 0
 LR_connect_x_54_1: LR_x_54_1 - x_hat1(54) = 0
-LR_connect_x_55_0: LR_x_55_0 - x_hat0(55) = 0
+LR_connect_x_54_2: LR_x_54_2 - x_hat2(54) = 0
 LR_connect_x_55_1: LR_x_55_1 - x_hat1(55) = 0
-LR_connect_x_56_0: LR_x_56_0 - x_hat0(56) = 0
+LR_connect_x_55_2: LR_x_55_2 - x_hat2(55) = 0
 LR_connect_x_56_1: LR_x_56_1 - x_hat1(56) = 0
-LR_connect_x_57_0: LR_x_57_0 - x_hat0(57) = 0
+LR_connect_x_56_2: LR_x_56_2 - x_hat2(56) = 0
 LR_connect_x_57_1: LR_x_57_1 - x_hat1(57) = 0
-LR_connect_x_58_0: LR_x_58_0 - x_hat0(58) = 0
+LR_connect_x_57_2: LR_x_57_2 - x_hat2(57) = 0
 LR_connect_x_58_1: LR_x_58_1 - x_hat1(58) = 0
-LR_connect_x_59_0: LR_x_59_0 - x_hat0(59) = 0
+LR_connect_x_58_2: LR_x_58_2 - x_hat2(58) = 0
 LR_connect_x_59_1: LR_x_59_1 - x_hat1(59) = 0
-LR_connect_x_5_0: LR_x_5_0 - x_hat0(5) = 0
+LR_connect_x_59_2: LR_x_59_2 - x_hat2(59) = 0
 LR_connect_x_5_1: LR_x_5_1 - x_hat1(5) = 0
-LR_connect_x_60_0: LR_x_60_0 - x_hat0(60) = 0
+LR_connect_x_5_2: LR_x_5_2 - x_hat2(5) = 0
 LR_connect_x_60_1: LR_x_60_1 - x_hat1(60) = 0
-LR_connect_x_61_0: LR_x_61_0 - x_hat0(61) = 0
+LR_connect_x_60_2: LR_x_60_2 - x_hat2(60) = 0
 LR_connect_x_61_1: LR_x_61_1 - x_hat1(61) = 0
-LR_connect_x_62_0: LR_x_62_0 - x_hat0(62) = 0
+LR_connect_x_61_2: LR_x_61_2 - x_hat2(61) = 0
 LR_connect_x_62_1: LR_x_62_1 - x_hat1(62) = 0
-LR_connect_x_63_0: LR_x_63_0 - x_hat0(63) = 0
+LR_connect_x_62_2: LR_x_62_2 - x_hat2(62) = 0
 LR_connect_x_63_1: LR_x_63_1 - x_hat1(63) = 0
-LR_connect_x_64_0: LR_x_64_0 - x_hat0(64) = 0
+LR_connect_x_63_2: LR_x_63_2 - x_hat2(63) = 0
 LR_connect_x_64_1: LR_x_64_1 - x_hat1(64) = 0
-LR_connect_x_65_0: LR_x_65_0 - x_hat0(65) = 0
+LR_connect_x_64_2: LR_x_64_2 - x_hat2(64) = 0
 LR_connect_x_65_1: LR_x_65_1 - x_hat1(65) = 0
-LR_connect_x_66_0: LR_x_66_0 - x_hat0(66) = 0
+LR_connect_x_65_2: LR_x_65_2 - x_hat2(65) = 0
 LR_connect_x_66_1: LR_x_66_1 - x_hat1(66) = 0
-LR_connect_x_67_0: LR_x_67_0 - x_hat0(67) = 0
+LR_connect_x_66_2: LR_x_66_2 - x_hat2(66) = 0
 LR_connect_x_67_1: LR_x_67_1 - x_hat1(67) = 0
-LR_connect_x_68_0: LR_x_68_0 - x_hat0(68) = 0
+LR_connect_x_67_2: LR_x_67_2 - x_hat2(67) = 0
 LR_connect_x_68_1: LR_x_68_1 - x_hat1(68) = 0
-LR_connect_x_69_0: LR_x_69_0 - x_hat0(69) = 0
+LR_connect_x_68_2: LR_x_68_2 - x_hat2(68) = 0
 LR_connect_x_69_1: LR_x_69_1 - x_hat1(69) = 0
-LR_connect_x_6_0: LR_x_6_0 - x_hat0(6) = 0
+LR_connect_x_69_2: LR_x_69_2 - x_hat2(69) = 0
 LR_connect_x_6_1: LR_x_6_1 - x_hat1(6) = 0
-LR_connect_x_70_0: LR_x_70_0 - x_hat0(70) = 0
+LR_connect_x_6_2: LR_x_6_2 - x_hat2(6) = 0
 LR_connect_x_70_1: LR_x_70_1 - x_hat1(70) = 0
-LR_connect_x_71_0: LR_x_71_0 - x_hat0(71) = 0
+LR_connect_x_70_2: LR_x_70_2 - x_hat2(70) = 0
 LR_connect_x_71_1: LR_x_71_1 - x_hat1(71) = 0
-LR_connect_x_72_0: LR_x_72_0 - x_hat0(72) = 0
+LR_connect_x_71_2: LR_x_71_2 - x_hat2(71) = 0
 LR_connect_x_72_1: LR_x_72_1 - x_hat1(72) = 0
-LR_connect_x_73_0: LR_x_73_0 - x_hat0(73) = 0
+LR_connect_x_72_2: LR_x_72_2 - x_hat2(72) = 0
 LR_connect_x_73_1: LR_x_73_1 - x_hat1(73) = 0
-LR_connect_x_74_0: LR_x_74_0 - x_hat0(74) = 0
+LR_connect_x_73_2: LR_x_73_2 - x_hat2(73) = 0
 LR_connect_x_74_1: LR_x_74_1 - x_hat1(74) = 0
-LR_connect_x_75_0: LR_x_75_0 - x_hat0(75) = 0
+LR_connect_x_74_2: LR_x_74_2 - x_hat2(74) = 0
 LR_connect_x_75_1: LR_x_75_1 - x_hat1(75) = 0
-LR_connect_x_76_0: LR_x_76_0 - x_hat0(76) = 0
+LR_connect_x_75_2: LR_x_75_2 - x_hat2(75) = 0
 LR_connect_x_76_1: LR_x_76_1 - x_hat1(76) = 0
-LR_connect_x_77_0: LR_x_77_0 - x_hat0(77) = 0
+LR_connect_x_76_2: LR_x_76_2 - x_hat2(76) = 0
 LR_connect_x_77_1: LR_x_77_1 - x_hat1(77) = 0
-LR_connect_x_78_0: LR_x_78_0 - x_hat0(78) = 0
+LR_connect_x_77_2: LR_x_77_2 - x_hat2(77) = 0
 LR_connect_x_78_1: LR_x_78_1 - x_hat1(78) = 0
-LR_connect_x_79_0: LR_x_79_0 - x_hat0(79) = 0
+LR_connect_x_78_2: LR_x_78_2 - x_hat2(78) = 0
 LR_connect_x_79_1: LR_x_79_1 - x_hat1(79) = 0
-LR_connect_x_7_0: LR_x_7_0 - x_hat0(7) = 0
+LR_connect_x_79_2: LR_x_79_2 - x_hat2(79) = 0
 LR_connect_x_7_1: LR_x_7_1 - x_hat1(7) = 0
-LR_connect_x_80_0: LR_x_80_0 - x_hat0(80) = 0
+LR_connect_x_7_2: LR_x_7_2 - x_hat2(7) = 0
 LR_connect_x_80_1: LR_x_80_1 - x_hat1(80) = 0
-LR_connect_x_81_0: LR_x_81_0 - x_hat0(81) = 0
+LR_connect_x_80_2: LR_x_80_2 - x_hat2(80) = 0
 LR_connect_x_81_1: LR_x_81_1 - x_hat1(81) = 0
-LR_connect_x_82_0: LR_x_82_0 - x_hat0(82) = 0
+LR_connect_x_81_2: LR_x_81_2 - x_hat2(81) = 0
 LR_connect_x_82_1: LR_x_82_1 - x_hat1(82) = 0
-LR_connect_x_83_0: LR_x_83_0 - x_hat0(83) = 0
+LR_connect_x_82_2: LR_x_82_2 - x_hat2(82) = 0
 LR_connect_x_83_1: LR_x_83_1 - x_hat1(83) = 0
-LR_connect_x_84_0: LR_x_84_0 - x_hat0(84) = 0
+LR_connect_x_83_2: LR_x_83_2 - x_hat2(83) = 0
 LR_connect_x_84_1: LR_x_84_1 - x_hat1(84) = 0
-LR_connect_x_85_0: LR_x_85_0 - x_hat0(85) = 0
+LR_connect_x_84_2: LR_x_84_2 - x_hat2(84) = 0
 LR_connect_x_85_1: LR_x_85_1 - x_hat1(85) = 0
-LR_connect_x_86_0: LR_x_86_0 - x_hat0(86) = 0
+LR_connect_x_85_2: LR_x_85_2 - x_hat2(85) = 0
 LR_connect_x_86_1: LR_x_86_1 - x_hat1(86) = 0
-LR_connect_x_87_0: LR_x_87_0 - x_hat0(87) = 0
+LR_connect_x_86_2: LR_x_86_2 - x_hat2(86) = 0
 LR_connect_x_87_1: LR_x_87_1 - x_hat1(87) = 0
-LR_connect_x_88_0: LR_x_88_0 - x_hat0(88) = 0
+LR_connect_x_87_2: LR_x_87_2 - x_hat2(87) = 0
 LR_connect_x_88_1: LR_x_88_1 - x_hat1(88) = 0
-LR_connect_x_89_0: LR_x_89_0 - x_hat0(89) = 0
+LR_connect_x_88_2: LR_x_88_2 - x_hat2(88) = 0
 LR_connect_x_89_1: LR_x_89_1 - x_hat1(89) = 0
-LR_connect_x_8_0: LR_x_8_0 - x_hat0(8) = 0
+LR_connect_x_89_2: LR_x_89_2 - x_hat2(89) = 0
 LR_connect_x_8_1: LR_x_8_1 - x_hat1(8) = 0
-LR_connect_x_90_0: LR_x_90_0 - x_hat0(90) = 0
+LR_connect_x_8_2: LR_x_8_2 - x_hat2(8) = 0
 LR_connect_x_90_1: LR_x_90_1 - x_hat1(90) = 0
-LR_connect_x_91_0: LR_x_91_0 - x_hat0(91) = 0
+LR_connect_x_90_2: LR_x_90_2 - x_hat2(90) = 0
 LR_connect_x_91_1: LR_x_91_1 - x_hat1(91) = 0
-LR_connect_x_92_0: LR_x_92_0 - x_hat0(92) = 0
+LR_connect_x_91_2: LR_x_91_2 - x_hat2(91) = 0
 LR_connect_x_92_1: LR_x_92_1 - x_hat1(92) = 0
-LR_connect_x_93_0: LR_x_93_0 - x_hat0(93) = 0
+LR_connect_x_92_2: LR_x_92_2 - x_hat2(92) = 0
 LR_connect_x_93_1: LR_x_93_1 - x_hat1(93) = 0
-LR_connect_x_94_0: LR_x_94_0 - x_hat0(94) = 0
+LR_connect_x_93_2: LR_x_93_2 - x_hat2(93) = 0
 LR_connect_x_94_1: LR_x_94_1 - x_hat1(94) = 0
-LR_connect_x_95_0: LR_x_95_0 - x_hat0(95) = 0
+LR_connect_x_94_2: LR_x_94_2 - x_hat2(94) = 0
 LR_connect_x_95_1: LR_x_95_1 - x_hat1(95) = 0
-LR_connect_x_96_0: LR_x_96_0 - x_hat0(96) = 0
+LR_connect_x_95_2: LR_x_95_2 - x_hat2(95) = 0
 LR_connect_x_96_1: LR_x_96_1 - x_hat1(96) = 0
-LR_connect_x_97_0: LR_x_97_0 - x_hat0(97) = 0
+LR_connect_x_96_2: LR_x_96_2 - x_hat2(96) = 0
 LR_connect_x_97_1: LR_x_97_1 - x_hat1(97) = 0
-LR_connect_x_98_0: LR_x_98_0 - x_hat0(98) = 0
+LR_connect_x_97_2: LR_x_97_2 - x_hat2(97) = 0
 LR_connect_x_98_1: LR_x_98_1 - x_hat1(98) = 0
-LR_connect_x_99_0: LR_x_99_0 - x_hat0(99) = 0
+LR_connect_x_98_2: LR_x_98_2 - x_hat2(98) = 0
 LR_connect_x_99_1: LR_x_99_1 - x_hat1(99) = 0
-LR_connect_x_9_0: LR_x_9_0 - x_hat0(9) = 0
+LR_connect_x_99_2: LR_x_99_2 - x_hat2(99) = 0
 LR_connect_x_9_1: LR_x_9_1 - x_hat1(9) = 0
-LR_lb_0: LR_y_0 >= 0.264259802682
-LR_lb_1: LR_y_1 >= 0.26568017249
-LR_lr_0: - 0.0521150336872 LR_x_10_0 + 0.0939405714505 LR_x_12_0
- - 0.488205424168 LR_x_15_0 - 0.0142148578389 LR_x_164_0
- - 0.00280444048032 LR_x_169_0 + 0.0102130583861 LR_x_172_0
- - 0.000119041098645 LR_x_177_0 - 0.097957703929 LR_x_20_0
- + 0.0177905865794 LR_x_23_0 - 0.00308980732284 LR_x_24_0
- - 0.0392209150915 LR_x_25_0 - 0.00767770858703 LR_x_27_0
- + 0.000353445613099 LR_x_29_0 - 0.0114689847786 LR_x_39_0
- + 0.0962740390018 LR_x_40_0 - 0.221914180565 LR_x_47_0
- - 0.0211313448141 LR_x_49_0 - 0.00262112957168 LR_x_50_0
- - 0.0443200179955 LR_x_51_0 - 0.00941488495121 LR_x_53_0
- + 0.00804963504474 LR_x_59_0 - 0.0142961589137 LR_x_6_0
- - 0.0530780851874 LR_x_70_0 - 0.00396196194271 LR_x_9_0 + LR_y_0 = 0
+LR_connect_x_9_2: LR_x_9_2 - x_hat2(9) = 0
+LR_lb_1: LR_y_1 >= 0.264259802682
+LR_lb_2: LR_y_2 >= 0.26568017249
 LR_lr_1: - 0.0521150336872 LR_x_10_1 + 0.0939405714505 LR_x_12_1
  - 0.488205424168 LR_x_15_1 - 0.0142148578389 LR_x_164_1
  - 0.00280444048032 LR_x_169_1 + 0.0102130583861 LR_x_172_1
@@ -382,8 +370,805 @@ LR_lr_1: - 0.0521150336872 LR_x_10_1 + 0.0939405714505 LR_x_12_1
  - 0.0443200179955 LR_x_51_1 - 0.00941488495121 LR_x_53_1
  + 0.00804963504474 LR_x_59_1 - 0.0142961589137 LR_x_6_1
  - 0.0530780851874 LR_x_70_1 - 0.00396196194271 LR_x_9_1 + LR_y_1 = 0
-LR_ub_0: LR_y_0 <= 0.286985719602
+LR_lr_2: - 0.0521150336872 LR_x_10_2 + 0.0939405714505 LR_x_12_2
+ - 0.488205424168 LR_x_15_2 - 0.0142148578389 LR_x_164_2
+ - 0.00280444048032 LR_x_169_2 + 0.0102130583861 LR_x_172_2
+ - 0.000119041098645 LR_x_177_2 - 0.097957703929 LR_x_20_2
+ + 0.0177905865794 LR_x_23_2 - 0.00308980732284 LR_x_24_2
+ - 0.0392209150915 LR_x_25_2 - 0.00767770858703 LR_x_27_2
+ + 0.000353445613099 LR_x_29_2 - 0.0114689847786 LR_x_39_2
+ + 0.0962740390018 LR_x_40_2 - 0.221914180565 LR_x_47_2
+ - 0.0211313448141 LR_x_49_2 - 0.00262112957168 LR_x_50_2
+ - 0.0443200179955 LR_x_51_2 - 0.00941488495121 LR_x_53_2
+ + 0.00804963504474 LR_x_59_2 - 0.0142961589137 LR_x_6_2
+ - 0.0530780851874 LR_x_70_2 - 0.00396196194271 LR_x_9_2 + LR_y_2 = 0
 LR_ub_1: LR_y_1 <= 0.286985719602
+LR_ub_2: LR_y_2 <= 0.286985719602
+Output_node_(2,_1)_0: ann_x(2,_1)_0 - 0.0176837882206 ann_y(1,_1)_0
+ + 0.115936569927 ann_y(1,_12)_0 + 0.151977024931 ann_y(1,_13)_0
+ - 0.233728020343 ann_y(1,_14)_0 - 0.248957032314 ann_y(1,_2)_0
+ + 0.0280170904599 ann_y(1,_20)_0 - 0.322107316308 ann_y(1,_3)_0
+ - 0.216287233302 ann_y(1,_38)_0 + 0.176127220804 ann_y(1,_39)_0
+ + 0.293255651619 ann_y(1,_4)_0 + 0.0225268639339 ann_y(1,_40)_0
+ - 0.338077686821 ann_y(1,_41)_0 - 0.328021869895 ann_y(1,_5)_0
+ + 0.0582231471471 ann_y(1,_6)_0 + 0.136089734956 ann_y(1,_9)_0
+ = 0.142425096145
+Output_node_(2,_10)_0: ann_x(2,_10)_0 + 0.0435219912692 ann_y(1,_1)_0
+ - 0.175233186585 ann_y(1,_12)_0 - 0.298762614298 ann_y(1,_13)_0
+ + 0.0620488990746 ann_y(1,_14)_0 - 0.195849691329 ann_y(1,_2)_0
+ + 0.0526819198816 ann_y(1,_20)_0 + 0.313069049222 ann_y(1,_3)_0
+ - 0.259299812916 ann_y(1,_38)_0 - 0.0603213346773 ann_y(1,_39)_0
+ - 0.085582694006 ann_y(1,_4)_0 - 0.194686575887 ann_y(1,_40)_0
+ + 0.172332638235 ann_y(1,_41)_0 - 0.0694765214578 ann_y(1,_5)_0
+ - 0.254750269904 ann_y(1,_6)_0 - 0.0813648147056 ann_y(1,_9)_0 = 0.1104138585
+Output_node_(2,_11)_0: ann_x(2,_11)_0 - 0.0238703539935 ann_y(1,_1)_0
+ - 0.0624357177586 ann_y(1,_12)_0 + 0.428688169807 ann_y(1,_13)_0
+ + 0.036298003925 ann_y(1,_14)_0 + 0.240722557394 ann_y(1,_2)_0
+ + 0.0869996879232 ann_y(1,_20)_0 + 0.211913302143 ann_y(1,_3)_0
+ + 0.0978778286 ann_y(1,_38)_0 - 0.106166541876 ann_y(1,_39)_0
+ - 0.181426655364 ann_y(1,_4)_0 - 0.014046100366 ann_y(1,_40)_0
+ + 0.432812313446 ann_y(1,_41)_0 + 0.179550489849 ann_y(1,_5)_0
+ + 0.240610572454 ann_y(1,_6)_0 + 0.0284777721428 ann_y(1,_9)_0
+ = 0.127879660233
+Output_node_(2,_12)_0: ann_x(2,_12)_0 - 0.122465761774 ann_y(1,_1)_0
+ - 0.107667631534 ann_y(1,_12)_0 - 0.162181572912 ann_y(1,_13)_0
+ + 0.0778022967828 ann_y(1,_14)_0 + 0.0710706032495 ann_y(1,_2)_0
+ - 0.0981753524344 ann_y(1,_20)_0 - 0.218481413364 ann_y(1,_3)_0
+ + 0.376672636763 ann_y(1,_38)_0 - 0.0787410688682 ann_y(1,_39)_0
+ + 0.264771752844 ann_y(1,_4)_0 + 0.106835298766 ann_y(1,_40)_0
+ + 0.113493292722 ann_y(1,_41)_0 - 0.175092740031 ann_y(1,_5)_0
+ + 0.234714397021 ann_y(1,_6)_0 - 0.204600195618 ann_y(1,_9)_0
+ = 0.159993149163
+Output_node_(2,_13)_0: ann_x(2,_13)_0 + 0.115280063807 ann_y(1,_1)_0
+ - 0.25450281581 ann_y(1,_12)_0 + 0.0460650247612 ann_y(1,_13)_0
+ - 0.141517065472 ann_y(1,_14)_0 - 0.332742827372 ann_y(1,_2)_0
+ + 0.0864994997131 ann_y(1,_20)_0 + 0.134661411595 ann_y(1,_3)_0
+ - 0.288722294367 ann_y(1,_38)_0 - 0.103739478884 ann_y(1,_39)_0
+ + 0.266478966155 ann_y(1,_4)_0 + 0.137382362108 ann_y(1,_40)_0
+ - 0.201330645721 ann_y(1,_41)_0 + 0.0455249449951 ann_y(1,_5)_0
+ - 0.295345552417 ann_y(1,_6)_0 - 0.103491015639 ann_y(1,_9)_0
+ = -0.156512623781
+Output_node_(2,_14)_0: ann_x(2,_14)_0 - 0.250092175512 ann_y(1,_1)_0
+ + 0.0982147668573 ann_y(1,_12)_0 - 0.317317567427 ann_y(1,_13)_0
+ - 0.0151063986316 ann_y(1,_14)_0 - 0.0351607825236 ann_y(1,_2)_0
+ + 0.269755723661 ann_y(1,_20)_0 + 0.140561289471 ann_y(1,_3)_0
+ - 0.315110503324 ann_y(1,_38)_0 + 0.0525049819449 ann_y(1,_39)_0
+ - 0.231618698627 ann_y(1,_4)_0 - 0.0840036852074 ann_y(1,_40)_0
+ + 0.0884214030529 ann_y(1,_41)_0 - 0.0297128499548 ann_y(1,_5)_0
+ - 0.113333931617 ann_y(1,_6)_0 + 0.096580292283 ann_y(1,_9)_0
+ = -0.167225275914
+Output_node_(2,_15)_0: ann_x(2,_15)_0 + 0.227061007454 ann_y(1,_1)_0
+ - 0.0244791364659 ann_y(1,_12)_0 - 0.0679993050951 ann_y(1,_13)_0
+ - 0.343294570721 ann_y(1,_14)_0 - 0.1671717934 ann_y(1,_2)_0
+ + 0.0220256344288 ann_y(1,_20)_0 + 0.0162501195307 ann_y(1,_3)_0
+ - 0.101154492316 ann_y(1,_38)_0 - 0.173409099427 ann_y(1,_39)_0
+ + 0.0178811102747 ann_y(1,_4)_0 + 0.18765097703 ann_y(1,_40)_0
+ - 0.294318769338 ann_y(1,_41)_0 - 0.0394833336994 ann_y(1,_5)_0
+ + 0.313451336281 ann_y(1,_6)_0 - 0.0907862652712 ann_y(1,_9)_0
+ = 0.0515874729353
+Output_node_(2,_16)_0: ann_x(2,_16)_0 - 0.150107916141 ann_y(1,_1)_0
+ - 0.129345341763 ann_y(1,_12)_0 - 0.200750201516 ann_y(1,_13)_0
+ - 0.0758223923792 ann_y(1,_14)_0 + 0.0870410374673 ann_y(1,_2)_0
+ - 0.225936496678 ann_y(1,_20)_0 + 0.153527988918 ann_y(1,_3)_0
+ - 0.132181588841 ann_y(1,_38)_0 + 0.184071795885 ann_y(1,_39)_0
+ + 0.216937367199 ann_y(1,_4)_0 - 0.212965942578 ann_y(1,_40)_0
+ + 0.251226260637 ann_y(1,_41)_0 + 0.18697864859 ann_y(1,_5)_0
+ - 0.146382338752 ann_y(1,_6)_0 - 0.0966923799684 ann_y(1,_9)_0
+ = 0.299499687978
+Output_node_(2,_17)_0: ann_x(2,_17)_0 + 0.025714439122 ann_y(1,_1)_0
+ + 0.217931245038 ann_y(1,_12)_0 - 0.0460437791241 ann_y(1,_13)_0
+ + 0.176389039557 ann_y(1,_14)_0 - 0.157957935912 ann_y(1,_2)_0
+ + 0.0787942407563 ann_y(1,_20)_0 - 0.0455207925339 ann_y(1,_3)_0
+ + 0.0456844497035 ann_y(1,_38)_0 + 0.100473422071 ann_y(1,_39)_0
+ - 0.316919531739 ann_y(1,_4)_0 + 0.126964291066 ann_y(1,_40)_0
+ + 0.114719740233 ann_y(1,_41)_0 - 0.205397379481 ann_y(1,_5)_0
+ - 0.199197294198 ann_y(1,_6)_0 - 0.113149876575 ann_y(1,_9)_0
+ = -0.204379660059
+Output_node_(2,_18)_0: ann_x(2,_18)_0 - 0.0106604502774 ann_y(1,_1)_0
+ - 0.0216029738161 ann_y(1,_12)_0 - 0.128866355484 ann_y(1,_13)_0
+ + 0.0182492581116 ann_y(1,_14)_0 - 0.205204097053 ann_y(1,_2)_0
+ - 0.170934529216 ann_y(1,_20)_0 + 0.236309247031 ann_y(1,_3)_0
+ - 0.180343035917 ann_y(1,_38)_0 + 0.185876902118 ann_y(1,_39)_0
+ + 0.0529508286273 ann_y(1,_4)_0 - 0.0404965557265 ann_y(1,_40)_0
+ + 0.142719054661 ann_y(1,_41)_0 - 0.0736847246272 ann_y(1,_5)_0
+ - 0.237388601493 ann_y(1,_6)_0 + 0.115116905041 ann_y(1,_9)_0
+ = 0.00598628221365
+Output_node_(2,_19)_0: ann_x(2,_19)_0 + 0.188495959566 ann_y(1,_1)_0
+ + 0.0383567252977 ann_y(1,_12)_0 + 0.123114469678 ann_y(1,_13)_0
+ + 0.120530659272 ann_y(1,_14)_0 + 0.275399566214 ann_y(1,_2)_0
+ - 0.0110754533184 ann_y(1,_20)_0 + 0.02455810376 ann_y(1,_3)_0
+ + 0.0572988160993 ann_y(1,_38)_0 + 0.03095176912 ann_y(1,_39)_0
+ - 0.188056841892 ann_y(1,_4)_0 + 0.10792358855 ann_y(1,_40)_0
+ - 0.243943011156 ann_y(1,_41)_0 + 0.279913380115 ann_y(1,_5)_0
+ - 0.152601802608 ann_y(1,_6)_0 + 0.247275197159 ann_y(1,_9)_0
+ = -0.0127113642377
+Output_node_(2,_2)_0: ann_x(2,_2)_0 - 0.109616746162 ann_y(1,_1)_0
+ + 0.0999861573302 ann_y(1,_12)_0 - 0.175566702627 ann_y(1,_13)_0
+ - 0.225307803754 ann_y(1,_14)_0 - 0.252346370391 ann_y(1,_2)_0
+ + 0.00264469427517 ann_y(1,_20)_0 - 0.140499015868 ann_y(1,_3)_0
+ + 0.240679922025 ann_y(1,_38)_0 - 0.372064435928 ann_y(1,_39)_0
+ + 0.086123706853 ann_y(1,_4)_0 - 0.315098344333 ann_y(1,_40)_0
+ + 0.268431711004 ann_y(1,_41)_0 - 0.0858442408002 ann_y(1,_5)_0
+ + 0.00470517096852 ann_y(1,_6)_0 - 0.0593822866748 ann_y(1,_9)_0
+ = -0.159142358563
+Output_node_(2,_20)_0: ann_x(2,_20)_0 + 0.137307899965 ann_y(1,_1)_0
+ - 0.262692836115 ann_y(1,_12)_0 + 0.00764926337394 ann_y(1,_13)_0
+ - 0.16384735818 ann_y(1,_14)_0 - 0.187299393552 ann_y(1,_2)_0
+ - 0.0651525192801 ann_y(1,_20)_0 - 0.235955379105 ann_y(1,_3)_0
+ + 0.067686352807 ann_y(1,_38)_0 + 0.146364787108 ann_y(1,_39)_0
+ - 0.138310302525 ann_y(1,_4)_0 - 0.232171636682 ann_y(1,_40)_0
+ - 0.103089614771 ann_y(1,_41)_0 - 0.0639752036734 ann_y(1,_5)_0
+ + 0.174751043863 ann_y(1,_6)_0 + 0.137077149261 ann_y(1,_9)_0
+ = 0.0650887735973
+Output_node_(2,_3)_0: ann_x(2,_3)_0 + 0.282853295686 ann_y(1,_1)_0
+ + 0.271546960908 ann_y(1,_12)_0 - 0.030693784411 ann_y(1,_13)_0
+ - 0.138760000901 ann_y(1,_14)_0 + 0.107392497456 ann_y(1,_2)_0
+ - 0.293699140688 ann_y(1,_20)_0 + 0.18704365961 ann_y(1,_3)_0
+ + 0.0543601844604 ann_y(1,_38)_0 + 0.116194237594 ann_y(1,_39)_0
+ - 0.163894352044 ann_y(1,_4)_0 + 0.194051150015 ann_y(1,_40)_0
+ - 0.172966127962 ann_y(1,_41)_0 - 0.168832349187 ann_y(1,_5)_0
+ - 0.263049601121 ann_y(1,_6)_0 - 0.0547968418538 ann_y(1,_9)_0
+ = 0.125859607211
+Output_node_(2,_4)_0: ann_x(2,_4)_0 + 0.0285860531493 ann_y(1,_1)_0
+ - 0.289447379206 ann_y(1,_12)_0 + 0.20650023259 ann_y(1,_13)_0
+ - 0.135793881426 ann_y(1,_14)_0 - 0.182691512922 ann_y(1,_2)_0
+ + 0.196248419177 ann_y(1,_20)_0 - 0.275978331423 ann_y(1,_3)_0
+ - 0.236610866096 ann_y(1,_38)_0 + 0.225776725467 ann_y(1,_39)_0
+ + 0.046299737967 ann_y(1,_4)_0 - 0.268113190188 ann_y(1,_40)_0
+ - 0.279841644881 ann_y(1,_41)_0 + 0.0674951154176 ann_y(1,_5)_0
+ + 0.0697473146671 ann_y(1,_6)_0 - 0.235816381912 ann_y(1,_9)_0
+ = -0.0807860646224
+Output_node_(2,_5)_0: ann_x(2,_5)_0 + 0.319226057233 ann_y(1,_1)_0
+ + 0.185048470297 ann_y(1,_12)_0 - 0.176829781222 ann_y(1,_13)_0
+ - 0.130541962601 ann_y(1,_14)_0 - 0.194141669504 ann_y(1,_2)_0
+ + 0.238598609754 ann_y(1,_20)_0 + 0.282559002234 ann_y(1,_3)_0
+ + 0.280609758885 ann_y(1,_38)_0 + 0.202178103583 ann_y(1,_39)_0
+ + 0.329168875511 ann_y(1,_4)_0 - 0.0748161874297 ann_y(1,_40)_0
+ + 0.0301869934065 ann_y(1,_41)_0 + 0.0961827208747 ann_y(1,_5)_0
+ - 0.207313704165 ann_y(1,_6)_0 + 0.194985007037 ann_y(1,_9)_0
+ = -0.0902797457041
+Output_node_(2,_6)_0: ann_x(2,_6)_0 + 0.15024467997 ann_y(1,_1)_0
+ - 0.365354942723 ann_y(1,_12)_0 - 0.0657949591704 ann_y(1,_13)_0
+ + 0.0960946585451 ann_y(1,_14)_0 - 0.320023731921 ann_y(1,_2)_0
+ + 0.127195599496 ann_y(1,_20)_0 - 0.0924058354081 ann_y(1,_3)_0
+ - 0.136535780083 ann_y(1,_38)_0 + 0.277612204827 ann_y(1,_39)_0
+ + 0.0129856236003 ann_y(1,_4)_0 + 0.0026317252935 ann_y(1,_40)_0
+ - 0.198060776992 ann_y(1,_41)_0 - 0.250945785635 ann_y(1,_5)_0
+ - 0.102233858332 ann_y(1,_6)_0 + 0.336869457087 ann_y(1,_9)_0
+ = -0.0554637207715
+Output_node_(2,_7)_0: ann_x(2,_7)_0 + 0.13291073267 ann_y(1,_1)_0
+ - 0.112324932715 ann_y(1,_12)_0 + 0.355990336948 ann_y(1,_13)_0
+ - 0.115011401173 ann_y(1,_14)_0 + 0.265739259217 ann_y(1,_2)_0
+ - 0.192435149701 ann_y(1,_20)_0 - 0.371568049425 ann_y(1,_3)_0
+ - 0.156796967743 ann_y(1,_38)_0 - 0.121990648156 ann_y(1,_39)_0
+ - 0.0596964638048 ann_y(1,_4)_0 - 0.220739025234 ann_y(1,_40)_0
+ + 0.19333641507 ann_y(1,_41)_0 + 0.0373654082609 ann_y(1,_5)_0
+ + 0.416342109663 ann_y(1,_6)_0 + 0.333367342112 ann_y(1,_9)_0
+ = -0.0323844182092
+Output_node_(2,_8)_0: ann_x(2,_8)_0 + 0.054589761702 ann_y(1,_1)_0
+ - 0.311196005888 ann_y(1,_12)_0 + 0.0548324993092 ann_y(1,_13)_0
+ - 0.0309480858928 ann_y(1,_14)_0 + 0.226191026683 ann_y(1,_2)_0
+ + 0.0240892406708 ann_y(1,_20)_0 + 0.0663864711385 ann_y(1,_3)_0
+ + 0.0926175384972 ann_y(1,_38)_0 - 0.0361554478318 ann_y(1,_39)_0
+ - 0.0786847484415 ann_y(1,_4)_0 - 0.123581743005 ann_y(1,_40)_0
+ - 0.0876363276435 ann_y(1,_41)_0 - 0.327408312372 ann_y(1,_5)_0
+ - 0.239393292245 ann_y(1,_6)_0 + 0.010838218119 ann_y(1,_9)_0
+ = -0.220229253631
+Output_node_(2,_9)_0: ann_x(2,_9)_0 + 0.0321045447312 ann_y(1,_1)_0
+ - 0.270966471414 ann_y(1,_12)_0 - 0.083261370516 ann_y(1,_13)_0
+ + 0.0840444158001 ann_y(1,_14)_0 + 0.197732776011 ann_y(1,_2)_0
+ + 0.254909324219 ann_y(1,_20)_0 + 0.0277604119758 ann_y(1,_3)_0
+ + 0.282528524851 ann_y(1,_38)_0 - 0.108354973555 ann_y(1,_39)_0
+ - 0.242831129582 ann_y(1,_4)_0 + 0.100239051911 ann_y(1,_40)_0
+ - 0.0422030439484 ann_y(1,_41)_0 - 0.0710471148863 ann_y(1,_5)_0
+ - 0.112542516195 ann_y(1,_6)_0 - 0.00649686116527 ann_y(1,_9)_0
+ = 0.113801230448
+Output_node_(3,_1)_0: ann_x(3,_1)_0 + 0.238199421563 ann_y(2,_1)_0
+ - 0.0083257905034 ann_y(2,_10)_0 + 0.323127737544 ann_y(2,_11)_0
+ - 0.221142449906 ann_y(2,_12)_0 + 0.152355503905 ann_y(2,_13)_0
+ + 0.216021668535 ann_y(2,_14)_0 + 0.137361699025 ann_y(2,_15)_0
+ + 0.296636100588 ann_y(2,_16)_0 + 0.0501411927144 ann_y(2,_17)_0
+ - 0.109456430309 ann_y(2,_18)_0 - 0.226305518356 ann_y(2,_19)_0
+ - 0.0454955227423 ann_y(2,_2)_0 + 0.073020912844 ann_y(2,_20)_0
+ + 0.0844316019971 ann_y(2,_3)_0 + 0.17831976603 ann_y(2,_4)_0
+ + 0.245874746731 ann_y(2,_5)_0 + 0.25101414559 ann_y(2,_6)_0
+ - 0.349669745802 ann_y(2,_7)_0 + 0.251596987275 ann_y(2,_8)_0
+ + 0.12151307609 ann_y(2,_9)_0 = -0.211001884589
+Output_node_(3,_10)_0: ann_x(3,_10)_0 + 0.167238354219 ann_y(2,_1)_0
+ - 0.376143301354 ann_y(2,_10)_0 + 0.0725412704427 ann_y(2,_11)_0
+ + 0.0675928317075 ann_y(2,_12)_0 - 0.203443790386 ann_y(2,_13)_0
+ - 0.364887762721 ann_y(2,_14)_0 + 0.183299036763 ann_y(2,_15)_0
+ + 0.23438145666 ann_y(2,_16)_0 + 0.367569616551 ann_y(2,_17)_0
+ - 0.18341624411 ann_y(2,_18)_0 - 0.352786145289 ann_y(2,_19)_0
+ - 0.385615541828 ann_y(2,_2)_0 - 0.294854269967 ann_y(2,_20)_0
+ + 0.134011509481 ann_y(2,_3)_0 + 0.385531074711 ann_y(2,_4)_0
+ + 0.137098930652 ann_y(2,_5)_0 + 0.0752221430496 ann_y(2,_6)_0
+ - 0.0116506128485 ann_y(2,_7)_0 - 0.299230809624 ann_y(2,_8)_0
+ - 0.107787227282 ann_y(2,_9)_0 = -0.0940474033201
+Output_node_(3,_11)_0: ann_x(3,_11)_0 - 0.253347944009 ann_y(2,_1)_0
+ + 0.317631372615 ann_y(2,_10)_0 + 0.185214625174 ann_y(2,_11)_0
+ + 0.30788951507 ann_y(2,_12)_0 - 0.07096945918 ann_y(2,_13)_0
+ + 0.124913058064 ann_y(2,_14)_0 + 0.135989741468 ann_y(2,_15)_0
+ - 0.182810341398 ann_y(2,_16)_0 + 0.185738518917 ann_y(2,_17)_0
+ - 0.281738821123 ann_y(2,_18)_0 - 0.0129869278541 ann_y(2,_19)_0
+ + 0.31613026082 ann_y(2,_2)_0 + 0.218938541965 ann_y(2,_20)_0
+ + 0.189914261904 ann_y(2,_3)_0 - 0.0493338895759 ann_y(2,_4)_0
+ + 0.302429473803 ann_y(2,_5)_0 + 0.0826796430317 ann_y(2,_6)_0
+ - 0.0274232448106 ann_y(2,_7)_0 - 0.219634936725 ann_y(2,_8)_0
+ - 0.118807613403 ann_y(2,_9)_0 = -0.17381708919
+Output_node_(3,_12)_0: ann_x(3,_12)_0 - 0.171554058187 ann_y(2,_1)_0
+ + 0.203331917357 ann_y(2,_10)_0 - 0.430135162524 ann_y(2,_11)_0
+ - 0.351814974889 ann_y(2,_12)_0 - 0.379478422708 ann_y(2,_13)_0
+ + 0.316004840272 ann_y(2,_14)_0 + 0.193655067701 ann_y(2,_15)_0
+ - 0.257961255644 ann_y(2,_16)_0 + 0.0506440125152 ann_y(2,_17)_0
+ + 0.397415680139 ann_y(2,_18)_0 + 0.318316095813 ann_y(2,_19)_0
+ + 0.268413720683 ann_y(2,_2)_0 - 0.184066873128 ann_y(2,_20)_0
+ + 0.0741178511055 ann_y(2,_3)_0 + 0.234854504394 ann_y(2,_4)_0
+ + 0.0581977808638 ann_y(2,_5)_0 - 0.151594338417 ann_y(2,_6)_0
+ - 0.367236764558 ann_y(2,_7)_0 + 0.303667884737 ann_y(2,_8)_0
+ + 0.0273249684894 ann_y(2,_9)_0 = 0.369567475854
+Output_node_(3,_13)_0: ann_x(3,_13)_0 - 0.159468559391 ann_y(2,_1)_0
+ + 0.262143842602 ann_y(2,_10)_0 - 0.0754922904917 ann_y(2,_11)_0
+ + 0.164167811674 ann_y(2,_12)_0 + 0.119865308363 ann_y(2,_13)_0
+ - 0.268099378372 ann_y(2,_14)_0 + 0.332734575046 ann_y(2,_15)_0
+ - 0.335606245023 ann_y(2,_16)_0 + 0.236020723981 ann_y(2,_17)_0
+ - 0.416846289023 ann_y(2,_18)_0 + 0.406521767703 ann_y(2,_19)_0
+ + 0.0608933743718 ann_y(2,_2)_0 + 0.158738453111 ann_y(2,_20)_0
+ + 0.146397608974 ann_y(2,_3)_0 - 0.137774953592 ann_y(2,_4)_0
+ + 0.336427399662 ann_y(2,_5)_0 + 0.37168567959 ann_y(2,_6)_0
+ - 0.0300000052437 ann_y(2,_7)_0 - 0.112605064493 ann_y(2,_8)_0
+ - 0.270280199107 ann_y(2,_9)_0 = -0.0520487437888
+Output_node_(3,_14)_0: ann_x(3,_14)_0 + 0.228660877054 ann_y(2,_1)_0
+ + 0.0465486692106 ann_y(2,_10)_0 + 0.225930031813 ann_y(2,_11)_0
+ - 0.311602367193 ann_y(2,_12)_0 - 0.112656898124 ann_y(2,_13)_0
+ + 0.120550875315 ann_y(2,_14)_0 + 0.00156226833081 ann_y(2,_15)_0
+ + 0.150440071318 ann_y(2,_16)_0 + 0.300200683619 ann_y(2,_17)_0
+ + 0.318431933568 ann_y(2,_18)_0 + 0.0914311906247 ann_y(2,_19)_0
+ + 0.353714526695 ann_y(2,_2)_0 - 0.403631752448 ann_y(2,_20)_0
+ + 0.0179197630148 ann_y(2,_3)_0 - 0.391397180096 ann_y(2,_4)_0
+ + 0.056277581713 ann_y(2,_5)_0 + 0.203294939501 ann_y(2,_6)_0
+ - 0.383821350204 ann_y(2,_7)_0 + 0.265881037914 ann_y(2,_8)_0
+ - 0.0804524402402 ann_y(2,_9)_0 = 0.0658065806097
+Output_node_(3,_15)_0: ann_x(3,_15)_0 - 0.0563193639416 ann_y(2,_1)_0
+ - 0.360438688685 ann_y(2,_10)_0 - 0.295418118131 ann_y(2,_11)_0
+ - 0.379400370655 ann_y(2,_12)_0 - 0.0684772399287 ann_y(2,_13)_0
+ + 0.329591638474 ann_y(2,_14)_0 - 0.190620725803 ann_y(2,_15)_0
+ + 0.175279089748 ann_y(2,_16)_0 - 0.128495198459 ann_y(2,_17)_0
+ - 0.357835778653 ann_y(2,_18)_0 + 0.188094724896 ann_y(2,_19)_0
+ - 0.11782006844 ann_y(2,_2)_0 + 0.297075222364 ann_y(2,_20)_0
+ - 0.429435931602 ann_y(2,_3)_0 - 0.348154577489 ann_y(2,_4)_0
+ - 0.00701933969465 ann_y(2,_5)_0 + 0.298354163584 ann_y(2,_6)_0
+ + 0.101530835594 ann_y(2,_7)_0 - 0.113642632006 ann_y(2,_8)_0
+ + 0.272707820036 ann_y(2,_9)_0 = -0.108801453319
+Output_node_(3,_16)_0: ann_x(3,_16)_0 - 0.326916782008 ann_y(2,_1)_0
+ + 0.327146510842 ann_y(2,_10)_0 - 0.107322188012 ann_y(2,_11)_0
+ + 0.0572055339349 ann_y(2,_12)_0 - 0.0113178974024 ann_y(2,_13)_0
+ - 0.116480950049 ann_y(2,_14)_0 + 0.319432381771 ann_y(2,_15)_0
+ + 0.11637346413 ann_y(2,_16)_0 - 0.186506405194 ann_y(2,_17)_0
+ - 0.18547376645 ann_y(2,_18)_0 - 0.179877707371 ann_y(2,_19)_0
+ + 0.381895223084 ann_y(2,_2)_0 + 0.289602318414 ann_y(2,_20)_0
+ + 0.0746412184545 ann_y(2,_3)_0 + 0.105197958838 ann_y(2,_4)_0
+ - 0.362039256951 ann_y(2,_5)_0 + 0.348045870817 ann_y(2,_6)_0
+ + 0.298413358829 ann_y(2,_7)_0 - 0.459742890427 ann_y(2,_8)_0
+ + 0.317339803183 ann_y(2,_9)_0 = 0.259046934119
+Output_node_(3,_17)_0: ann_x(3,_17)_0 - 0.320980266143 ann_y(2,_1)_0
+ - 0.00650715566131 ann_y(2,_10)_0 + 0.00539444793902 ann_y(2,_11)_0
+ - 0.0454510121499 ann_y(2,_12)_0 + 0.400957264627 ann_y(2,_13)_0
+ + 0.336831636721 ann_y(2,_14)_0 - 0.481566083997 ann_y(2,_15)_0
+ + 0.179179389618 ann_y(2,_16)_0 + 0.169099036926 ann_y(2,_17)_0
+ + 0.115633719817 ann_y(2,_18)_0 - 0.0369389230628 ann_y(2,_19)_0
+ + 0.161631774207 ann_y(2,_2)_0 - 0.310002500469 ann_y(2,_20)_0
+ - 0.279303010021 ann_y(2,_3)_0 - 0.129247154952 ann_y(2,_4)_0
+ + 0.294613412004 ann_y(2,_5)_0 - 0.156644758721 ann_y(2,_6)_0
+ + 0.238500907323 ann_y(2,_7)_0 + 0.0132369554322 ann_y(2,_8)_0
+ + 0.234951619221 ann_y(2,_9)_0 = -0.129182547172
+Output_node_(3,_18)_0: ann_x(3,_18)_0 - 0.151855498986 ann_y(2,_1)_0
+ + 0.392871955525 ann_y(2,_10)_0 - 0.0835972972004 ann_y(2,_11)_0
+ - 0.0648396985203 ann_y(2,_12)_0 - 0.232175230569 ann_y(2,_13)_0
+ + 0.115745860856 ann_y(2,_14)_0 - 0.23706918975 ann_y(2,_15)_0
+ - 0.194532308344 ann_y(2,_16)_0 - 0.35331044631 ann_y(2,_17)_0
+ + 0.194832126419 ann_y(2,_18)_0 - 0.37757408399 ann_y(2,_19)_0
+ + 0.382712759864 ann_y(2,_2)_0 - 0.0152549684429 ann_y(2,_20)_0
+ - 0.0741364421108 ann_y(2,_3)_0 - 0.178732563588 ann_y(2,_4)_0
+ - 0.229615550585 ann_y(2,_5)_0 + 0.0327271466054 ann_y(2,_6)_0
+ + 0.0464209107848 ann_y(2,_7)_0 - 0.247962409249 ann_y(2,_8)_0
+ + 0.164773611208 ann_y(2,_9)_0 = -0.145019673373
+Output_node_(3,_19)_0: ann_x(3,_19)_0 + 0.309078441267 ann_y(2,_1)_0
+ - 0.220170063608 ann_y(2,_10)_0 + 0.232744724115 ann_y(2,_11)_0
+ - 0.0521909800767 ann_y(2,_12)_0 - 0.361100663753 ann_y(2,_13)_0
+ - 0.239824205055 ann_y(2,_14)_0 - 0.33090778253 ann_y(2,_15)_0
+ - 0.0745364317906 ann_y(2,_16)_0 + 0.0356674767932 ann_y(2,_17)_0
+ - 0.151287786691 ann_y(2,_18)_0 - 0.397740592548 ann_y(2,_19)_0
+ - 0.134247980084 ann_y(2,_2)_0 + 0.197396089109 ann_y(2,_20)_0
+ - 0.325397858721 ann_y(2,_3)_0 + 0.0461352699984 ann_y(2,_4)_0
+ + 0.010482241957 ann_y(2,_5)_0 + 0.160564078102 ann_y(2,_6)_0
+ + 0.214875584416 ann_y(2,_7)_0 + 0.0252431727295 ann_y(2,_8)_0
+ + 0.368160978514 ann_y(2,_9)_0 = 0.151852746721
+Output_node_(3,_2)_0: ann_x(3,_2)_0 + 0.109803879185 ann_y(2,_1)_0
+ - 0.0816588530034 ann_y(2,_10)_0 + 0.00936103150373 ann_y(2,_11)_0
+ + 0.315323529864 ann_y(2,_12)_0 - 0.270632762969 ann_y(2,_13)_0
+ - 0.177215189162 ann_y(2,_14)_0 + 0.338947357582 ann_y(2,_15)_0
+ + 0.0126407901317 ann_y(2,_16)_0 + 0.282700598572 ann_y(2,_17)_0
+ - 0.0562046269814 ann_y(2,_18)_0 - 0.0892119139496 ann_y(2,_19)_0
+ + 0.0216596925392 ann_y(2,_2)_0 + 0.0265710718862 ann_y(2,_20)_0
+ + 0.219134199598 ann_y(2,_3)_0 - 0.29021969387 ann_y(2,_4)_0
+ + 0.0908672500513 ann_y(2,_5)_0 + 0.294375707233 ann_y(2,_6)_0
+ - 0.235336905757 ann_y(2,_7)_0 + 0.286538803696 ann_y(2,_8)_0
+ - 0.274991591536 ann_y(2,_9)_0 = -0.274669163896
+Output_node_(3,_20)_0: ann_x(3,_20)_0 - 0.150180665054 ann_y(2,_1)_0
+ - 0.290226650073 ann_y(2,_10)_0 - 0.0509845300448 ann_y(2,_11)_0
+ - 0.314927684642 ann_y(2,_12)_0 - 0.0111615053864 ann_y(2,_13)_0
+ + 0.404270938844 ann_y(2,_14)_0 - 0.24404077663 ann_y(2,_15)_0
+ - 0.245271554201 ann_y(2,_16)_0 - 0.282509198305 ann_y(2,_17)_0
+ - 0.359627650933 ann_y(2,_18)_0 + 0.299459225195 ann_y(2,_19)_0
+ - 0.195049648655 ann_y(2,_2)_0 + 0.392279725868 ann_y(2,_20)_0
+ + 0.112291612967 ann_y(2,_3)_0 - 0.0753307067229 ann_y(2,_4)_0
+ - 0.179281264584 ann_y(2,_5)_0 - 0.0485992267909 ann_y(2,_6)_0
+ - 0.121199842458 ann_y(2,_7)_0 - 0.348447157819 ann_y(2,_8)_0
+ - 0.111695304099 ann_y(2,_9)_0 = -0.218015480424
+Output_node_(3,_3)_0: ann_x(3,_3)_0 + 0.166708281928 ann_y(2,_1)_0
+ + 0.0468752059237 ann_y(2,_10)_0 + 0.18265862772 ann_y(2,_11)_0
+ + 0.260399056507 ann_y(2,_12)_0 - 0.0469071739478 ann_y(2,_13)_0
+ + 0.349106197244 ann_y(2,_14)_0 - 0.352580010825 ann_y(2,_15)_0
+ + 0.0376130238037 ann_y(2,_16)_0 + 0.271500866569 ann_y(2,_17)_0
+ + 0.210193580059 ann_y(2,_18)_0 - 0.322833753177 ann_y(2,_19)_0
+ + 0.0498818411764 ann_y(2,_2)_0 - 0.0422164140377 ann_y(2,_20)_0
+ - 0.173011735781 ann_y(2,_3)_0 + 0.322952215676 ann_y(2,_4)_0
+ + 0.252006738088 ann_y(2,_5)_0 + 0.0699892799015 ann_y(2,_6)_0
+ - 0.139458931761 ann_y(2,_7)_0 - 0.260902675166 ann_y(2,_8)_0
+ - 0.176350192652 ann_y(2,_9)_0 = -0.229719171853
+Output_node_(3,_4)_0: ann_x(3,_4)_0 - 0.305435895386 ann_y(2,_1)_0
+ - 0.27098488415 ann_y(2,_10)_0 - 0.43956390552 ann_y(2,_11)_0
+ - 0.309868501584 ann_y(2,_12)_0 + 0.27810547301 ann_y(2,_13)_0
+ + 0.157343485974 ann_y(2,_14)_0 + 0.0305566937456 ann_y(2,_15)_0
+ - 0.173996218034 ann_y(2,_16)_0 + 0.118965317107 ann_y(2,_17)_0
+ + 0.0458052793085 ann_y(2,_18)_0 - 0.00530854050461 ann_y(2,_19)_0
+ - 0.04113750946 ann_y(2,_2)_0 - 0.25786881201 ann_y(2,_20)_0
+ + 0.146669997698 ann_y(2,_3)_0 - 0.361907329745 ann_y(2,_4)_0
+ - 0.18109676735 ann_y(2,_5)_0 - 0.257818001104 ann_y(2,_6)_0
+ - 0.384885580243 ann_y(2,_7)_0 + 0.340157929266 ann_y(2,_8)_0
+ - 0.230001764797 ann_y(2,_9)_0 = 0.347653921632
+Output_node_(3,_5)_0: ann_x(3,_5)_0 - 0.193954153132 ann_y(2,_1)_0
+ + 0.0379915234782 ann_y(2,_10)_0 - 0.256072889507 ann_y(2,_11)_0
+ - 0.0476782081437 ann_y(2,_12)_0 + 0.232245127911 ann_y(2,_13)_0
+ - 0.347130483396 ann_y(2,_14)_0 + 0.0661777698797 ann_y(2,_15)_0
+ + 0.0798855384586 ann_y(2,_16)_0 + 0.216376832376 ann_y(2,_17)_0
+ - 0.373780553325 ann_y(2,_18)_0 + 0.169813361317 ann_y(2,_19)_0
+ - 0.306089759914 ann_y(2,_2)_0 + 0.0495083914491 ann_y(2,_20)_0
+ - 0.251367450747 ann_y(2,_3)_0 - 0.0308643347228 ann_y(2,_4)_0
+ + 0.0230972231767 ann_y(2,_5)_0 + 0.267384230568 ann_y(2,_6)_0
+ + 0.417955018658 ann_y(2,_7)_0 - 0.0468209008121 ann_y(2,_8)_0
+ + 0.050370167159 ann_y(2,_9)_0 = 0.248535808368
+Output_node_(3,_6)_0: ann_x(3,_6)_0 + 0.00725830734743 ann_y(2,_1)_0
+ + 0.360864413065 ann_y(2,_10)_0 - 0.177502860338 ann_y(2,_11)_0
+ - 0.0834864923782 ann_y(2,_12)_0 - 0.102036789699 ann_y(2,_13)_0
+ - 0.0499884489872 ann_y(2,_14)_0 - 0.238035067665 ann_y(2,_15)_0
+ - 0.208722174418 ann_y(2,_16)_0 - 0.228455568883 ann_y(2,_17)_0
+ + 0.192037854055 ann_y(2,_18)_0 + 0.123142942469 ann_y(2,_19)_0
+ - 0.166965462694 ann_y(2,_2)_0 + 0.0185423019684 ann_y(2,_20)_0
+ + 0.0367630849161 ann_y(2,_3)_0 + 0.0514462668117 ann_y(2,_4)_0
+ + 0.0334958211015 ann_y(2,_5)_0 - 0.245852025718 ann_y(2,_6)_0
+ + 0.250651129325 ann_y(2,_7)_0 + 0.0810674551685 ann_y(2,_8)_0
+ + 0.177928985679 ann_y(2,_9)_0 = 0.202163397146
+Output_node_(3,_7)_0: ann_x(3,_7)_0 - 0.128367243084 ann_y(2,_1)_0
+ - 0.290753859141 ann_y(2,_10)_0 - 0.45697730139 ann_y(2,_11)_0
+ + 0.132821334978 ann_y(2,_12)_0 + 0.135062346275 ann_y(2,_13)_0
+ - 0.250771470479 ann_y(2,_14)_0 + 0.077488317687 ann_y(2,_15)_0
+ - 0.188665187143 ann_y(2,_16)_0 - 0.0573879313777 ann_y(2,_17)_0
+ - 0.211980629548 ann_y(2,_18)_0 + 0.187487165498 ann_y(2,_19)_0
+ - 0.036323822651 ann_y(2,_2)_0 + 0.134346545842 ann_y(2,_20)_0
+ - 0.00156700112723 ann_y(2,_3)_0 - 0.405812116361 ann_y(2,_4)_0
+ - 0.305567794908 ann_y(2,_5)_0 + 0.132818723106 ann_y(2,_6)_0
+ - 0.0489376564999 ann_y(2,_7)_0 + 0.0964181294961 ann_y(2,_8)_0
+ + 0.312572594161 ann_y(2,_9)_0 = 0.0255009034402
+Output_node_(3,_8)_0: ann_x(3,_8)_0 + 0.359413907851 ann_y(2,_1)_0
+ - 0.0962715870004 ann_y(2,_10)_0 + 0.220970633878 ann_y(2,_11)_0
+ + 0.253456918246 ann_y(2,_12)_0 + 0.285800620058 ann_y(2,_13)_0
+ - 0.120446968281 ann_y(2,_14)_0 - 0.0549799508256 ann_y(2,_15)_0
+ - 0.0970703831825 ann_y(2,_16)_0 - 0.180669314237 ann_y(2,_17)_0
+ - 0.29737753075 ann_y(2,_18)_0 - 0.412721246566 ann_y(2,_19)_0
+ - 0.291267825581 ann_y(2,_2)_0 - 0.236136946068 ann_y(2,_20)_0
+ + 0.350104526283 ann_y(2,_3)_0 + 0.429721173813 ann_y(2,_4)_0
+ - 0.0144543979895 ann_y(2,_5)_0 + 0.318645331257 ann_y(2,_6)_0
+ + 0.113934086187 ann_y(2,_7)_0 + 0.249212541876 ann_y(2,_8)_0
+ + 0.213360218569 ann_y(2,_9)_0 = 0.196691781761
+Output_node_(3,_9)_0: ann_x(3,_9)_0 + 0.00339466703636 ann_y(2,_1)_0
+ - 0.275657802557 ann_y(2,_10)_0 - 0.270831823479 ann_y(2,_11)_0
+ - 0.306411155153 ann_y(2,_12)_0 + 0.368109662317 ann_y(2,_13)_0
+ - 0.250947583833 ann_y(2,_14)_0 - 0.0522496833321 ann_y(2,_15)_0
+ - 0.115861969625 ann_y(2,_16)_0 + 0.0273467102999 ann_y(2,_17)_0
+ + 0.0482097256173 ann_y(2,_18)_0 + 0.0308272156342 ann_y(2,_19)_0
+ + 0.281021322397 ann_y(2,_2)_0 + 0.399529229102 ann_y(2,_20)_0
+ - 0.0702602353378 ann_y(2,_3)_0 - 0.0716770141788 ann_y(2,_4)_0
+ + 0.146501925857 ann_y(2,_5)_0 + 0.342248486166 ann_y(2,_6)_0
+ - 0.273356567219 ann_y(2,_7)_0 - 0.383825397101 ann_y(2,_8)_0
+ + 0.375071159219 ann_y(2,_9)_0 = -0.00705327518442
+Output_node_(4,_1)_0: ann_x(4,_1)_0 + 0.373904636588 ann_y(3,_1)_0
+ - 0.442667036703 ann_y(3,_10)_0 + 0.0382648200586 ann_y(3,_11)_0
+ - 0.345603039762 ann_y(3,_12)_0 + 0.390431096502 ann_y(3,_13)_0
+ - 0.156574789082 ann_y(3,_14)_0 + 0.1596613778 ann_y(3,_15)_0
+ + 0.0948923411286 ann_y(3,_16)_0 + 0.493533930941 ann_y(3,_17)_0
+ + 0.325651447037 ann_y(3,_18)_0 + 0.479484093999 ann_y(3,_19)_0
+ - 0.329183021439 ann_y(3,_2)_0 + 0.302731329868 ann_y(3,_20)_0
+ - 0.237091094204 ann_y(3,_3)_0 - 0.137640591219 ann_y(3,_4)_0
+ + 0.239493562993 ann_y(3,_5)_0 - 0.180045815992 ann_y(3,_6)_0
+ - 0.155983403261 ann_y(3,_7)_0 + 0.179998949412 ann_y(3,_8)_0
+ + 0.489130095669 ann_y(3,_9)_0 = 0.298888077115
+ReLU_x(2,_1)_lb_0: ann_x(2,_1)_0 - 69.4472127013 ann_z(2,_1)_0
+ >= -69.4472127013
+ReLU_x(2,_1)_ub_0: ann_x(2,_1)_0 - 69.4472127013 ann_z(2,_1)_0 <= 0
+ReLU_x(2,_10)_lb_0: ann_x(2,_10)_0 - 71.3694343546 ann_z(2,_10)_0
+ >= -71.3694343546
+ReLU_x(2,_10)_ub_0: ann_x(2,_10)_0 - 71.3694343546 ann_z(2,_10)_0 <= 0
+ReLU_x(2,_11)_lb_0: ann_x(2,_11)_0 - 61.1475025477 ann_z(2,_11)_0
+ >= -61.1475025477
+ReLU_x(2,_11)_ub_0: ann_x(2,_11)_0 - 61.1475025477 ann_z(2,_11)_0 <= 0
+ReLU_x(2,_12)_lb_0: ann_x(2,_12)_0 - 72.3105130159 ann_z(2,_12)_0
+ >= -72.3105130159
+ReLU_x(2,_12)_ub_0: ann_x(2,_12)_0 - 72.3105130159 ann_z(2,_12)_0 <= 0
+ReLU_x(2,_13)_lb_0: ann_x(2,_13)_0 - 63.8192346909 ann_z(2,_13)_0
+ >= -63.8192346909
+ReLU_x(2,_13)_ub_0: ann_x(2,_13)_0 - 63.8192346909 ann_z(2,_13)_0 <= 0
+ReLU_x(2,_14)_lb_0: ann_x(2,_14)_0 - 55.3144316264 ann_z(2,_14)_0
+ >= -55.3144316264
+ReLU_x(2,_14)_ub_0: ann_x(2,_14)_0 - 55.3144316264 ann_z(2,_14)_0 <= 0
+ReLU_x(2,_15)_lb_0: ann_x(2,_15)_0 - 69.3590147679 ann_z(2,_15)_0
+ >= -69.3590147679
+ReLU_x(2,_15)_ub_0: ann_x(2,_15)_0 - 69.3590147679 ann_z(2,_15)_0 <= 0
+ReLU_x(2,_16)_lb_0: ann_x(2,_16)_0 - 63.9881564975 ann_z(2,_16)_0
+ >= -63.9881564975
+ReLU_x(2,_16)_ub_0: ann_x(2,_16)_0 - 63.9881564975 ann_z(2,_16)_0 <= 0
+ReLU_x(2,_17)_lb_0: ann_x(2,_17)_0 - 63.5527784563 ann_z(2,_17)_0
+ >= -63.5527784563
+ReLU_x(2,_17)_ub_0: ann_x(2,_17)_0 - 63.5527784563 ann_z(2,_17)_0 <= 0
+ReLU_x(2,_18)_lb_0: ann_x(2,_18)_0 - 61.5345859534 ann_z(2,_18)_0
+ >= -61.5345859534
+ReLU_x(2,_18)_ub_0: ann_x(2,_18)_0 - 61.5345859534 ann_z(2,_18)_0 <= 0
+ReLU_x(2,_19)_lb_0: ann_x(2,_19)_0 - 65.0033401349 ann_z(2,_19)_0
+ >= -65.0033401349
+ReLU_x(2,_19)_ub_0: ann_x(2,_19)_0 - 65.0033401349 ann_z(2,_19)_0 <= 0
+ReLU_x(2,_2)_lb_0: ann_x(2,_2)_0 - 68.0754772179 ann_z(2,_2)_0
+ >= -68.0754772179
+ReLU_x(2,_2)_ub_0: ann_x(2,_2)_0 - 68.0754772179 ann_z(2,_2)_0 <= 0
+ReLU_x(2,_20)_lb_0: ann_x(2,_20)_0 - 70.9666336323 ann_z(2,_20)_0
+ >= -70.9666336323
+ReLU_x(2,_20)_ub_0: ann_x(2,_20)_0 - 70.9666336323 ann_z(2,_20)_0 <= 0
+ReLU_x(2,_3)_lb_0: ann_x(2,_3)_0 - 70.9419521551 ann_z(2,_3)_0
+ >= -70.9419521551
+ReLU_x(2,_3)_ub_0: ann_x(2,_3)_0 - 70.9419521551 ann_z(2,_3)_0 <= 0
+ReLU_x(2,_4)_lb_0: ann_x(2,_4)_0 - 71.4711510528 ann_z(2,_4)_0
+ >= -71.4711510528
+ReLU_x(2,_4)_ub_0: ann_x(2,_4)_0 - 71.4711510528 ann_z(2,_4)_0 <= 0
+ReLU_x(2,_5)_lb_0: ann_x(2,_5)_0 - 62.7112867332 ann_z(2,_5)_0
+ >= -62.7112867332
+ReLU_x(2,_5)_ub_0: ann_x(2,_5)_0 - 62.7112867332 ann_z(2,_5)_0 <= 0
+ReLU_x(2,_6)_lb_0: ann_x(2,_6)_0 - 64.0112260665 ann_z(2,_6)_0
+ >= -64.0112260665
+ReLU_x(2,_6)_ub_0: ann_x(2,_6)_0 - 64.0112260665 ann_z(2,_6)_0 <= 0
+ReLU_x(2,_7)_lb_0: ann_x(2,_7)_0 - 68.37183304 ann_z(2,_7)_0 >= -68.37183304
+ReLU_x(2,_7)_ub_0: ann_x(2,_7)_0 - 68.37183304 ann_z(2,_7)_0 <= 0
+ReLU_x(2,_8)_lb_0: ann_x(2,_8)_0 - 58.8501273955 ann_z(2,_8)_0
+ >= -58.8501273955
+ReLU_x(2,_8)_ub_0: ann_x(2,_8)_0 - 58.8501273955 ann_z(2,_8)_0 <= 0
+ReLU_x(2,_9)_lb_0: ann_x(2,_9)_0 - 48.4419243477 ann_z(2,_9)_0
+ >= -48.4419243477
+ReLU_x(2,_9)_ub_0: ann_x(2,_9)_0 - 48.4419243477 ann_z(2,_9)_0 <= 0
+ReLU_x(3,_1)_lb_0: ann_x(3,_1)_0 - 115.439815433 ann_z(3,_1)_0
+ >= -115.439815433
+ReLU_x(3,_1)_ub_0: ann_x(3,_1)_0 - 115.439815433 ann_z(3,_1)_0 <= 0
+ReLU_x(3,_10)_lb_0: ann_x(3,_10)_0 - 143.625439342 ann_z(3,_10)_0
+ >= -143.625439342
+ReLU_x(3,_10)_ub_0: ann_x(3,_10)_0 - 143.625439342 ann_z(3,_10)_0 <= 0
+ReLU_x(3,_11)_lb_0: ann_x(3,_11)_0 - 117.692153197 ann_z(3,_11)_0
+ >= -117.692153197
+ReLU_x(3,_11)_ub_0: ann_x(3,_11)_0 - 117.692153197 ann_z(3,_11)_0 <= 0
+ReLU_x(3,_12)_lb_0: ann_x(3,_12)_0 - 154.593008427 ann_z(3,_12)_0
+ >= -154.593008427
+ReLU_x(3,_12)_ub_0: ann_x(3,_12)_0 - 154.593008427 ann_z(3,_12)_0 <= 0
+ReLU_x(3,_13)_lb_0: ann_x(3,_13)_0 - 141.394063433 ann_z(3,_13)_0
+ >= -141.394063433
+ReLU_x(3,_13)_ub_0: ann_x(3,_13)_0 - 141.394063433 ann_z(3,_13)_0 <= 0
+ReLU_x(3,_14)_lb_0: ann_x(3,_14)_0 - 133.953733388 ann_z(3,_14)_0
+ >= -133.953733388
+ReLU_x(3,_14)_ub_0: ann_x(3,_14)_0 - 133.953733388 ann_z(3,_14)_0 <= 0
+ReLU_x(3,_15)_lb_0: ann_x(3,_15)_0 - 147.835566146 ann_z(3,_15)_0
+ >= -147.835566146
+ReLU_x(3,_15)_ub_0: ann_x(3,_15)_0 - 147.835566146 ann_z(3,_15)_0 <= 0
+ReLU_x(3,_16)_lb_0: ann_x(3,_16)_0 - 147.755948212 ann_z(3,_16)_0
+ >= -147.755948212
+ReLU_x(3,_16)_ub_0: ann_x(3,_16)_0 - 147.755948212 ann_z(3,_16)_0 <= 0
+ReLU_x(3,_17)_lb_0: ann_x(3,_17)_0 - 127.352823629 ann_z(3,_17)_0
+ >= -127.352823629
+ReLU_x(3,_17)_ub_0: ann_x(3,_17)_0 - 127.352823629 ann_z(3,_17)_0 <= 0
+ReLU_x(3,_18)_lb_0: ann_x(3,_18)_0 - 122.347304266 ann_z(3,_18)_0
+ >= -122.347304266
+ReLU_x(3,_18)_ub_0: ann_x(3,_18)_0 - 122.347304266 ann_z(3,_18)_0 <= 0
+ReLU_x(3,_19)_lb_0: ann_x(3,_19)_0 - 125.647086241 ann_z(3,_19)_0
+ >= -125.647086241
+ReLU_x(3,_19)_ub_0: ann_x(3,_19)_0 - 125.647086241 ann_z(3,_19)_0 <= 0
+ReLU_x(3,_2)_lb_0: ann_x(3,_2)_0 - 112.85926989 ann_z(3,_2)_0 >= -112.85926989
+ReLU_x(3,_2)_ub_0: ann_x(3,_2)_0 - 112.85926989 ann_z(3,_2)_0 <= 0
+ReLU_x(3,_20)_lb_0: ann_x(3,_20)_0 - 137.634553491 ann_z(3,_20)_0
+ >= -137.634553491
+ReLU_x(3,_20)_ub_0: ann_x(3,_20)_0 - 137.634553491 ann_z(3,_20)_0 <= 0
+ReLU_x(3,_3)_lb_0: ann_x(3,_3)_0 - 120.283405961 ann_z(3,_3)_0
+ >= -120.283405961
+ReLU_x(3,_3)_ub_0: ann_x(3,_3)_0 - 120.283405961 ann_z(3,_3)_0 <= 0
+ReLU_x(3,_4)_lb_0: ann_x(3,_4)_0 - 141.532990623 ann_z(3,_4)_0
+ >= -141.532990623
+ReLU_x(3,_4)_ub_0: ann_x(3,_4)_0 - 141.532990623 ann_z(3,_4)_0 <= 0
+ReLU_x(3,_5)_lb_0: ann_x(3,_5)_0 - 111.672997477 ann_z(3,_5)_0
+ >= -111.672997477
+ReLU_x(3,_5)_ub_0: ann_x(3,_5)_0 - 111.672997477 ann_z(3,_5)_0 <= 0
+ReLU_x(3,_6)_lb_0: ann_x(3,_6)_0 - 92.0156813144 ann_z(3,_6)_0
+ >= -92.0156813144
+ReLU_x(3,_6)_ub_0: ann_x(3,_6)_0 - 92.0156813144 ann_z(3,_6)_0 <= 0
+ReLU_x(3,_7)_lb_0: ann_x(3,_7)_0 - 114.551600817 ann_z(3,_7)_0
+ >= -114.551600817
+ReLU_x(3,_7)_ub_0: ann_x(3,_7)_0 - 114.551600817 ann_z(3,_7)_0 <= 0
+ReLU_x(3,_8)_lb_0: ann_x(3,_8)_0 - 150.701055486 ann_z(3,_8)_0
+ >= -150.701055486
+ReLU_x(3,_8)_ub_0: ann_x(3,_8)_0 - 150.701055486 ann_z(3,_8)_0 <= 0
+ReLU_x(3,_9)_lb_0: ann_x(3,_9)_0 - 130.888055229 ann_z(3,_9)_0
+ >= -130.888055229
+ReLU_x(3,_9)_ub_0: ann_x(3,_9)_0 - 130.888055229 ann_z(3,_9)_0 <= 0
+ReLU_y(2,_1)_0_lb_0: ann_y(2,_1)_0 + 104.313244148 ann_z(2,_1)_0 >= 0
+ReLU_y(2,_1)_0_ub_0: ann_y(2,_1)_0 - 104.313244148 ann_z(2,_1)_0 <= 0
+ReLU_y(2,_1)_1_lb_0: - ann_x(2,_1)_0 + ann_y(2,_1)_0
+ - 104.313244148 ann_z(2,_1)_0 >= -104.313244148
+ReLU_y(2,_1)_1_ub_0: - ann_x(2,_1)_0 + ann_y(2,_1)_0
+ + 104.313244148 ann_z(2,_1)_0 <= 104.313244148
+ReLU_y(2,_10)_0_lb_0: ann_y(2,_10)_0 + 107.16456539 ann_z(2,_10)_0 >= 0
+ReLU_y(2,_10)_0_ub_0: ann_y(2,_10)_0 - 107.16456539 ann_z(2,_10)_0 <= 0
+ReLU_y(2,_10)_1_lb_0: - ann_x(2,_10)_0 + ann_y(2,_10)_0
+ - 107.16456539 ann_z(2,_10)_0 >= -107.16456539
+ReLU_y(2,_10)_1_ub_0: - ann_x(2,_10)_0 + ann_y(2,_10)_0
+ + 107.16456539 ann_z(2,_10)_0 <= 107.16456539
+ReLU_y(2,_11)_0_lb_0: ann_y(2,_11)_0 + 91.8491334818 ann_z(2,_11)_0 >= 0
+ReLU_y(2,_11)_0_ub_0: ann_y(2,_11)_0 - 91.8491334818 ann_z(2,_11)_0 <= 0
+ReLU_y(2,_11)_1_lb_0: - ann_x(2,_11)_0 + ann_y(2,_11)_0
+ - 91.8491334818 ann_z(2,_11)_0 >= -91.8491334818
+ReLU_y(2,_11)_1_ub_0: - ann_x(2,_11)_0 + ann_y(2,_11)_0
+ + 91.8491334818 ann_z(2,_11)_0 <= 91.8491334818
+ReLU_y(2,_12)_0_lb_0: ann_y(2,_12)_0 + 108.625762673 ann_z(2,_12)_0 >= 0
+ReLU_y(2,_12)_0_ub_0: ann_y(2,_12)_0 - 108.625762673 ann_z(2,_12)_0 <= 0
+ReLU_y(2,_12)_1_lb_0: - ann_x(2,_12)_0 + ann_y(2,_12)_0
+ - 108.625762673 ann_z(2,_12)_0 >= -108.625762673
+ReLU_y(2,_12)_1_ub_0: - ann_x(2,_12)_0 + ann_y(2,_12)_0
+ + 108.625762673 ann_z(2,_12)_0 <= 108.625762673
+ReLU_y(2,_13)_0_lb_0: ann_y(2,_13)_0 + 95.5723394125 ann_z(2,_13)_0 >= 0
+ReLU_y(2,_13)_0_ub_0: ann_y(2,_13)_0 - 95.5723394125 ann_z(2,_13)_0 <= 0
+ReLU_y(2,_13)_1_lb_0: - ann_x(2,_13)_0 + ann_y(2,_13)_0
+ - 95.5723394125 ann_z(2,_13)_0 >= -95.5723394125
+ReLU_y(2,_13)_1_ub_0: - ann_x(2,_13)_0 + ann_y(2,_13)_0
+ + 95.5723394125 ann_z(2,_13)_0 <= 95.5723394125
+ReLU_y(2,_14)_0_lb_0: ann_y(2,_14)_0 + 82.8044221638 ann_z(2,_14)_0 >= 0
+ReLU_y(2,_14)_0_ub_0: ann_y(2,_14)_0 - 82.8044221638 ann_z(2,_14)_0 <= 0
+ReLU_y(2,_14)_1_lb_0: - ann_x(2,_14)_0 + ann_y(2,_14)_0
+ - 82.8044221638 ann_z(2,_14)_0 >= -82.8044221638
+ReLU_y(2,_14)_1_ub_0: - ann_x(2,_14)_0 + ann_y(2,_14)_0
+ + 82.8044221638 ann_z(2,_14)_0 <= 82.8044221638
+ReLU_y(2,_15)_0_lb_0: ann_y(2,_15)_0 + 104.090109625 ann_z(2,_15)_0 >= 0
+ReLU_y(2,_15)_0_ub_0: ann_y(2,_15)_0 - 104.090109625 ann_z(2,_15)_0 <= 0
+ReLU_y(2,_15)_1_lb_0: - ann_x(2,_15)_0 + ann_y(2,_15)_0
+ - 104.090109625 ann_z(2,_15)_0 >= -104.090109625
+ReLU_y(2,_15)_1_ub_0: - ann_x(2,_15)_0 + ann_y(2,_15)_0
+ + 104.090109625 ann_z(2,_15)_0 <= 104.090109625
+ReLU_y(2,_16)_0_lb_0: ann_y(2,_16)_0 + 96.2817344342 ann_z(2,_16)_0 >= 0
+ReLU_y(2,_16)_0_ub_0: ann_y(2,_16)_0 - 96.2817344342 ann_z(2,_16)_0 <= 0
+ReLU_y(2,_16)_1_lb_0: - ann_x(2,_16)_0 + ann_y(2,_16)_0
+ - 96.2817344342 ann_z(2,_16)_0 >= -96.2817344342
+ReLU_y(2,_16)_1_ub_0: - ann_x(2,_16)_0 + ann_y(2,_16)_0
+ + 96.2817344342 ann_z(2,_16)_0 <= 96.2817344342
+ReLU_y(2,_17)_0_lb_0: ann_y(2,_17)_0 + 95.1247880244 ann_z(2,_17)_0 >= 0
+ReLU_y(2,_17)_0_ub_0: ann_y(2,_17)_0 - 95.1247880244 ann_z(2,_17)_0 <= 0
+ReLU_y(2,_17)_1_lb_0: - ann_x(2,_17)_0 + ann_y(2,_17)_0
+ - 95.1247880244 ann_z(2,_17)_0 >= -95.1247880244
+ReLU_y(2,_17)_1_ub_0: - ann_x(2,_17)_0 + ann_y(2,_17)_0
+ + 95.1247880244 ann_z(2,_17)_0 <= 95.1247880244
+ReLU_y(2,_18)_0_lb_0: ann_y(2,_18)_0 + 92.3078652123 ann_z(2,_18)_0 >= 0
+ReLU_y(2,_18)_0_ub_0: ann_y(2,_18)_0 - 92.3078652123 ann_z(2,_18)_0 <= 0
+ReLU_y(2,_18)_1_lb_0: - ann_x(2,_18)_0 + ann_y(2,_18)_0
+ - 92.3078652123 ann_z(2,_18)_0 >= -92.3078652123
+ReLU_y(2,_18)_1_ub_0: - ann_x(2,_18)_0 + ann_y(2,_18)_0
+ + 92.3078652123 ann_z(2,_18)_0 <= 92.3078652123
+ReLU_y(2,_19)_0_lb_0: ann_y(2,_19)_0 + 97.4922988382 ann_z(2,_19)_0 >= 0
+ReLU_y(2,_19)_0_ub_0: ann_y(2,_19)_0 - 97.4922988382 ann_z(2,_19)_0 <= 0
+ReLU_y(2,_19)_1_lb_0: - ann_x(2,_19)_0 + ann_y(2,_19)_0
+ - 97.4922988382 ann_z(2,_19)_0 >= -97.4922988382
+ReLU_y(2,_19)_1_ub_0: - ann_x(2,_19)_0 + ann_y(2,_19)_0
+ + 97.4922988382 ann_z(2,_19)_0 <= 97.4922988382
+ReLU_y(2,_2)_0_lb_0: ann_y(2,_2)_0 + 101.954073468 ann_z(2,_2)_0 >= 0
+ReLU_y(2,_2)_0_ub_0: ann_y(2,_2)_0 - 101.954073468 ann_z(2,_2)_0 <= 0
+ReLU_y(2,_2)_1_lb_0: - ann_x(2,_2)_0 + ann_y(2,_2)_0
+ - 101.954073468 ann_z(2,_2)_0 >= -101.954073468
+ReLU_y(2,_2)_1_ub_0: - ann_x(2,_2)_0 + ann_y(2,_2)_0
+ + 101.954073468 ann_z(2,_2)_0 <= 101.954073468
+ReLU_y(2,_20)_0_lb_0: ann_y(2,_20)_0 + 106.515039222 ann_z(2,_20)_0 >= 0
+ReLU_y(2,_20)_0_ub_0: ann_y(2,_20)_0 - 106.515039222 ann_z(2,_20)_0 <= 0
+ReLU_y(2,_20)_1_lb_0: - ann_x(2,_20)_0 + ann_y(2,_20)_0
+ - 106.515039222 ann_z(2,_20)_0 >= -106.515039222
+ReLU_y(2,_20)_1_ub_0: - ann_x(2,_20)_0 + ann_y(2,_20)_0
+ + 106.515039222 ann_z(2,_20)_0 <= 106.515039222
+ReLU_y(2,_3)_0_lb_0: ann_y(2,_3)_0 + 106.53878784 ann_z(2,_3)_0 >= 0
+ReLU_y(2,_3)_0_ub_0: ann_y(2,_3)_0 - 106.53878784 ann_z(2,_3)_0 <= 0
+ReLU_y(2,_3)_1_lb_0: - ann_x(2,_3)_0 + ann_y(2,_3)_0
+ - 106.53878784 ann_z(2,_3)_0 >= -106.53878784
+ReLU_y(2,_3)_1_ub_0: - ann_x(2,_3)_0 + ann_y(2,_3)_0
+ + 106.53878784 ann_z(2,_3)_0 <= 106.53878784
+ReLU_y(2,_4)_0_lb_0: ann_y(2,_4)_0 + 107.125940515 ann_z(2,_4)_0 >= 0
+ReLU_y(2,_4)_0_ub_0: ann_y(2,_4)_0 - 107.125940515 ann_z(2,_4)_0 <= 0
+ReLU_y(2,_4)_1_lb_0: - ann_x(2,_4)_0 + ann_y(2,_4)_0
+ - 107.125940515 ann_z(2,_4)_0 >= -107.125940515
+ReLU_y(2,_4)_1_ub_0: - ann_x(2,_4)_0 + ann_y(2,_4)_0
+ + 107.125940515 ann_z(2,_4)_0 <= 107.125940515
+ReLU_y(2,_5)_0_lb_0: ann_y(2,_5)_0 + 93.976650354 ann_z(2,_5)_0 >= 0
+ReLU_y(2,_5)_0_ub_0: ann_y(2,_5)_0 - 93.976650354 ann_z(2,_5)_0 <= 0
+ReLU_y(2,_5)_1_lb_0: - ann_x(2,_5)_0 + ann_y(2,_5)_0
+ - 93.976650354 ann_z(2,_5)_0 >= -93.976650354
+ReLU_y(2,_5)_1_ub_0: - ann_x(2,_5)_0 + ann_y(2,_5)_0
+ + 93.976650354 ann_z(2,_5)_0 <= 93.976650354
+ReLU_y(2,_6)_0_lb_0: ann_y(2,_6)_0 + 95.961375379 ann_z(2,_6)_0 >= 0
+ReLU_y(2,_6)_0_ub_0: ann_y(2,_6)_0 - 95.961375379 ann_z(2,_6)_0 <= 0
+ReLU_y(2,_6)_1_lb_0: - ann_x(2,_6)_0 + ann_y(2,_6)_0
+ - 95.961375379 ann_z(2,_6)_0 >= -95.961375379
+ReLU_y(2,_6)_1_ub_0: - ann_x(2,_6)_0 + ann_y(2,_6)_0
+ + 95.961375379 ann_z(2,_6)_0 <= 95.961375379
+ReLU_y(2,_7)_0_lb_0: ann_y(2,_7)_0 + 102.525365142 ann_z(2,_7)_0 >= 0
+ReLU_y(2,_7)_0_ub_0: ann_y(2,_7)_0 - 102.525365142 ann_z(2,_7)_0 <= 0
+ReLU_y(2,_7)_1_lb_0: - ann_x(2,_7)_0 + ann_y(2,_7)_0
+ - 102.525365142 ann_z(2,_7)_0 >= -102.525365142
+ReLU_y(2,_7)_1_ub_0: - ann_x(2,_7)_0 + ann_y(2,_7)_0
+ + 102.525365142 ann_z(2,_7)_0 <= 102.525365142
+ReLU_y(2,_8)_0_lb_0: ann_y(2,_8)_0 + 88.0549618396 ann_z(2,_8)_0 >= 0
+ReLU_y(2,_8)_0_ub_0: ann_y(2,_8)_0 - 88.0549618396 ann_z(2,_8)_0 <= 0
+ReLU_y(2,_8)_1_lb_0: - ann_x(2,_8)_0 + ann_y(2,_8)_0
+ - 88.0549618396 ann_z(2,_8)_0 >= -88.0549618396
+ReLU_y(2,_8)_1_ub_0: - ann_x(2,_8)_0 + ann_y(2,_8)_0
+ + 88.0549618396 ann_z(2,_8)_0 <= 88.0549618396
+ReLU_y(2,_9)_0_lb_0: ann_y(2,_9)_0 + 72.776687752 ann_z(2,_9)_0 >= 0
+ReLU_y(2,_9)_0_ub_0: ann_y(2,_9)_0 - 72.776687752 ann_z(2,_9)_0 <= 0
+ReLU_y(2,_9)_1_lb_0: - ann_x(2,_9)_0 + ann_y(2,_9)_0
+ - 72.776687752 ann_z(2,_9)_0 >= -72.776687752
+ReLU_y(2,_9)_1_ub_0: - ann_x(2,_9)_0 + ann_y(2,_9)_0
+ + 72.776687752 ann_z(2,_9)_0 <= 72.776687752
+ReLU_y(3,_1)_0_lb_0: ann_y(3,_1)_0 + 147.76222486 ann_z(3,_1)_0 >= 0
+ReLU_y(3,_1)_0_ub_0: ann_y(3,_1)_0 - 147.76222486 ann_z(3,_1)_0 <= 0
+ReLU_y(3,_1)_1_lb_0: - ann_x(3,_1)_0 + ann_y(3,_1)_0
+ - 147.76222486 ann_z(3,_1)_0 >= -147.76222486
+ReLU_y(3,_1)_1_ub_0: - ann_x(3,_1)_0 + ann_y(3,_1)_0
+ + 147.76222486 ann_z(3,_1)_0 <= 147.76222486
+ReLU_y(3,_10)_0_lb_0: ann_y(3,_10)_0 + 225.897782568 ann_z(3,_10)_0 >= 0
+ReLU_y(3,_10)_0_ub_0: ann_y(3,_10)_0 - 225.897782568 ann_z(3,_10)_0 <= 0
+ReLU_y(3,_10)_1_lb_0: - ann_x(3,_10)_0 + ann_y(3,_10)_0
+ - 225.897782568 ann_z(3,_10)_0 >= -225.897782568
+ReLU_y(3,_10)_1_ub_0: - ann_x(3,_10)_0 + ann_y(3,_10)_0
+ + 225.897782568 ann_z(3,_10)_0 <= 225.897782568
+ReLU_y(3,_11)_0_lb_0: ann_y(3,_11)_0 + 155.601780597 ann_z(3,_11)_0 >= 0
+ReLU_y(3,_11)_0_ub_0: ann_y(3,_11)_0 - 155.601780597 ann_z(3,_11)_0 <= 0
+ReLU_y(3,_11)_1_lb_0: - ann_x(3,_11)_0 + ann_y(3,_11)_0
+ - 155.601780597 ann_z(3,_11)_0 >= -155.601780597
+ReLU_y(3,_11)_1_ub_0: - ann_x(3,_11)_0 + ann_y(3,_11)_0
+ + 155.601780597 ann_z(3,_11)_0 <= 155.601780597
+ReLU_y(3,_12)_0_lb_0: ann_y(3,_12)_0 + 231.235372995 ann_z(3,_12)_0 >= 0
+ReLU_y(3,_12)_0_ub_0: ann_y(3,_12)_0 - 231.235372995 ann_z(3,_12)_0 <= 0
+ReLU_y(3,_12)_1_lb_0: - ann_x(3,_12)_0 + ann_y(3,_12)_0
+ - 231.235372995 ann_z(3,_12)_0 >= -231.235372995
+ReLU_y(3,_12)_1_ub_0: - ann_x(3,_12)_0 + ann_y(3,_12)_0
+ + 231.235372995 ann_z(3,_12)_0 <= 231.235372995
+ReLU_y(3,_13)_0_lb_0: ann_y(3,_13)_0 + 196.058250071 ann_z(3,_13)_0 >= 0
+ReLU_y(3,_13)_0_ub_0: ann_y(3,_13)_0 - 196.058250071 ann_z(3,_13)_0 <= 0
+ReLU_y(3,_13)_1_lb_0: - ann_x(3,_13)_0 + ann_y(3,_13)_0
+ - 196.058250071 ann_z(3,_13)_0 >= -196.058250071
+ReLU_y(3,_13)_1_ub_0: - ann_x(3,_13)_0 + ann_y(3,_13)_0
+ + 196.058250071 ann_z(3,_13)_0 <= 196.058250071
+ReLU_y(3,_14)_0_lb_0: ann_y(3,_14)_0 + 192.282959212 ann_z(3,_14)_0 >= 0
+ReLU_y(3,_14)_0_ub_0: ann_y(3,_14)_0 - 192.282959212 ann_z(3,_14)_0 <= 0
+ReLU_y(3,_14)_1_lb_0: - ann_x(3,_14)_0 + ann_y(3,_14)_0
+ - 192.282959212 ann_z(3,_14)_0 >= -192.282959212
+ReLU_y(3,_14)_1_ub_0: - ann_x(3,_14)_0 + ann_y(3,_14)_0
+ + 192.282959212 ann_z(3,_14)_0 <= 192.282959212
+ReLU_y(3,_15)_0_lb_0: ann_y(3,_15)_0 + 244.533541619 ann_z(3,_15)_0 >= 0
+ReLU_y(3,_15)_0_ub_0: ann_y(3,_15)_0 - 244.533541619 ann_z(3,_15)_0 <= 0
+ReLU_y(3,_15)_1_lb_0: - ann_x(3,_15)_0 + ann_y(3,_15)_0
+ - 244.533541619 ann_z(3,_15)_0 >= -244.533541619
+ReLU_y(3,_15)_1_ub_0: - ann_x(3,_15)_0 + ann_y(3,_15)_0
+ + 244.533541619 ann_z(3,_15)_0 <= 244.533541619
+ReLU_y(3,_16)_0_lb_0: ann_y(3,_16)_0 + 208.455752193 ann_z(3,_16)_0 >= 0
+ReLU_y(3,_16)_0_ub_0: ann_y(3,_16)_0 - 208.455752193 ann_z(3,_16)_0 <= 0
+ReLU_y(3,_16)_1_lb_0: - ann_x(3,_16)_0 + ann_y(3,_16)_0
+ - 208.455752193 ann_z(3,_16)_0 >= -208.455752193
+ReLU_y(3,_16)_1_ub_0: - ann_x(3,_16)_0 + ann_y(3,_16)_0
+ + 208.455752193 ann_z(3,_16)_0 <= 208.455752193
+ReLU_y(3,_17)_0_lb_0: ann_y(3,_17)_0 + 188.79936447 ann_z(3,_17)_0 >= 0
+ReLU_y(3,_17)_0_ub_0: ann_y(3,_17)_0 - 188.79936447 ann_z(3,_17)_0 <= 0
+ReLU_y(3,_17)_1_lb_0: - ann_x(3,_17)_0 + ann_y(3,_17)_0
+ - 188.79936447 ann_z(3,_17)_0 >= -188.79936447
+ReLU_y(3,_17)_1_ub_0: - ann_x(3,_17)_0 + ann_y(3,_17)_0
+ + 188.79936447 ann_z(3,_17)_0 <= 188.79936447
+ReLU_y(3,_18)_0_lb_0: ann_y(3,_18)_0 + 201.702636472 ann_z(3,_18)_0 >= 0
+ReLU_y(3,_18)_0_ub_0: ann_y(3,_18)_0 - 201.702636472 ann_z(3,_18)_0 <= 0
+ReLU_y(3,_18)_1_lb_0: - ann_x(3,_18)_0 + ann_y(3,_18)_0
+ - 201.702636472 ann_z(3,_18)_0 >= -201.702636472
+ReLU_y(3,_18)_1_ub_0: - ann_x(3,_18)_0 + ann_y(3,_18)_0
+ + 201.702636472 ann_z(3,_18)_0 <= 201.702636472
+ReLU_y(3,_19)_0_lb_0: ann_y(3,_19)_0 + 201.243019925 ann_z(3,_19)_0 >= 0
+ReLU_y(3,_19)_0_ub_0: ann_y(3,_19)_0 - 201.243019925 ann_z(3,_19)_0 <= 0
+ReLU_y(3,_19)_1_lb_0: - ann_x(3,_19)_0 + ann_y(3,_19)_0
+ - 201.243019925 ann_z(3,_19)_0 >= -201.243019925
+ReLU_y(3,_19)_1_ub_0: - ann_x(3,_19)_0 + ann_y(3,_19)_0
+ + 201.243019925 ann_z(3,_19)_0 <= 201.243019925
+ReLU_y(3,_2)_0_lb_0: ann_y(3,_2)_0 + 158.677831243 ann_z(3,_2)_0 >= 0
+ReLU_y(3,_2)_0_ub_0: ann_y(3,_2)_0 - 158.677831243 ann_z(3,_2)_0 <= 0
+ReLU_y(3,_2)_1_lb_0: - ann_x(3,_2)_0 + ann_y(3,_2)_0
+ - 158.677831243 ann_z(3,_2)_0 >= -158.677831243
+ReLU_y(3,_2)_1_ub_0: - ann_x(3,_2)_0 + ann_y(3,_2)_0
+ + 158.677831243 ann_z(3,_2)_0 <= 158.677831243
+ReLU_y(3,_20)_0_lb_0: ann_y(3,_20)_0 + 236.266423922 ann_z(3,_20)_0 >= 0
+ReLU_y(3,_20)_0_ub_0: ann_y(3,_20)_0 - 236.266423922 ann_z(3,_20)_0 <= 0
+ReLU_y(3,_20)_1_lb_0: - ann_x(3,_20)_0 + ann_y(3,_20)_0
+ - 236.266423922 ann_z(3,_20)_0 >= -236.266423922
+ReLU_y(3,_20)_1_ub_0: - ann_x(3,_20)_0 + ann_y(3,_20)_0
+ + 236.266423922 ann_z(3,_20)_0 <= 236.266423922
+ReLU_y(3,_3)_0_lb_0: ann_y(3,_3)_0 + 168.610628761 ann_z(3,_3)_0 >= 0
+ReLU_y(3,_3)_0_ub_0: ann_y(3,_3)_0 - 168.610628761 ann_z(3,_3)_0 <= 0
+ReLU_y(3,_3)_1_lb_0: - ann_x(3,_3)_0 + ann_y(3,_3)_0
+ - 168.610628761 ann_z(3,_3)_0 >= -168.610628761
+ReLU_y(3,_3)_1_ub_0: - ann_x(3,_3)_0 + ann_y(3,_3)_0
+ + 168.610628761 ann_z(3,_3)_0 <= 168.610628761
+ReLU_y(3,_4)_0_lb_0: ann_y(3,_4)_0 + 248.875487992 ann_z(3,_4)_0 >= 0
+ReLU_y(3,_4)_0_ub_0: ann_y(3,_4)_0 - 248.875487992 ann_z(3,_4)_0 <= 0
+ReLU_y(3,_4)_1_lb_0: - ann_x(3,_4)_0 + ann_y(3,_4)_0
+ - 248.875487992 ann_z(3,_4)_0 >= -248.875487992
+ReLU_y(3,_4)_1_ub_0: - ann_x(3,_4)_0 + ann_y(3,_4)_0
+ + 248.875487992 ann_z(3,_4)_0 <= 248.875487992
+ReLU_y(3,_5)_0_lb_0: ann_y(3,_5)_0 + 171.107948565 ann_z(3,_5)_0 >= 0
+ReLU_y(3,_5)_0_ub_0: ann_y(3,_5)_0 - 171.107948565 ann_z(3,_5)_0 <= 0
+ReLU_y(3,_5)_1_lb_0: - ann_x(3,_5)_0 + ann_y(3,_5)_0
+ - 171.107948565 ann_z(3,_5)_0 >= -171.107948565
+ReLU_y(3,_5)_1_ub_0: - ann_x(3,_5)_0 + ann_y(3,_5)_0
+ + 171.107948565 ann_z(3,_5)_0 <= 171.107948565
+ReLU_y(3,_6)_0_lb_0: ann_y(3,_6)_0 + 141.045441848 ann_z(3,_6)_0 >= 0
+ReLU_y(3,_6)_0_ub_0: ann_y(3,_6)_0 - 141.045441848 ann_z(3,_6)_0 <= 0
+ReLU_y(3,_6)_1_lb_0: - ann_x(3,_6)_0 + ann_y(3,_6)_0
+ - 141.045441848 ann_z(3,_6)_0 >= -141.045441848
+ReLU_y(3,_6)_1_ub_0: - ann_x(3,_6)_0 + ann_y(3,_6)_0
+ + 141.045441848 ann_z(3,_6)_0 <= 141.045441848
+ReLU_y(3,_7)_0_lb_0: ann_y(3,_7)_0 + 191.792457713 ann_z(3,_7)_0 >= 0
+ReLU_y(3,_7)_0_ub_0: ann_y(3,_7)_0 - 191.792457713 ann_z(3,_7)_0 <= 0
+ReLU_y(3,_7)_1_lb_0: - ann_x(3,_7)_0 + ann_y(3,_7)_0
+ - 191.792457713 ann_z(3,_7)_0 >= -191.792457713
+ReLU_y(3,_7)_1_ub_0: - ann_x(3,_7)_0 + ann_y(3,_7)_0
+ + 191.792457713 ann_z(3,_7)_0 <= 191.792457713
+ReLU_y(3,_8)_0_lb_0: ann_y(3,_8)_0 + 209.677368888 ann_z(3,_8)_0 >= 0
+ReLU_y(3,_8)_0_ub_0: ann_y(3,_8)_0 - 209.677368888 ann_z(3,_8)_0 <= 0
+ReLU_y(3,_8)_1_lb_0: - ann_x(3,_8)_0 + ann_y(3,_8)_0
+ - 209.677368888 ann_z(3,_8)_0 >= -209.677368888
+ReLU_y(3,_8)_1_ub_0: - ann_x(3,_8)_0 + ann_y(3,_8)_0
+ + 209.677368888 ann_z(3,_8)_0 <= 209.677368888
+ReLU_y(3,_9)_0_lb_0: ann_y(3,_9)_0 + 198.247738737 ann_z(3,_9)_0 >= 0
+ReLU_y(3,_9)_0_ub_0: ann_y(3,_9)_0 - 198.247738737 ann_z(3,_9)_0 <= 0
+ReLU_y(3,_9)_1_lb_0: - ann_x(3,_9)_0 + ann_y(3,_9)_0
+ - 198.247738737 ann_z(3,_9)_0 >= -198.247738737
+ReLU_y(3,_9)_1_ub_0: - ann_x(3,_9)_0 + ann_y(3,_9)_0
+ + 198.247738737 ann_z(3,_9)_0 <= 198.247738737
+ReLU_y(4,_1)_0: - ann_x(4,_1)_0 + ann_y(4,_1)_0 = 0
+ann_input_12_0: ann_y(1,_12)_0 - x_hat0(12) = 0
+ann_input_13_0: ann_y(1,_13)_0 - x_hat0(13) = 0
+ann_input_14_0: ann_y(1,_14)_0 - x_hat0(14) = 0
+ann_input_1_0: ann_y(1,_1)_0 - x_hat0(1) = 0
+ann_input_20_0: ann_y(1,_20)_0 - x_hat0(20) = 0
+ann_input_2_0: ann_y(1,_2)_0 - x_hat0(2) = 0
+ann_input_38_0: ann_y(1,_38)_0 - x_hat0(38) = 0
+ann_input_39_0: ann_y(1,_39)_0 - x_hat0(39) = 0
+ann_input_3_0: ann_y(1,_3)_0 - x_hat0(3) = 0
+ann_input_40_0: ann_y(1,_40)_0 - x_hat0(40) = 0
+ann_input_41_0: ann_y(1,_41)_0 - x_hat0(41) = 0
+ann_input_4_0: ann_y(1,_4)_0 - x_hat0(4) = 0
+ann_input_5_0: ann_y(1,_5)_0 - x_hat0(5) = 0
+ann_input_6_0: ann_y(1,_6)_0 - x_hat0(6) = 0
+ann_input_9_0: ann_y(1,_9)_0 - x_hat0(9) = 0
+lower_bound_target_(4,_1)_0: ann_y(4,_1)_0 >= -0.020202020202
 milp_(32)_1: deg_int_C(1) + delta_fr_C(1,24) + delta_fr_C(1,25)
  + delta_fr_C(1,26) + delta_fr_C(1,27) + delta_fr_C(1,28) + delta_fr_C(1,29)
  + delta_fr_C(1,30) >= 2
@@ -32340,613 +33125,687 @@ milp_2LMH_(9)_2_9_2: chi_F(1,9) + chi_F(10,9) + chi_F(11,9) + chi_F(12,9)
  + chi_F(27,9) + chi_F(28,9) + chi_F(29,9) + chi_F(3,9) + chi_F(30,9)
  + chi_F(4,9) + chi_F(5,9) + chi_F(6,9) + chi_F(7,9) + chi_F(8,9) + chi_F(9,9)
  - delta_chi_F(9) >= 0
-milp_2LMH_std_100_0: x_hat0(100) = 0
 milp_2LMH_std_100_1: x_hat1(100) = 0
-milp_2LMH_std_101_0: x_hat0(101) = 0
+milp_2LMH_std_100_2: x_hat2(100) = 0
 milp_2LMH_std_101_1: x_hat1(101) = 0
-milp_2LMH_std_102_0: x_hat0(102) = 0
+milp_2LMH_std_101_2: x_hat2(101) = 0
 milp_2LMH_std_102_1: x_hat1(102) = 0
-milp_2LMH_std_103_0: x_hat0(103) = 0
+milp_2LMH_std_102_2: x_hat2(102) = 0
 milp_2LMH_std_103_1: x_hat1(103) = 0
-milp_2LMH_std_104_0: x_hat0(104) = 0
+milp_2LMH_std_103_2: x_hat2(103) = 0
 milp_2LMH_std_104_1: x_hat1(104) = 0
-milp_2LMH_std_105_0: x_hat0(105) = 0
+milp_2LMH_std_104_2: x_hat2(104) = 0
 milp_2LMH_std_105_1: x_hat1(105) = 0
-milp_2LMH_std_106_0: x_hat0(106) = 0
+milp_2LMH_std_105_2: x_hat2(105) = 0
 milp_2LMH_std_106_1: x_hat1(106) = 0
-milp_2LMH_std_107_0: x_hat0(107) = 0
+milp_2LMH_std_106_2: x_hat2(106) = 0
 milp_2LMH_std_107_1: x_hat1(107) = 0
-milp_2LMH_std_108_0: x_hat0(108) = 0
+milp_2LMH_std_107_2: x_hat2(107) = 0
 milp_2LMH_std_108_1: x_hat1(108) = 0
-milp_2LMH_std_109_0: x_hat0(109) = 0
+milp_2LMH_std_108_2: x_hat2(108) = 0
 milp_2LMH_std_109_1: x_hat1(109) = 0
-milp_2LMH_std_10_1(nor)0: - 0.02 dg_int(2) + x_hat0(10) >= -2e-07
+milp_2LMH_std_109_2: x_hat2(109) = 0
+milp_2LMH_std_10_0: x_hat0(10) = 0
 milp_2LMH_std_10_1(nor)1: - 0.02 dg_int(2) + x_hat1(10) >= -2e-07
-milp_2LMH_std_10_2(nor)0: - 0.02 dg_int(2) + x_hat0(10) <= 2e-07
+milp_2LMH_std_10_1(nor)2: - 0.02 dg_int(2) + x_hat2(10) >= -2e-07
 milp_2LMH_std_10_2(nor)1: - 0.02 dg_int(2) + x_hat1(10) <= 2e-07
-milp_2LMH_std_110_0: x_hat0(110) = 0
+milp_2LMH_std_10_2(nor)2: - 0.02 dg_int(2) + x_hat2(10) <= 2e-07
 milp_2LMH_std_110_1: x_hat1(110) = 0
-milp_2LMH_std_111_0: x_hat0(111) = 0
+milp_2LMH_std_110_2: x_hat2(110) = 0
 milp_2LMH_std_111_1: x_hat1(111) = 0
-milp_2LMH_std_112_0: x_hat0(112) = 0
+milp_2LMH_std_111_2: x_hat2(111) = 0
 milp_2LMH_std_112_1: x_hat1(112) = 0
-milp_2LMH_std_113_0: x_hat0(113) = 0
+milp_2LMH_std_112_2: x_hat2(112) = 0
 milp_2LMH_std_113_1: x_hat1(113) = 0
-milp_2LMH_std_114_0: x_hat0(114) = 0
+milp_2LMH_std_113_2: x_hat2(113) = 0
 milp_2LMH_std_114_1: x_hat1(114) = 0
-milp_2LMH_std_115_0: x_hat0(115) = 0
+milp_2LMH_std_114_2: x_hat2(114) = 0
 milp_2LMH_std_115_1: x_hat1(115) = 0
-milp_2LMH_std_116_0: x_hat0(116) = 0
+milp_2LMH_std_115_2: x_hat2(115) = 0
 milp_2LMH_std_116_1: x_hat1(116) = 0
-milp_2LMH_std_117_0: x_hat0(117) = 0
+milp_2LMH_std_116_2: x_hat2(116) = 0
 milp_2LMH_std_117_1: x_hat1(117) = 0
-milp_2LMH_std_118_0: x_hat0(118) = 0
+milp_2LMH_std_117_2: x_hat2(117) = 0
 milp_2LMH_std_118_1: x_hat1(118) = 0
-milp_2LMH_std_119_0: x_hat0(119) = 0
+milp_2LMH_std_118_2: x_hat2(118) = 0
 milp_2LMH_std_119_1: x_hat1(119) = 0
-milp_2LMH_std_11_1(nor)0: - 0.1 dg_int(3) + x_hat0(11) >= -1e-06
+milp_2LMH_std_119_2: x_hat2(119) = 0
+milp_2LMH_std_11_0: x_hat0(11) = 0
 milp_2LMH_std_11_1(nor)1: - 0.1 dg_int(3) + x_hat1(11) >= -1e-06
-milp_2LMH_std_11_2(nor)0: - 0.1 dg_int(3) + x_hat0(11) <= 1e-06
+milp_2LMH_std_11_1(nor)2: - 0.1 dg_int(3) + x_hat2(11) >= -1e-06
 milp_2LMH_std_11_2(nor)1: - 0.1 dg_int(3) + x_hat1(11) <= 1e-06
-milp_2LMH_std_120_0: x_hat0(120) = 0
+milp_2LMH_std_11_2(nor)2: - 0.1 dg_int(3) + x_hat2(11) <= 1e-06
 milp_2LMH_std_120_1: x_hat1(120) = 0
-milp_2LMH_std_121_0: x_hat0(121) = 0
+milp_2LMH_std_120_2: x_hat2(120) = 0
 milp_2LMH_std_121_1: x_hat1(121) = 0
-milp_2LMH_std_122_0: x_hat0(122) = 0
+milp_2LMH_std_121_2: x_hat2(121) = 0
 milp_2LMH_std_122_1: x_hat1(122) = 0
-milp_2LMH_std_123_0: x_hat0(123) = 0
+milp_2LMH_std_122_2: x_hat2(122) = 0
 milp_2LMH_std_123_1: x_hat1(123) = 0
-milp_2LMH_std_124_0: x_hat0(124) = 0
+milp_2LMH_std_123_2: x_hat2(123) = 0
 milp_2LMH_std_124_1: x_hat1(124) = 0
-milp_2LMH_std_125_0: x_hat0(125) = 0
+milp_2LMH_std_124_2: x_hat2(124) = 0
 milp_2LMH_std_125_1: x_hat1(125) = 0
-milp_2LMH_std_126_1(nor)0: - fc(21) + x_hat0(126) >= -1e-05
+milp_2LMH_std_125_2: x_hat2(125) = 0
 milp_2LMH_std_126_1(nor)1: - fc(21) + x_hat1(126) >= -1e-05
-milp_2LMH_std_126_2(nor)0: - fc(21) + x_hat0(126) <= 1e-05
+milp_2LMH_std_126_1(nor)2: - fc(21) + x_hat2(126) >= -1e-05
 milp_2LMH_std_126_2(nor)1: - fc(21) + x_hat1(126) <= 1e-05
-milp_2LMH_std_127_0: x_hat0(127) = 0
+milp_2LMH_std_126_2(nor)2: - fc(21) + x_hat2(126) <= 1e-05
 milp_2LMH_std_127_1: x_hat1(127) = 0
-milp_2LMH_std_128_0: x_hat0(128) = 0
+milp_2LMH_std_127_2: x_hat2(127) = 0
 milp_2LMH_std_128_1: x_hat1(128) = 0
-milp_2LMH_std_129_0: x_hat0(129) = 0
+milp_2LMH_std_128_2: x_hat2(128) = 0
 milp_2LMH_std_129_1: x_hat1(129) = 0
-milp_2LMH_std_12_1(nor)0: - dg_int(4) + x_hat0(12) >= -1e-05
+milp_2LMH_std_129_2: x_hat2(129) = 0
+milp_2LMH_std_12_1(nor)0: - 0.1 fc(6) + x_hat0(12) >= -1e-06
 milp_2LMH_std_12_1(nor)1: - dg_int(4) + x_hat1(12) >= -1e-05
-milp_2LMH_std_12_2(nor)0: - dg_int(4) + x_hat0(12) <= 1e-05
+milp_2LMH_std_12_1(nor)2: - dg_int(4) + x_hat2(12) >= -1e-05
+milp_2LMH_std_12_2(nor)0: - 0.1 fc(6) + x_hat0(12) <= 1e-06
 milp_2LMH_std_12_2(nor)1: - dg_int(4) + x_hat1(12) <= 1e-05
-milp_2LMH_std_130_0: x_hat0(130) = 0
+milp_2LMH_std_12_2(nor)2: - dg_int(4) + x_hat2(12) <= 1e-05
 milp_2LMH_std_130_1: x_hat1(130) = 0
-milp_2LMH_std_131_0: x_hat0(131) = 0
+milp_2LMH_std_130_2: x_hat2(130) = 0
 milp_2LMH_std_131_1: x_hat1(131) = 0
-milp_2LMH_std_132_0: x_hat0(132) = 0
+milp_2LMH_std_131_2: x_hat2(131) = 0
 milp_2LMH_std_132_1: x_hat1(132) = 0
-milp_2LMH_std_133_0: x_hat0(133) = 0
+milp_2LMH_std_132_2: x_hat2(132) = 0
 milp_2LMH_std_133_1: x_hat1(133) = 0
-milp_2LMH_std_134_0: x_hat0(134) = 0
+milp_2LMH_std_133_2: x_hat2(133) = 0
 milp_2LMH_std_134_1: x_hat1(134) = 0
-milp_2LMH_std_135_0: x_hat0(135) = 0
+milp_2LMH_std_134_2: x_hat2(134) = 0
 milp_2LMH_std_135_1: x_hat1(135) = 0
-milp_2LMH_std_136_0: x_hat0(136) = 0
+milp_2LMH_std_135_2: x_hat2(135) = 0
 milp_2LMH_std_136_1: x_hat1(136) = 0
-milp_2LMH_std_137_0: x_hat0(137) = 0
+milp_2LMH_std_136_2: x_hat2(136) = 0
 milp_2LMH_std_137_1: x_hat1(137) = 0
-milp_2LMH_std_138_0: x_hat0(138) = 0
+milp_2LMH_std_137_2: x_hat2(137) = 0
 milp_2LMH_std_138_1: x_hat1(138) = 0
-milp_2LMH_std_139_0: x_hat0(139) = 0
+milp_2LMH_std_138_2: x_hat2(138) = 0
 milp_2LMH_std_139_1: x_hat1(139) = 0
-milp_2LMH_std_13_1(nor)0: - 0.111111111111 bd_int(2) + x_hat0(13)
- >= -1.11111111111e-06
+milp_2LMH_std_139_2: x_hat2(139) = 0
+milp_2LMH_std_13_1(nor)0: - 0.0285714285714 fc(11) + x_hat0(13)
+ >= -2.85714285714e-07
 milp_2LMH_std_13_1(nor)1: - 0.111111111111 bd_int(2) + x_hat1(13)
  >= -1.11111111111e-06
-milp_2LMH_std_13_2(nor)0: - 0.111111111111 bd_int(2) + x_hat0(13)
- <= 1.11111111111e-06
+milp_2LMH_std_13_1(nor)2: - 0.111111111111 bd_int(2) + x_hat2(13)
+ >= -1.11111111111e-06
+milp_2LMH_std_13_2(nor)0: - 0.0285714285714 fc(11) + x_hat0(13)
+ <= 2.85714285714e-07
 milp_2LMH_std_13_2(nor)1: - 0.111111111111 bd_int(2) + x_hat1(13)
  <= 1.11111111111e-06
-milp_2LMH_std_140_0: x_hat0(140) = 0
+milp_2LMH_std_13_2(nor)2: - 0.111111111111 bd_int(2) + x_hat2(13)
+ <= 1.11111111111e-06
 milp_2LMH_std_140_1: x_hat1(140) = 0
-milp_2LMH_std_141_0: x_hat0(141) = 0
+milp_2LMH_std_140_2: x_hat2(140) = 0
 milp_2LMH_std_141_1: x_hat1(141) = 0
-milp_2LMH_std_142_0: x_hat0(142) = 0
+milp_2LMH_std_141_2: x_hat2(141) = 0
 milp_2LMH_std_142_1: x_hat1(142) = 0
-milp_2LMH_std_143_0: x_hat0(143) = 0
+milp_2LMH_std_142_2: x_hat2(142) = 0
 milp_2LMH_std_143_1: x_hat1(143) = 0
-milp_2LMH_std_144_0: x_hat0(144) = 0
+milp_2LMH_std_143_2: x_hat2(143) = 0
 milp_2LMH_std_144_1: x_hat1(144) = 0
-milp_2LMH_std_145_0: x_hat0(145) = 0
+milp_2LMH_std_144_2: x_hat2(144) = 0
 milp_2LMH_std_145_1: x_hat1(145) = 0
-milp_2LMH_std_146_0: x_hat0(146) = 0
+milp_2LMH_std_145_2: x_hat2(145) = 0
 milp_2LMH_std_146_1: x_hat1(146) = 0
-milp_2LMH_std_147_0: x_hat0(147) = 0
+milp_2LMH_std_146_2: x_hat2(146) = 0
 milp_2LMH_std_147_1: x_hat1(147) = 0
-milp_2LMH_std_148_0: x_hat0(148) = 0
+milp_2LMH_std_147_2: x_hat2(147) = 0
 milp_2LMH_std_148_1: x_hat1(148) = 0
-milp_2LMH_std_149_0: x_hat0(149) = 0
+milp_2LMH_std_148_2: x_hat2(148) = 0
 milp_2LMH_std_149_1: x_hat1(149) = 0
-milp_2LMH_std_14_1(nor)0: x_hat0(14) = 0
+milp_2LMH_std_149_2: x_hat2(149) = 0
+milp_2LMH_std_14_1(nor)0: - 0.2 fc(1) + x_hat0(14) >= -2e-06
 milp_2LMH_std_14_1(nor)1: x_hat1(14) = 0
-milp_2LMH_std_150_0: x_hat0(150) = 0
+milp_2LMH_std_14_1(nor)2: x_hat2(14) = 0
+milp_2LMH_std_14_2(nor)0: - 0.2 fc(1) + x_hat0(14) <= 2e-06
 milp_2LMH_std_150_1: x_hat1(150) = 0
-milp_2LMH_std_151_0: x_hat0(151) = 0
+milp_2LMH_std_150_2: x_hat2(150) = 0
 milp_2LMH_std_151_1: x_hat1(151) = 0
-milp_2LMH_std_152_0: x_hat0(152) = 0
+milp_2LMH_std_151_2: x_hat2(151) = 0
 milp_2LMH_std_152_1: x_hat1(152) = 0
-milp_2LMH_std_153_0: x_hat0(153) = 0
+milp_2LMH_std_152_2: x_hat2(152) = 0
 milp_2LMH_std_153_1: x_hat1(153) = 0
-milp_2LMH_std_154_1(nor)0: - fc(28) + x_hat0(154) >= -1e-05
+milp_2LMH_std_153_2: x_hat2(153) = 0
 milp_2LMH_std_154_1(nor)1: - fc(28) + x_hat1(154) >= -1e-05
-milp_2LMH_std_154_2(nor)0: - fc(28) + x_hat0(154) <= 1e-05
+milp_2LMH_std_154_1(nor)2: - fc(28) + x_hat2(154) >= -1e-05
 milp_2LMH_std_154_2(nor)1: - fc(28) + x_hat1(154) <= 1e-05
-milp_2LMH_std_155_0: x_hat0(155) = 0
+milp_2LMH_std_154_2(nor)2: - fc(28) + x_hat2(154) <= 1e-05
 milp_2LMH_std_155_1: x_hat1(155) = 0
-milp_2LMH_std_156_0: x_hat0(156) = 0
+milp_2LMH_std_155_2: x_hat2(155) = 0
 milp_2LMH_std_156_1: x_hat1(156) = 0
-milp_2LMH_std_157_0: x_hat0(157) = 0
+milp_2LMH_std_156_2: x_hat2(156) = 0
 milp_2LMH_std_157_1: x_hat1(157) = 0
-milp_2LMH_std_158_0: x_hat0(158) = 0
+milp_2LMH_std_157_2: x_hat2(157) = 0
 milp_2LMH_std_158_1: x_hat1(158) = 0
-milp_2LMH_std_159_0: x_hat0(159) = 0
+milp_2LMH_std_158_2: x_hat2(158) = 0
 milp_2LMH_std_159_1: x_hat1(159) = 0
-milp_2LMH_std_15_1(nor)0: - 0.0196078431373 na_int(C4) + x_hat0(15)
- >= -1.96078431373e-07
+milp_2LMH_std_159_2: x_hat2(159) = 0
+milp_2LMH_std_15_0: x_hat0(15) = 0
 milp_2LMH_std_15_1(nor)1: - 0.0196078431373 na_int(C4) + x_hat1(15)
  >= -1.96078431373e-07
-milp_2LMH_std_15_2(nor)0: - 0.0196078431373 na_int(C4) + x_hat0(15)
- <= 1.96078431373e-07
+milp_2LMH_std_15_1(nor)2: - 0.0196078431373 na_int(C4) + x_hat2(15)
+ >= -1.96078431373e-07
 milp_2LMH_std_15_2(nor)1: - 0.0196078431373 na_int(C4) + x_hat1(15)
  <= 1.96078431373e-07
-milp_2LMH_std_160_0: x_hat0(160) = 0
+milp_2LMH_std_15_2(nor)2: - 0.0196078431373 na_int(C4) + x_hat2(15)
+ <= 1.96078431373e-07
 milp_2LMH_std_160_1: x_hat1(160) = 0
-milp_2LMH_std_161_0: x_hat0(161) = 0
+milp_2LMH_std_160_2: x_hat2(160) = 0
 milp_2LMH_std_161_1: x_hat1(161) = 0
-milp_2LMH_std_162_0: x_hat0(162) = 0
+milp_2LMH_std_161_2: x_hat2(161) = 0
 milp_2LMH_std_162_1: x_hat1(162) = 0
-milp_2LMH_std_163_0: x_hat0(163) = 0
+milp_2LMH_std_162_2: x_hat2(162) = 0
 milp_2LMH_std_163_1: x_hat1(163) = 0
-milp_2LMH_std_164_1(nor)0: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat0(164)
- >= -2.5e-06
+milp_2LMH_std_163_2: x_hat2(163) = 0
 milp_2LMH_std_164_1(nor)1: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat1(164)
  >= -2.5e-06
-milp_2LMH_std_164_2(nor)0: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat0(164)
- <= 2.5e-06
+milp_2LMH_std_164_1(nor)2: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat2(164)
+ >= -2.5e-06
 milp_2LMH_std_164_2(nor)1: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat1(164)
  <= 2.5e-06
-milp_2LMH_std_165_1(nor)0: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat0(165)
- >= -5e-06
+milp_2LMH_std_164_2(nor)2: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat2(164)
+ <= 2.5e-06
 milp_2LMH_std_165_1(nor)1: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat1(165)
  >= -5e-06
-milp_2LMH_std_165_2(nor)0: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat0(165) <= 5e-06
-milp_2LMH_std_165_2(nor)1: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat1(165) <= 5e-06
-milp_2LMH_std_166_1(nor)0: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat0(166)
+milp_2LMH_std_165_1(nor)2: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat2(165)
  >= -5e-06
+milp_2LMH_std_165_2(nor)1: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat1(165) <= 5e-06
+milp_2LMH_std_165_2(nor)2: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat2(165) <= 5e-06
 milp_2LMH_std_166_1(nor)1: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat1(166)
  >= -5e-06
-milp_2LMH_std_166_2(nor)0: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat0(166) <= 5e-06
-milp_2LMH_std_166_2(nor)1: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat1(166) <= 5e-06
-milp_2LMH_std_167_1(nor)0: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat0(167)
+milp_2LMH_std_166_1(nor)2: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat2(166)
  >= -5e-06
+milp_2LMH_std_166_2(nor)1: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat1(166) <= 5e-06
+milp_2LMH_std_166_2(nor)2: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat2(166) <= 5e-06
 milp_2LMH_std_167_1(nor)1: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat1(167)
  >= -5e-06
-milp_2LMH_std_167_2(nor)0: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat0(167) <= 5e-06
-milp_2LMH_std_167_2(nor)1: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat1(167) <= 5e-06
-milp_2LMH_std_168_0: x_hat0(168) = 0
-milp_2LMH_std_168_1: x_hat1(168) = 0
-milp_2LMH_std_169_1(nor)0: - ac_lf(('N3',_'C4',_1)) + x_hat0(169) >= -1e-05
-milp_2LMH_std_169_1(nor)1: - ac_lf(('N3',_'C4',_1)) + x_hat1(169) >= -1e-05
-milp_2LMH_std_169_2(nor)0: - ac_lf(('N3',_'C4',_1)) + x_hat0(169) <= 1e-05
-milp_2LMH_std_169_2(nor)1: - ac_lf(('N3',_'C4',_1)) + x_hat1(169) <= 1e-05
-milp_2LMH_std_16_1(nor)0: - 0.25 na_int(N3) + x_hat0(16) >= -2.5e-06
-milp_2LMH_std_16_1(nor)1: - 0.25 na_int(N3) + x_hat1(16) >= -2.5e-06
-milp_2LMH_std_16_2(nor)0: - 0.25 na_int(N3) + x_hat0(16) <= 2.5e-06
-milp_2LMH_std_16_2(nor)1: - 0.25 na_int(N3) + x_hat1(16) <= 2.5e-06
-milp_2LMH_std_170_1(nor)0: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat0(170)
+milp_2LMH_std_167_1(nor)2: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat2(167)
  >= -5e-06
+milp_2LMH_std_167_2(nor)1: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat1(167) <= 5e-06
+milp_2LMH_std_167_2(nor)2: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat2(167) <= 5e-06
+milp_2LMH_std_168_1: x_hat1(168) = 0
+milp_2LMH_std_168_2: x_hat2(168) = 0
+milp_2LMH_std_169_1(nor)1: - ac_lf(('N3',_'C4',_1)) + x_hat1(169) >= -1e-05
+milp_2LMH_std_169_1(nor)2: - ac_lf(('N3',_'C4',_1)) + x_hat2(169) >= -1e-05
+milp_2LMH_std_169_2(nor)1: - ac_lf(('N3',_'C4',_1)) + x_hat1(169) <= 1e-05
+milp_2LMH_std_169_2(nor)2: - ac_lf(('N3',_'C4',_1)) + x_hat2(169) <= 1e-05
+milp_2LMH_std_16_0: x_hat0(16) = 0
+milp_2LMH_std_16_1(nor)1: - 0.25 na_int(N3) + x_hat1(16) >= -2.5e-06
+milp_2LMH_std_16_1(nor)2: - 0.25 na_int(N3) + x_hat2(16) >= -2.5e-06
+milp_2LMH_std_16_2(nor)1: - 0.25 na_int(N3) + x_hat1(16) <= 2.5e-06
+milp_2LMH_std_16_2(nor)2: - 0.25 na_int(N3) + x_hat2(16) <= 2.5e-06
 milp_2LMH_std_170_1(nor)1: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat1(170)
  >= -5e-06
-milp_2LMH_std_170_2(nor)0: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat0(170) <= 5e-06
+milp_2LMH_std_170_1(nor)2: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat2(170)
+ >= -5e-06
 milp_2LMH_std_170_2(nor)1: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat1(170) <= 5e-06
-milp_2LMH_std_171_1(nor)0: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat0(171)
- >= -1.25e-06
+milp_2LMH_std_170_2(nor)2: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat2(170) <= 5e-06
 milp_2LMH_std_171_1(nor)1: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat1(171)
  >= -1.25e-06
-milp_2LMH_std_171_2(nor)0: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat0(171)
- <= 1.25e-06
+milp_2LMH_std_171_1(nor)2: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat2(171)
+ >= -1.25e-06
 milp_2LMH_std_171_2(nor)1: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat1(171)
  <= 1.25e-06
-milp_2LMH_std_172_1(nor)0: - 0.333333333333 ac_lf(('O2',_'C4',_2))
- + x_hat0(172) >= -3.33333333333e-06
+milp_2LMH_std_171_2(nor)2: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat2(171)
+ <= 1.25e-06
 milp_2LMH_std_172_1(nor)1: - 0.333333333333 ac_lf(('O2',_'C4',_2))
  + x_hat1(172) >= -3.33333333333e-06
-milp_2LMH_std_172_2(nor)0: - 0.333333333333 ac_lf(('O2',_'C4',_2))
- + x_hat0(172) <= 3.33333333333e-06
+milp_2LMH_std_172_1(nor)2: - 0.333333333333 ac_lf(('O2',_'C4',_2))
+ + x_hat2(172) >= -3.33333333333e-06
 milp_2LMH_std_172_2(nor)1: - 0.333333333333 ac_lf(('O2',_'C4',_2))
  + x_hat1(172) <= 3.33333333333e-06
-milp_2LMH_std_173_1(nor)0: - 0.333333333333 ac_lf(('O2',_'N3',_1))
- + x_hat0(173) >= -3.33333333333e-06
+milp_2LMH_std_172_2(nor)2: - 0.333333333333 ac_lf(('O2',_'C4',_2))
+ + x_hat2(172) <= 3.33333333333e-06
 milp_2LMH_std_173_1(nor)1: - 0.333333333333 ac_lf(('O2',_'N3',_1))
  + x_hat1(173) >= -3.33333333333e-06
-milp_2LMH_std_173_2(nor)0: - 0.333333333333 ac_lf(('O2',_'N3',_1))
- + x_hat0(173) <= 3.33333333333e-06
+milp_2LMH_std_173_1(nor)2: - 0.333333333333 ac_lf(('O2',_'N3',_1))
+ + x_hat2(173) >= -3.33333333333e-06
 milp_2LMH_std_173_2(nor)1: - 0.333333333333 ac_lf(('O2',_'N3',_1))
  + x_hat1(173) <= 3.33333333333e-06
-milp_2LMH_std_174_1(nor)0: - 0.333333333333 ac_lf(('O2',_'N3',_2))
- + x_hat0(174) >= -3.33333333333e-06
+milp_2LMH_std_173_2(nor)2: - 0.333333333333 ac_lf(('O2',_'N3',_1))
+ + x_hat2(173) <= 3.33333333333e-06
 milp_2LMH_std_174_1(nor)1: - 0.333333333333 ac_lf(('O2',_'N3',_2))
  + x_hat1(174) >= -3.33333333333e-06
-milp_2LMH_std_174_2(nor)0: - 0.333333333333 ac_lf(('O2',_'N3',_2))
- + x_hat0(174) <= 3.33333333333e-06
+milp_2LMH_std_174_1(nor)2: - 0.333333333333 ac_lf(('O2',_'N3',_2))
+ + x_hat2(174) >= -3.33333333333e-06
 milp_2LMH_std_174_2(nor)1: - 0.333333333333 ac_lf(('O2',_'N3',_2))
  + x_hat1(174) <= 3.33333333333e-06
-milp_2LMH_std_175_1(nor)0: - ac_lf(('O2',_'O2',_1)) + x_hat0(175) >= -1e-05
+milp_2LMH_std_174_2(nor)2: - 0.333333333333 ac_lf(('O2',_'N3',_2))
+ + x_hat2(174) <= 3.33333333333e-06
 milp_2LMH_std_175_1(nor)1: - ac_lf(('O2',_'O2',_1)) + x_hat1(175) >= -1e-05
-milp_2LMH_std_175_2(nor)0: - ac_lf(('O2',_'O2',_1)) + x_hat0(175) <= 1e-05
+milp_2LMH_std_175_1(nor)2: - ac_lf(('O2',_'O2',_1)) + x_hat2(175) >= -1e-05
 milp_2LMH_std_175_2(nor)1: - ac_lf(('O2',_'O2',_1)) + x_hat1(175) <= 1e-05
-milp_2LMH_std_176_1(nor)0: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat0(176)
- >= -5e-06
+milp_2LMH_std_175_2(nor)2: - ac_lf(('O2',_'O2',_1)) + x_hat2(175) <= 1e-05
 milp_2LMH_std_176_1(nor)1: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat1(176)
  >= -5e-06
-milp_2LMH_std_176_2(nor)0: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat0(176) <= 5e-06
+milp_2LMH_std_176_1(nor)2: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat2(176)
+ >= -5e-06
 milp_2LMH_std_176_2(nor)1: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat1(176) <= 5e-06
-milp_2LMH_std_177_1(nor)0: - ac_lf(('S2',_'C4',_1)) + x_hat0(177) >= -1e-05
+milp_2LMH_std_176_2(nor)2: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat2(176) <= 5e-06
 milp_2LMH_std_177_1(nor)1: - ac_lf(('S2',_'C4',_1)) + x_hat1(177) >= -1e-05
-milp_2LMH_std_177_2(nor)0: - ac_lf(('S2',_'C4',_1)) + x_hat0(177) <= 1e-05
+milp_2LMH_std_177_1(nor)2: - ac_lf(('S2',_'C4',_1)) + x_hat2(177) >= -1e-05
 milp_2LMH_std_177_2(nor)1: - ac_lf(('S2',_'C4',_1)) + x_hat1(177) <= 1e-05
-milp_2LMH_std_17_1(nor)0: - 0.25 na_int(O2) + x_hat0(17) >= -2.5e-06
+milp_2LMH_std_177_2(nor)2: - ac_lf(('S2',_'C4',_1)) + x_hat2(177) <= 1e-05
+milp_2LMH_std_17_0: x_hat0(17) = 0
 milp_2LMH_std_17_1(nor)1: - 0.25 na_int(O2) + x_hat1(17) >= -2.5e-06
-milp_2LMH_std_17_2(nor)0: - 0.25 na_int(O2) + x_hat0(17) <= 2.5e-06
+milp_2LMH_std_17_1(nor)2: - 0.25 na_int(O2) + x_hat2(17) >= -2.5e-06
 milp_2LMH_std_17_2(nor)1: - 0.25 na_int(O2) + x_hat1(17) <= 2.5e-06
-milp_2LMH_std_18_1(nor)0: - na_int(S2) + x_hat0(18) >= -1e-05
+milp_2LMH_std_17_2(nor)2: - 0.25 na_int(O2) + x_hat2(17) <= 2.5e-06
+milp_2LMH_std_18_0: x_hat0(18) = 0
 milp_2LMH_std_18_1(nor)1: - na_int(S2) + x_hat1(18) >= -1e-05
-milp_2LMH_std_18_2(nor)0: - na_int(S2) + x_hat0(18) <= 1e-05
+milp_2LMH_std_18_1(nor)2: - na_int(S2) + x_hat2(18) >= -1e-05
 milp_2LMH_std_18_2(nor)1: - na_int(S2) + x_hat1(18) <= 1e-05
-milp_2LMH_std_19_1(nor)0: - na_int(S6) + x_hat0(19) >= -1e-05
+milp_2LMH_std_18_2(nor)2: - na_int(S2) + x_hat2(18) <= 1e-05
+milp_2LMH_std_19_0: x_hat0(19) = 0
 milp_2LMH_std_19_1(nor)1: - na_int(S6) + x_hat1(19) >= -1e-05
-milp_2LMH_std_19_2(nor)0: - na_int(S6) + x_hat0(19) <= 1e-05
+milp_2LMH_std_19_1(nor)2: - na_int(S6) + x_hat2(19) >= -1e-05
 milp_2LMH_std_19_2(nor)1: - na_int(S6) + x_hat1(19) <= 1e-05
-milp_2LMH_std_1_1(nor)0: - 0.0169491525424 n_G + x_hat0(1) >= -0.067796779661
+milp_2LMH_std_19_2(nor)2: - na_int(S6) + x_hat2(19) <= 1e-05
+milp_2LMH_std_1_1(nor)0: - 0.25 rank_G + x_hat0(1) >= -2.5e-06
 milp_2LMH_std_1_1(nor)1: - 0.0169491525424 n_G + x_hat1(1) >= -0.067796779661
-milp_2LMH_std_1_2(nor)0: - 0.0169491525424 n_G + x_hat0(1) <= -0.067796440678
+milp_2LMH_std_1_1(nor)2: - 0.0169491525424 n_G + x_hat2(1) >= -0.067796779661
+milp_2LMH_std_1_2(nor)0: - 0.25 rank_G + x_hat0(1) <= 2.5e-06
 milp_2LMH_std_1_2(nor)1: - 0.0169491525424 n_G + x_hat1(1) <= -0.067796440678
-milp_2LMH_std_20_1(nor)0: - 0.125 na_ex(C4) + x_hat0(20) >= -1.25e-06
-milp_2LMH_std_20_1(nor)1: - 0.125 na_ex(C4) + x_hat1(20) >= -1.25e-06
-milp_2LMH_std_20_2(nor)0: - 0.125 na_ex(C4) + x_hat0(20) <= 1.25e-06
-milp_2LMH_std_20_2(nor)1: - 0.125 na_ex(C4) + x_hat1(20) <= 1.25e-06
-milp_2LMH_std_21_1(nor)0: x_hat0(21) >= -1.66666666667e-06
-milp_2LMH_std_21_1(nor)1: x_hat1(21) >= -1.66666666667e-06
-milp_2LMH_std_21_2(nor)0: x_hat0(21) <= 1.66666666667e-06
-milp_2LMH_std_21_2(nor)1: x_hat1(21) <= 1.66666666667e-06
-milp_2LMH_std_22_1(nor)0: - 0.333333333333 na_ex(N3) + x_hat0(22)
+milp_2LMH_std_1_2(nor)2: - 0.0169491525424 n_G + x_hat2(1) <= -0.067796440678
+milp_2LMH_std_20_1(nor)0: - 0.333333333333 fc(15) + x_hat0(20)
  >= -3.33333333333e-06
+milp_2LMH_std_20_1(nor)1: - 0.125 na_ex(C4) + x_hat1(20) >= -1.25e-06
+milp_2LMH_std_20_1(nor)2: - 0.125 na_ex(C4) + x_hat2(20) >= -1.25e-06
+milp_2LMH_std_20_2(nor)0: - 0.333333333333 fc(15) + x_hat0(20)
+ <= 3.33333333333e-06
+milp_2LMH_std_20_2(nor)1: - 0.125 na_ex(C4) + x_hat1(20) <= 1.25e-06
+milp_2LMH_std_20_2(nor)2: - 0.125 na_ex(C4) + x_hat2(20) <= 1.25e-06
+milp_2LMH_std_21_0: x_hat0(21) = 0
+milp_2LMH_std_21_1(nor)1: x_hat1(21) >= -1.66666666667e-06
+milp_2LMH_std_21_1(nor)2: x_hat2(21) >= -1.66666666667e-06
+milp_2LMH_std_21_2(nor)1: x_hat1(21) <= 1.66666666667e-06
+milp_2LMH_std_21_2(nor)2: x_hat2(21) <= 1.66666666667e-06
+milp_2LMH_std_22_0: x_hat0(22) = 0
 milp_2LMH_std_22_1(nor)1: - 0.333333333333 na_ex(N3) + x_hat1(22)
  >= -3.33333333333e-06
-milp_2LMH_std_22_2(nor)0: - 0.333333333333 na_ex(N3) + x_hat0(22)
- <= 3.33333333333e-06
+milp_2LMH_std_22_1(nor)2: - 0.333333333333 na_ex(N3) + x_hat2(22)
+ >= -3.33333333333e-06
 milp_2LMH_std_22_2(nor)1: - 0.333333333333 na_ex(N3) + x_hat1(22)
  <= 3.33333333333e-06
-milp_2LMH_std_23_1(nor)0: - 0.125 na_ex(O2) + x_hat0(23) >= -1.25e-06
+milp_2LMH_std_22_2(nor)2: - 0.333333333333 na_ex(N3) + x_hat2(22)
+ <= 3.33333333333e-06
+milp_2LMH_std_23_0: x_hat0(23) = 0
 milp_2LMH_std_23_1(nor)1: - 0.125 na_ex(O2) + x_hat1(23) >= -1.25e-06
-milp_2LMH_std_23_2(nor)0: - 0.125 na_ex(O2) + x_hat0(23) <= 1.25e-06
+milp_2LMH_std_23_1(nor)2: - 0.125 na_ex(O2) + x_hat2(23) >= -1.25e-06
 milp_2LMH_std_23_2(nor)1: - 0.125 na_ex(O2) + x_hat1(23) <= 1.25e-06
-milp_2LMH_std_24_1(nor)0: x_hat0(24) >= -1e-05
+milp_2LMH_std_23_2(nor)2: - 0.125 na_ex(O2) + x_hat2(23) <= 1.25e-06
+milp_2LMH_std_24_0: x_hat0(24) = 0
 milp_2LMH_std_24_1(nor)1: x_hat1(24) >= -1e-05
-milp_2LMH_std_24_2(nor)0: x_hat0(24) <= 1e-05
+milp_2LMH_std_24_1(nor)2: x_hat2(24) >= -1e-05
 milp_2LMH_std_24_2(nor)1: x_hat1(24) <= 1e-05
-milp_2LMH_std_25_1(nor)0: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
- + x_hat0(25) >= -2.5641025641e-07
+milp_2LMH_std_24_2(nor)2: x_hat2(24) <= 1e-05
+milp_2LMH_std_25_0: x_hat0(25) = 0
 milp_2LMH_std_25_1(nor)1: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
  + x_hat1(25) >= -2.5641025641e-07
-milp_2LMH_std_25_2(nor)0: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
- + x_hat0(25) <= 2.5641025641e-07
+milp_2LMH_std_25_1(nor)2: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
+ + x_hat2(25) >= -2.5641025641e-07
 milp_2LMH_std_25_2(nor)1: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
  + x_hat1(25) <= 2.5641025641e-07
-milp_2LMH_std_26_1(nor)0: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat0(26)
- >= -2e-06
+milp_2LMH_std_25_2(nor)2: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
+ + x_hat2(25) <= 2.5641025641e-07
+milp_2LMH_std_26_0: x_hat0(26) = 0
 milp_2LMH_std_26_1(nor)1: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat1(26)
  >= -2e-06
-milp_2LMH_std_26_2(nor)0: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat0(26)
- <= 2e-06
+milp_2LMH_std_26_1(nor)2: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat2(26)
+ >= -2e-06
 milp_2LMH_std_26_2(nor)1: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat1(26)
  <= 2e-06
-milp_2LMH_std_27_1(nor)0: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
- + x_hat0(27) >= -1.42857142857e-06
+milp_2LMH_std_26_2(nor)2: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat2(26)
+ <= 2e-06
+milp_2LMH_std_27_0: x_hat0(27) = 0
 milp_2LMH_std_27_1(nor)1: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
  + x_hat1(27) >= -1.42857142857e-06
-milp_2LMH_std_27_2(nor)0: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
- + x_hat0(27) <= 1.42857142857e-06
+milp_2LMH_std_27_1(nor)2: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
+ + x_hat2(27) >= -1.42857142857e-06
 milp_2LMH_std_27_2(nor)1: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
  + x_hat1(27) <= 1.42857142857e-06
-milp_2LMH_std_28_1(nor)0: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat0(28)
- >= -2.5e-06
+milp_2LMH_std_27_2(nor)2: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
+ + x_hat2(27) <= 1.42857142857e-06
+milp_2LMH_std_28_0: x_hat0(28) = 0
 milp_2LMH_std_28_1(nor)1: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat1(28)
  >= -2.5e-06
-milp_2LMH_std_28_2(nor)0: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat0(28)
- <= 2.5e-06
+milp_2LMH_std_28_1(nor)2: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat2(28)
+ >= -2.5e-06
 milp_2LMH_std_28_2(nor)1: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat1(28)
  <= 2.5e-06
-milp_2LMH_std_29_1(nor)0: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat0(29)
- >= -5e-06
+milp_2LMH_std_28_2(nor)2: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat2(28)
+ <= 2.5e-06
+milp_2LMH_std_29_0: x_hat0(29) = 0
 milp_2LMH_std_29_1(nor)1: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat1(29)
  >= -5e-06
-milp_2LMH_std_29_2(nor)0: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat0(29)
- <= 5e-06
+milp_2LMH_std_29_1(nor)2: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat2(29)
+ >= -5e-06
 milp_2LMH_std_29_2(nor)1: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat1(29)
  <= 5e-06
-milp_2LMH_std_2_1(nor)0: - 0.142857142857 rank_G + x_hat0(2)
- >= -1.42857142857e-06
+milp_2LMH_std_29_2(nor)2: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat2(29)
+ <= 5e-06
+milp_2LMH_std_2_1(nor)0: - 0.0185185185185 n_G_int + x_hat0(2)
+ >= -1.85185185185e-07
 milp_2LMH_std_2_1(nor)1: - 0.142857142857 rank_G + x_hat1(2)
  >= -1.42857142857e-06
-milp_2LMH_std_2_2(nor)0: - 0.142857142857 rank_G + x_hat0(2)
- <= 1.42857142857e-06
+milp_2LMH_std_2_1(nor)2: - 0.142857142857 rank_G + x_hat2(2)
+ >= -1.42857142857e-06
+milp_2LMH_std_2_2(nor)0: - 0.0185185185185 n_G_int + x_hat0(2)
+ <= 1.85185185185e-07
 milp_2LMH_std_2_2(nor)1: - 0.142857142857 rank_G + x_hat1(2)
  <= 1.42857142857e-06
-milp_2LMH_std_30_1(nor)0: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat0(30)
- >= -5e-06
+milp_2LMH_std_2_2(nor)2: - 0.142857142857 rank_G + x_hat2(2)
+ <= 1.42857142857e-06
+milp_2LMH_std_30_0: x_hat0(30) = 0
 milp_2LMH_std_30_1(nor)1: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat1(30)
  >= -5e-06
-milp_2LMH_std_30_2(nor)0: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat0(30)
- <= 5e-06
+milp_2LMH_std_30_1(nor)2: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat2(30)
+ >= -5e-06
 milp_2LMH_std_30_2(nor)1: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat1(30)
+ <= 5e-06
+milp_2LMH_std_30_2(nor)2: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat2(30)
  <= 5e-06
 milp_2LMH_std_31_0: x_hat0(31) = 0
 milp_2LMH_std_31_1: x_hat1(31) = 0
+milp_2LMH_std_31_2: x_hat2(31) = 0
 milp_2LMH_std_32_0: x_hat0(32) = 0
 milp_2LMH_std_32_1: x_hat1(32) = 0
-milp_2LMH_std_33_1(nor)0: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
- + x_hat0(33) >= -1.66666666667e-06
+milp_2LMH_std_32_2: x_hat2(32) = 0
+milp_2LMH_std_33_0: x_hat0(33) = 0
 milp_2LMH_std_33_1(nor)1: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
  + x_hat1(33) >= -1.66666666667e-06
-milp_2LMH_std_33_2(nor)0: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
- + x_hat0(33) <= 1.66666666667e-06
+milp_2LMH_std_33_1(nor)2: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
+ + x_hat2(33) >= -1.66666666667e-06
 milp_2LMH_std_33_2(nor)1: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
  + x_hat1(33) <= 1.66666666667e-06
+milp_2LMH_std_33_2(nor)2: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
+ + x_hat2(33) <= 1.66666666667e-06
 milp_2LMH_std_34_0: x_hat0(34) = 0
 milp_2LMH_std_34_1: x_hat1(34) = 0
+milp_2LMH_std_34_2: x_hat2(34) = 0
 milp_2LMH_std_35_0: x_hat0(35) = 0
 milp_2LMH_std_35_1: x_hat1(35) = 0
-milp_2LMH_std_36_1(nor)0: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
- + x_hat0(36) >= -1.66666666667e-06
+milp_2LMH_std_35_2: x_hat2(35) = 0
+milp_2LMH_std_36_0: x_hat0(36) = 0
 milp_2LMH_std_36_1(nor)1: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
  + x_hat1(36) >= -1.66666666667e-06
-milp_2LMH_std_36_2(nor)0: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
- + x_hat0(36) <= 1.66666666667e-06
+milp_2LMH_std_36_1(nor)2: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
+ + x_hat2(36) >= -1.66666666667e-06
 milp_2LMH_std_36_2(nor)1: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
  + x_hat1(36) <= 1.66666666667e-06
-milp_2LMH_std_37_1(nor)0: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
- + x_hat0(37) >= -3.33333333333e-06
+milp_2LMH_std_36_2(nor)2: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
+ + x_hat2(36) <= 1.66666666667e-06
+milp_2LMH_std_37_0: x_hat0(37) = 0
 milp_2LMH_std_37_1(nor)1: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
  + x_hat1(37) >= -3.33333333333e-06
-milp_2LMH_std_37_2(nor)0: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
- + x_hat0(37) <= 3.33333333333e-06
+milp_2LMH_std_37_1(nor)2: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
+ + x_hat2(37) >= -3.33333333333e-06
 milp_2LMH_std_37_2(nor)1: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
  + x_hat1(37) <= 3.33333333333e-06
-milp_2LMH_std_38_1(nor)0: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
- + x_hat0(38) >= -3.33333333333e-06
+milp_2LMH_std_37_2(nor)2: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
+ + x_hat2(37) <= 3.33333333333e-06
+milp_2LMH_std_38_1(nor)0: - 0.25 ac_lf(('C4',_'N3',_1)) + x_hat0(38)
+ >= -2.5e-06
 milp_2LMH_std_38_1(nor)1: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
  + x_hat1(38) >= -3.33333333333e-06
-milp_2LMH_std_38_2(nor)0: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
- + x_hat0(38) <= 3.33333333333e-06
+milp_2LMH_std_38_1(nor)2: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
+ + x_hat2(38) >= -3.33333333333e-06
+milp_2LMH_std_38_2(nor)0: - 0.25 ac_lf(('C4',_'N3',_1)) + x_hat0(38)
+ <= 2.5e-06
 milp_2LMH_std_38_2(nor)1: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
  + x_hat1(38) <= 3.33333333333e-06
-milp_2LMH_std_39_1(nor)0: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat0(39)
- >= -2.5e-06
+milp_2LMH_std_38_2(nor)2: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
+ + x_hat2(38) <= 3.33333333333e-06
+milp_2LMH_std_39_1(nor)0: - ac_lf(('N3',_'N3',_1)) + x_hat0(39) >= -1e-05
 milp_2LMH_std_39_1(nor)1: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat1(39)
  >= -2.5e-06
-milp_2LMH_std_39_2(nor)0: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat0(39)
- <= 2.5e-06
+milp_2LMH_std_39_1(nor)2: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat2(39)
+ >= -2.5e-06
+milp_2LMH_std_39_2(nor)0: - ac_lf(('N3',_'N3',_1)) + x_hat0(39) <= 1e-05
 milp_2LMH_std_39_2(nor)1: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat1(39)
  <= 2.5e-06
-milp_2LMH_std_3_1(nor)0: - 0.0185185185185 n_G_int + x_hat0(3)
- >= -1.85185185185e-07
+milp_2LMH_std_39_2(nor)2: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat2(39)
+ <= 2.5e-06
 milp_2LMH_std_3_1(nor)1: - 0.0185185185185 n_G_int + x_hat1(3)
  >= -1.85185185185e-07
-milp_2LMH_std_3_2(nor)0: - 0.0185185185185 n_G_int + x_hat0(3)
- <= 1.85185185185e-07
+milp_2LMH_std_3_1(nor)2: - 0.0185185185185 n_G_int + x_hat2(3)
+ >= -1.85185185185e-07
+milp_2LMH_std_3_1_mass0: - 0.00456680644139 mass_n + x_hat0(3)
+ >= -0.189196443006
 milp_2LMH_std_3_2(nor)1: - 0.0185185185185 n_G_int + x_hat1(3)
  <= 1.85185185185e-07
-milp_2LMH_std_40_1(nor)0: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat0(40)
+milp_2LMH_std_3_2(nor)2: - 0.0185185185185 n_G_int + x_hat2(3)
+ <= 1.85185185185e-07
+milp_2LMH_std_3_2_mass0: - 0.00456680644139 mass_n + x_hat0(3)
+ <= -0.18919635167
+milp_2LMH_std_40_1(nor)0: - 0.25 ac_lf(('O2',_'C4',_2)) + x_hat0(40)
  >= -2.5e-06
 milp_2LMH_std_40_1(nor)1: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat1(40)
  >= -2.5e-06
-milp_2LMH_std_40_2(nor)0: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat0(40)
+milp_2LMH_std_40_1(nor)2: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat2(40)
+ >= -2.5e-06
+milp_2LMH_std_40_2(nor)0: - 0.25 ac_lf(('O2',_'C4',_2)) + x_hat0(40)
  <= 2.5e-06
 milp_2LMH_std_40_2(nor)1: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat1(40)
  <= 2.5e-06
-milp_2LMH_std_41_1(nor)0: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat0(41)
- >= -1.25e-06
+milp_2LMH_std_40_2(nor)2: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat2(40)
+ <= 2.5e-06
+milp_2LMH_std_41_1(nor)0: - 0.25 ac_lf(('O2',_'N3',_2)) + x_hat0(41)
+ >= -2.5e-06
 milp_2LMH_std_41_1(nor)1: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat1(41)
  >= -1.25e-06
-milp_2LMH_std_41_2(nor)0: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat0(41)
- <= 1.25e-06
+milp_2LMH_std_41_1(nor)2: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat2(41)
+ >= -1.25e-06
+milp_2LMH_std_41_2(nor)0: - 0.25 ac_lf(('O2',_'N3',_2)) + x_hat0(41)
+ <= 2.5e-06
 milp_2LMH_std_41_2(nor)1: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat1(41)
  <= 1.25e-06
-milp_2LMH_std_42_0: x_hat0(42) = 0
+milp_2LMH_std_41_2(nor)2: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat2(41)
+ <= 1.25e-06
 milp_2LMH_std_42_1: x_hat1(42) = 0
-milp_2LMH_std_43_0: x_hat0(43) = 0
+milp_2LMH_std_42_2: x_hat2(42) = 0
 milp_2LMH_std_43_1: x_hat1(43) = 0
-milp_2LMH_std_44_0: x_hat0(44) = 0
+milp_2LMH_std_43_2: x_hat2(43) = 0
 milp_2LMH_std_44_1: x_hat1(44) = 0
-milp_2LMH_std_45_0: x_hat0(45) = 0
+milp_2LMH_std_44_2: x_hat2(44) = 0
 milp_2LMH_std_45_1: x_hat1(45) = 0
-milp_2LMH_std_46_1(nor)0: - 0.0714285714286 fc(6) + x_hat0(46)
- >= -7.14285714286e-07
+milp_2LMH_std_45_2: x_hat2(45) = 0
 milp_2LMH_std_46_1(nor)1: - 0.0714285714286 fc(6) + x_hat1(46)
  >= -7.14285714286e-07
-milp_2LMH_std_46_2(nor)0: - 0.0714285714286 fc(6) + x_hat0(46)
- <= 7.14285714286e-07
+milp_2LMH_std_46_1(nor)2: - 0.0714285714286 fc(6) + x_hat2(46)
+ >= -7.14285714286e-07
 milp_2LMH_std_46_2(nor)1: - 0.0714285714286 fc(6) + x_hat1(46)
  <= 7.14285714286e-07
-milp_2LMH_std_47_1(nor)0: - 0.0263157894737 fc(11) + x_hat0(47)
- >= -2.63157894737e-07
+milp_2LMH_std_46_2(nor)2: - 0.0714285714286 fc(6) + x_hat2(46)
+ <= 7.14285714286e-07
 milp_2LMH_std_47_1(nor)1: - 0.0263157894737 fc(11) + x_hat1(47)
  >= -2.63157894737e-07
-milp_2LMH_std_47_2(nor)0: - 0.0263157894737 fc(11) + x_hat0(47)
- <= 2.63157894737e-07
+milp_2LMH_std_47_1(nor)2: - 0.0263157894737 fc(11) + x_hat2(47)
+ >= -2.63157894737e-07
 milp_2LMH_std_47_2(nor)1: - 0.0263157894737 fc(11) + x_hat1(47)
  <= 2.63157894737e-07
-milp_2LMH_std_48_1(nor)0: - 0.166666666667 fc(1) + x_hat0(48)
- >= -1.66666666667e-06
+milp_2LMH_std_47_2(nor)2: - 0.0263157894737 fc(11) + x_hat2(47)
+ <= 2.63157894737e-07
 milp_2LMH_std_48_1(nor)1: - 0.166666666667 fc(1) + x_hat1(48)
  >= -1.66666666667e-06
-milp_2LMH_std_48_2(nor)0: - 0.166666666667 fc(1) + x_hat0(48)
- <= 1.66666666667e-06
+milp_2LMH_std_48_1(nor)2: - 0.166666666667 fc(1) + x_hat2(48)
+ >= -1.66666666667e-06
 milp_2LMH_std_48_2(nor)1: - 0.166666666667 fc(1) + x_hat1(48)
  <= 1.66666666667e-06
-milp_2LMH_std_49_0: x_hat0(49) = 0
+milp_2LMH_std_48_2(nor)2: - 0.166666666667 fc(1) + x_hat2(48)
+ <= 1.66666666667e-06
 milp_2LMH_std_49_1: x_hat1(49) = 0
-milp_2LMH_std_4_1_mass0: - 0.00511322207644 mass_n + x_hat0(4)
- >= -0.211833683248
+milp_2LMH_std_49_2: x_hat2(49) = 0
+milp_2LMH_std_4_1(nor)0: - 0.125 dg_int(1) + x_hat0(4) >= -1.25e-06
 milp_2LMH_std_4_1_mass1: - 0.00511322207644 mass_n + x_hat1(4)
  >= -0.211833683248
-milp_2LMH_std_4_2_mass0: - 0.00511322207644 mass_n + x_hat0(4)
- <= -0.211833580984
+milp_2LMH_std_4_1_mass2: - 0.00511322207644 mass_n + x_hat2(4)
+ >= -0.211833683248
+milp_2LMH_std_4_2(nor)0: - 0.125 dg_int(1) + x_hat0(4) <= 1.25e-06
 milp_2LMH_std_4_2_mass1: - 0.00511322207644 mass_n + x_hat1(4)
  <= -0.211833580984
-milp_2LMH_std_50_1(nor)0: - 0.25 fc(2) + x_hat0(50) >= -2.5e-06
+milp_2LMH_std_4_2_mass2: - 0.00511322207644 mass_n + x_hat2(4)
+ <= -0.211833580984
 milp_2LMH_std_50_1(nor)1: - 0.25 fc(2) + x_hat1(50) >= -2.5e-06
-milp_2LMH_std_50_2(nor)0: - 0.25 fc(2) + x_hat0(50) <= 2.5e-06
+milp_2LMH_std_50_1(nor)2: - 0.25 fc(2) + x_hat2(50) >= -2.5e-06
 milp_2LMH_std_50_2(nor)1: - 0.25 fc(2) + x_hat1(50) <= 2.5e-06
-milp_2LMH_std_51_1(nor)0: - 0.333333333333 fc(18) + x_hat0(51)
- >= -3.33333333333e-06
+milp_2LMH_std_50_2(nor)2: - 0.25 fc(2) + x_hat2(50) <= 2.5e-06
 milp_2LMH_std_51_1(nor)1: - 0.333333333333 fc(18) + x_hat1(51)
  >= -3.33333333333e-06
-milp_2LMH_std_51_2(nor)0: - 0.333333333333 fc(18) + x_hat0(51)
- <= 3.33333333333e-06
+milp_2LMH_std_51_1(nor)2: - 0.333333333333 fc(18) + x_hat2(51)
+ >= -3.33333333333e-06
 milp_2LMH_std_51_2(nor)1: - 0.333333333333 fc(18) + x_hat1(51)
  <= 3.33333333333e-06
-milp_2LMH_std_52_0: x_hat0(52) = 0
+milp_2LMH_std_51_2(nor)2: - 0.333333333333 fc(18) + x_hat2(51)
+ <= 3.33333333333e-06
 milp_2LMH_std_52_1: x_hat1(52) = 0
-milp_2LMH_std_53_0: x_hat0(53) = 0
+milp_2LMH_std_52_2: x_hat2(52) = 0
 milp_2LMH_std_53_1: x_hat1(53) = 0
-milp_2LMH_std_54_0: x_hat0(54) = 0
+milp_2LMH_std_53_2: x_hat2(53) = 0
 milp_2LMH_std_54_1: x_hat1(54) = 0
-milp_2LMH_std_55_0: x_hat0(55) = 0
+milp_2LMH_std_54_2: x_hat2(54) = 0
 milp_2LMH_std_55_1: x_hat1(55) = 0
-milp_2LMH_std_56_0: x_hat0(56) = 0
+milp_2LMH_std_55_2: x_hat2(55) = 0
 milp_2LMH_std_56_1: x_hat1(56) = 0
-milp_2LMH_std_57_0: x_hat0(57) = 0
+milp_2LMH_std_56_2: x_hat2(56) = 0
 milp_2LMH_std_57_1: x_hat1(57) = 0
-milp_2LMH_std_58_0: x_hat0(58) = 0
+milp_2LMH_std_57_2: x_hat2(57) = 0
 milp_2LMH_std_58_1: x_hat1(58) = 0
-milp_2LMH_std_59_1(nor)0: - 0.25 fc(15) + x_hat0(59) >= -2.5e-06
+milp_2LMH_std_58_2: x_hat2(58) = 0
 milp_2LMH_std_59_1(nor)1: - 0.25 fc(15) + x_hat1(59) >= -2.5e-06
-milp_2LMH_std_59_2(nor)0: - 0.25 fc(15) + x_hat0(59) <= 2.5e-06
+milp_2LMH_std_59_1(nor)2: - 0.25 fc(15) + x_hat2(59) >= -2.5e-06
 milp_2LMH_std_59_2(nor)1: - 0.25 fc(15) + x_hat1(59) <= 2.5e-06
-milp_2LMH_std_5_1(nor)0: x_hat0(5) = 0
+milp_2LMH_std_59_2(nor)2: - 0.25 fc(15) + x_hat2(59) <= 2.5e-06
+milp_2LMH_std_5_1(nor)0: - 0.25 na_int(N3) + x_hat0(5) >= -2.5e-06
 milp_2LMH_std_5_1(nor)1: x_hat1(5) = 0
-milp_2LMH_std_60_1(nor)0: - 0.5 fc(8) + x_hat0(60) >= -5e-06
+milp_2LMH_std_5_1(nor)2: x_hat2(5) = 0
+milp_2LMH_std_5_2(nor)0: - 0.25 na_int(N3) + x_hat0(5) <= 2.5e-06
 milp_2LMH_std_60_1(nor)1: - 0.5 fc(8) + x_hat1(60) >= -5e-06
-milp_2LMH_std_60_2(nor)0: - 0.5 fc(8) + x_hat0(60) <= 5e-06
+milp_2LMH_std_60_1(nor)2: - 0.5 fc(8) + x_hat2(60) >= -5e-06
 milp_2LMH_std_60_2(nor)1: - 0.5 fc(8) + x_hat1(60) <= 5e-06
-milp_2LMH_std_61_1(nor)0: - 0.25 fc(3) + x_hat0(61) >= -2.5e-06
+milp_2LMH_std_60_2(nor)2: - 0.5 fc(8) + x_hat2(60) <= 5e-06
 milp_2LMH_std_61_1(nor)1: - 0.25 fc(3) + x_hat1(61) >= -2.5e-06
-milp_2LMH_std_61_2(nor)0: - 0.25 fc(3) + x_hat0(61) <= 2.5e-06
+milp_2LMH_std_61_1(nor)2: - 0.25 fc(3) + x_hat2(61) >= -2.5e-06
 milp_2LMH_std_61_2(nor)1: - 0.25 fc(3) + x_hat1(61) <= 2.5e-06
-milp_2LMH_std_62_0: x_hat0(62) = 0
+milp_2LMH_std_61_2(nor)2: - 0.25 fc(3) + x_hat2(61) <= 2.5e-06
 milp_2LMH_std_62_1: x_hat1(62) = 0
-milp_2LMH_std_63_1(nor)0: - 0.5 fc(16) + x_hat0(63) >= -5e-06
+milp_2LMH_std_62_2: x_hat2(62) = 0
 milp_2LMH_std_63_1(nor)1: - 0.5 fc(16) + x_hat1(63) >= -5e-06
-milp_2LMH_std_63_2(nor)0: - 0.5 fc(16) + x_hat0(63) <= 5e-06
+milp_2LMH_std_63_1(nor)2: - 0.5 fc(16) + x_hat2(63) >= -5e-06
 milp_2LMH_std_63_2(nor)1: - 0.5 fc(16) + x_hat1(63) <= 5e-06
-milp_2LMH_std_64_0: x_hat0(64) = 0
+milp_2LMH_std_63_2(nor)2: - 0.5 fc(16) + x_hat2(63) <= 5e-06
 milp_2LMH_std_64_1: x_hat1(64) = 0
-milp_2LMH_std_65_1(nor)0: - fc(20) + x_hat0(65) >= -1e-05
+milp_2LMH_std_64_2: x_hat2(64) = 0
 milp_2LMH_std_65_1(nor)1: - fc(20) + x_hat1(65) >= -1e-05
-milp_2LMH_std_65_2(nor)0: - fc(20) + x_hat0(65) <= 1e-05
+milp_2LMH_std_65_1(nor)2: - fc(20) + x_hat2(65) >= -1e-05
 milp_2LMH_std_65_2(nor)1: - fc(20) + x_hat1(65) <= 1e-05
-milp_2LMH_std_66_0: x_hat0(66) = 0
+milp_2LMH_std_65_2(nor)2: - fc(20) + x_hat2(65) <= 1e-05
 milp_2LMH_std_66_1: x_hat1(66) = 0
-milp_2LMH_std_67_0: x_hat0(67) = 0
+milp_2LMH_std_66_2: x_hat2(66) = 0
 milp_2LMH_std_67_1: x_hat1(67) = 0
-milp_2LMH_std_68_0: x_hat0(68) = 0
+milp_2LMH_std_67_2: x_hat2(67) = 0
 milp_2LMH_std_68_1: x_hat1(68) = 0
-milp_2LMH_std_69_0: x_hat0(69) = 0
+milp_2LMH_std_68_2: x_hat2(68) = 0
 milp_2LMH_std_69_1: x_hat1(69) = 0
-milp_2LMH_std_6_1(nor)0: - 0.02 dg(2) + x_hat0(6) >= -2e-07
+milp_2LMH_std_69_2: x_hat2(69) = 0
+milp_2LMH_std_6_1(nor)0: - 0.1 ec_int(('C4',_2),_('O2',_2),_1) + x_hat0(6)
+ >= -1e-06
 milp_2LMH_std_6_1(nor)1: - 0.02 dg(2) + x_hat1(6) >= -2e-07
-milp_2LMH_std_6_2(nor)0: - 0.02 dg(2) + x_hat0(6) <= 2e-07
+milp_2LMH_std_6_1(nor)2: - 0.02 dg(2) + x_hat2(6) >= -2e-07
+milp_2LMH_std_6_2(nor)0: - 0.1 ec_int(('C4',_2),_('O2',_2),_1) + x_hat0(6)
+ <= 1e-06
 milp_2LMH_std_6_2(nor)1: - 0.02 dg(2) + x_hat1(6) <= 2e-07
-milp_2LMH_std_70_0: x_hat0(70) = 0
+milp_2LMH_std_6_2(nor)2: - 0.02 dg(2) + x_hat2(6) <= 2e-07
 milp_2LMH_std_70_1: x_hat1(70) = 0
-milp_2LMH_std_71_0: x_hat0(71) = 0
+milp_2LMH_std_70_2: x_hat2(70) = 0
 milp_2LMH_std_71_1: x_hat1(71) = 0
-milp_2LMH_std_72_0: x_hat0(72) = 0
+milp_2LMH_std_71_2: x_hat2(71) = 0
 milp_2LMH_std_72_1: x_hat1(72) = 0
-milp_2LMH_std_73_0: x_hat0(73) = 0
+milp_2LMH_std_72_2: x_hat2(72) = 0
 milp_2LMH_std_73_1: x_hat1(73) = 0
-milp_2LMH_std_74_0: x_hat0(74) = 0
+milp_2LMH_std_73_2: x_hat2(73) = 0
 milp_2LMH_std_74_1: x_hat1(74) = 0
-milp_2LMH_std_75_0: x_hat0(75) = 0
+milp_2LMH_std_74_2: x_hat2(74) = 0
 milp_2LMH_std_75_1: x_hat1(75) = 0
-milp_2LMH_std_76_0: x_hat0(76) = 0
+milp_2LMH_std_75_2: x_hat2(75) = 0
 milp_2LMH_std_76_1: x_hat1(76) = 0
-milp_2LMH_std_77_0: x_hat0(77) = 0
+milp_2LMH_std_76_2: x_hat2(76) = 0
 milp_2LMH_std_77_1: x_hat1(77) = 0
-milp_2LMH_std_78_0: x_hat0(78) = 0
+milp_2LMH_std_77_2: x_hat2(77) = 0
 milp_2LMH_std_78_1: x_hat1(78) = 0
-milp_2LMH_std_79_0: x_hat0(79) = 0
+milp_2LMH_std_78_2: x_hat2(78) = 0
 milp_2LMH_std_79_1: x_hat1(79) = 0
-milp_2LMH_std_7_1(nor)0: - 0.0769230769231 dg(3) + x_hat0(7)
- >= -7.69230769231e-07
+milp_2LMH_std_79_2: x_hat2(79) = 0
+milp_2LMH_std_7_0: x_hat0(7) = 0
 milp_2LMH_std_7_1(nor)1: - 0.0769230769231 dg(3) + x_hat1(7)
  >= -7.69230769231e-07
-milp_2LMH_std_7_2(nor)0: - 0.0769230769231 dg(3) + x_hat0(7)
- <= 7.69230769231e-07
+milp_2LMH_std_7_1(nor)2: - 0.0769230769231 dg(3) + x_hat2(7)
+ >= -7.69230769231e-07
 milp_2LMH_std_7_2(nor)1: - 0.0769230769231 dg(3) + x_hat1(7)
  <= 7.69230769231e-07
-milp_2LMH_std_80_0: x_hat0(80) = 0
+milp_2LMH_std_7_2(nor)2: - 0.0769230769231 dg(3) + x_hat2(7)
+ <= 7.69230769231e-07
 milp_2LMH_std_80_1: x_hat1(80) = 0
-milp_2LMH_std_81_0: x_hat0(81) = 0
+milp_2LMH_std_80_2: x_hat2(80) = 0
 milp_2LMH_std_81_1: x_hat1(81) = 0
-milp_2LMH_std_82_1(nor)0: - fc(17) + x_hat0(82) >= -1e-05
+milp_2LMH_std_81_2: x_hat2(81) = 0
 milp_2LMH_std_82_1(nor)1: - fc(17) + x_hat1(82) >= -1e-05
-milp_2LMH_std_82_2(nor)0: - fc(17) + x_hat0(82) <= 1e-05
+milp_2LMH_std_82_1(nor)2: - fc(17) + x_hat2(82) >= -1e-05
 milp_2LMH_std_82_2(nor)1: - fc(17) + x_hat1(82) <= 1e-05
-milp_2LMH_std_83_0: x_hat0(83) = 0
+milp_2LMH_std_82_2(nor)2: - fc(17) + x_hat2(82) <= 1e-05
 milp_2LMH_std_83_1: x_hat1(83) = 0
-milp_2LMH_std_84_1(nor)0: - fc(22) + x_hat0(84) >= -1e-05
+milp_2LMH_std_83_2: x_hat2(83) = 0
 milp_2LMH_std_84_1(nor)1: - fc(22) + x_hat1(84) >= -1e-05
-milp_2LMH_std_84_2(nor)0: - fc(22) + x_hat0(84) <= 1e-05
+milp_2LMH_std_84_1(nor)2: - fc(22) + x_hat2(84) >= -1e-05
 milp_2LMH_std_84_2(nor)1: - fc(22) + x_hat1(84) <= 1e-05
-milp_2LMH_std_85_0: x_hat0(85) = 0
+milp_2LMH_std_84_2(nor)2: - fc(22) + x_hat2(84) <= 1e-05
 milp_2LMH_std_85_1: x_hat1(85) = 0
-milp_2LMH_std_86_0: x_hat0(86) = 0
+milp_2LMH_std_85_2: x_hat2(85) = 0
 milp_2LMH_std_86_1: x_hat1(86) = 0
-milp_2LMH_std_87_0: x_hat0(87) = 0
+milp_2LMH_std_86_2: x_hat2(86) = 0
 milp_2LMH_std_87_1: x_hat1(87) = 0
-milp_2LMH_std_88_0: x_hat0(88) = 0
+milp_2LMH_std_87_2: x_hat2(87) = 0
 milp_2LMH_std_88_1: x_hat1(88) = 0
-milp_2LMH_std_89_0: x_hat0(89) = 0
+milp_2LMH_std_88_2: x_hat2(88) = 0
 milp_2LMH_std_89_1: x_hat1(89) = 0
-milp_2LMH_std_8_1(nor)0: - dg(4) + x_hat0(8) >= -1e-05
+milp_2LMH_std_89_2: x_hat2(89) = 0
+milp_2LMH_std_8_0: x_hat0(8) = 0
 milp_2LMH_std_8_1(nor)1: - dg(4) + x_hat1(8) >= -1e-05
-milp_2LMH_std_8_2(nor)0: - dg(4) + x_hat0(8) <= 1e-05
+milp_2LMH_std_8_1(nor)2: - dg(4) + x_hat2(8) >= -1e-05
 milp_2LMH_std_8_2(nor)1: - dg(4) + x_hat1(8) <= 1e-05
-milp_2LMH_std_90_0: x_hat0(90) = 0
+milp_2LMH_std_8_2(nor)2: - dg(4) + x_hat2(8) <= 1e-05
 milp_2LMH_std_90_1: x_hat1(90) = 0
-milp_2LMH_std_91_0: x_hat0(91) = 0
+milp_2LMH_std_90_2: x_hat2(90) = 0
 milp_2LMH_std_91_1: x_hat1(91) = 0
-milp_2LMH_std_92_0: x_hat0(92) = 0
+milp_2LMH_std_91_2: x_hat2(91) = 0
 milp_2LMH_std_92_1: x_hat1(92) = 0
-milp_2LMH_std_93_0: x_hat0(93) = 0
+milp_2LMH_std_92_2: x_hat2(92) = 0
 milp_2LMH_std_93_1: x_hat1(93) = 0
-milp_2LMH_std_94_0: x_hat0(94) = 0
+milp_2LMH_std_93_2: x_hat2(93) = 0
 milp_2LMH_std_94_1: x_hat1(94) = 0
-milp_2LMH_std_95_0: x_hat0(95) = 0
+milp_2LMH_std_94_2: x_hat2(94) = 0
 milp_2LMH_std_95_1: x_hat1(95) = 0
-milp_2LMH_std_96_0: x_hat0(96) = 0
+milp_2LMH_std_95_2: x_hat2(95) = 0
 milp_2LMH_std_96_1: x_hat1(96) = 0
-milp_2LMH_std_97_0: x_hat0(97) = 0
+milp_2LMH_std_96_2: x_hat2(96) = 0
 milp_2LMH_std_97_1: x_hat1(97) = 0
-milp_2LMH_std_98_0: x_hat0(98) = 0
+milp_2LMH_std_97_2: x_hat2(97) = 0
 milp_2LMH_std_98_1: x_hat1(98) = 0
-milp_2LMH_std_99_0: x_hat0(99) = 0
+milp_2LMH_std_98_2: x_hat2(98) = 0
 milp_2LMH_std_99_1: x_hat1(99) = 0
-milp_2LMH_std_9_1(nor)0: - 0.333333333333 dg_int(1) + x_hat0(9)
- >= -3.33333333333e-06
+milp_2LMH_std_99_2: x_hat2(99) = 0
+milp_2LMH_std_9_1(nor)0: - 0.333333333333 ec_int(('C4',_3),_('N3',_3),_1)
+ + x_hat0(9) >= -3.33333333333e-06
 milp_2LMH_std_9_1(nor)1: - 0.333333333333 dg_int(1) + x_hat1(9)
  >= -3.33333333333e-06
-milp_2LMH_std_9_2(nor)0: - 0.333333333333 dg_int(1) + x_hat0(9)
- <= 3.33333333333e-06
+milp_2LMH_std_9_1(nor)2: - 0.333333333333 dg_int(1) + x_hat2(9)
+ >= -3.33333333333e-06
+milp_2LMH_std_9_2(nor)0: - 0.333333333333 ec_int(('C4',_3),_('N3',_3),_1)
+ + x_hat0(9) <= 3.33333333333e-06
 milp_2LMH_std_9_2(nor)1: - 0.333333333333 dg_int(1) + x_hat1(9)
+ <= 3.33333333333e-06
+milp_2LMH_std_9_2(nor)2: - 0.333333333333 dg_int(1) + x_hat2(9)
  <= 3.33333333333e-06
 milp_2LMM_(1)_rank: - e_C(7) + rank_G = 4
 milp_2LMM_ac_lf_('C4',_'C4',_1): - ac_lf(('C4',_'C4',_1)) + delta_fr_C(1,15)
@@ -33773,6 +34632,7 @@ milp_mass_n_99_1: - 0.010101010101 Mass + 100000 delta_n(99) + mass_n
  <= 100000
 milp_mass_n_99_2: - 0.010101010101 Mass - 100000 delta_n(99) + mass_n
  >= -100000
+upper_bound_target_(4,_1)_0: ann_y(4,_1)_0 <= 1.91919191919
 Bounds
  0 <= Delta_ac_CF_minus(1) <= 5
  0 <= Delta_ac_CF_minus(2) <= 5
@@ -34122,362 +34982,362 @@ Bounds
  0 <= Delta_ec_T_plus(7) <= 4
  0 <= Delta_ec_T_plus(8) <= 4
  0 <= Delta_ec_T_plus(9) <= 4
- LR_x_100_0 free
  LR_x_100_1 free
- LR_x_101_0 free
+ LR_x_100_2 free
  LR_x_101_1 free
- LR_x_102_0 free
+ LR_x_101_2 free
  LR_x_102_1 free
- LR_x_103_0 free
+ LR_x_102_2 free
  LR_x_103_1 free
- LR_x_104_0 free
+ LR_x_103_2 free
  LR_x_104_1 free
- LR_x_105_0 free
+ LR_x_104_2 free
  LR_x_105_1 free
- LR_x_106_0 free
+ LR_x_105_2 free
  LR_x_106_1 free
- LR_x_107_0 free
+ LR_x_106_2 free
  LR_x_107_1 free
- LR_x_108_0 free
+ LR_x_107_2 free
  LR_x_108_1 free
- LR_x_109_0 free
+ LR_x_108_2 free
  LR_x_109_1 free
- LR_x_10_0 free
+ LR_x_109_2 free
  LR_x_10_1 free
- LR_x_110_0 free
+ LR_x_10_2 free
  LR_x_110_1 free
- LR_x_111_0 free
+ LR_x_110_2 free
  LR_x_111_1 free
- LR_x_112_0 free
+ LR_x_111_2 free
  LR_x_112_1 free
- LR_x_113_0 free
+ LR_x_112_2 free
  LR_x_113_1 free
- LR_x_114_0 free
+ LR_x_113_2 free
  LR_x_114_1 free
- LR_x_115_0 free
+ LR_x_114_2 free
  LR_x_115_1 free
- LR_x_116_0 free
+ LR_x_115_2 free
  LR_x_116_1 free
- LR_x_117_0 free
+ LR_x_116_2 free
  LR_x_117_1 free
- LR_x_118_0 free
+ LR_x_117_2 free
  LR_x_118_1 free
- LR_x_119_0 free
+ LR_x_118_2 free
  LR_x_119_1 free
- LR_x_11_0 free
+ LR_x_119_2 free
  LR_x_11_1 free
- LR_x_120_0 free
+ LR_x_11_2 free
  LR_x_120_1 free
- LR_x_121_0 free
+ LR_x_120_2 free
  LR_x_121_1 free
- LR_x_122_0 free
+ LR_x_121_2 free
  LR_x_122_1 free
- LR_x_123_0 free
+ LR_x_122_2 free
  LR_x_123_1 free
- LR_x_124_0 free
+ LR_x_123_2 free
  LR_x_124_1 free
- LR_x_125_0 free
+ LR_x_124_2 free
  LR_x_125_1 free
- LR_x_126_0 free
+ LR_x_125_2 free
  LR_x_126_1 free
- LR_x_127_0 free
+ LR_x_126_2 free
  LR_x_127_1 free
- LR_x_128_0 free
+ LR_x_127_2 free
  LR_x_128_1 free
- LR_x_129_0 free
+ LR_x_128_2 free
  LR_x_129_1 free
- LR_x_12_0 free
+ LR_x_129_2 free
  LR_x_12_1 free
- LR_x_130_0 free
+ LR_x_12_2 free
  LR_x_130_1 free
- LR_x_131_0 free
+ LR_x_130_2 free
  LR_x_131_1 free
- LR_x_132_0 free
+ LR_x_131_2 free
  LR_x_132_1 free
- LR_x_133_0 free
+ LR_x_132_2 free
  LR_x_133_1 free
- LR_x_134_0 free
+ LR_x_133_2 free
  LR_x_134_1 free
- LR_x_135_0 free
+ LR_x_134_2 free
  LR_x_135_1 free
- LR_x_136_0 free
+ LR_x_135_2 free
  LR_x_136_1 free
- LR_x_137_0 free
+ LR_x_136_2 free
  LR_x_137_1 free
- LR_x_138_0 free
+ LR_x_137_2 free
  LR_x_138_1 free
- LR_x_139_0 free
+ LR_x_138_2 free
  LR_x_139_1 free
- LR_x_13_0 free
+ LR_x_139_2 free
  LR_x_13_1 free
- LR_x_140_0 free
+ LR_x_13_2 free
  LR_x_140_1 free
- LR_x_141_0 free
+ LR_x_140_2 free
  LR_x_141_1 free
- LR_x_142_0 free
+ LR_x_141_2 free
  LR_x_142_1 free
- LR_x_143_0 free
+ LR_x_142_2 free
  LR_x_143_1 free
- LR_x_144_0 free
+ LR_x_143_2 free
  LR_x_144_1 free
- LR_x_145_0 free
+ LR_x_144_2 free
  LR_x_145_1 free
- LR_x_146_0 free
+ LR_x_145_2 free
  LR_x_146_1 free
- LR_x_147_0 free
+ LR_x_146_2 free
  LR_x_147_1 free
- LR_x_148_0 free
+ LR_x_147_2 free
  LR_x_148_1 free
- LR_x_149_0 free
+ LR_x_148_2 free
  LR_x_149_1 free
- LR_x_14_0 free
+ LR_x_149_2 free
  LR_x_14_1 free
- LR_x_150_0 free
+ LR_x_14_2 free
  LR_x_150_1 free
- LR_x_151_0 free
+ LR_x_150_2 free
  LR_x_151_1 free
- LR_x_152_0 free
+ LR_x_151_2 free
  LR_x_152_1 free
- LR_x_153_0 free
+ LR_x_152_2 free
  LR_x_153_1 free
- LR_x_154_0 free
+ LR_x_153_2 free
  LR_x_154_1 free
- LR_x_155_0 free
+ LR_x_154_2 free
  LR_x_155_1 free
- LR_x_156_0 free
+ LR_x_155_2 free
  LR_x_156_1 free
- LR_x_157_0 free
+ LR_x_156_2 free
  LR_x_157_1 free
- LR_x_158_0 free
+ LR_x_157_2 free
  LR_x_158_1 free
- LR_x_159_0 free
+ LR_x_158_2 free
  LR_x_159_1 free
- LR_x_15_0 free
+ LR_x_159_2 free
  LR_x_15_1 free
- LR_x_160_0 free
+ LR_x_15_2 free
  LR_x_160_1 free
- LR_x_161_0 free
+ LR_x_160_2 free
  LR_x_161_1 free
- LR_x_162_0 free
+ LR_x_161_2 free
  LR_x_162_1 free
- LR_x_163_0 free
+ LR_x_162_2 free
  LR_x_163_1 free
- LR_x_164_0 free
+ LR_x_163_2 free
  LR_x_164_1 free
- LR_x_165_0 free
+ LR_x_164_2 free
  LR_x_165_1 free
- LR_x_166_0 free
+ LR_x_165_2 free
  LR_x_166_1 free
- LR_x_167_0 free
+ LR_x_166_2 free
  LR_x_167_1 free
- LR_x_168_0 free
+ LR_x_167_2 free
  LR_x_168_1 free
- LR_x_169_0 free
+ LR_x_168_2 free
  LR_x_169_1 free
- LR_x_16_0 free
+ LR_x_169_2 free
  LR_x_16_1 free
- LR_x_170_0 free
+ LR_x_16_2 free
  LR_x_170_1 free
- LR_x_171_0 free
+ LR_x_170_2 free
  LR_x_171_1 free
- LR_x_172_0 free
+ LR_x_171_2 free
  LR_x_172_1 free
- LR_x_173_0 free
+ LR_x_172_2 free
  LR_x_173_1 free
- LR_x_174_0 free
+ LR_x_173_2 free
  LR_x_174_1 free
- LR_x_175_0 free
+ LR_x_174_2 free
  LR_x_175_1 free
- LR_x_176_0 free
+ LR_x_175_2 free
  LR_x_176_1 free
- LR_x_177_0 free
+ LR_x_176_2 free
  LR_x_177_1 free
- LR_x_17_0 free
+ LR_x_177_2 free
  LR_x_17_1 free
- LR_x_18_0 free
+ LR_x_17_2 free
  LR_x_18_1 free
- LR_x_19_0 free
+ LR_x_18_2 free
  LR_x_19_1 free
- LR_x_1_0 free
+ LR_x_19_2 free
  LR_x_1_1 free
- LR_x_20_0 free
+ LR_x_1_2 free
  LR_x_20_1 free
- LR_x_21_0 free
+ LR_x_20_2 free
  LR_x_21_1 free
- LR_x_22_0 free
+ LR_x_21_2 free
  LR_x_22_1 free
- LR_x_23_0 free
+ LR_x_22_2 free
  LR_x_23_1 free
- LR_x_24_0 free
+ LR_x_23_2 free
  LR_x_24_1 free
- LR_x_25_0 free
+ LR_x_24_2 free
  LR_x_25_1 free
- LR_x_26_0 free
+ LR_x_25_2 free
  LR_x_26_1 free
- LR_x_27_0 free
+ LR_x_26_2 free
  LR_x_27_1 free
- LR_x_28_0 free
+ LR_x_27_2 free
  LR_x_28_1 free
- LR_x_29_0 free
+ LR_x_28_2 free
  LR_x_29_1 free
- LR_x_2_0 free
+ LR_x_29_2 free
  LR_x_2_1 free
- LR_x_30_0 free
+ LR_x_2_2 free
  LR_x_30_1 free
- LR_x_31_0 free
+ LR_x_30_2 free
  LR_x_31_1 free
- LR_x_32_0 free
+ LR_x_31_2 free
  LR_x_32_1 free
- LR_x_33_0 free
+ LR_x_32_2 free
  LR_x_33_1 free
- LR_x_34_0 free
+ LR_x_33_2 free
  LR_x_34_1 free
- LR_x_35_0 free
+ LR_x_34_2 free
  LR_x_35_1 free
- LR_x_36_0 free
+ LR_x_35_2 free
  LR_x_36_1 free
- LR_x_37_0 free
+ LR_x_36_2 free
  LR_x_37_1 free
- LR_x_38_0 free
+ LR_x_37_2 free
  LR_x_38_1 free
- LR_x_39_0 free
+ LR_x_38_2 free
  LR_x_39_1 free
- LR_x_3_0 free
+ LR_x_39_2 free
  LR_x_3_1 free
- LR_x_40_0 free
+ LR_x_3_2 free
  LR_x_40_1 free
- LR_x_41_0 free
+ LR_x_40_2 free
  LR_x_41_1 free
- LR_x_42_0 free
+ LR_x_41_2 free
  LR_x_42_1 free
- LR_x_43_0 free
+ LR_x_42_2 free
  LR_x_43_1 free
- LR_x_44_0 free
+ LR_x_43_2 free
  LR_x_44_1 free
- LR_x_45_0 free
+ LR_x_44_2 free
  LR_x_45_1 free
- LR_x_46_0 free
+ LR_x_45_2 free
  LR_x_46_1 free
- LR_x_47_0 free
+ LR_x_46_2 free
  LR_x_47_1 free
- LR_x_48_0 free
+ LR_x_47_2 free
  LR_x_48_1 free
- LR_x_49_0 free
+ LR_x_48_2 free
  LR_x_49_1 free
- LR_x_4_0 free
+ LR_x_49_2 free
  LR_x_4_1 free
- LR_x_50_0 free
+ LR_x_4_2 free
  LR_x_50_1 free
- LR_x_51_0 free
+ LR_x_50_2 free
  LR_x_51_1 free
- LR_x_52_0 free
+ LR_x_51_2 free
  LR_x_52_1 free
- LR_x_53_0 free
+ LR_x_52_2 free
  LR_x_53_1 free
- LR_x_54_0 free
+ LR_x_53_2 free
  LR_x_54_1 free
- LR_x_55_0 free
+ LR_x_54_2 free
  LR_x_55_1 free
- LR_x_56_0 free
+ LR_x_55_2 free
  LR_x_56_1 free
- LR_x_57_0 free
+ LR_x_56_2 free
  LR_x_57_1 free
- LR_x_58_0 free
+ LR_x_57_2 free
  LR_x_58_1 free
- LR_x_59_0 free
+ LR_x_58_2 free
  LR_x_59_1 free
- LR_x_5_0 free
+ LR_x_59_2 free
  LR_x_5_1 free
- LR_x_60_0 free
+ LR_x_5_2 free
  LR_x_60_1 free
- LR_x_61_0 free
+ LR_x_60_2 free
  LR_x_61_1 free
- LR_x_62_0 free
+ LR_x_61_2 free
  LR_x_62_1 free
- LR_x_63_0 free
+ LR_x_62_2 free
  LR_x_63_1 free
- LR_x_64_0 free
+ LR_x_63_2 free
  LR_x_64_1 free
- LR_x_65_0 free
+ LR_x_64_2 free
  LR_x_65_1 free
- LR_x_66_0 free
+ LR_x_65_2 free
  LR_x_66_1 free
- LR_x_67_0 free
+ LR_x_66_2 free
  LR_x_67_1 free
- LR_x_68_0 free
+ LR_x_67_2 free
  LR_x_68_1 free
- LR_x_69_0 free
+ LR_x_68_2 free
  LR_x_69_1 free
- LR_x_6_0 free
+ LR_x_69_2 free
  LR_x_6_1 free
- LR_x_70_0 free
+ LR_x_6_2 free
  LR_x_70_1 free
- LR_x_71_0 free
+ LR_x_70_2 free
  LR_x_71_1 free
- LR_x_72_0 free
+ LR_x_71_2 free
  LR_x_72_1 free
- LR_x_73_0 free
+ LR_x_72_2 free
  LR_x_73_1 free
- LR_x_74_0 free
+ LR_x_73_2 free
  LR_x_74_1 free
- LR_x_75_0 free
+ LR_x_74_2 free
  LR_x_75_1 free
- LR_x_76_0 free
+ LR_x_75_2 free
  LR_x_76_1 free
- LR_x_77_0 free
+ LR_x_76_2 free
  LR_x_77_1 free
- LR_x_78_0 free
+ LR_x_77_2 free
  LR_x_78_1 free
- LR_x_79_0 free
+ LR_x_78_2 free
  LR_x_79_1 free
- LR_x_7_0 free
+ LR_x_79_2 free
  LR_x_7_1 free
- LR_x_80_0 free
+ LR_x_7_2 free
  LR_x_80_1 free
- LR_x_81_0 free
+ LR_x_80_2 free
  LR_x_81_1 free
- LR_x_82_0 free
+ LR_x_81_2 free
  LR_x_82_1 free
- LR_x_83_0 free
+ LR_x_82_2 free
  LR_x_83_1 free
- LR_x_84_0 free
+ LR_x_83_2 free
  LR_x_84_1 free
- LR_x_85_0 free
+ LR_x_84_2 free
  LR_x_85_1 free
- LR_x_86_0 free
+ LR_x_85_2 free
  LR_x_86_1 free
- LR_x_87_0 free
+ LR_x_86_2 free
  LR_x_87_1 free
- LR_x_88_0 free
+ LR_x_87_2 free
  LR_x_88_1 free
- LR_x_89_0 free
+ LR_x_88_2 free
  LR_x_89_1 free
- LR_x_8_0 free
+ LR_x_89_2 free
  LR_x_8_1 free
- LR_x_90_0 free
+ LR_x_8_2 free
  LR_x_90_1 free
- LR_x_91_0 free
+ LR_x_90_2 free
  LR_x_91_1 free
- LR_x_92_0 free
+ LR_x_91_2 free
  LR_x_92_1 free
- LR_x_93_0 free
+ LR_x_92_2 free
  LR_x_93_1 free
- LR_x_94_0 free
+ LR_x_93_2 free
  LR_x_94_1 free
- LR_x_95_0 free
+ LR_x_94_2 free
  LR_x_95_1 free
- LR_x_96_0 free
+ LR_x_95_2 free
  LR_x_96_1 free
- LR_x_97_0 free
+ LR_x_96_2 free
  LR_x_97_1 free
- LR_x_98_0 free
+ LR_x_97_2 free
  LR_x_98_1 free
- LR_x_99_0 free
+ LR_x_98_2 free
  LR_x_99_1 free
- LR_x_9_0 free
+ LR_x_99_2 free
  LR_x_9_1 free
- LR_y_0 free
+ LR_x_9_2 free
  LR_y_1 free
+ LR_y_2 free
  Mass free
  __dummy = 0
  0 <= ac_C(('C4',_'C4',_1)) <= 17
@@ -34714,6 +35574,103 @@ Bounds
  0 <= alpha_TF(7) <= 5
  0 <= alpha_TF(8) <= 5
  0 <= alpha_TF(9) <= 5
+ -34.5811812545 <= ann_x(2,_1)_0 <= 34.8660314468
+ -35.5743033188 <= ann_x(2,_10)_0 <= 35.7951310358
+ -30.4458716136 <= ann_x(2,_11)_0 <= 30.7016309341
+ -35.9952633588 <= ann_x(2,_12)_0 <= 36.3152496571
+ -32.0661299692 <= ann_x(2,_13)_0 <= 31.7531047217
+ -27.8244410891 <= ann_x(2,_14)_0 <= 27.4899905373
+ -34.627919911 <= ann_x(2,_15)_0 <= 34.7310948569
+ -31.6945785608 <= ann_x(2,_16)_0 <= 32.2935779367
+ -31.9807688882 <= ann_x(2,_17)_0 <= 31.5720095681
+ -30.7613066945 <= ann_x(2,_18)_0 <= 30.7732792589
+ -32.5143814317 <= ann_x(2,_19)_0 <= 32.4889587032
+ -34.1968809675 <= ann_x(2,_2)_0 <= 33.8785962504
+ -35.4182280426 <= ann_x(2,_20)_0 <= 35.5484055898
+ -35.3451164703 <= ann_x(2,_3)_0 <= 35.5968356847
+ -35.816361591 <= ann_x(2,_4)_0 <= 35.6547894618
+ -31.4459231123 <= ann_x(2,_5)_0 <= 31.2653636209
+ -32.061076754 <= ann_x(2,_6)_0 <= 31.9501493125
+ -34.2183009382 <= ann_x(2,_7)_0 <= 34.1535321018
+ -29.6452929514 <= ann_x(2,_8)_0 <= 29.2048344441
+ -24.1071609434 <= ann_x(2,_9)_0 <= 24.3347634043
+ -83.1174060062 <= ann_x(3,_1)_0 <= 32.3224094268
+ -61.3530961165 <= ann_x(3,_10)_0 <= 82.2723432259
+ -79.7825257974 <= ann_x(3,_11)_0 <= 37.9096273999
+ -77.9506438604 <= ann_x(3,_12)_0 <= 76.6423645671
+ -86.7298767947 <= ann_x(3,_13)_0 <= 54.6641866379
+ -75.6245075637 <= ann_x(3,_14)_0 <= 58.329225824
+ -51.1375906727 <= ann_x(3,_15)_0 <= 96.697975473
+ -87.0561442314 <= ann_x(3,_16)_0 <= 60.6998039808
+ -65.9062827876 <= ann_x(3,_17)_0 <= 61.446540841
+ -42.9919720588 <= ann_x(3,_18)_0 <= 79.3553322067
+ -50.0511525557 <= ann_x(3,_19)_0 <= 75.5959336848
+ -67.0407085374 <= ann_x(3,_2)_0 <= 45.8185613526
+ -39.0026830598 <= ann_x(3,_20)_0 <= 98.6318704312
+ -71.95618316 <= ann_x(3,_3)_0 <= 48.3272228007
+ -34.1904932547 <= ann_x(3,_4)_0 <= 107.342497369
+ -52.2380463892 <= ann_x(3,_5)_0 <= 59.4349510877
+ -42.9859207807 <= ann_x(3,_6)_0 <= 49.0297605336
+ -37.3107439213 <= ann_x(3,_7)_0 <= 77.240856896
+ -91.7247420833 <= ann_x(3,_8)_0 <= 58.9763134024
+ -63.5283717215 <= ann_x(3,_9)_0 <= 67.359683508
+ -235.850440349 <= ann_x(4,_1)_0 <= 134.530089226
+ -5 <= ann_y(1,_1)_0 <= 5
+ -5 <= ann_y(1,_12)_0 <= 5
+ -5 <= ann_y(1,_13)_0 <= 5
+ -5 <= ann_y(1,_14)_0 <= 5
+ -5 <= ann_y(1,_2)_0 <= 5
+ -5 <= ann_y(1,_20)_0 <= 5
+ -5 <= ann_y(1,_3)_0 <= 5
+ -5 <= ann_y(1,_38)_0 <= 5
+ -5 <= ann_y(1,_39)_0 <= 5
+ -5 <= ann_y(1,_4)_0 <= 5
+ -5 <= ann_y(1,_40)_0 <= 5
+ -5 <= ann_y(1,_41)_0 <= 5
+ -5 <= ann_y(1,_5)_0 <= 5
+ -5 <= ann_y(1,_6)_0 <= 5
+ -5 <= ann_y(1,_9)_0 <= 5
+ ann_y(2,_1)_0 <= 34.8660314468
+ ann_y(2,_10)_0 <= 35.7951310358
+ ann_y(2,_11)_0 <= 30.7016309341
+ ann_y(2,_12)_0 <= 36.3152496571
+ ann_y(2,_13)_0 <= 31.7531047217
+ ann_y(2,_14)_0 <= 27.4899905373
+ ann_y(2,_15)_0 <= 34.7310948569
+ ann_y(2,_16)_0 <= 32.2935779367
+ ann_y(2,_17)_0 <= 31.5720095681
+ ann_y(2,_18)_0 <= 30.7732792589
+ ann_y(2,_19)_0 <= 32.4889587032
+ ann_y(2,_2)_0 <= 33.8785962504
+ ann_y(2,_20)_0 <= 35.5484055898
+ ann_y(2,_3)_0 <= 35.5968356847
+ ann_y(2,_4)_0 <= 35.6547894618
+ ann_y(2,_5)_0 <= 31.2653636209
+ ann_y(2,_6)_0 <= 31.9501493125
+ ann_y(2,_7)_0 <= 34.1535321018
+ ann_y(2,_8)_0 <= 29.2048344441
+ ann_y(2,_9)_0 <= 24.3347634043
+ ann_y(3,_1)_0 <= 32.3224094268
+ ann_y(3,_10)_0 <= 82.2723432259
+ ann_y(3,_11)_0 <= 37.9096273999
+ ann_y(3,_12)_0 <= 76.6423645671
+ ann_y(3,_13)_0 <= 54.6641866379
+ ann_y(3,_14)_0 <= 58.329225824
+ ann_y(3,_15)_0 <= 96.697975473
+ ann_y(3,_16)_0 <= 60.6998039808
+ ann_y(3,_17)_0 <= 61.446540841
+ ann_y(3,_18)_0 <= 79.3553322067
+ ann_y(3,_19)_0 <= 75.5959336848
+ ann_y(3,_2)_0 <= 45.8185613526
+ ann_y(3,_20)_0 <= 98.6318704312
+ ann_y(3,_3)_0 <= 48.3272228007
+ ann_y(3,_4)_0 <= 107.342497369
+ ann_y(3,_5)_0 <= 59.4349510877
+ ann_y(3,_6)_0 <= 49.0297605336
+ ann_y(3,_7)_0 <= 77.240856896
+ ann_y(3,_8)_0 <= 58.9763134024
+ ann_y(3,_9)_0 <= 67.359683508
+ -1000 <= ann_y(4,_1)_0 <= 134.530089226
  0 <= bd_C(1) <= 56
  0 <= bd_C(2) <= 56
  0 <= bd_C(3) <= 56
@@ -35773,91 +36730,13 @@ Bounds
  0 <= rank_G
  x_hat0(1) free
  x_hat0(10) free
- x_hat0(100) free
- x_hat0(101) free
- x_hat0(102) free
- x_hat0(103) free
- x_hat0(104) free
- x_hat0(105) free
- x_hat0(106) free
- x_hat0(107) free
- x_hat0(108) free
- x_hat0(109) free
  x_hat0(11) free
- x_hat0(110) free
- x_hat0(111) free
- x_hat0(112) free
- x_hat0(113) free
- x_hat0(114) free
- x_hat0(115) free
- x_hat0(116) free
- x_hat0(117) free
- x_hat0(118) free
- x_hat0(119) free
  x_hat0(12) free
- x_hat0(120) free
- x_hat0(121) free
- x_hat0(122) free
- x_hat0(123) free
- x_hat0(124) free
- x_hat0(125) free
- x_hat0(126) free
- x_hat0(127) free
- x_hat0(128) free
- x_hat0(129) free
  x_hat0(13) free
- x_hat0(130) free
- x_hat0(131) free
- x_hat0(132) free
- x_hat0(133) free
- x_hat0(134) free
- x_hat0(135) free
- x_hat0(136) free
- x_hat0(137) free
- x_hat0(138) free
- x_hat0(139) free
  x_hat0(14) free
- x_hat0(140) free
- x_hat0(141) free
- x_hat0(142) free
- x_hat0(143) free
- x_hat0(144) free
- x_hat0(145) free
- x_hat0(146) free
- x_hat0(147) free
- x_hat0(148) free
- x_hat0(149) free
  x_hat0(15) free
- x_hat0(150) free
- x_hat0(151) free
- x_hat0(152) free
- x_hat0(153) free
- x_hat0(154) free
- x_hat0(155) free
- x_hat0(156) free
- x_hat0(157) free
- x_hat0(158) free
- x_hat0(159) free
  x_hat0(16) free
- x_hat0(160) free
- x_hat0(161) free
- x_hat0(162) free
- x_hat0(163) free
- x_hat0(164) free
- x_hat0(165) free
- x_hat0(166) free
- x_hat0(167) free
- x_hat0(168) free
- x_hat0(169) free
  x_hat0(17) free
- x_hat0(170) free
- x_hat0(171) free
- x_hat0(172) free
- x_hat0(173) free
- x_hat0(174) free
- x_hat0(175) free
- x_hat0(176) free
- x_hat0(177) free
  x_hat0(18) free
  x_hat0(19) free
  x_hat0(2) free
@@ -35885,69 +36764,11 @@ Bounds
  x_hat0(4) free
  x_hat0(40) free
  x_hat0(41) free
- x_hat0(42) free
- x_hat0(43) free
- x_hat0(44) free
- x_hat0(45) free
- x_hat0(46) free
- x_hat0(47) free
- x_hat0(48) free
- x_hat0(49) free
  x_hat0(5) free
- x_hat0(50) free
- x_hat0(51) free
- x_hat0(52) free
- x_hat0(53) free
- x_hat0(54) free
- x_hat0(55) free
- x_hat0(56) free
- x_hat0(57) free
- x_hat0(58) free
- x_hat0(59) free
  x_hat0(6) free
- x_hat0(60) free
- x_hat0(61) free
- x_hat0(62) free
- x_hat0(63) free
- x_hat0(64) free
- x_hat0(65) free
- x_hat0(66) free
- x_hat0(67) free
- x_hat0(68) free
- x_hat0(69) free
  x_hat0(7) free
- x_hat0(70) free
- x_hat0(71) free
- x_hat0(72) free
- x_hat0(73) free
- x_hat0(74) free
- x_hat0(75) free
- x_hat0(76) free
- x_hat0(77) free
- x_hat0(78) free
- x_hat0(79) free
  x_hat0(8) free
- x_hat0(80) free
- x_hat0(81) free
- x_hat0(82) free
- x_hat0(83) free
- x_hat0(84) free
- x_hat0(85) free
- x_hat0(86) free
- x_hat0(87) free
- x_hat0(88) free
- x_hat0(89) free
  x_hat0(9) free
- x_hat0(90) free
- x_hat0(91) free
- x_hat0(92) free
- x_hat0(93) free
- x_hat0(94) free
- x_hat0(95) free
- x_hat0(96) free
- x_hat0(97) free
- x_hat0(98) free
- x_hat0(99) free
  x_hat1(1) free
  x_hat1(10) free
  x_hat1(100) free
@@ -36125,6 +36946,183 @@ Bounds
  x_hat1(97) free
  x_hat1(98) free
  x_hat1(99) free
+ x_hat2(1) free
+ x_hat2(10) free
+ x_hat2(100) free
+ x_hat2(101) free
+ x_hat2(102) free
+ x_hat2(103) free
+ x_hat2(104) free
+ x_hat2(105) free
+ x_hat2(106) free
+ x_hat2(107) free
+ x_hat2(108) free
+ x_hat2(109) free
+ x_hat2(11) free
+ x_hat2(110) free
+ x_hat2(111) free
+ x_hat2(112) free
+ x_hat2(113) free
+ x_hat2(114) free
+ x_hat2(115) free
+ x_hat2(116) free
+ x_hat2(117) free
+ x_hat2(118) free
+ x_hat2(119) free
+ x_hat2(12) free
+ x_hat2(120) free
+ x_hat2(121) free
+ x_hat2(122) free
+ x_hat2(123) free
+ x_hat2(124) free
+ x_hat2(125) free
+ x_hat2(126) free
+ x_hat2(127) free
+ x_hat2(128) free
+ x_hat2(129) free
+ x_hat2(13) free
+ x_hat2(130) free
+ x_hat2(131) free
+ x_hat2(132) free
+ x_hat2(133) free
+ x_hat2(134) free
+ x_hat2(135) free
+ x_hat2(136) free
+ x_hat2(137) free
+ x_hat2(138) free
+ x_hat2(139) free
+ x_hat2(14) free
+ x_hat2(140) free
+ x_hat2(141) free
+ x_hat2(142) free
+ x_hat2(143) free
+ x_hat2(144) free
+ x_hat2(145) free
+ x_hat2(146) free
+ x_hat2(147) free
+ x_hat2(148) free
+ x_hat2(149) free
+ x_hat2(15) free
+ x_hat2(150) free
+ x_hat2(151) free
+ x_hat2(152) free
+ x_hat2(153) free
+ x_hat2(154) free
+ x_hat2(155) free
+ x_hat2(156) free
+ x_hat2(157) free
+ x_hat2(158) free
+ x_hat2(159) free
+ x_hat2(16) free
+ x_hat2(160) free
+ x_hat2(161) free
+ x_hat2(162) free
+ x_hat2(163) free
+ x_hat2(164) free
+ x_hat2(165) free
+ x_hat2(166) free
+ x_hat2(167) free
+ x_hat2(168) free
+ x_hat2(169) free
+ x_hat2(17) free
+ x_hat2(170) free
+ x_hat2(171) free
+ x_hat2(172) free
+ x_hat2(173) free
+ x_hat2(174) free
+ x_hat2(175) free
+ x_hat2(176) free
+ x_hat2(177) free
+ x_hat2(18) free
+ x_hat2(19) free
+ x_hat2(2) free
+ x_hat2(20) free
+ x_hat2(21) free
+ x_hat2(22) free
+ x_hat2(23) free
+ x_hat2(24) free
+ x_hat2(25) free
+ x_hat2(26) free
+ x_hat2(27) free
+ x_hat2(28) free
+ x_hat2(29) free
+ x_hat2(3) free
+ x_hat2(30) free
+ x_hat2(31) free
+ x_hat2(32) free
+ x_hat2(33) free
+ x_hat2(34) free
+ x_hat2(35) free
+ x_hat2(36) free
+ x_hat2(37) free
+ x_hat2(38) free
+ x_hat2(39) free
+ x_hat2(4) free
+ x_hat2(40) free
+ x_hat2(41) free
+ x_hat2(42) free
+ x_hat2(43) free
+ x_hat2(44) free
+ x_hat2(45) free
+ x_hat2(46) free
+ x_hat2(47) free
+ x_hat2(48) free
+ x_hat2(49) free
+ x_hat2(5) free
+ x_hat2(50) free
+ x_hat2(51) free
+ x_hat2(52) free
+ x_hat2(53) free
+ x_hat2(54) free
+ x_hat2(55) free
+ x_hat2(56) free
+ x_hat2(57) free
+ x_hat2(58) free
+ x_hat2(59) free
+ x_hat2(6) free
+ x_hat2(60) free
+ x_hat2(61) free
+ x_hat2(62) free
+ x_hat2(63) free
+ x_hat2(64) free
+ x_hat2(65) free
+ x_hat2(66) free
+ x_hat2(67) free
+ x_hat2(68) free
+ x_hat2(69) free
+ x_hat2(7) free
+ x_hat2(70) free
+ x_hat2(71) free
+ x_hat2(72) free
+ x_hat2(73) free
+ x_hat2(74) free
+ x_hat2(75) free
+ x_hat2(76) free
+ x_hat2(77) free
+ x_hat2(78) free
+ x_hat2(79) free
+ x_hat2(8) free
+ x_hat2(80) free
+ x_hat2(81) free
+ x_hat2(82) free
+ x_hat2(83) free
+ x_hat2(84) free
+ x_hat2(85) free
+ x_hat2(86) free
+ x_hat2(87) free
+ x_hat2(88) free
+ x_hat2(89) free
+ x_hat2(9) free
+ x_hat2(90) free
+ x_hat2(91) free
+ x_hat2(92) free
+ x_hat2(93) free
+ x_hat2(94) free
+ x_hat2(95) free
+ x_hat2(96) free
+ x_hat2(97) free
+ x_hat2(98) free
+ x_hat2(99) free
 Generals
 Delta_ac_CF_minus(1)
 Delta_ac_CF_minus(2)
@@ -37768,6 +38766,46 @@ rank_G
 Binaries
 ac_int('C4',_'S2',_1)
 ac_int('C4',_'S6',_1)
+ann_z(2,_1)_0
+ann_z(2,_10)_0
+ann_z(2,_11)_0
+ann_z(2,_12)_0
+ann_z(2,_13)_0
+ann_z(2,_14)_0
+ann_z(2,_15)_0
+ann_z(2,_16)_0
+ann_z(2,_17)_0
+ann_z(2,_18)_0
+ann_z(2,_19)_0
+ann_z(2,_2)_0
+ann_z(2,_20)_0
+ann_z(2,_3)_0
+ann_z(2,_4)_0
+ann_z(2,_5)_0
+ann_z(2,_6)_0
+ann_z(2,_7)_0
+ann_z(2,_8)_0
+ann_z(2,_9)_0
+ann_z(3,_1)_0
+ann_z(3,_10)_0
+ann_z(3,_11)_0
+ann_z(3,_12)_0
+ann_z(3,_13)_0
+ann_z(3,_14)_0
+ann_z(3,_15)_0
+ann_z(3,_16)_0
+ann_z(3,_17)_0
+ann_z(3,_18)_0
+ann_z(3,_19)_0
+ann_z(3,_2)_0
+ann_z(3,_20)_0
+ann_z(3,_3)_0
+ann_z(3,_4)_0
+ann_z(3,_5)_0
+ann_z(3,_6)_0
+ann_z(3,_7)_0
+ann_z(3,_8)_0
+ann_z(3,_9)_0
 bd_T(1,10,2)
 bd_T(1,10,3)
 bd_T(1,11,2)

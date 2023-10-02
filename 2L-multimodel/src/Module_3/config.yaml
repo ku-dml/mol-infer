@@ -5,10 +5,10 @@ original_dataset_filename: ./sample_instance/Hc_desc.csv
 
 # model can be ANN or LR
 input_data:
-  # - model: ANN
-  #   prefix: ./sample_instance/sample/At_large
-  #   target_value_lower_bound: 0
-  #   target_value_upper_bound: 1920
+  - model: ANN
+    prefix: ./sample_instance/sample/At_large
+    target_value_lower_bound: 0
+    target_value_upper_bound: 1920
   # - model: ANN
   #   prefix: ./sample_instance/sample/At_large
   #   target_value_lower_bound: 0
