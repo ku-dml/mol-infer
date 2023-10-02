@@ -71,7 +71,7 @@ def main(argv):
     fringe_tree_file = config_get(config, "fringe_tree_file")
     original_dataset_filename = config_get(config, "original_dataset_filename")
 
-    ## create MILP
+    ## Create MILP
     MILP = pulp.LpProblem("MultiModel")
     base_var = ()
 
@@ -131,14 +131,12 @@ def main(argv):
         solve_end = time.time()
 
     # Output result of solving MILP to command-line
-    # print("# -------- solve status --------")
     if pulp.LpStatus[MILP.status] == "Optimal":
         output_status = "Feasible"
     else:
         output_status = pulp.LpStatus[MILP.status]
     print("Status:", output_status)
 
-    # y_star = (tree_vars['y'].value())
     if pulp.LpStatus[MILP.status] == "Optimal":
         for index, item in enumerate(config["input_data"]):
             match item["model"]:
@@ -155,11 +153,10 @@ def main(argv):
 
     print("Solving Time:", f"{solve_end - init_end:.3f}")
 
-    # ############################################
-    # # The following block of code is used to print out the value of feature vector #
-    # # and the value of all variables used in MILP in to a file "test.txt" #
-    # ############################################
-    # #
+    ############################################
+    # The following block of code is used to print out the value of feature vector #
+    # and the value of all variables used in MILP in to a file "test.txt" #
+    ############################################
     with open(output_prefix + "_test_all.txt", "w") as file:
         for var in MILP.variables():
             if isinstance(var, dict):
@@ -175,7 +172,7 @@ def main(argv):
 
         file.write("\n")
 
-    # #############################################
+    ##############################################
 
     if pulp.LpStatus[MILP.status] == "Optimal":
         strF, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, \
@@ -199,8 +196,8 @@ def main(argv):
             e_T, e_F, delta_fr_C, delta_fr_T, delta_fr_F,
             outputfilename,
         )
-
-        # Output file of partition which will be used in graph generation
+        
+        # Output file of partition
         outputfilename = output_prefix + "_partition.txt"
 
         print_gstar_file(
