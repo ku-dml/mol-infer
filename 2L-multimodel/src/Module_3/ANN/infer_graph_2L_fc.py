@@ -2,31 +2,36 @@ import ANN.ann_inverter as ann_inverter
 from twolayered_MILP_2LMM_L import *
 from read_instance_2layer_2LMM_L import *
 
-def ANN_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
-
-    try:
-        prop = config["input_data"][index]["prefix"]
-        target_value_lb = config["input_data"][index]["target_value_lower_bound"]
-        target_value_ub = config["input_data"][index]["target_value_upper_bound"]
-    except:
-        print("\tError: Please specify (prefix), (target_value) in config.yaml")
+def config_get_input_data(config, index, key):
+    """Get the value of key in config.yaml"""
+    if config["input_data"][index].get(key) is None:
+        print(f"\tError: Please specify ({key}) in config.yaml")
         sys.exit(1)
+    return config["input_data"][index][key]
 
+def ANN_add_vars_constraints_to_MILP(config, index, MILP, base_var):
+    """Add variables and constraints to MILP"""
+    ########## preparation ##########
+    print("\tmodel: ANN")
+    prop = config_get_input_data(config, index, "prefix")
+    target_value_lb = config_get_input_data(config, index, "target_value_lower_bound")
+    target_value_ub = config_get_input_data(config, index, "target_value_upper_bound")
+    
     print("\tprefix:", prop)
     print("\ttarget_value_lower_bound:", target_value_lb)
     print("\ttarget_value_upper_bound:", target_value_ub, "\n")
 
     #input file of bias
-    ann_bias_filename = "{}_biases.txt".format(prop)
+    ann_bias_filename = f"{prop}_biases.txt"
     #input file of weight
-    ann_weights_filename = "{}_weights.txt".format(prop)  
+    ann_weights_filename = f"{prop}_weights.txt" 
     #input file of fv
-    ann_training_data_filename = "{}_desc.csv".format(prop)
-    ann_training_data_norm_filename = "{}_desc_norm_selected.csv".format(prop)
+    ann_training_data_filename = f"{prop}_desc.csv"
+    ann_training_data_norm_filename = f"{prop}_desc_norm.csv"
     # all fringe trees used in learning
-    fv_fringe_tree_filename = "{}_fringe.txt".format(prop)    
+    fv_fringe_tree_filename = f"{prop}_fringe.txt"  
     # value file
-    value_filename = "{}_values.txt".format(prop)
+    value_filename = f"{prop}_values.txt"
     
     strF, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, \
     n_G, n_G_int, MASS, dg, dg_int, bd_int, na_int, na_ex, ec_int, fc, ac_lf, rank_G, mass_n, \
@@ -35,7 +40,7 @@ def ANN_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
         v_T, v_F, alpha_C, alpha_T, alpha_F, \
         beta_C, beta_T, beta_F, beta_CT, beta_TC, beta_CF, beta_TF, chi_T, chi_F, \
         e_T, e_F, delta_fr_C, delta_fr_T, delta_fr_F, \
-        t_T, E_C, ch_LB, ch_UB, \
+        E_C, ch_LB, ch_UB, \
         set_F_v, set_F_E = base_var
     
     ########## Inverse problem: ANN part ##########
@@ -54,7 +59,7 @@ def ANN_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
     std_eps = 1e-5
     x_hat, x_tilde = prepare_variables_nor_std_fv(num_fv, prop=index)
     MILP = add_constraints_nor_std_fv(
-        base_MILP,
+        MILP,
         num_fv, mass_ind, descriptors, fv_list, mass_n,
         max_dcp, min_dcp, avg_dcp, sd_dcp,
         x_hat, x_tilde,
@@ -101,14 +106,5 @@ def ANN_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
                         forbidden_node,
                         prop=index)
     
-    # ########## add variables and constraints to base MILP ##########
-    # for var in MILP.variables():
-    #     var.name = "ANN_{}_{}".format(index, var.name)
-    #     pass
-
-    # for cons in MILP.constraints.values():
-    #     cons.name = "ANN_{}_{}".format(index, cons.name)
-    #     base_MILP += cons
-
     layer_num = len(weights)
     return y[(layer_num + 1, 1)], y_min, y_max, x_hat, ann_training_data_norm_filename, ann

@@ -4,32 +4,36 @@ import LR.lr_inverter as lr_inverter
 
 ####################################################
 
-def LR_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
-
-    ########## preparation ##########
-    try:
-        prop = config["input_data"][index]["prefix"]
-        target_value_lb = config["input_data"][index]["target_value_lower_bound"]
-        target_value_ub = config["input_data"][index]["target_value_upper_bound"]
-    except:
-        print("\tError: Please specify (prefix), (target_value_lower_bound), (target_value_upper_bound) in config.yaml")
+def config_get_input_data(config, index, key):
+    """Get the value of key in config.yaml"""
+    if config["input_data"][index].get(key) is None:
+        print(f"\tError: Please specify ({key}) in config.yaml")
         sys.exit(1)
+    return config["input_data"][index][key]
 
+def LR_add_vars_constraints_to_MILP(config, index, MILP, base_var):
+    """Add variables and constraints to MILP"""
+    ########## preparation ##########
+    print("\tmodel: LR")
+    prop = config_get_input_data(config, index, "prefix")
+    target_value_lb = config_get_input_data(config, index, "target_value_lower_bound")
+    target_value_ub = config_get_input_data(config, index, "target_value_upper_bound")
+    
     print("\tprefix:", prop)
     print("\ttarget_value_lower_bound:", target_value_lb)
     print("\ttarget_value_upper_bound:", target_value_ub, "\n")
 
     ### decide the file names
     # file for linear regression
-    LR_filename = "{}_linreg.txt".format(prop)
+    LR_filename = f"{prop}_linreg.txt"
     # file for original csv
-    original_dataset_filename = "{}_desc.csv".format(prop)
+    original_dataset_filename = f"{prop}_desc.csv"
     # file for normalized csv
-    normalized_dataset_filename = "{}_desc_norm.csv".format(prop)
+    normalized_dataset_filename = f"{prop}_desc_norm.csv"
     # file for fringe trees
-    fv_fringe_tree_filename = "{}_fringe.txt".format(prop)    # all fringe trees used in learning
+    fv_fringe_tree_filename = f"{prop}_fringe.txt"    # all fringe trees used in learning
     # value file
-    value_filename = "{}_values.txt".format(prop)
+    value_filename = f"{prop}_values.txt"
 
 
     strF, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, \
@@ -39,7 +43,7 @@ def LR_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
         v_T, v_F, alpha_C, alpha_T, alpha_F, \
         beta_C, beta_T, beta_F, beta_CT, beta_TC, beta_CF, beta_TF, chi_T, chi_F, \
         e_T, e_F, delta_fr_C, delta_fr_T, delta_fr_F, \
-        t_T, E_C, ch_LB, ch_UB, \
+        E_C, ch_LB, ch_UB, \
         set_F_v, set_F_E = base_var
 
     ########## Inverse problem: LR part ##########
@@ -53,12 +57,10 @@ def LR_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
 
     max_dcp, min_dcp, avg_dcp, sd_dcp = prepare_max_min(original_dataset_filename)
 
-    # tmp_MILP = pulp.LpProblem("LR")
-
     x_hat, x_tilde = prepare_variables_nor_std_fv(num_fv, prop=index)
     std_eps = 1e-5
     MILP = add_constraints_nor_std_fv(
-        base_MILP,
+        MILP,
         num_fv, mass_ind, descriptors, fv_list, mass_n,
         max_dcp, min_dcp, avg_dcp, sd_dcp,
         x_hat, x_tilde,
@@ -84,13 +86,5 @@ def LR_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
     MILP = LR.build_constraints(MILP, target_value_lb, target_value_ub, prop=index)
 
     MILP = add_constraints__LR(MILP, x_hat, num_fv, LR, mass_ind, mass_n, forbidden_node, prop=index)
-
-    ########## add variables and constraints to base MILP ##########
-    # for var in tmp_MILP.variables():
-    #     var.name = "LR_{}_{}".format(index, var.name)
-
-    # for cons in tmp_MILP.constraints.values():
-    #     cons.name = "LR_{}_{}".format(index, cons.name)
-    #     base_MILP += cons
 
     return y, y_min, y_max, x_hat, LR_filename, normalized_dataset_filename
