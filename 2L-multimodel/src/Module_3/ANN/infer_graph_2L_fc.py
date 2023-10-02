@@ -34,7 +34,7 @@ def ANN_add_vars_constraints_to_MILP(config, index, MILP, base_var):
     value_filename = f"{prop}_values.txt"
     
     strF, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, \
-    n_G, n_G_int, MASS, dg, dg_int, bd_int, na_int, na_ex, ec_int, fc, ac_lf, rank_G, mass_n, \
+        n_G, n_G_int, MASS, dg, dg_int, bd_int, na_int, na_ex, ec_int, fc, ac_lf, rank_G, mass_n, \
         t_C, t_T, t_F, t_C_tilde, n_C, n_T, n_F, c_F, Lambda, \
         head_C, tail_C, I_equal_one, I_zero_one, I_ge_one, I_ge_two, set_F, Code_F, \
         v_T, v_F, alpha_C, alpha_T, alpha_F, \

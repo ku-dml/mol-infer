@@ -44,6 +44,7 @@ def config_get(config, key):
     if value is None:
         print(f"Error: Please specify ({key}) in config.yaml")
         sys.exit(1)
+    print(f"{key}:", value)
     return value
 
 
@@ -69,11 +70,6 @@ def main(argv):
     instance_file = config_get(config, "instance_file")
     fringe_tree_file = config_get(config, "fringe_tree_file")
     original_dataset_filename = config_get(config, "original_dataset_filename")
-
-    print("output_prefix:", output_prefix)
-    print("instance_file:", instance_file)
-    print("fringe_tree_file:", fringe_tree_file)
-    print("original_dataset_filename:", original_dataset_filename)
 
     ## create MILP
     MILP = pulp.LpProblem("MultiModel")
@@ -107,19 +103,11 @@ def main(argv):
 
     num_vars = len(MILP.variables())
     num_ints = len([var for var in MILP.variables() if var.cat == pulp.LpInteger])
-    bins = [
-        v.name
-        for v in MILP.variables()
-        if (
-            v.cat == pulp.LpBinary
-            or (
-                v.cat == "Integer"
-                and v.upBound
-                and v.lowBound is not None
-                and round(v.upBound - v.lowBound) == 1
-            )
-        )
-    ]
+    bins = [v.name for v in MILP.variables()
+                                if (v.cat == pulp.LpBinary or
+                                (v.cat == "Integer" and
+                                v.upBound and v.lowBound is not None and
+                                round(v.upBound - v.lowBound) == 1))]
 
     num_constraints = len(MILP.constraints.items())
 
@@ -190,113 +178,25 @@ def main(argv):
     # #############################################
 
     if pulp.LpStatus[MILP.status] == "Optimal":
-        (
-            strF,
-            Lambda_int,
-            Lambda_ex,
-            Gamma_int,
-            Gamma_int_less,
-            Gamma_int_equal,
-            Gamma_lf_ac,
-            n_G,
-            n_G_int,
-            MASS,
-            dg,
-            dg_int,
-            bd_int,
-            na_int,
-            na_ex,
-            ec_int,
-            fc,
-            ac_lf,
-            rank_G,
-            mass_n,
-            t_C,
-            t_T,
-            t_F,
-            t_C_tilde,
-            n_C,
-            n_T,
-            n_F,
-            c_F,
-            Lambda,
-            head_C,
-            tail_C,
-            I_equal_one,
-            I_zero_one,
-            I_ge_one,
-            I_ge_two,
-            set_F,
-            Code_F,
-            v_T,
-            v_F,
-            alpha_C,
-            alpha_T,
-            alpha_F,
-            beta_C,
-            beta_T,
-            beta_F,
-            beta_CT,
-            beta_TC,
-            beta_CF,
-            beta_TF,
-            chi_T,
-            chi_F,
-            e_T,
-            e_F,
-            delta_fr_C,
-            delta_fr_T,
-            delta_fr_F,
-            E_C,
-            ch_LB,
-            ch_UB,
-            set_F_v,
-            set_F_E,
-        ) = base_var
+        strF, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, \
+        n_G, n_G_int, MASS, dg, dg_int, bd_int, na_int, na_ex, ec_int, fc, ac_lf, rank_G, mass_n, \
+        t_C, t_T, t_F, t_C_tilde, n_C, n_T, n_F, c_F, Lambda, \
+        head_C, tail_C, I_equal_one, I_zero_one, I_ge_one, I_ge_two, set_F, Code_F, \
+        v_T, v_F, alpha_C, alpha_T, alpha_F, \
+        beta_C, beta_T, beta_F, beta_CT, beta_TC, beta_CF, beta_TF, chi_T, chi_F, \
+        e_T, e_F, delta_fr_C, delta_fr_T, delta_fr_F, \
+        E_C, ch_LB, ch_UB, \
+        set_F_v, set_F_E = base_var
 
         # Output SDF file
         outputfilename = output_prefix + ".sdf"
-
+    
         index_C, index_T, graph_adj, graph_ind = print_sdf_file(
-            t_C,
-            t_T,
-            t_F,
-            t_C_tilde,
-            n_C,
-            n_T,
-            n_F,
-            c_F,
-            Lambda,
-            Lambda_int,
-            Lambda_ex,
-            head_C,
-            tail_C,
-            I_equal_one,
-            I_zero_one,
-            I_ge_one,
-            I_ge_two,
-            set_F,
-            Code_F,
-            n_G,
-            v_T,
-            v_F,
-            alpha_C,
-            alpha_T,
-            alpha_F,
-            beta_C,
-            beta_T,
-            beta_F,
-            beta_CT,
-            beta_TC,
-            beta_CF,
-            beta_TF,
-            chi_T,
-            chi_F,
-            e_T,
-            e_F,
-            delta_fr_C,
-            delta_fr_T,
-            delta_fr_F,
+            t_C, t_T, t_F, t_C_tilde, n_C, n_T, n_F, c_F, Lambda, Lambda_int, Lambda_ex,
+            head_C, tail_C, I_equal_one, I_zero_one, I_ge_one, I_ge_two, set_F, Code_F,
+            n_G, v_T, v_F, alpha_C, alpha_T, alpha_F,
+            beta_C, beta_T, beta_F, beta_CT, beta_TC, beta_CF, beta_TF, chi_T, chi_F,
+            e_T, e_F, delta_fr_C, delta_fr_T, delta_fr_F,
             outputfilename,
         )
 
@@ -304,22 +204,10 @@ def main(argv):
         outputfilename = output_prefix + "_partition.txt"
 
         print_gstar_file(
-            graph_ind,
-            chi_T,
-            t_C,
-            t_T,
-            index_C,
-            index_T,
-            graph_adj,
-            E_C,
-            ch_LB,
-            ch_UB,
-            I_ge_one,
-            I_ge_two,
-            I_zero_one,
-            I_equal_one,
-            set_F_v,
-            set_F_E,
+            graph_ind, chi_T,
+            t_C, t_T, index_C, index_T, graph_adj, E_C, ch_LB, ch_UB,
+            I_ge_one, I_ge_two, I_zero_one, I_equal_one,
+            set_F_v, set_F_E,
             outputfilename,
         )
 
@@ -328,56 +216,20 @@ def main(argv):
         test_prefix = output_prefix + "_test_tmp"
         for index, item in enumerate(config["input_data"]):
             prop = config["input_data"][index]["prefix"]
-            subprocess.run(
-                [
-                    FV_GEN_NAME,
-                    f"{prop}.sdf",
-                    f"{prop}_test",
-                    outputfilename,
-                    test_prefix,
-                ],
-                stdout=subprocess.DEVNULL,
-                check=False,
-            )
+            subprocess.run([FV_GEN_NAME, f"{prop}.sdf", f"{prop}_test", outputfilename, test_prefix],
+                stdout=subprocess.DEVNULL , check=False)
             match item["model"]:
                 case "ANN":
-                    (
-                        y,
-                        y_min,
-                        y_max,
-                        x_hat,
-                        ann_training_data_norm_filename,
-                        ann,
-                    ) = milp_results[index]
-                    y_predict, _ = ann_inverter.inspection(
-                        f"{test_prefix}_desc_norm.csv",
-                        ann_training_data_norm_filename,
-                        ann,
-                        x_hat,
-                        STD_EPS,
-                    )
+                    y, y_min, y_max, x_hat, ann_training_data_norm_filename, ann = milp_results[index]
+                    y_predict, _ = ann_inverter.inspection(f"{test_prefix}_desc_norm.csv", ann_training_data_norm_filename, ann, x_hat, STD_EPS)
                 case "LR":
-                    (
-                        y,
-                        y_min,
-                        y_max,
-                        x_hat,
-                        LR_filename,
-                        normalized_dataset_filename,
-                    ) = milp_results[index]
+                    y, y_min, y_max, x_hat, lr_filename, normalized_dataset_filename = milp_results[index]
                     y_star = y.value()
                     y_star_scaled = y_star * (y_max - y_min) + y_min
-                    y_predict = lr_inverter.inspection(
-                        f"{test_prefix}_desc_norm.csv",
-                        normalized_dataset_filename,
-                        LR_filename,
-                        x_hat,
-                        STD_EPS,
-                    )
+                    y_predict = lr_inverter.inspection(f"{test_prefix}_desc_norm.csv", normalized_dataset_filename, lr_filename, x_hat, STD_EPS)
                     y_predict = y_predict[0]
-            print("Inspection value:  ", y_predict)
+            print("Inspection value:  ",  y_predict)
             print("Inspection value (scaled):  ", y_predict * (y_max - y_min) + y_min)
-
 
 if __name__ == "__main__":
     main(sys.argv)
