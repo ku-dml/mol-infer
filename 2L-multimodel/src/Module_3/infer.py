@@ -210,8 +210,6 @@ def main(argv):
         ## Check the calculated descriptors
         outputfilename = output_prefix + ".sdf"
         test_prefix = output_prefix + "_test_tmp"
-        # # os.system(f"{fv_gen_name} {prop}.sdf {prop}_test {outputfilename} ttt")
-        
         for (index, item) in enumerate(config["input_data"]):
             prop = config["input_data"][index]["prefix"]
             subprocess.run([fv_gen_name, f"{prop}.sdf", f"{prop}_test", outputfilename, test_prefix],

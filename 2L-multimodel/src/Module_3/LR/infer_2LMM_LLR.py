@@ -75,15 +75,15 @@ def LR_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
     fp.close()
         
     ### prepare variables (tree part)
-    weight_var, y = LR.build_weight_var(I_integer, I_nonneg)
+    weight_var, y = LR.build_weight_var(I_integer, I_nonneg, prop=index)
     
     ### add constraints (tree part)
     target_value_lb = (target_value_lb - y_min) / (y_max - y_min)
     target_value_ub = (target_value_ub - y_min) / (y_max - y_min)
     
-    MILP = LR.build_constraints(MILP, target_value_lb, target_value_ub)
+    MILP = LR.build_constraints(MILP, target_value_lb, target_value_ub, prop=index)
 
-    MILP = add_constraints__LR(MILP, x_hat, num_fv, LR, mass_ind, mass_n, forbidden_node)
+    MILP = add_constraints__LR(MILP, x_hat, num_fv, LR, mass_ind, mass_n, forbidden_node, prop=index)
 
     ########## add variables and constraints to base MILP ##########
     # for var in tmp_MILP.variables():

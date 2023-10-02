@@ -2,9 +2,6 @@ output_prefix: ./output/test
 instance_file: ./sample_instance/instance_a_2LMM.txt
 fringe_tree_file: ./sample_instance/ins_a_fringe_2LMM.txt
 original_dataset_filename: ./sample_instance/Hc_desc.csv
-# original_dataset_filename: ./sample_instance/sample/At_large_desc.csv
-# instance_file: ./ANN/topological_description/instance_a.txt
-# fringe_tree_file: ./ANN/fringe_set/ins_a_fringe.txt
 
 # model can be ANN or LR
 input_data:
@@ -16,19 +13,12 @@ input_data:
   #   prefix: ./sample_instance/sample/At_large
   #   target_value_lower_bound: 0
   #   target_value_upper_bound: 1930
-  # - model: ANN
-  #   prefix: ANN/ANN/LP
-  #   target_value: 2.5
   - model: LR
     prefix: ./sample_instance/Hc
     target_value_lower_bound: 9200
     target_value_upper_bound: 10000
-  # - model: LR
-  #   prefix: sample_instance/Hc
-  #   target_value_lower_bound: 1910
-  #   target_value_upper_bound: 1930
-  # - model: LR
-  #   prefix: ./sample_instance/Hc
-  #   target_value_lower_bound: 1900
-  #   target_value_upper_bound: 1910
+  - model: LR
+    prefix: sample_instance/Hc
+    target_value_lower_bound: 9250
+    target_value_upper_bound: 10000
     

@@ -32,9 +32,9 @@ class LinearReg:
         self.weight_var = dict()
         self.predict = dict()
 
-    def build_weight_var(self, I_integer, I_nonneg):
-        self.weight_var = {i: pulp.LpVariable(f"LR_x_{i}", cat=pulp.LpContinuous) for i in range(1, self.K + 1)}
-        self.predict = {0: pulp.LpVariable(f"LR_y", cat=pulp.LpContinuous)}
+    def build_weight_var(self, I_integer, I_nonneg, prop):
+        self.weight_var = {i: pulp.LpVariable(f"LR_x_{i}_{prop}", cat=pulp.LpContinuous) for i in range(1, self.K + 1)}
+        self.predict = {0: pulp.LpVariable(f"LR_y_{prop}", cat=pulp.LpContinuous)}
 
         # for i in range(1, self.K + 1):
         #     if i in I_integer:
@@ -44,10 +44,10 @@ class LinearReg:
 
         return self.weight_var, self.predict[0]
 
-    def build_constraints(self, MILP, y_lb, y_ub):
-        MILP += self.predict[0] == pulp.lpSum([self.coef[i - 1] * self.weight_var[i] for i in range(1, self.K + 1)]) + self.bias, "LR_lr"
-        MILP += self.predict[0] <= y_ub, "LR_ub"
-        MILP += self.predict[0] >= y_lb, "LR_lb"
+    def build_constraints(self, MILP, y_lb, y_ub, prop):
+        MILP += self.predict[0] == pulp.lpSum([self.coef[i - 1] * self.weight_var[i] for i in range(1, self.K + 1)]) + self.bias, "LR_lr_{}".format(prop)
+        MILP += self.predict[0] <= y_ub, "LR_ub_{}".format(prop)
+        MILP += self.predict[0] >= y_lb, "LR_lb_{}".format(prop)
 
         return MILP
 

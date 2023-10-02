@@ -2,197 +2,388 @@
 Minimize
 OBJ: __dummy
 Subject To
-LR_connect_x_100_def: LR_x_100 - x_hat0(100) = 0
-LR_connect_x_101_def: LR_x_101 - x_hat0(101) = 0
-LR_connect_x_102_def: LR_x_102 - x_hat0(102) = 0
-LR_connect_x_103_def: LR_x_103 - x_hat0(103) = 0
-LR_connect_x_104_def: LR_x_104 - x_hat0(104) = 0
-LR_connect_x_105_def: LR_x_105 - x_hat0(105) = 0
-LR_connect_x_106_def: LR_x_106 - x_hat0(106) = 0
-LR_connect_x_107_def: LR_x_107 - x_hat0(107) = 0
-LR_connect_x_108_def: LR_x_108 - x_hat0(108) = 0
-LR_connect_x_109_def: LR_x_109 - x_hat0(109) = 0
-LR_connect_x_10_def: LR_x_10 - x_hat0(10) = 0
-LR_connect_x_110_def: LR_x_110 - x_hat0(110) = 0
-LR_connect_x_111_def: LR_x_111 - x_hat0(111) = 0
-LR_connect_x_112_def: LR_x_112 - x_hat0(112) = 0
-LR_connect_x_113_def: LR_x_113 - x_hat0(113) = 0
-LR_connect_x_114_def: LR_x_114 - x_hat0(114) = 0
-LR_connect_x_115_def: LR_x_115 - x_hat0(115) = 0
-LR_connect_x_116_def: LR_x_116 - x_hat0(116) = 0
-LR_connect_x_117_def: LR_x_117 - x_hat0(117) = 0
-LR_connect_x_118_def: LR_x_118 - x_hat0(118) = 0
-LR_connect_x_119_def: LR_x_119 - x_hat0(119) = 0
-LR_connect_x_11_def: LR_x_11 - x_hat0(11) = 0
-LR_connect_x_120_def: LR_x_120 - x_hat0(120) = 0
-LR_connect_x_121_def: LR_x_121 - x_hat0(121) = 0
-LR_connect_x_122_def: LR_x_122 - x_hat0(122) = 0
-LR_connect_x_123_def: LR_x_123 - x_hat0(123) = 0
-LR_connect_x_124_def: LR_x_124 - x_hat0(124) = 0
-LR_connect_x_125_def: LR_x_125 - x_hat0(125) = 0
-LR_connect_x_126_def: LR_x_126 - x_hat0(126) = 0
-LR_connect_x_127_def: LR_x_127 - x_hat0(127) = 0
-LR_connect_x_128_def: LR_x_128 - x_hat0(128) = 0
-LR_connect_x_129_def: LR_x_129 - x_hat0(129) = 0
-LR_connect_x_12_def: LR_x_12 - x_hat0(12) = 0
-LR_connect_x_130_def: LR_x_130 - x_hat0(130) = 0
-LR_connect_x_131_def: LR_x_131 - x_hat0(131) = 0
-LR_connect_x_132_def: LR_x_132 - x_hat0(132) = 0
-LR_connect_x_133_def: LR_x_133 - x_hat0(133) = 0
-LR_connect_x_134_def: LR_x_134 - x_hat0(134) = 0
-LR_connect_x_135_def: LR_x_135 - x_hat0(135) = 0
-LR_connect_x_136_def: LR_x_136 - x_hat0(136) = 0
-LR_connect_x_137_def: LR_x_137 - x_hat0(137) = 0
-LR_connect_x_138_def: LR_x_138 - x_hat0(138) = 0
-LR_connect_x_139_def: LR_x_139 - x_hat0(139) = 0
-LR_connect_x_13_def: LR_x_13 - x_hat0(13) = 0
-LR_connect_x_140_def: LR_x_140 - x_hat0(140) = 0
-LR_connect_x_141_def: LR_x_141 - x_hat0(141) = 0
-LR_connect_x_142_def: LR_x_142 - x_hat0(142) = 0
-LR_connect_x_143_def: LR_x_143 - x_hat0(143) = 0
-LR_connect_x_144_def: LR_x_144 - x_hat0(144) = 0
-LR_connect_x_145_def: LR_x_145 - x_hat0(145) = 0
-LR_connect_x_146_def: LR_x_146 - x_hat0(146) = 0
-LR_connect_x_147_def: LR_x_147 - x_hat0(147) = 0
-LR_connect_x_148_def: LR_x_148 - x_hat0(148) = 0
-LR_connect_x_149_def: LR_x_149 - x_hat0(149) = 0
-LR_connect_x_14_def: LR_x_14 - x_hat0(14) = 0
-LR_connect_x_150_def: LR_x_150 - x_hat0(150) = 0
-LR_connect_x_151_def: LR_x_151 - x_hat0(151) = 0
-LR_connect_x_152_def: LR_x_152 - x_hat0(152) = 0
-LR_connect_x_153_def: LR_x_153 - x_hat0(153) = 0
-LR_connect_x_154_def: LR_x_154 - x_hat0(154) = 0
-LR_connect_x_155_def: LR_x_155 - x_hat0(155) = 0
-LR_connect_x_156_def: LR_x_156 - x_hat0(156) = 0
-LR_connect_x_157_def: LR_x_157 - x_hat0(157) = 0
-LR_connect_x_158_def: LR_x_158 - x_hat0(158) = 0
-LR_connect_x_159_def: LR_x_159 - x_hat0(159) = 0
-LR_connect_x_15_def: LR_x_15 - x_hat0(15) = 0
-LR_connect_x_160_def: LR_x_160 - x_hat0(160) = 0
-LR_connect_x_161_def: LR_x_161 - x_hat0(161) = 0
-LR_connect_x_162_def: LR_x_162 - x_hat0(162) = 0
-LR_connect_x_163_def: LR_x_163 - x_hat0(163) = 0
-LR_connect_x_164_def: LR_x_164 - x_hat0(164) = 0
-LR_connect_x_165_def: LR_x_165 - x_hat0(165) = 0
-LR_connect_x_166_def: LR_x_166 - x_hat0(166) = 0
-LR_connect_x_167_def: LR_x_167 - x_hat0(167) = 0
-LR_connect_x_168_def: LR_x_168 - x_hat0(168) = 0
-LR_connect_x_169_def: LR_x_169 - x_hat0(169) = 0
-LR_connect_x_16_def: LR_x_16 - x_hat0(16) = 0
-LR_connect_x_170_def: LR_x_170 - x_hat0(170) = 0
-LR_connect_x_171_def: LR_x_171 - x_hat0(171) = 0
-LR_connect_x_172_def: LR_x_172 - x_hat0(172) = 0
-LR_connect_x_173_def: LR_x_173 - x_hat0(173) = 0
-LR_connect_x_174_def: LR_x_174 - x_hat0(174) = 0
-LR_connect_x_175_def: LR_x_175 - x_hat0(175) = 0
-LR_connect_x_176_def: LR_x_176 - x_hat0(176) = 0
-LR_connect_x_177_def: LR_x_177 - x_hat0(177) = 0
-LR_connect_x_17_def: LR_x_17 - x_hat0(17) = 0
-LR_connect_x_18_def: LR_x_18 - x_hat0(18) = 0
-LR_connect_x_19_def: LR_x_19 - x_hat0(19) = 0
-LR_connect_x_1_def: LR_x_1 - x_hat0(1) = 0
-LR_connect_x_20_def: LR_x_20 - x_hat0(20) = 0
-LR_connect_x_21_def: LR_x_21 - x_hat0(21) = 0
-LR_connect_x_22_def: LR_x_22 - x_hat0(22) = 0
-LR_connect_x_23_def: LR_x_23 - x_hat0(23) = 0
-LR_connect_x_24_def: LR_x_24 - x_hat0(24) = 0
-LR_connect_x_25_def: LR_x_25 - x_hat0(25) = 0
-LR_connect_x_26_def: LR_x_26 - x_hat0(26) = 0
-LR_connect_x_27_def: LR_x_27 - x_hat0(27) = 0
-LR_connect_x_28_def: LR_x_28 - x_hat0(28) = 0
-LR_connect_x_29_def: LR_x_29 - x_hat0(29) = 0
-LR_connect_x_2_def: LR_x_2 - x_hat0(2) = 0
-LR_connect_x_30_def: LR_x_30 - x_hat0(30) = 0
-LR_connect_x_31_def: LR_x_31 - x_hat0(31) = 0
-LR_connect_x_32_def: LR_x_32 - x_hat0(32) = 0
-LR_connect_x_33_def: LR_x_33 - x_hat0(33) = 0
-LR_connect_x_34_def: LR_x_34 - x_hat0(34) = 0
-LR_connect_x_35_def: LR_x_35 - x_hat0(35) = 0
-LR_connect_x_36_def: LR_x_36 - x_hat0(36) = 0
-LR_connect_x_37_def: LR_x_37 - x_hat0(37) = 0
-LR_connect_x_38_def: LR_x_38 - x_hat0(38) = 0
-LR_connect_x_39_def: LR_x_39 - x_hat0(39) = 0
-LR_connect_x_3_def: LR_x_3 - x_hat0(3) = 0
-LR_connect_x_40_def: LR_x_40 - x_hat0(40) = 0
-LR_connect_x_41_def: LR_x_41 - x_hat0(41) = 0
-LR_connect_x_42_def: LR_x_42 - x_hat0(42) = 0
-LR_connect_x_43_def: LR_x_43 - x_hat0(43) = 0
-LR_connect_x_44_def: LR_x_44 - x_hat0(44) = 0
-LR_connect_x_45_def: LR_x_45 - x_hat0(45) = 0
-LR_connect_x_46_def: LR_x_46 - x_hat0(46) = 0
-LR_connect_x_47_def: LR_x_47 - x_hat0(47) = 0
-LR_connect_x_48_def: LR_x_48 - x_hat0(48) = 0
-LR_connect_x_49_def: LR_x_49 - x_hat0(49) = 0
-LR_connect_x_4_def: LR_x_4 - x_hat0(4) = 0
-LR_connect_x_50_def: LR_x_50 - x_hat0(50) = 0
-LR_connect_x_51_def: LR_x_51 - x_hat0(51) = 0
-LR_connect_x_52_def: LR_x_52 - x_hat0(52) = 0
-LR_connect_x_53_def: LR_x_53 - x_hat0(53) = 0
-LR_connect_x_54_def: LR_x_54 - x_hat0(54) = 0
-LR_connect_x_55_def: LR_x_55 - x_hat0(55) = 0
-LR_connect_x_56_def: LR_x_56 - x_hat0(56) = 0
-LR_connect_x_57_def: LR_x_57 - x_hat0(57) = 0
-LR_connect_x_58_def: LR_x_58 - x_hat0(58) = 0
-LR_connect_x_59_def: LR_x_59 - x_hat0(59) = 0
-LR_connect_x_5_def: LR_x_5 - x_hat0(5) = 0
-LR_connect_x_60_def: LR_x_60 - x_hat0(60) = 0
-LR_connect_x_61_def: LR_x_61 - x_hat0(61) = 0
-LR_connect_x_62_def: LR_x_62 - x_hat0(62) = 0
-LR_connect_x_63_def: LR_x_63 - x_hat0(63) = 0
-LR_connect_x_64_def: LR_x_64 - x_hat0(64) = 0
-LR_connect_x_65_def: LR_x_65 - x_hat0(65) = 0
-LR_connect_x_66_def: LR_x_66 - x_hat0(66) = 0
-LR_connect_x_67_def: LR_x_67 - x_hat0(67) = 0
-LR_connect_x_68_def: LR_x_68 - x_hat0(68) = 0
-LR_connect_x_69_def: LR_x_69 - x_hat0(69) = 0
-LR_connect_x_6_def: LR_x_6 - x_hat0(6) = 0
-LR_connect_x_70_def: LR_x_70 - x_hat0(70) = 0
-LR_connect_x_71_def: LR_x_71 - x_hat0(71) = 0
-LR_connect_x_72_def: LR_x_72 - x_hat0(72) = 0
-LR_connect_x_73_def: LR_x_73 - x_hat0(73) = 0
-LR_connect_x_74_def: LR_x_74 - x_hat0(74) = 0
-LR_connect_x_75_def: LR_x_75 - x_hat0(75) = 0
-LR_connect_x_76_def: LR_x_76 - x_hat0(76) = 0
-LR_connect_x_77_def: LR_x_77 - x_hat0(77) = 0
-LR_connect_x_78_def: LR_x_78 - x_hat0(78) = 0
-LR_connect_x_79_def: LR_x_79 - x_hat0(79) = 0
-LR_connect_x_7_def: LR_x_7 - x_hat0(7) = 0
-LR_connect_x_80_def: LR_x_80 - x_hat0(80) = 0
-LR_connect_x_81_def: LR_x_81 - x_hat0(81) = 0
-LR_connect_x_82_def: LR_x_82 - x_hat0(82) = 0
-LR_connect_x_83_def: LR_x_83 - x_hat0(83) = 0
-LR_connect_x_84_def: LR_x_84 - x_hat0(84) = 0
-LR_connect_x_85_def: LR_x_85 - x_hat0(85) = 0
-LR_connect_x_86_def: LR_x_86 - x_hat0(86) = 0
-LR_connect_x_87_def: LR_x_87 - x_hat0(87) = 0
-LR_connect_x_88_def: LR_x_88 - x_hat0(88) = 0
-LR_connect_x_89_def: LR_x_89 - x_hat0(89) = 0
-LR_connect_x_8_def: LR_x_8 - x_hat0(8) = 0
-LR_connect_x_90_def: LR_x_90 - x_hat0(90) = 0
-LR_connect_x_91_def: LR_x_91 - x_hat0(91) = 0
-LR_connect_x_92_def: LR_x_92 - x_hat0(92) = 0
-LR_connect_x_93_def: LR_x_93 - x_hat0(93) = 0
-LR_connect_x_94_def: LR_x_94 - x_hat0(94) = 0
-LR_connect_x_95_def: LR_x_95 - x_hat0(95) = 0
-LR_connect_x_96_def: LR_x_96 - x_hat0(96) = 0
-LR_connect_x_97_def: LR_x_97 - x_hat0(97) = 0
-LR_connect_x_98_def: LR_x_98 - x_hat0(98) = 0
-LR_connect_x_99_def: LR_x_99 - x_hat0(99) = 0
-LR_connect_x_9_def: LR_x_9 - x_hat0(9) = 0
-LR_lb: LR_y >= 0.264259802682
-LR_lr: - 0.0521150336872 LR_x_10 + 0.0939405714505 LR_x_12
- - 0.488205424168 LR_x_15 - 0.0142148578389 LR_x_164
- - 0.00280444048032 LR_x_169 + 0.0102130583861 LR_x_172
- - 0.000119041098645 LR_x_177 - 0.097957703929 LR_x_20
- + 0.0177905865794 LR_x_23 - 0.00308980732284 LR_x_24
- - 0.0392209150915 LR_x_25 - 0.00767770858703 LR_x_27
- + 0.000353445613099 LR_x_29 - 0.0114689847786 LR_x_39
- + 0.0962740390018 LR_x_40 - 0.221914180565 LR_x_47 - 0.0211313448141 LR_x_49
- - 0.00262112957168 LR_x_50 - 0.0443200179955 LR_x_51
- - 0.00941488495121 LR_x_53 + 0.00804963504474 LR_x_59
- - 0.0142961589137 LR_x_6 - 0.0530780851874 LR_x_70 - 0.00396196194271 LR_x_9
- + LR_y = 0
-LR_ub: LR_y <= 0.286985719602
+LR_connect_x_100_0: LR_x_100_0 - x_hat0(100) = 0
+LR_connect_x_100_1: LR_x_100_1 - x_hat1(100) = 0
+LR_connect_x_101_0: LR_x_101_0 - x_hat0(101) = 0
+LR_connect_x_101_1: LR_x_101_1 - x_hat1(101) = 0
+LR_connect_x_102_0: LR_x_102_0 - x_hat0(102) = 0
+LR_connect_x_102_1: LR_x_102_1 - x_hat1(102) = 0
+LR_connect_x_103_0: LR_x_103_0 - x_hat0(103) = 0
+LR_connect_x_103_1: LR_x_103_1 - x_hat1(103) = 0
+LR_connect_x_104_0: LR_x_104_0 - x_hat0(104) = 0
+LR_connect_x_104_1: LR_x_104_1 - x_hat1(104) = 0
+LR_connect_x_105_0: LR_x_105_0 - x_hat0(105) = 0
+LR_connect_x_105_1: LR_x_105_1 - x_hat1(105) = 0
+LR_connect_x_106_0: LR_x_106_0 - x_hat0(106) = 0
+LR_connect_x_106_1: LR_x_106_1 - x_hat1(106) = 0
+LR_connect_x_107_0: LR_x_107_0 - x_hat0(107) = 0
+LR_connect_x_107_1: LR_x_107_1 - x_hat1(107) = 0
+LR_connect_x_108_0: LR_x_108_0 - x_hat0(108) = 0
+LR_connect_x_108_1: LR_x_108_1 - x_hat1(108) = 0
+LR_connect_x_109_0: LR_x_109_0 - x_hat0(109) = 0
+LR_connect_x_109_1: LR_x_109_1 - x_hat1(109) = 0
+LR_connect_x_10_0: LR_x_10_0 - x_hat0(10) = 0
+LR_connect_x_10_1: LR_x_10_1 - x_hat1(10) = 0
+LR_connect_x_110_0: LR_x_110_0 - x_hat0(110) = 0
+LR_connect_x_110_1: LR_x_110_1 - x_hat1(110) = 0
+LR_connect_x_111_0: LR_x_111_0 - x_hat0(111) = 0
+LR_connect_x_111_1: LR_x_111_1 - x_hat1(111) = 0
+LR_connect_x_112_0: LR_x_112_0 - x_hat0(112) = 0
+LR_connect_x_112_1: LR_x_112_1 - x_hat1(112) = 0
+LR_connect_x_113_0: LR_x_113_0 - x_hat0(113) = 0
+LR_connect_x_113_1: LR_x_113_1 - x_hat1(113) = 0
+LR_connect_x_114_0: LR_x_114_0 - x_hat0(114) = 0
+LR_connect_x_114_1: LR_x_114_1 - x_hat1(114) = 0
+LR_connect_x_115_0: LR_x_115_0 - x_hat0(115) = 0
+LR_connect_x_115_1: LR_x_115_1 - x_hat1(115) = 0
+LR_connect_x_116_0: LR_x_116_0 - x_hat0(116) = 0
+LR_connect_x_116_1: LR_x_116_1 - x_hat1(116) = 0
+LR_connect_x_117_0: LR_x_117_0 - x_hat0(117) = 0
+LR_connect_x_117_1: LR_x_117_1 - x_hat1(117) = 0
+LR_connect_x_118_0: LR_x_118_0 - x_hat0(118) = 0
+LR_connect_x_118_1: LR_x_118_1 - x_hat1(118) = 0
+LR_connect_x_119_0: LR_x_119_0 - x_hat0(119) = 0
+LR_connect_x_119_1: LR_x_119_1 - x_hat1(119) = 0
+LR_connect_x_11_0: LR_x_11_0 - x_hat0(11) = 0
+LR_connect_x_11_1: LR_x_11_1 - x_hat1(11) = 0
+LR_connect_x_120_0: LR_x_120_0 - x_hat0(120) = 0
+LR_connect_x_120_1: LR_x_120_1 - x_hat1(120) = 0
+LR_connect_x_121_0: LR_x_121_0 - x_hat0(121) = 0
+LR_connect_x_121_1: LR_x_121_1 - x_hat1(121) = 0
+LR_connect_x_122_0: LR_x_122_0 - x_hat0(122) = 0
+LR_connect_x_122_1: LR_x_122_1 - x_hat1(122) = 0
+LR_connect_x_123_0: LR_x_123_0 - x_hat0(123) = 0
+LR_connect_x_123_1: LR_x_123_1 - x_hat1(123) = 0
+LR_connect_x_124_0: LR_x_124_0 - x_hat0(124) = 0
+LR_connect_x_124_1: LR_x_124_1 - x_hat1(124) = 0
+LR_connect_x_125_0: LR_x_125_0 - x_hat0(125) = 0
+LR_connect_x_125_1: LR_x_125_1 - x_hat1(125) = 0
+LR_connect_x_126_0: LR_x_126_0 - x_hat0(126) = 0
+LR_connect_x_126_1: LR_x_126_1 - x_hat1(126) = 0
+LR_connect_x_127_0: LR_x_127_0 - x_hat0(127) = 0
+LR_connect_x_127_1: LR_x_127_1 - x_hat1(127) = 0
+LR_connect_x_128_0: LR_x_128_0 - x_hat0(128) = 0
+LR_connect_x_128_1: LR_x_128_1 - x_hat1(128) = 0
+LR_connect_x_129_0: LR_x_129_0 - x_hat0(129) = 0
+LR_connect_x_129_1: LR_x_129_1 - x_hat1(129) = 0
+LR_connect_x_12_0: LR_x_12_0 - x_hat0(12) = 0
+LR_connect_x_12_1: LR_x_12_1 - x_hat1(12) = 0
+LR_connect_x_130_0: LR_x_130_0 - x_hat0(130) = 0
+LR_connect_x_130_1: LR_x_130_1 - x_hat1(130) = 0
+LR_connect_x_131_0: LR_x_131_0 - x_hat0(131) = 0
+LR_connect_x_131_1: LR_x_131_1 - x_hat1(131) = 0
+LR_connect_x_132_0: LR_x_132_0 - x_hat0(132) = 0
+LR_connect_x_132_1: LR_x_132_1 - x_hat1(132) = 0
+LR_connect_x_133_0: LR_x_133_0 - x_hat0(133) = 0
+LR_connect_x_133_1: LR_x_133_1 - x_hat1(133) = 0
+LR_connect_x_134_0: LR_x_134_0 - x_hat0(134) = 0
+LR_connect_x_134_1: LR_x_134_1 - x_hat1(134) = 0
+LR_connect_x_135_0: LR_x_135_0 - x_hat0(135) = 0
+LR_connect_x_135_1: LR_x_135_1 - x_hat1(135) = 0
+LR_connect_x_136_0: LR_x_136_0 - x_hat0(136) = 0
+LR_connect_x_136_1: LR_x_136_1 - x_hat1(136) = 0
+LR_connect_x_137_0: LR_x_137_0 - x_hat0(137) = 0
+LR_connect_x_137_1: LR_x_137_1 - x_hat1(137) = 0
+LR_connect_x_138_0: LR_x_138_0 - x_hat0(138) = 0
+LR_connect_x_138_1: LR_x_138_1 - x_hat1(138) = 0
+LR_connect_x_139_0: LR_x_139_0 - x_hat0(139) = 0
+LR_connect_x_139_1: LR_x_139_1 - x_hat1(139) = 0
+LR_connect_x_13_0: LR_x_13_0 - x_hat0(13) = 0
+LR_connect_x_13_1: LR_x_13_1 - x_hat1(13) = 0
+LR_connect_x_140_0: LR_x_140_0 - x_hat0(140) = 0
+LR_connect_x_140_1: LR_x_140_1 - x_hat1(140) = 0
+LR_connect_x_141_0: LR_x_141_0 - x_hat0(141) = 0
+LR_connect_x_141_1: LR_x_141_1 - x_hat1(141) = 0
+LR_connect_x_142_0: LR_x_142_0 - x_hat0(142) = 0
+LR_connect_x_142_1: LR_x_142_1 - x_hat1(142) = 0
+LR_connect_x_143_0: LR_x_143_0 - x_hat0(143) = 0
+LR_connect_x_143_1: LR_x_143_1 - x_hat1(143) = 0
+LR_connect_x_144_0: LR_x_144_0 - x_hat0(144) = 0
+LR_connect_x_144_1: LR_x_144_1 - x_hat1(144) = 0
+LR_connect_x_145_0: LR_x_145_0 - x_hat0(145) = 0
+LR_connect_x_145_1: LR_x_145_1 - x_hat1(145) = 0
+LR_connect_x_146_0: LR_x_146_0 - x_hat0(146) = 0
+LR_connect_x_146_1: LR_x_146_1 - x_hat1(146) = 0
+LR_connect_x_147_0: LR_x_147_0 - x_hat0(147) = 0
+LR_connect_x_147_1: LR_x_147_1 - x_hat1(147) = 0
+LR_connect_x_148_0: LR_x_148_0 - x_hat0(148) = 0
+LR_connect_x_148_1: LR_x_148_1 - x_hat1(148) = 0
+LR_connect_x_149_0: LR_x_149_0 - x_hat0(149) = 0
+LR_connect_x_149_1: LR_x_149_1 - x_hat1(149) = 0
+LR_connect_x_14_0: LR_x_14_0 - x_hat0(14) = 0
+LR_connect_x_14_1: LR_x_14_1 - x_hat1(14) = 0
+LR_connect_x_150_0: LR_x_150_0 - x_hat0(150) = 0
+LR_connect_x_150_1: LR_x_150_1 - x_hat1(150) = 0
+LR_connect_x_151_0: LR_x_151_0 - x_hat0(151) = 0
+LR_connect_x_151_1: LR_x_151_1 - x_hat1(151) = 0
+LR_connect_x_152_0: LR_x_152_0 - x_hat0(152) = 0
+LR_connect_x_152_1: LR_x_152_1 - x_hat1(152) = 0
+LR_connect_x_153_0: LR_x_153_0 - x_hat0(153) = 0
+LR_connect_x_153_1: LR_x_153_1 - x_hat1(153) = 0
+LR_connect_x_154_0: LR_x_154_0 - x_hat0(154) = 0
+LR_connect_x_154_1: LR_x_154_1 - x_hat1(154) = 0
+LR_connect_x_155_0: LR_x_155_0 - x_hat0(155) = 0
+LR_connect_x_155_1: LR_x_155_1 - x_hat1(155) = 0
+LR_connect_x_156_0: LR_x_156_0 - x_hat0(156) = 0
+LR_connect_x_156_1: LR_x_156_1 - x_hat1(156) = 0
+LR_connect_x_157_0: LR_x_157_0 - x_hat0(157) = 0
+LR_connect_x_157_1: LR_x_157_1 - x_hat1(157) = 0
+LR_connect_x_158_0: LR_x_158_0 - x_hat0(158) = 0
+LR_connect_x_158_1: LR_x_158_1 - x_hat1(158) = 0
+LR_connect_x_159_0: LR_x_159_0 - x_hat0(159) = 0
+LR_connect_x_159_1: LR_x_159_1 - x_hat1(159) = 0
+LR_connect_x_15_0: LR_x_15_0 - x_hat0(15) = 0
+LR_connect_x_15_1: LR_x_15_1 - x_hat1(15) = 0
+LR_connect_x_160_0: LR_x_160_0 - x_hat0(160) = 0
+LR_connect_x_160_1: LR_x_160_1 - x_hat1(160) = 0
+LR_connect_x_161_0: LR_x_161_0 - x_hat0(161) = 0
+LR_connect_x_161_1: LR_x_161_1 - x_hat1(161) = 0
+LR_connect_x_162_0: LR_x_162_0 - x_hat0(162) = 0
+LR_connect_x_162_1: LR_x_162_1 - x_hat1(162) = 0
+LR_connect_x_163_0: LR_x_163_0 - x_hat0(163) = 0
+LR_connect_x_163_1: LR_x_163_1 - x_hat1(163) = 0
+LR_connect_x_164_0: LR_x_164_0 - x_hat0(164) = 0
+LR_connect_x_164_1: LR_x_164_1 - x_hat1(164) = 0
+LR_connect_x_165_0: LR_x_165_0 - x_hat0(165) = 0
+LR_connect_x_165_1: LR_x_165_1 - x_hat1(165) = 0
+LR_connect_x_166_0: LR_x_166_0 - x_hat0(166) = 0
+LR_connect_x_166_1: LR_x_166_1 - x_hat1(166) = 0
+LR_connect_x_167_0: LR_x_167_0 - x_hat0(167) = 0
+LR_connect_x_167_1: LR_x_167_1 - x_hat1(167) = 0
+LR_connect_x_168_0: LR_x_168_0 - x_hat0(168) = 0
+LR_connect_x_168_1: LR_x_168_1 - x_hat1(168) = 0
+LR_connect_x_169_0: LR_x_169_0 - x_hat0(169) = 0
+LR_connect_x_169_1: LR_x_169_1 - x_hat1(169) = 0
+LR_connect_x_16_0: LR_x_16_0 - x_hat0(16) = 0
+LR_connect_x_16_1: LR_x_16_1 - x_hat1(16) = 0
+LR_connect_x_170_0: LR_x_170_0 - x_hat0(170) = 0
+LR_connect_x_170_1: LR_x_170_1 - x_hat1(170) = 0
+LR_connect_x_171_0: LR_x_171_0 - x_hat0(171) = 0
+LR_connect_x_171_1: LR_x_171_1 - x_hat1(171) = 0
+LR_connect_x_172_0: LR_x_172_0 - x_hat0(172) = 0
+LR_connect_x_172_1: LR_x_172_1 - x_hat1(172) = 0
+LR_connect_x_173_0: LR_x_173_0 - x_hat0(173) = 0
+LR_connect_x_173_1: LR_x_173_1 - x_hat1(173) = 0
+LR_connect_x_174_0: LR_x_174_0 - x_hat0(174) = 0
+LR_connect_x_174_1: LR_x_174_1 - x_hat1(174) = 0
+LR_connect_x_175_0: LR_x_175_0 - x_hat0(175) = 0
+LR_connect_x_175_1: LR_x_175_1 - x_hat1(175) = 0
+LR_connect_x_176_0: LR_x_176_0 - x_hat0(176) = 0
+LR_connect_x_176_1: LR_x_176_1 - x_hat1(176) = 0
+LR_connect_x_177_0: LR_x_177_0 - x_hat0(177) = 0
+LR_connect_x_177_1: LR_x_177_1 - x_hat1(177) = 0
+LR_connect_x_17_0: LR_x_17_0 - x_hat0(17) = 0
+LR_connect_x_17_1: LR_x_17_1 - x_hat1(17) = 0
+LR_connect_x_18_0: LR_x_18_0 - x_hat0(18) = 0
+LR_connect_x_18_1: LR_x_18_1 - x_hat1(18) = 0
+LR_connect_x_19_0: LR_x_19_0 - x_hat0(19) = 0
+LR_connect_x_19_1: LR_x_19_1 - x_hat1(19) = 0
+LR_connect_x_1_0: LR_x_1_0 - x_hat0(1) = 0
+LR_connect_x_1_1: LR_x_1_1 - x_hat1(1) = 0
+LR_connect_x_20_0: LR_x_20_0 - x_hat0(20) = 0
+LR_connect_x_20_1: LR_x_20_1 - x_hat1(20) = 0
+LR_connect_x_21_0: LR_x_21_0 - x_hat0(21) = 0
+LR_connect_x_21_1: LR_x_21_1 - x_hat1(21) = 0
+LR_connect_x_22_0: LR_x_22_0 - x_hat0(22) = 0
+LR_connect_x_22_1: LR_x_22_1 - x_hat1(22) = 0
+LR_connect_x_23_0: LR_x_23_0 - x_hat0(23) = 0
+LR_connect_x_23_1: LR_x_23_1 - x_hat1(23) = 0
+LR_connect_x_24_0: LR_x_24_0 - x_hat0(24) = 0
+LR_connect_x_24_1: LR_x_24_1 - x_hat1(24) = 0
+LR_connect_x_25_0: LR_x_25_0 - x_hat0(25) = 0
+LR_connect_x_25_1: LR_x_25_1 - x_hat1(25) = 0
+LR_connect_x_26_0: LR_x_26_0 - x_hat0(26) = 0
+LR_connect_x_26_1: LR_x_26_1 - x_hat1(26) = 0
+LR_connect_x_27_0: LR_x_27_0 - x_hat0(27) = 0
+LR_connect_x_27_1: LR_x_27_1 - x_hat1(27) = 0
+LR_connect_x_28_0: LR_x_28_0 - x_hat0(28) = 0
+LR_connect_x_28_1: LR_x_28_1 - x_hat1(28) = 0
+LR_connect_x_29_0: LR_x_29_0 - x_hat0(29) = 0
+LR_connect_x_29_1: LR_x_29_1 - x_hat1(29) = 0
+LR_connect_x_2_0: LR_x_2_0 - x_hat0(2) = 0
+LR_connect_x_2_1: LR_x_2_1 - x_hat1(2) = 0
+LR_connect_x_30_0: LR_x_30_0 - x_hat0(30) = 0
+LR_connect_x_30_1: LR_x_30_1 - x_hat1(30) = 0
+LR_connect_x_31_0: LR_x_31_0 - x_hat0(31) = 0
+LR_connect_x_31_1: LR_x_31_1 - x_hat1(31) = 0
+LR_connect_x_32_0: LR_x_32_0 - x_hat0(32) = 0
+LR_connect_x_32_1: LR_x_32_1 - x_hat1(32) = 0
+LR_connect_x_33_0: LR_x_33_0 - x_hat0(33) = 0
+LR_connect_x_33_1: LR_x_33_1 - x_hat1(33) = 0
+LR_connect_x_34_0: LR_x_34_0 - x_hat0(34) = 0
+LR_connect_x_34_1: LR_x_34_1 - x_hat1(34) = 0
+LR_connect_x_35_0: LR_x_35_0 - x_hat0(35) = 0
+LR_connect_x_35_1: LR_x_35_1 - x_hat1(35) = 0
+LR_connect_x_36_0: LR_x_36_0 - x_hat0(36) = 0
+LR_connect_x_36_1: LR_x_36_1 - x_hat1(36) = 0
+LR_connect_x_37_0: LR_x_37_0 - x_hat0(37) = 0
+LR_connect_x_37_1: LR_x_37_1 - x_hat1(37) = 0
+LR_connect_x_38_0: LR_x_38_0 - x_hat0(38) = 0
+LR_connect_x_38_1: LR_x_38_1 - x_hat1(38) = 0
+LR_connect_x_39_0: LR_x_39_0 - x_hat0(39) = 0
+LR_connect_x_39_1: LR_x_39_1 - x_hat1(39) = 0
+LR_connect_x_3_0: LR_x_3_0 - x_hat0(3) = 0
+LR_connect_x_3_1: LR_x_3_1 - x_hat1(3) = 0
+LR_connect_x_40_0: LR_x_40_0 - x_hat0(40) = 0
+LR_connect_x_40_1: LR_x_40_1 - x_hat1(40) = 0
+LR_connect_x_41_0: LR_x_41_0 - x_hat0(41) = 0
+LR_connect_x_41_1: LR_x_41_1 - x_hat1(41) = 0
+LR_connect_x_42_0: LR_x_42_0 - x_hat0(42) = 0
+LR_connect_x_42_1: LR_x_42_1 - x_hat1(42) = 0
+LR_connect_x_43_0: LR_x_43_0 - x_hat0(43) = 0
+LR_connect_x_43_1: LR_x_43_1 - x_hat1(43) = 0
+LR_connect_x_44_0: LR_x_44_0 - x_hat0(44) = 0
+LR_connect_x_44_1: LR_x_44_1 - x_hat1(44) = 0
+LR_connect_x_45_0: LR_x_45_0 - x_hat0(45) = 0
+LR_connect_x_45_1: LR_x_45_1 - x_hat1(45) = 0
+LR_connect_x_46_0: LR_x_46_0 - x_hat0(46) = 0
+LR_connect_x_46_1: LR_x_46_1 - x_hat1(46) = 0
+LR_connect_x_47_0: LR_x_47_0 - x_hat0(47) = 0
+LR_connect_x_47_1: LR_x_47_1 - x_hat1(47) = 0
+LR_connect_x_48_0: LR_x_48_0 - x_hat0(48) = 0
+LR_connect_x_48_1: LR_x_48_1 - x_hat1(48) = 0
+LR_connect_x_49_0: LR_x_49_0 - x_hat0(49) = 0
+LR_connect_x_49_1: LR_x_49_1 - x_hat1(49) = 0
+LR_connect_x_4_0: LR_x_4_0 - x_hat0(4) = 0
+LR_connect_x_4_1: LR_x_4_1 - x_hat1(4) = 0
+LR_connect_x_50_0: LR_x_50_0 - x_hat0(50) = 0
+LR_connect_x_50_1: LR_x_50_1 - x_hat1(50) = 0
+LR_connect_x_51_0: LR_x_51_0 - x_hat0(51) = 0
+LR_connect_x_51_1: LR_x_51_1 - x_hat1(51) = 0
+LR_connect_x_52_0: LR_x_52_0 - x_hat0(52) = 0
+LR_connect_x_52_1: LR_x_52_1 - x_hat1(52) = 0
+LR_connect_x_53_0: LR_x_53_0 - x_hat0(53) = 0
+LR_connect_x_53_1: LR_x_53_1 - x_hat1(53) = 0
+LR_connect_x_54_0: LR_x_54_0 - x_hat0(54) = 0
+LR_connect_x_54_1: LR_x_54_1 - x_hat1(54) = 0
+LR_connect_x_55_0: LR_x_55_0 - x_hat0(55) = 0
+LR_connect_x_55_1: LR_x_55_1 - x_hat1(55) = 0
+LR_connect_x_56_0: LR_x_56_0 - x_hat0(56) = 0
+LR_connect_x_56_1: LR_x_56_1 - x_hat1(56) = 0
+LR_connect_x_57_0: LR_x_57_0 - x_hat0(57) = 0
+LR_connect_x_57_1: LR_x_57_1 - x_hat1(57) = 0
+LR_connect_x_58_0: LR_x_58_0 - x_hat0(58) = 0
+LR_connect_x_58_1: LR_x_58_1 - x_hat1(58) = 0
+LR_connect_x_59_0: LR_x_59_0 - x_hat0(59) = 0
+LR_connect_x_59_1: LR_x_59_1 - x_hat1(59) = 0
+LR_connect_x_5_0: LR_x_5_0 - x_hat0(5) = 0
+LR_connect_x_5_1: LR_x_5_1 - x_hat1(5) = 0
+LR_connect_x_60_0: LR_x_60_0 - x_hat0(60) = 0
+LR_connect_x_60_1: LR_x_60_1 - x_hat1(60) = 0
+LR_connect_x_61_0: LR_x_61_0 - x_hat0(61) = 0
+LR_connect_x_61_1: LR_x_61_1 - x_hat1(61) = 0
+LR_connect_x_62_0: LR_x_62_0 - x_hat0(62) = 0
+LR_connect_x_62_1: LR_x_62_1 - x_hat1(62) = 0
+LR_connect_x_63_0: LR_x_63_0 - x_hat0(63) = 0
+LR_connect_x_63_1: LR_x_63_1 - x_hat1(63) = 0
+LR_connect_x_64_0: LR_x_64_0 - x_hat0(64) = 0
+LR_connect_x_64_1: LR_x_64_1 - x_hat1(64) = 0
+LR_connect_x_65_0: LR_x_65_0 - x_hat0(65) = 0
+LR_connect_x_65_1: LR_x_65_1 - x_hat1(65) = 0
+LR_connect_x_66_0: LR_x_66_0 - x_hat0(66) = 0
+LR_connect_x_66_1: LR_x_66_1 - x_hat1(66) = 0
+LR_connect_x_67_0: LR_x_67_0 - x_hat0(67) = 0
+LR_connect_x_67_1: LR_x_67_1 - x_hat1(67) = 0
+LR_connect_x_68_0: LR_x_68_0 - x_hat0(68) = 0
+LR_connect_x_68_1: LR_x_68_1 - x_hat1(68) = 0
+LR_connect_x_69_0: LR_x_69_0 - x_hat0(69) = 0
+LR_connect_x_69_1: LR_x_69_1 - x_hat1(69) = 0
+LR_connect_x_6_0: LR_x_6_0 - x_hat0(6) = 0
+LR_connect_x_6_1: LR_x_6_1 - x_hat1(6) = 0
+LR_connect_x_70_0: LR_x_70_0 - x_hat0(70) = 0
+LR_connect_x_70_1: LR_x_70_1 - x_hat1(70) = 0
+LR_connect_x_71_0: LR_x_71_0 - x_hat0(71) = 0
+LR_connect_x_71_1: LR_x_71_1 - x_hat1(71) = 0
+LR_connect_x_72_0: LR_x_72_0 - x_hat0(72) = 0
+LR_connect_x_72_1: LR_x_72_1 - x_hat1(72) = 0
+LR_connect_x_73_0: LR_x_73_0 - x_hat0(73) = 0
+LR_connect_x_73_1: LR_x_73_1 - x_hat1(73) = 0
+LR_connect_x_74_0: LR_x_74_0 - x_hat0(74) = 0
+LR_connect_x_74_1: LR_x_74_1 - x_hat1(74) = 0
+LR_connect_x_75_0: LR_x_75_0 - x_hat0(75) = 0
+LR_connect_x_75_1: LR_x_75_1 - x_hat1(75) = 0
+LR_connect_x_76_0: LR_x_76_0 - x_hat0(76) = 0
+LR_connect_x_76_1: LR_x_76_1 - x_hat1(76) = 0
+LR_connect_x_77_0: LR_x_77_0 - x_hat0(77) = 0
+LR_connect_x_77_1: LR_x_77_1 - x_hat1(77) = 0
+LR_connect_x_78_0: LR_x_78_0 - x_hat0(78) = 0
+LR_connect_x_78_1: LR_x_78_1 - x_hat1(78) = 0
+LR_connect_x_79_0: LR_x_79_0 - x_hat0(79) = 0
+LR_connect_x_79_1: LR_x_79_1 - x_hat1(79) = 0
+LR_connect_x_7_0: LR_x_7_0 - x_hat0(7) = 0
+LR_connect_x_7_1: LR_x_7_1 - x_hat1(7) = 0
+LR_connect_x_80_0: LR_x_80_0 - x_hat0(80) = 0
+LR_connect_x_80_1: LR_x_80_1 - x_hat1(80) = 0
+LR_connect_x_81_0: LR_x_81_0 - x_hat0(81) = 0
+LR_connect_x_81_1: LR_x_81_1 - x_hat1(81) = 0
+LR_connect_x_82_0: LR_x_82_0 - x_hat0(82) = 0
+LR_connect_x_82_1: LR_x_82_1 - x_hat1(82) = 0
+LR_connect_x_83_0: LR_x_83_0 - x_hat0(83) = 0
+LR_connect_x_83_1: LR_x_83_1 - x_hat1(83) = 0
+LR_connect_x_84_0: LR_x_84_0 - x_hat0(84) = 0
+LR_connect_x_84_1: LR_x_84_1 - x_hat1(84) = 0
+LR_connect_x_85_0: LR_x_85_0 - x_hat0(85) = 0
+LR_connect_x_85_1: LR_x_85_1 - x_hat1(85) = 0
+LR_connect_x_86_0: LR_x_86_0 - x_hat0(86) = 0
+LR_connect_x_86_1: LR_x_86_1 - x_hat1(86) = 0
+LR_connect_x_87_0: LR_x_87_0 - x_hat0(87) = 0
+LR_connect_x_87_1: LR_x_87_1 - x_hat1(87) = 0
+LR_connect_x_88_0: LR_x_88_0 - x_hat0(88) = 0
+LR_connect_x_88_1: LR_x_88_1 - x_hat1(88) = 0
+LR_connect_x_89_0: LR_x_89_0 - x_hat0(89) = 0
+LR_connect_x_89_1: LR_x_89_1 - x_hat1(89) = 0
+LR_connect_x_8_0: LR_x_8_0 - x_hat0(8) = 0
+LR_connect_x_8_1: LR_x_8_1 - x_hat1(8) = 0
+LR_connect_x_90_0: LR_x_90_0 - x_hat0(90) = 0
+LR_connect_x_90_1: LR_x_90_1 - x_hat1(90) = 0
+LR_connect_x_91_0: LR_x_91_0 - x_hat0(91) = 0
+LR_connect_x_91_1: LR_x_91_1 - x_hat1(91) = 0
+LR_connect_x_92_0: LR_x_92_0 - x_hat0(92) = 0
+LR_connect_x_92_1: LR_x_92_1 - x_hat1(92) = 0
+LR_connect_x_93_0: LR_x_93_0 - x_hat0(93) = 0
+LR_connect_x_93_1: LR_x_93_1 - x_hat1(93) = 0
+LR_connect_x_94_0: LR_x_94_0 - x_hat0(94) = 0
+LR_connect_x_94_1: LR_x_94_1 - x_hat1(94) = 0
+LR_connect_x_95_0: LR_x_95_0 - x_hat0(95) = 0
+LR_connect_x_95_1: LR_x_95_1 - x_hat1(95) = 0
+LR_connect_x_96_0: LR_x_96_0 - x_hat0(96) = 0
+LR_connect_x_96_1: LR_x_96_1 - x_hat1(96) = 0
+LR_connect_x_97_0: LR_x_97_0 - x_hat0(97) = 0
+LR_connect_x_97_1: LR_x_97_1 - x_hat1(97) = 0
+LR_connect_x_98_0: LR_x_98_0 - x_hat0(98) = 0
+LR_connect_x_98_1: LR_x_98_1 - x_hat1(98) = 0
+LR_connect_x_99_0: LR_x_99_0 - x_hat0(99) = 0
+LR_connect_x_99_1: LR_x_99_1 - x_hat1(99) = 0
+LR_connect_x_9_0: LR_x_9_0 - x_hat0(9) = 0
+LR_connect_x_9_1: LR_x_9_1 - x_hat1(9) = 0
+LR_lb_0: LR_y_0 >= 0.264259802682
+LR_lb_1: LR_y_1 >= 0.26568017249
+LR_lr_0: - 0.0521150336872 LR_x_10_0 + 0.0939405714505 LR_x_12_0
+ - 0.488205424168 LR_x_15_0 - 0.0142148578389 LR_x_164_0
+ - 0.00280444048032 LR_x_169_0 + 0.0102130583861 LR_x_172_0
+ - 0.000119041098645 LR_x_177_0 - 0.097957703929 LR_x_20_0
+ + 0.0177905865794 LR_x_23_0 - 0.00308980732284 LR_x_24_0
+ - 0.0392209150915 LR_x_25_0 - 0.00767770858703 LR_x_27_0
+ + 0.000353445613099 LR_x_29_0 - 0.0114689847786 LR_x_39_0
+ + 0.0962740390018 LR_x_40_0 - 0.221914180565 LR_x_47_0
+ - 0.0211313448141 LR_x_49_0 - 0.00262112957168 LR_x_50_0
+ - 0.0443200179955 LR_x_51_0 - 0.00941488495121 LR_x_53_0
+ + 0.00804963504474 LR_x_59_0 - 0.0142961589137 LR_x_6_0
+ - 0.0530780851874 LR_x_70_0 - 0.00396196194271 LR_x_9_0 + LR_y_0 = 0
+LR_lr_1: - 0.0521150336872 LR_x_10_1 + 0.0939405714505 LR_x_12_1
+ - 0.488205424168 LR_x_15_1 - 0.0142148578389 LR_x_164_1
+ - 0.00280444048032 LR_x_169_1 + 0.0102130583861 LR_x_172_1
+ - 0.000119041098645 LR_x_177_1 - 0.097957703929 LR_x_20_1
+ + 0.0177905865794 LR_x_23_1 - 0.00308980732284 LR_x_24_1
+ - 0.0392209150915 LR_x_25_1 - 0.00767770858703 LR_x_27_1
+ + 0.000353445613099 LR_x_29_1 - 0.0114689847786 LR_x_39_1
+ + 0.0962740390018 LR_x_40_1 - 0.221914180565 LR_x_47_1
+ - 0.0211313448141 LR_x_49_1 - 0.00262112957168 LR_x_50_1
+ - 0.0443200179955 LR_x_51_1 - 0.00941488495121 LR_x_53_1
+ + 0.00804963504474 LR_x_59_1 - 0.0142961589137 LR_x_6_1
+ - 0.0530780851874 LR_x_70_1 - 0.00396196194271 LR_x_9_1 + LR_y_1 = 0
+LR_ub_0: LR_y_0 <= 0.286985719602
+LR_ub_1: LR_y_1 <= 0.286985719602
 milp_(32)_1: deg_int_C(1) + delta_fr_C(1,24) + delta_fr_C(1,25)
  + delta_fr_C(1,26) + delta_fr_C(1,27) + delta_fr_C(1,28) + delta_fr_C(1,29)
  + delta_fr_C(1,30) >= 2
@@ -32150,308 +32341,612 @@ milp_2LMH_(9)_2_9_2: chi_F(1,9) + chi_F(10,9) + chi_F(11,9) + chi_F(12,9)
  + chi_F(4,9) + chi_F(5,9) + chi_F(6,9) + chi_F(7,9) + chi_F(8,9) + chi_F(9,9)
  - delta_chi_F(9) >= 0
 milp_2LMH_std_100_0: x_hat0(100) = 0
+milp_2LMH_std_100_1: x_hat1(100) = 0
 milp_2LMH_std_101_0: x_hat0(101) = 0
+milp_2LMH_std_101_1: x_hat1(101) = 0
 milp_2LMH_std_102_0: x_hat0(102) = 0
+milp_2LMH_std_102_1: x_hat1(102) = 0
 milp_2LMH_std_103_0: x_hat0(103) = 0
+milp_2LMH_std_103_1: x_hat1(103) = 0
 milp_2LMH_std_104_0: x_hat0(104) = 0
+milp_2LMH_std_104_1: x_hat1(104) = 0
 milp_2LMH_std_105_0: x_hat0(105) = 0
+milp_2LMH_std_105_1: x_hat1(105) = 0
 milp_2LMH_std_106_0: x_hat0(106) = 0
+milp_2LMH_std_106_1: x_hat1(106) = 0
 milp_2LMH_std_107_0: x_hat0(107) = 0
+milp_2LMH_std_107_1: x_hat1(107) = 0
 milp_2LMH_std_108_0: x_hat0(108) = 0
+milp_2LMH_std_108_1: x_hat1(108) = 0
 milp_2LMH_std_109_0: x_hat0(109) = 0
+milp_2LMH_std_109_1: x_hat1(109) = 0
 milp_2LMH_std_10_1(nor)0: - 0.02 dg_int(2) + x_hat0(10) >= -2e-07
+milp_2LMH_std_10_1(nor)1: - 0.02 dg_int(2) + x_hat1(10) >= -2e-07
 milp_2LMH_std_10_2(nor)0: - 0.02 dg_int(2) + x_hat0(10) <= 2e-07
+milp_2LMH_std_10_2(nor)1: - 0.02 dg_int(2) + x_hat1(10) <= 2e-07
 milp_2LMH_std_110_0: x_hat0(110) = 0
+milp_2LMH_std_110_1: x_hat1(110) = 0
 milp_2LMH_std_111_0: x_hat0(111) = 0
+milp_2LMH_std_111_1: x_hat1(111) = 0
 milp_2LMH_std_112_0: x_hat0(112) = 0
+milp_2LMH_std_112_1: x_hat1(112) = 0
 milp_2LMH_std_113_0: x_hat0(113) = 0
+milp_2LMH_std_113_1: x_hat1(113) = 0
 milp_2LMH_std_114_0: x_hat0(114) = 0
+milp_2LMH_std_114_1: x_hat1(114) = 0
 milp_2LMH_std_115_0: x_hat0(115) = 0
+milp_2LMH_std_115_1: x_hat1(115) = 0
 milp_2LMH_std_116_0: x_hat0(116) = 0
+milp_2LMH_std_116_1: x_hat1(116) = 0
 milp_2LMH_std_117_0: x_hat0(117) = 0
+milp_2LMH_std_117_1: x_hat1(117) = 0
 milp_2LMH_std_118_0: x_hat0(118) = 0
+milp_2LMH_std_118_1: x_hat1(118) = 0
 milp_2LMH_std_119_0: x_hat0(119) = 0
+milp_2LMH_std_119_1: x_hat1(119) = 0
 milp_2LMH_std_11_1(nor)0: - 0.1 dg_int(3) + x_hat0(11) >= -1e-06
+milp_2LMH_std_11_1(nor)1: - 0.1 dg_int(3) + x_hat1(11) >= -1e-06
 milp_2LMH_std_11_2(nor)0: - 0.1 dg_int(3) + x_hat0(11) <= 1e-06
+milp_2LMH_std_11_2(nor)1: - 0.1 dg_int(3) + x_hat1(11) <= 1e-06
 milp_2LMH_std_120_0: x_hat0(120) = 0
+milp_2LMH_std_120_1: x_hat1(120) = 0
 milp_2LMH_std_121_0: x_hat0(121) = 0
+milp_2LMH_std_121_1: x_hat1(121) = 0
 milp_2LMH_std_122_0: x_hat0(122) = 0
+milp_2LMH_std_122_1: x_hat1(122) = 0
 milp_2LMH_std_123_0: x_hat0(123) = 0
+milp_2LMH_std_123_1: x_hat1(123) = 0
 milp_2LMH_std_124_0: x_hat0(124) = 0
+milp_2LMH_std_124_1: x_hat1(124) = 0
 milp_2LMH_std_125_0: x_hat0(125) = 0
+milp_2LMH_std_125_1: x_hat1(125) = 0
 milp_2LMH_std_126_1(nor)0: - fc(21) + x_hat0(126) >= -1e-05
+milp_2LMH_std_126_1(nor)1: - fc(21) + x_hat1(126) >= -1e-05
 milp_2LMH_std_126_2(nor)0: - fc(21) + x_hat0(126) <= 1e-05
+milp_2LMH_std_126_2(nor)1: - fc(21) + x_hat1(126) <= 1e-05
 milp_2LMH_std_127_0: x_hat0(127) = 0
+milp_2LMH_std_127_1: x_hat1(127) = 0
 milp_2LMH_std_128_0: x_hat0(128) = 0
+milp_2LMH_std_128_1: x_hat1(128) = 0
 milp_2LMH_std_129_0: x_hat0(129) = 0
+milp_2LMH_std_129_1: x_hat1(129) = 0
 milp_2LMH_std_12_1(nor)0: - dg_int(4) + x_hat0(12) >= -1e-05
+milp_2LMH_std_12_1(nor)1: - dg_int(4) + x_hat1(12) >= -1e-05
 milp_2LMH_std_12_2(nor)0: - dg_int(4) + x_hat0(12) <= 1e-05
+milp_2LMH_std_12_2(nor)1: - dg_int(4) + x_hat1(12) <= 1e-05
 milp_2LMH_std_130_0: x_hat0(130) = 0
+milp_2LMH_std_130_1: x_hat1(130) = 0
 milp_2LMH_std_131_0: x_hat0(131) = 0
+milp_2LMH_std_131_1: x_hat1(131) = 0
 milp_2LMH_std_132_0: x_hat0(132) = 0
+milp_2LMH_std_132_1: x_hat1(132) = 0
 milp_2LMH_std_133_0: x_hat0(133) = 0
+milp_2LMH_std_133_1: x_hat1(133) = 0
 milp_2LMH_std_134_0: x_hat0(134) = 0
+milp_2LMH_std_134_1: x_hat1(134) = 0
 milp_2LMH_std_135_0: x_hat0(135) = 0
+milp_2LMH_std_135_1: x_hat1(135) = 0
 milp_2LMH_std_136_0: x_hat0(136) = 0
+milp_2LMH_std_136_1: x_hat1(136) = 0
 milp_2LMH_std_137_0: x_hat0(137) = 0
+milp_2LMH_std_137_1: x_hat1(137) = 0
 milp_2LMH_std_138_0: x_hat0(138) = 0
+milp_2LMH_std_138_1: x_hat1(138) = 0
 milp_2LMH_std_139_0: x_hat0(139) = 0
+milp_2LMH_std_139_1: x_hat1(139) = 0
 milp_2LMH_std_13_1(nor)0: - 0.111111111111 bd_int(2) + x_hat0(13)
+ >= -1.11111111111e-06
+milp_2LMH_std_13_1(nor)1: - 0.111111111111 bd_int(2) + x_hat1(13)
  >= -1.11111111111e-06
 milp_2LMH_std_13_2(nor)0: - 0.111111111111 bd_int(2) + x_hat0(13)
  <= 1.11111111111e-06
+milp_2LMH_std_13_2(nor)1: - 0.111111111111 bd_int(2) + x_hat1(13)
+ <= 1.11111111111e-06
 milp_2LMH_std_140_0: x_hat0(140) = 0
+milp_2LMH_std_140_1: x_hat1(140) = 0
 milp_2LMH_std_141_0: x_hat0(141) = 0
+milp_2LMH_std_141_1: x_hat1(141) = 0
 milp_2LMH_std_142_0: x_hat0(142) = 0
+milp_2LMH_std_142_1: x_hat1(142) = 0
 milp_2LMH_std_143_0: x_hat0(143) = 0
+milp_2LMH_std_143_1: x_hat1(143) = 0
 milp_2LMH_std_144_0: x_hat0(144) = 0
+milp_2LMH_std_144_1: x_hat1(144) = 0
 milp_2LMH_std_145_0: x_hat0(145) = 0
+milp_2LMH_std_145_1: x_hat1(145) = 0
 milp_2LMH_std_146_0: x_hat0(146) = 0
+milp_2LMH_std_146_1: x_hat1(146) = 0
 milp_2LMH_std_147_0: x_hat0(147) = 0
+milp_2LMH_std_147_1: x_hat1(147) = 0
 milp_2LMH_std_148_0: x_hat0(148) = 0
+milp_2LMH_std_148_1: x_hat1(148) = 0
 milp_2LMH_std_149_0: x_hat0(149) = 0
+milp_2LMH_std_149_1: x_hat1(149) = 0
 milp_2LMH_std_14_1(nor)0: x_hat0(14) = 0
+milp_2LMH_std_14_1(nor)1: x_hat1(14) = 0
 milp_2LMH_std_150_0: x_hat0(150) = 0
+milp_2LMH_std_150_1: x_hat1(150) = 0
 milp_2LMH_std_151_0: x_hat0(151) = 0
+milp_2LMH_std_151_1: x_hat1(151) = 0
 milp_2LMH_std_152_0: x_hat0(152) = 0
+milp_2LMH_std_152_1: x_hat1(152) = 0
 milp_2LMH_std_153_0: x_hat0(153) = 0
+milp_2LMH_std_153_1: x_hat1(153) = 0
 milp_2LMH_std_154_1(nor)0: - fc(28) + x_hat0(154) >= -1e-05
+milp_2LMH_std_154_1(nor)1: - fc(28) + x_hat1(154) >= -1e-05
 milp_2LMH_std_154_2(nor)0: - fc(28) + x_hat0(154) <= 1e-05
+milp_2LMH_std_154_2(nor)1: - fc(28) + x_hat1(154) <= 1e-05
 milp_2LMH_std_155_0: x_hat0(155) = 0
+milp_2LMH_std_155_1: x_hat1(155) = 0
 milp_2LMH_std_156_0: x_hat0(156) = 0
+milp_2LMH_std_156_1: x_hat1(156) = 0
 milp_2LMH_std_157_0: x_hat0(157) = 0
+milp_2LMH_std_157_1: x_hat1(157) = 0
 milp_2LMH_std_158_0: x_hat0(158) = 0
+milp_2LMH_std_158_1: x_hat1(158) = 0
 milp_2LMH_std_159_0: x_hat0(159) = 0
+milp_2LMH_std_159_1: x_hat1(159) = 0
 milp_2LMH_std_15_1(nor)0: - 0.0196078431373 na_int(C4) + x_hat0(15)
+ >= -1.96078431373e-07
+milp_2LMH_std_15_1(nor)1: - 0.0196078431373 na_int(C4) + x_hat1(15)
  >= -1.96078431373e-07
 milp_2LMH_std_15_2(nor)0: - 0.0196078431373 na_int(C4) + x_hat0(15)
  <= 1.96078431373e-07
+milp_2LMH_std_15_2(nor)1: - 0.0196078431373 na_int(C4) + x_hat1(15)
+ <= 1.96078431373e-07
 milp_2LMH_std_160_0: x_hat0(160) = 0
+milp_2LMH_std_160_1: x_hat1(160) = 0
 milp_2LMH_std_161_0: x_hat0(161) = 0
+milp_2LMH_std_161_1: x_hat1(161) = 0
 milp_2LMH_std_162_0: x_hat0(162) = 0
+milp_2LMH_std_162_1: x_hat1(162) = 0
 milp_2LMH_std_163_0: x_hat0(163) = 0
+milp_2LMH_std_163_1: x_hat1(163) = 0
 milp_2LMH_std_164_1(nor)0: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat0(164)
+ >= -2.5e-06
+milp_2LMH_std_164_1(nor)1: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat1(164)
  >= -2.5e-06
 milp_2LMH_std_164_2(nor)0: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat0(164)
  <= 2.5e-06
+milp_2LMH_std_164_2(nor)1: - 0.25 ac_lf(('C4',_'C4',_1)) + x_hat1(164)
+ <= 2.5e-06
 milp_2LMH_std_165_1(nor)0: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat0(165)
  >= -5e-06
+milp_2LMH_std_165_1(nor)1: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat1(165)
+ >= -5e-06
 milp_2LMH_std_165_2(nor)0: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat0(165) <= 5e-06
+milp_2LMH_std_165_2(nor)1: - 0.5 ac_lf(('C4',_'C4',_2)) + x_hat1(165) <= 5e-06
 milp_2LMH_std_166_1(nor)0: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat0(166)
  >= -5e-06
+milp_2LMH_std_166_1(nor)1: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat1(166)
+ >= -5e-06
 milp_2LMH_std_166_2(nor)0: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat0(166) <= 5e-06
+milp_2LMH_std_166_2(nor)1: - 0.5 ac_lf(('C4',_'N3',_1)) + x_hat1(166) <= 5e-06
 milp_2LMH_std_167_1(nor)0: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat0(167)
  >= -5e-06
+milp_2LMH_std_167_1(nor)1: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat1(167)
+ >= -5e-06
 milp_2LMH_std_167_2(nor)0: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat0(167) <= 5e-06
+milp_2LMH_std_167_2(nor)1: - 0.5 ac_lf(('C4',_'O2',_1)) + x_hat1(167) <= 5e-06
 milp_2LMH_std_168_0: x_hat0(168) = 0
+milp_2LMH_std_168_1: x_hat1(168) = 0
 milp_2LMH_std_169_1(nor)0: - ac_lf(('N3',_'C4',_1)) + x_hat0(169) >= -1e-05
+milp_2LMH_std_169_1(nor)1: - ac_lf(('N3',_'C4',_1)) + x_hat1(169) >= -1e-05
 milp_2LMH_std_169_2(nor)0: - ac_lf(('N3',_'C4',_1)) + x_hat0(169) <= 1e-05
+milp_2LMH_std_169_2(nor)1: - ac_lf(('N3',_'C4',_1)) + x_hat1(169) <= 1e-05
 milp_2LMH_std_16_1(nor)0: - 0.25 na_int(N3) + x_hat0(16) >= -2.5e-06
+milp_2LMH_std_16_1(nor)1: - 0.25 na_int(N3) + x_hat1(16) >= -2.5e-06
 milp_2LMH_std_16_2(nor)0: - 0.25 na_int(N3) + x_hat0(16) <= 2.5e-06
+milp_2LMH_std_16_2(nor)1: - 0.25 na_int(N3) + x_hat1(16) <= 2.5e-06
 milp_2LMH_std_170_1(nor)0: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat0(170)
  >= -5e-06
+milp_2LMH_std_170_1(nor)1: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat1(170)
+ >= -5e-06
 milp_2LMH_std_170_2(nor)0: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat0(170) <= 5e-06
+milp_2LMH_std_170_2(nor)1: - 0.5 ac_lf(('N3',_'C4',_3)) + x_hat1(170) <= 5e-06
 milp_2LMH_std_171_1(nor)0: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat0(171)
+ >= -1.25e-06
+milp_2LMH_std_171_1(nor)1: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat1(171)
  >= -1.25e-06
 milp_2LMH_std_171_2(nor)0: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat0(171)
  <= 1.25e-06
+milp_2LMH_std_171_2(nor)1: - 0.125 ac_lf(('O2',_'C4',_1)) + x_hat1(171)
+ <= 1.25e-06
 milp_2LMH_std_172_1(nor)0: - 0.333333333333 ac_lf(('O2',_'C4',_2))
  + x_hat0(172) >= -3.33333333333e-06
+milp_2LMH_std_172_1(nor)1: - 0.333333333333 ac_lf(('O2',_'C4',_2))
+ + x_hat1(172) >= -3.33333333333e-06
 milp_2LMH_std_172_2(nor)0: - 0.333333333333 ac_lf(('O2',_'C4',_2))
  + x_hat0(172) <= 3.33333333333e-06
+milp_2LMH_std_172_2(nor)1: - 0.333333333333 ac_lf(('O2',_'C4',_2))
+ + x_hat1(172) <= 3.33333333333e-06
 milp_2LMH_std_173_1(nor)0: - 0.333333333333 ac_lf(('O2',_'N3',_1))
  + x_hat0(173) >= -3.33333333333e-06
+milp_2LMH_std_173_1(nor)1: - 0.333333333333 ac_lf(('O2',_'N3',_1))
+ + x_hat1(173) >= -3.33333333333e-06
 milp_2LMH_std_173_2(nor)0: - 0.333333333333 ac_lf(('O2',_'N3',_1))
  + x_hat0(173) <= 3.33333333333e-06
+milp_2LMH_std_173_2(nor)1: - 0.333333333333 ac_lf(('O2',_'N3',_1))
+ + x_hat1(173) <= 3.33333333333e-06
 milp_2LMH_std_174_1(nor)0: - 0.333333333333 ac_lf(('O2',_'N3',_2))
  + x_hat0(174) >= -3.33333333333e-06
+milp_2LMH_std_174_1(nor)1: - 0.333333333333 ac_lf(('O2',_'N3',_2))
+ + x_hat1(174) >= -3.33333333333e-06
 milp_2LMH_std_174_2(nor)0: - 0.333333333333 ac_lf(('O2',_'N3',_2))
  + x_hat0(174) <= 3.33333333333e-06
+milp_2LMH_std_174_2(nor)1: - 0.333333333333 ac_lf(('O2',_'N3',_2))
+ + x_hat1(174) <= 3.33333333333e-06
 milp_2LMH_std_175_1(nor)0: - ac_lf(('O2',_'O2',_1)) + x_hat0(175) >= -1e-05
+milp_2LMH_std_175_1(nor)1: - ac_lf(('O2',_'O2',_1)) + x_hat1(175) >= -1e-05
 milp_2LMH_std_175_2(nor)0: - ac_lf(('O2',_'O2',_1)) + x_hat0(175) <= 1e-05
+milp_2LMH_std_175_2(nor)1: - ac_lf(('O2',_'O2',_1)) + x_hat1(175) <= 1e-05
 milp_2LMH_std_176_1(nor)0: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat0(176)
  >= -5e-06
+milp_2LMH_std_176_1(nor)1: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat1(176)
+ >= -5e-06
 milp_2LMH_std_176_2(nor)0: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat0(176) <= 5e-06
+milp_2LMH_std_176_2(nor)1: - 0.5 ac_lf(('O2',_'S6',_2)) + x_hat1(176) <= 5e-06
 milp_2LMH_std_177_1(nor)0: - ac_lf(('S2',_'C4',_1)) + x_hat0(177) >= -1e-05
+milp_2LMH_std_177_1(nor)1: - ac_lf(('S2',_'C4',_1)) + x_hat1(177) >= -1e-05
 milp_2LMH_std_177_2(nor)0: - ac_lf(('S2',_'C4',_1)) + x_hat0(177) <= 1e-05
+milp_2LMH_std_177_2(nor)1: - ac_lf(('S2',_'C4',_1)) + x_hat1(177) <= 1e-05
 milp_2LMH_std_17_1(nor)0: - 0.25 na_int(O2) + x_hat0(17) >= -2.5e-06
+milp_2LMH_std_17_1(nor)1: - 0.25 na_int(O2) + x_hat1(17) >= -2.5e-06
 milp_2LMH_std_17_2(nor)0: - 0.25 na_int(O2) + x_hat0(17) <= 2.5e-06
+milp_2LMH_std_17_2(nor)1: - 0.25 na_int(O2) + x_hat1(17) <= 2.5e-06
 milp_2LMH_std_18_1(nor)0: - na_int(S2) + x_hat0(18) >= -1e-05
+milp_2LMH_std_18_1(nor)1: - na_int(S2) + x_hat1(18) >= -1e-05
 milp_2LMH_std_18_2(nor)0: - na_int(S2) + x_hat0(18) <= 1e-05
+milp_2LMH_std_18_2(nor)1: - na_int(S2) + x_hat1(18) <= 1e-05
 milp_2LMH_std_19_1(nor)0: - na_int(S6) + x_hat0(19) >= -1e-05
+milp_2LMH_std_19_1(nor)1: - na_int(S6) + x_hat1(19) >= -1e-05
 milp_2LMH_std_19_2(nor)0: - na_int(S6) + x_hat0(19) <= 1e-05
+milp_2LMH_std_19_2(nor)1: - na_int(S6) + x_hat1(19) <= 1e-05
 milp_2LMH_std_1_1(nor)0: - 0.0169491525424 n_G + x_hat0(1) >= -0.067796779661
+milp_2LMH_std_1_1(nor)1: - 0.0169491525424 n_G + x_hat1(1) >= -0.067796779661
 milp_2LMH_std_1_2(nor)0: - 0.0169491525424 n_G + x_hat0(1) <= -0.067796440678
+milp_2LMH_std_1_2(nor)1: - 0.0169491525424 n_G + x_hat1(1) <= -0.067796440678
 milp_2LMH_std_20_1(nor)0: - 0.125 na_ex(C4) + x_hat0(20) >= -1.25e-06
+milp_2LMH_std_20_1(nor)1: - 0.125 na_ex(C4) + x_hat1(20) >= -1.25e-06
 milp_2LMH_std_20_2(nor)0: - 0.125 na_ex(C4) + x_hat0(20) <= 1.25e-06
+milp_2LMH_std_20_2(nor)1: - 0.125 na_ex(C4) + x_hat1(20) <= 1.25e-06
 milp_2LMH_std_21_1(nor)0: x_hat0(21) >= -1.66666666667e-06
+milp_2LMH_std_21_1(nor)1: x_hat1(21) >= -1.66666666667e-06
 milp_2LMH_std_21_2(nor)0: x_hat0(21) <= 1.66666666667e-06
+milp_2LMH_std_21_2(nor)1: x_hat1(21) <= 1.66666666667e-06
 milp_2LMH_std_22_1(nor)0: - 0.333333333333 na_ex(N3) + x_hat0(22)
+ >= -3.33333333333e-06
+milp_2LMH_std_22_1(nor)1: - 0.333333333333 na_ex(N3) + x_hat1(22)
  >= -3.33333333333e-06
 milp_2LMH_std_22_2(nor)0: - 0.333333333333 na_ex(N3) + x_hat0(22)
  <= 3.33333333333e-06
+milp_2LMH_std_22_2(nor)1: - 0.333333333333 na_ex(N3) + x_hat1(22)
+ <= 3.33333333333e-06
 milp_2LMH_std_23_1(nor)0: - 0.125 na_ex(O2) + x_hat0(23) >= -1.25e-06
+milp_2LMH_std_23_1(nor)1: - 0.125 na_ex(O2) + x_hat1(23) >= -1.25e-06
 milp_2LMH_std_23_2(nor)0: - 0.125 na_ex(O2) + x_hat0(23) <= 1.25e-06
+milp_2LMH_std_23_2(nor)1: - 0.125 na_ex(O2) + x_hat1(23) <= 1.25e-06
 milp_2LMH_std_24_1(nor)0: x_hat0(24) >= -1e-05
+milp_2LMH_std_24_1(nor)1: x_hat1(24) >= -1e-05
 milp_2LMH_std_24_2(nor)0: x_hat0(24) <= 1e-05
+milp_2LMH_std_24_2(nor)1: x_hat1(24) <= 1e-05
 milp_2LMH_std_25_1(nor)0: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
  + x_hat0(25) >= -2.5641025641e-07
+milp_2LMH_std_25_1(nor)1: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
+ + x_hat1(25) >= -2.5641025641e-07
 milp_2LMH_std_25_2(nor)0: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
  + x_hat0(25) <= 2.5641025641e-07
+milp_2LMH_std_25_2(nor)1: - 0.025641025641 ec_int(('C4',_2),_('C4',_2),_1)
+ + x_hat1(25) <= 2.5641025641e-07
 milp_2LMH_std_26_1(nor)0: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat0(26)
+ >= -2e-06
+milp_2LMH_std_26_1(nor)1: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat1(26)
  >= -2e-06
 milp_2LMH_std_26_2(nor)0: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat0(26)
  <= 2e-06
+milp_2LMH_std_26_2(nor)1: - 0.2 ec_int(('C4',_2),_('C4',_2),_2) + x_hat1(26)
+ <= 2e-06
 milp_2LMH_std_27_1(nor)0: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
  + x_hat0(27) >= -1.42857142857e-06
+milp_2LMH_std_27_1(nor)1: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
+ + x_hat1(27) >= -1.42857142857e-06
 milp_2LMH_std_27_2(nor)0: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
  + x_hat0(27) <= 1.42857142857e-06
+milp_2LMH_std_27_2(nor)1: - 0.142857142857 ec_int(('C4',_2),_('C4',_3),_1)
+ + x_hat1(27) <= 1.42857142857e-06
 milp_2LMH_std_28_1(nor)0: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat0(28)
+ >= -2.5e-06
+milp_2LMH_std_28_1(nor)1: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat1(28)
  >= -2.5e-06
 milp_2LMH_std_28_2(nor)0: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat0(28)
  <= 2.5e-06
+milp_2LMH_std_28_2(nor)1: - 0.25 ec_int(('C4',_2),_('C4',_3),_2) + x_hat1(28)
+ <= 2.5e-06
 milp_2LMH_std_29_1(nor)0: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat0(29)
+ >= -5e-06
+milp_2LMH_std_29_1(nor)1: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat1(29)
  >= -5e-06
 milp_2LMH_std_29_2(nor)0: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat0(29)
  <= 5e-06
+milp_2LMH_std_29_2(nor)1: - 0.5 ec_int(('C4',_2),_('C4',_4),_1) + x_hat1(29)
+ <= 5e-06
 milp_2LMH_std_2_1(nor)0: - 0.142857142857 rank_G + x_hat0(2)
+ >= -1.42857142857e-06
+milp_2LMH_std_2_1(nor)1: - 0.142857142857 rank_G + x_hat1(2)
  >= -1.42857142857e-06
 milp_2LMH_std_2_2(nor)0: - 0.142857142857 rank_G + x_hat0(2)
  <= 1.42857142857e-06
+milp_2LMH_std_2_2(nor)1: - 0.142857142857 rank_G + x_hat1(2)
+ <= 1.42857142857e-06
 milp_2LMH_std_30_1(nor)0: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat0(30)
+ >= -5e-06
+milp_2LMH_std_30_1(nor)1: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat1(30)
  >= -5e-06
 milp_2LMH_std_30_2(nor)0: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat0(30)
  <= 5e-06
+milp_2LMH_std_30_2(nor)1: - 0.5 ec_int(('C4',_2),_('N3',_2),_1) + x_hat1(30)
+ <= 5e-06
 milp_2LMH_std_31_0: x_hat0(31) = 0
+milp_2LMH_std_31_1: x_hat1(31) = 0
 milp_2LMH_std_32_0: x_hat0(32) = 0
+milp_2LMH_std_32_1: x_hat1(32) = 0
 milp_2LMH_std_33_1(nor)0: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
  + x_hat0(33) >= -1.66666666667e-06
+milp_2LMH_std_33_1(nor)1: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
+ + x_hat1(33) >= -1.66666666667e-06
 milp_2LMH_std_33_2(nor)0: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
  + x_hat0(33) <= 1.66666666667e-06
+milp_2LMH_std_33_2(nor)1: - 0.166666666667 ec_int(('C4',_2),_('O2',_2),_1)
+ + x_hat1(33) <= 1.66666666667e-06
 milp_2LMH_std_34_0: x_hat0(34) = 0
+milp_2LMH_std_34_1: x_hat1(34) = 0
 milp_2LMH_std_35_0: x_hat0(35) = 0
+milp_2LMH_std_35_1: x_hat1(35) = 0
 milp_2LMH_std_36_1(nor)0: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
  + x_hat0(36) >= -1.66666666667e-06
+milp_2LMH_std_36_1(nor)1: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
+ + x_hat1(36) >= -1.66666666667e-06
 milp_2LMH_std_36_2(nor)0: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
  + x_hat0(36) <= 1.66666666667e-06
+milp_2LMH_std_36_2(nor)1: - 0.166666666667 ec_int(('C4',_3),_('C4',_3),_1)
+ + x_hat1(36) <= 1.66666666667e-06
 milp_2LMH_std_37_1(nor)0: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
  + x_hat0(37) >= -3.33333333333e-06
+milp_2LMH_std_37_1(nor)1: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
+ + x_hat1(37) >= -3.33333333333e-06
 milp_2LMH_std_37_2(nor)0: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
  + x_hat0(37) <= 3.33333333333e-06
+milp_2LMH_std_37_2(nor)1: - 0.333333333333 ec_int(('C4',_3),_('C4',_3),_2)
+ + x_hat1(37) <= 3.33333333333e-06
 milp_2LMH_std_38_1(nor)0: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
  + x_hat0(38) >= -3.33333333333e-06
+milp_2LMH_std_38_1(nor)1: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
+ + x_hat1(38) >= -3.33333333333e-06
 milp_2LMH_std_38_2(nor)0: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
  + x_hat0(38) <= 3.33333333333e-06
+milp_2LMH_std_38_2(nor)1: - 0.333333333333 ec_int(('C4',_3),_('C4',_4),_1)
+ + x_hat1(38) <= 3.33333333333e-06
 milp_2LMH_std_39_1(nor)0: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat0(39)
+ >= -2.5e-06
+milp_2LMH_std_39_1(nor)1: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat1(39)
  >= -2.5e-06
 milp_2LMH_std_39_2(nor)0: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat0(39)
  <= 2.5e-06
+milp_2LMH_std_39_2(nor)1: - 0.25 ec_int(('C4',_3),_('N3',_2),_1) + x_hat1(39)
+ <= 2.5e-06
 milp_2LMH_std_3_1(nor)0: - 0.0185185185185 n_G_int + x_hat0(3)
+ >= -1.85185185185e-07
+milp_2LMH_std_3_1(nor)1: - 0.0185185185185 n_G_int + x_hat1(3)
  >= -1.85185185185e-07
 milp_2LMH_std_3_2(nor)0: - 0.0185185185185 n_G_int + x_hat0(3)
  <= 1.85185185185e-07
+milp_2LMH_std_3_2(nor)1: - 0.0185185185185 n_G_int + x_hat1(3)
+ <= 1.85185185185e-07
 milp_2LMH_std_40_1(nor)0: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat0(40)
+ >= -2.5e-06
+milp_2LMH_std_40_1(nor)1: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat1(40)
  >= -2.5e-06
 milp_2LMH_std_40_2(nor)0: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat0(40)
  <= 2.5e-06
+milp_2LMH_std_40_2(nor)1: - 0.25 ec_int(('C4',_3),_('N3',_3),_1) + x_hat1(40)
+ <= 2.5e-06
 milp_2LMH_std_41_1(nor)0: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat0(41)
+ >= -1.25e-06
+milp_2LMH_std_41_1(nor)1: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat1(41)
  >= -1.25e-06
 milp_2LMH_std_41_2(nor)0: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat0(41)
  <= 1.25e-06
+milp_2LMH_std_41_2(nor)1: - 0.125 ec_int(('C4',_3),_('O2',_2),_1) + x_hat1(41)
+ <= 1.25e-06
 milp_2LMH_std_42_0: x_hat0(42) = 0
+milp_2LMH_std_42_1: x_hat1(42) = 0
 milp_2LMH_std_43_0: x_hat0(43) = 0
+milp_2LMH_std_43_1: x_hat1(43) = 0
 milp_2LMH_std_44_0: x_hat0(44) = 0
+milp_2LMH_std_44_1: x_hat1(44) = 0
 milp_2LMH_std_45_0: x_hat0(45) = 0
+milp_2LMH_std_45_1: x_hat1(45) = 0
 milp_2LMH_std_46_1(nor)0: - 0.0714285714286 fc(6) + x_hat0(46)
+ >= -7.14285714286e-07
+milp_2LMH_std_46_1(nor)1: - 0.0714285714286 fc(6) + x_hat1(46)
  >= -7.14285714286e-07
 milp_2LMH_std_46_2(nor)0: - 0.0714285714286 fc(6) + x_hat0(46)
  <= 7.14285714286e-07
+milp_2LMH_std_46_2(nor)1: - 0.0714285714286 fc(6) + x_hat1(46)
+ <= 7.14285714286e-07
 milp_2LMH_std_47_1(nor)0: - 0.0263157894737 fc(11) + x_hat0(47)
+ >= -2.63157894737e-07
+milp_2LMH_std_47_1(nor)1: - 0.0263157894737 fc(11) + x_hat1(47)
  >= -2.63157894737e-07
 milp_2LMH_std_47_2(nor)0: - 0.0263157894737 fc(11) + x_hat0(47)
  <= 2.63157894737e-07
+milp_2LMH_std_47_2(nor)1: - 0.0263157894737 fc(11) + x_hat1(47)
+ <= 2.63157894737e-07
 milp_2LMH_std_48_1(nor)0: - 0.166666666667 fc(1) + x_hat0(48)
+ >= -1.66666666667e-06
+milp_2LMH_std_48_1(nor)1: - 0.166666666667 fc(1) + x_hat1(48)
  >= -1.66666666667e-06
 milp_2LMH_std_48_2(nor)0: - 0.166666666667 fc(1) + x_hat0(48)
  <= 1.66666666667e-06
+milp_2LMH_std_48_2(nor)1: - 0.166666666667 fc(1) + x_hat1(48)
+ <= 1.66666666667e-06
 milp_2LMH_std_49_0: x_hat0(49) = 0
+milp_2LMH_std_49_1: x_hat1(49) = 0
 milp_2LMH_std_4_1_mass0: - 0.00511322207644 mass_n + x_hat0(4)
+ >= -0.211833683248
+milp_2LMH_std_4_1_mass1: - 0.00511322207644 mass_n + x_hat1(4)
  >= -0.211833683248
 milp_2LMH_std_4_2_mass0: - 0.00511322207644 mass_n + x_hat0(4)
  <= -0.211833580984
+milp_2LMH_std_4_2_mass1: - 0.00511322207644 mass_n + x_hat1(4)
+ <= -0.211833580984
 milp_2LMH_std_50_1(nor)0: - 0.25 fc(2) + x_hat0(50) >= -2.5e-06
+milp_2LMH_std_50_1(nor)1: - 0.25 fc(2) + x_hat1(50) >= -2.5e-06
 milp_2LMH_std_50_2(nor)0: - 0.25 fc(2) + x_hat0(50) <= 2.5e-06
+milp_2LMH_std_50_2(nor)1: - 0.25 fc(2) + x_hat1(50) <= 2.5e-06
 milp_2LMH_std_51_1(nor)0: - 0.333333333333 fc(18) + x_hat0(51)
+ >= -3.33333333333e-06
+milp_2LMH_std_51_1(nor)1: - 0.333333333333 fc(18) + x_hat1(51)
  >= -3.33333333333e-06
 milp_2LMH_std_51_2(nor)0: - 0.333333333333 fc(18) + x_hat0(51)
  <= 3.33333333333e-06
+milp_2LMH_std_51_2(nor)1: - 0.333333333333 fc(18) + x_hat1(51)
+ <= 3.33333333333e-06
 milp_2LMH_std_52_0: x_hat0(52) = 0
+milp_2LMH_std_52_1: x_hat1(52) = 0
 milp_2LMH_std_53_0: x_hat0(53) = 0
+milp_2LMH_std_53_1: x_hat1(53) = 0
 milp_2LMH_std_54_0: x_hat0(54) = 0
+milp_2LMH_std_54_1: x_hat1(54) = 0
 milp_2LMH_std_55_0: x_hat0(55) = 0
+milp_2LMH_std_55_1: x_hat1(55) = 0
 milp_2LMH_std_56_0: x_hat0(56) = 0
+milp_2LMH_std_56_1: x_hat1(56) = 0
 milp_2LMH_std_57_0: x_hat0(57) = 0
+milp_2LMH_std_57_1: x_hat1(57) = 0
 milp_2LMH_std_58_0: x_hat0(58) = 0
+milp_2LMH_std_58_1: x_hat1(58) = 0
 milp_2LMH_std_59_1(nor)0: - 0.25 fc(15) + x_hat0(59) >= -2.5e-06
+milp_2LMH_std_59_1(nor)1: - 0.25 fc(15) + x_hat1(59) >= -2.5e-06
 milp_2LMH_std_59_2(nor)0: - 0.25 fc(15) + x_hat0(59) <= 2.5e-06
+milp_2LMH_std_59_2(nor)1: - 0.25 fc(15) + x_hat1(59) <= 2.5e-06
 milp_2LMH_std_5_1(nor)0: x_hat0(5) = 0
+milp_2LMH_std_5_1(nor)1: x_hat1(5) = 0
 milp_2LMH_std_60_1(nor)0: - 0.5 fc(8) + x_hat0(60) >= -5e-06
+milp_2LMH_std_60_1(nor)1: - 0.5 fc(8) + x_hat1(60) >= -5e-06
 milp_2LMH_std_60_2(nor)0: - 0.5 fc(8) + x_hat0(60) <= 5e-06
+milp_2LMH_std_60_2(nor)1: - 0.5 fc(8) + x_hat1(60) <= 5e-06
 milp_2LMH_std_61_1(nor)0: - 0.25 fc(3) + x_hat0(61) >= -2.5e-06
+milp_2LMH_std_61_1(nor)1: - 0.25 fc(3) + x_hat1(61) >= -2.5e-06
 milp_2LMH_std_61_2(nor)0: - 0.25 fc(3) + x_hat0(61) <= 2.5e-06
+milp_2LMH_std_61_2(nor)1: - 0.25 fc(3) + x_hat1(61) <= 2.5e-06
 milp_2LMH_std_62_0: x_hat0(62) = 0
+milp_2LMH_std_62_1: x_hat1(62) = 0
 milp_2LMH_std_63_1(nor)0: - 0.5 fc(16) + x_hat0(63) >= -5e-06
+milp_2LMH_std_63_1(nor)1: - 0.5 fc(16) + x_hat1(63) >= -5e-06
 milp_2LMH_std_63_2(nor)0: - 0.5 fc(16) + x_hat0(63) <= 5e-06
+milp_2LMH_std_63_2(nor)1: - 0.5 fc(16) + x_hat1(63) <= 5e-06
 milp_2LMH_std_64_0: x_hat0(64) = 0
+milp_2LMH_std_64_1: x_hat1(64) = 0
 milp_2LMH_std_65_1(nor)0: - fc(20) + x_hat0(65) >= -1e-05
+milp_2LMH_std_65_1(nor)1: - fc(20) + x_hat1(65) >= -1e-05
 milp_2LMH_std_65_2(nor)0: - fc(20) + x_hat0(65) <= 1e-05
+milp_2LMH_std_65_2(nor)1: - fc(20) + x_hat1(65) <= 1e-05
 milp_2LMH_std_66_0: x_hat0(66) = 0
+milp_2LMH_std_66_1: x_hat1(66) = 0
 milp_2LMH_std_67_0: x_hat0(67) = 0
+milp_2LMH_std_67_1: x_hat1(67) = 0
 milp_2LMH_std_68_0: x_hat0(68) = 0
+milp_2LMH_std_68_1: x_hat1(68) = 0
 milp_2LMH_std_69_0: x_hat0(69) = 0
+milp_2LMH_std_69_1: x_hat1(69) = 0
 milp_2LMH_std_6_1(nor)0: - 0.02 dg(2) + x_hat0(6) >= -2e-07
+milp_2LMH_std_6_1(nor)1: - 0.02 dg(2) + x_hat1(6) >= -2e-07
 milp_2LMH_std_6_2(nor)0: - 0.02 dg(2) + x_hat0(6) <= 2e-07
+milp_2LMH_std_6_2(nor)1: - 0.02 dg(2) + x_hat1(6) <= 2e-07
 milp_2LMH_std_70_0: x_hat0(70) = 0
+milp_2LMH_std_70_1: x_hat1(70) = 0
 milp_2LMH_std_71_0: x_hat0(71) = 0
+milp_2LMH_std_71_1: x_hat1(71) = 0
 milp_2LMH_std_72_0: x_hat0(72) = 0
+milp_2LMH_std_72_1: x_hat1(72) = 0
 milp_2LMH_std_73_0: x_hat0(73) = 0
+milp_2LMH_std_73_1: x_hat1(73) = 0
 milp_2LMH_std_74_0: x_hat0(74) = 0
+milp_2LMH_std_74_1: x_hat1(74) = 0
 milp_2LMH_std_75_0: x_hat0(75) = 0
+milp_2LMH_std_75_1: x_hat1(75) = 0
 milp_2LMH_std_76_0: x_hat0(76) = 0
+milp_2LMH_std_76_1: x_hat1(76) = 0
 milp_2LMH_std_77_0: x_hat0(77) = 0
+milp_2LMH_std_77_1: x_hat1(77) = 0
 milp_2LMH_std_78_0: x_hat0(78) = 0
+milp_2LMH_std_78_1: x_hat1(78) = 0
 milp_2LMH_std_79_0: x_hat0(79) = 0
+milp_2LMH_std_79_1: x_hat1(79) = 0
 milp_2LMH_std_7_1(nor)0: - 0.0769230769231 dg(3) + x_hat0(7)
+ >= -7.69230769231e-07
+milp_2LMH_std_7_1(nor)1: - 0.0769230769231 dg(3) + x_hat1(7)
  >= -7.69230769231e-07
 milp_2LMH_std_7_2(nor)0: - 0.0769230769231 dg(3) + x_hat0(7)
  <= 7.69230769231e-07
+milp_2LMH_std_7_2(nor)1: - 0.0769230769231 dg(3) + x_hat1(7)
+ <= 7.69230769231e-07
 milp_2LMH_std_80_0: x_hat0(80) = 0
+milp_2LMH_std_80_1: x_hat1(80) = 0
 milp_2LMH_std_81_0: x_hat0(81) = 0
+milp_2LMH_std_81_1: x_hat1(81) = 0
 milp_2LMH_std_82_1(nor)0: - fc(17) + x_hat0(82) >= -1e-05
+milp_2LMH_std_82_1(nor)1: - fc(17) + x_hat1(82) >= -1e-05
 milp_2LMH_std_82_2(nor)0: - fc(17) + x_hat0(82) <= 1e-05
+milp_2LMH_std_82_2(nor)1: - fc(17) + x_hat1(82) <= 1e-05
 milp_2LMH_std_83_0: x_hat0(83) = 0
+milp_2LMH_std_83_1: x_hat1(83) = 0
 milp_2LMH_std_84_1(nor)0: - fc(22) + x_hat0(84) >= -1e-05
+milp_2LMH_std_84_1(nor)1: - fc(22) + x_hat1(84) >= -1e-05
 milp_2LMH_std_84_2(nor)0: - fc(22) + x_hat0(84) <= 1e-05
+milp_2LMH_std_84_2(nor)1: - fc(22) + x_hat1(84) <= 1e-05
 milp_2LMH_std_85_0: x_hat0(85) = 0
+milp_2LMH_std_85_1: x_hat1(85) = 0
 milp_2LMH_std_86_0: x_hat0(86) = 0
+milp_2LMH_std_86_1: x_hat1(86) = 0
 milp_2LMH_std_87_0: x_hat0(87) = 0
+milp_2LMH_std_87_1: x_hat1(87) = 0
 milp_2LMH_std_88_0: x_hat0(88) = 0
+milp_2LMH_std_88_1: x_hat1(88) = 0
 milp_2LMH_std_89_0: x_hat0(89) = 0
+milp_2LMH_std_89_1: x_hat1(89) = 0
 milp_2LMH_std_8_1(nor)0: - dg(4) + x_hat0(8) >= -1e-05
+milp_2LMH_std_8_1(nor)1: - dg(4) + x_hat1(8) >= -1e-05
 milp_2LMH_std_8_2(nor)0: - dg(4) + x_hat0(8) <= 1e-05
+milp_2LMH_std_8_2(nor)1: - dg(4) + x_hat1(8) <= 1e-05
 milp_2LMH_std_90_0: x_hat0(90) = 0
+milp_2LMH_std_90_1: x_hat1(90) = 0
 milp_2LMH_std_91_0: x_hat0(91) = 0
+milp_2LMH_std_91_1: x_hat1(91) = 0
 milp_2LMH_std_92_0: x_hat0(92) = 0
+milp_2LMH_std_92_1: x_hat1(92) = 0
 milp_2LMH_std_93_0: x_hat0(93) = 0
+milp_2LMH_std_93_1: x_hat1(93) = 0
 milp_2LMH_std_94_0: x_hat0(94) = 0
+milp_2LMH_std_94_1: x_hat1(94) = 0
 milp_2LMH_std_95_0: x_hat0(95) = 0
+milp_2LMH_std_95_1: x_hat1(95) = 0
 milp_2LMH_std_96_0: x_hat0(96) = 0
+milp_2LMH_std_96_1: x_hat1(96) = 0
 milp_2LMH_std_97_0: x_hat0(97) = 0
+milp_2LMH_std_97_1: x_hat1(97) = 0
 milp_2LMH_std_98_0: x_hat0(98) = 0
+milp_2LMH_std_98_1: x_hat1(98) = 0
 milp_2LMH_std_99_0: x_hat0(99) = 0
+milp_2LMH_std_99_1: x_hat1(99) = 0
 milp_2LMH_std_9_1(nor)0: - 0.333333333333 dg_int(1) + x_hat0(9)
  >= -3.33333333333e-06
+milp_2LMH_std_9_1(nor)1: - 0.333333333333 dg_int(1) + x_hat1(9)
+ >= -3.33333333333e-06
 milp_2LMH_std_9_2(nor)0: - 0.333333333333 dg_int(1) + x_hat0(9)
+ <= 3.33333333333e-06
+milp_2LMH_std_9_2(nor)1: - 0.333333333333 dg_int(1) + x_hat1(9)
  <= 3.33333333333e-06
 milp_2LMM_(1)_rank: - e_C(7) + rank_G = 4
 milp_2LMM_ac_lf_('C4',_'C4',_1): - ac_lf(('C4',_'C4',_1)) + delta_fr_C(1,15)
@@ -33627,184 +34122,362 @@ Bounds
  0 <= Delta_ec_T_plus(7) <= 4
  0 <= Delta_ec_T_plus(8) <= 4
  0 <= Delta_ec_T_plus(9) <= 4
- LR_x_1 free
- LR_x_10 free
- LR_x_100 free
- LR_x_101 free
- LR_x_102 free
- LR_x_103 free
- LR_x_104 free
- LR_x_105 free
- LR_x_106 free
- LR_x_107 free
- LR_x_108 free
- LR_x_109 free
- LR_x_11 free
- LR_x_110 free
- LR_x_111 free
- LR_x_112 free
- LR_x_113 free
- LR_x_114 free
- LR_x_115 free
- LR_x_116 free
- LR_x_117 free
- LR_x_118 free
- LR_x_119 free
- LR_x_12 free
- LR_x_120 free
- LR_x_121 free
- LR_x_122 free
- LR_x_123 free
- LR_x_124 free
- LR_x_125 free
- LR_x_126 free
- LR_x_127 free
- LR_x_128 free
- LR_x_129 free
- LR_x_13 free
- LR_x_130 free
- LR_x_131 free
- LR_x_132 free
- LR_x_133 free
- LR_x_134 free
- LR_x_135 free
- LR_x_136 free
- LR_x_137 free
- LR_x_138 free
- LR_x_139 free
- LR_x_14 free
- LR_x_140 free
- LR_x_141 free
- LR_x_142 free
- LR_x_143 free
- LR_x_144 free
- LR_x_145 free
- LR_x_146 free
- LR_x_147 free
- LR_x_148 free
- LR_x_149 free
- LR_x_15 free
- LR_x_150 free
- LR_x_151 free
- LR_x_152 free
- LR_x_153 free
- LR_x_154 free
- LR_x_155 free
- LR_x_156 free
- LR_x_157 free
- LR_x_158 free
- LR_x_159 free
- LR_x_16 free
- LR_x_160 free
- LR_x_161 free
- LR_x_162 free
- LR_x_163 free
- LR_x_164 free
- LR_x_165 free
- LR_x_166 free
- LR_x_167 free
- LR_x_168 free
- LR_x_169 free
- LR_x_17 free
- LR_x_170 free
- LR_x_171 free
- LR_x_172 free
- LR_x_173 free
- LR_x_174 free
- LR_x_175 free
- LR_x_176 free
- LR_x_177 free
- LR_x_18 free
- LR_x_19 free
- LR_x_2 free
- LR_x_20 free
- LR_x_21 free
- LR_x_22 free
- LR_x_23 free
- LR_x_24 free
- LR_x_25 free
- LR_x_26 free
- LR_x_27 free
- LR_x_28 free
- LR_x_29 free
- LR_x_3 free
- LR_x_30 free
- LR_x_31 free
- LR_x_32 free
- LR_x_33 free
- LR_x_34 free
- LR_x_35 free
- LR_x_36 free
- LR_x_37 free
- LR_x_38 free
- LR_x_39 free
- LR_x_4 free
- LR_x_40 free
- LR_x_41 free
- LR_x_42 free
- LR_x_43 free
- LR_x_44 free
- LR_x_45 free
- LR_x_46 free
- LR_x_47 free
- LR_x_48 free
- LR_x_49 free
- LR_x_5 free
- LR_x_50 free
- LR_x_51 free
- LR_x_52 free
- LR_x_53 free
- LR_x_54 free
- LR_x_55 free
- LR_x_56 free
- LR_x_57 free
- LR_x_58 free
- LR_x_59 free
- LR_x_6 free
- LR_x_60 free
- LR_x_61 free
- LR_x_62 free
- LR_x_63 free
- LR_x_64 free
- LR_x_65 free
- LR_x_66 free
- LR_x_67 free
- LR_x_68 free
- LR_x_69 free
- LR_x_7 free
- LR_x_70 free
- LR_x_71 free
- LR_x_72 free
- LR_x_73 free
- LR_x_74 free
- LR_x_75 free
- LR_x_76 free
- LR_x_77 free
- LR_x_78 free
- LR_x_79 free
- LR_x_8 free
- LR_x_80 free
- LR_x_81 free
- LR_x_82 free
- LR_x_83 free
- LR_x_84 free
- LR_x_85 free
- LR_x_86 free
- LR_x_87 free
- LR_x_88 free
- LR_x_89 free
- LR_x_9 free
- LR_x_90 free
- LR_x_91 free
- LR_x_92 free
- LR_x_93 free
- LR_x_94 free
- LR_x_95 free
- LR_x_96 free
- LR_x_97 free
- LR_x_98 free
- LR_x_99 free
- LR_y free
+ LR_x_100_0 free
+ LR_x_100_1 free
+ LR_x_101_0 free
+ LR_x_101_1 free
+ LR_x_102_0 free
+ LR_x_102_1 free
+ LR_x_103_0 free
+ LR_x_103_1 free
+ LR_x_104_0 free
+ LR_x_104_1 free
+ LR_x_105_0 free
+ LR_x_105_1 free
+ LR_x_106_0 free
+ LR_x_106_1 free
+ LR_x_107_0 free
+ LR_x_107_1 free
+ LR_x_108_0 free
+ LR_x_108_1 free
+ LR_x_109_0 free
+ LR_x_109_1 free
+ LR_x_10_0 free
+ LR_x_10_1 free
+ LR_x_110_0 free
+ LR_x_110_1 free
+ LR_x_111_0 free
+ LR_x_111_1 free
+ LR_x_112_0 free
+ LR_x_112_1 free
+ LR_x_113_0 free
+ LR_x_113_1 free
+ LR_x_114_0 free
+ LR_x_114_1 free
+ LR_x_115_0 free
+ LR_x_115_1 free
+ LR_x_116_0 free
+ LR_x_116_1 free
+ LR_x_117_0 free
+ LR_x_117_1 free
+ LR_x_118_0 free
+ LR_x_118_1 free
+ LR_x_119_0 free
+ LR_x_119_1 free
+ LR_x_11_0 free
+ LR_x_11_1 free
+ LR_x_120_0 free
+ LR_x_120_1 free
+ LR_x_121_0 free
+ LR_x_121_1 free
+ LR_x_122_0 free
+ LR_x_122_1 free
+ LR_x_123_0 free
+ LR_x_123_1 free
+ LR_x_124_0 free
+ LR_x_124_1 free
+ LR_x_125_0 free
+ LR_x_125_1 free
+ LR_x_126_0 free
+ LR_x_126_1 free
+ LR_x_127_0 free
+ LR_x_127_1 free
+ LR_x_128_0 free
+ LR_x_128_1 free
+ LR_x_129_0 free
+ LR_x_129_1 free
+ LR_x_12_0 free
+ LR_x_12_1 free
+ LR_x_130_0 free
+ LR_x_130_1 free
+ LR_x_131_0 free
+ LR_x_131_1 free
+ LR_x_132_0 free
+ LR_x_132_1 free
+ LR_x_133_0 free
+ LR_x_133_1 free
+ LR_x_134_0 free
+ LR_x_134_1 free
+ LR_x_135_0 free
+ LR_x_135_1 free
+ LR_x_136_0 free
+ LR_x_136_1 free
+ LR_x_137_0 free
+ LR_x_137_1 free
+ LR_x_138_0 free
+ LR_x_138_1 free
+ LR_x_139_0 free
+ LR_x_139_1 free
+ LR_x_13_0 free
+ LR_x_13_1 free
+ LR_x_140_0 free
+ LR_x_140_1 free
+ LR_x_141_0 free
+ LR_x_141_1 free
+ LR_x_142_0 free
+ LR_x_142_1 free
+ LR_x_143_0 free
+ LR_x_143_1 free
+ LR_x_144_0 free
+ LR_x_144_1 free
+ LR_x_145_0 free
+ LR_x_145_1 free
+ LR_x_146_0 free
+ LR_x_146_1 free
+ LR_x_147_0 free
+ LR_x_147_1 free
+ LR_x_148_0 free
+ LR_x_148_1 free
+ LR_x_149_0 free
+ LR_x_149_1 free
+ LR_x_14_0 free
+ LR_x_14_1 free
+ LR_x_150_0 free
+ LR_x_150_1 free
+ LR_x_151_0 free
+ LR_x_151_1 free
+ LR_x_152_0 free
+ LR_x_152_1 free
+ LR_x_153_0 free
+ LR_x_153_1 free
+ LR_x_154_0 free
+ LR_x_154_1 free
+ LR_x_155_0 free
+ LR_x_155_1 free
+ LR_x_156_0 free
+ LR_x_156_1 free
+ LR_x_157_0 free
+ LR_x_157_1 free
+ LR_x_158_0 free
+ LR_x_158_1 free
+ LR_x_159_0 free
+ LR_x_159_1 free
+ LR_x_15_0 free
+ LR_x_15_1 free
+ LR_x_160_0 free
+ LR_x_160_1 free
+ LR_x_161_0 free
+ LR_x_161_1 free
+ LR_x_162_0 free
+ LR_x_162_1 free
+ LR_x_163_0 free
+ LR_x_163_1 free
+ LR_x_164_0 free
+ LR_x_164_1 free
+ LR_x_165_0 free
+ LR_x_165_1 free
+ LR_x_166_0 free
+ LR_x_166_1 free
+ LR_x_167_0 free
+ LR_x_167_1 free
+ LR_x_168_0 free
+ LR_x_168_1 free
+ LR_x_169_0 free
+ LR_x_169_1 free
+ LR_x_16_0 free
+ LR_x_16_1 free
+ LR_x_170_0 free
+ LR_x_170_1 free
+ LR_x_171_0 free
+ LR_x_171_1 free
+ LR_x_172_0 free
+ LR_x_172_1 free
+ LR_x_173_0 free
+ LR_x_173_1 free
+ LR_x_174_0 free
+ LR_x_174_1 free
+ LR_x_175_0 free
+ LR_x_175_1 free
+ LR_x_176_0 free
+ LR_x_176_1 free
+ LR_x_177_0 free
+ LR_x_177_1 free
+ LR_x_17_0 free
+ LR_x_17_1 free
+ LR_x_18_0 free
+ LR_x_18_1 free
+ LR_x_19_0 free
+ LR_x_19_1 free
+ LR_x_1_0 free
+ LR_x_1_1 free
+ LR_x_20_0 free
+ LR_x_20_1 free
+ LR_x_21_0 free
+ LR_x_21_1 free
+ LR_x_22_0 free
+ LR_x_22_1 free
+ LR_x_23_0 free
+ LR_x_23_1 free
+ LR_x_24_0 free
+ LR_x_24_1 free
+ LR_x_25_0 free
+ LR_x_25_1 free
+ LR_x_26_0 free
+ LR_x_26_1 free
+ LR_x_27_0 free
+ LR_x_27_1 free
+ LR_x_28_0 free
+ LR_x_28_1 free
+ LR_x_29_0 free
+ LR_x_29_1 free
+ LR_x_2_0 free
+ LR_x_2_1 free
+ LR_x_30_0 free
+ LR_x_30_1 free
+ LR_x_31_0 free
+ LR_x_31_1 free
+ LR_x_32_0 free
+ LR_x_32_1 free
+ LR_x_33_0 free
+ LR_x_33_1 free
+ LR_x_34_0 free
+ LR_x_34_1 free
+ LR_x_35_0 free
+ LR_x_35_1 free
+ LR_x_36_0 free
+ LR_x_36_1 free
+ LR_x_37_0 free
+ LR_x_37_1 free
+ LR_x_38_0 free
+ LR_x_38_1 free
+ LR_x_39_0 free
+ LR_x_39_1 free
+ LR_x_3_0 free
+ LR_x_3_1 free
+ LR_x_40_0 free
+ LR_x_40_1 free
+ LR_x_41_0 free
+ LR_x_41_1 free
+ LR_x_42_0 free
+ LR_x_42_1 free
+ LR_x_43_0 free
+ LR_x_43_1 free
+ LR_x_44_0 free
+ LR_x_44_1 free
+ LR_x_45_0 free
+ LR_x_45_1 free
+ LR_x_46_0 free
+ LR_x_46_1 free
+ LR_x_47_0 free
+ LR_x_47_1 free
+ LR_x_48_0 free
+ LR_x_48_1 free
+ LR_x_49_0 free
+ LR_x_49_1 free
+ LR_x_4_0 free
+ LR_x_4_1 free
+ LR_x_50_0 free
+ LR_x_50_1 free
+ LR_x_51_0 free
+ LR_x_51_1 free
+ LR_x_52_0 free
+ LR_x_52_1 free
+ LR_x_53_0 free
+ LR_x_53_1 free
+ LR_x_54_0 free
+ LR_x_54_1 free
+ LR_x_55_0 free
+ LR_x_55_1 free
+ LR_x_56_0 free
+ LR_x_56_1 free
+ LR_x_57_0 free
+ LR_x_57_1 free
+ LR_x_58_0 free
+ LR_x_58_1 free
+ LR_x_59_0 free
+ LR_x_59_1 free
+ LR_x_5_0 free
+ LR_x_5_1 free
+ LR_x_60_0 free
+ LR_x_60_1 free
+ LR_x_61_0 free
+ LR_x_61_1 free
+ LR_x_62_0 free
+ LR_x_62_1 free
+ LR_x_63_0 free
+ LR_x_63_1 free
+ LR_x_64_0 free
+ LR_x_64_1 free
+ LR_x_65_0 free
+ LR_x_65_1 free
+ LR_x_66_0 free
+ LR_x_66_1 free
+ LR_x_67_0 free
+ LR_x_67_1 free
+ LR_x_68_0 free
+ LR_x_68_1 free
+ LR_x_69_0 free
+ LR_x_69_1 free
+ LR_x_6_0 free
+ LR_x_6_1 free
+ LR_x_70_0 free
+ LR_x_70_1 free
+ LR_x_71_0 free
+ LR_x_71_1 free
+ LR_x_72_0 free
+ LR_x_72_1 free
+ LR_x_73_0 free
+ LR_x_73_1 free
+ LR_x_74_0 free
+ LR_x_74_1 free
+ LR_x_75_0 free
+ LR_x_75_1 free
+ LR_x_76_0 free
+ LR_x_76_1 free
+ LR_x_77_0 free
+ LR_x_77_1 free
+ LR_x_78_0 free
+ LR_x_78_1 free
+ LR_x_79_0 free
+ LR_x_79_1 free
+ LR_x_7_0 free
+ LR_x_7_1 free
+ LR_x_80_0 free
+ LR_x_80_1 free
+ LR_x_81_0 free
+ LR_x_81_1 free
+ LR_x_82_0 free
+ LR_x_82_1 free
+ LR_x_83_0 free
+ LR_x_83_1 free
+ LR_x_84_0 free
+ LR_x_84_1 free
+ LR_x_85_0 free
+ LR_x_85_1 free
+ LR_x_86_0 free
+ LR_x_86_1 free
+ LR_x_87_0 free
+ LR_x_87_1 free
+ LR_x_88_0 free
+ LR_x_88_1 free
+ LR_x_89_0 free
+ LR_x_89_1 free
+ LR_x_8_0 free
+ LR_x_8_1 free
+ LR_x_90_0 free
+ LR_x_90_1 free
+ LR_x_91_0 free
+ LR_x_91_1 free
+ LR_x_92_0 free
+ LR_x_92_1 free
+ LR_x_93_0 free
+ LR_x_93_1 free
+ LR_x_94_0 free
+ LR_x_94_1 free
+ LR_x_95_0 free
+ LR_x_95_1 free
+ LR_x_96_0 free
+ LR_x_96_1 free
+ LR_x_97_0 free
+ LR_x_97_1 free
+ LR_x_98_0 free
+ LR_x_98_1 free
+ LR_x_99_0 free
+ LR_x_99_1 free
+ LR_x_9_0 free
+ LR_x_9_1 free
+ LR_y_0 free
+ LR_y_1 free
  Mass free
  __dummy = 0
  0 <= ac_C(('C4',_'C4',_1)) <= 17
@@ -35275,6 +35948,183 @@ Bounds
  x_hat0(97) free
  x_hat0(98) free
  x_hat0(99) free
+ x_hat1(1) free
+ x_hat1(10) free
+ x_hat1(100) free
+ x_hat1(101) free
+ x_hat1(102) free
+ x_hat1(103) free
+ x_hat1(104) free
+ x_hat1(105) free
+ x_hat1(106) free
+ x_hat1(107) free
+ x_hat1(108) free
+ x_hat1(109) free
+ x_hat1(11) free
+ x_hat1(110) free
+ x_hat1(111) free
+ x_hat1(112) free
+ x_hat1(113) free
+ x_hat1(114) free
+ x_hat1(115) free
+ x_hat1(116) free
+ x_hat1(117) free
+ x_hat1(118) free
+ x_hat1(119) free
+ x_hat1(12) free
+ x_hat1(120) free
+ x_hat1(121) free
+ x_hat1(122) free
+ x_hat1(123) free
+ x_hat1(124) free
+ x_hat1(125) free
+ x_hat1(126) free
+ x_hat1(127) free
+ x_hat1(128) free
+ x_hat1(129) free
+ x_hat1(13) free
+ x_hat1(130) free
+ x_hat1(131) free
+ x_hat1(132) free
+ x_hat1(133) free
+ x_hat1(134) free
+ x_hat1(135) free
+ x_hat1(136) free
+ x_hat1(137) free
+ x_hat1(138) free
+ x_hat1(139) free
+ x_hat1(14) free
+ x_hat1(140) free
+ x_hat1(141) free
+ x_hat1(142) free
+ x_hat1(143) free
+ x_hat1(144) free
+ x_hat1(145) free
+ x_hat1(146) free
+ x_hat1(147) free
+ x_hat1(148) free
+ x_hat1(149) free
+ x_hat1(15) free
+ x_hat1(150) free
+ x_hat1(151) free
+ x_hat1(152) free
+ x_hat1(153) free
+ x_hat1(154) free
+ x_hat1(155) free
+ x_hat1(156) free
+ x_hat1(157) free
+ x_hat1(158) free
+ x_hat1(159) free
+ x_hat1(16) free
+ x_hat1(160) free
+ x_hat1(161) free
+ x_hat1(162) free
+ x_hat1(163) free
+ x_hat1(164) free
+ x_hat1(165) free
+ x_hat1(166) free
+ x_hat1(167) free
+ x_hat1(168) free
+ x_hat1(169) free
+ x_hat1(17) free
+ x_hat1(170) free
+ x_hat1(171) free
+ x_hat1(172) free
+ x_hat1(173) free
+ x_hat1(174) free
+ x_hat1(175) free
+ x_hat1(176) free
+ x_hat1(177) free
+ x_hat1(18) free
+ x_hat1(19) free
+ x_hat1(2) free
+ x_hat1(20) free
+ x_hat1(21) free
+ x_hat1(22) free
+ x_hat1(23) free
+ x_hat1(24) free
+ x_hat1(25) free
+ x_hat1(26) free
+ x_hat1(27) free
+ x_hat1(28) free
+ x_hat1(29) free
+ x_hat1(3) free
+ x_hat1(30) free
+ x_hat1(31) free
+ x_hat1(32) free
+ x_hat1(33) free
+ x_hat1(34) free
+ x_hat1(35) free
+ x_hat1(36) free
+ x_hat1(37) free
+ x_hat1(38) free
+ x_hat1(39) free
+ x_hat1(4) free
+ x_hat1(40) free
+ x_hat1(41) free
+ x_hat1(42) free
+ x_hat1(43) free
+ x_hat1(44) free
+ x_hat1(45) free
+ x_hat1(46) free
+ x_hat1(47) free
+ x_hat1(48) free
+ x_hat1(49) free
+ x_hat1(5) free
+ x_hat1(50) free
+ x_hat1(51) free
+ x_hat1(52) free
+ x_hat1(53) free
+ x_hat1(54) free
+ x_hat1(55) free
+ x_hat1(56) free
+ x_hat1(57) free
+ x_hat1(58) free
+ x_hat1(59) free
+ x_hat1(6) free
+ x_hat1(60) free
+ x_hat1(61) free
+ x_hat1(62) free
+ x_hat1(63) free
+ x_hat1(64) free
+ x_hat1(65) free
+ x_hat1(66) free
+ x_hat1(67) free
+ x_hat1(68) free
+ x_hat1(69) free
+ x_hat1(7) free
+ x_hat1(70) free
+ x_hat1(71) free
+ x_hat1(72) free
+ x_hat1(73) free
+ x_hat1(74) free
+ x_hat1(75) free
+ x_hat1(76) free
+ x_hat1(77) free
+ x_hat1(78) free
+ x_hat1(79) free
+ x_hat1(8) free
+ x_hat1(80) free
+ x_hat1(81) free
+ x_hat1(82) free
+ x_hat1(83) free
+ x_hat1(84) free
+ x_hat1(85) free
+ x_hat1(86) free
+ x_hat1(87) free
+ x_hat1(88) free
+ x_hat1(89) free
+ x_hat1(9) free
+ x_hat1(90) free
+ x_hat1(91) free
+ x_hat1(92) free
+ x_hat1(93) free
+ x_hat1(94) free
+ x_hat1(95) free
+ x_hat1(96) free
+ x_hat1(97) free
+ x_hat1(98) free
+ x_hat1(99) free
 Generals
 Delta_ac_CF_minus(1)
 Delta_ac_CF_minus(2)
