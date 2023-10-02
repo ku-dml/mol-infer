@@ -46,22 +46,25 @@ def LR_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
 
     fv_fringe_tree, index_set = read_fringe_tree(fv_fringe_tree_filename, strF)
 
-    descriptors, num_fv, mass_ind, max_dcp, min_dcp, avg_dcp, sd_dcp, forbidden_node, I_integer, I_nonneg = prepare_fv(
-        original_dataset_filename, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, fv_fringe_tree,
+    descriptors, num_fv, mass_ind, max_dcp, min_dcp, avg_dcp, sd_dcp, forbidden_node, I_integer, I_nonneg, fv_list = prepare_fv(
+        normalized_dataset_filename, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, fv_fringe_tree,
         index_set, n_G, n_G_int, MASS, dg, dg_int, bd_int, na_int, na_ex, ec_int, fc, ac_lf, rank_G
     )
 
-    tmp_MILP = pulp.LpProblem("LR")
+    max_dcp, min_dcp, avg_dcp, sd_dcp = prepare_max_min(original_dataset_filename)
 
-    x_hat, x_tilde = prepare_variables_nor_std_fv(num_fv)
+    # tmp_MILP = pulp.LpProblem("LR")
+
+    x_hat, x_tilde = prepare_variables_nor_std_fv(num_fv, prop=index)
     std_eps = 1e-5
-    tmp_MILP = add_constraints_nor_std_fv(
-        tmp_MILP,
-        num_fv, mass_ind, descriptors, mass_n,
+    MILP = add_constraints_nor_std_fv(
+        base_MILP,
+        num_fv, mass_ind, descriptors, fv_list, mass_n,
         max_dcp, min_dcp, avg_dcp, sd_dcp,
         x_hat, x_tilde,
         std_eps,
-        forbidden_node
+        forbidden_node,
+        prop=index
     )
 
     y_min, y_max = get_value(value_filename)
@@ -78,16 +81,16 @@ def LR_add_vars_constraints_to_MILP(config, index, base_MILP, base_var):
     target_value_lb = (target_value_lb - y_min) / (y_max - y_min)
     target_value_ub = (target_value_ub - y_min) / (y_max - y_min)
     
-    LR.build_constraints(tmp_MILP, target_value_lb, target_value_ub)
+    MILP = LR.build_constraints(MILP, target_value_lb, target_value_ub)
 
-    tmp_MILP = add_constraints__LR(tmp_MILP, x_hat, num_fv, LR, mass_ind, mass_n, forbidden_node)
+    MILP = add_constraints__LR(MILP, x_hat, num_fv, LR, mass_ind, mass_n, forbidden_node)
 
     ########## add variables and constraints to base MILP ##########
-    for var in tmp_MILP.variables():
-        var.name = "LR_{}_{}".format(index, var.name)
+    # for var in tmp_MILP.variables():
+    #     var.name = "LR_{}_{}".format(index, var.name)
 
-    for cons in tmp_MILP.constraints.values():
-        cons.name = "LR_{}_{}".format(index, cons.name)
-        base_MILP += cons
+    # for cons in tmp_MILP.constraints.values():
+    #     cons.name = "LR_{}_{}".format(index, cons.name)
+    #     base_MILP += cons
 
-    return y, y_min, y_max
+    return y, y_min, y_max, x_hat, LR_filename, normalized_dataset_filename

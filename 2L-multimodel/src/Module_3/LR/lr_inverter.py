@@ -229,7 +229,7 @@ def inspection_no_x(desc_filename, desc_test_filename, lr_filename):
         #         print(f"i = {i}. [{columns[i]}] Difference in desc ({des[columns_dict[i] - 1]}) and x_hat ({x_hat[i].value()}).")
 
 
-    return y
+    return y[0]
 
 def main(argv):
     sdf_all_filename = argv[1]

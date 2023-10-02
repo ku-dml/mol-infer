@@ -903,7 +903,26 @@ def prepare_fv(
                 forbidden_node.append((1, i))
                 forbidden_node.append((1, i))
 
-    return descriptors, num_fv, mass_ind, max_dcp, min_dcp, avg_dcp, sd_dcp, forbidden_node, I_integer, I_nonneg
+    return descriptors, num_fv, mass_ind, max_dcp, min_dcp, avg_dcp, sd_dcp, forbidden_node, I_integer, I_nonneg, list(fv.columns)
+
+def prepare_max_min(
+    ann_training_data_filename
+):
+    fv = pd.read_csv(ann_training_data_filename, sep=",")
+    num_fv = len(list(fv.columns))
+    # prepare for normalization and standardization
+    max_dcp = dict()
+    min_dcp = dict()
+    avg_dcp = dict()
+    sd_dcp = dict()
+    for i, fv_name in enumerate(list(fv.columns)):
+        if fv_name == "CID":
+            pass
+        max_dcp[fv_name] = fv.iloc[:, i].max()
+        min_dcp[fv_name] = fv.iloc[:, i].min()
+        avg_dcp[fv_name] = fv.iloc[:, i].mean()
+        sd_dcp[fv_name] = fv.iloc[:, i].std()
+    return max_dcp, min_dcp, avg_dcp, sd_dcp
 
 def add_constraints_mass_n(MILP,
     n_LB, n_star, n_G, na_UB, na_ex, MASS):
@@ -968,20 +987,21 @@ def add_constraints_ANN(MILP,
     ''' A function to add constraints used in ANN '''
 
     for i in range(1, num_fv):
-        if i == mass_ind:  # Mass
-            MILP += y[(1, i)] == mass_n,\
-            "ann_input_{}_{}".format(i, prop)
-        elif (1, i) not in forbidden_node:
+        # if i == mass_ind:  # Mass
+        #     MILP += y[(1, i)] == mass_n,\
+        #     "ann_input_{}_{}".format(i, prop)
+        # el
+        if (1, i) not in forbidden_node:
             MILP += y[(1, i)] == descriptors[i], \
             "ann_input_{}_{}".format(i, prop)
 
     return MILP
 
 # -------- A.12 Constraints for Normalization or Standardization of Feature Vectors --------
-def prepare_variables_nor_std_fv(num_fv):
+def prepare_variables_nor_std_fv(num_fv, prop=""):
 
-    x_hat = {i: pulp.LpVariable(f"x_hat({i})") for i in range(1, num_fv)}
-    x_tilde = {i: pulp.LpVariable(f"x_tilde({i})") for i in range(1, num_fv)}
+    x_hat = {i: pulp.LpVariable(f"x_hat{prop}({i})") for i in range(1, num_fv)}
+    x_tilde = {i: pulp.LpVariable(f"x_tilde{prop}({i})") for i in range(1, num_fv)}
 
     return x_hat, x_tilde
 
@@ -990,6 +1010,7 @@ def add_constraints_nor_std_fv(
     num_fv,
     mass_ind,
     descriptors,
+    fv_list,
     mass_n,
     max_dcp,
     min_dcp,
@@ -998,29 +1019,31 @@ def add_constraints_nor_std_fv(
     x_hat,
     x_tilde,
     eps,
-    forbidden_node
+    forbidden_node,
+    prop=''
 ):
     for i in range(1, num_fv):
+        fv_name = fv_list[i]
         if i == mass_ind:
-            if max_dcp[i] == min_dcp[i]:
-                MILP += x_hat[i] == 0, f"milp-2LMH-std-{i}-1-mass"
+            if max_dcp[fv_name] == min_dcp[fv_name]:
+                MILP += x_hat[i] == 0, f"milp-2LMH-std-{i}-1-mass{prop}"
                 # MILP += x_hat[i] <= mass_n + eps - min_dcp[i], f"milp-2LMH-std-{i}-2-mass"
             else:
-                MILP += x_hat[i] >= (mass_n - eps - min_dcp[i]) / (max_dcp[i] - min_dcp[i]), f"milp-2LMH-std-{i}-1-mass"
-                MILP += x_hat[i] <= (mass_n + eps - min_dcp[i]) / (max_dcp[i] - min_dcp[i]), f"milp-2LMH-std-{i}-2-mass"
+                MILP += x_hat[i] >= (mass_n - eps - min_dcp[fv_name]) / (max_dcp[fv_name] - min_dcp[fv_name]), f"milp-2LMH-std-{i}-1-mass{prop}"
+                MILP += x_hat[i] <= (mass_n + eps - min_dcp[fv_name]) / (max_dcp[fv_name] - min_dcp[fv_name]), f"milp-2LMH-std-{i}-2-mass{prop}"
             # MILP += x_tilde[i] >= (mass_n - eps - avg_dcp[i]) / sd_dcp[i], f"milp-(89)-{i}-1-mass"
             # MILP += x_tilde[i] <= (mass_n + eps - avg_dcp[i]) / sd_dcp[i], f"milp-(89)-{i}-2-mass"
         elif (1, i) not in forbidden_node:
-            if max_dcp[i] == min_dcp[i]:
-                MILP += x_hat[i] == 0, f"milp-2LMH-std-{i}-1(nor)"
+            if max_dcp[fv_name] == min_dcp[fv_name]:
+                MILP += x_hat[i] == 0, f"milp-2LMH-std-{i}-1(nor){prop}"
                 # MILP += x_hat[i] <= descriptors[i] + eps - min_dcp[i], f"milp-2LMH-(85)-{i}-2(nor)"
             else:
-                MILP += x_hat[i] >= (descriptors[i] - eps - min_dcp[i]) / (max_dcp[i] - min_dcp[i]), f"milp-2LMH-std-{i}-1(nor)"
-                MILP += x_hat[i] <= (descriptors[i] + eps - min_dcp[i]) / (max_dcp[i] - min_dcp[i]), f"milp-2LMH-std-{i}-2(nor)"
+                MILP += x_hat[i] >= (descriptors[i] - eps - min_dcp[fv_name]) / (max_dcp[fv_name] - min_dcp[fv_name]), f"milp-2LMH-std-{i}-1(nor){prop}"
+                MILP += x_hat[i] <= (descriptors[i] + eps - min_dcp[fv_name]) / (max_dcp[fv_name] - min_dcp[fv_name]), f"milp-2LMH-std-{i}-2(nor){prop}"
             # MILP += x_tilde[i] >= (descriptors[i] - eps - avg_dcp[i]) / sd_dcp[i], f"milp-(89)-{i}-1(std)"
             # MILP += x_tilde[i] <= (descriptors[i] + eps - avg_dcp[i]) / sd_dcp[i], f"milp-(89)-{i}-2(std)"
         else:
-            MILP += x_hat[i] == 0,  f"milp-2LMH-std-{i}"
+            MILP += x_hat[i] == 0,  f"milp-2LMH-std-{i}_{prop}"
 
     return MILP
 

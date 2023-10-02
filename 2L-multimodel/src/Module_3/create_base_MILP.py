@@ -1,7 +1,7 @@
 from twolayered_MILP_2LMM_L import *
 from read_instance_2layer_2LMM_L import *
 
-def create_base_MILP(MILP, instance_file, fringe_tree_file, normalized_dataset_filename):
+def create_base_MILP(MILP, instance_file, fringe_tree_file, original_dataset_filename):
     start = time.time()
     set_Lambda = prepare_CG_element_info()
     
@@ -21,7 +21,7 @@ def create_base_MILP(MILP, instance_file, fringe_tree_file, normalized_dataset_f
     # print(Lambda_star)
 
     Lambda, Lambda_dg_int, Lambda_int, Gamma_int, Gamma_int_ac = prepare_lambda_pre( 
-        normalized_dataset_filename, Lambda, Lambda_dg_int, Lambda_int, Gamma_int, Gamma_int_ac
+        original_dataset_filename, Lambda, Lambda_dg_int, Lambda_int, Gamma_int, Gamma_int_ac
     )
 
     set_F, Lambda_ex, strF, fc_LB, fc_UB = prepare_fringe_trees(fringe_tree_file, Lambda)
@@ -35,7 +35,7 @@ def create_base_MILP(MILP, instance_file, fringe_tree_file, normalized_dataset_f
     MAX_CODE, MAX_CODE_dg, MAX_CODE_int, MAX_CODE_ex, \
     Code_Gamma_ec_int, Code_Gamma_ac_int, val, mass = \
         prepare_Lambda_dg(set_Lambda, Lambda, Lambda_int, Lambda_dg_int, Lambda_ex, Gamma_int, Gamma_int_ac)
-
+    print(val)
     Gamma_int_less, Gamma_int_equal, Gamma_int_great, \
     Gamma_int_ac_less, Gamma_int_ac_equal, Gamma_int_ac_great, \
     Gamma_tilde_ac_C, Gamma_tilde_ac_T, Gamma_tilde_ac_CT, Gamma_tilde_ac_TC, \

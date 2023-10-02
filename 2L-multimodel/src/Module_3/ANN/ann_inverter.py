@@ -19,6 +19,7 @@ import numpy as np
 
 # import pulp for MILP modeling
 import pulp
+# import pulp_modified as pulp
 
 
 class ANN:
@@ -166,6 +167,8 @@ class ANN:
                         ])
             
             vec_x = np.dot(weight_matrix, vec_y) + bias_vector
+
+            # print("x: ", vec_x)
             
             if next_layer == self.output_layer:
                 vec_y = np.array([x for x in vec_x])
@@ -174,12 +177,12 @@ class ANN:
                             self.activation(x)
                             for x in vec_x
                         ])
+            # print("y: ", vec_y)
                 
             # update current layer
             cur_layer = next_layer
 
         return list(vec_y)
-
 
 def initialize_constants(ann, training_data):
     """
@@ -193,6 +196,8 @@ def initialize_constants(ann, training_data):
     td = np.array(training_data)
     # Check if the training_data's feature vectors have exactly the same
     # number of elements as nodes in the input layer
+
+
     if td.shape[1] != len(ann.input_layer):
         print("###############")
         print("""
@@ -200,6 +205,8 @@ def initialize_constants(ann, training_data):
         and ANN input layer!
         """)
         sys.exit()
+
+
     # prepare dictionaries to store values
     a_low = dict()
     a_high = dict()
@@ -212,9 +219,14 @@ def initialize_constants(ann, training_data):
     z13 = dict()
     # first, calculate b_low, b_high values for the
     # nodes of the input layer
-    for node, column in zip(ann.input_layer, td.T):
-        b_low[node] = min(column)
-        b_high[node] = 1000
+    # for node, column in zip(ann.input_layer, td.T):
+    #     b_low[node] = min(column)
+    #     b_high[node] = 1000
+    #     b[node] = (b_low[node], 0, b_high[node])
+
+    for node in ann.input_layer:
+        b_low[node] = -5
+        b_high[node] = 5
         b[node] = (b_low[node], 0, b_high[node])
 
     # calculate the ranges for the remaining layers
@@ -301,8 +313,9 @@ def build_MILP_ReLU(
     ann      : ANN, 
     variables: tuple, 
     constants: tuple, 
-    target   : tuple,
-    eps      : float,
+    target_lb   : tuple,   # 2021/05/13, change the way of representing target value from (target, eps) to (target_lb, target_ub)
+    target_ub   : tuple,
+    # eps      : float,
     forbidden_node,
     property_name = "def" 
     )-> pulp.LpProblem:
@@ -313,13 +326,15 @@ def build_MILP_ReLU(
     Akutsu and Nagamochi, 2019
     """
 
-    if type(target) == int or type(target) == float:
-        target = [target, ]
+    if type(target_lb) == int or type(target_lb) == float:
+        target_lb = [target_lb, ]
+    if type(target_ub) == int or type(target_ub) == float:
+        target_ub = [target_ub, ]
     """
     First, check if the last (output) layer of ann
     has the same size as the target data
     """
-    if len(ann.output_layer) != len(target):
+    if len(ann.output_layer) != len(target_lb) or len(ann.output_layer) != len(target_ub):
         print("""
         Error: The size of the output layer and the
         target data do not match!
@@ -377,25 +392,13 @@ def build_MILP_ReLU(
         #######################
 
 
-    for out_node, tv in zip(ann.output_layer, target):
-        #######################
-        if tv >= 0:
-            model += \
-                y[out_node] >= tv * (1 - eps), \
-                "lower_bound_target_{}_{}".format(out_node, property_name)
-
-            model += \
-                y[out_node] <= tv * (1 + eps), \
-                "upper_bound_target_{}_{}".format(out_node, property_name)
-        else:
-            model += \
-                y[out_node] >= tv * (1 + eps), \
-                "lower_bound_target_{}_{}".format(out_node, property_name)
-
-            model += \
-                y[out_node] <= tv * (1 - eps), \
-                "upper_bound_target_{}_{}".format(out_node, property_name)
-        #######################
+    for out_node, tv_lb, tv_ub in zip(ann.output_layer, target_lb, target_ub):
+        model += \
+            y[out_node] >= tv_lb, \
+            "lower_bound_target_{}_{}".format(out_node, property_name)
+        model += \
+            y[out_node] <= tv_ub, \
+            "upper_bound_target_{}_{}".format(out_node, property_name)
 
     # Finally, return the built model
     return model
@@ -481,7 +484,8 @@ def read_training_data(training_data_filename):
         Error reading the file {}
         with pandas.
         """.format(training_data_filename))
-        sys.exit()
+        # sys.exit()
+        raise ValueError
     # print(data_frame.values) # testing
 
     try:
@@ -493,7 +497,8 @@ def read_training_data(training_data_filename):
         to a numpy array, file
         {}
         """.format(training_data_filename))
-        sys.exit()
+        # sys.exit()
+        raise ValueError
     # Success
     return table        
  
@@ -514,6 +519,55 @@ def get_input_layer_variables(ann, variables, descriptors, forbidden_node):
         if v not in forbidden_node:
             sol[name] = y[v]
     return sol
+
+def inspection(desc_filename, desc_test_filename, ann, x_hat, std_eps):
+    ans = 0
+    x_hat_old = list()
+
+    try:
+
+
+        data = read_training_data(desc_filename)
+
+        data_frame = pd.read_csv(desc_filename, sep=",")
+        columns = data_frame.columns.tolist()
+
+        data_frame_test = pd.read_csv(desc_test_filename, sep=",")
+        columns_test = data_frame_test.columns.tolist()
+
+        columns_dict = dict()
+
+        for i in range(len(columns_test)):
+            i_dict = -1
+            for j in range(len(columns)):
+                if columns_test[i][0] != 'F':
+                    if columns[j] == columns_test[i]:
+                        i_dict = j
+                        break
+                else:
+                    ind_i = columns_test[i].find('_', 3)
+                    ind_j = columns[j].find('_', 3)
+                    if columns[j][ind_j:] == columns_test[i][ind_i:]:
+                        i_dict = j
+                        break
+            columns_dict[i] = i_dict
+
+        x_hat_right_order = list()
+        x_hat_old = list()
+
+        for des in data:
+            for i in range(1, len(des) + 1):
+                if i not in columns_dict:
+                    continue
+                x_hat_right_order.append(des[columns_dict[i] - 1])
+                x_hat_old.append(x_hat[i].value())
+                if abs(x_hat[i].value() - des[columns_dict[i] - 1]) > 2*std_eps:
+                    print(f"i = {i}. [{columns[i]}] Difference in desc ({des[columns_dict[i] - 1]}) and x_hat ({x_hat[i].value()}).")
+        ans = ann.propagate(x_hat_right_order)[0]
+    except:
+        raise ValueError
+
+    return ans, x_hat_old
 
 # Testing
 def test():

@@ -3,9 +3,12 @@ from LR.infer_2LMM_LLR import LR_add_vars_constraints_to_MILP
 from twolayered_MILP_2LMM_L import print_sdf_file, print_gstar_file
 from create_base_MILP import create_base_MILP
 
-import sys, time
+import sys, time, subprocess
 import yaml
 import pulp
+
+import ANN.ann_inverter as ann_inverter
+import LR.lr_inverter as lr_inverter
 
 ####################################################
 # IMPORTANT:
@@ -19,7 +22,7 @@ CPLEX_MSG = False
 CPLEX_TIMELIMIT = 0
 solver_type = 1 # change 1 to 2 if use CBC solver
 std_eps = 1e-5
-fv_gen_name = "./2LMM_v018/FV_2LMM_V018"  # file of fv generator used to generate fv to check
+fv_gen_name = "sample_instance/2LMM_v019/FV_2LMM_V019"  # file of fv generator used to generate fv to check
 ####################################################
 
 def main(argv):
@@ -38,38 +41,37 @@ def main(argv):
     if config["output_prefix"] == None or \
         config["instance_file"] == None or \
         config["fringe_tree_file"] == None or \
-        config["normalized_dataset_filename"] == None or \
+        config["original_dataset_filename"] == None or \
         config["input_data"] == None:
-        print("Error: Please specify (output_prefix), (instance_file), (fringe_tree_file), (normalized_dataset_filename), (input_data) in config.yaml")
+        print("Error: Please specify (output_prefix), (instance_file), (fringe_tree_file), (original_dataset_filename), (input_data) in config.yaml")
         sys.exit(1)
 
     output_prefix = config["output_prefix"]
     instance_file = config["instance_file"]
     fringe_tree_file = config["fringe_tree_file"]
-    normalized_dataset_filename = config["normalized_dataset_filename"]
+    original_dataset_filename = config["original_dataset_filename"]
 
     print("output_prefix:", output_prefix)
     print("instance_file:", instance_file)
     print("fringe_tree_file:", fringe_tree_file)
-    print("normalized_dataset_filename:", normalized_dataset_filename)
+    print("original_dataset_filename:", original_dataset_filename)
     
     ## create MILP
     MILP = pulp.LpProblem("MultiModel")
     base_var = ()
 
-    base_var = create_base_MILP(MILP, instance_file, fringe_tree_file, normalized_dataset_filename)
+    base_var = create_base_MILP(MILP, instance_file, fringe_tree_file, original_dataset_filename)
 
     MILP_results = [None] * len(config["input_data"])
     for (index, item) in enumerate(config["input_data"]):
         match item["model"]:
             case "ANN":
                 print("\tmodel: ANN")
-                y = ANN_add_vars_constraints_to_MILP(config, index, MILP, base_var)
-                MILP_results[index] = (y)
+                y, y_min, y_max, x_hat, ann_training_data_norm_filename, ann = ANN_add_vars_constraints_to_MILP(config, index, MILP, base_var)
+                MILP_results[index] = (y, y_min, y_max, x_hat, ann_training_data_norm_filename, ann)
             case "LR":
                 print("\tmodel: LR")
-                y, y_min, y_max = LR_add_vars_constraints_to_MILP(config, index, MILP, base_var)
-                MILP_results[index] = (y, y_min, y_max)
+                MILP_results[index] = LR_add_vars_constraints_to_MILP(config, index, MILP, base_var)
             case _:
                 print("\tmodel {} not supported".format(item["model"]))
                 sys.exit(1)
@@ -130,11 +132,12 @@ def main(argv):
         for (index, item) in enumerate(config["input_data"]):
             match item["model"]:
                 case "ANN":
-                    y = MILP_results[index]
+                    y, y_min, y_max, _, _, _ = MILP_results[index]
                     y_star = y.value()
-                    print("index", index, " y*:", "{:.3f}".format(y_star))
+                    y_star_scaled = y_star * (y_max - y_min) + y_min
+                    print("index", index, " y*:", "{:.3f}".format(y_star_scaled))
                 case "LR":
-                    y, y_min, y_max = MILP_results[index]
+                    y, y_min, y_max, _, _, _ = MILP_results[index]
                     y_star = y.value()
                     y_star_scaled = y_star * (y_max - y_min) + y_min
                     print("index", index, " y*:", "{:.3f}".format(y_star_scaled))
@@ -204,16 +207,27 @@ def main(argv):
             outputfilename
         )
 
-        # ## Check the calculated descriptors
-        # outputfilename = output_prefix + ".sdf"
-        # test_prefix = output_prefix + "_test_tmp"
-        # subprocess.run([fv_gen_name, f"{prop}.sdf", f"{prop}_test", outputfilename, test_prefix],
-        #                stdout=subprocess.DEVNULL)
+        ## Check the calculated descriptors
+        outputfilename = output_prefix + ".sdf"
+        test_prefix = output_prefix + "_test_tmp"
         # # os.system(f"{fv_gen_name} {prop}.sdf {prop}_test {outputfilename} ttt")
-        # y_predict = lr_inverter.inspection(f"{test_prefix}_desc_norm.csv", normalized_dataset_filename, LR_filename, x_hat, std_eps)
-
-        # print("Inspection value:  ",  y_predict[0])
-        # print("Inspection value (scaled):  ", y_predict[0] * (y_max - y_min) + y_min)
+        
+        for (index, item) in enumerate(config["input_data"]):
+            prop = config["input_data"][index]["prefix"]
+            subprocess.run([fv_gen_name, f"{prop}.sdf", f"{prop}_test", outputfilename, test_prefix],
+                stdout=subprocess.DEVNULL)
+            match item["model"]:
+                case "ANN":
+                    y, y_min, y_max, x_hat, ann_training_data_norm_filename, ann = MILP_results[index]
+                    y_predict, x_hat_vector = ann_inverter.inspection(f"{test_prefix}_desc_norm.csv", ann_training_data_norm_filename, ann, x_hat, std_eps)
+                case "LR":
+                    y, y_min, y_max, x_hat, LR_filename, normalized_dataset_filename = MILP_results[index]
+                    y_star = y.value()
+                    y_star_scaled = y_star * (y_max - y_min) + y_min
+                    y_predict = lr_inverter.inspection(f"{test_prefix}_desc_norm.csv", normalized_dataset_filename, LR_filename, x_hat, std_eps)
+                    y_predict = y_predict[0]
+            print("Inspection value:  ",  y_predict)
+            print("Inspection value (scaled):  ", y_predict * (y_max - y_min) + y_min)
 
 if __name__ == '__main__':
     main(sys.argv)
