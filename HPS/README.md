@@ -6,6 +6,7 @@ This folder contains the codes used for the paper
 
 # Architectures
 1. Module 1
+   
    Paragraph "Feature Function" in Section 3.
    - Generate Linear Descriptors
    - Generate Quadratic Descritpors
@@ -17,5 +18,5 @@ This folder contains the codes used for the paper
    - Generating Neighbor Solutions (Section 6.2)
 1. Module 4
    - Generating Recombination Solutions (Section 6.2)
-  
-   - 
+
+
