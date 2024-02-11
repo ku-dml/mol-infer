@@ -10,6 +10,6 @@ Module 2 consists of the stage of constructing the prediction functions between 
   
 - Constructing Prediction Functions
 
-  Use machine learning methods to construct prediction functions using the linear/quadratic descriptor files generated in [Module 1](HPS/Module_1) in the case of LLR, ANN, ALR, RLR, or the two splitted data sets generated above in the case of HPS.
+  Use machine learning methods to construct prediction functions using the linear/quadratic descriptor files generated in [Module 1](HPS/Module_1) in the cases of LLR, ANN, ALR, RLR, or the two splitted data sets generated above in the case of HPS.
 
   
