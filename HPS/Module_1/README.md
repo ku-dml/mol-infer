@@ -1,9 +1,9 @@
-** UNDER CONSTRUCTION (2024.2.9) **
+** UNDER CONSTRUCTION (2024.2.11) **
 
-This is the code used to generate the feature vector of the two-layered model, 
-as described in Section 3, "Feature Function".
+Module 1 consists of the stage of generating the feature vectors (defined in Section 3, paragraph "Feature Function") of a given dataset (sdf format file).
 
-generate_linear_descriptors: code to generate the "linear descriptors", please refer 
-https://github.com/ku-dml/mol-infer/blob/master/2LMM-LLR/doc/Manual_2LMM-LLR-monomer_en.pdf
-for more details.
+- Generate Linear Descriptors:
+  Generate the _linear descriptors_ file of the dataset.
+- Generate Quadratic Desctiptors:
+  Generate the _quadratic descriptors_ file of the dataset that is used in the learning method RLR.
 
