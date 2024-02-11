@@ -1,6 +1,9 @@
+** UNDER CONSTRUCTION (2024.2.11) **
+
 ## Generate Quadratic Descriptors
 
 This folder contains the code to generate the quadratic descriptors defined in Section 3, paragraph "Feature Function".
+
 A file containing the information of linear desctiors and a file containing the observed value information is necessary.
 
 Usage:
