@@ -2,7 +2,7 @@
 
 ## Generate Linear Descriptors
 
-This folder contains the code to generate the linear descriptors defined in Section 3, paragraph "Feature Function", which will be used for the learning procedure in [Module 2]().
+This folder contains the code to generate the linear descriptors defined in Section 3, paragraph "Feature Function", which will be used for the learning procedure in [Module 2](HPS/Module_2).
 
 Usage:
 First compile the 'c++' files as following on terminal:
@@ -18,8 +18,10 @@ and then generate the linear feature desctipor files by using command:
 ./fv_2LMM INPUT_eli.sdf OUTPUT
 ```
 
-Here 'INPUT_eli.sdf' is the input sdf file containing molecular information of the dataset, 
-'OUTPUT' is the prefix for the output files.
+Here:
+- 'INPUT_eli.sdf': the input sdf file containing molecular information of the dataset, and
+- 'OUTPUT': the prefix for the output files.
+  
 When the generator finishes normally, it will generate the following files:
 - OUTPUT_desc.csv
   The csv file of the linear descriptors of the dataset **BEFORE** normalization.
