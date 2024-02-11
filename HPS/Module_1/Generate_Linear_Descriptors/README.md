@@ -5,6 +5,7 @@
 This folder contains the code to generate the linear descriptors defined in Section 3, paragraph "Feature Function", which will be used for the learning procedure in [Module 2](HPS/Module_2).
 
 Usage:
+
 First compile the 'c++' files as following on terminal:
 
 ```
