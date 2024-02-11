@@ -2,7 +2,7 @@
 
 ## Conctructing Prediction Functions
 
-The folder contains the codes used to construct the prediction functions between the given desctiptor file of the whole data set ('SINGLE_xxx') or the two subsets ('SEP_xxx').
+This folder contains the codes used to construct the prediction functions between the given desctiptor file of the whole data set ('SINGLE_xxx') or the two subsets ('SEP_xxx').
 
 In both cases, we conduct the experiment in two stages, namely:
 - the preliminary experiment ('xxx_pre') to specify the hyperparameters, and
