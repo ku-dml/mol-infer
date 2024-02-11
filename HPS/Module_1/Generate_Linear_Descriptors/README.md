@@ -1,4 +1,4 @@
-# Generate Linear Descriptors
+## Generate Linear Descriptors
 
 This folder contains the code to generate the linear descriptors defined in Section 3, paragraph "Feature Function", which will be refered as "Feature Generator".
 
