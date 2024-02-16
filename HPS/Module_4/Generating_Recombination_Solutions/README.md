@@ -28,7 +28,7 @@ Here:
 - "10000": an upper bound on the number of total paths stored during the computation;
 - "2": an upper bound on the number of output chemical isomers;
 - OUTPUT.sdf: output file name;
-- RES_partition.txt: file containing the partition information of RES.sdf obtained in [Module 3](HPS/Module_3), and;
+- RES_partition.txt: file containing the partition information of RES.sdf obtained in [Module 3](HPS/Module_3), and
 - FRINGE.txt: file containing the information of available fringe trees used as part of input for [Module 3](HPS/Module_3) to obtain RES.sdf.
 
 When the code finishes normally, it will generate the following file:
