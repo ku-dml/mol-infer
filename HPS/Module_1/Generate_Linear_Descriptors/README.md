@@ -24,12 +24,9 @@ Here:
 - OUTPUT: the prefix for the output files.
   
 When the generator finishes normally, it will generate the following files:
-- OUTPUT_desc.csv
-  The csv file of the linear descriptors of the dataset **BEFORE** normalization.
-- OUTPUT_desc_norm.csv
-  The csv file of the linear descriptors of the dataset **AFTER** normalization.
-- OUTPUT_fringe.txt
-  The file containing the _fringe tree_ information of the dataset, which will be used in the stage of solving inverse problem (Module 3).
+- OUTPUT_desc.csv: The csv file of the linear descriptors of the dataset **BEFORE** normalization.
+- OUTPUT_desc_norm.csv: The csv file of the linear descriptors of the dataset **AFTER** normalization.
+- OUTPUT_fringe.txt: The file containing the _fringe tree_ information of the dataset, which will be used in the stage of solving inverse problem (Module 3).
 
 A sample usage:
 
