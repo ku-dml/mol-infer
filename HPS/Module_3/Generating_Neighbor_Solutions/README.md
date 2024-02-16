@@ -12,7 +12,7 @@ This folder contains the code to generate the *neighbor solutions*, or *Grid Nei
 Also the installation [PuLP](https://coin-or.github.io/pulp/index.html) and [CPLEX](https://www.ibm.com/products/ilog-cplex-optimization-studio) are necessary.
 The CPLEX path should be specified in 'infer_2LMM_SEP.py' before running the code.
 
-We refer [\[24\]](https://www.computer.org/csdl/proceedings-article/bibm/2021/09669710/1A9VAbXVZJu) for the idea and [GNS](Grid-neighbor-search) for more details.
+We refer [\[24\]](https://www.computer.org/csdl/proceedings-article/bibm/2021/09669710/1A9VAbXVZJu) for the idea and [GNS package](Grid-neighbor-search) for more details.
 
 Usage:
 
