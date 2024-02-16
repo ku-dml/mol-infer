@@ -1,8 +1,8 @@
 ** UNDER CONSTRUCTION (2024.2.16) **
 
-## Solving an MILP for the Inverse Probem
+## Solving an MILP for the Inverse Problem
 
-This folder contains the code to generate **ONE** chemical graph by solving an MILP formulation for the inverse problem of the machine learning method, once given:
+This folder contains the code to generate **ONE** chemical graph by solving an MILP formulation for the inverse problem of the machine learning method, described in Section 6.2, paragraph "Solving an MILP for the Inverse Problem", once given:
 - files describing the hyperplane used to split the data set to two subsets;
 - files describing the weights/parameters of the prediction functions for the two subsets obtained from [Module 2](HPS/Module_2);
 - files describing the topological specification $\sigma$;
