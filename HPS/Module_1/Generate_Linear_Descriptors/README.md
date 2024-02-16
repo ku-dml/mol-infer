@@ -16,12 +16,12 @@ This will generate an executable file named 'fv_2LMM',
 and then generate the linear feature desctipor files by using command:
 
 ```
-./fv_2LMM INPUT_eli.sdf OUTPUT
+./fv_2LMM DATASET.sdf OUTPUT
 ```
 
 Here:
-- 'INPUT_eli.sdf': the input sdf file containing molecular information of the dataset, and
-- 'OUTPUT': the prefix for the output files.
+- DATASET.sdf: the input sdf file containing molecular information of the data set, and
+- OUTPUT: the prefix for the output files.
   
 When the generator finishes normally, it will generate the following files:
 - OUTPUT_desc.csv
@@ -29,7 +29,7 @@ When the generator finishes normally, it will generate the following files:
 - OUTPUT_desc_norm.csv
   The csv file of the linear descriptors of the dataset **AFTER** normalization.
 - OUTPUT_fringe.txt
-  The file containing the _fringe tree_ information of the dataset, which may be used in the stage of solving inverse problem (Module 3).
+  The file containing the _fringe tree_ information of the dataset, which will be used in the stage of solving inverse problem (Module 3).
 
 A sample usage:
 
