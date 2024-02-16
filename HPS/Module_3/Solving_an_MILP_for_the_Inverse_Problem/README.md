@@ -11,7 +11,7 @@ This folder contains the code to generate **ONE** chemical graph by solving an M
 Also the installation [PuLP](https://coin-or.github.io/pulp/index.html) and [CPLEX](https://www.ibm.com/products/ilog-cplex-optimization-studio) are necessary.
 The CPLEX path should be specified in 'infer_2LMM_SEP.py' before running the code.
 
-We refer [\[22\]](https://arxiv.org/abs/2107.02381) for more details of the tological specification. 
+We refer [\[22\]](https://arxiv.org/abs/2107.02381) for more details of the MILP formulation and other things like topological specification. 
 
 Usage:
 
