@@ -2,8 +2,8 @@
 
 ## Generating Recombination Solutions
 
-This folder contains the code to generate chemical isomers from the output of MILP by using a dynamic programming algorithm.
-
+This folder contains the code to generate chemical isomers from the output of MILP by using a dynamic programming algorithm. We refer [\[22\]](https://arxiv.org/abs/2107.02381) and [2LMM-LLR](2LMM-LLR) for more details.
+ 
 
 Usage:
 
