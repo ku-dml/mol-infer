@@ -25,7 +25,7 @@ Here:
 - SPEC.txt: the file describing the topological specification except fringe trees;
 - FRINGE.txt: the file describing the available fringe trees in the topological specification;
 - OUTPUT: the prefix of output files;
-- -d1 (...): specifying the learning method ("ANN" or "R-MLR"(RLR)) used for the first subset, and;
+- -d1 (...): specifying the learning method ("ANN" or "R-MLR"(RLR)) used for the first subset, an
 - -d2 (...): specifying the learning method ("ANN" or "R-MLR"(RLR)) used for the second subset.
 
 To describe the information of the data set, separating hyperplane, and the prediction functions, the following files are necessary:
@@ -34,18 +34,18 @@ To describe the information of the data set, separating hyperplane, and the pred
 - DATASET_fringe.txt: file containing all the fringe tree information of the original data set, obtained in [Module 1](HPS/Module_1);
 - DATASET_values.txt: file containing the observed values of the original data set **BEFORE NORMALIZATION**;
 - DATASET_sep.txt: file describing the hyperplane used to split the data set, obtained in [Module 2/Splitting Data Sets via Hyperplanes](HPS/Module_2/Splitting_Data_Sets_via_Hyperplane);
-- DATASET_D1_values.txt: file containing the observed values of the first subset, obtained in [Module 2/Splitting Data Sets via Hyperplanes](HPS/Module_2/Splitting_Data_Sets_via_Hyperplane);
+- DATASET_D1_values.txt: file containing the observed values of the first subset, obtained in [Module 2/Splitting Data Sets via Hyperplanes](HPS/Module_2/Splitting_Data_Sets_via_Hyperplane), and
 - DATASET_D2_values.txt: file containing the observed values of the second subset, obtained in [Module 2/Splitting Data Sets via Hyperplanes](HPS/Module_2/Splitting_Data_Sets_via_Hyperplane);
 
 Moreover, the following files containing the information of the prediction functions are necessary, which can be obtained in [Module 2/Constructing Prediction Functions](HPS/Module_2/Constructing_Prediction_Functions):
 - DATASET_D1_desc_norm_selected.csv: file containng the selected/reduced features for the first subset during the computation;
 - DATASET_D2_desc_norm_selected.csv: file containng the selected/reduced features for the second subset during the computation;
-- DATASET_Di_linreg.txt: (only when using RLR) file containing the weights and bias of linear regression of RLR, i=1,2, and;
+- DATASET_Di_linreg.txt: (only when using RLR) file containing the weights and bias of linear regression of RLR, i=1,2, and
 - DATASET_Di_weights.txt, DATASET_Di_biaese.txt: (only when using ANN) files containing the weights and biases of the neural networks, i=1,2.
 
 When the code finishes normally, it will generate the following files:
 - OUTPUT.lp: the lp file describing the MILP formulation;
-- OUTPUT.sdf: (when MILP is feasible) the sdf file of the inferred chemical graph;
+- OUTPUT.sdf: (when MILP is feasible) the sdf file of the inferred chemical graph, and
 - OUTPUT_partition.txt: (when MILP is feasible) the partition file of the inferred chemical graph, which will be used in [Module 4](HPS/Module_4).
   
 If MILP is considered as "Infeasible" by the solver, it means such a chemical graph does not exist under the given constraints/specifications.
