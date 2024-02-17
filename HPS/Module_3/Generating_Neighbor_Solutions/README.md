@@ -28,8 +28,8 @@ Here:
 - FRINGE.txt: the file describing the available fringe trees in the topological specification;
 - OUTPUT: the prefix of output files;
 - GNS_PARAMETER.txt: the file describing the parameters related to GNS;
-- -d1 (...): specifying the learning method ("ANN" or "R-MLR"(RLR)) used for the first subset;
-- -d2 (...): specifying the learning method ("ANN" or "R-MLR"(RLR)) used for the second subset, and
+- -d1 (...): specifying the learning method (`ANN` or `R-MLR`(RLR)) used for the first subset;
+- -d2 (...): specifying the learning method (`ANN` or `R-MLR`(RLR)) used for the second subset, and
 - -t (...): the set of additional linear constraints (see [GNS](Grid-neighbor-search) for more details of this).
 
 To describe the information of the data set, separating hyperplane, and the prediction functions, the following files are necessary:
@@ -45,7 +45,7 @@ Moreover, the following files containing the information of the prediction funct
 - DATASET_D1_desc_norm_selected.csv: file containng the selected/reduced features for the first subset during the computation;
 - DATASET_D2_desc_norm_selected.csv: file containng the selected/reduced features for the second subset during the computation;
 - DATASET_Di_linreg.txt: (only when using RLR) file containing the weights and bias of linear regression of RLR, i=1,2, and
-- DATASET_Di_weights.txt, DATASET_Di_biaese.txt: (only when using ANN) files containing the weights and biases of the neural networks, i=1,2.
+- DATASET_Di_weights.txt, DATASET_Di_biases.txt: (only when using ANN) files containing the weights and biases of the neural networks, i=1,2.
 
 When the code finishes normally, it will generate the following files:
 - OUTPUT.lp: the lp file describing the MILP formulation;
