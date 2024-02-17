@@ -30,7 +30,7 @@ Evaluation experiment:
 python SINGLE_eval.py DATASET_desc_norm.csv DATASET_values.txt -learning_method (...)
 ```
 
-Basically the inputs should be the same as the ones used for the preliminary experiment, except:
+Basically the inputs are the same as the ones used for the preliminary experiment, except:
 - -learning_method (...): the learning method **AND** the corresponding parameters obtained in the preliminary experiment (see the example below).
 
 A sample usage:
@@ -68,7 +68,7 @@ Here we explain the usage of learning by HPS, making use of the two subsets gene
 Preliminary experiment:
 
 ```
-python
+python SEP_pre.py C1_desc_norm.csv C1_values.txt C2_desc_norm.csv C2_values.txt -learning_method_for_C1 -learning_method_for_C2
 ```
 
 Here:
@@ -76,20 +76,47 @@ Here:
 - C1_values.txt: the file containing observed value information of the subset 'C1';
 - C2_desc_norm.csv: the linear/quadratic descriptor files of the subset 'C2';
 - C2_values.txt: the file containing observed value information of the subset 'C2';
-- -learning_method_for_C1:
-- -learning_method_for_C2:
-
-The output will be
+- -learning_method_for_C1: the learning method specified for the subset 'C1' (`-l1` for LLR, `-ann1` for ANN, `-alr1` for ALR, and `-rbsp1` for RLR), and;
+- -learning_method_for_C2: the learning method specified for the subset 'C2' (`-l2` for LLR, `-ann2` for ANN, `-alr2` for ALR, and `-rbsp2` for RLR).
 
 Evaluation experiment:
 
 ```
-python
+python SEP_eval.py C1_desc_norm.csv C1_values.txt C2_desc_norm.csv C2_values.txt -learning_method_for_C1 (...) -learning_method_for_C2 (...)
 ```
 
-Here:
+Basically the inputs are the same as the ones used for the preliminary experiment, except:
+- -learning_method_for_C1 (...): the learning method **AND** the corresponding parameters specified for the subset 'C1' obtained in the preliminary experiment (see the example below), and;
+- -learning_method_for_C2 (...): the learning method **AND** the corresponding parameters specified for the subset 'C2' obtained in the preliminary experiment (see the example below).
 
-The output will be
+
+A sample usage:
+
+For preliminary experiment:
+
+```
+python SEP_pre.py ./sample_instance/At_large_var0_theta0.35_D1_desc_norm.csv ./sample_instance/At_large_var0_theta0.35_D1_values.txt At_large_var0_theta0.35_D2_quadratic_h5000_desc_norm.csv At_large_var0_theta0.35_D2_values.txt -ann1 -rbsp2
+```
+
+The output will be like:
+
+```
+At_large_var0_theta0.35_D1	121	254	254	0  At_large_var0_theta0.35_D2_quadratic_h5000	327	5000	27	4973  ANN	0.44129720743276335	0.09686286746090852	35.96302032470703	BSP	0.6234	0.5273	14188.406049489975	-ann1 ./log/LLR_ANN_At_large_var0_theta0.35_D1_desc_norm.csv 0.44 1323 10  -rbsp2 ./log/MLR_based_BSP_At_large_var0_theta0.35_D2_quadratic_h5000_desc_norm.csv	
+```
+
+And for evaluation experiment:
+
+```
+python SEP_eval.py ./sample_instance/At_large_var0_theta0.35_D1_desc_norm.csv ./sample_instance/At_large_var0_theta0.35_D1_values.txt At_large_var0_theta0.35_D2_quadratic_h5000_desc_norm.csv At_large_var0_theta0.35_D2_values.txt -ann1 ./log/LLR_ANN_At_large_var0_theta0.35_D1_desc_norm.csv 0.44 1323 10  -rbsp2 ./log/MLR_based_BSP_At_large_var0_theta0.35_D2_quadratic_h5000_desc_norm.csv
+```
+
+Here `-ann1 ./log/LLR_ANN_At_large_var0_theta0.35_D1_desc_norm.csv 0.44 1323 10  -rbsp2 ./log/MLR_based_BSP_At_large_var0_theta0.35_D2_quadratic_h5000_desc_norm.csv` at the end of the output is the selected hyperparameter obtained from the preliminary experiment. Such csv files like `LLR_ANN_At_large_var0_theta0.35_D1_desc_norm.csv` are the ones containing the selected/reduced features for the subsets during the computation and will be used in [Module 3](HPS/Module_3).
+
+When the code finishes normally, it will output the information about the learning performance like:
+
+| Data set C1 | \#instance in C1 | \#descritpors in C1 | \#linear descriptors in C1 | \#quadratic descriptors in C1 | Data set C2 | \#instance in C2 | \#descritpors in C2 | \#linear descriptors in C2 | \#quadratic descriptors in C2 | learning method for C1 | median of train R<sup>2</sup> of C1 | min of train R<sup>2</sup> of C1 | max of train R<sup>2</sup> of C1 | median of test R<sup>2</sup> of C1 | min of test R<sup>2</sup> of C1 | max of test R<sup>2</sup> of C1 | running time(sec) for C1 | learning method for C2 | median of train R<sup>2</sup> of C2 | min of train R<sup>2</sup> of C2 | max of train R<sup>2</sup> of C2 | median of test R<sup>2</sup> of C2 | min of test R<sup>2</sup> of C2 | max of test R<sup>2</sup> of C2 | running time(sec) for C2 | ALL | median of train R<sup>2</sup> of HPS | min of train R<sup>2</sup> of HPS | max of train R<sup>2</sup> of HPS | median of test R<sup>2</sup> of HPS | min of test R<sup>2</sup> of HPS | max of test R<sup>2</sup> of HPS |   running time(sec) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| At_large_var0_theta0.35_D1 | 121 | 10 | 10 |  0 | At_large_var0_theta0.35_D2_quadratic_h5000 | 327 | 39 | 0 | 39 |  ANN | 0.44080679140495954 | 0.27623698613933056 | 0.44557922028326724 | 0.1256260280176708 | -3.154369174844743 | 0.5088258925224387 | 5.402069807052612 | BSP | 0.6185826861886786 | 0.5760320283426084 | 0.6915885578335911 | 0.5322920228884651 | -0.04772080841685944 | 0.6615550826567639 | 0.06558966636657715 | ALL | 0.8199587937517928 | 0.7988590479498323 | 0.8522449855216254 | 0.7647687447715765 | 0.5806001953070816 | 0.8508567427925742 | 5.4676594734191895 | 
 
 
 
