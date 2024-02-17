@@ -56,7 +56,6 @@ Here `-l 0.00073` is the selected parameter obtained from the preliminary experi
 
 When the code finishes normally, it will output the information about the learning performance like:
 
-
 | Data set | \#instance | \#descritpors | \#linear descriptors | \#quadratic descriptors | learning method | median of train R<sup>2</sup> | min of train R<sup>2</sup> | max of train R<sup>2</sup> | median of test R<sup>2</sup> | min of test R<sup>2</sup> | max of test R<sup>2</sup> | running time(sec) |
 | --- | --- |
 | At_large_var0 | 448 | 254 | 254 | 0 | Lasso | 0.5773279046164392 | 0.5366019574027185 | 0.6211274634517285 | 0.3911713431555095 | 0.038081164737786555 | 0.521242342190777 | 0.16965603828430176 |
