@@ -7,13 +7,13 @@ This folder contains the code to generate chemical isomers from the output of MI
 
 Usage:
 
-First compile the 'c++' files as following on terminal:
+First compile the `c++` files as following on terminal:
 
 ```
 g++ -o ./main/generate_isomers ./main/generate_isomers.cpp -O3 -std=c++11
 ```
 
-This will generate an executable file './main/generate_isomers', and then generate the chemical isomers by using command:
+This will generate an executable file `./main/generate_isomers`, and then generate the chemical isomers by using command:
 
 ```
 ./main/generate_isomers RES.sdf 4 100000 5 10 10000 2 OUTPUT.sdf RES_partition.txt FRINGE.txt
