@@ -59,6 +59,9 @@ and for the augmented MILP corresponding to the i-th subspace, it will generate 
   
 If MILP is considered as "Infeasible" by the solver, it means such a chemical graph does not exist under the given constraints/specifications. 
 
+And finally:
+- OUTPUT_GS_log.csv: a summary file containing all the results obtained for the given inputs.
+
 
 A sample usage:
 
