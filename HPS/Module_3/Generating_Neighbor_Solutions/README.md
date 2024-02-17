@@ -1,4 +1,4 @@
-** UNDER CONSTRUCTION (2024.2.16) **
+** UNDER CONSTRUCTION (2024.2.17) **
 
 ## Generating Neighbor Solutions
 
@@ -11,6 +11,7 @@ This folder contains the code to generate the *neighbor solutions*, or *Grid Nei
   
 Also the installation [PuLP](https://coin-or.github.io/pulp/index.html) and [CPLEX](https://www.ibm.com/products/ilog-cplex-optimization-studio) are necessary.
 The CPLEX path should be specified in 'infer_2LMM_SEP.py' before running the code.
+The default time limit for CPLEX to solve the augmented MILP is set to 300s.
 
 We refer [\[24\]](https://www.computer.org/csdl/proceedings-article/bibm/2021/09669710/1A9VAbXVZJu) for the idea and [GNS package](Grid-neighbor-search) for more details.
 
@@ -54,9 +55,9 @@ When the code finishes normally, it will generate the following files:
 and for the augmented MILP corresponding to the i-th subspace, it will generate the following files:
 - OUTPUT_i.lp: the lp file describing the MILP formulation corresponding to the i-th subspace;
 - OUTPUT_i.sdf: (when MILP is feasible) the sdf file of the inferred chemical graph corresponding to the i-th subspace, and
-- OUTPUT_i_partition.txt: (when MILP is feasible) the partition file of the inferred chemical graph corresponding to the i-th subspace, which will be used in [Module 4](HPS/Module_4);
+- OUTPUT_i_partition.txt: (when MILP is feasible) the partition file of the inferred chemical graph corresponding to the i-th subspace, which will be used in [Module 4](HPS/Module_4).
   
-If MILP is considered as "Infeasible" by the solver, it means such a chemical graph does not exist under the given constraints/specifications.
+If MILP is considered as "Infeasible" by the solver, it means such a chemical graph does not exist under the given constraints/specifications. 
 
 
 A sample usage:
