@@ -1,4 +1,4 @@
-** UNDER CONSTRUCTION (2024.2.16) **
+** UNDER CONSTRUCTION (2024.2.17) **
 
 ## Splitting Data Sets via Hyperplanes
 
@@ -24,6 +24,13 @@ When the code finishes normally, it will generate the following files:
 - DATASET_thetaTHETA_D1_values.txt: the file containing observed value information of the first subset;
 - DATASET_thetaTHETA_D2_desc_norm.csv: the linear descriptor file for the second subset, and
 - DATASET_thetaTHETA_D2_values.txt: the file containing observed value information of the second subset.
+
+And also the information about this splitting hyperplane as:
+
+| Data set | \#instance | \#descriptors | $\theta$ | $a_{min}^{(1)}$ | $a_{max}^{(1)}$ | $a_{min}^{(2)}$ | $a_{max}^{(2)}$ | \|$C^{(1)}$\| | \|$C^{(2)}$\| | \#overlapping instances | %overlapping instances | Running time(sec) | Well-separated or not |
+| ---      | ---        | ---           | ---      | ---             | ---              | ---             | ---                   | ---         | ---         | ---                    | ---                    | ---                       | --- |
+| Homo_var0 | 977 | 296 | 0.65 | 0.0 | 0.7916666666666666 | 0.5565068493150684 | 1.0 | 849 | 128 | 338 | 0.345957011258956 | 0.11586952209472656 | No |
+
 
 A sample usage:
 
