@@ -27,7 +27,7 @@ When the code finishes normally, it will generate the following files:
 
 And also the information about this splitting hyperplane as:
 
-| Data set | \#instance | \#descriptors | $\theta$ | $a_{min}^{(1)}$ | $a_{max}^{(1)}$ | $a_{min}^{(2)}$ | $a_{max}^{(2)}$ | \|$C^{(1)}$\| | \|$C^{(2)}$\| | \#overlapping instances | %overlapping instances | Running time(sec) | Well-separated or not |
+| Data set | \#instance | \#descriptors | $\theta$ | $a_{min}^{(1)}$ | $a_{max}^{(1)}$ | $a_{min}^{(2)}$ | $a_{max}^{(2)}$ | $\|C^{(1)}\|$ | $\|C^{(2)}\|$ | \#overlapping instances | %overlapping instances | Running time(sec) | Well-separated or not |
 | ---      | ---        | ---           | ---      | ---             | ---              | ---             | ---                   | ---         | ---         | ---                    | ---                    | ---                       | --- |
 | Homo_var0 | 977 | 296 | 0.65 | 0.0 | 0.7916666666666666 | 0.5565068493150684 | 1.0 | 849 | 128 | 338 | 0.345957011258956 | 0.11586952209472656 | No |
 
