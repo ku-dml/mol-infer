@@ -1,16 +1,16 @@
-** UNDER CONSTRUCTION (2024.2.11) **
+** UNDER CONSTRUCTION (2024.2.17) **
 
 ## Conctructing Prediction Functions
 
-This folder contains the codes used to construct the prediction functions between the given desctiptor file of the whole data set ('SINGLE_xxx') or the two subsets ('SEP_xxx').
+This folder contains the codes used to construct the prediction functions between the given desctiptor file of the whole data set (`SINGLE_xxx`) or the two subsets (`SEP_xxx`).
 
-In both cases, we conduct the experiment in two stages, namely:
-- the preliminary experiment ('xxx_pre') to specify the hyperparameters, and
-- the evaluation experiment ('xxx_eval') to evaluate the learning performance by 10 times 5-crossvalidation, and construct the prediction function files that will be used later in the stage of solving inverse problem ([Module 3](HPS/Module_3)).
+In both cases, we conduct the experiment in two steps, namely:
+- the preliminary experiment (`xxx_pre`) to specify the hyperparameters, and
+- the evaluation experiment (`xxx_eval`) to evaluate the learning performance by 10 times 5-cross validation, and construct the prediction function files that will be used later in the stage of solving inverse problem ([Module 3](HPS/Module_3)).
 
 Usage:
 
-For learning using the whole data set ('SINGLE_xxx'):
+For learning using the whole data set (`SINGLE_xxx`):
 
 Preliminary experiment:
 
@@ -21,7 +21,7 @@ python SINGLE_pre.py DATASET_desc_norm.csv DATASET_values.txt -learning_method
 Here:
 - DATASET_desc_norm.csv(DATASET_hK_desc_norm.csv): the linear(quadratic) descriptor files generated in [Module 1](/HPS/Module_1) of the whole given data set;
 - DATASET_values.txt: the file containing observed value information of the data set, and;
-- -learning_method: the learning method ("-l" for LLR, "-ann" for ANN, "-alr" for ALR, and "-rbsp" for RLR).
+- -learning_method: the learning method (`-l` for LLR, `-ann` for ANN, `-alr` for ALR, and `-rbsp` for RLR).
 
 Evaluation experiment:
 
@@ -56,21 +56,12 @@ Here `-l 0.00073` is the selected parameter obtained from the preliminary experi
 
 When the code finishes normally, it will output the information about the learning performance like:
 
----
-Data set: "At_large_var0"
-\#instance: "448"
-\#descritpors: "254"
-\#linear descriptors: "254"
-\#quadratic descriptors: "0"
-learning method: "Lasso"
-median of train R<sup>2</sup>: "0.5773279046164392"
-min of train R<sup>2</sup>: "0.5366019574027185"
-max of train R<sup>2</sup>: "0.6211274634517285"
-median of test R<sup>2</sup>: "0.3911713431555095"
-min of test R<sup>2</sup>: "0.038081164737786555"
-max of test R<sup>2</sup>: "0.521242342190777"
-running time(sec): "0.16965603828430176" 
----
+
+|Data set|\#instance|\#descritpors|\#linear descriptors|\#quadratic descriptors|learning method|median of train R<sup>2</sup>|min of train R<sup>2</sup>|max of train R<sup>2</sup>|median of test R<sup>2</sup>|min of test R<sup>2</sup>|max of test R<sup>2</sup>|running time(sec)|
+|---|---|
+|At_large_var0|448|254|254|0|Lasso|0.5773279046164392|0.5366019574027185|0.6211274634517285|0.3911713431555095|0.038081164737786555|0.521242342190777|0.16965603828430176|
+|---|---|
+
 
 
 
