@@ -1,4 +1,4 @@
-** UNDER CONSTRUCTION (2024.2.16) **
+** UNDER CONSTRUCTION (2024.2.17) **
 
 ## Solving an MILP for the Inverse Problem
 
@@ -25,8 +25,8 @@ Here:
 - SPEC.txt: the file describing the topological specification except fringe trees;
 - FRINGE.txt: the file describing the available fringe trees in the topological specification;
 - OUTPUT: the prefix of output files;
-- -d1 (...): specifying the learning method ("ANN" or "R-MLR"(RLR)) used for the first subset, an
-- -d2 (...): specifying the learning method ("ANN" or "R-MLR"(RLR)) used for the second subset.
+- -d1 (...): specifying the learning method (`ANN` or `R-MLR`(RLR)) used for the first subset, an
+- -d2 (...): specifying the learning method (`ANN` or `R-MLR`(RLR)) used for the second subset.
 
 To describe the information of the data set, separating hyperplane, and the prediction functions, the following files are necessary:
 - DATASET_desc.csv: linear descriptor file of the original data set **BEFORE NORMALIZATION**, obtained in [Module 1](HPS/Module_1);
@@ -41,7 +41,7 @@ Moreover, the following files containing the information of the prediction funct
 - DATASET_D1_desc_norm_selected.csv: file containng the selected/reduced features for the first subset during the computation;
 - DATASET_D2_desc_norm_selected.csv: file containng the selected/reduced features for the second subset during the computation;
 - DATASET_Di_linreg.txt: (only when using RLR) file containing the weights and bias of linear regression of RLR, i=1,2, and
-- DATASET_Di_weights.txt, DATASET_Di_biaese.txt: (only when using ANN) files containing the weights and biases of the neural networks, i=1,2.
+- DATASET_Di_weights.txt, DATASET_Di_biases.txt: (only when using ANN) files containing the weights and biases of the neural networks, i=1,2.
 
 When the code finishes normally, it will generate the following files:
 - OUTPUT.lp: the lp file describing the MILP formulation;
