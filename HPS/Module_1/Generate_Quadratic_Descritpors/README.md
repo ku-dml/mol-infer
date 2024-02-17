@@ -1,10 +1,10 @@
-** UNDER CONSTRUCTION (2024.2.11) **
+** UNDER CONSTRUCTION (2024.2.17) **
 
 ## Generate Quadratic Descriptors
 
 This folder contains the code to generate the quadratic descriptors defined in Section 3, paragraph "Feature Function".
 
-A file containing the information of linear desctiors and a file containing the observed value information is necessary.
+A file containing the information of linear desctiors and a file containing the observed value information is necessary. See [[28]](https://arxiv.org/abs/2209.13527) for more details.
 
 Usage:
 
@@ -18,8 +18,7 @@ Here:
 - K: the size of descriptors to reduce to. (Please refer the paper for more information about the procedure of reducing descriptors.)
   
 When the generator finishes normally, it will generate the following file:
-- OUTPUT_hK_desc_norm.csv
-  The csv file of the quadratic descriptors of the data set with resulting descriptor size K.
+- OUTPUT_hK_desc_norm.csv: the csv file of the quadratic descriptors of the data set with resulting descriptor size K.
 
 A sample usage:
 
