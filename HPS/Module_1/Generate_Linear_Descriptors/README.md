@@ -1,18 +1,18 @@
-** UNDER CONSTRUCTION (2024.2.11) **
+** UNDER CONSTRUCTION (2024.2.17) **
 
 ## Generate Linear Descriptors
 
-This folder contains the code to generate the linear descriptors defined in Section 3, paragraph "Feature Function", which will be used for the learning procedure in [Module 2](HPS/Module_2).
+This folder contains the code to generate the linear descriptors defined in Section 3, paragraph "Feature Function", which will be used for the learning stage in [Module 2](HPS/Module_2).
 
 Usage:
 
-First compile the 'c++' files as following on terminal:
+First compile the `c++` files as following on terminal:
 
 ```
 g++ -o fv_2LMM fv_2LMM.cpp -O2 -Wall -std=c++20
 ```
 
-This will generate an executable file named 'fv_2LMM',
+This will generate an executable file named `fv_2LMM`,
 and then generate the linear feature desctipor files by using command:
 
 ```
