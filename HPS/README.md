@@ -1,4 +1,4 @@
-** UNDER CONSTRUCTION (2024.2.16) **
+** UNDER CONSTRUCTION (2024.2.19) **
 
 # mol-infer/HPS
 
@@ -6,10 +6,8 @@ This folder contains the codes and instances used for the paper "Molecular Desig
 
 The folder structure is organized as follows:
 1. Module 1
-
-   Paragraph "Feature Function" in Section 3.
-   - Generate Linear Descriptors
-   - Generate Quadratic Descritpors
+   - Generate Linear Descriptors (described in Section 3)
+   - Generate Quadratic Descritpors (described in Section 3)
 1. Module 2
    - Splitting Data Sets via Hyperplane (Section 5)
    - Constructing Prediction Functions (Section 4)
@@ -19,8 +17,8 @@ The folder structure is organized as follows:
 1. Module 4
    - Generating Recombination Solutions (Section 6.2)
 1. Instances for the paper
-   - Orginal data sets
-   - Instance files used for Table 2, 3&4, 5, respectively
+   - Orginal data sets used in the paper
+   - Instance files used for Tables 2, 3&4, 5, respectively
   
 Please refer each folder for detailed descriptions.
 
