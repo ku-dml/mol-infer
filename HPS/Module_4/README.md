@@ -1,5 +1,3 @@
-** UNDER CONSTRUCTION (2024.2.16) **
-
 # Module 4
 
 Module 4 consists of the stage of "Generating Recombination Solutions" described in the paragraph under the same name in Section 6.2.

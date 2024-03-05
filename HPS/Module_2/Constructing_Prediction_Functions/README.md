@@ -1,8 +1,6 @@
-** UNDER CONSTRUCTION (2024.2.17) **
+## Constructing Prediction Functions
 
-## Conctructing Prediction Functions
-
-This folder contains the codes used to construct the prediction functions between the given desctiptor file of the whole data set (`SINGLE_xxx`) or the two subsets (`SEP_xxx`).
+This folder contains the codes used to construct the prediction functions between the given descriptor file of the whole data set (`SINGLE_xxx`) or the two subsets (`SEP_xxx`).
 
 In both cases, we conduct the experiment in two steps, namely:
 - the preliminary experiment (`xxx_pre`) to specify the hyperparameters, and
@@ -20,7 +18,7 @@ python SINGLE_pre.py DATASET_desc_norm.csv DATASET_values.txt -learning_method
 ```
 
 Here:
-- DATASET_desc_norm.csv(DATASET_hK_desc_norm.csv): the linear(quadratic) descriptor files generated in [Module 1](/HPS/Module_1) of the whole given data set;
+- DATASET_desc_norm.csv (DATASET_hK_desc_norm.csv): the linear(quadratic) descriptor files generated in [Module 1](/HPS/Module_1) of the whole given data set;
 - DATASET_values.txt: the file containing observed value information of the data set, and;
 - -learning_method: the learning method (`-l` for LLR, `-ann` for ANN, `-alr` for ALR, and `-rbsp` for RLR).
 
@@ -57,7 +55,7 @@ Here `-l 0.00073` at the end of the output is the selected hyperparameter obtain
 
 When the code finishes normally, it will output the information about the learning performance like:
 
-| Data set | \#instance | \#descritpors | \#linear descriptors | \#quadratic descriptors | learning method | median of train R<sup>2</sup> | min of train R<sup>2</sup> | max of train R<sup>2</sup> | median of test R<sup>2</sup> | min of test R<sup>2</sup> | max of test R<sup>2</sup> | running time(sec) |
+| Data set | \#instance | \#descriptors | \#linear descriptors | \#quadratic descriptors | learning method | median of train R<sup>2</sup> | min of train R<sup>2</sup> | max of train R<sup>2</sup> | median of test R<sup>2</sup> | min of test R<sup>2</sup> | max of test R<sup>2</sup> | running time(sec) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | At_large_var0 | 448 | 254 | 254 | 0 | Lasso | 0.5773279046164392 | 0.5366019574027185 | 0.6211274634517285 | 0.3911713431555095 | 0.038081164737786555 | 0.521242342190777 | 0.16965603828430176 |
 
@@ -114,7 +112,7 @@ Here `-ann1 ./log/LLR_ANN_At_large_var0_theta0.35_D1_desc_norm.csv 0.44 1323 10 
 
 When the code finishes normally, it will output the information about the learning performance like:
 
-| Data set C1 | \#instance in C1 | \#descritpors in C1 | \#linear descriptors in C1 | \#quadratic descriptors in C1 | Data set C2 | \#instance in C2 | \#descritpors in C2 | \#linear descriptors in C2 | \#quadratic descriptors in C2 | learning method for C1 | median of train R<sup>2</sup> of C1 | min of train R<sup>2</sup> of C1 | max of train R<sup>2</sup> of C1 | median of test R<sup>2</sup> of C1 | min of test R<sup>2</sup> of C1 | max of test R<sup>2</sup> of C1 | running time(sec) for C1 | learning method for C2 | median of train R<sup>2</sup> of C2 | min of train R<sup>2</sup> of C2 | max of train R<sup>2</sup> of C2 | median of test R<sup>2</sup> of C2 | min of test R<sup>2</sup> of C2 | max of test R<sup>2</sup> of C2 | running time(sec) for C2 | ALL | median of train R<sup>2</sup> of HPS | min of train R<sup>2</sup> of HPS | max of train R<sup>2</sup> of HPS | median of test R<sup>2</sup> of HPS | min of test R<sup>2</sup> of HPS | max of test R<sup>2</sup> of HPS |   total running time(sec) |
+| Data set C1 | \#instance in C1 | \#descriptors in C1 | \#linear descriptors in C1 | \#quadratic descriptors in C1 | Data set C2 | \#instance in C2 | \#descriptors in C2 | \#linear descriptors in C2 | \#quadratic descriptors in C2 | learning method for C1 | median of train R<sup>2</sup> of C1 | min of train R<sup>2</sup> of C1 | max of train R<sup>2</sup> of C1 | median of test R<sup>2</sup> of C1 | min of test R<sup>2</sup> of C1 | max of test R<sup>2</sup> of C1 | running time(sec) for C1 | learning method for C2 | median of train R<sup>2</sup> of C2 | min of train R<sup>2</sup> of C2 | max of train R<sup>2</sup> of C2 | median of test R<sup>2</sup> of C2 | min of test R<sup>2</sup> of C2 | max of test R<sup>2</sup> of C2 | running time(sec) for C2 | ALL | median of train R<sup>2</sup> of HPS | min of train R<sup>2</sup> of HPS | max of train R<sup>2</sup> of HPS | median of test R<sup>2</sup> of HPS | min of test R<sup>2</sup> of HPS | max of test R<sup>2</sup> of HPS |   total running time(sec) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | At_large_var0_theta0.35_D1 | 121 | 10 | 10 |  0 | At_large_var0_theta0.35_D2_quadratic_h5000 | 327 | 39 | 0 | 39 |  ANN | 0.44080679140495954 | 0.27623698613933056 | 0.44557922028326724 | 0.1256260280176708 | -3.154369174844743 | 0.5088258925224387 | 5.402069807052612 | BSP | 0.6185826861886786 | 0.5760320283426084 | 0.6915885578335911 | 0.5322920228884651 | -0.04772080841685944 | 0.6615550826567639 | 0.06558966636657715 | ALL | 0.8199587937517928 | 0.7988590479498323 | 0.8522449855216254 | 0.7647687447715765 | 0.5806001953070816 | 0.8508567427925742 | 5.4676594734191895 | 
 
@@ -124,7 +122,7 @@ Besides above, the code will also generate two summary files containing the info
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | 1 | 0.8420611575174265 | 0.6587311490954544 | 0.08189535140991211 | 0.6532945133522152 | 0.38561774355971723|
 
-Also the files about the constructed prediction functions for the two subsets respectively in `./pred_func/` folder, which will be used in [Module 3](HPS/Module_3):
+Also the files about the constructed prediction functions for the two subsets in `./pred_func/` folder, which will be used in [Module 3](HPS/Module_3):
 - C1_i_j_linreg.txt: (in the case of LLR and RLR) the file containing the weights and bias of linear regression constructed for subset 'C1' for the i-th time j-th cross-validation;
 - C2_i_j_linreg.txt: (in the case of LLR and RLR) the file containing the weights and bias of linear regression constructed for subset 'C2' for the i-th time j-th cross-validation;
 - C1_i_j_weights.txt, C1_i_j_biases.txt: (in the case of ANN) the files containing the weights and biases of the neural networks constructed for subset 'C1' for the i-th time j-th cross-validation, and;

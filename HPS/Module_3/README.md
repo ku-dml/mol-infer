@@ -1,5 +1,3 @@
-** UNDER CONSTRUCTION (2024.2.16) **
-
 # Module 3
 
 Module 3 consists of the stage of solving an MILP formulation for the inverse problem to infer a chemical graph described in Section 6.2, paragraphs "Solving an MILP for the Inverse Problem" and "Generating Neighbor Solutions".

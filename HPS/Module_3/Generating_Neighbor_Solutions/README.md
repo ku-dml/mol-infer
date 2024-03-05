@@ -1,5 +1,3 @@
-** UNDER CONSTRUCTION (2024.2.19) **
-
 ## Generating Neighbor Solutions
 
 This folder contains the code to generate the *neighbor solutions*, or *Grid Neighbor Search* (GNS), described in Section 6.2, paragraph "Generating Neighbor Solutions" by solving an MILP formulation for the inverse problem of the machine learning method systematically, once given:
@@ -42,8 +40,8 @@ To describe the information of the data set, separating hyperplane, and the pred
 - DATASET_D2_values.txt: file containing the observed values of the second subset, obtained in [Module 2/Splitting Data Sets via Hyperplanes](HPS/Module_2/Splitting_Data_Sets_via_Hyperplane);
 
 Moreover, the following files containing the information of the prediction functions are necessary, which can be obtained in [Module 2/Constructing Prediction Functions](HPS/Module_2/Constructing_Prediction_Functions):
-- DATASET_D1_desc_norm_selected.csv: file containng the selected/reduced features for the first subset during the computation;
-- DATASET_D2_desc_norm_selected.csv: file containng the selected/reduced features for the second subset during the computation;
+- DATASET_D1_desc_norm_selected.csv: file containing the selected/reduced features for the first subset during the computation;
+- DATASET_D2_desc_norm_selected.csv: file containing the selected/reduced features for the second subset during the computation;
 - DATASET_Di_linreg.txt: (only when using RLR) file containing the weights and bias of linear regression of RLR, i=1,2, and;
 - DATASET_Di_weights.txt, DATASET_Di_biases.txt: (only when using ANN) files containing the weights and biases of the neural networks, i=1,2.
 
@@ -66,5 +64,5 @@ And finally:
 A sample usage:
 
 ```
-python infer_2LMM_SEP_GNS.py ./sample_instance/At 370 380 ./sample_instance/instance_c_2LMM.txt ./sample_instance/ins_c_fringe_2LMM.txt ./sample_instance/At_370_380 ./sample_instance/p_max_delta_r_1e-1.txt -d1 -ANN -d2 R-MLR -t ./sample_instance/constraints/Mp/Mp ./sample_instance/constaints/Sl/Sl
+python infer_2LMM_SEP_GNS.py ./sample_instance/At 370 380 ./sample_instance/instance_c_2LMM.txt ./sample_instance/ins_c_fringe_2LMM.txt ./sample_instance/At_370_380 ./sample_instance/p_max_delta_r_1e-1.txt -d1 -ANN -d2 R-MLR -t ./sample_instance/constraints/Mp/Mp ./sample_instance/constraints/Sl/Sl
 ```

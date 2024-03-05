@@ -1,8 +1,6 @@
-** UNDER CONSTRUCTION (2024.2.17) **
-
 ## Splitting Data Sets via Hyperplanes
 
-This folder constains the code of "Splitting Data Sets via Hyperplanes" described in Section 5.
+This folder contains the code of "Splitting Data Sets via Hyperplanes" described in Section 5.
 
 The installation of [PuLP](https://coin-or.github.io/pulp/index.html) and [CPLEX](https://www.ibm.com/products/ilog-cplex-optimization-studio) are necessary.
 The CPLEX path should be specified in 'separating_plane.py' before running the code.

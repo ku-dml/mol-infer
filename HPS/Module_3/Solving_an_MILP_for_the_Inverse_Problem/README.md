@@ -1,5 +1,3 @@
-** UNDER CONSTRUCTION (2024.2.19) **
-
 ## Solving an MILP for the Inverse Problem
 
 This folder contains the code to generate **ONE** chemical graph by solving an MILP formulation for the inverse problem of the machine learning method, described in Section 6.2, paragraph "Solving an MILP for the Inverse Problem", once given:
@@ -38,8 +36,8 @@ To describe the information of the data set, separating hyperplane, and the pred
 - DATASET_D2_values.txt: file containing the observed values of the second subset, obtained in [Module 2/Splitting Data Sets via Hyperplanes](HPS/Module_2/Splitting_Data_Sets_via_Hyperplane);
 
 Moreover, the following files containing the information of the prediction functions are necessary, which can be obtained in [Module 2/Constructing Prediction Functions](HPS/Module_2/Constructing_Prediction_Functions):
-- DATASET_D1_desc_norm_selected.csv: file containng the selected/reduced features for the first subset during the computation;
-- DATASET_D2_desc_norm_selected.csv: file containng the selected/reduced features for the second subset during the computation;
+- DATASET_D1_desc_norm_selected.csv: file containing the selected/reduced features for the first subset during the computation;
+- DATASET_D2_desc_norm_selected.csv: file containing the selected/reduced features for the second subset during the computation;
 - DATASET_Di_linreg.txt: (only when using RLR) file containing the weights and bias of linear regression of RLR, i=1,2, and;
 - DATASET_Di_weights.txt, DATASET_Di_biases.txt: (only when using ANN) files containing the weights and biases of the neural networks, i=1,2.
 

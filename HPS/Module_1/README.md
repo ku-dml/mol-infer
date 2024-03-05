@@ -1,5 +1,3 @@
-** UNDER CONSTRUCTION (2024.2.11) **
-
 # Module 1
 
 Module 1 consists of the stage of generating the feature vectors (defined in Section 3, paragraph "Feature Function") of a given data set (sdf format file).
