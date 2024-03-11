@@ -29,7 +29,7 @@ For a given SDF, you can extract molecules that do not contain any other atoms t
 ```
 $ python limit_atoms.py B.sdf C N O H
 ```
-Then you will have an SDF file named _B_C_N_O_H.sdf_. Each molecule in this SDF consists of some of C, N, O and H and does not contain any other atoms. Of course this _B_C_N_O_H.sdf_ can be also used as an input of the [feature vector generator](../Generate_Linear_Descriptors). 
+Then you will have an SDF file named _B_C_N_O_H.sdf_. Each molecule in this SDF consists of some of C, N, O and H and does not contain any other atoms. The order of atoms is not essential. Of course this _B_C_N_O_H.sdf_ can be also used as an input of the [feature vector generator](../Generate_Linear_Descriptors). 
 
 For example, 
 ```
