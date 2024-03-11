@@ -35,5 +35,5 @@ For example,
 ```
 $ python limit_atoms.py Example_eli.sdf C O N S Cl H
 ```
-Then you will have **Example_eli_C_O_N_S_Cl_H.sdf** that contain 899 molecules, all of which consist of some of C, O, N, S, Cl and H. 
+Then you will have **Example_eli_C_O_N_S_Cl_H.sdf** that contains 899 molecules, all of which consist of some of C, O, N, S, Cl and H. 
 
