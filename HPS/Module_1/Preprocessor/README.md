@@ -1,4 +1,4 @@
-# Preprocessor
+# Preprocessors
 The directory contains two scripts that are used to preprocess your SDF file.
 
 Note that [SDF files that are used in the paper](../../instances_for_paper) are already processed by these two scripts. You don't need to run the scripts for the SDF files in the above directory. 
