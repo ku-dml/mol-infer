@@ -10,3 +10,6 @@ Module 1 consists of the stage of generating the feature vectors (defined in Sec
   
   Generate the _quadratic descriptors_ file of a given data set that is used in the learning method RLR.
 
+- Preprocessors:
+
+  Preprocessing scripts that build an SDF file by extracting feasible molecules from an original SDF file. 
