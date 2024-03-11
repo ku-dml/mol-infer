@@ -18,7 +18,7 @@ The folder structure is organized as follows:
    - Generating Recombination Solutions (Section 6.2)
 1. Instances for the paper
    - Original data sets used in the paper
-   - Instance files used for Tables 2, 3, 4, respectively
+   - Instance files used for Tables 2, 3 and 4
   
 Please refer each folder for detailed descriptions.
 
