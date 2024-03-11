@@ -8,6 +8,7 @@ The folder structure is organized as follows:
 1. Module 1
    - Generate Linear Descriptors (described in Section 3)
    - Generate Quadratic Descriptors (described in Section 3)
+   - Preprpcessors
 1. Module 2
    - Splitting Data Sets via Hyperplane (Section 5)
    - Constructing Prediction Functions (Section 4)
