@@ -12,4 +12,4 @@ Module 1 consists of the stage of generating the feature vectors (defined in Sec
 
 - Preprocessors:
 
-  Preprocessing scripts that build an SDF file by extracting feasible molecules from an original SDF file. 
+  Build an _SDF_ file by extracting feasible molecules from an original SDF file. Note that [SDF files that are used in the paper](../instances_for_paper) are already processed by the preprocessing scripts; you don't need to run the scripts for them. 
