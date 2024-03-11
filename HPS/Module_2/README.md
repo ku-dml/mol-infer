@@ -4,7 +4,7 @@ Module 2 consists of the stage of constructing the prediction functions between 
 
 - Splitting Data Sets via Hyperplanes
 
-  Use a linear program formulation to find a hyperplane to split the given data set into two subsets as described in Section 5.
+  Use a linear programming formulation to find a hyperplane to split the given data set into two subsets as described in Section 5.
   
 - Constructing Prediction Functions
 
