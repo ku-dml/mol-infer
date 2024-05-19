@@ -49,7 +49,7 @@ def main(argv):
     instance_file = argv[4]
     fringe_tree_file = argv[5]
     output_prefix = argv[6]
-    if 'Perm' in prop:
+    if 'Prm' in prop:
       fq_lb = float(argv[7])
       fq_ub = float(argv[8])
       fq = pulp.LpVariable(f"fq", fq_lb, fq_ub, cat=pulp.LpInteger)
