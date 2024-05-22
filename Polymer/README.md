@@ -1,5 +1,12 @@
 # mol-infer/Polymer
 
+This folder contains the codes and instances used for the paper "A Method for Inferring Polymers Based on Linear Regression and Integer Programming".
+
+- The paper is submitted to IEEE/ACM Transactions on Computational Biology and Bioinformatics.
+- The preprint is available at https://arxiv.org/abs/2109.02628.
+- All folder/file names in this repository are based on the table/figure numbers in the submitted paper.
+
+
 The folder structure is organized as follows:
 1. Module 1
    - Generate Descriptors (described in Section 3)
