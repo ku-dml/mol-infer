@@ -11,6 +11,7 @@ This folder contains the codes and instances used for the paper:
 - All folder/file names in this repository are based on the table/figure numbers in the TCBB paper.
 - Please cite the TCBB paper if you use the files in this directory.  
 
+-----
 The folder structure is organized as follows:
 1. Module 1
    - Generate Linear Descriptors (described in Section 3)
