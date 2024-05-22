@@ -1,8 +1,15 @@
 # mol-infer/HPS
-This folder contains the codes and instances used for the paper "Molecular Design Based on Integer Programming and Splitting Data Sets by Hyperplanes".
-- The paper is submitted to IEEE/ACM Transactions on Computational Biology and Bioinformatics.
-- The preprint is available at https://arxiv.org/abs/2305.00801.
-- All folder/file names in this repository are based on the table/figure numbers in the submitted paper. 
+This folder contains the codes and instances used for the paper:
+
+<p>Jianshen Zhu, Naveed Ahmed Azam, Kazuya Haraguchi, Liang Zhao, Hiroshi Nagamochi and Tatsuya Akutsu:<br>
+  A Method for Inferring Polymers Based on Linear Regression and Integer Programming.<br>
+  <i>IEEE/ACM Transactions on Computational Biology and Bioinformatics</i>, 2024. DOI: 10.1109/TCBB.2024.3402675.
+</p>
+
+- https://ieeexplore.ieee.org/document/10534864/
+- The preprint is available at https://arxiv.org/abs/2109.02628.
+- All folder/file names in this repository are based on the table/figure numbers in the TCBB paper.
+- Please cite the TCBB paper if you use the files in this directory.  
 
 The folder structure is organized as follows:
 1. Module 1
