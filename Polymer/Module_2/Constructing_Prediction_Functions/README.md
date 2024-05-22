@@ -10,7 +10,7 @@ In both cases, we conduct the experiment in two steps, namely:
 
 Here we explain the usage of learning for the data set (`SINGLE_xxx`) by Lasso linear regression. 
 
-Preliminary experiment:
+#### Preliminary experiment:
 
 ```
 python SINGLE_pre.py DATASET_desc_norm.csv DATASET_values.txt -l
@@ -21,7 +21,7 @@ Here:
 - DATASET_values.txt: the file containing observed value information of the data set, and;
 - -l: representing the learning method Lasso linear regression.
 
-Evaluation experiment:
+#### Evaluation experiment:
 
 ```
 python SINGLE_eval.py DATASET_desc_norm.csv DATASET_values.txt -l (...)
@@ -30,7 +30,7 @@ python SINGLE_eval.py DATASET_desc_norm.csv DATASET_values.txt -l (...)
 Basically the inputs are the same as the ones used for the preliminary experiment, except:
 - -l (...): the learning method **AND** the corresponding parameters obtained in the preliminary experiment (see the example below).
 
-A sample usage:
+#### A sample usage:
 
 For preliminary experiment:
 
