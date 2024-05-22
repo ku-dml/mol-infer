@@ -14,7 +14,7 @@ This will generate an executable file named `fv_2LMM_polymer`,
 and then generate the linear feature descriptor files by using the command:
 
 ```
-./fv_2LMM DATASET.sdf OUTPUT
+./fv_2LMM_polymer DATASET.sdf OUTPUT
 ```
 
 Here:
