@@ -36,7 +36,7 @@ You can use **Example.sdf** in this directory for example.
 ```
 $ python eliminate.py ./sample_instance/sample_e*.sdf ./sample_instance/sample_eli_e*.sdf 
 ```
-Executing this, you will have **sample_eli_e*.sdf**. You will also see that **sample_eli_e*.sdf** contains 108 molecules, where **sample_e*.sdf** contains 127 molecules. 
+Executing this, you will have _sample_eli_e*.sdf_. You will also see that _sample_eli_e*.sdf_ contains 108 molecules, where _sample_e*.sdf_ contains 127 molecules. 
 
 ## limit_atoms.py
 For a given SDF, you can extract molecules that do not contain any other atoms than specified ones, as we do in the experiments in Section 4 of the paper. If you want to extract molecules in B.sdf that do not contain any other atoms than C, N, O and H, run
@@ -49,7 +49,7 @@ For example,
 ```
 $ python limit_atoms.py ./sample_instance/sample_eli_e*.sdf C O N H e*
 ```
-Then you will have **sample_eli_C_O_N_H_e*.sdf** that contains 86 molecules, all of which consist of some of C, O, N, H and e* (a dummy atom for polymer). 
+Then you will have _sample_eli_C_O_N_H_e*.sdf_ that contains 86 molecules, all of which consist of some of C, O, N, H and e* (a dummy atom for polymer). 
 
 
 ##  contract_e.cpp
