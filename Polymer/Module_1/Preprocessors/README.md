@@ -19,7 +19,7 @@ Suppose that the mol files are in the folder ./sample_instance/mol, run **polyme
 $ python polymer_converter_mol_to_sdf.py ./sample_instance/mol ./sample_instance/sample_e*.sdf
 ```
 
-Executing this, you will have **sample_e*.sdf**, which will be used for the following preprocessing procedure.
+Executing this, you will have _sample_e*.sdf_, which will be used for the following preprocessing procedure.
 
 
 ## eliminate.py
