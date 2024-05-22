@@ -1,7 +1,7 @@
 # Preprocessors
 The directory contains several scripts that are used to preprocess your SDF file.
 
-Note that [SDF files that are used in the paper](../../instances_for_paper) are already processed by these two scripts. You don't need to run the scripts for the SDF files in the above directory. 
+Note that [SDF files that are used in the paper](../../instances_for_paper) are already processed by these scripts. You don't need to run the scripts for the SDF files in the above directory. 
 
 The scripts are: 
 
@@ -13,7 +13,7 @@ The scripts are:
 ## polymer_converter_mol_to_sdf.py
 A file to convert the mol file representing polymers to the SDF format.
 
-Suppose that the mol files are in the folder ./sample_instance/mol, run **polymer_converter_mol_to_sdf.py** to get a SDF file.
+Suppose that the mol files are in the folder ./sample_instance/mol, run **polymer_converter_mol_to_sdf.py** to get a SDF file. We assume that the polymer data set is represented in the format like the ones in that folder.
 
 ```
 $ python polymer_converter_mol_to_sdf.py ./sample_instance/mol ./sample_instance/sample_e*.sdf
@@ -53,7 +53,7 @@ Then you will have **sample_eli_C_O_N_H_e*.sdf** that contains 86 molecules, all
 
 
 ##  contract_e.cpp
-Finally, we will convert the polymer to the **monomer-representation** described in Section 2.
+Finally, you need to convert the polymer to the **monomer-representation** described in Section 2.
 
 First, compile the `c++` files as follows on the terminal:
 ```
@@ -61,9 +61,9 @@ g++ -o contract_e.o contract_e.cpp -O3 -std=c++11
 ```
 
 This will generate an executable file named `contract_e.o`,
-and then generate the monomer-representation by using the command:
+and then use the following command:
 ```
 ./contract_e.o ./sample_instance/sample_eli_C_O_N_H_e*.sdf ./sample_instance/sample_eli_C_O_N_H_contract.sdf
 ```
 
-This will generate the **monomer-representation** file for the polymers and can be directly used as an input of the [feature vector generator](../Generate_Descriptors).
+This will generate a **monomer-representation** file _sample_eli_C_O_N_H_contract.sdf_ for the polymers that can be directly used as an input of the [feature vector generator](../Generate_Descriptors).
