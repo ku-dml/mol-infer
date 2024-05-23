@@ -11,7 +11,7 @@ The scripts are:
 - **contract_e.cpp** (converting polymer to its monomer-representation)
 
 ## polymer_converter_mol_to_sdf.py
-A file to convert the mol file representing polymers to the SDF format.
+A file to convert the mol file representing polymers to the SDF format. As described in Section 2, paragraph "Polymers", we consider linear polymers which have only one repeating unit (homopolymer), and assume that the two ends are presented by a dummy atom e*.
 
 Suppose that the mol files are in the folder ./sample_instance/mol, run **polymer_converter_mol_to_sdf.py** to get a SDF file. We assume that the polymer data set is represented in the format like the ones in that folder.
 
