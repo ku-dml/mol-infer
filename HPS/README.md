@@ -2,7 +2,7 @@
 This folder contains the codes and instances used for the paper:
 
 <p>Jianshen Zhu, Naveed Ahmed Azam, Kazuya Haraguchi, Liang Zhao, Hiroshi Nagamochi and Tatsuya Akutsu:<br>
-  A Method for Inferring Polymers Based on Linear Regression and Integer Programming.<br>
+  Molecular Design Based on Integer Programming and Splitting Data Sets by Hyperplanes.<br>
   <i>IEEE/ACM Transactions on Computational Biology and Bioinformatics</i>, 2024. DOI: 10.1109/TCBB.2024.3402675.
 </p>
 
