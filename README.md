@@ -23,7 +23,12 @@ You should think of different packages as different projects.
 
 **Notice:** Please visit each package for details.
 - Some packages may not be fully prepared. 
-- In addition to structural assumptions, we may make other assumptions on input chemical graphs. For example, in [Cyclic](Cyclic/) and [Cyclic_improved](Cyclic_improved/), the graphs should be *2-lean* as well as cyclic. 
+- In addition to structural assumptions, we may make other assumptions on input chemical graphs. For example, in [Cyclic](Cyclic/) and [Cyclic_improved](Cyclic_improved/), the graphs should be *2-lean* as well as cyclic.
+
+### Package [RMLRQ](RMLRQ/) (May 2023)
+- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
+- **Reference:**
+  - Jianshen Zhu, Naveed Ahmed Azam, Shengjuan Cao, Ryota Ido, Kazuya, Haraguchi, Liang Zhao, Hiroshi Nagamochi and Tatsuya Akutsu, Molecular Design Based on Integer Programming and Quadratic Descriptors in a Two-layered Model, arXiv 2209.13527, 2022, https://arxiv.org/abs/2209.13527.
 
 ### Package [Grid-neighbor-search](Grid-neighbor-search/) (Dec 2021)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
@@ -57,11 +62,6 @@ You should think of different packages as different projects.
 - **Reference:**
   - N.A. Azam, J. Zhu, Y. Sun, Y. Shi, A. Shurbevski, L. Zhao, H. Nagamochi and T. Akutsu, A Novel Method for Inference of Acyclic Chemical Compounds with Bounded Branch-height Based on Artificial Neural Networks and Integer Programming, 2020, https://arxiv.org/abs/2009.09646.
 
-### Package [RMLRQ](RMLRQ/) (May 2023)
-- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
-- **Reference:**
-  - Jianshen Zhu, Naveed Ahmed Azam, Shengjuan Cao, Ryota Ido, Kazuya, Haraguchi, Liang Zhao, Hiroshi Nagamochi and Tatsuya Akutsu, Molecular Design Based on Integer Programming and Quadratic Descriptors in a Two-layered Model, arXiv 2209.13527, 2022, https://arxiv.org/abs/2209.13527.
-
 
 ## Requirement
 
@@ -69,4 +69,4 @@ A standard C++ compiler and Python with some standard packages. See each package
 
 ## Acknowledgement
 
-This project is partially supported by JSPS Grant (KAKENHI) 18H04113.
+This project is partially supported by JSPS Grant (KAKENHI) 18H04113 and 22H00532.
