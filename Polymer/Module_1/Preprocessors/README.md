@@ -49,7 +49,7 @@ For example,
 ```
 $ python limit_atoms.py ./sample_instance/sample_eli_e.sdf C O N H e*
 ```
-Then you will have **sample_eli_C_O_N_H_e.sdf** that contains 86 molecules, all of which consist of some of C, O, N, H and e* (a dummy atom for polymer). 
+Then you will have _sample_eli_C_O_N_H_e*.sdf_ that contains 86 molecules, all of which consist of some of C, O, N, H and e* (a dummy atom for polymer). Notice that asterisk * here does not mean a wildcard character.
 
 
 ##  contract_e.cpp
@@ -63,7 +63,7 @@ g++ -o contract_e.o contract_e.cpp -O3 -std=c++11
 This will generate an executable file named `contract_e.o`,
 and then use the following command:
 ```
-./contract_e.o ./sample_instance/sample_eli_C_O_N_H_e.sdf ./sample_instance/sample_eli_C_O_N_H_contract.sdf
+./contract_e.o ./sample_instance/sample_eli_C_O_N_H_e*.sdf ./sample_instance/sample_eli_C_O_N_H_contract.sdf
 ```
 
 This will generate a **monomer-representation** file **sample_eli_C_O_N_H_contract.sdf** for the polymers that can be directly used as an input of the [feature vector generator](../Generate_Descriptors).
