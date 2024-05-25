@@ -2,7 +2,7 @@
 
 This folder contains the codes and instances used for the paper "A Method for Inferring Polymers Based on Linear Regression and Integer Programming".
 
-- The paper is submitted to IEEE/ACM Transactions on Computational Biology and Bioinformatics.
+- The paper is submitted to IEEE/ACM Transactions on Computational Biology and Bioinformatics.　The supplementary material is available [here](Supplementary_Materials.pdf). 
 - The preprint is available at https://arxiv.org/abs/2109.02628.
 - All folder/file names in this repository are based on the table/figure numbers in the submitted paper.
 
