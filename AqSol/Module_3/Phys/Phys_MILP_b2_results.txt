@@ -1,0 +1,27 @@
+output_prefix: ./tests/output/Phys_b2_0.52_0.57_test
+instance_file: ./tests/input/instance_files/instance_b2_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_b2_fringe_2LMM.txt
+Input data:
+	index: 0
+	model: ANN
+	prefix: ./tests/input/data/Phys
+	target_value_lower_bound: 0.52
+	target_value_upper_bound: 0.57
+
+Initializing Time: 11.096
+Number of variables: 18326
+ - Integer : 17947
+ - Binary  : 15532
+Number of constraints: 10970
+
+Status: Feasible
+index 0  y*: 0.562
+
+Solving Time: 1165.992
+
+Checking calculated descriptors
+	prefix: ./tests/input/data/Phys
+
+        Error reading the file ./tests/output/Phys_b2_0.52_0.57_test_test_tmp_desc_norm.csv
+        with pandas.
+        

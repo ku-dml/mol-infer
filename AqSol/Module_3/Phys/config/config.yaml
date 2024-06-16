@@ -1,0 +1,20 @@
+output_prefix: ./tests/output/Phys_b2_0.52_0.57_test
+instance_file: ./tests/input/instance_files/instance_b2_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_b2_fringe_2LMM.txt
+input_data:
+  # - model: LR
+  #   prefix: ./input/data/Mp_small
+  #   target_value_lower_bound: -208.79
+  #   target_value_upper_bound: 40.0
+  # - model: RF
+  #   prefix: ./input/data/Bp_small
+  #   target_value_lower_bound: -268.928
+  #   target_value_upper_bound: 167.95
+  # - model: ANN
+  #   prefix: ./input/data/Fp_small
+  #   target_value_lower_bound: -188.0
+  #   target_value_upper_bound: 63.44444444444444
+  - model: ANN
+    prefix: ./tests/input/data/Phys
+    target_value_lower_bound: 0.52
+    target_value_upper_bound: 0.57

@@ -1,0 +1,29 @@
+output_prefix: ./tests/output/Phys_b3_-3.60_-3.55_test
+instance_file: ./tests/input/instance_files/instance_b3_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_b3_fringe_2LMM.txt
+Input data:
+	index: 0
+	model: ANN
+	prefix: ./tests/input/data/Phys
+	target_value_lower_bound: -3.6
+	target_value_upper_bound: -3.55
+
+Initializing Time: 11.198
+Number of variables: 18166
+ - Integer : 17790
+ - Binary  : 15375
+Number of constraints: 10971
+
+Status: Feasible
+index 0  y*: -3.570
+
+Solving Time: 322.070
+
+Checking calculated descriptors
+	prefix: ./tests/input/data/Phys
+i = 1. [n] Difference in desc (1.33333) and x_hat (1.3529408823540001).
+i = 2. [rank] Difference in desc (0.139961) and x_hat (0.3036710739266413).
+	Inspection value (scaled):   -3.5704474273124376
+
+DONE: ./tests/output/Phys_b3_-3.60_-3.55_test (Feasible) in 345.139 seconds
+Feasible

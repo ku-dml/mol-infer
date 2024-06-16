@@ -1,0 +1,30 @@
+output_prefix: ./tests/output/Jain_Yalkowsky_c_-9.20_-9.15_test
+instance_file: ./tests/input/instance_files/instance_c_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_c_fringe_2LMM.txt
+Input data:
+	index: 0
+	model: LR
+	prefix: ./tests/input/data/Jain_Yalkowsky
+	target_value_lower_bound: -9.2
+	target_value_upper_bound: -9.15
+LR_filename:  ./tests/input/data/Jain_Yalkowsky_LR.txt
+
+Initializing Time: 1.670
+Number of variables: 6651
+ - Integer : 6558
+ - Binary  : 5089
+Number of constraints: 6980
+
+Status: Feasible
+index 0  y*: -9.158
+
+Solving Time: 6.583
+
+Checking calculated descriptors
+	prefix: ./tests/input/data/Jain_Yalkowsky
+i = 4. [n] Difference in desc (0.907407) and x_hat (0.9019605882375).
+i = 5. [ms] Difference in desc (0.0922947) and x_hat (0.20919828527824072).
+	Inspection value (scaled):   -8.99508459502374
+
+DONE: ./tests/output/Jain_Yalkowsky_c_-9.20_-9.15_test (Feasible) in 9.940 seconds
+Feasible

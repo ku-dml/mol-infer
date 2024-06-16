@@ -1,0 +1,27 @@
+output_prefix: ./tests/output/Wang_d_-5_-4_test
+instance_file: ./tests/input/instance_files/instance_d_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_d_fringe_2LMM.txt
+Input data:
+	index: 0
+	model: ANN
+	prefix: ./tests/input/data/Wang_D_1
+	target_value_lower_bound: -5
+	target_value_upper_bound: -4
+
+Initializing Time: 3.308
+Number of variables: 5942
+ - Integer : 5370
+ - Binary  : 4184
+Number of constraints: 7940
+
+Status: Feasible
+index 0  y*: -4.475
+
+Solving Time: 13.319
+
+Checking calculated descriptors
+	prefix: ./tests/input/data/Wang_D_1
+
+        Error reading the file ./tests/output/Wang_d_-5_-4_test_test_tmp_desc_norm.csv
+        with pandas.
+        

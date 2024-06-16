@@ -1,0 +1,21 @@
+output_prefix: ./tests/output/Wang_b3_-2.5_-1.5_test
+instance_file: ./tests/input/instance_files/instance_b3_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_b3_fringe_2LMM.txt
+input_data:
+  # - model: LR
+  #   prefix: ./input/data/Mp_small
+  #   target_value_lower_bound: -208.79
+  #   target_value_upper_bound: 40.0
+  # - model: RF
+  #   prefix: ./input/data/Bp_small
+  #   target_value_lower_bound: -268.928
+  #   target_value_upper_bound: 167.95
+  # - model: ANN
+  #   prefix: ./input/data/Fp_small
+  #   target_value_lower_bound: -188.0
+  #   target_value_upper_bound: 63.44444444444444
+  - model: ANN
+    prefix: ./tests/input/data/Wang_D_1
+    target_value_lower_bound: -2.5
+    target_value_upper_bound:  -1.5
+    

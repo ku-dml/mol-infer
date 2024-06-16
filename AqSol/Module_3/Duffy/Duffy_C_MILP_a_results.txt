@@ -1,0 +1,28 @@
+output_prefix: ./tests/output/Duffy_a_-11.50_-11.45_test
+instance_file: ./tests/input/instance_files/instance_a_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_a_fringe_2LMM.txt
+Input data:
+	index: 0
+	model: LR
+	prefix: ./tests/input/data/Duffy_Jorgensen_C
+	target_value_lower_bound: -11.5
+	target_value_upper_bound: -11.45
+LR_filename:  ./tests/input/data/Duffy_Jorgensen_C_LR.txt
+
+Initializing Time: 4.094
+Number of variables: 10535
+ - Integer : 10442
+ - Binary  : 8727
+Number of constraints: 9035
+
+Status: Feasible
+index 0  y*: -11.498
+
+Solving Time: 16.646
+
+Checking calculated descriptors
+	prefix: ./tests/input/data/Duffy_Jorgensen_C
+	Inspection value (scaled):   -11.498056867559745
+
+DONE: ./tests/output/Duffy_a_-11.50_-11.45_test (Feasible) in 21.650 seconds
+Feasible

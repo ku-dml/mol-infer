@@ -1,0 +1,20 @@
+output_prefix: ./tests/output/Duffy_d_-8.05_-8_test
+instance_file: ./tests/input/instance_files/instance_d_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_d_fringe_2LMM.txt
+input_data:
+  # - model: LR
+  #   prefix: ./input/data/Mp_small
+  #   target_value_lower_bound: -208.79
+  #   target_value_upper_bound: 40.0
+  # - model: RF
+  #   prefix: ./input/data/Bp_small
+  #   target_value_lower_bound: -268.928
+  #   target_value_upper_bound: 167.95
+  # - model: ANN
+  #   prefix: ./input/data/Fp_small
+  #   target_value_lower_bound: -188.0
+  #   target_value_upper_bound: 63.44444444444444
+  - model: LR
+    prefix: ./tests/input/data/Duffy_Jorgensen_C
+    target_value_lower_bound: -8.05
+    target_value_upper_bound: -8
