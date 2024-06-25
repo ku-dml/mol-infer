@@ -367,7 +367,7 @@ def read_ELR(fp):
         # print(string)
         arr = list(map(float, string.split(SPL)))
         ## read bias b
-        ELR.bias = arr[0]
+        ELR.bias = arr[0] 
 
         string = readline_except_comment(fp)
         # print(string)

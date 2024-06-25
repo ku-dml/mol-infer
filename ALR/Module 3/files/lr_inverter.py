@@ -97,7 +97,7 @@ def read_LR(fp):
         # print(string)
         arr = list(map(float, string.split(SPL)))
         ## read bias b
-        LR.bias = int(arr[0])
+        LR.bias = arr[0]
 
     except:
         sys.stderr.write("error: failed to read the linear regression file.\n")
