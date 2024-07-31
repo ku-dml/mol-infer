@@ -5,7 +5,7 @@ author: "京都大学　情報学研究科　離散数理分野研究室"
 ---
 
 <p align="center">
-  <a href="/README_en.md">English</a>
+  <a href="/README.md">English</a>
   ·
   <a href="/README_jp.md">日本語</a>
 </p>
