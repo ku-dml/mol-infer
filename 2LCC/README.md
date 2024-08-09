@@ -9,7 +9,7 @@ The folder structure is organized as follows:
 1. Module 1
 	- Generate 2LCC Descriptors (described in Section 3)
 1. Module 2
-	- Constructing Prediction Functions (Section 5.3)
+	- Constructing Prediction Functions (Section 5.2)
 1. Module 3
 	- Solving an MILP for the Inverse Problem (Section 5.3)
 1. Instances for the paper
