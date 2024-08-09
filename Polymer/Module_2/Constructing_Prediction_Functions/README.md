@@ -4,7 +4,7 @@ This folder contains the codes used to construct the prediction functions betwee
 
 In both cases, we conduct the experiment in two steps, namely:
 - the preliminary experiment (`xxx_pre`) to specify the hyperparameters, and
-- the evaluation experiment (`xxx_eval`) to evaluate the learning performance by 10 times 5-cross validation, and construct the prediction function files that will be used later in the stage of solving inverse problem ([Module 3](Polymer/Module_3)).
+- the evaluation experiment (`xxx_eval`) to evaluate the learning performance by 10 times 5-cross validation, and construct the prediction function files that will be used later in the stage of solving inverse problem ([Module 3](/Polymer/Module_3)).
 
 ### Learning with the whole data set
 
@@ -64,6 +64,6 @@ Besides above, the code will also generate two summary files containing the info
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | 1 | 0.8420611575174265 | 0.6587311490954544 | 0.08189535140991211 | 
 
-Also the files about the constructed prediction functions in `./pred_func/` folder, which will be used in [Module 3](Polymer/Module_3):
+Also the files about the constructed prediction functions in `./pred_func/` folder, which will be used in [Module 3](/Polymer/Module_3):
 - DATASET_i_j_linreg.txt: the file containing the weights and bias of Lasso linear regression constructed for the data set for the i-th time j-th cross-validation.
 

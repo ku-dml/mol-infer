@@ -1,6 +1,6 @@
 ## Generate Descriptors
 
-This folder contains the code to generate the linear descriptors defined in Section 3, paragraph "Feature Function", which will be used for the learning stage in [Module 2](Polymer/Module_2).
+This folder contains the code to generate the linear descriptors defined in Section 3, paragraph "Feature Function", which will be used for the learning stage in [Module 2](/Polymer/Module_2).
 
 Usage:
 

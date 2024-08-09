@@ -4,4 +4,4 @@ Module 4 consists of the stage of "Generating Recombination Solutions" described
 
 - Generating Recombination Solutions:
 
-  Use a dynamic programming algorithm to generate the chemical isomers once a chemical graph is obtained by solving the MILP for the inverse problem in [Module 3](Polymer/Module_3).
+  Use a dynamic programming algorithm to generate the chemical isomers once a chemical graph is obtained by solving the MILP for the inverse problem in [Module 3](/Polymer/Module_3).

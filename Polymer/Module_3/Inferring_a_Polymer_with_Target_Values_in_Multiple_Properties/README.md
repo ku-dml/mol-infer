@@ -1,7 +1,7 @@
 ## Inferring a Polymer with Target Values in Multiple Properties
 
 This folder contains the code to generate **ONE** chemical graph for **THREE** properties at the same time by solving an MILP formulation for the inverse problem of Lasso linear regression, described in Section 4, paragraph "Inferring a Polymer with Target Values in Multiple Properties", once given:
-- fils describing the weights and biases of the prediction functions obtained from [Module 2](Polymer/Module_2);
+- fils describing the weights and biases of the prediction functions obtained from [Module 2](/Polymer/Module_2);
 - files describing the topological specification $\sigma$;
 - two real numbers $y_l^i$ and $y_u^i$, specifying the range of target $\[ y_l^i, y_u^i \]$ for each property, i=1,2,3.
   
@@ -24,18 +24,18 @@ Here:
 - OUTPUT: the prefix of output files.
 
 To describe the information of the data set and the prediction functions, the following files are necessary:
-- DATASET_i_desc.csv: descriptor files of the original data set **BEFORE NORMALIZATION**, obtained in [Module 1](Polymer/Module_1) for each property, i=1,2,3;
-- DATASET_i_desc_norm.csv: descriptor files of the original data set **AFTER NORMALIZATION**, obtained in [Module 1](Polymer/Module_1) for each property, i=1,2,3;
-- DATASET_i_fringe.txt: files containing all the fringe tree information of the original data set, obtained in [Module 1](Polymer/Module_1) for each property, i=1,2,3;
+- DATASET_i_desc.csv: descriptor files of the original data set **BEFORE NORMALIZATION**, obtained in [Module 1](/Polymer/Module_1) for each property, i=1,2,3;
+- DATASET_i_desc_norm.csv: descriptor files of the original data set **AFTER NORMALIZATION**, obtained in [Module 1](/Polymer/Module_1) for each property, i=1,2,3;
+- DATASET_i_fringe.txt: files containing all the fringe tree information of the original data set, obtained in [Module 1](/Polymer/Module_1) for each property, i=1,2,3;
 - DATASET_i_values.txt: files containing the observed values of the original data set **BEFORE NORMALIZATION** for each property, i=1,2,3;
 
-Moreover, the following files containing the information of the prediction functions are necessary, which can be obtained in [Module 2/Constructing Prediction Functions](Polymer/Module_2/Constructing_Prediction_Functions):
+Moreover, the following files containing the information of the prediction functions are necessary, which can be obtained in [Module 2/Constructing Prediction Functions](/Polymer/Module_2/Constructing_Prediction_Functions):
 - DATASET_i_linreg.txt: files containing the weights and bias of linear regression for each property, i=1,2,3.
 
 When the code finishes normally, it will generate the following files:
 - OUTPUT.lp: the lp file describing the MILP formulation;
 - OUTPUT.sdf: (when MILP is feasible) the sdf file of the inferred chemical graph, and;
-- OUTPUT_partition.txt: (when MILP is feasible) the partition file of the inferred chemical graph, which will be used in [Module 4](Polymer/Module_4).
+- OUTPUT_partition.txt: (when MILP is feasible) the partition file of the inferred chemical graph, which will be used in [Module 4](/Polymer/Module_4).
   
 If MILP is considered as "Infeasible" by the solver, it means such a chemical graph does not exist under the given constraints/specifications.
 
