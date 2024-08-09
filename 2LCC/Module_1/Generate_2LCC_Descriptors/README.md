@@ -1,6 +1,6 @@
 ## Generate Linear Descriptors
 
-This folder contains the code to generate the linear descriptors defined in Section 3, which will be used for the learning stage in [Module 2](2LCC/Module_2).
+This folder contains the code to generate the linear descriptors defined in Section 3, which will be used for the learning stage in [Module 2](/2LCC/Module_2).
 
 Usage:
 
