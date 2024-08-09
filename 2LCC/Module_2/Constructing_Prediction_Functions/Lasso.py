@@ -5,7 +5,6 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import KFold
 from sklearn.linear_model import Lasso
-from CLSF import calc_bacc,calc_aucroc
 import sys, time, csv
 
 Times = 10
@@ -50,11 +49,6 @@ def learn_Lasso(metric, x_train, y_train, x_test, y_test, a=1.0):
     if metric == 'r2':
         r2_train = lasso.score(x_train, y_train)
         r2_test = lasso.score(x_test, y_test)
-    elif metric == 'AUCROC':
-        r2_train, r2_test = calc_aucroc(lasso, x_train, y_train, x_test, y_test)
-    elif metric == 'BACC':
-        r2_train, r2_test = calc_bacc(lasso, x_train, y_train, x_test, y_test)
-        # r2_train, r2_test = skl_bacc(lasso, x_train, y_train, x_test, y_test)
     nonzero = len([w for w in lasso.coef_ if abs(w) >= ZERO_TOL])
 
     return lasso, nonzero, r2_train, r2_test
@@ -77,8 +71,8 @@ def adjust_lambda(Lambda,x,y):
                 fold += 1
                 _, _, _, r2test = learn_Lasso(metric,x[train], y[train], x[test], y[test], a=lmda)
                 Ts.append(r2test)
-            Ten_test_r2.extend(Ts) # 保存了10轮5个数字，一共50个数
-        testR2_score_for_each_lambda[lmda] = np.median(Ten_test_r2)# 保存一个lambda的对应的50个值的median，一共保存20个数字
+            Ten_test_r2.extend(Ts) 
+        testR2_score_for_each_lambda[lmda] = np.median(Ten_test_r2)
     lambda_with_highest_score = max(testR2_score_for_each_lambda, key=testR2_score_for_each_lambda.get)
     return lambda_with_highest_score, power_of_ten
 
@@ -179,7 +173,11 @@ def train_Lasso(best_lambda,x,y):
     return Ten_test_r2, Ten_NonZ, Ten_train_r2, Ten_time, excel
 
 
-def main(fv_path,output,initial_lambda):
+def main(argv):
+    fv_path = argv[1]
+    output = argv[2]
+    initial_lambda = float(argv[3])
+
     result = list()
     result.append(
         ["Dataset","#of feasible molecules","#of descriptors","Best lambda", "Median of test R^2 over 50 trials ","Min of test R^2 over 50 trials ",
@@ -207,7 +205,7 @@ def main(fv_path,output,initial_lambda):
             lambda_with_highest_score, power_of_ten = adjust_lambda(Initial_lambda, x, y)
             while True:
                 logLmd2 = math.log10(abs(lambda_with_highest_score))  #
-                power_of_ten2 = math.floor(logLmd2)  # 计算获得的最佳的lambda的科学计数法的位数。
+                power_of_ten2 = math.floor(logLmd2)  
                 if power_of_ten != power_of_ten2:
                     lambda_with_highest_score, power_of_ten = adjust_lambda(lambda_with_highest_score, x, y)
                 elif power_of_ten == power_of_ten2:
@@ -236,4 +234,5 @@ def main(fv_path,output,initial_lambda):
         result.to_excel(writer, sheet_name="summary", index=False, header=False)
 
 if __name__ == '__main__':
-    main("/Sample_instance/Sample_dataset_path.txt", "/Sample_instance/Lasso_reg.xlsx", 1)
+    # main("/Sample_instance/Sample_dataset_path.txt", "/Sample_instance/Lasso_reg.xlsx", 1)
+    main(sys.argv)
