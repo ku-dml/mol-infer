@@ -4,7 +4,7 @@ This folder contains the codes used to construct prediction functions that is de
 
 ### Preliminary experiment:
 
-The `Lasso.py` script will automatically search for the best parameter $\lambda$ in Lasso linear regression and output an `.xlsx` file containing detailed ML results. 
+The script `Lasso.py` will automatically search for the best parameter $\lambda$ in Lasso linear regression and output an `.xlsx` file containing detailed results. 
 
 Usage:
 
