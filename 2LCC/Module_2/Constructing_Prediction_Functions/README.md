@@ -45,7 +45,7 @@ python LASSO.py ./sample_instance/sample_fv_value_path.txt ./sample_instance/sam
 
 ### Generate prediction function:
 
-After obtaining the best parameter $\lambda$ in the preliminary experiment, then use `lasso_eval_linreg.py` to generate the prediction function.
+After obtaining the best parameter $\lambda$ in the preliminary experiment, we use the script `lasso_eval_linreg.py` to generate the prediction function that will be used in [Module 3](/2LCC/Module_3).
 
 Usage:
 
