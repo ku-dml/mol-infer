@@ -2,7 +2,7 @@
 
 This folder contains the codes and instances used for the paper "Cycle-Configuration: A Novel Graph-theoretic Descriptor Set for Molecular Inference".
 
-- The preprint is available at xxx.
+- The preprint is available at [https://arxiv.org/abs/2408.05136](https://arxiv.org/abs/2408.05136).
 - All folder/file names in this repository are based on the table/figure numbers in the submitted paper.
 
 The folder structure is organized as follows:
