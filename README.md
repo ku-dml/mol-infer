@@ -13,7 +13,7 @@ author: "Discrete Mathematics Lab, Kyoto University"
 # mol-infer: Molecular Inferring
 
 Mol-infer is a project developed by the Discrete Mathematics Lab at Kyoto Univerisity (ku-dml).
-After many years of research on original graph algorithms for infering molecular structures,
+After many years of research on original graph algorithms for inferring molecular structures,
 we decided to open-source our programs for public use.
 If you found it was useful in your work,
 please consider citing our paper(s) as well as this GitHub repository.
@@ -33,12 +33,12 @@ You should think of different packages as different projects.
 ### Package [2LCC](2LCC/) (August 2024)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions
 - **Reference:**
-  - B. Song, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, T. Akutsu, Cycle-Configuration: A Novel Graph-theoteric Descriptor Set for Molecular Inference, arXiv 2408.05136, 2024, https://arxiv.org/abs/2408.05136.
+  - B. Song, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, T. Akutsu, Cycle-Configuration: A Novel Graph-theoteric Descriptor Set for Molecular ence, arXiv 2408.05136, 2024, https://arxiv.org/abs/2408.05136.
 
 ### Package [Polymer](Polymer/) (May 2024)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
 - **Reference:**
-  - R. Ido, S. Cao, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, A Method for Inferring Polymers Based on Linear Regression and Integer Programming, arXiv 2109.02628, 2021, https://arxiv.org/abs/2109.02628.
+  - R. Ido, S. Cao, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, A Method for ring Polymers Based on Linear Regression and Integer Programming, arXiv 2109.02628, 2021, https://arxiv.org/abs/2109.02628.
 
 ### Package [HPS](HPS/) (Mar 2024)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
