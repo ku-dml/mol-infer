@@ -10,7 +10,7 @@ author: "Discrete Mathematics Lab, Kyoto University"
   <a href="/README_jp.md">日本語</a>
 </p>
 
-# mol-infer: Molecular Inferring
+# mol-infer: Molecular Inference
 
 Mol-infer is a project developed by the Discrete Mathematics Lab at Kyoto Univerisity (ku-dml).
 After many years of research on original graph algorithms for inferring molecular structures,
