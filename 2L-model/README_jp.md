@@ -5,7 +5,7 @@ author: "京都大学　情報学研究科　離散数理分野研究室"
 ---
 
 <p align="center">
-  <a href="/2L-model/README_en.md">English</a>
+  <a href="/2L-model/README.md">English</a>
   ·
   <a href="/2L-model/README_jp.md">日本語</a>
 </p>
@@ -29,10 +29,10 @@ Mol-inferとは，京都大学の離散数理分野研究室（ku-dml）が開�
 
 このパッケージは4つのモジュールで構成されています．
 
-+ モジュール1では記述子を導出します．詳細は[Module 1](/Module_1/)を参照してください．
-+ モジュール2では*Artificial Neural Network* (ANN)を用いて予測関数を構築し,与えられた化合物の物性値の予測に用いられます．詳細は[Module 2](/Module_2/)を参照してください．
-+ モジュール3では逆問題を解く*Mixed-Integer Linear Programming*（MILP）を実装します．詳細は[Module 3](/Module_3/)を参照してください．
-+ モジュール4ではグラフを生成します（部分列挙）．詳細は[Module 4](/Module_4/)を参照してください．
++ モジュール1では記述子を導出します．詳細は[Module 1](Module_1/)を参照してください．
++ モジュール2では*Artificial Neural Network* (ANN)を用いて予測関数を構築し,与えられた化合物の物性値の予測に用いられます．詳細は[Module 2](Module_2/)を参照してください．
++ モジュール3では逆問題を解く*Mixed-Integer Linear Programming*（MILP）を実装します．詳細は[Module 3](Module_3/)を参照してください．
++ モジュール4ではグラフを生成します（部分列挙）．詳細は[Module 4](Module_4/)を参照してください．
 
 これらのモジュールがどうやってこれらのタスクを処理するかをより具体的に理解したい場合は，[論文](https://doi.org/10.3390/ijms22062847)を参照してください．
 
