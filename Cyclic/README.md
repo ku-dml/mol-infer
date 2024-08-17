@@ -5,7 +5,7 @@ author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
 <p align="center">
-  <a href="/Cyclic/README_en.md">English</a>
+  <a href="/Cyclic/README.md">English</a>
   ·
   <a href="/Cyclic/README_jp.md">日本語</a>
 </p>

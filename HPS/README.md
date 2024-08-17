@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="/HPS/README.md">English</a>
+  ·
+  <a href="/HPS/README_jp.md">日本語</a>
+</p>
+
 # mol-infer/HPS
 This folder contains the codes and instances used for the paper:
 

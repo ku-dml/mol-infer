@@ -1,13 +1,13 @@
 ---
-title: "Mol-InferプロジェクトにおけるCyclicパッケージの使い方"
-date: "2021年5月12日"
+title: "Mol-Inferプロジェクトにおける改良型Cyclicパッケージの使い方"
+date: " 2021年2月15日"
 author: "京都大学　情報学研究科　離散数理分野研究室"
 ---
 
 <p align="center">
-  <a href="/Cyclic/README.md">English</a>
+  <a href="/Cyclic_improved/README.md">English</a>
   ·
-  <a href="/Cyclic/README_jp.md">日本語</a>
+  <a href="/Cyclic_improved/README_jp.md">日本語</a>
 </p>
 
 **お願い**
@@ -16,7 +16,7 @@ author: "京都大学　情報学研究科　離散数理分野研究室"
 
 ---
 
-## Molecular Inferingについて
+### Molecular Inferingについて
 
 Mol-inferプロジェクトとは，京都大学の離散数理分野研究室（ku-dml）が開発したプロジェクトです．詳細は[トップページ](https://github.com/ku-dml/mol-infer)を参照してください.
 
@@ -33,9 +33,6 @@ This package consists of four modules.
 
 モジュールがこれらのタスクをどう処理するかを理解したい場合は，[論文](https://arxiv.org/abs/2010.09203)を参照してください．
 
-## クイックスタートビジュアルガイド
+## コンパイルと使い方
 
-Cyclicパッケージ内でデータとファイルがどう処理されるかを示した以下の画像を参照してください．
-より細かい使い方やコンパイル方法については，各モジュールのユーザーマニュアルを参照してください．
-
-![データの流れ](/Cyclic/doc/cyclic_flow.png)
+それぞれのモジュールのユーザーマニュアルを参照してください．
