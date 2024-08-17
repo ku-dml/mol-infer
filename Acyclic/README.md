@@ -4,6 +4,12 @@ date: "September 22, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
+<p align="center">
+  <a href="/Acyclic/README.md">English</a>
+  ·
+  <a href="/Acyclic/README_jp.md">日本語</a>
+</p>
+
 Notice: at the current point (Sep. 22, 2021) this repository is almost complete. We are checking the documentation.
 
 # mol-infer: Molecular Infering

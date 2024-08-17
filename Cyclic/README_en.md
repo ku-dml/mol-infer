@@ -4,6 +4,12 @@ date: "May 12, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
+<p align="center">
+  <a href="/Cyclic/README_en.md">English</a>
+  ·
+  <a href="/Cyclic/README_jp.md">日本語</a>
+</p>
+
 **STATUS**
 
 We have carefully prepared this repository. If one finds bugs or mistakes, please contact us so that we can fix them

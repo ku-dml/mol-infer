@@ -4,6 +4,12 @@ date: "July 4, 2021"
 author: "Discrete Mathematics Lab, Kyoto University"
 ---
 
+<p align="center">
+  <a href="/2LMM-LLR/README.md">English</a>
+  ·
+  <a href="/2LMM-LLR/README_jp.md">日本語</a>
+</p>
+
 **STATUS**
 
 We have carefully prepared this repository. If one finds bugs or mistakes, please contact us so that we can fix them
