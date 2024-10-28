@@ -36,3 +36,7 @@
 *.log
 *.toc
 *.dvi
+
+# Python cache files
+__pycache__/
+*.pyc
