@@ -1,11 +1,16 @@
-to check the calculated descriptors
-```bash
-cd libs/2LMM_v019/
-make FV_2LMM_V019
-```
+<p align="center">
+  <a href="/Multimodel/README.md">English</a>
+  ·
+  <a href="/Multimodel/README_jp.md">日本語</a>
+</p>
 
-sample command to run the code
-```bash
-python3 -m Module_3 config/config.yaml
-```
+# mol-infer/Multimodel
 
+This folder contains the codes and instances used to infer a chemical graph with multiple target values.
+
+The folder structure is organized as follows:
+1. Module 3
+    - Solving an MILP for the inverse problem
+    - Inferring a chemical graph with target values for multiple properties
+
+Please refer each folder for detailed descriptions.
