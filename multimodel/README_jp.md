@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="/Multimodel/README.md">English</a>
+  <a href="/multimodel/README.md">English</a>
   ·
-  <a href="/Multimodel/README_jp.md">日本語</a>
+  <a href="/multimodel/README_jp.md">日本語</a>
 </p>
 
-# mol-infer/Multimodel
+# mol-infer/multimodel
 
 このフォルダーには, 複数の所望の物性値を持つ化合物を推論するコードとインスタンスが含まれています．
 
