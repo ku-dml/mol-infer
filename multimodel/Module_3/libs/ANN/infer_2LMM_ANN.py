@@ -1,15 +1,12 @@
-from . import ann_inverter
-from ..Function.twolayered_MILP_2LMM_L import *
-from ..Function.read_instance_2layer_2LMM_L import *
-from ..Function.create_base_MILP import create_base_MILP
+from Module_3.libs.ANN import ann_inverter
+from Module_3.libs.Function.twolayered_MILP_2LMM_L import *
+from Module_3.libs.Function.read_instance_2layer_2LMM_L import *
+from Module_3.libs.Function.read_instance_2layer_2LMM_L import *
+from Module_3.libs import pulp_modified as pulp
 
-def ANN_add_vars_constraints_to_MILP(config, index, MILP, base_var):
+def ANN_add_vars_constraints_to_MILP(prop: str, target_value_lb: float, target_value_ub: float, MILP: pulp.LpProblem, base_var: tuple, index: int):
     """Add variables and constraints to MILP"""
     ########## preparation ##########
-    prop = config.get_with_index(index, "prefix")
-    target_value_lb = config.get_with_index(index, "target_value_lower_bound")
-    target_value_ub = config.get_with_index(index, "target_value_upper_bound")
-
     #input file of bias
     ann_bias_filename = f"{prop}_biases.txt"
     #input file of weight

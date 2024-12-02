@@ -3,18 +3,16 @@ multi-model
 """
 import time
 import subprocess
-# import pulp
-from . import pulp_modified as pulp
+from Module_3.libs import pulp_modified as pulp
 
 from Module_3.libs.ANN.infer_2LMM_ANN import ANN_add_vars_constraints_to_MILP
+from Module_3.libs.ANN import ann_inverter
 from Module_3.libs.LR.infer_2LMM_LLR import LR_add_vars_constraints_to_MILP
+from Module_3.libs.LR import lr_inverter
 from Module_3.libs.RF.infer_2LMM_RF import RF_add_vars_constraints_to_MILP
+from Module_3.libs.RF import rf_inverter
 from Module_3.libs.Function.twolayered_MILP_2LMM_L import print_sdf_file, print_gstar_file
 from Module_3.libs.Function.create_base_MILP import create_base_MILP
-
-from Module_3.libs.ANN import ann_inverter
-from Module_3.libs.LR import lr_inverter
-from Module_3.libs.RF import rf_inverter
 
 from Module_3.libs.Class.InputConfiguration import Config
 
@@ -31,34 +29,51 @@ CPLEX_LOG_PATH = "./logs/cplex.log"
 SOLVER_CASE = 1  # change 1 to 2 if use CBC solver
 STD_EPS = 1e-5
 # file of fv generator used to generate fv to check
-FV_GEN_NAME = "./libs/2LMM_v019/FV_2LMM_V019"
+FV_GEN_NAME = "Module_3/libs/2LMM_v019/FV_2LMM_V019"
 ####################################################
 
-# def infer(argv):
-def infer(config_filename: str):
-    start = time.time()
-    config: Config = Config(config_filename)
+def prepare_MILP(config: Config):
+    """
+    Prepare MILP
+    """
     ## Create MILP
     MILP = pulp.LpProblem("MultiModel")
     base_var: tuple = create_base_MILP(
         MILP, config.instance_file, config.fringe_tree_file
     )
+    # after MILP calucation, the results will be stored in milp_results
     milp_results: list = [()] * len(config.input_data)
     print("Input data:")
     for index, item in enumerate(config.input_data):
         print("\tindex:", index)
         if item["model"] == "ANN":
             print("\tmodel: ANN")
-            milp_results[index] = ANN_add_vars_constraints_to_MILP(config, index, MILP, base_var)
+            prop = config.get_with_index(index, "prefix")
+            target_value_lb = config.get_with_index(index, "target_value_lower_bound")
+            target_value_ub = config.get_with_index(index, "target_value_upper_bound")
+            milp_results[index] = ANN_add_vars_constraints_to_MILP(prop, target_value_lb, target_value_ub, MILP, base_var, index)
         elif item["model"] == "LR":
             print("\tmodel: LR")
-            milp_results[index] = LR_add_vars_constraints_to_MILP(config, index, MILP, base_var)
+            prop = config.get_with_index(index, "prefix")
+            target_value_lb = config.get_with_index(index, "target_value_lower_bound")
+            target_value_ub = config.get_with_index(index, "target_value_upper_bound")
+            milp_results[index] = LR_add_vars_constraints_to_MILP(prop, target_value_lb, target_value_ub, MILP, base_var, index)
         elif item["model"] == "RF":
             print("\tmodel: RF")
-            milp_results[index] = RF_add_vars_constraints_to_MILP(config, index, MILP, base_var)
+            prop = config.get_with_index(index, "prefix")
+            target_value_lb = config.get_with_index(index, "target_value_lower_bound")
+            target_value_ub = config.get_with_index(index, "target_value_upper_bound")
+            milp_results[index] = RF_add_vars_constraints_to_MILP(prop, target_value_lb, target_value_ub, MILP, base_var, index)
         else:
             raise Exception(f"\tmodel {item['model']} not supported")
         print()
+    return MILP, milp_results, base_var
+
+# def infer(argv):
+def infer(config_filename: str):
+    start = time.time()
+    config = Config(config_filename)
+    MILP, milp_results, base_var = prepare_MILP(config)
 
     ########## solve and output ##########
     # Output all MILP variables and constraints
@@ -193,8 +208,6 @@ def infer(config_filename: str):
         # Check the calculated descriptors
         try:
             check_calculated_descriptors(config, milp_results)
-        except KeyboardInterrupt as e:
-            raise
         except Exception as e:
             print(f"Error: cannot check calculated descriptors {e}")
     print(f"DONE: {config.output_prefix} ({output_status}) in {time.time() - start:.3f} seconds", flush=True)

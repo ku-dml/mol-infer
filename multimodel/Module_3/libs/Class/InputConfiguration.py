@@ -5,11 +5,8 @@ class Config:
     def __init__(self, config_path):
         self.config_path = config_path
         # read config file
-        try :
-            with open(self.config_path, "r", encoding="utf-8") as file:
-                self.config_data = yaml.safe_load(file)
-        except Exception as ex:
-            raise ex
+        with open(self.config_path, "r", encoding="utf-8") as file:
+            self.config_data = yaml.safe_load(file)
         # get values
         self.__get_value("output_prefix")
         self.__get_value("instance_file")

@@ -27,13 +27,12 @@
 
 計算された記述子を確認するには
 ```bash
-cd libs/2LMM_v019/
-make FV_2LMM_V019
+make -C Module_3/libs/2LMM_v019/ FV_2LMM_V019
 ```
 
 コードを実行するサンプルコマンド
 ```bash
-python3 -m Module_3 config/config.yaml
+python -m Module_3 Module_3/config/config.yaml
 ```
 
 # config ファイル

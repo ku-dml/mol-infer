@@ -1,20 +1,14 @@
-# from twolayered_MILP_2LMM_L import *
-# from read_instance_2layer_2LMM_L import *
-# import LR.lr_inverter as lr_inverter
-
-from . import lr_inverter
-from ..Function.twolayered_MILP_2LMM_L import *
-from ..Function.read_instance_2layer_2LMM_L import *
+from Module_3.libs.LR import lr_inverter
+from Module_3.libs.Function.twolayered_MILP_2LMM_L import *
+from Module_3.libs.Function.read_instance_2layer_2LMM_L import *
+from Module_3.libs import pulp_modified as pulp
 
 ####################################################
 
-def LR_add_vars_constraints_to_MILP(config, index, MILP, base_var):
+# def LR_add_vars_constraints_to_MILP(config, index, MILP, base_var):
+def LR_add_vars_constraints_to_MILP(prop: str, target_value_lb: float, target_value_ub: float, MILP: pulp.LpProblem, base_var: tuple, index: int):  
     """Add variables and constraints to MILP"""
     ########## preparation ##########
-    prop = config.get_with_index(index, "prefix")
-    target_value_lb = config.get_with_index(index, "target_value_lower_bound")
-    target_value_ub = config.get_with_index(index, "target_value_upper_bound")
-    
     ### decide the file names
     # file for linear regression
     LR_filename = f"{prop}_LR.txt"

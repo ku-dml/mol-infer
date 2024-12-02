@@ -1,5 +1,5 @@
-from .twolayered_MILP_2LMM_L import *
-from .read_instance_2layer_2LMM_L import *
+from Module_3.libs.Function.twolayered_MILP_2LMM_L import *
+from Module_3.libs.Function.read_instance_2layer_2LMM_L import *
 
 def create_base_MILP(MILP, instance_file, fringe_tree_file):
     set_Lambda = prepare_CG_element_info()
