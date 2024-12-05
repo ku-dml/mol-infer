@@ -3,3 +3,6 @@ FV_2LMM_V019
 
 # Python virtual environment
 /venv
+
+# CPLEX files
+*.lp
