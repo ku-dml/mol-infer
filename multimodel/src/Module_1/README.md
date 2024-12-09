@@ -13,7 +13,7 @@ python eliminate.py (data.sdf)
 
 sample
 ```bash
-python eliminate.py sample_instance/Bp_small.sdf
+python eliminate.py sample_instance/input/Bp_small.sdf
 ```
 
 (optional) 
@@ -24,12 +24,17 @@ python limit_atoms.py (data.sdf) (原子の種類)
 
 sample
 ```bash
-python limit_atoms.py sample_instance/Bp_small.sdf C O N S Cl H
+python limit_atoms.py sample_instance/input/Bp_small.sdf C O N S Cl H
 ```
 
 # 実行
 ## 特徴ベクトルの計算
+
+```bash
+./FV_2LMM_V019 (data.sdf) (output_prefix)
+```
+
 サンプルスクリプト
 ```bash
-./FV_2LMM_V019 sample_instance/Bp_small.sdf sample_instance/output/Bp_small 
+./FV_2LMM_V019 sample_instance/input/Bp_small.sdf sample_instance/output/Bp_small 
 ```
