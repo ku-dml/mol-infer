@@ -1,3 +1,11 @@
+# Module 2
+
+Module 2 consists of the stage of constructing a prediction function using Lasso Linear Regression (LLR), Random Forest (RF), or Artificial Neural Network (ANN).
+
+# Preparation:
+
+Prepare the CID and the property value files. A sample property value file is located in /sample_instance/input/.
+
 # Preliminary experiment:
 
 Usage:
