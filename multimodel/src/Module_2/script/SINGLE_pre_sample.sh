@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# it takes a long time to run this script.
+
 echo 'property_D1	n_D1	K_D1	K_linear_D1	K_quad_D1	Way_D1	R2_train_D1	R2_test_D1 	Time_D1 		C_D1	C_D2'
 
 props=(Bp Fp Kow Lp Mp Sl)
