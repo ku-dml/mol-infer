@@ -405,11 +405,11 @@ def main(args):
     Sbar.finish()
 
     print(output_str)
+    
+    with open(log_filename_D1, 'a') as f:
+        f.write(f"{output_str}\n")
+        f.close()
 
 if __name__ == "__main__":
-    # prop = "Bp_large"
-    # main((0, f"./data_var0/{prop}_var0_desc_norm.csv", f"./data_var0/{prop}_norm_values.txt"))
-    # main((0, "./data_regression_var0/BHL_large_var0_theta0.001_D1_quadratic_h5000_desc_norm.csv", "./data_regression_var0/BHL_large_var0_theta0.001_D1_values.txt", "./data_regression_var0/BHL_large_var0_theta0.001_D2_quadratic_h5000_desc_norm.csv", "./data_regression_var0/BHL_large_var0_theta0.001_D2_values.txt"))
-    # main(sys.argv)
     main(get_args())
 
