@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="/multimodel/src/Module_1/README.md">English</a>
+  ·
+  <a href="/multimodel/src/Module_1/README_jp.md">日本語</a>
+</p>
+
 # Module 1: Feature vector calculation
 
 Module 1 consists of the stage of generating the feature vectors of a given data set (sdf format file).

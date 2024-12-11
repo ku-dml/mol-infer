@@ -1,3 +1,10 @@
+<p align="center">
+  <a href="/multimodel/src/Module_2/README.md">English</a>
+  ·
+  <a href="/multimodel/src/Module_2/README_jp.md">日本語</a>
+</p>
+
+
 # Module 2
 
 Module 2 consists of the stage of constructing a prediction function using Lasso Linear Regression (LLR), Random Forest (RF), or Artificial Neural Network (ANN).

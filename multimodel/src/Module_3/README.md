@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="/multimodel/Module_3/README.md">English</a>
+  <a href="/multimodel/src/Module_3/README.md">English</a>
   ·
-  <a href="/multimodel/Module_3/README_jp.md">日本語</a>
+  <a href="/multimodel/src/Module_3/README_jp.md">日本語</a>
 </p>
 
 # Module 3

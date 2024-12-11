@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="/multimodel/src/Module_2/README.md">English</a>
+  ·
+  <a href="/multimodel/src/Module_2/README_jp.md">日本語</a>
+</p>
+
 # Module 2: 
 
 モジュール2は、Lasso Linear Regression (LLR)、Random Forest (RF)、またはArtificial Neural Network (ANN)を使用して予測関数を構築します。
