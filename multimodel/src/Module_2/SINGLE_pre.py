@@ -408,7 +408,6 @@ def main(args):
     
     with open(log_filename_D1, 'a') as f:
         f.write(f"{output_str}\n")
-        f.close()
 
 if __name__ == "__main__":
     main(get_args())
