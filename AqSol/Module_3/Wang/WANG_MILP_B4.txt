@@ -1,0 +1,55 @@
+output_prefix: ./tests/output/Wang_b4_-2.0_-1.5_test
+instance_file: ./tests/input/instance_files/instance_b4_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_b4_fringe_2LMM.txt
+Input data:
+	index: 0
+	model: ANN
+	prefix: ./tests/input/data/Wang
+	target_value_lower_bound: -3.0
+	target_value_upper_bound: -2.0
+
+Initializing Time: 8.076
+Number of variables: 18624
+ - Integer : 18022
+ - Binary  : 15594
+Number of constraints: 11746
+
+Status: Feasible
+index 0  y*: -2.072
+
+Solving Time: 1050.672
+
+Checking calculated descriptors
+	prefix: ./tests/input/data/Wang
+
+        Error reading the file ./tests/output/Wang_b4_-2.0_-1.5_test_test_tmp_desc_norm.csv
+        with pandas.
+        
+
+output_prefix: ./tests/output/Wang_b4_-2.80_-2.30_test
+instance_file: ./tests/input/instance_files/instance_b4_2LMM.txt
+fringe_tree_file: ./tests/input/fringe_files/ins_b4_fringe_2LMM.txt
+Input data:
+	index: 0
+	model: ANN
+	prefix: ./tests/input/data/Wang
+	target_value_lower_bound: -2.8
+	target_value_upper_bound: -2.3
+
+Initializing Time: 7.339
+Number of variables: 18624
+ - Integer : 18022
+ - Binary  : 15594
+Number of constraints: 11746
+
+Status: Feasible
+index 0  y*: -2.351
+
+Solving Time: 751.557
+
+Checking calculated descriptors
+	prefix: ./tests/input/data/Wang
+
+        Error reading the file ./tests/output/Wang_b4_-2.80_-2.30_test_test_tmp_desc_norm.csv
+        with pandas.
+        

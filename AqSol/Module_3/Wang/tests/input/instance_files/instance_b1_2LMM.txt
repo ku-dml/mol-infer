@@ -33,7 +33,7 @@
 2 0 38
 ### chemical specification ###
 # Lambda
-H1 C4 N3 O2 P5 S2 S4 S6
+H1 C4 N3 O2 P5 S2 S4 S6 Br1 Cl1 F1 I1
 # Lambda_dg_int
 10
 C4 2
@@ -42,12 +42,12 @@ C4 4
 N3 2
 N3 3
 O2 2
-S2 2
+S2 2 
 S4 3
 S6 4
 P5 4
 # Gamma_int_ac
-22
+21
 C4 C4 1
 C4 C4 2
 C4 C4 3
@@ -66,14 +66,12 @@ N3 S6 1
 N3 O2 1
 O2 P5 1
 O2 S6 1
-O2 O2 1
 P5 S2 1
 S2 S2 1
 S2 S4 1
 # Gamma_int
-46
+45
 C4 2 C4 2 1
-C4 2 C4 2 2
 C4 2 C4 2 3
 C4 2 C4 3 1
 C4 2 C4 3 2
@@ -103,8 +101,8 @@ C4 4 O2 2 1
 C4 4 S2 2 1
 N3 2 N3 2 1
 N3 2 N3 2 2
-N3 2 N3 3 2
-O2 2 O2 2 1
+N3 2 N3 3 1
+N3 2 O2 2 1
 N3 2 P5 4 1
 N3 2 S2 2 1
 N3 2 S6 4 1
@@ -119,10 +117,10 @@ P5 4 S2 2 1
 S2 2 S2 2 1
 S2 2 S4 3 1
 # Lambda_star
-1 C4 N3 O2 P5 S2 S4 S6
-2 C4 N3 O2 P5 S2 S4 S6
+1 C4 N3 O2 P5 S2 S4 S6 Br1 Cl1 F1 I1
+2 C4 N3 O2 P5 S2 S4 S6 Br1 Cl1 F1 I1
 # na_LB and na_UB
-8
+12
 H1 0 38
 C4 0 38
 N3 0 38
@@ -131,8 +129,12 @@ P5 0 38
 S2 0 38
 S4 0 38
 S6 0 38
+Br1 0 38
+Cl1 0 38
+F1 0 38 
+I1 0 38
 # na_LB_int and na_UB_int
-7
+11
 C4 0 38
 N3 0 38
 O2 0 38
@@ -140,11 +142,15 @@ P5 0 38
 S2 0 38
 S4 0 38
 S6 0 38
+Br1 0 38
+Cl1 0 38
+F1 0 38 
+I1 0 38
 # ns_LB_int and ns_UB_int
 10
 C4 2 0 38
 C4 3 0 38
-C4 4 0 38
+C4 4 0 38 
 N3 2 0 38
 N3 3 0 38
 O2 2 0 38
@@ -153,7 +159,7 @@ S4 3 0 38
 S6 4 0 38
 P5 4 0 38
 # ac_LB_int and ac_UB_int
-22
+21
 1 0 38
 2 0 38
 3 0 38
@@ -175,9 +181,8 @@ P5 4 0 38
 19 0 38
 20 0 38
 21 0 38
-22 0 38
 # ec_LB_int and ec_UB_int
-46
+45
 1 0 38
 2 0 38
 3 0 38
@@ -223,7 +228,6 @@ P5 4 0 38
 43 0 38
 44 0 38
 45 0 38
-46 0 38
 # bd2_LB and bd2_UB
 1 0 38
 2 0 38
