@@ -4,7 +4,7 @@
   <a href="/chi_parameter/README_jp.md">日本語</a>
 </p>
 
-# mol-infer/chi_parameter
+# mol-infer/chi-parameter
 
 This folder contains the codes and instances used for the paper "XXX".
 
