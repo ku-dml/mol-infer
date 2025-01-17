@@ -7,3 +7,9 @@ fv_2LMM
 
 # CPLEX files
 *.lp
+
+# Ignore the generated files (hydra)
+outputs/
+
+# hydra
+.hydra/

@@ -3,18 +3,29 @@ from Module_3.libs.Function.read_instance_2layer_2LMM_L import *
 from Module_3.libs.Function.twolayered_MILP_2LMM_L import *
 from Module_3.libs import pulp_modified as pulp
 
-def RF_add_vars_constraints_to_MILP(prop: str, target_value_lb: float, target_value_ub: float, MILP: pulp.LpProblem, base_var: tuple, index: int):
-    """Add variables and constraints to MILP"""
-    ########## preparation ##########
-    # file for original csv
-    original_dataset_filename = f"{prop}_desc.csv"
-    # file for normalized csv
-    normalized_dataset_filename = f"{prop}_desc_norm_selected.csv"
-    # file for fringe trees
-    fv_fringe_tree_filename = f"{prop}_fringe.txt"  # all fringe trees used in learning
-    # value file
-    value_filename = f"{prop}_values.txt"
+def RF_add_vars_constraints_to_MILP(
+    rf_filename: str,
+    original_dataset_filename: str,
+    normalized_dataset_filename: str,
+    fv_fringe_tree_filename: str,
+    values_filename: str,
+    target_value_lb: float,
+    target_value_ub: float,
+    MILP: pulp.LpProblem,
+    base_var: tuple,
+    index: int,
+):
+    """Add variables and constraints to MILP
     
+    Arguments:
+        original_dataset_filename {str} -- *_desc.csv
+        normalized_dataset_filename {str} -- *_desc_norm_selected.csv
+        fv_fringe_tree_filename {str} -- *_fringe.txt (used in learning)
+        values_filename {str} -- *_values.txt
+        target_value_lb {float} -- Lower bound of target value
+        target_value_ub {float} -- Upper bound of target value
+    """
+
     strF, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, \
         n_G, n_G_int, MASS, dg, dg_int, bd_int, na_int, na_ex, ec_int, fc, ac_lf, rank_G, mass_n, \
         t_C, t_T, t_F, t_C_tilde, n_C, n_T, n_F, c_F, Lambda, \
@@ -47,12 +58,11 @@ def RF_add_vars_constraints_to_MILP(prop: str, target_value_lb: float, target_va
         prop=index
     )
 
-    y_min, y_max = get_value(value_filename)
+    y_min, y_max = get_value(values_filename)
     target_value_lb = (target_value_lb - y_min) / (y_max - y_min)
     target_value_ub = (target_value_ub - y_min) / (y_max - y_min)
     
     ########## Inverse problem: RF part ##########
-    rf_filename = f"{prop}_RF.txt"
     rf_model = rf_inverter.read_rf(rf_filename)
     rf_inv = rf_inverter.RFRegInv(n_estimators=len(rf_model.dt_list), property_name=index)
     rf_inv.build_var(rf_model, property_name=index)

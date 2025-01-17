@@ -25,7 +25,7 @@ make -C Module_3/libs/2LMM_v019/ FV_2LMM_V019
 
 sample command
 ```bash
-python3 -m Module_3 Module_3/config/config.yaml
+python3 -m Module_3 --config-name=config1
 ```
 
 

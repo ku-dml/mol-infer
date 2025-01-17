@@ -23,7 +23,7 @@ make -C Module_3/libs/2LMM_v019/ FV_2LMM_V019
 
 サンプルコマンド
 ```bash
-python -m Module_3 Module_3/config/config.yaml
+python -m Module_3 --config-name=config1
 ```
 
 # config ファイル

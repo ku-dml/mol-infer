@@ -5,22 +5,29 @@ from Module_3.libs import pulp_modified as pulp
 
 ####################################################
 
-# def LR_add_vars_constraints_to_MILP(config, index, MILP, base_var):
-def LR_add_vars_constraints_to_MILP(prop: str, target_value_lb: float, target_value_ub: float, MILP: pulp.LpProblem, base_var: tuple, index: int):  
-    """Add variables and constraints to MILP"""
-    ########## preparation ##########
-    ### decide the file names
-    # file for linear regression
-    LR_filename = f"{prop}_LR.txt"
-    # file for original csv
-    original_dataset_filename = f"{prop}_desc.csv"
-    # file for normalized csv
-    normalized_dataset_filename = f"{prop}_desc_norm.csv"
-    # file for fringe trees
-    fv_fringe_tree_filename = f"{prop}_fringe.txt"    # all fringe trees used in learning
-    # value file
-    value_filename = f"{prop}_values.txt"
-
+def LR_add_vars_constraints_to_MILP(
+    LR_filename: str,
+    original_dataset_filename: str,
+    normalized_dataset_filename: str,
+    fv_fringe_tree_filename: str,
+    values_filename: str,
+    target_value_lb: float,
+    target_value_ub: float,
+    MILP: pulp.LpProblem,
+    base_var: tuple,
+    index: int,
+):
+    """Add variables and constraints to MILP
+    
+    Arguments:
+        LR_filename {str} -- *_LR.txt
+        original_dataset_filename {str} -- *_desc.csv
+        normalized_dataset_filename {str} -- *_desc_norm.csv
+        fv_fringe_tree_filename {str} -- *_fringe.txt (used in learning)
+        values_filename {str} -- *_values.txt
+        target_value_lb {float} -- Lower bound of target value
+        target_value_ub {float} -- Upper bound of target value
+    """
 
     strF, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, \
         n_G, n_G_int, MASS, dg, dg_int, bd_int, na_int, na_ex, ec_int, fc, ac_lf, rank_G, mass_n, \
@@ -55,7 +62,7 @@ def LR_add_vars_constraints_to_MILP(prop: str, target_value_lb: float, target_va
         prop=index
     )
 
-    y_min, y_max = get_value(value_filename)
+    y_min, y_max = get_value(values_filename)
 
     ### read LR file to obtain constants
     fp = open(LR_filename)
