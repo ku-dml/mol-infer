@@ -327,6 +327,11 @@ def prepare_fringe_trees(fringe_filename, Lambda):
     
     with open(fringe_filename,'r') as f:
         lines = f.readlines()
+
+        # skip header if necessary
+        if not lines[0].split(",")[0].isdigit():
+            lines.pop(0)
+        
         for line in lines:
             if len(line.split(",")) < 4:
                 continue
