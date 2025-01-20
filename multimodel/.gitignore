@@ -13,3 +13,7 @@ outputs/
 
 # hydra
 .hydra/
+
+# output
+output/
+!output/.gitkeep
