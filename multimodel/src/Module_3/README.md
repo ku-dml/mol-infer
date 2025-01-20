@@ -25,17 +25,9 @@ make -C Module_3/libs/2LMM_v019/ FV_2LMM_V019
 
 sample command
 ```bash
-python3 -m Module_3 Module_3/config/config.yaml
+python3 -m Module_3 --config-name=config_sample
 ```
 
 
 # config file
-The config file is a yaml file containing the following parameters:
-- instance_file: path to the instance file
-- fringe_tree_file: path to the fringe tree file
-- output_prefix: prefix for the output files
-- input_data: a list of dictionaries containing the following parameters:
-  - model: the model used for prediction (LR, RF, ANN)
-  - prefix: the prefix for the input data files
-  - target_value_lower_bound: the lower bound of the target value range
-  - target_value_upper_bound: the upper bound of the target value range
+For the settings of the config file, refer to config/config_sample.yaml.
