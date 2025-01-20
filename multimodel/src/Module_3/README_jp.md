@@ -23,16 +23,8 @@ make -C Module_3/libs/2LMM_v019/ FV_2LMM_V019
 
 サンプルコマンド
 ```bash
-python -m Module_3 Module_3/config/config.yaml
+python -m Module_3 --config-name=config_sample
 ```
 
 # config ファイル
-config ファイルは以下のパラメータを含む yaml ファイルです:
-- instance_file: インスタンスファイルへのパス
-- fringe_tree_file: 外縁木ファイルへのパス
-- output_prefix: 出力ファイルのプレフィックス
-- input_data: 以下のパラメータを含む辞書のリスト
-  - model: 予測に使用されるモデル (LR, RF, ANN)
-  - prefix: 入力データファイルのプレフィックス
-  - target_value_lower_bound: 目標値範囲の下限
-  - target_value_upper_bound: 目標値範囲の上限
+config ファイルの設定は config/config_sample.yaml を参照してください．
