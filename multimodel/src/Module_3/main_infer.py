@@ -85,7 +85,7 @@ def prepare_MILP(config: DictConfig):
         elif item.model == "RF":
             output_item(item)
             milp_results[index] = RF_add_vars_constraints_to_MILP(
-                item.rf_filename,
+                item.RF_filename,
                 item.desc_filename,
                 item.desc_norm_selected_filename,
                 item.fringe_filename,
