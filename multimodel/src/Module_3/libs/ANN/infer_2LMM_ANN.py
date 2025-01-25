@@ -4,21 +4,31 @@ from Module_3.libs.Function.read_instance_2layer_2LMM_L import *
 from Module_3.libs.Function.read_instance_2layer_2LMM_L import *
 from Module_3.libs import pulp_modified as pulp
 
-def ANN_add_vars_constraints_to_MILP(prop: str, target_value_lb: float, target_value_ub: float, MILP: pulp.LpProblem, base_var: tuple, index: int):
-    """Add variables and constraints to MILP"""
-    ########## preparation ##########
-    #input file of bias
-    ann_bias_filename = f"{prop}_biases.txt"
-    #input file of weight
-    ann_weights_filename = f"{prop}_weights.txt" 
-    #input file of fv
-    ann_training_data_filename = f"{prop}_desc.csv"
-    ann_training_data_norm_filename = f"{prop}_desc_norm_selected.csv"
-    # all fringe trees used in learning
-    fv_fringe_tree_filename = f"{prop}_fringe.txt"  
-    # value file
-    value_filename = f"{prop}_values.txt"
+def ANN_add_vars_constraints_to_MILP(
+    ann_biases_filename: str,
+    ann_weights_filename: str,
+    ann_training_data_filename: str,
+    ann_training_data_norm_filename: str,
+    fv_fringe_tree_filename: str,
+    values_filename: str,
+    target_value_lb: float,
+    target_value_ub: float,
+    MILP: pulp.LpProblem,
+    base_var: tuple,
+    index: int,
+):
+    """Add variables and constraints to MILP
     
+    Arguments:
+        ann_biases_filename {str} -- *_biases.txt
+        ann_weights_filename {str} -- *_weights.txt
+        ann_training_data_filename {str} -- *_desc.csv
+        ann_training_data_norm_filename {str} -- *_desc_norm_selected.csv
+        fv_fringe_tree_filename {str} -- *_fringe.txt (used in learning)
+        values_filename {str} -- *_values.txt
+        target_value_lb {float} -- Lower bound of target value
+        target_value_ub {float} -- Upper bound of target value
+    """
     strF, Lambda_int, Lambda_ex, Gamma_int, Gamma_int_less, Gamma_int_equal, Gamma_lf_ac, \
         n_G, n_G_int, MASS, dg, dg_int, bd_int, na_int, na_ex, ec_int, fc, ac_lf, rank_G, mass_n, \
         t_C, t_T, t_F, t_C_tilde, n_C, n_T, n_F, c_F, Lambda, \
@@ -57,7 +67,7 @@ def ANN_add_vars_constraints_to_MILP(prop: str, target_value_lb: float, target_v
     des = ann_inverter.read_fv_descriptors(ann_training_data_norm_filename)
     des = des[1:] # Drop the "CID" descriptor
     weights, biases = ann_inverter.read_trained_ANN(ann_weights_filename,
-                                                    ann_bias_filename)
+                                                    ann_biases_filename)
     ann = ann_inverter.ANN(weights, biases)
     milp_ann_constants = ann_inverter.initialize_constants(
         ann, training_data)
@@ -66,7 +76,7 @@ def ANN_add_vars_constraints_to_MILP(prop: str, target_value_lb: float, target_v
     milp_ann_vars = ann_inverter.initialize_lp_variables(
         ann, ann_a, ann_b, forbidden_node, property_name=index)
 
-    y_min, y_max = get_value(value_filename)
+    y_min, y_max = get_value(values_filename)
     target_value_lb = (target_value_lb - y_min) / (y_max - y_min)
     target_value_ub = (target_value_ub - y_min) / (y_max - y_min)
 

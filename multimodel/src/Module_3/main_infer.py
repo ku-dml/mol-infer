@@ -3,6 +3,9 @@ multi-model
 """
 import time
 import subprocess
+from omegaconf import DictConfig
+import hydra
+
 from Module_3.libs import pulp_modified as pulp
 
 from Module_3.libs.ANN.infer_2LMM_ANN import ANN_add_vars_constraints_to_MILP
@@ -13,8 +16,6 @@ from Module_3.libs.RF.infer_2LMM_RF import RF_add_vars_constraints_to_MILP
 from Module_3.libs.RF import rf_inverter
 from Module_3.libs.Function.twolayered_MILP_2LMM_L import print_sdf_file, print_gstar_file
 from Module_3.libs.Function.create_base_MILP import create_base_MILP
-
-from Module_3.libs.Class.InputConfiguration import Config
 
 ####################################################
 # IMPORTANT:
@@ -32,7 +33,7 @@ STD_EPS = 1e-5
 FV_GEN_NAME = "Module_3/libs/2LMM_v019/FV_2LMM_V019"
 ####################################################
 
-def prepare_MILP(config: Config):
+def prepare_MILP(config: DictConfig):
     """
     Prepare MILP
     """
@@ -43,36 +44,65 @@ def prepare_MILP(config: Config):
     )
     # after MILP calucation, the results will be stored in milp_results
     milp_results: list = [()] * len(config.input_data)
-    print("Input data:")
+    print("Data:")
+    
+    def output_item(item: DictConfig, verbose: bool = False):
+        if verbose:
+            for (k, v) in item.items():
+                print(f"\t{k}: {v}")
+        else:
+            print(f"\tproperty: {item.property}")
+            print(f"\ttarget value lower bound: {item.target_value_lower_bound}")
+            print(f"\ttarget value upper bound: {item.target_value_upper_bound}")
+    
     for index, item in enumerate(config.input_data):
         print("\tindex:", index)
-        if item["model"] == "ANN":
-            print("\tmodel: ANN")
-            prop = config.get_with_index(index, "prefix")
-            target_value_lb = config.get_with_index(index, "target_value_lower_bound")
-            target_value_ub = config.get_with_index(index, "target_value_upper_bound")
-            milp_results[index] = ANN_add_vars_constraints_to_MILP(prop, target_value_lb, target_value_ub, MILP, base_var, index)
-        elif item["model"] == "LR":
-            print("\tmodel: LR")
-            prop = config.get_with_index(index, "prefix")
-            target_value_lb = config.get_with_index(index, "target_value_lower_bound")
-            target_value_ub = config.get_with_index(index, "target_value_upper_bound")
-            milp_results[index] = LR_add_vars_constraints_to_MILP(prop, target_value_lb, target_value_ub, MILP, base_var, index)
-        elif item["model"] == "RF":
-            print("\tmodel: RF")
-            prop = config.get_with_index(index, "prefix")
-            target_value_lb = config.get_with_index(index, "target_value_lower_bound")
-            target_value_ub = config.get_with_index(index, "target_value_upper_bound")
-            milp_results[index] = RF_add_vars_constraints_to_MILP(prop, target_value_lb, target_value_ub, MILP, base_var, index)
+        if item.model == "ANN":
+            output_item(item)
+            milp_results[index] = ANN_add_vars_constraints_to_MILP(
+                item.biases_filename,
+                item.weights_filename,
+                item.desc_filename,
+                item.desc_norm_selected_filename,
+                item.fringe_filename,
+                item.values_filename,
+                item.target_value_lower_bound,
+                item.target_value_upper_bound,
+                MILP, base_var, index
+            )
+        elif item.model == "LR":
+            output_item(item)
+            milp_results[index] = LR_add_vars_constraints_to_MILP(
+                item.LR_filename,
+                item.desc_filename,
+                item.desc_norm_filename,
+                item.fringe_filename,
+                item.values_filename,
+                item.target_value_lower_bound,
+                item.target_value_upper_bound,
+                MILP, base_var, index
+            )
+        elif item.model == "RF":
+            output_item(item)
+            milp_results[index] = RF_add_vars_constraints_to_MILP(
+                item.rf_filename,
+                item.desc_filename,
+                item.desc_norm_selected_filename,
+                item.fringe_filename,
+                item.values_filename,
+                item.target_value_lower_bound,
+                item.target_value_upper_bound,
+                MILP, base_var, index
+            )
         else:
-            raise Exception(f"\tmodel {item['model']} not supported")
+            raise Exception(f"\tmodel {item.model} not supported")
         print()
+    
     return MILP, milp_results, base_var
 
-# def infer(argv):
-def infer(config_filename: str):
+@hydra.main(version_base=None, config_path="config", config_name=None)
+def infer(config: DictConfig):
     start = time.time()
-    config = Config(config_filename)
     MILP, milp_results, base_var = prepare_MILP(config)
 
     ########## solve and output ##########
@@ -129,19 +159,19 @@ def infer(config_filename: str):
     y_start_scaled_list = []
     if pulp.LpStatus[MILP.status] == "Optimal":
         for index, item in enumerate(config.input_data):
-            if item["model"] == "ANN":
+            if item.model == "ANN":
                 y, y_min, y_max, _, _, _ = milp_results[index]
                 y_star = y.value()
                 y_star_scaled = y_star * (y_max - y_min) + y_min
                 y_start_scaled_list.append(y_star_scaled)
                 print("index", index, " y*:", f"{y_star_scaled:.3f}")
-            elif item["model"] == "LR":
+            elif item.model == "LR":
                 y, y_min, y_max, _, _, _, _ = milp_results[index]
                 y_star = y.value()
                 y_star_scaled = y_star * (y_max - y_min) + y_min
                 y_start_scaled_list.append(y_star_scaled)
                 print("index", index, " y*:", f"{y_star_scaled:.3f}")
-            elif item["model"] == "RF":
+            elif item.model == "RF":
                 y, y_min, y_max, _, _, _, _ = milp_results[index]
                 y_star = y.value()
                 y_star_scaled = y_star * (y_max - y_min) + y_min
@@ -213,28 +243,27 @@ def infer(config_filename: str):
     print(f"DONE: {config.output_prefix} ({output_status}) in {time.time() - start:.3f} seconds", flush=True)
     return output_status, y_start_scaled_list
 
-def check_calculated_descriptors(config: Config, milp_results: list):
+def check_calculated_descriptors(config: DictConfig, milp_results: list):
     print("Checking calculated descriptors")
     outputfilename = config.output_prefix + ".sdf"
-    test_prefix = config.output_prefix + "_test_tmp"
+    check_prefix = config.output_prefix + "_check"
     for index, item in enumerate(config.input_data):
-        prop = config.get_with_index(index, "prefix")
+        prop = item.property
         # output current directory
-        # sleep
-        subprocess.run([FV_GEN_NAME, f"{prop}.sdf", f"{prop}_test", outputfilename, test_prefix],
+        subprocess.run([FV_GEN_NAME, f"{item.sdf_filename}", check_prefix, outputfilename, check_prefix],
             stdout=subprocess.DEVNULL , check=False)
         model = item["model"]
         if model == "ANN":
             y, y_min, y_max, x_hat, ann_training_data_norm_filename, ann = milp_results[index]
-            y_predict, _ = ann_inverter.inspection(f"{test_prefix}_desc_norm.csv", ann_training_data_norm_filename, ann, x_hat, STD_EPS)
+            y_predict, _ = ann_inverter.inspection(f"{check_prefix}_desc_norm.csv", ann_training_data_norm_filename, ann, x_hat, STD_EPS)
         elif model == "LR":
             y, y_min, y_max, x_hat, fv_list, lr, num_fv = milp_results[index]
             y_star = y.value()
-            y_predict = lr_inverter.inspection(f"{test_prefix}_desc_norm.csv", lr, x_hat, STD_EPS, num_fv, fv_list)
+            y_predict = lr_inverter.inspection(f"{check_prefix}_desc_norm.csv", lr, x_hat, STD_EPS, num_fv, fv_list)
             y_predict = y_predict[0]
         elif model == "RF":
             y, y_min, y_max, x_hat, fv_list, rf, num_fv = milp_results[index]
             y_star = y.value()
-            y_predict = rf_inverter.inspection(f"{test_prefix}_desc_norm.csv", rf, x_hat, STD_EPS, num_fv, fv_list)
+            y_predict = rf_inverter.inspection(f"{check_prefix}_desc_norm.csv", rf, x_hat, STD_EPS, num_fv, fv_list)
             y_predict = y_predict[0]
         print("\tInspection value (scaled):  ", y_predict * (y_max - y_min) + y_min, end="\n\n")

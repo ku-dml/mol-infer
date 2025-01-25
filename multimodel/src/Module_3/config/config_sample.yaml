@@ -1,0 +1,65 @@
+# sample config file
+output_prefix: Module_3/samples/output/test
+instance_file: Module_3/samples/input/instance_files/instance_a_2LMM.txt
+fringe_tree_file: Module_3/samples/input/fringe_files/ins_a_fringe_2LMM.txt
+input_data:
+  - property: Mp
+    # model used to predict target values
+    model: LR 
+    # file of LR
+    LR_filename: Module_3/samples/input/data/Mp_small_LR.txt
+    # file of feature vectors
+    desc_filename: Module_3/samples/input/data/Mp_small_desc.csv
+    # file of feature vectors (normalized)
+    desc_norm_filename: Module_3/samples/input/data/Mp_small_desc_norm.csv
+    # file of fringe trees used in learning
+    fringe_filename: Module_3/samples/input/data/Mp_small_fringe.txt
+    # file of vallues
+    values_filename: Module_3/samples/input/data/Mp_small_values.txt
+    # target value
+    target_value_lower_bound: -2000.0
+    target_value_upper_bound: 1000.0
+    # sdf file used to generate feature vectors (to check the results of MILP)
+    sdf_filename: Module_3/samples/input/data/Mp_small.sdf
+
+  - property: Bp
+    # model used to predict target values
+    model: RF
+    # file of RF
+    rf_filename: Module_3/samples/input/data/Bp_small_RF.txt
+    # file of feature vectors
+    desc_filename: Module_3/samples/input/data/Bp_small_desc.csv
+    # file of feature vectors (normalized)
+    desc_norm_selected_filename: Module_3/samples/input/data/Bp_small_desc_norm_selected.csv
+    # file of fringe trees used in learning
+    fringe_filename: Module_3/samples/input/data/Bp_small_fringe.txt
+    # file of vallues
+    values_filename: Module_3/samples/input/data/Bp_small_values.txt
+    # target value
+    target_value_lower_bound: 0.0
+    target_value_upper_bound: 4500.0
+    # sdf file used to generate feature vectors (to check the results of MILP)
+    sdf_filename: Module_3/samples/input/data/Bp_small.sdf
+
+  - property: Fp
+    # model used to predict target values
+    model: ANN 
+    # file of biases
+    biases_filename: Module_3/samples/input/data/Fp_small_biases.txt
+    # file of weights
+    weights_filename: Module_3/samples/input/data/Fp_small_weights.txt
+    # file of feature vectors
+    desc_filename: Module_3/samples/input/data/Fp_small_desc.csv
+    # file of feature vectors (normalized)
+    desc_norm_selected_filename: Module_3/samples/input/data/Fp_small_desc_norm_selected.csv
+    # file of fringe trees used in learning
+    fringe_filename: Module_3/samples/input/data/Fp_small_fringe.txt
+    # file of vallues
+    values_filename: Module_3/samples/input/data/Fp_small_values.txt
+    # target value
+    target_value_lower_bound: -100
+    target_value_upper_bound: 0.0
+    # sdf file used to generate feature vectors (to check the results of MILP)
+    sdf_filename: Module_3/samples/input/data/Fp_small.sdf
+
+

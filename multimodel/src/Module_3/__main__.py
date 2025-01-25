@@ -1,8 +1,10 @@
+import argparse
+
 def print_help():
     """Print help message."""
-    # print("Usage: python3 infer.py [config.yaml]")
-    print ("Usage: python -m Module_3 [config.yaml]")
-    print ("Example: python -m Module_3 config/config.yaml")
+    print ("\nUsage: python -m Module_3 --config-name=[config]")
+    print ("Example: python -m Module_3 --config-name=config1")
+    print ("config file should be in config/ directory\n")
 
 if __name__ == "__main__":
     import sys
@@ -14,6 +16,5 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print_help()
         raise Exception("Wrong number of arguments")
-    # Read config file
-    config_filename: str = sys.argv[1]
-    infer(config_filename)
+
+    infer()
