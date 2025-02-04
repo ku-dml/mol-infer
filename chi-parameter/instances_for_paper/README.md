@@ -5,6 +5,7 @@ This folder contains the data sets and instance files used for this paper.
 - chi-aoki.zip / chi-nistane.zip / chi-jocta.zip
 
   The sdf files and learning results (Tables 2-4) for the data sets Chi-Aoki, Chi-Nistane, and Chi-JOCTA, respectively.
+  A code for using J-OCTA to compute the solubility parameters is also included.
 
 - milp-aoki-nistane.zip / milp-jocta.zip (.z01, .z02)
 
