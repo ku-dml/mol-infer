@@ -35,6 +35,8 @@ In order to understand how they deal with these tasks, one may need to read our 
 
 ## Quickstart visual guide
 
+This [movie](https://www.youtube.com/watch?v=NfWlQbfs3qg) describes how to use this project (Japanese only).
+
 Please check the image below on how data and files are used and passed through different modules
 of the 2LMM-LLR Package.
 For more details on usage and compiling, please see the user's manual in each module
