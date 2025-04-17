@@ -24,7 +24,3 @@ https://doi.org/10.48550/arXiv.2209.13527 にて発表されています．
 	詳細はku-dml/mol-infer/Grid-neighbor-searchを参照してください．
 	
 各フォルダにはそれぞれreadme，コード，サンプルのインスタンスがあります．
-
-参考文献: "Molecular Design Based on Integer Programming and Quadratic Descriptors in a Two-layered Model" by
-Jianshen Zhu, Naveed Ahmed Azam, Shengjuan Cao, Ryota Ido, Kazuya Haraguchi, Liang Zhao, Hiroshi Nagamochi and Tatsuya Akutsu
-
