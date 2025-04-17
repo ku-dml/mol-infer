@@ -2,6 +2,7 @@
  - 著者: Jianshen Zhu, Naveed Ahmed Azam, Shengjuan Cao, Ryota Ido, Kazuya Haraguchi, Liang Zhao, Hiroshi Nagamochi and Tatsuya Akutsu
  - タイトル: Quadratic descriptors and reduction methods in a two-layered model for compound inference"
  - doi: https://doi.org/10.3389/fgene.2024.1483490
+
 に関するファイルを置いています．
 なお上記論文のプレプリントは "Molecular Design Based on Integer Programming and Quadratic Descriptors in a Two-layered Model" というタイトルで
 https://doi.org/10.48550/arXiv.2209.13527 にて発表されています．
