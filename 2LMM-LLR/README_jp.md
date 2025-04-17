@@ -23,10 +23,10 @@ Mol-inferプロジェクトとは，京都大学の離散数理分野研究室�
 
 このパッケージは4つのモジュールで構成されています．
 
-+ モジュール1では記述子を導出します．詳細は[Module 1](Module_1/)を参照してください．
-+ モジュール2では*Lasso Linear Regression*（LLR）を用いて予測関数を構築します．詳細は[Module 2](Module_2/)を参照してください．
-+ モジュール3では逆問題を解く*Mixed-Integer Linear Programming*（MILP）を実装します．詳細は[Module 3](Module_3/)を参照してください．
-+ モジュール4ではグラフを生成します（部分列挙）．詳細は[Module 4](Module_4/)を参照してください．
++ モジュール1では記述子を導出します．詳細は[Module 1](src/Module_1/)を参照してください．
++ モジュール2では*Lasso Linear Regression*（LLR）を用いて予測関数を構築します．詳細は[Module 2](src/Module_2/)を参照してください．
++ モジュール3では逆問題を解く*Mixed-Integer Linear Programming*（MILP）を実装します．詳細は[Module 3](src/Module_3/)を参照してください．
++ モジュール4ではグラフを生成します（部分列挙）．詳細は[Module 4](src/Module_4/)を参照してください．
 
 このパッケージが具体的にどうやってこれらのタスクを処理するかを理解したい場合は，[論文](https://arxiv.org/abs/2107.02381)を参照してください．
 
