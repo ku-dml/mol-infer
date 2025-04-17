@@ -1,3 +1,9 @@
+This is the directory for our paper titled:
+"Quadratic descriptors and reduction methods in a two-layered model for compound inference" (https://doi.org/10.3389/fgene.2024.1483490),
+authored by Jianshen Zhu, Naveed Ahmed Azam, Shengjuan Cao, Ryota Ido, Kazuya Haraguchi, Liang Zhao, Hiroshi Nagamochi and Tatsuya Akutsu,
+where the preprint appeared as "Molecular Design Based on Integer Programming and Quadratic Descriptors in a Two-layered Model" (https://doi.org/10.48550/arXiv.2209.13527). 
+
+
 There are four modules of our model, where the Modules 1 and 4 are the same as the previous work. 
 For details, please check Modules 1 and 4 at ku-dml/mol-infer/2LMM-LLR/.
 
