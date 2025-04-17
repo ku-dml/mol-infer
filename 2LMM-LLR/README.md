@@ -25,11 +25,11 @@ Mol-infer is a project developed by the Discrete Mathematics Lab at Kyoto Univer
 
 This package consists of four modules.
 
-+ Module 1 calculates descriptors. See [Module 1](Module_1/) for detail. 
-+ Module 2 constructs a prediction function by using *Lasso Linear Regression* (LLR). See [Module 2](Module_2/) for detail.
++ Module 1 calculates descriptors. See [Module 1](src/Module_1/) for detail. 
++ Module 2 constructs a prediction function by using *Lasso Linear Regression* (LLR). See [Module 2](src/Module_2/) for detail.
 + Module 3 implements a *Mixed-Integer Linear Programming* (MILP) that solves the inverse problem.
-[Module 3](Module_3/) for detail.
-+ Module 4 generates graphs (partial enumeration). See [Module 4](Module_4/) for detail.
+[Module 3](src/Module_3/) for detail.
++ Module 4 generates graphs (partial enumeration). See [Module 4](src/Module_4/) for detail.
 
 In order to understand how they deal with these tasks, one may need to read our [paper](https://arxiv.org/abs/2107.02381).
 
