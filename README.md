@@ -31,11 +31,11 @@ You should think of different packages as different projects.
 - In addition to structural assumptions, we may make other assumptions on input chemical graphs. For example, in [Cyclic](Cyclic/) and [Cyclic_improved](Cyclic_improved/), the graphs should be *2-lean* as well as cyclic.
 
 ### Package [AqSol](AqSol/) (April 2025)
-- **Input graphs:** Similar to 2LMM-LLR
+- **Input graphs:** Same as 2LMM-LLR
 - **Reference:** Muniba Batool, Naveed Ahmed Azam, Jianshen Zhu, Kazuya Haraguchi, Liang Zhao and Tatsuya Akutsu: A Unified Model for Inferring Chemical Compounds with Given Aqueous Solubility. Journal of Cheminformatics, 17:37, 2025, https://doi.org/10.1186/s13321-025-00966-w
   
 ### Package [2LCC](2LCC/) (August 2024)
-- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions
+- **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
 - **Reference:**
   - B. Song, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, T. Akutsu, Cycle-Configuration: A Novel Graph-theoteric Descriptor Set for Molecular ence, arXiv 2408.05136, 2024, https://arxiv.org/abs/2408.05136.
 
