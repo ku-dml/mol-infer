@@ -39,6 +39,7 @@ You should think of different packages as different projects.
 - **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
 - **Reference:**
   - B. Song, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, T. Akutsu, Cycle-Configuration: A Novel Graph-theoteric Descriptor Set for Molecular Inference, arXiv 2408.05136, 2024, https://arxiv.org/abs/2408.05136.
+  - An extended abstract presented at 2024 IEEE International Conference on Bioinformatics and Biomedicine (BIBM) ... https://doi.org/10.1109/BIBM62325.2024.10822617
 
 ### Package [Polymer](Polymer/) (May 2024)
 - **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
