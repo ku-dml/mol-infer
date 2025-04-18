@@ -38,17 +38,20 @@ You should think of different packages as different projects.
 ### Package [Polymer](Polymer/) (May 2024)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
 - **Reference:**
-  - R. Ido, S. Cao, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, A Method for ring Polymers Based on Linear Regression and Integer Programming, arXiv 2109.02628, 2021, https://arxiv.org/abs/2109.02628.
+  - R. Ido, S. Cao, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, A Method for Inferring Polymers Based on Linear Regression and Integer Programming, arXiv 2109.02628, 2021, https://arxiv.org/abs/2109.02628.
+  - Published version in IEEE/ACM Transactions on Computational Biology and Bioinformatics ... https://doi.org/10.1109/TCBB.2024.3447780
 
 ### Package [HPS](HPS/) (Mar 2024)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
 - **Reference:**
   - J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, Molecular Design Based on Integer Programming and Splitting Data Sets by Hyperplanes, arXiv 2305.00801, 2023, https://arxiv.org/abs/2305.00801.
+  - Published version in IEEE/ACM Transactions on Computational Biology and Bioinformatics ... https://doi.org/10.1109/TCBB.2024.3402675
 
 ### Package [RMLRQ](RMLRQ/) (May 2023)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
 - **Reference:**
   - J. Zhu, N. A. Azam, S. Cao, R. Ido, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, Molecular Design Based on Integer Programming and Quadratic Descriptors in a Two-layered Model, arXiv 2209.13527, 2022, https://arxiv.org/abs/2209.13527.
+  - Published version in Frontiers in Genetics ... https://doi.org/10.3389/fgene.2024.1483490
 
 ### Package [Grid-neighbor-search](Grid-neighbor-search/) (Dec 2021)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
@@ -64,6 +67,7 @@ You should think of different packages as different projects.
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
 - **Reference:** 
   - J. Zhu, N.A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu: An Inverse QSAR Method Based on Linear Regression and Integer Programming, 2021, http://arxiv.org/abs/2107.02381.
+  - An extended abstract appears in Proceedings of ICBBB 2022 ... https://doi.org/10.31083/j.fbl2706188
 
 ### Package [2L-model](2L-model/) (Mar 2021)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
