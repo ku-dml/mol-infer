@@ -32,7 +32,8 @@ You should think of different packages as different projects.
 
 ### Package [AqSol](AqSol/) (April 2025)
 - **Input graphs:** Same as 2LMM-LLR
-- **Reference:** Muniba Batool, Naveed Ahmed Azam, Jianshen Zhu, Kazuya Haraguchi, Liang Zhao and Tatsuya Akutsu: A Unified Model for Inferring Chemical Compounds with Given Aqueous Solubility. Journal of Cheminformatics, 17:37, 2025, https://doi.org/10.1186/s13321-025-00966-w
+- **Reference:**
+  - Muniba Batool, Naveed Ahmed Azam, Jianshen Zhu, Kazuya Haraguchi, Liang Zhao and Tatsuya Akutsu: A Unified Model for Inferring Chemical Compounds with Given Aqueous Solubility. Journal of Cheminformatics, 17:37, 2025, https://doi.org/10.1186/s13321-025-00966-w
   
 ### Package [2LCC](2LCC/) (August 2024)
 - **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
@@ -40,30 +41,30 @@ You should think of different packages as different projects.
   - B. Song, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, T. Akutsu, Cycle-Configuration: A Novel Graph-theoteric Descriptor Set for Molecular ence, arXiv 2408.05136, 2024, https://arxiv.org/abs/2408.05136.
 
 ### Package [Polymer](Polymer/) (May 2024)
-- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
+- **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
 - **Reference:**
   - R. Ido, S. Cao, J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, A Method for Inferring Polymers Based on Linear Regression and Integer Programming, arXiv 2109.02628, 2021, https://arxiv.org/abs/2109.02628.
   - Published version in IEEE/ACM Transactions on Computational Biology and Bioinformatics ... https://doi.org/10.1109/TCBB.2024.3447780
 
 ### Package [HPS](HPS/) (Mar 2024)
-- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
+- **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
 - **Reference:**
   - J. Zhu, N. A. Azam, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, Molecular Design Based on Integer Programming and Splitting Data Sets by Hyperplanes, arXiv 2305.00801, 2023, https://arxiv.org/abs/2305.00801.
   - Published version in IEEE/ACM Transactions on Computational Biology and Bioinformatics ... https://doi.org/10.1109/TCBB.2024.3402675
 
 ### Package [RMLRQ](RMLRQ/) (May 2023)
-- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
+- **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
 - **Reference:**
   - J. Zhu, N. A. Azam, S. Cao, R. Ido, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu, Molecular Design Based on Integer Programming and Quadratic Descriptors in a Two-layered Model, arXiv 2209.13527, 2022, https://arxiv.org/abs/2209.13527.
   - Published version in Frontiers in Genetics ... https://doi.org/10.3389/fgene.2024.1483490
 
 ### Package [Grid-neighbor-search](Grid-neighbor-search/) (Dec 2021)
-- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
+- **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
 - **Reference:** 
   - N. A. Azam, J. Zhu, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu. Molecular Design Based on Artificial Neural Networks, Integer Programming and Grid Neighbor Search, *Proceedings of IEEE International Conference on Bioinformatics and Biomedicine (BIBM)*, 2021.
 
 ### Package [ALR](ALR/) (Sep 2021)
-- **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
+- **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
 - **Reference:** 
   - J. Zhu, K. Haraguchi, H. Nagamochi and T. Akutsu: Adjustive Linear Regression and Its Application to the Inverse QSAR, *Proceedings of the 15th International Joint Conference on Biomedical Engineering Systems and Technologies (BIOSTEC 2022) - Volume 3: BIOINFORMATICS*, 2021, https://doi.org/10.5220/0010853700003123.
 
