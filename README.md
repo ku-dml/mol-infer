@@ -62,12 +62,12 @@ You should think of different packages as different projects.
 ### Package [Grid-neighbor-search](Grid-neighbor-search/) (Dec 2021)
 - **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
 - **Reference:** 
-  - N. A. Azam, J. Zhu, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu. Molecular Design Based on Artificial Neural Networks, Integer Programming and Grid Neighbor Search, *Proceedings of IEEE International Conference on Bioinformatics and Biomedicine (BIBM)*, 2021. ... https://doi.org/10.1109/BIBM52615.2021.9669710
+  - N. A. Azam, J. Zhu, K. Haraguchi, L. Zhao, H. Nagamochi and T. Akutsu. Molecular Design Based on Artificial Neural Networks, Integer Programming and Grid Neighbor Search, *Proceedings of IEEE International Conference on Bioinformatics and Biomedicine (BIBM)*, 2021, https://doi.org/10.1109/BIBM52615.2021.9669710
 
 ### Package [ALR](ALR/) (Sep 2021)
 - **Input graphs:** Same as 2LMM-LLR <!-- Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time) with some exceptions -->
 - **Reference:** 
-  - J. Zhu, K. Haraguchi, H. Nagamochi and T. Akutsu: Adjustive Linear Regression and Its Application to the Inverse QSAR, *Proceedings of the 15th International Joint Conference on Biomedical Engineering Systems and Technologies (BIOSTEC 2022) - Volume 3: BIOINFORMATICS*, 2021, https://doi.org/10.5220/0010853700003123. ... https://doi.org/10.5220/0010853700003123
+  - J. Zhu, K. Haraguchi, H. Nagamochi and T. Akutsu: Adjustive Linear Regression and Its Application to the Inverse QSAR, *Proceedings of the 15th International Joint Conference on Biomedical Engineering Systems and Technologies (BIOSTEC 2022) - Volume 3: BIOINFORMATICS*, 2021, https://doi.org/10.5220/0010853700003123
 
 ### Package [2LMM-LLR](2LMM-LLR/) (Jul 2021)
 - **Input graphs:** Arbitrary graphs (i.e., both cyclic and acyclic graphs can be treated at the same time)
