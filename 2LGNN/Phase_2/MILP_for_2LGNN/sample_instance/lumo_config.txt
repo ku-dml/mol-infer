@@ -1,0 +1,10 @@
+in_channels_FT, 14
+hidden_channels_FT, 256
+num_layers_FT, 16
+p_channels_FT, 256
+ANN_channels_FT, 256, 128, 64, 32, 16, 8
+in_channels_IN, 7
+hidden_channels_IN, 16
+num_layers_IN, 3
+p_channels_IN, 32
+ANN_channels_IN, 16, 1
