@@ -4,7 +4,7 @@ from Module_3.libs.Function.twolayered_MILP_2LMM_L import *
 from Module_3.libs import pulp_modified as pulp
 
 def RF_add_vars_constraints_to_MILP(
-    rf_filename: str,
+    RF_filename: str,
     original_dataset_filename: str,
     normalized_dataset_filename: str,
     fv_fringe_tree_filename: str,
@@ -18,6 +18,7 @@ def RF_add_vars_constraints_to_MILP(
     """Add variables and constraints to MILP
     
     Arguments:
+        RF_filename {str} -- *_RF.txt
         original_dataset_filename {str} -- *_desc.csv
         normalized_dataset_filename {str} -- *_desc_norm_selected.csv
         fv_fringe_tree_filename {str} -- *_fringe.txt (used in learning)
@@ -63,7 +64,7 @@ def RF_add_vars_constraints_to_MILP(
     target_value_ub = (target_value_ub - y_min) / (y_max - y_min)
     
     ########## Inverse problem: RF part ##########
-    rf_model = rf_inverter.read_rf(rf_filename)
+    rf_model = rf_inverter.read_rf(RF_filename)
     rf_inv = rf_inverter.RFRegInv(n_estimators=len(rf_model.dt_list), property_name=index)
     rf_inv.build_var(rf_model, property_name=index)
     x_hat_dict = {i: x_hat[i + 1] for i in range(num_fv - 1)}

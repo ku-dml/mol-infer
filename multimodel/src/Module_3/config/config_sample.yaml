@@ -26,7 +26,7 @@ input_data:
     # model used to predict target values
     model: RF
     # file of RF
-    rf_filename: Module_3/samples/input/data/Bp_small_RF.txt
+    RF_filename: Module_3/samples/input/data/Bp_small_RF.txt
     # file of feature vectors
     desc_filename: Module_3/samples/input/data/Bp_small_desc.csv
     # file of feature vectors (normalized)
