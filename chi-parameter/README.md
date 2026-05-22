@@ -6,10 +6,10 @@
 
 # mol-infer/chi-parameter
 
-This folder contains the codes and instances used for the paper "Towards Environment-Sensitive Molecular Inference via Mixed Integer Linear Programming" (to submit).
+This folder contains the codes and instances used for the paper "Towards Environment-Sensitive Molecular Inference via Mixed Integer Linear Programming".
 
-- The paper is submitted to XXX. 
-- The preprint is available at XXX.
+- The paper is submitted to ACS Omega (Accepted). 
+- The preprint is available at [https://arxiv.org/abs/2503.01849].
 - All folder/file names in this repository are based on the table/figure numbers in the submitted paper.
 
 The folder structure is organized as follows:
@@ -26,4 +26,3 @@ The folder structure is organized as follows:
    - Original data sets used in the paper
    - Instance files used for Tables 5 and 6
 
-TO DO. 2025/01/06, Zhu
