@@ -1,0 +1,166 @@
+# =============================================================================
+# Sample configuration file for the copolymer inverse-design experiment.
+#
+# This file describes:
+#   - the MILP solver settings,
+#   - the seed graphs used as monomer skeletons,
+#   - the trained learning model and descriptor files,
+#   - the target property bounds and mixing ratio for the copolymer design task.
+#
+# Paths are written relative to the directory from which the script is executed.
+# Modify them as needed for your local environment.
+# =============================================================================
+
+# If true, additional debugging information may be printed.
+# For normal experiments, this should usually be false.
+DEBUG: false
+
+
+# -----------------------------------------------------------------------------
+# Solver settings
+# -----------------------------------------------------------------------------
+solver:
+  # Solver type.
+  # Currently, this sample assumes that IBM ILOG CPLEX is used.
+  type: "CPLEX"
+
+  # Path to the CPLEX executable.
+  # This path is environment-dependent and should be changed by the user.
+  #
+  # Example for macOS Apple Silicon:
+  #   /Applications/CPLEX_Studio2211/cplex/bin/arm64_osx/cplex
+  #
+  # Example for Linux:
+  #   /opt/ibm/ILOG/CPLEX_Studio2211/cplex/bin/x86-64_linux/cplex
+  CPLEX_PATH: "/Applications/CPLEX_Studio2211/cplex/bin/arm64_osx/cplex"
+
+  # Whether to display messages from CPLEX during optimization.
+  # Set this to true if you want to inspect the solver log directly.
+  CPLEX_MSG: false
+
+  # Time limit for CPLEX, in seconds.
+  # Here, 3600 means one hour.
+  CPLEX_TIMELIMIT: 3600
+
+
+# -----------------------------------------------------------------------------
+# Seed graphs
+# -----------------------------------------------------------------------------
+# Each seed graph specifies the molecular graph template used as a starting
+# structure in the inverse-design problem.
+#
+# In the MV model for copolymers, multiple seed graphs may be specified.
+# In this example, two seed graphs are used, corresponding to two monomer units.
+# -----------------------------------------------------------------------------
+seed_graphs:
+  - name: "seed_d1_polymer"
+
+    # Type of the seed graph.
+    # "2LMM_polymer" denotes the polymer version of the two-layered molecular
+    # model representation.
+    type: "2LMM_polymer"
+
+    # File containing the seed graph instance.
+    filename: "./sample/instance_d1.txt"
+
+    # File containing the fringe-tree information associated with this seed graph.
+    fringe_filename: "./sample/ins_d1.txt"
+
+  - name: "seed_d2_polymer"
+    type: "2LMM_polymer"
+    filename: "./sample/instance_d2.txt"
+    fringe_filename: "./sample/ins_d2.txt"
+
+
+# -----------------------------------------------------------------------------
+# Learning models
+# -----------------------------------------------------------------------------
+# Each entry describes a trained prediction model used in Phase 2.
+#
+# The inverse problem is formulated so that the designed copolymer is constrained
+# to have a predicted property value within the target interval specified below.
+# -----------------------------------------------------------------------------
+learning_models:
+  - name: "Wilbraham_EA_RMLR"
+
+    # Type of prediction model.
+    # In the code included in this repository, this field should be one of:
+    #   - "mlr": multiple linear regression,
+    #   - "rf" : random forest,
+    #   - "ann": artificial neural network.
+    type: "mlr"
+
+    # Descriptor file for the training dataset.
+    # This file is used to define descriptor information required by the model.
+    desc_filename: "./sample/wilbraham_5000_alternate_desc.csv"
+
+    # File containing the selected and normalized descriptors.
+    # The normalization should be consistent with the trained model.
+    desc_norm_selected_filename: "./sample/wilbraham_5000_recalc_desc_norm_selected.csv"
+
+    # Fringe-tree file used for descriptor computation.
+    fringe_filename: "./sample/wilbraham_5000_alternate_fringe.txt"
+
+    # File containing the property values used for training the prediction model.
+    # In this example, the target property is the recalculated electron affinity.
+    values_filename: "./sample/wilbraham_5000_EA_recalc_values.txt"
+
+    # File containing the trained RMLR model parameters.
+    # This field is required when type is "mlr".
+    #
+    # If type is "ann", weight_filename and biases_filename are required instead.
+    # If type is "rf", rf_filename is required instead.
+    #
+    # These model files are obtained from Module_2.
+    linreg_filename: "./sample/wilbraham_5000_recalc_EA_RMLR.txt"
+
+    # Additional options for the learning model.
+    flags:
+      # Use quadratic descriptor terms in the regression model.
+      - use_quadratic
+
+
+# -----------------------------------------------------------------------------
+# Assignments
+# -----------------------------------------------------------------------------
+# Each assignment specifies one inverse-design task.
+#
+# It connects:
+#   - one or more seed graphs,
+#   - one learning model,
+#   - a mixing ratio,
+#   - lower and upper bounds for the target predicted property.
+# -----------------------------------------------------------------------------
+assignments:
+  - seed_graph:
+      # Names of the seed graphs used for the copolymer.
+      # These names must match entries in seed_graphs above.
+      - "seed_d1_polymer"
+      - "seed_d2_polymer"
+
+    # Name of the learning model used for property prediction.
+    # This name must match an entry in learning_models above.
+    learning_model: "Wilbraham_EA_RMLR"
+
+    # Mixing ratio of the monomer units.
+    # The length of this list must match the number of seed graphs.
+    # In this example, the copolymer is represented by a 1:1 mixture.
+    ratio:
+      - 0.5
+      - 0.5
+
+    # Lower and upper bounds for the predicted property value.
+    # The MILP searches for structures whose predicted value lies in [lb, ub].
+    #
+    # In this example:
+    #   4.3 <= predicted EA <= 4.5
+    lb: 4.3
+    ub: 4.5
+
+    # Type of copolymer representation.
+    # "MV" denotes the mixing-vector model, where the copolymer descriptor vector
+    # is computed as the weighted average of monomer-level descriptor vectors
+    # according to the specified mixing ratio.
+    type: "MV"
+
+    
