@@ -1,0 +1,10 @@
+output_prefix: ./tests/output/qm9_d_alpha_r2_zpve_cv
+instance_file: ./tests/alpha-r2-zpve-cv/instance_files/instance_d_2LMM.txt
+fringe_tree_file: ./tests/alpha-r2-zpve-cv/fringe_files/ins_d_fringe_2LMM.txt
+
+input_data:
+  - model: ANN
+    prefix: ./tests/alpha-r2-zpve-cv/data/qm9
+    property_names: [alpha, r2, zpve, cv]
+    target_value_lower_bound: [337.4, 11377.8, 0.633, 137.1]
+    target_value_upper_bound: [453.6, 14275.5, 0.885, 174.8]

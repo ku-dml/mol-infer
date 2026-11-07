@@ -1,0 +1,10 @@
+output_prefix: ./tests/output/qm9_b4_alpha_r2_zpve_cv_gap_lumo_homo_u0
+instance_file: ./tests/alpha-r2-zpve-cv-gap-lumo-homo-u0/instance_files/instance_b4_2LMM.txt
+fringe_tree_file: ./tests/alpha-r2-zpve-cv-gap-lumo-homo-u0/fringe_files/ins_b4_fringe_2LMM.txt
+
+input_data:
+  - model: ANN
+    prefix: ./tests/alpha-r2-zpve-cv-gap-lumo-homo-u0/data/qm9
+    property_names: [alpha, r2, zpve, cv, gap, lumo, homo, u0]
+    target_value_lower_bound: [336, 12421, 0.598, 160, 0.308, 0.146, 0.26, -698]
+    target_value_upper_bound: [452, 15319, 0.851, 198, 0.696, 0.397, 0.505, -169]

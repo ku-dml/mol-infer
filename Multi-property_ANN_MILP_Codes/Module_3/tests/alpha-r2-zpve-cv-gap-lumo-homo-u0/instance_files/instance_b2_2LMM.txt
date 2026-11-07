@@ -1,0 +1,239 @@
+### seed graph ###
+# |V_C|
+4
+# |E_C|
+5
+# edges (index followed by list of extreme points)
+1 1 2
+2 3 4
+3 2 3
+4 1 2
+5 3 4
+### Path-replacement specification pr###
+# index, ell_LB and ell_UB
+1 2 50
+2 2 50
+3 1 50
+4 1 1
+5 1 1
+# n_LB_int and n_UB_int
+25
+30
+### Path-replacement specification ta###
+# n_LB, n_star
+45
+50
+# rho
+2
+# index of V_C, ch_LB and ch_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+# index of E_ge_two | E_ge_one, ch_LB and ch_UB
+1 0 50
+2 0 50
+3 0 50
+# index of V_C, bl_LB and bl_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+# index of E_ge_two | E_ge_one, bl_LB and bl_UB
+1 0 50
+2 0 50
+3 0 50
+### chemical specification ###
+# Lambda
+H1 C3 C4 N2 N3 N4 O1 O2 F1
+# Lambda_dg_int
+12
+C3 2 
+C3 3
+C4 2 
+C4 3
+C4 4
+N2 2
+N3 2
+N3 3
+N4 2
+N4 3
+N4 4
+O2 2
+# Gamma_int_ac
+16
+C3 C4 1
+C3 N3 1
+C3 O2 1
+C4 C4 1
+C4 C4 2
+C4 C4 3
+C4 N2 1
+C4 N3 1
+C4 N3 2
+C4 N4 1
+C4 N4 2
+C4 O2 1
+N2 N3 1
+N3 N3 1
+N3 N3 2
+N3 O2 1
+# Gamma_int
+41
+C3 2 C4 3 1
+C3 2 N3 2 1
+C3 2 O2 2 1
+C3 3 C4 2 1
+C3 3 C4 3 1
+C3 3 O2 2 1
+C4 2 C4 2 1
+C4 2 C4 2 2
+C4 2 C4 2 3
+C4 2 C4 3 1
+C4 2 C4 3 2
+C4 2 C4 4 1
+C4 2 N2 2 1
+C4 2 N3 2 1
+C4 2 N3 2 2
+C4 2 N3 3 1
+C4 2 N4 2 1
+C4 2 N4 2 2
+C4 2 N4 3 1
+C4 2 O2 2 1
+C4 3 C4 3 1
+C4 3 C4 3 2
+C4 3 C4 4 1
+C4 3 N2 2 1
+C4 3 N3 2 1
+C4 3 N3 2 2
+C4 3 N3 3 1
+C4 3 N4 2 1
+C4 3 N4 2 2
+C4 3 N4 3 1
+C4 3 O2 2 1
+C4 4 C4 4 1
+C4 4 N3 2 1
+C4 4 N3 3 1
+C4 4 N4 2 1
+C4 4 O2 2 1
+N2 2 N3 2 1
+N3 2 N3 2 1
+N3 2 N3 2 2
+N3 2 N3 3 1
+N3 2 O2 2 1
+# Lambda_star
+1 C3 C4 N2 N3 N4 O1 O2 F1
+2 C3 C4 N2 N3 N4 O1 O2 F1
+3 C3 C4 N2 N3 N4 O1 O2 F1
+4 C3 C4 N2 N3 N4 O1 O2 F1
+# na_LB and na_UB
+9
+H1 0 50
+C3 0 50
+C4 0 50
+N2 0 50
+N3 0 50
+N4 0 50
+O1 0 50
+O2 0 50
+F1 0 50
+# na_LB_int and na_UB_int
+8
+C3 0 50
+C4 0 50
+N2 0 50
+N3 0 50
+N4 0 50
+O1 0 50
+O2 0 50
+F1 0 50
+# ns_LB_int and ns_UB_int
+12
+C3 2 0 50
+C3 3 0 50
+C4 2 0 50
+C4 3 0 50
+C4 4 0 50
+N2 2 0 50
+N3 2 0 50
+N3 3 0 50
+N4 2 0 50
+N4 3 0 50
+N4 4 0 50
+O2 2 0 50
+# ac_LB_int and ac_UB_int
+16
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+6 0 50
+7 0 50
+8 0 50
+9 0 50
+10 0 50
+11 0 50
+12 0 50
+13 0 50
+14 0 50
+15 0 50
+16 0 50
+# ec_LB_int and ec_UB_int
+41
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+6 0 50
+7 0 50
+8 0 50
+9 0 50
+10 0 50
+11 0 50
+12 0 50
+13 0 50
+14 0 50
+15 0 50
+16 0 50
+17 0 50
+18 0 50
+19 0 50
+20 0 50
+21 0 50
+22 0 50
+23 0 50
+24 0 50
+25 0 50
+26 0 50
+27 0 50
+28 0 50
+29 0 50
+30 0 50
+31 0 50
+32 0 50
+33 0 50
+34 0 50
+35 0 50
+36 0 50
+37 0 50
+38 0 50
+39 0 50
+40 0 50
+41 0 50
+# bd2_LB and bd2_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+# bd3_LB and bd3_UB
+1 0 50
+2 0 50
+3 0 50
+4 0 50
+5 0 50
+# ac_LB_lf and ac_UB_lf
+0
+0 50
