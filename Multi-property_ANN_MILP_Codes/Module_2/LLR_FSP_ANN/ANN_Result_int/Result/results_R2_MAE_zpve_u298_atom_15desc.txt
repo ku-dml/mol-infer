@@ -1,0 +1,28 @@
+Targets: zpve, u298_atom
+Best Architecture: [78, 18, 83, 83]
+
+=== R2 (normalized target space) ===
+Median Train R2 per target: [0.98016271 0.98282423]
+Median Validation R2 per target: [0.98017657 0.98215577]
+Median combined Train R2 (flattened): 0.9804415485813365
+Median combined Validation R2 (flattened): 0.9805580945405329
+
+=== MAE / NMAE (original units) ===
+Median Train MAE  (orig units): [1.06744861e-02 2.30182298e+02]
+Median Validation MAE (orig units): [1.07256822e-02 2.29849249e+02]
+Median combined Train MAE (orig units): 113.24361392429626
+Median combined Validation MAE (orig units): 113.77214030914756
+
+Median Train NMAE: [0.04624353 0.14132954]
+Median Validation NMAE: [0.04646532 0.14112505]
+Median combined Train NMAE: 0.09316695268047534
+Median combined Validation NMAE: 0.0936179476107703
+
+=== Median-closest final-CV model (L1) ===
+Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selected Iteration: 8
+Selected Fold: 5
+Selected Fold Validation R2 per target: [0.9801970020739265, 0.9818922270670474]
+L1 closeness score: 0.00028397634032129027
+Median-closest weights: /home/azam/Prediction_Phase1/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_u298_atom_15desc_weights.txt
+Median-closest biases: /home/azam/Prediction_Phase1/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_u298_atom_15desc_biases.txt
