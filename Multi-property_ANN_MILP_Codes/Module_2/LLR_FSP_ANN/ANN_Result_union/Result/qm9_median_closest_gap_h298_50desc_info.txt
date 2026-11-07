@@ -1,0 +1,9 @@
+Median Validation R2 per target: [0.83148371 0.99214091]
+Selected Iteration: 3
+Selected Fold: 3
+Selected Fold Validation R2 per target: [0.8317039696490502, 0.9914090723582363]
+L1 closeness score: 0.0009520900586055259
+Source weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/weight_biases/qm9_3_3_gap_h298_50desc_weights.txt
+Source biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/weight_biases/qm9_3_3_gap_h298_50desc_biases.txt
+Copied median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_h298_50desc_weights.txt
+Copied median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_h298_50desc_biases.txt
