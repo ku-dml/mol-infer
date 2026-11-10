@@ -17,7 +17,7 @@ The original experimental settings are preserved while the output dimension is g
 - MSE loss
 - rho = 0.98 and maxitr = 10000
 - Equal-weight weighted-sum Optuna score for any number of targets
-- Combined statistics = median of flattened per-target values
+- Combined statistics = average of per-target median values (Eq. (3))
 """
 
 import os
@@ -198,9 +198,9 @@ def objective(
     fold_test_r2_scores = []
 
     for train_index, test_index in kf.split(X_all):
-        X_train_fold, X_val_fold = X_all[train_index], X_all[test_index]
+        X_train_fold, X_test_fold = X_all[train_index], X_all[test_index]
         y_train_fold_norm = y_norm_all[train_index]
-        y_val_fold_norm = y_norm_all[test_index]
+        y_test_fold_norm = y_norm_all[test_index]
 
         # Release Keras/TensorFlow state from the previous fold before
         # constructing a new model. This prevents model/graph accumulation.
@@ -237,11 +237,11 @@ def objective(
             if early_stop_reached(r2_scores_train, rho):
                 break
 
-        y_val_pred_norm = model(X_val_fold, training=False).numpy()
+        y_test_pred_norm = model(X_test_fold, training=False).numpy()
         r2_scores_test = [
             r2_score(
-                y_val_fold_norm[:, i],
-                y_val_pred_norm[:, i],
+                y_test_fold_norm[:, i],
+                y_test_pred_norm[:, i],
             )
             for i in range(num_targets)
         ]
@@ -258,7 +258,7 @@ def objective(
         # Explicitly release fold-specific TensorFlow objects.
         del model
         del y_train_pred_norm
-        del y_val_pred_norm
+        del y_test_pred_norm
         tf.keras.backend.clear_session()
         gc.collect()
 
@@ -375,13 +375,13 @@ def learn_ANN_eval(
     fold_test_nmae = []
 
     for iteration in range(10):
-        for fold, (train_index, val_index) in enumerate(kf.split(X_all)):
+        for fold, (train_index, test_index) in enumerate(kf.split(X_all)):
             X_tr_fold = X_all[train_index]
-            X_val_fold = X_all[val_index]
+            X_test_fold = X_all[test_index]
             y_tr_fold_norm = y_norm_all[train_index]
-            y_val_fold_norm = y_norm_all[val_index]
+            y_test_fold_norm = y_norm_all[test_index]
             y_tr_fold_orig = y_orig_all[train_index]
-            y_val_fold_orig = y_orig_all[val_index]
+            y_test_fold_orig = y_orig_all[test_index]
 
             # Release Keras/TensorFlow state from the previous fold before
             # constructing a new model. This prevents model/graph accumulation.
@@ -418,22 +418,20 @@ def learn_ANN_eval(
                 if early_stop_reached(train_r2, rho):
                     break
 
-            y_val_pred_norm = model(X_val_fold, training=False).numpy()
+            y_test_pred_norm = model(X_test_fold, training=False).numpy()
             test_r2 = [
                 r2_score(
-                    y_val_fold_norm[:, d],
-                    y_val_pred_norm[:, d],
+                    y_test_fold_norm[:, d],
+                    y_test_pred_norm[:, d],
                 )
                 for d in range(num_targets)
             ]
 
             final_train_r2_scores.append(train_r2)
             final_test_r2_scores.append(test_r2)
-            # Combined R² for this fold: median across all target properties.
-            # For one target, this is the target R² itself; for two targets,
-            # the median is equal to their arithmetic average.
-            combined_train_r2 = float(np.median(np.asarray(train_r2)))
-            combined_test_r2 = float(np.median(np.asarray(test_r2)))
+            # Combined R² for this fold: average across all target properties.
+            combined_train_r2 = float(np.mean(np.asarray(train_r2)))
+            combined_test_r2 = float(np.mean(np.asarray(test_r2)))
 
             cv_fold_records.append(
                 {
@@ -448,14 +446,14 @@ def learn_ANN_eval(
 
             # Back-transform predictions and compute MAE/NMAE
             y_tr_pred_orig = y_tr_pred_norm * y_range + y_min
-            y_val_pred_orig = y_val_pred_norm * y_range + y_min
+            y_test_pred_orig = y_test_pred_norm * y_range + y_min
 
             mae_train = np.mean(
                 np.abs(y_tr_pred_orig - y_tr_fold_orig),
                 axis=0,
             )
             mae_test = np.mean(
-                np.abs(y_val_pred_orig - y_val_fold_orig),
+                np.abs(y_test_pred_orig - y_test_fold_orig),
                 axis=0,
             )
 
@@ -486,9 +484,9 @@ def learn_ANN_eval(
             # prediction arrays before the next model is created.
             del model
             del y_tr_pred_norm
-            del y_val_pred_norm
+            del y_test_pred_norm
             del y_tr_pred_orig
-            del y_val_pred_orig
+            del y_test_pred_orig
             tf.keras.backend.clear_session()
             gc.collect()
 
@@ -505,20 +503,9 @@ def learn_ANN_eval(
         axis=0,
     )
 
-    # Combined R²: exactly the original flattened-median definition
-    flat_train_r2 = [
-        score
-        for sublist in final_train_r2_scores
-        for score in sublist
-    ]
-    flat_test_r2 = [
-        score
-        for sublist in final_test_r2_scores
-        for score in sublist
-    ]
-
-    median_train_r2_combined = np.median(flat_train_r2)
-    median_test_r2_combined = np.median(flat_test_r2)
+    # Combined R² (Eq. (3)): average of the per-target median R² values
+    median_train_r2_combined = np.mean(median_train_r2_per_dimension)
+    median_test_r2_combined = np.mean(median_test_r2_per_dimension)
 
     # ---------- MEDIAN-CLOSEST REAL FOLD (same L1 technique as previous code) ----------
     # No retraining and no change to any R2/MAE/NMAE calculation.
@@ -632,10 +619,11 @@ def learn_ANN_eval(
     median_train_nmae = np.median(train_nmae_arr, axis=0)
     median_test_nmae = np.median(test_nmae_arr, axis=0)
 
-    median_train_mae_combined = np.median(train_mae_arr.flatten())
-    median_test_mae_combined = np.median(test_mae_arr.flatten())
-    median_train_nmae_combined = np.median(train_nmae_arr.flatten())
-    median_test_nmae_combined = np.median(test_nmae_arr.flatten())
+    # Combined MAE/NMAE: average of the per-target median values
+    median_train_mae_combined = np.mean(median_train_mae)
+    median_test_mae_combined = np.mean(median_test_mae)
+    median_train_nmae_combined = np.mean(median_train_nmae)
+    median_test_nmae_combined = np.mean(median_test_nmae)
 
     print(
         f"Best architecture: {best_architecture} "
@@ -655,11 +643,11 @@ def learn_ANN_eval(
         f"{median_test_r2_per_dimension}"
     )
     print(
-        "Median combined Train R2 (norm, flattened): "
+        "Median combined Train R2 (norm, average): "
         f"{median_train_r2_combined}"
     )
     print(
-        "Median combined Testing R2 (norm, flattened): "
+        "Median combined Testing R2 (norm, average): "
         f"{median_test_r2_combined}"
     )
     print("------------------------------------------------------")
@@ -1214,11 +1202,11 @@ def write_results_to_files(results, properties, base_tag):
             f"{results['median_test_r2_per_dim']}\n"
         )
         file.write(
-            "Median combined Train R2 (flattened): "
+            "Median combined Train R2 (average): "
             f"{results['median_train_r2_combined']}\n"
         )
         file.write(
-            "Median combined Testing R2 (flattened): "
+            "Median combined Testing R2 (average): "
             f"{results['median_test_r2_combined']}\n\n"
         )
         file.write("=== MAE / NMAE (original units) ===\n")
