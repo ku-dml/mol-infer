@@ -1,6 +1,6 @@
 This folder contains the codes and datasets used in the following paper:
 
-Raveena Rai, Naveed Ahmed Azam, Jianshen Zhu, Kazuya Haraguchi, Liang Zhao, and Tatsuya Akutsu, "One Model, Multiple Targets: An ANN–MILP Framework for Mathematically Guaranteed Inverse Molecular Design."
+Raveena Rai, Naveed Ahmed Azam, Jianshen Zhu, Kazuya Haraguchi, Liang Zhao, and Tatsuya Akutsu, "Mathematically Guaranteed Multi-Property Inverse Molecular Design via Shared Representation and Mixed-Integer Linear Programming."
 
 The folder structure is organized as follows:
 
