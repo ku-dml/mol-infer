@@ -3,26 +3,26 @@ Best Architecture: [114, 122, 58, 103]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.9978172  0.97850251]
-Median Validation R2 per target: [0.99666379 0.97167488]
-Median combined Train R2 (flattened): 0.9883843651063937
-Median combined Validation R2 (flattened): 0.9845836897126732
+Median Testing R2 per target: [0.99666379 0.97167488]
+Median combined Train R2 (average): 0.9881598549999999
+Median combined Testing R2 (average): 0.984169335
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [0.01062839 2.91477212]
-Median Validation MAE (orig units): [0.0106602  2.91608175]
-Median combined Train MAE (orig units): 1.4305695421839588
-Median combined Validation MAE (orig units): 1.4270045321537916
+Median Testing MAE (orig units): [0.0106602  2.91608175]
+Median combined Train MAE (orig units): 1.462700255
+Median combined Testing MAE (orig units): 1.463370975
 
 Median Train NMAE: [0.04604382 0.0964741 ]
-Median Validation NMAE: [0.04618163 0.09651745]
-Median combined Train NMAE: 0.07126975306980034
-Median combined Validation NMAE: 0.0713072310503636
+Median Testing NMAE: [0.04618163 0.09651745]
+Median combined Train NMAE: 0.07125896
+Median combined Testing NMAE: 0.07134954
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 2
 Selected Fold: 1
-Selected Fold Validation R2 per target: [0.9965917018066403, 0.9717232861834257]
+Selected Fold Testing R2 per target: [0.9965917018066403, 0.9717232861834257]
 L1 closeness score: 0.00012049471938424539
 Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_cv_40desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_cv_40desc_biases.txt

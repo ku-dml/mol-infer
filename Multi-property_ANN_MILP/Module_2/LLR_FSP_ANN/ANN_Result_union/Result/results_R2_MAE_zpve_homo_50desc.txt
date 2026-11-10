@@ -3,26 +3,26 @@ Best Architecture: [78, 18, 83, 83]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.99608688 0.83645451]
-Median Validation R2 per target: [0.99440347 0.75892017]
-Median combined Train R2 (flattened): 0.9223625893046427
-Median combined Validation R2 (flattened): 0.8859545064973114
+Median Testing R2 per target: [0.99440347 0.75892017]
+Median combined Train R2 (average): 0.916270695
+Median combined Testing R2 (average): 0.87666182
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [0.01059416 0.00710931]
-Median Validation MAE (orig units): [0.01060987 0.00833961]
-Median combined Train MAE (orig units): 0.008644467930398764
-Median combined Validation MAE (orig units): 0.009209229036529397
+Median Testing MAE (orig units): [0.01060987 0.00833961]
+Median combined Train MAE (orig units): 0.008851735
+Median combined Testing MAE (orig units): 0.00947474
 
 Median Train NMAE: [0.04589555 0.02956056]
-Median Validation NMAE: [0.04596359 0.03467615]
-Median combined Train NMAE: 0.0368028402266182
-Median combined Validation NMAE: 0.03914024756450938
+Median Testing NMAE: [0.04596359 0.03467615]
+Median combined Train NMAE: 0.037728054999999996
+Median combined Testing NMAE: 0.04031987
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 4
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.9948509999298063, 0.7584427714396557]
+Selected Fold Testing R2 per target: [0.9948509999298063, 0.7584427714396557]
 L1 closeness score: 0.0009249328083941188
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_homo_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_homo_50desc_biases.txt

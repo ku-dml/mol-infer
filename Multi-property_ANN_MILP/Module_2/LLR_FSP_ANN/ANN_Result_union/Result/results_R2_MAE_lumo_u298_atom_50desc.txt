@@ -3,26 +3,26 @@ Best Architecture: [78, 18, 83, 83]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.92803659 0.99211649]
-Median Validation R2 per target: [0.8874888  0.99028078]
-Median combined Train R2 (flattened): 0.9621476154655135
-Median combined Validation R2 (flattened): 0.9432130689676268
+Median Testing R2 per target: [0.8874888  0.99028078]
+Median combined Train R2 (average): 0.96007654
+Median combined Testing R2 (average): 0.9388847899999999
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [9.11749497e-03 2.30072028e+02]
-Median Validation MAE (orig units): [1.12418235e-02 2.29707176e+02]
-Median combined Train MAE (orig units): 114.49305541602997
-Median combined Validation MAE (orig units): 113.81471771896814
+Median Testing MAE (orig units): [1.12418235e-02 2.29707176e+02]
+Median combined Train MAE (orig units): 115.040572747485
+Median combined Testing MAE (orig units): 114.85920891175
 
 Median Train NMAE: [0.03713847 0.14126183]
-Median Validation NMAE: [0.04579154 0.14103782]
-Median combined Train NMAE: 0.08986079988479863
-Median combined Validation NMAE: 0.09341398559461032
+Median Testing NMAE: [0.04579154 0.14103782]
+Median combined Train NMAE: 0.08920015
+Median combined Testing NMAE: 0.09341468
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 8
 Selected Fold: 4
-Selected Fold Validation R2 per target: [0.8875544192458236, 0.9900768514519502]
+Selected Fold Testing R2 per target: [0.8875544192458236, 0.9900768514519502]
 L1 closeness score: 0.00026954213233509883
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_lumo_u298_atom_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_lumo_u298_atom_50desc_biases.txt

@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.88897075 0.97280052]
-Median Validation R2 per target: [0.83261313 0.96793265]
-Median combined Train R2 (flattened): 0.9382850541410812
-Median combined Validation R2 (flattened): 0.9038527228927539
+Median Testing R2 per target: [0.83261313 0.96793265]
+Median combined Train R2 (average): 0.930885635
+Median combined Testing R2 (average): 0.90027289
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [0.01160641 2.91280465]
-Median Validation MAE (orig units): [0.01424106 2.91623275]
-Median combined Train MAE (orig units): 1.4499768329976188
-Median combined Validation MAE (orig units): 1.4435626944926874
+Median Testing MAE (orig units): [0.01424106 2.91623275]
+Median combined Train MAE (orig units): 1.46220553
+Median combined Testing MAE (orig units): 1.4652369049999998
 
 Median Train NMAE: [0.02986725 0.09640898]
-Median Validation NMAE: [0.03664709 0.09652245]
-Median combined Train NMAE: 0.06361188652097702
-Median combined Validation NMAE: 0.06682465372387698
+Median Testing NMAE: [0.03664709 0.09652245]
+Median combined Train NMAE: 0.06313811500000001
+Median combined Testing NMAE: 0.06658477
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 8
 Selected Fold: 1
-Selected Fold Validation R2 per target: [0.8326063925954099, 0.9689506570973521]
+Selected Fold Testing R2 per target: [0.8326063925954099, 0.9689506570973521]
 L1 closeness score: 0.0010247503930213009
 Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_cv_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_cv_50desc_biases.txt

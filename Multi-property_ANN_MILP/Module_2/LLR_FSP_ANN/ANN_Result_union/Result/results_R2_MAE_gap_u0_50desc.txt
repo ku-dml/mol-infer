@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.89499945 0.99458578]
-Median Validation R2 per target: [0.83228929 0.99209595]
-Median combined Train R2 (flattened): 0.9508403960509082
-Median combined Validation R2 (flattened): 0.9189059733934515
+Median Testing R2 per target: [0.83228929 0.99209595]
+Median combined Train R2 (average): 0.944792615
+Median combined Testing R2 (average): 0.9121926199999999
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [1.12271064e-02 2.98930718e+01]
-Median Validation MAE (orig units): [1.41417922e-02 2.99459667e+01]
-Median combined Train MAE (orig units): 14.363446498308369
-Median combined Validation MAE (orig units): 14.265778080699489
+Median Testing MAE (orig units): [1.41417922e-02 2.99459667e+01]
+Median combined Train MAE (orig units): 14.9521494532
+Median combined Testing MAE (orig units): 14.9800542461
 
 Median Train NMAE: [0.02889116 0.06669774]
-Median Validation NMAE: [0.03639164 0.06681576]
-Median combined Train NMAE: 0.047220395882123394
-Median combined Validation NMAE: 0.050796663609517456
+Median Testing NMAE: [0.03639164 0.06681576]
+Median combined Train NMAE: 0.04779445
+Median combined Testing NMAE: 0.0516037
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 2
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.8321017738883456, 0.9915146911108923]
+Selected Fold Testing R2 per target: [0.8321017738883456, 0.9915146911108923]
 L1 closeness score: 0.0007687746525277817
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_u0_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_u0_50desc_biases.txt

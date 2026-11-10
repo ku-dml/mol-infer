@@ -3,26 +3,26 @@ Best Architecture: [119, 91, 55, 64, 92]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.97936241 0.99556055]
-Median Validation R2 per target: [0.97177693 0.99355819]
-Median combined Train R2 (flattened): 0.9820271351300409
-Median combined Validation R2 (flattened): 0.9791066159860575
+Median Testing R2 per target: [0.97177693 0.99355819]
+Median combined Train R2 (average): 0.98746148
+Median combined Testing R2 (average): 0.98266756
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [  2.90994006 231.51651688]
-Median Validation MAE (orig units): [  2.91180043 231.96844081]
-Median combined Train MAE (orig units): 113.0110418239168
-Median combined Validation MAE (orig units): 113.35718274547357
+Median Testing MAE (orig units): [  2.91180043 231.96844081]
+Median combined Train MAE (orig units): 117.21322847
+Median combined Testing MAE (orig units): 117.44012062
 
 Median Train NMAE: [0.09631417 0.14112122]
-Median Validation NMAE: [0.09637575 0.14139669]
-Median combined Train NMAE: 0.11944168224285939
-Median combined Validation NMAE: 0.11957855340900564
+Median Testing NMAE: [0.09637575 0.14139669]
+Median combined Train NMAE: 0.118717695
+Median combined Testing NMAE: 0.11888621999999999
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 8
 Selected Fold: 1
-Selected Fold Validation R2 per target: [0.9717763059840445, 0.9936483115531087]
+Selected Fold Testing R2 per target: [0.9717763059840445, 0.9936483115531087]
 L1 closeness score: 9.073880597409989e-05
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_h298_atom_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_h298_atom_50desc_biases.txt

@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.96570199 0.8879902 ]
-Median Validation R2 per target: [0.95109103 0.82796513]
-Median combined Train R2 (flattened): 0.931200948834504
-Median combined Validation R2 (flattened): 0.8893650191936486
+Median Testing R2 per target: [0.95109103 0.82796513]
+Median combined Train R2 (average): 0.9268460949999999
+Median combined Testing R2 (average): 0.88952808
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [1.33643634e+01 1.16258927e-02]
-Median Validation MAE (orig units): [13.38134294  0.01425029]
-Median combined Train MAE (orig units): 6.622349456948557
-Median combined Validation MAE (orig units): 6.613713263353775
+Median Testing MAE (orig units): [13.38134294  0.01425029]
+Median combined Train MAE (orig units): 6.68799464635
+Median combined Testing MAE (orig units): 6.697796615
 
 Median Train NMAE: [0.15021202 0.02991738]
-Median Validation NMAE: [0.15040287 0.03667083]
-Median combined Train NMAE: 0.09065254698534339
-Median combined Validation NMAE: 0.09316110398605944
+Median Testing NMAE: [0.15040287 0.03667083]
+Median combined Train NMAE: 0.0900647
+Median combined Testing NMAE: 0.09353685
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 2
 Selected Fold: 1
-Selected Fold Validation R2 per target: [0.952626891100787, 0.8279472991844096]
+Selected Fold Testing R2 per target: [0.952626891100787, 0.8279472991844096]
 L1 closeness score: 0.0015536953312619284
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_gap_40desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_gap_40desc_biases.txt

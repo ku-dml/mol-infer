@@ -3,26 +3,26 @@ Best Architecture: [89]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.9818743  0.98151174 0.98176728]
-Median Validation R2 per target: [0.97850188 0.97764331 0.97796621]
-Median combined Train R2 (flattened): 0.9816564988424925
-Median combined Validation R2 (flattened): 0.9780472983813586
+Median Testing R2 per target: [0.97850188 0.97764331 0.97796621]
+Median combined Train R2 (average): 0.9817177733333334
+Median combined Testing R2 (average): 0.9780371333333333
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [29.86606195 29.87567659 29.87417155]
-Median Validation MAE (orig units): [29.91417672 29.82985827 29.84111337]
-Median combined Train MAE (orig units): 29.872246288948677
-Median combined Validation MAE (orig units): 29.85414506992211
+Median Testing MAE (orig units): [29.91417672 29.82985827 29.84111337]
+Median combined Train MAE (orig units): 29.87197003
+Median combined Testing MAE (orig units): 29.86171612
 
 Median Train NMAE: [0.06663748 0.06665951 0.06665615]
-Median Validation NMAE: [0.06674483 0.06655728 0.06658239]
-Median combined Train NMAE: 0.06665185752104667
-Median combined Validation NMAE: 0.06661117772780124
+Median Testing NMAE: [0.06674483 0.06655728 0.06658239]
+Median combined Train NMAE: 0.06665104666666667
+Median combined Testing NMAE: 0.06662816666666667
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 1
 Selected Fold: 5
-Selected Fold Validation R2 per target: [0.9785734973094863, 0.9769147523078021, 0.9796199852842]
+Selected Fold Testing R2 per target: [0.9785734973094863, 0.9769147523078021, 0.9796199852842]
 L1 closeness score: 0.00245395128004422
 Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_u298_h298_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_u298_h298_50desc_biases.txt

@@ -3,26 +3,26 @@ Best Architecture: [101, 111, 123, 103, 66, 101, 29]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.99718267 0.77802874]
-Median Validation R2 per target: [0.99331588 0.73242167]
-Median combined Train R2 (flattened): 0.89482974073737
-Median combined Validation R2 (flattened): 0.8753977028594684
+Median Testing R2 per target: [0.99331588 0.73242167]
+Median combined Train R2 (average): 0.887605705
+Median combined Testing R2 (average): 0.862868775
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [29.84316605  0.80895372]
-Median Validation MAE (orig units): [29.7763358   0.80743271]
-Median combined Train MAE (orig units): 13.915856397455915
-Median combined Validation MAE (orig units): 14.024641976051798
+Median Testing MAE (orig units): [29.7763358   0.80743271]
+Median combined Train MAE (orig units): 15.326059885000001
+Median combined Testing MAE (orig units): 15.291884255
 
 Median Train NMAE: [0.06658639 0.10965385]
-Median Validation NMAE: [0.06643728 0.10944767]
-Median combined Train NMAE: 0.09015690024584215
-Median combined Validation NMAE: 0.09029311971149712
+Median Testing NMAE: [0.06643728 0.10944767]
+Median combined Train NMAE: 0.08812012
+Median combined Testing NMAE: 0.08794247499999999
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 7
 Selected Fold: 4
-Selected Fold Validation R2 per target: [0.9941026808213926, 0.7324065051446894]
+Selected Fold Testing R2 per target: [0.9941026808213926, 0.7324065051446894]
 L1 closeness score: 0.0008019638859351197
 Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_B_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_B_50desc_biases.txt

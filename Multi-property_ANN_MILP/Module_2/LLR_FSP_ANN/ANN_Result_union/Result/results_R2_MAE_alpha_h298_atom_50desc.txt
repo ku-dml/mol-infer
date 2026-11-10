@@ -3,26 +3,26 @@ Best Architecture: [119, 91, 55, 64, 92]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.97886878 0.99576502]
-Median Validation R2 per target: [0.96286176 0.99379807]
-Median combined Train R2 (flattened): 0.9857555940038778
-Median combined Validation R2 (flattened): 0.9819715372319856
+Median Testing R2 per target: [0.96286176 0.99379807]
+Median combined Train R2 (average): 0.9873168999999999
+Median combined Testing R2 (average): 0.978329915
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [ 13.36551739 232.04251069]
-Median Validation MAE (orig units): [ 13.38315015 231.43592325]
-Median combined Train MAE (orig units): 119.29978326420633
-Median combined Validation MAE (orig units): 119.59453396023648
+Median Testing MAE (orig units): [ 13.38315015 231.43592325]
+Median combined Train MAE (orig units): 122.70401404
+Median combined Testing MAE (orig units): 122.4095367
 
 Median Train NMAE: [0.15022499 0.14144184]
-Median Validation NMAE: [0.15042318 0.14107209]
-Median combined Train NMAE: 0.14795593634959536
-Median combined Validation NMAE: 0.14754808387753277
+Median Testing NMAE: [0.15042318 0.14107209]
+Median combined Train NMAE: 0.14583341500000002
+Median combined Testing NMAE: 0.145747635
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 8
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.9628998152624354, 0.9935615580077622]
+Selected Fold Testing R2 per target: [0.9628998152624354, 0.9935615580077622]
 L1 closeness score: 0.0002745647142914365
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_h298_atom_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_h298_atom_50desc_biases.txt

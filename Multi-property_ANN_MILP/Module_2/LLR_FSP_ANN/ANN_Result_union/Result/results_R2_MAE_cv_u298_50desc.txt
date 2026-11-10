@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.9773445  0.99745416]
-Median Validation R2 per target: [0.97219905 0.99603361]
-Median combined Train R2 (flattened): 0.9867046132454413
-Median combined Validation R2 (flattened): 0.9745159651803401
+Median Testing R2 per target: [0.97219905 0.99603361]
+Median combined Train R2 (average): 0.9873993299999999
+Median combined Testing R2 (average): 0.98411633
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [ 2.90742403 29.88813024]
-Median Validation MAE (orig units): [ 2.91108899 29.89366357]
-Median combined Train MAE (orig units): 15.296791035944494
-Median combined Validation MAE (orig units): 15.309563966076212
+Median Testing MAE (orig units): [ 2.91108899 29.89366357]
+Median combined Train MAE (orig units): 16.397777135
+Median combined Testing MAE (orig units): 16.402376280000002
 
 Median Train NMAE: [0.09623089 0.0666873 ]
-Median Validation NMAE: [0.0963522  0.06669964]
-Median combined Train NMAE: 0.08174338778590803
-Median combined Validation NMAE: 0.08148399282919622
+Median Testing NMAE: [0.0963522  0.06669964]
+Median combined Train NMAE: 0.08145909500000001
+Median combined Testing NMAE: 0.08152592
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 5
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.9723433922161985, 0.9967273036740796]
+Selected Fold Testing R2 per target: [0.9723433922161985, 0.9967273036740796]
 L1 closeness score: 0.0008380267838580258
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_u298_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_u298_50desc_biases.txt

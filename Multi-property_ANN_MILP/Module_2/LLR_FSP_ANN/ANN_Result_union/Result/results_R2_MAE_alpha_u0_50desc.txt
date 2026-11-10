@@ -3,26 +3,26 @@ Best Architecture: [78, 18, 83, 83]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.96823905 0.99623269]
-Median Validation R2 per target: [0.96014009 0.99389768]
-Median combined Train R2 (flattened): 0.9839487612067084
-Median combined Validation R2 (flattened): 0.9796593848494961
+Median Testing R2 per target: [0.96014009 0.99389768]
+Median combined Train R2 (average): 0.98223587
+Median combined Testing R2 (average): 0.977018885
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [13.3643982  29.82596216]
-Median Validation MAE (orig units): [13.37027746 29.89067251]
-Median combined Train MAE (orig units): 21.259423796371884
-Median combined Validation MAE (orig units): 21.227725838521984
+Median Testing MAE (orig units): [13.37027746 29.89067251]
+Median combined Train MAE (orig units): 21.59518018
+Median combined Testing MAE (orig units): 21.630474985
 
 Median Train NMAE: [0.15021241 0.066548  ]
-Median Validation NMAE: [0.15027849 0.06669239]
-Median combined Train NMAE: 0.10833183245428504
-Median combined Validation NMAE: 0.10850593860684556
+Median Testing NMAE: [0.15027849 0.06669239]
+Median combined Train NMAE: 0.108380205
+Median combined Testing NMAE: 0.10848543999999999
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 5
 Selected Fold: 5
-Selected Fold Validation R2 per target: [0.9591715225368398, 0.9944110069984093]
+Selected Fold Testing R2 per target: [0.9591715225368398, 0.9944110069984093]
 L1 closeness score: 0.0014818912131642215
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_u0_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_u0_50desc_biases.txt

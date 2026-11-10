@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.99617504 0.88166345]
-Median Validation R2 per target: [0.99522734 0.83149975]
-Median combined Train R2 (flattened): 0.9436352824415324
-Median combined Validation R2 (flattened): 0.9205228243457402
+Median Testing R2 per target: [0.99522734 0.83149975]
+Median combined Train R2 (average): 0.938919245
+Median combined Testing R2 (average): 0.9133635449999999
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [0.01060486 0.01192594]
-Median Validation MAE (orig units): [0.01063538 0.01418664]
-Median combined Train MAE (orig units): 0.011095031910684628
-Median combined Validation MAE (orig units): 0.012277785127882815
+Median Testing MAE (orig units): [0.01063538 0.01418664]
+Median combined Train MAE (orig units): 0.0112654
+Median combined Testing MAE (orig units): 0.01241101
 
 Median Train NMAE: [0.04594191 0.03068949]
-Median Validation NMAE: [0.04607411 0.03650705]
-Median combined Train NMAE: 0.03814394604460275
-Median combined Validation NMAE: 0.04060055083961861
+Median Testing NMAE: [0.04607411 0.03650705]
+Median combined Train NMAE: 0.0383157
+Median combined Testing NMAE: 0.04129058
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 6
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.9953682794392288, 0.8320401277433309]
+Selected Fold Testing R2 per target: [0.9953682794392288, 0.8320401277433309]
 L1 closeness score: 0.0006813203966704595
 Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_gap_40desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_gap_40desc_biases.txt

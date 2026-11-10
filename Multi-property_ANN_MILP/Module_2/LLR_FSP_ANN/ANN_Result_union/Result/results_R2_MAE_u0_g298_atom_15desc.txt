@@ -3,26 +3,26 @@ Best Architecture: [89]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.98479983 0.98002256]
-Median Validation R2 per target: [0.98365938 0.97937787]
-Median combined Train R2 (flattened): 0.9801220002964431
-Median combined Validation R2 (flattened): 0.9809285054001118
+Median Testing R2 per target: [0.98365938 0.97937787]
+Median combined Train R2 (average): 0.9824111950000001
+Median combined Testing R2 (average): 0.981518625
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [ 29.87041958 212.32844173]
-Median Validation MAE (orig units): [ 29.82118775 212.25357609]
-Median combined Train MAE (orig units): 120.90170467974495
-Median combined Validation MAE (orig units): 120.28563598301801
+Median Testing MAE (orig units): [ 29.82118775 212.25357609]
+Median combined Train MAE (orig units): 121.099430655
+Median combined Testing MAE (orig units): 121.03738192
 
 Median Train NMAE: [0.0666472  0.14316954]
-Median Validation NMAE: [0.06653735 0.14311905]
-Median combined Train NMAE: 0.10484251558596322
-Median combined Validation NMAE: 0.1047496141265618
+Median Testing NMAE: [0.06653735 0.14311905]
+Median combined Train NMAE: 0.10490837
+Median combined Testing NMAE: 0.1048282
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 2
 Selected Fold: 4
-Selected Fold Validation R2 per target: [0.983659952560552, 0.9791998494530844]
+Selected Fold Testing R2 per target: [0.983659952560552, 0.9791998494530844]
 L1 closeness score: 0.0001785960490379157
 Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_g298_atom_15desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_g298_atom_15desc_biases.txt

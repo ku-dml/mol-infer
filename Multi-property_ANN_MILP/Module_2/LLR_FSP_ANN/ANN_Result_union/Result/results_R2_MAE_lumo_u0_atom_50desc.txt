@@ -3,26 +3,26 @@ Best Architecture: [78, 18, 83, 83]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.92911654 0.99222424]
-Median Validation R2 per target: [0.89038084 0.99051556]
-Median combined Train R2 (flattened): 0.9621097595777002
-Median combined Validation R2 (flattened): 0.9449995065992773
+Median Testing R2 per target: [0.89038084 0.99051556]
+Median combined Train R2 (average): 0.96067039
+Median combined Testing R2 (average): 0.9404482
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [9.05484170e-03 2.28704741e+02]
-Median Validation MAE (orig units): [1.11414261e-02 2.28519517e+02]
-Median combined Train MAE (orig units): 113.51063845213872
-Median combined Validation MAE (orig units): 113.18513427885304
+Median Testing MAE (orig units): [1.11414261e-02 2.28519517e+02]
+Median combined Train MAE (orig units): 114.35689792085
+Median combined Testing MAE (orig units): 114.26532921305001
 
 Median Train NMAE: [0.03688327 0.14158854]
-Median Validation NMAE: [0.04538259 0.14147387]
-Median combined Train NMAE: 0.08942472960105612
-Median combined Validation NMAE: 0.0937496363871438
+Median Testing NMAE: [0.04538259 0.14147387]
+Median combined Train NMAE: 0.089235905
+Median combined Testing NMAE: 0.09342823
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 5
 Selected Fold: 1
-Selected Fold Validation R2 per target: [0.8906945168237483, 0.9910319417624164]
+Selected Fold Testing R2 per target: [0.8906945168237483, 0.9910319417624164]
 L1 closeness score: 0.0008300646719782145
 Median-closest weights: /home/azam/Prediction_Phase1/Prediction_Phase/ANN_Result/Result/qm9_median_closest_lumo_u0_atom_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase1/Prediction_Phase/ANN_Result/Result/qm9_median_closest_lumo_u0_atom_50desc_biases.txt

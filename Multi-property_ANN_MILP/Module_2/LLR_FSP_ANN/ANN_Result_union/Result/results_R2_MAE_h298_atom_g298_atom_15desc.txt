@@ -3,26 +3,26 @@ Best Architecture: [89]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.98098386 0.98007862]
-Median Validation R2 per target: [0.98078001 0.98031793]
-Median combined Train R2 (flattened): 0.9801260608943552
-Median combined Validation R2 (flattened): 0.980546680797756
+Median Testing R2 per target: [0.98078001 0.98031793]
+Median combined Train R2 (average): 0.98053124
+Median combined Testing R2 (average): 0.9805489700000001
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [231.67570388 212.50727483]
-Median Validation MAE (orig units): [231.62576577 212.48039525]
-Median combined Train MAE (orig units): 221.66161549607745
-Median combined Validation MAE (orig units): 221.97168162611646
+Median Testing MAE (orig units): [231.62576577 212.48039525]
+Median combined Train MAE (orig units): 222.091489355
+Median combined Testing MAE (orig units): 222.05308050999997
 
 Median Train NMAE: [0.14121825 0.14329012]
-Median Validation NMAE: [0.14118781 0.14327199]
-Median combined Train NMAE: 0.14203777591366112
-Median combined Validation NMAE: 0.142134061279631
+Median Testing NMAE: [0.14118781 0.14327199]
+Median combined Train NMAE: 0.14225418499999998
+Median combined Testing NMAE: 0.1422299
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 2
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.9808406066163128, 0.9804834903956001]
+Selected Fold Testing R2 per target: [0.9808406066163128, 0.9804834903956001]
 L1 closeness score: 0.00022616220780591334
 Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_h298_atom_g298_atom_15desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_h298_atom_g298_atom_15desc_biases.txt

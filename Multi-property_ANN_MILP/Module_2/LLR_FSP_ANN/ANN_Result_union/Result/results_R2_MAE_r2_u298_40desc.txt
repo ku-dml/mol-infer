@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.91622974 0.99635493]
-Median Validation R2 per target: [0.86136425 0.9944059 ]
-Median combined Train R2 (flattened): 0.9569331050445422
-Median combined Validation R2 (flattened): 0.9377921185241249
+Median Testing R2 per target: [0.86136425 0.9944059 ]
+Median combined Train R2 (average): 0.956292335
+Median combined Testing R2 (average): 0.9278850750000001
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [182.43363724  29.77325194]
-Median Validation MAE (orig units): [187.18170242  29.65030128]
-Median combined Train MAE (orig units): 99.92196403543758
-Median combined Validation MAE (orig units): 103.75439014193029
+Median Testing MAE (orig units): [187.18170242  29.65030128]
+Median combined Train MAE (orig units): 106.10344459
+Median combined Testing MAE (orig units): 108.41600185
 
 Median Train NMAE: [0.06999237 0.06643098]
-Median Validation NMAE: [0.071814   0.06615665]
-Median combined Train NMAE: 0.06769127777877228
-Median combined Validation NMAE: 0.06860494722840631
+Median Testing NMAE: [0.071814   0.06615665]
+Median combined Train NMAE: 0.068211675
+Median combined Testing NMAE: 0.068985325
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 10
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.860020815365288, 0.9944224907852903]
+Selected Fold Testing R2 per target: [0.860020815365288, 0.9944224907852903]
 L1 closeness score: 0.0013600241234660304
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_r2_u298_40desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_r2_u298_40desc_biases.txt

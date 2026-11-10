@@ -4,31 +4,31 @@ Best Architecture: [114, 122, 58, 103]
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.96126523 0.89333111 0.99284338 0.97159286 0.89781317 0.93566173
  0.81501963]
-Median Validation R2 per target: [0.95370263 0.86598189 0.99148545 0.967664   0.83028769 0.88737554
+Median Testing R2 per target: [0.95370263 0.86598189 0.99148545 0.967664   0.83028769 0.88737554
  0.75727061]
-Median combined Train R2 (flattened): 0.9356617334331486
-Median combined Validation R2 (flattened): 0.8880121766369191
+Median combined Train R2 (average): 0.9239324442857143
+Median combined Testing R2 (average): 0.8933954014285713
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [1.33410988e+01 1.84414528e+02 1.06715152e-02 2.91097439e+00
  1.12607038e-02 8.81333237e-03 7.48848493e-03]
-Median Validation MAE (orig units): [1.33527124e+01 1.86988813e+02 1.06754938e-02 2.91075140e+00
+Median Testing MAE (orig units): [1.33527124e+01 1.86988813e+02 1.06754938e-02 2.91075140e+00
  1.43129543e-02 1.14308991e-02 8.35067339e-03]
-Median combined Train MAE (orig units): 0.011260703808360226
-Median combined Validation MAE (orig units): 0.01431295431714206
+Median combined Train MAE (orig units): 28.672119318042856
+Median combined Testing MAE (orig units): 29.042435260084286
 
 Median Train NMAE: [0.14995053 0.07075235 0.04623066 0.09634841 0.02897762 0.03589952
  0.03113715]
-Median Validation NMAE: [0.15008107 0.07174    0.04624789 0.09634103 0.0368321  0.04656171
+Median Testing NMAE: [0.15008107 0.07174    0.04624789 0.09634103 0.0368321  0.04656171
  0.03472213]
-Median combined Train NMAE: 0.0462306579346264
-Median combined Validation NMAE: 0.046986383757387756
+Median combined Train NMAE: 0.06561374857142857
+Median combined Testing NMAE: 0.06893227571428572
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 10
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.9549076655124238, 0.8672156418340506, 0.9914937048837963, 0.9666808463583236, 0.8300994697253165, 0.8900179271708726, 0.7543918602425438]
+Selected Fold Testing R2 per target: [0.9549076655124238, 0.8672156418340506, 0.9914937048837963, 0.9666808463583236, 0.8300994697253165, 0.8900179271708726, 0.7543918602425438]
 L1 closeness score: 0.009139546561958367
 Median-closest weights: /home/azam/Prediction_Phase1/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_r2_zpve_cv_gap_lumo_homo_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase1/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_r2_zpve_cv_gap_lumo_homo_50desc_biases.txt

@@ -3,26 +3,26 @@ Best Architecture: [114, 122, 58, 103]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.98040736 0.98440327]
-Median Validation R2 per target: [0.97880473 0.98396659]
-Median combined Train R2 (flattened): 0.9815635011769259
-Median combined Validation R2 (flattened): 0.9808521954116622
+Median Testing R2 per target: [0.97880473 0.98396659]
+Median combined Train R2 (average): 0.9824053150000001
+Median combined Testing R2 (average): 0.9813856599999999
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [ 29.87016519 231.27711525]
-Median Validation MAE (orig units): [ 29.83735872 231.03205881]
-Median combined Train MAE (orig units): 129.72800734905258
-Median combined Validation MAE (orig units): 129.2091035309051
+Median Testing MAE (orig units): [ 29.83735872 231.03205881]
+Median combined Train MAE (orig units): 130.57364022000002
+Median combined Testing MAE (orig units): 130.434708765
 
 Median Train NMAE: [0.06664663 0.14097529]
-Median Validation NMAE: [0.06657343 0.14082591]
-Median combined Train NMAE: 0.10393740947629285
-Median combined Validation NMAE: 0.10381870629439209
+Median Testing NMAE: [0.06657343 0.14082591]
+Median combined Train NMAE: 0.10381096000000001
+Median combined Testing NMAE: 0.10369967
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 4
 Selected Fold: 5
-Selected Fold Validation R2 per target: [0.9787114424481216, 0.9834656864545919]
+Selected Fold Testing R2 per target: [0.9787114424481216, 0.9834656864545919]
 L1 closeness score: 0.0005941903208731558
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_h298_atom_20desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_h298_atom_20desc_biases.txt

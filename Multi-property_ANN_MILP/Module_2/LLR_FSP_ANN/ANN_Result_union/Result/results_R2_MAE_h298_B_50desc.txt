@@ -3,26 +3,26 @@ Best Architecture: [94, 82, 75, 62, 87]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.99778938 0.76877209]
-Median Validation R2 per target: [0.99493304 0.71893836]
-Median combined Train R2 (flattened): 0.890692071891436
-Median combined Validation R2 (flattened): 0.8716327952209895
+Median Testing R2 per target: [0.99493304 0.71893836]
+Median combined Train R2 (average): 0.883280735
+Median combined Testing R2 (average): 0.8569357
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [29.9868177   0.80931822]
-Median Validation MAE (orig units): [29.94166753  0.80724374]
-Median combined Train MAE (orig units): 14.5568965668677
-Median combined Validation MAE (orig units): 14.409718757823278
+Median Testing MAE (orig units): [29.94166753  0.80724374]
+Median combined Train MAE (orig units): 15.39806796
+Median combined Testing MAE (orig units): 15.374455635
 
 Median Train NMAE: [0.06690749 0.10970326]
-Median Validation NMAE: [0.06680675 0.10942206]
-Median combined Train NMAE: 0.09008529408948457
-Median combined Validation NMAE: 0.08970036353123412
+Median Testing NMAE: [0.06680675 0.10942206]
+Median combined Train NMAE: 0.08830537499999999
+Median combined Testing NMAE: 0.088114405
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 3
 Selected Fold: 4
-Selected Fold Validation R2 per target: [0.9949725115419119, 0.7202830675092875]
+Selected Fold Testing R2 per target: [0.9949725115419119, 0.7202830675092875]
 L1 closeness score: 0.0013841866450531315
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_h298_B_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_h298_B_50desc_biases.txt

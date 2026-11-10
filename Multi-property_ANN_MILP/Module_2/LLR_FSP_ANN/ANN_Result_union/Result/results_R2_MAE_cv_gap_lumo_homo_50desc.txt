@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.96620086 0.88950299 0.92949457 0.80656243]
-Median Validation R2 per target: [0.96198919 0.83432042 0.88806134 0.76200606]
-Median combined Train R2 (flattened): 0.9151185927995599
-Median combined Validation R2 (flattened): 0.8641822247803446
+Median Testing R2 per target: [0.96198919 0.83432042 0.88806134 0.76200606]
+Median combined Train R2 (average): 0.8979402125
+Median combined Testing R2 (average): 0.8615942525
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [2.91326779 0.01167617 0.0091511  0.00767373]
-Median Validation MAE (orig units): [2.90655626 0.01413718 0.01132723 0.00831912]
-Median combined Train MAE (orig units): 0.010148489776463238
-Median combined Validation MAE (orig units): 0.01281073173028081
+Median Testing MAE (orig units): [2.90655626 0.01413718 0.01132723 0.00831912]
+Median combined Train MAE (orig units): 0.7354421975
+Median combined Testing MAE (orig units): 0.7350849475
 
 Median Train NMAE: [0.09642431 0.03004677 0.03727535 0.03190742]
-Median Validation NMAE: [0.09620217 0.03637976 0.04613941 0.03459095]
-Median combined Train NMAE: 0.033821528849259916
-Median combined Validation NMAE: 0.04108722606838883
+Median Testing NMAE: [0.09620217 0.03637976 0.04613941 0.03459095]
+Median combined Train NMAE: 0.0489134625
+Median combined Testing NMAE: 0.053328072500000004
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 5
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.9595029823229876, 0.8347621398667413, 0.8869085375593145, 0.7596818462212118]
+Selected Fold Testing R2 per target: [0.9595029823229876, 0.8347621398667413, 0.8869085375593145, 0.7596818462212118]
 L1 closeness score: 0.006404951334717857
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_gap_lumo_homo_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_gap_lumo_homo_50desc_biases.txt

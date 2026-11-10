@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.97724368 0.99464264]
-Median Validation R2 per target: [0.9730238  0.99289317]
-Median combined Train R2 (flattened): 0.979073499027897
-Median combined Validation R2 (flattened): 0.9762625948351533
+Median Testing R2 per target: [0.9730238  0.99289317]
+Median combined Train R2 (average): 0.9859431599999999
+Median combined Testing R2 (average): 0.9829584849999999
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [  2.91193299 212.30471629]
-Median Validation MAE (orig units): [  2.91392046 212.20675233]
-Median combined Train MAE (orig units): 98.17579867036787
-Median combined Validation MAE (orig units): 99.04004924661946
+Median Testing MAE (orig units): [  2.91392046 212.20675233]
+Median combined Train MAE (orig units): 107.60832463999999
+Median combined Testing MAE (orig units): 107.56033639500001
 
 Median Train NMAE: [0.09638013 0.14315354]
-Median Validation NMAE: [0.09644592 0.14308748]
-Median combined Train NMAE: 0.1142886532176057
-Median combined Validation NMAE: 0.11483190330943263
+Median Testing NMAE: [0.09644592 0.14308748]
+Median combined Train NMAE: 0.11976683499999999
+Median combined Testing NMAE: 0.1197667
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 4
 Selected Fold: 4
-Selected Fold Validation R2 per target: [0.9735563661818515, 0.99290175196318]
+Selected Fold Testing R2 per target: [0.9735563661818515, 0.99290175196318]
 L1 closeness score: 0.000541147061169478
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_g298_atom_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_g298_atom_50desc_biases.txt
