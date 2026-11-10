@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.8095928 0.9756629]
-Median Validation R2 per target: [0.69874231 0.96735139]
-Median combined Train R2 (flattened): 0.9024166870459387
-Median combined Validation R2 (flattened): 0.8460624889002563
+Median Testing R2 per target: [0.69874231 0.96735139]
+Median combined Train R2 (average): 0.89262785
+Median combined Testing R2 (average): 0.83304685
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [7.54763317e-03 2.98888097e+01]
-Median Validation MAE (orig units): [9.21680814e-03 2.99899919e+01]
-Median combined Train MAE (orig units): 13.994234313109342
-Median combined Validation MAE (orig units): 13.996470714183765
+Median Testing MAE (orig units): [9.21680814e-03 2.99899919e+01]
+Median combined Train MAE (orig units): 14.948178666585
+Median combined Testing MAE (orig units): 14.99960435407
 
 Median Train NMAE: [0.03138309 0.06668722]
-Median Validation NMAE: [0.03832353 0.06691298]
-Median combined Train NMAE: 0.04887307517712298
-Median combined Validation NMAE: 0.051824835978419116
+Median Testing NMAE: [0.03832353 0.06691298]
+Median combined Train NMAE: 0.049035155000000004
+Median combined Testing NMAE: 0.052618255
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 9
 Selected Fold: 4
-Selected Fold Validation R2 per target: [0.6999428654950272, 0.9676549551255482]
+Selected Fold Testing R2 per target: [0.6999428654950272, 0.9676549551255482]
 L1 closeness score: 0.0015041194341007813
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_homo_g298_37desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_homo_g298_37desc_biases.txt

@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.82744144 0.87276878]
-Median Validation R2 per target: [0.75016076 0.82650636]
-Median combined Train R2 (flattened): 0.8547092507689937
-Median combined Validation R2 (flattened): 0.7862684455402273
+Median Testing R2 per target: [0.75016076 0.82650636]
+Median combined Train R2 (average): 0.85010511
+Median combined Testing R2 (average): 0.78833356
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [0.80866507 0.65970353]
-Median Validation MAE (orig units): [0.80919455 0.6575357 ]
-Median combined Train MAE (orig units): 0.7326205338575813
-Median combined Validation MAE (orig units): 0.7315409762715162
+Median Testing MAE (orig units): [0.80919455 0.6575357 ]
+Median combined Train MAE (orig units): 0.7341843
+Median combined Testing MAE (orig units): 0.733365125
 
 Median Train NMAE: [0.10961472 0.14976006]
-Median Validation NMAE: [0.10968649 0.14926793]
-Median combined Train NMAE: 0.12976269899282097
-Median combined Validation NMAE: 0.12952933737311745 0.12952933737311745
+Median Testing NMAE: [0.10968649 0.14926793]
+Median combined Train NMAE: 0.12968739
+Median combined Testing NMAE: 0.12947721 0.12947721
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 7
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.748239575447116, 0.8261359452069564]
+Selected Fold Testing R2 per target: [0.748239575447116, 0.8261359452069564]
 L1 closeness score: 0.0022916000123622826
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_B_C_35desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_B_C_35desc_biases.txt

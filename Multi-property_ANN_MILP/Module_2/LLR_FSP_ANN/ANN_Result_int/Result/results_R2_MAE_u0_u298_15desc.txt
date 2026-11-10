@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.98074042 0.98114575]
-Median Validation R2 per target: [0.98021123 0.98027823]
-Median combined Train R2 (flattened): 0.9808228055128532
-Median combined Validation R2 (flattened): 0.9802112324084169
+Median Testing R2 per target: [0.98021123 0.98027823]
+Median combined Train R2 (average): 0.980943085
+Median combined Testing R2 (average): 0.98024473
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [30.01552983 29.94055583]
-Median Validation MAE (orig units): [30.002556   30.15610328]
-Median combined Train MAE (orig units): 29.990182725466102
-Median combined Validation MAE (orig units): 30.038387070403473
+Median Testing MAE (orig units): [30.002556   30.15610328]
+Median combined Train MAE (orig units): 29.97804283
+Median combined Testing MAE (orig units): 30.079329639999997
 
 Median Train NMAE: [0.06697097 0.06680427]
-Median Validation NMAE: [0.06694202 0.06728521]
-Median combined Train NMAE: 0.06691470754615565
-Median combined Validation NMAE: 0.06702226213588253
+Median Testing NMAE: [0.06694202 0.06728521]
+Median combined Train NMAE: 0.06688762000000001
+Median combined Testing NMAE: 0.067113615
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 1
 Selected Fold: 5
-Selected Fold Validation R2 per target: [0.9800742044615421, 0.980470555253578]
+Selected Fold Testing R2 per target: [0.9800742044615421, 0.980470555253578]
 L1 closeness score: 0.0003293578704771649
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_u298_15desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_u298_15desc_biases.txt

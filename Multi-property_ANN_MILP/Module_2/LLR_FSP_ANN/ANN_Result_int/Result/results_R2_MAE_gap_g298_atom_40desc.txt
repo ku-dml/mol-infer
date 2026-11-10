@@ -3,26 +3,26 @@ Best Architecture: [78, 18, 83, 83]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.87097007 0.99140636]
-Median Validation R2 per target: [0.8210737  0.98942587]
-Median combined Train R2 (flattened): 0.9357607875083018
-Median combined Validation R2 (flattened): 0.9105600148072388
+Median Testing R2 per target: [0.8210737  0.98942587]
+Median combined Train R2 (average): 0.931188215
+Median combined Testing R2 (average): 0.9052497850000001
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [1.26583192e-02 2.12302366e+02]
-Median Validation MAE (orig units): [1.48443795e-02 2.12677521e+02]
-Median combined Train MAE (orig units): 105.58798979725036
-Median combined Validation MAE (orig units): 105.20726789864995
+Median Testing MAE (orig units): [1.48443795e-02 2.12677521e+02]
+Median combined Train MAE (orig units): 106.1575121596
+Median combined Testing MAE (orig units): 106.34618268975001
 
 Median Train NMAE: [0.03257416 0.14315195]
-Median Validation NMAE: [0.03819964 0.14340491]
-Median combined Train NMAE: 0.08818418196436016
-Median combined Validation NMAE: 0.09106971068276429
+Median Testing NMAE: [0.03819964 0.14340491]
+Median combined Train NMAE: 0.087863055
+Median combined Testing NMAE: 0.090802275
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 8
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.8209725993533046, 0.9887901688565325]
+Selected Fold Testing R2 per target: [0.8209725993533046, 0.9887901688565325]
 L1 closeness score: 0.000736795444252758
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_g298_atom_40desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_g298_atom_40desc_biases.txt

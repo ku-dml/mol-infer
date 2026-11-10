@@ -3,26 +3,26 @@ Best Architecture: [101, 111, 123, 103, 66, 101, 29]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.98142086 0.98138715]
-Median Validation R2 per target: [0.98015474 0.97993362]
-Median combined Train R2 (flattened): 0.9813871536742771
-Median combined Validation R2 (flattened): 0.9799870907828764
+Median Testing R2 per target: [0.98015474 0.97993362]
+Median combined Train R2 (average): 0.9814040049999999
+Median combined Testing R2 (average): 0.9800441799999999
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [29.94798253 29.93610098]
-Median Validation MAE (orig units): [29.85036944 29.88227457]
-Median combined Train MAE (orig units): 29.944492383604445
-Median combined Validation MAE (orig units): 29.870138194658917
+Median Testing MAE (orig units): [29.85036944 29.88227457]
+Median combined Train MAE (orig units): 29.942041754999998
+Median combined Testing MAE (orig units): 29.866322005
 
 Median Train NMAE: [0.06682084 0.06679274]
-Median Validation NMAE: [0.06660305 0.06667264]
-Median combined Train NMAE: 0.06681225820121886
-Median combined Validation NMAE: 0.06664635871250342
+Median Testing NMAE: [0.06660305 0.06667264]
+Median combined Train NMAE: 0.06680679
+Median combined Testing NMAE: 0.066637845
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 2
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.9803744992925764, 0.9799541203126814]
+Selected Fold Testing R2 per target: [0.9803744992925764, 0.9799541203126814]
 L1 closeness score: 0.0002402565099056675
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u298_g298_15desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u298_g298_15desc_biases.txt

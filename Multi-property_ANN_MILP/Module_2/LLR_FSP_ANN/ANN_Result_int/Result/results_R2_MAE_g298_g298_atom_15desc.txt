@@ -3,26 +3,26 @@ Best Architecture: [89]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.9853861  0.98002993]
-Median Validation R2 per target: [0.98461203 0.97940753]
-Median combined Train R2 (flattened): 0.9801785606761406
-Median combined Validation R2 (flattened): 0.9807033241739471
+Median Testing R2 per target: [0.98461203 0.97940753]
+Median combined Train R2 (average): 0.982708015
+Median combined Testing R2 (average): 0.98200978
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [ 29.86739853 212.46854352]
-Median Validation MAE (orig units): [ 29.85303046 212.34681319]
-Median combined Train MAE (orig units): 120.96581955279383
-Median combined Validation MAE (orig units): 120.5418188745085
+Median Testing MAE (orig units): [ 29.85303046 212.34681319]
+Median combined Train MAE (orig units): 121.167971025
+Median combined Testing MAE (orig units): 121.099921825
 
 Median Train NMAE: [0.06663945 0.143264  ]
-Median Validation NMAE: [0.06660739 0.14318192]
-Median combined Train NMAE: 0.10486886281621438
-Median combined Validation NMAE: 0.10496691694868242
+Median Testing NMAE: [0.06660739 0.14318192]
+Median combined Train NMAE: 0.104951725
+Median combined Testing NMAE: 0.104894655
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 8
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.9845571417352544, 0.9798394731555167]
+Selected Fold Testing R2 per target: [0.9845571417352544, 0.9798394731555167]
 L1 closeness score: 0.00048683215677869374
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_g298_g298_atom_15desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_g298_g298_atom_15desc_biases.txt

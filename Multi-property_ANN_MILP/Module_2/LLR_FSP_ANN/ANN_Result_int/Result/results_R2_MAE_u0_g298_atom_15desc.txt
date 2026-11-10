@@ -3,26 +3,26 @@ Best Architecture: [89]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.98535164 0.98003032]
-Median Validation R2 per target: [0.98461185 0.97940506]
-Median combined Train R2 (flattened): 0.9802126726731455
-Median combined Validation R2 (flattened): 0.9806919835724738
+Median Testing R2 per target: [0.98461185 0.97940506]
+Median combined Train R2 (average): 0.98269098
+Median combined Testing R2 (average): 0.982008455
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [ 29.86515914 212.46924692]
-Median Validation MAE (orig units): [ 29.85763864 212.35048927]
-Median combined Train MAE (orig units): 120.94139081737339
-Median combined Validation MAE (orig units): 120.54364647547827
+Median Testing MAE (orig units): [ 29.85763864 212.35048927]
+Median combined Train MAE (orig units): 121.16720303
+Median combined Testing MAE (orig units): 121.104063955
 
 Median Train NMAE: [0.06663546 0.14326448]
-Median Validation NMAE: [0.06661868 0.1431844 ]
-Median combined Train NMAE: 0.10484900194761729
-Median combined Validation NMAE: 0.10496190858963017
+Median Testing NMAE: [0.06661868 0.1431844 ]
+Median combined Train NMAE: 0.10494997
+Median combined Testing NMAE: 0.10490153999999999
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 8
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.9845552766198983, 0.9798365578986994]
+Selected Fold Testing R2 per target: [0.9845552766198983, 0.9798365578986994]
 L1 closeness score: 0.0004880766050463503
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_g298_atom_15desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_g298_atom_15desc_biases.txt

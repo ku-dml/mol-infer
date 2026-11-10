@@ -3,26 +3,26 @@ Best Architecture: [94, 82, 75, 62, 87]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.9803392 0.9808828]
-Median Validation R2 per target: [0.9804759  0.98138224]
-Median combined Train R2 (flattened): 0.9806937748090209
-Median combined Validation R2 (flattened): 0.9807238078740582
+Median Testing R2 per target: [0.9804759  0.98138224]
+Median combined Train R2 (average): 0.980611
+Median combined Testing R2 (average): 0.98092907
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [1.05991290e-02 2.31655907e+02]
-Median Validation MAE (orig units): [1.06494082e-02 2.31444694e+02]
-Median combined Train MAE (orig units): 113.73763177077201
-Median combined Validation MAE (orig units): 113.82294002128128
+Median Testing MAE (orig units): [1.06494082e-02 2.31444694e+02]
+Median combined Train MAE (orig units): 115.83325306450001
+Median combined Testing MAE (orig units): 115.7276717041
 
 Median Train NMAE: [0.04591707 0.14120618]
-Median Validation NMAE: [0.04613489 0.14107744]
-Median combined Train NMAE: 0.09283741003832896
-Median combined Validation NMAE: 0.09312679265384648
+Median Testing NMAE: [0.04613489 0.14107744]
+Median combined Train NMAE: 0.093561625
+Median combined Testing NMAE: 0.09360616499999999
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 4
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.9805996709240464, 0.9816970977666322]
+Selected Fold Testing R2 per target: [0.9805996709240464, 0.9816970977666322]
 L1 closeness score: 0.00043862293171892386
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_h298_atom_15desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_h298_atom_15desc_biases.txt

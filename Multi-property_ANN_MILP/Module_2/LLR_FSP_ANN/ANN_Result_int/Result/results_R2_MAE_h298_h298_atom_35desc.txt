@@ -3,26 +3,26 @@ Best Architecture: [27, 38, 33, 87, 43, 67, 42, 33]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.98017932 0.98563573]
-Median Validation R2 per target: [0.97682651 0.98423142]
-Median combined Train R2 (flattened): 0.9812356442396487
-Median combined Validation R2 (flattened): 0.9789198886084702
+Median Testing R2 per target: [0.97682651 0.98423142]
+Median combined Train R2 (average): 0.982907525
+Median combined Testing R2 (average): 0.980528965
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [ 29.88168266 231.387991  ]
-Median Validation MAE (orig units): [ 29.93362263 231.66160512]
-Median combined Train MAE (orig units): 126.98140846898886
-Median combined Validation MAE (orig units): 126.75008885180321
+Median Testing MAE (orig units): [ 29.93362263 231.66160512]
+Median combined Train MAE (orig units): 130.63483683
+Median combined Testing MAE (orig units): 130.797613875
 
 Median Train NMAE: [0.06667291 0.14104287]
-Median Validation NMAE: [0.0667888  0.14120966]
-Median combined Train NMAE: 0.1024085843284123
-Median combined Validation NMAE: 0.10224304115949709
+Median Testing NMAE: [0.0667888  0.14120966]
+Median combined Train NMAE: 0.10385789
+Median combined Testing NMAE: 0.10399923
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 1
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.9768370087033007, 0.9845796885217701]
+Selected Fold Testing R2 per target: [0.9768370087033007, 0.9845796885217701]
 L1 closeness score: 0.00035876684382007973
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_h298_h298_atom_35desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_h298_h298_atom_35desc_biases.txt

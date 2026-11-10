@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.8093691  0.97513148]
-Median Validation R2 per target: [0.69941663 0.96702811]
-Median combined Train R2 (flattened): 0.9020024216212386
-Median combined Validation R2 (flattened): 0.8473697332561693
+Median Testing R2 per target: [0.69941663 0.96702811]
+Median combined Train R2 (average): 0.89225029
+Median combined Testing R2 (average): 0.83322237
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [7.54394348e-03 2.97782868e+01]
-Median Validation MAE (orig units): [9.21659737e-03 2.98653310e+01]
-Median combined Train MAE (orig units): 14.020238697197174
-Median combined Validation MAE (orig units): 14.14600648583288
+Median Testing MAE (orig units): [9.21659737e-03 2.98653310e+01]
+Median combined Train MAE (orig units): 14.892915371740001
+Median combined Testing MAE (orig units): 14.937273798685
 
 Median Train NMAE: [0.03136775 0.06644221]
-Median Validation NMAE: [0.03832265 0.06663643]
-Median combined Train NMAE: 0.048342951159795394
-Median combined Validation NMAE: 0.051778260165527445
+Median Testing NMAE: [0.03832265 0.06663643]
+Median combined Train NMAE: 0.04890498
+Median combined Testing NMAE: 0.05247954
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 3
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.6992631251791148, 0.9669940312401616]
+Selected Fold Testing R2 per target: [0.6992631251791148, 0.9669940312401616]
 L1 closeness score: 0.00018758846126643025
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_homo_h298_37desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_homo_h298_37desc_biases.txt

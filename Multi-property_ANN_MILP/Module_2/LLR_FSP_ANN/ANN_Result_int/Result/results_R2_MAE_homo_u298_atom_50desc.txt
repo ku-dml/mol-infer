@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.84929902 0.99198   ]
-Median Validation R2 per target: [0.74925429 0.98979506]
-Median combined Train R2 (flattened): 0.9338632559340156
-Median combined Validation R2 (flattened): 0.8855780973244562
+Median Testing R2 per target: [0.74925429 0.98979506]
+Median combined Train R2 (average): 0.92063951
+Median combined Testing R2 (average): 0.869524675
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [6.81127282e-03 2.30147798e+02]
-Median Validation MAE (orig units): [8.53414404e-03 2.30169002e+02]
-Median combined Train MAE (orig units): 113.22645174451198
-Median combined Validation MAE (orig units): 113.29482120506634
+Median Testing MAE (orig units): [8.53414404e-03 2.30169002e+02]
+Median combined Train MAE (orig units): 115.07730463640999
+Median combined Testing MAE (orig units): 115.08876807202
 
 Median Train NMAE: [0.0283213  0.14130835]
-Median Validation NMAE: [0.03548501 0.14132137]
-Median combined Train NMAE: 0.08523160937655502
-Median combined Validation NMAE: 0.0884472819745379
+Median Testing NMAE: [0.03548501 0.14132137]
+Median combined Train NMAE: 0.084814825
+Median combined Testing NMAE: 0.08840318999999999
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 4
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.7489195154507609, 0.989301381408378]
+Selected Fold Testing R2 per target: [0.7489195154507609, 0.989301381408378]
 L1 closeness score: 0.0008284503651236896
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_homo_u298_atom_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_homo_u298_atom_50desc_biases.txt

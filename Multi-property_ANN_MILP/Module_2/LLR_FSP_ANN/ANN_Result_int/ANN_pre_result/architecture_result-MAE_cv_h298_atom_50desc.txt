@@ -1,70 +1,70 @@
 Architecture: [94, 82, 75, 62, 87]
   Median Training R² (cv): 0.978765
   Median Training R² (h298_atom): 0.995728
-  Median Validation R² (cv): 0.971635
-  Median Validation R² (h298_atom): 0.993500
-  Weighted Median Validation R²: 0.982568
+  Median Testing R² (cv): 0.971635
+  Median Testing R² (h298_atom): 0.993500
+  Weighted Median Testing R²: 0.982568
 
 Architecture: [114, 122, 58, 103]
   Median Training R² (cv): 0.980003
   Median Training R² (h298_atom): 0.995603
-  Median Validation R² (cv): 0.972940
-  Median Validation R² (h298_atom): 0.992653
-  Weighted Median Validation R²: 0.982796
+  Median Testing R² (cv): 0.972940
+  Median Testing R² (h298_atom): 0.992653
+  Weighted Median Testing R²: 0.982796
 
 Architecture: [78, 117, 23, 25, 18]
   Median Training R² (cv): 0.978362
   Median Training R² (h298_atom): 0.995366
-  Median Validation R² (cv): 0.972418
-  Median Validation R² (h298_atom): 0.993562
-  Weighted Median Validation R²: 0.982990
+  Median Testing R² (cv): 0.972418
+  Median Testing R² (h298_atom): 0.993562
+  Weighted Median Testing R²: 0.982990
 
 Architecture: [101, 111, 123, 103, 66, 101, 29]
   Median Training R² (cv): 0.980004
   Median Training R² (h298_atom): 0.995617
-  Median Validation R² (cv): 0.972413
-  Median Validation R² (h298_atom): 0.993991
-  Weighted Median Validation R²: 0.983202
+  Median Testing R² (cv): 0.972413
+  Median Testing R² (h298_atom): 0.993991
+  Weighted Median Testing R²: 0.983202
 
 Architecture: [31, 119, 73, 61, 45, 101]
   Median Training R² (cv): 0.977564
   Median Training R² (h298_atom): 0.994883
-  Median Validation R² (cv): 0.970706
-  Median Validation R² (h298_atom): 0.993403
-  Weighted Median Validation R²: 0.982055
+  Median Testing R² (cv): 0.970706
+  Median Testing R² (h298_atom): 0.993403
+  Weighted Median Testing R²: 0.982055
 
 Architecture: [78, 18, 83, 83]
   Median Training R² (cv): 0.976774
   Median Training R² (h298_atom): 0.995323
-  Median Validation R² (cv): 0.971803
-  Median Validation R² (h298_atom): 0.993900
-  Weighted Median Validation R²: 0.982852
+  Median Testing R² (cv): 0.971803
+  Median Testing R² (h298_atom): 0.993900
+  Weighted Median Testing R²: 0.982852
 
 Architecture: [119, 91, 55, 64, 92]
   Median Training R² (cv): 0.980020
   Median Training R² (h298_atom): 0.995823
-  Median Validation R² (cv): 0.971667
-  Median Validation R² (h298_atom): 0.993977
-  Weighted Median Validation R²: 0.982822
+  Median Testing R² (cv): 0.971667
+  Median Testing R² (h298_atom): 0.993977
+  Weighted Median Testing R²: 0.982822
 
 Architecture: [89]
   Median Training R² (cv): 0.961713
   Median Training R² (h298_atom): 0.983012
-  Median Validation R² (cv): 0.957443
-  Median Validation R² (h298_atom): 0.979811
-  Weighted Median Validation R²: 0.968627
+  Median Testing R² (cv): 0.957443
+  Median Testing R² (h298_atom): 0.979811
+  Weighted Median Testing R²: 0.968627
 
 Architecture: [39, 30, 50, 56, 78, 64]
   Median Training R² (cv): 0.975828
   Median Training R² (h298_atom): 0.995367
-  Median Validation R² (cv): 0.970740
-  Median Validation R² (h298_atom): 0.994225
-  Weighted Median Validation R²: 0.982482
+  Median Testing R² (cv): 0.970740
+  Median Testing R² (h298_atom): 0.994225
+  Weighted Median Testing R²: 0.982482
 
 Architecture: [27, 38, 33, 87, 43, 67, 42, 33]
   Median Training R² (cv): 0.974724
   Median Training R² (h298_atom): 0.995005
-  Median Validation R² (cv): 0.971027
-  Median Validation R² (h298_atom): 0.993496
-  Weighted Median Validation R²: 0.982261
+  Median Testing R² (cv): 0.971027
+  Median Testing R² (h298_atom): 0.993496
+  Weighted Median Testing R²: 0.982261
 

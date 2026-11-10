@@ -3,26 +3,26 @@ Best Architecture: [101, 111, 123, 103, 66, 101, 29]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.99477881 0.81045851]
-Median Validation R2 per target: [0.98979465 0.79036971]
-Median combined Train R2 (flattened): 0.9022618280939304
-Median combined Validation R2 (flattened): 0.8943471232739897
+Median Testing R2 per target: [0.98979465 0.79036971]
+Median combined Train R2 (average): 0.90261866
+Median combined Testing R2 (average): 0.8900821800000001
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [29.82527886  0.66002762]
-Median Validation MAE (orig units): [29.88611204  0.65787078]
-Median combined Train MAE (orig units): 13.402013724389366
-Median combined Validation MAE (orig units): 13.579947229083148
+Median Testing MAE (orig units): [29.88611204  0.65787078]
+Median combined Train MAE (orig units): 15.242653240000001
+Median combined Testing MAE (orig units): 15.27199141
 
 Median Train NMAE: [0.06654648 0.14983363]
-Median Validation NMAE: [0.06668221 0.149344  ]
-Median combined Train NMAE: 0.11130606892546589
-Median combined Validation NMAE: 0.11111904312001564
+Median Testing NMAE: [0.06668221 0.149344  ]
+Median combined Train NMAE: 0.10819005500000001
+Median combined Testing NMAE: 0.108013105
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 6
 Selected Fold: 4
-Selected Fold Validation R2 per target: [0.9895575141111009, 0.7897507764852446]
+Selected Fold Testing R2 per target: [0.9895575141111009, 0.7897507764852446]
 L1 closeness score: 0.0008560746465759994
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_C_35desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_u0_C_35desc_biases.txt

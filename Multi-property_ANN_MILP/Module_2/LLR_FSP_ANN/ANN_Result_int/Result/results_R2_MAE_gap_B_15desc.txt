@@ -3,26 +3,26 @@ Best Architecture: [101, 111, 123, 103, 66, 101, 29]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.84805591 0.68064943]
-Median Validation R2 per target: [0.77551327 0.65417749]
-Median combined Train R2 (flattened): 0.7691180610682921
-Median combined Validation R2 (flattened): 0.7186069241848653
+Median Testing R2 per target: [0.77551327 0.65417749]
+Median combined Train R2 (average): 0.7643526700000001
+Median combined Testing R2 (average): 0.7148453800000001
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [0.01372435 0.80872864]
-Median Validation MAE (orig units): [0.01665561 0.80809019]
-Median combined Train MAE (orig units): 0.40847537499031716
-Median combined Validation MAE (orig units): 0.4083622356728144
+Median Testing MAE (orig units): [0.01665561 0.80809019]
+Median combined Train MAE (orig units): 0.411226495
+Median combined Testing MAE (orig units): 0.41237290000000004
 
 Median Train NMAE: [0.03531741 0.10962334]
-Median Validation NMAE: [0.04286054 0.1095368 ]
-Median combined Train NMAE: 0.07297647420652859
-Median combined Validation NMAE: 0.07626823241446076
+Median Testing NMAE: [0.04286054 0.1095368 ]
+Median combined Train NMAE: 0.072470375
+Median combined Testing NMAE: 0.07619867
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 1
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.7780440973609767, 0.6575892189281977]
+Selected Fold Testing R2 per target: [0.7780440973609767, 0.6575892189281977]
 L1 closeness score: 0.005942562697022091
 Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_B_15desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_B_15desc_biases.txt

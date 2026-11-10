@@ -3,26 +3,26 @@ Best Architecture: [89]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.99040507 0.98002792]
-Median Validation R2 per target: [0.98930455 0.97811132]
-Median combined Train R2 (flattened): 0.9812042112710573
-Median combined Validation R2 (flattened): 0.9804117475623357
+Median Testing R2 per target: [0.98930455 0.97811132]
+Median combined Train R2 (average): 0.985216495
+Median combined Testing R2 (average): 0.983707935
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [1.06739768e-02 2.12519847e+02]
-Median Validation MAE (orig units): [1.06989436e-02 2.12301496e+02]
-Median combined Train MAE (orig units): 105.92201694540543
-Median combined Validation MAE (orig units): 105.38532739306169
+Median Testing MAE (orig units): [1.06989436e-02 2.12301496e+02]
+Median combined Train MAE (orig units): 106.2652604884
+Median combined Testing MAE (orig units): 106.1560974718
 
 Median Train NMAE: [0.04624132 0.1432986 ]
-Median Validation NMAE: [0.04634948 0.14315137]
-Median combined Train NMAE: 0.0949559374485101
-Median combined Validation NMAE: 0.0947904571489122
+Median Testing NMAE: [0.04634948 0.14315137]
+Median combined Train NMAE: 0.09476996
+Median combined Testing NMAE: 0.094750425
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 7
 Selected Fold: 2
-Selected Fold Validation R2 per target: [0.9893097114763828, 0.9782402408029319]
+Selected Fold Testing R2 per target: [0.9893097114763828, 0.9782402408029319]
 L1 closeness score: 0.00013408189583530294
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_g298_atom_35desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_zpve_g298_atom_35desc_biases.txt

@@ -3,26 +3,26 @@ Best Architecture: [114, 122, 58, 103]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.97815276 0.99608919]
-Median Validation R2 per target: [0.96148863 0.99374539]
-Median combined Train R2 (flattened): 0.9856925956561531
-Median combined Validation R2 (flattened): 0.9794355543551104
+Median Testing R2 per target: [0.96148863 0.99374539]
+Median combined Train R2 (average): 0.987120975
+Median combined Testing R2 (average): 0.9776170099999999
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [ 13.3601237  228.76456177]
-Median Validation MAE (orig units): [ 13.37456772 228.42608491]
-Median combined Train MAE (orig units): 115.60510841588454
-Median combined Validation MAE (orig units): 116.64328749259685
+Median Testing MAE (orig units): [ 13.37456772 228.42608491]
+Median combined Train MAE (orig units): 121.062342735
+Median combined Testing MAE (orig units): 120.90032631499999
 
 Median Train NMAE: [0.15016437 0.14162558]
-Median Validation NMAE: [0.15032671 0.14141603]
-Median combined Train NMAE: 0.14834932604192103
-Median combined Validation NMAE: 0.14810180486967553
+Median Testing NMAE: [0.15032671 0.14141603]
+Median combined Train NMAE: 0.14589497499999998
+Median combined Testing NMAE: 0.14587137
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 3
 Selected Fold: 3
-Selected Fold Validation R2 per target: [0.9619647652539275, 0.9937509320053496]
+Selected Fold Testing R2 per target: [0.9619647652539275, 0.9937509320053496]
 L1 closeness score: 0.0004816858881094843
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_u0_atom_50desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_u0_atom_50desc_biases.txt

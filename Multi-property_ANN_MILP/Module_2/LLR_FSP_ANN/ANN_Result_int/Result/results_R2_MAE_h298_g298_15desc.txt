@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.98088967 0.98114388]
-Median Validation R2 per target: [0.98032538 0.98014133]
-Median combined Train R2 (flattened): 0.9809155889146456
-Median combined Validation R2 (flattened): 0.9802038709562475
+Median Testing R2 per target: [0.98032538 0.98014133]
+Median combined Train R2 (average): 0.9810167750000001
+Median combined Testing R2 (average): 0.980233355
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [29.93730808 29.93692627]
-Median Validation MAE (orig units): [29.86561901 29.94191848]
-Median combined Train MAE (orig units): 29.93692627243887
-Median combined Validation MAE (orig units): 29.88422239959482
+Median Testing MAE (orig units): [29.86561901 29.94191848]
+Median combined Train MAE (orig units): 29.937117175
+Median combined Testing MAE (orig units): 29.903768745
 
 Median Train NMAE: [0.06679703 0.06679458]
-Median Validation NMAE: [0.06663707 0.06680572]
-Median combined Train NMAE: 0.06679458005447497
-Median combined Validation NMAE: 0.0666777836260799
+Median Testing NMAE: [0.06663707 0.06680572]
+Median combined Train NMAE: 0.066795805
+Median combined Testing NMAE: 0.066721395
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 5
 Selected Fold: 4
-Selected Fold Validation R2 per target: [0.9805595768216514, 0.980188435249636]
+Selected Fold Testing R2 per target: [0.9805595768216514, 0.980188435249636]
 L1 closeness score: 0.0002812989925214948
 Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_h298_g298_15desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_h298_g298_15desc_biases.txt

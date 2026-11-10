@@ -1,7 +1,7 @@
-Median Validation R2 per target: [0.97969138 0.97988676]
+Median Testing R2 per target: [0.97969138 0.97988676]
 Selected Iteration: 8
 Selected Fold: 1
-Selected Fold Validation R2 per target: [0.9796137076745977, 0.9799276364612846]
+Selected Fold Testing R2 per target: [0.9796137076745977, 0.9799276364612846]
 L1 closeness score: 0.00011855662522686217
 Source weights: /home/azam/Prediction_Phase/ANN_Result/weight_biases/qm9_8_1_u0_h298_15desc_weights.txt
 Source biases: /home/azam/Prediction_Phase/ANN_Result/weight_biases/qm9_8_1_u0_h298_15desc_biases.txt

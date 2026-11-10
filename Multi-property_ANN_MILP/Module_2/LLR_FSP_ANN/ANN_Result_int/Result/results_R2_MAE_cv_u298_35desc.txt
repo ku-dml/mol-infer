@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.97289656 0.99528042]
-Median Validation R2 per target: [0.96673997 0.9937037 ]
-Median combined Train R2 (flattened): 0.9814473916555504
-Median combined Validation R2 (flattened): 0.9788327816191846
+Median Testing R2 per target: [0.96673997 0.9937037 ]
+Median combined Train R2 (average): 0.98408849
+Median combined Testing R2 (average): 0.980221835
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [ 2.91217928 29.85160335]
-Median Validation MAE (orig units): [ 2.92391658 29.91224694]
-Median combined Train MAE (orig units): 15.40049252232697
-Median combined Validation MAE (orig units): 15.29792929034918
+Median Testing MAE (orig units): [ 2.92391658 29.91224694]
+Median combined Train MAE (orig units): 16.381891315
+Median combined Testing MAE (orig units): 16.41808176
 
 Median Train NMAE: [0.09638829 0.0666058 ]
-Median Validation NMAE: [0.09677677 0.06674111]
-Median combined Train NMAE: 0.08212410329975488
-Median combined Validation NMAE: 0.08290333453013421
+Median Testing NMAE: [0.09677677 0.06674111]
+Median combined Train NMAE: 0.081497045
+Median combined Testing NMAE: 0.08175894
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 8
 Selected Fold: 1
-Selected Fold Validation R2 per target: [0.9668053677669943, 0.9937662189443762]
+Selected Fold Testing R2 per target: [0.9668053677669943, 0.9937662189443762]
 L1 closeness score: 0.00012791801667133562
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_u298_35desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_cv_u298_35desc_biases.txt

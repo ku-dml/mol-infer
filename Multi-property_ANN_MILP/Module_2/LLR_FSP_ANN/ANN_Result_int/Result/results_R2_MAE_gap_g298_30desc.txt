@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.86755784 0.97497664]
-Median Validation R2 per target: [0.80139847 0.97042747]
-Median combined Train R2 (flattened): 0.9261365630234979
-Median combined Validation R2 (flattened): 0.8922357454202994
+Median Testing R2 per target: [0.80139847 0.97042747]
+Median combined Train R2 (average): 0.9212672399999999
+Median combined Testing R2 (average): 0.8859129699999999
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [1.28701062e-02 2.98450827e+01]
-Median Validation MAE (orig units): [1.56893680e-02 2.97870822e+01]
-Median combined Train MAE (orig units): 14.20655949146299
-Median combined Validation MAE (orig units): 14.462843783587356
+Median Testing MAE (orig units): [1.56893680e-02 2.97870822e+01]
+Median combined Train MAE (orig units): 14.9289764031
+Median combined Testing MAE (orig units): 14.901385784
 
 Median Train NMAE: [0.03311916 0.06658966]
-Median Validation NMAE: [0.04037408 0.06646025]
-Median combined Train NMAE: 0.049172430220366305
-Median combined Validation NMAE: 0.053180287070831264
+Median Testing NMAE: [0.04037408 0.06646025]
+Median combined Train NMAE: 0.04985441
+Median combined Testing NMAE: 0.053417165
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 4
 Selected Fold: 5
-Selected Fold Validation R2 per target: [0.8012876865013282, 0.9704780042854041]
+Selected Fold Testing R2 per target: [0.8012876865013282, 0.9704780042854041]
 L1 closeness score: 0.00016131618913872714
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_g298_30desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_gap_g298_30desc_biases.txt

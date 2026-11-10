@@ -3,26 +3,26 @@ Best Architecture: [78, 117, 23, 25, 18]
 
 === R2 (normalized target space) ===
 Median Train R2 per target: [0.90606583 0.98515151]
-Median Validation R2 per target: [0.86190968 0.98158469]
-Median combined Train R2 (flattened): 0.9469656041032279
-Median combined Validation R2 (flattened): 0.9254318165980426
+Median Testing R2 per target: [0.86190968 0.98158469]
+Median combined Train R2 (average): 0.9456086699999999
+Median combined Testing R2 (average): 0.9217471850000001
 
 === MAE / NMAE (original units) ===
 Median Train MAE  (orig units): [1.03734653e-02 2.98320594e+01]
-Median Validation MAE (orig units): [1.24004852e-02 2.97740614e+01]
-Median combined Train MAE (orig units): 14.534288860263999
-Median combined Validation MAE (orig units): 14.575348203446048
+Median Testing MAE (orig units): [1.24004852e-02 2.97740614e+01]
+Median combined Train MAE (orig units): 14.921216432649999
+Median combined Testing MAE (orig units): 14.8932309426
 
 Median Train NMAE: [0.04225444 0.06656161]
-Median Validation NMAE: [0.05051114 0.0664322 ]
-Median combined Train NMAE: 0.054553021065273544
-Median combined Validation NMAE: 0.059032573739622576
+Median Testing NMAE: [0.05051114 0.0664322 ]
+Median combined Train NMAE: 0.054408025
+Median combined Testing NMAE: 0.05847167
 
 === Median-closest final-CV model (L1) ===
-Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selection: minimum L1 distance between each fold's per-target Testing R2 vector and the per-target median Testing R2 vector.
 Selected Iteration: 2
 Selected Fold: 1
-Selected Fold Validation R2 per target: [0.8619683063051427, 0.9814020177088032]
+Selected Fold Testing R2 per target: [0.8619683063051427, 0.9814020177088032]
 L1 closeness score: 0.00024129199850853045
 Median-closest weights: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_lumo_u0_25desc_weights.txt
 Median-closest biases: /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median_closest_lumo_u0_25desc_biases.txt
