@@ -1,0 +1,70 @@
+Architecture: [94, 82, 75, 62, 87]
+  Median Training R² (zpve): 0.983770
+  Median Training R² (g298_atom): 0.980187
+  Median Validation R² (zpve): 0.982344
+  Median Validation R² (g298_atom): 0.977232
+  Weighted Median Validation R²: 0.979788
+
+Architecture: [114, 122, 58, 103]
+  Median Training R² (zpve): 0.984357
+  Median Training R² (g298_atom): 0.980162
+  Median Validation R² (zpve): 0.982696
+  Median Validation R² (g298_atom): 0.977398
+  Weighted Median Validation R²: 0.980047
+
+Architecture: [78, 117, 23, 25, 18]
+  Median Training R² (zpve): 0.981501
+  Median Training R² (g298_atom): 0.980179
+  Median Validation R² (zpve): 0.980319
+  Median Validation R² (g298_atom): 0.978028
+  Weighted Median Validation R²: 0.979174
+
+Architecture: [101, 111, 123, 103, 66, 101, 29]
+  Median Training R² (zpve): 0.986127
+  Median Training R² (g298_atom): 0.980357
+  Median Validation R² (zpve): 0.984583
+  Median Validation R² (g298_atom): 0.978192
+  Weighted Median Validation R²: 0.981388
+
+Architecture: [31, 119, 73, 61, 45, 101]
+  Median Training R² (zpve): 0.984580
+  Median Training R² (g298_atom): 0.980280
+  Median Validation R² (zpve): 0.983148
+  Median Validation R² (g298_atom): 0.977115
+  Weighted Median Validation R²: 0.980131
+
+Architecture: [78, 18, 83, 83]
+  Median Training R² (zpve): 0.986952
+  Median Training R² (g298_atom): 0.980091
+  Median Validation R² (zpve): 0.986510
+  Median Validation R² (g298_atom): 0.978922
+  Weighted Median Validation R²: 0.982716
+
+Architecture: [119, 91, 55, 64, 92]
+  Median Training R² (zpve): 0.987757
+  Median Training R² (g298_atom): 0.980166
+  Median Validation R² (zpve): 0.986629
+  Median Validation R² (g298_atom): 0.979149
+  Weighted Median Validation R²: 0.982889
+
+Architecture: [89]
+  Median Training R² (zpve): 0.989461
+  Median Training R² (g298_atom): 0.980027
+  Median Validation R² (zpve): 0.987973
+  Median Validation R² (g298_atom): 0.976850
+  Weighted Median Validation R²: 0.982411
+
+Architecture: [39, 30, 50, 56, 78, 64]
+  Median Training R² (zpve): 0.988097
+  Median Training R² (g298_atom): 0.980108
+  Median Validation R² (zpve): 0.985978
+  Median Validation R² (g298_atom): 0.978343
+  Weighted Median Validation R²: 0.982160
+
+Architecture: [27, 38, 33, 87, 43, 67, 42, 33]
+  Median Training R² (zpve): 0.986218
+  Median Training R² (g298_atom): 0.980116
+  Median Validation R² (zpve): 0.985781
+  Median Validation R² (g298_atom): 0.978251
+  Weighted Median Validation R²: 0.982016
+

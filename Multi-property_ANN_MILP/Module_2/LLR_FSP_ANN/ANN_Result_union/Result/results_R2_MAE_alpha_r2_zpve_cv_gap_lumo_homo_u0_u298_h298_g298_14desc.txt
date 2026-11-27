@@ -1,0 +1,36 @@
+Targets: alpha, r2, zpve, cv, gap, lumo, homo, u0, u298, h298, g298
+Best Architecture: [114, 122, 58, 103]
+
+=== R2 (normalized target space) ===
+Median Train R2 per target: [0.86020853 0.82694507 0.98739136 0.91638496 0.61121898 0.71258305
+ 0.39991344 0.81381102 0.81312784 0.81340743 0.81348684]
+Median Validation R2 per target: [0.84502339 0.81971329 0.98639891 0.91374562 0.57759318 0.68336358
+ 0.36383578 0.79130869 0.79078608 0.79205212 0.79163851]
+Median combined Train R2 (flattened): 0.8154584569021498
+Median combined Validation R2 (flattened): 0.7945467555595286
+
+=== MAE / NMAE (original units) ===
+Median Train MAE  (orig units): [1.33539275e+01 1.92639372e+02 1.06275779e-02 2.93295907e+00
+ 2.26018124e-02 1.92511241e-02 1.26054489e-02 3.09341455e+01
+ 3.10058089e+01 3.09160180e+01 3.10360472e+01]
+Median Validation MAE (orig units): [1.33621947e+01 1.93419361e+02 1.06526138e-02 2.93562433e+00
+ 2.37514206e-02 2.03715198e-02 1.30313810e-02 3.12853726e+01
+ 3.13463270e+01 3.12368549e+01 3.12814693e+01]
+Median combined Train MAE (orig units): 13.353927498563944
+Median combined Validation MAE (orig units): 13.36219469685381
+
+Median Train NMAE: [0.15009472 0.07390789 0.04604031 0.09707606 0.05816215 0.07841598
+ 0.05241351 0.06902059 0.0691811  0.06898075 0.06924691]
+Median Validation NMAE: [0.15018764 0.07420714 0.04614877 0.09716428 0.06112049 0.08297971
+ 0.05418454 0.06980426 0.06994087 0.06969661 0.06979449]
+Median combined Train NMAE: 0.06975624246985639
+Median combined Validation NMAE: 0.07041025993926872
+
+=== Median-closest final-CV model (L1) ===
+Selection: minimum L1 distance between each fold's per-target Validation R2 vector and the per-target median Validation R2 vector.
+Selected Iteration: 10
+Selected Fold: 4
+Selected Fold Validation R2 per target: [0.8387541409735793, 0.8203517518606434, 0.9868062782710075, 0.9138642344449209, 0.5663296660208107, 0.6829831972059867, 0.36285267243783426, 0.7909304927578431, 0.7908868026024767, 0.7926921236955778, 0.7915570064993893]
+L1 closeness score: 0.02126111098111072
+Median-closest weights: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_r2_zpve_cv_gap_lumo_homo_u0_u298_h298_g298_14desc_weights.txt
+Median-closest biases: /home/azam/Prediction_Phase/Prediction_Phase/ANN_Result/Result/qm9_median_closest_alpha_r2_zpve_cv_gap_lumo_homo_u0_u298_h298_g298_14desc_biases.txt

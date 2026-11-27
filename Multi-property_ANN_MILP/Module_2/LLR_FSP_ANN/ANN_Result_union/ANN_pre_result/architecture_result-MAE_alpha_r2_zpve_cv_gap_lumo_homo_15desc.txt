@@ -1,0 +1,170 @@
+Architecture: [94, 82, 75, 62, 87]
+  Median Training R² (alpha): 0.938416
+  Median Training R² (r2): 0.851533
+  Median Training R² (zpve): 0.994730
+  Median Training R² (cv): 0.942814
+  Median Training R² (gap): 0.830224
+  Median Training R² (lumo): 0.878917
+  Median Training R² (homo): 0.675194
+  Median Validation R² (alpha): 0.935232
+  Median Validation R² (r2): 0.832446
+  Median Validation R² (zpve): 0.994377
+  Median Validation R² (cv): 0.941484
+  Median Validation R² (gap): 0.791934
+  Median Validation R² (lumo): 0.848605
+  Median Validation R² (homo): 0.635970
+  Weighted Median Validation R²: 0.854293
+
+Architecture: [114, 122, 58, 103]
+  Median Training R² (alpha): 0.940929
+  Median Training R² (r2): 0.854442
+  Median Training R² (zpve): 0.994814
+  Median Training R² (cv): 0.944195
+  Median Training R² (gap): 0.833425
+  Median Training R² (lumo): 0.881783
+  Median Training R² (homo): 0.681873
+  Median Validation R² (alpha): 0.936263
+  Median Validation R² (r2): 0.833890
+  Median Validation R² (zpve): 0.994072
+  Median Validation R² (cv): 0.942420
+  Median Validation R² (gap): 0.794186
+  Median Validation R² (lumo): 0.851505
+  Median Validation R² (homo): 0.640253
+  Weighted Median Validation R²: 0.856084
+
+Architecture: [78, 117, 23, 25, 18]
+  Median Training R² (alpha): 0.932577
+  Median Training R² (r2): 0.839662
+  Median Training R² (zpve): 0.993709
+  Median Training R² (cv): 0.942203
+  Median Training R² (gap): 0.816870
+  Median Training R² (lumo): 0.871861
+  Median Training R² (homo): 0.660657
+  Median Validation R² (alpha): 0.935385
+  Median Validation R² (r2): 0.827941
+  Median Validation R² (zpve): 0.993472
+  Median Validation R² (cv): 0.940505
+  Median Validation R² (gap): 0.798202
+  Median Validation R² (lumo): 0.849581
+  Median Validation R² (homo): 0.614892
+  Weighted Median Validation R²: 0.851425
+
+Architecture: [101, 111, 123, 103, 66, 101, 29]
+  Median Training R² (alpha): 0.938687
+  Median Training R² (r2): 0.855192
+  Median Training R² (zpve): 0.994257
+  Median Training R² (cv): 0.943057
+  Median Training R² (gap): 0.833644
+  Median Training R² (lumo): 0.883327
+  Median Training R² (homo): 0.686071
+  Median Validation R² (alpha): 0.928522
+  Median Validation R² (r2): 0.834658
+  Median Validation R² (zpve): 0.993488
+  Median Validation R² (cv): 0.941319
+  Median Validation R² (gap): 0.795309
+  Median Validation R² (lumo): 0.848726
+  Median Validation R² (homo): 0.643814
+  Weighted Median Validation R²: 0.855119
+
+Architecture: [31, 119, 73, 61, 45, 101]
+  Median Training R² (alpha): 0.935886
+  Median Training R² (r2): 0.849215
+  Median Training R² (zpve): 0.993185
+  Median Training R² (cv): 0.941884
+  Median Training R² (gap): 0.825458
+  Median Training R² (lumo): 0.878411
+  Median Training R² (homo): 0.672393
+  Median Validation R² (alpha): 0.929697
+  Median Validation R² (r2): 0.831888
+  Median Validation R² (zpve): 0.992449
+  Median Validation R² (cv): 0.938689
+  Median Validation R² (gap): 0.790765
+  Median Validation R² (lumo): 0.846290
+  Median Validation R² (homo): 0.624859
+  Weighted Median Validation R²: 0.850662
+
+Architecture: [78, 18, 83, 83]
+  Median Training R² (alpha): 0.933300
+  Median Training R² (r2): 0.840533
+  Median Training R² (zpve): 0.991955
+  Median Training R² (cv): 0.938881
+  Median Training R² (gap): 0.811603
+  Median Training R² (lumo): 0.865693
+  Median Training R² (homo): 0.646886
+  Median Validation R² (alpha): 0.929391
+  Median Validation R² (r2): 0.825531
+  Median Validation R² (zpve): 0.992068
+  Median Validation R² (cv): 0.936147
+  Median Validation R² (gap): 0.792951
+  Median Validation R² (lumo): 0.848628
+  Median Validation R² (homo): 0.625245
+  Weighted Median Validation R²: 0.849994
+
+Architecture: [119, 91, 55, 64, 92]
+  Median Training R² (alpha): 0.940777
+  Median Training R² (r2): 0.852956
+  Median Training R² (zpve): 0.995045
+  Median Training R² (cv): 0.943375
+  Median Training R² (gap): 0.830731
+  Median Training R² (lumo): 0.879198
+  Median Training R² (homo): 0.685825
+  Median Validation R² (alpha): 0.932000
+  Median Validation R² (r2): 0.835978
+  Median Validation R² (zpve): 0.994399
+  Median Validation R² (cv): 0.941892
+  Median Validation R² (gap): 0.793370
+  Median Validation R² (lumo): 0.847768
+  Median Validation R² (homo): 0.647059
+  Weighted Median Validation R²: 0.856067
+
+Architecture: [89]
+  Median Training R² (alpha): 0.895608
+  Median Training R² (r2): 0.811846
+  Median Training R² (zpve): 0.977089
+  Median Training R² (cv): 0.929500
+  Median Training R² (gap): 0.773766
+  Median Training R² (lumo): 0.827259
+  Median Training R² (homo): 0.574620
+  Median Validation R² (alpha): 0.897520
+  Median Validation R² (r2): 0.811942
+  Median Validation R² (zpve): 0.977040
+  Median Validation R² (cv): 0.929045
+  Median Validation R² (gap): 0.769985
+  Median Validation R² (lumo): 0.821720
+  Median Validation R² (homo): 0.571236
+  Weighted Median Validation R²: 0.825498
+
+Architecture: [39, 30, 50, 56, 78, 64]
+  Median Training R² (alpha): 0.926703
+  Median Training R² (r2): 0.844445
+  Median Training R² (zpve): 0.992285
+  Median Training R² (cv): 0.937069
+  Median Training R² (gap): 0.813506
+  Median Training R² (lumo): 0.865653
+  Median Training R² (homo): 0.647071
+  Median Validation R² (alpha): 0.919944
+  Median Validation R² (r2): 0.828248
+  Median Validation R² (zpve): 0.991598
+  Median Validation R² (cv): 0.936312
+  Median Validation R² (gap): 0.791978
+  Median Validation R² (lumo): 0.843590
+  Median Validation R² (homo): 0.616860
+  Weighted Median Validation R²: 0.846933
+
+Architecture: [27, 38, 33, 87, 43, 67, 42, 33]
+  Median Training R² (alpha): 0.921681
+  Median Training R² (r2): 0.838814
+  Median Training R² (zpve): 0.991664
+  Median Training R² (cv): 0.936966
+  Median Training R² (gap): 0.807819
+  Median Training R² (lumo): 0.863186
+  Median Training R² (homo): 0.634414
+  Median Validation R² (alpha): 0.909385
+  Median Validation R² (r2): 0.824011
+  Median Validation R² (zpve): 0.991217
+  Median Validation R² (cv): 0.934767
+  Median Validation R² (gap): 0.789060
+  Median Validation R² (lumo): 0.844773
+  Median Validation R² (homo): 0.611153
+  Weighted Median Validation R²: 0.843481
+
