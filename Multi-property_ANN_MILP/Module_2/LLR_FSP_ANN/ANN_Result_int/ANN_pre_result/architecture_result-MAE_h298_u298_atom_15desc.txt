@@ -1,0 +1,140 @@
+Architecture: [94, 82, 75, 62, 87]
+  Median Training R² (h298): 0.980232
+  Median Training R² (u298_atom): 0.983720
+  Median Validation R² (h298): 0.979549
+  Median Validation R² (u298_atom): 0.982787
+  Weighted Median Validation R²: 0.981168
+
+Architecture: [114, 122, 58, 103]
+  Median Training R² (h298): 0.980518
+  Median Training R² (u298_atom): 0.980602
+  Median Validation R² (h298): 0.979704
+  Median Validation R² (u298_atom): 0.980782
+  Weighted Median Validation R²: 0.980243
+
+Architecture: [78, 117, 23, 25, 18]
+  Median Training R² (h298): 0.980051
+  Median Training R² (u298_atom): 0.983676
+  Median Validation R² (h298): 0.979235
+  Median Validation R² (u298_atom): 0.984274
+  Weighted Median Validation R²: 0.981754
+
+Architecture: [101, 111, 123, 103, 66, 101, 29]
+  Median Training R² (h298): 0.980448
+  Median Training R² (u298_atom): 0.982040
+  Median Validation R² (h298): 0.978972
+  Median Validation R² (u298_atom): 0.982311
+  Weighted Median Validation R²: 0.980642
+
+Architecture: [31, 119, 73, 61, 45, 101]
+  Median Training R² (h298): 0.980450
+  Median Training R² (u298_atom): 0.982619
+  Median Validation R² (h298): 0.979595
+  Median Validation R² (u298_atom): 0.981238
+  Weighted Median Validation R²: 0.980417
+
+Architecture: [78, 18, 83, 83]
+  Median Training R² (h298): 0.980370
+  Median Training R² (u298_atom): 0.982260
+  Median Validation R² (h298): 0.980173
+  Median Validation R² (u298_atom): 0.980383
+  Weighted Median Validation R²: 0.980278
+
+Architecture: [119, 91, 55, 64, 92]
+  Median Training R² (h298): 0.981006
+  Median Training R² (u298_atom): 0.980458
+  Median Validation R² (h298): 0.980805
+  Median Validation R² (u298_atom): 0.980305
+  Weighted Median Validation R²: 0.980555
+
+Architecture: [89]
+  Median Training R² (h298): 0.984774
+  Median Training R² (u298_atom): 0.980028
+  Median Validation R² (h298): 0.983967
+  Median Validation R² (u298_atom): 0.979835
+  Weighted Median Validation R²: 0.981901
+
+Architecture: [39, 30, 50, 56, 78, 64]
+  Median Training R² (h298): 0.980166
+  Median Training R² (u298_atom): 0.984450
+  Median Validation R² (h298): 0.980064
+  Median Validation R² (u298_atom): 0.984564
+  Weighted Median Validation R²: 0.982314
+
+Architecture: [27, 38, 33, 87, 43, 67, 42, 33]
+  Median Training R² (h298): 0.980197
+  Median Training R² (u298_atom): 0.981869
+  Median Validation R² (h298): 0.978449
+  Median Validation R² (u298_atom): 0.981068
+  Weighted Median Validation R²: 0.979759
+
+Architecture: [94, 82, 75, 62, 87]
+  Median Training R² (h298): 0.980232
+  Median Training R² (u298_atom): 0.983720
+  Median Validation R² (h298): 0.979549
+  Median Validation R² (u298_atom): 0.982787
+  Weighted Median Validation R²: 0.981168
+
+Architecture: [114, 122, 58, 103]
+  Median Training R² (h298): 0.980518
+  Median Training R² (u298_atom): 0.980602
+  Median Validation R² (h298): 0.979704
+  Median Validation R² (u298_atom): 0.980782
+  Weighted Median Validation R²: 0.980243
+
+Architecture: [78, 117, 23, 25, 18]
+  Median Training R² (h298): 0.980051
+  Median Training R² (u298_atom): 0.983676
+  Median Validation R² (h298): 0.979235
+  Median Validation R² (u298_atom): 0.984274
+  Weighted Median Validation R²: 0.981754
+
+Architecture: [101, 111, 123, 103, 66, 101, 29]
+  Median Training R² (h298): 0.980448
+  Median Training R² (u298_atom): 0.982040
+  Median Validation R² (h298): 0.978972
+  Median Validation R² (u298_atom): 0.982311
+  Weighted Median Validation R²: 0.980642
+
+Architecture: [31, 119, 73, 61, 45, 101]
+  Median Training R² (h298): 0.980450
+  Median Training R² (u298_atom): 0.982619
+  Median Validation R² (h298): 0.979595
+  Median Validation R² (u298_atom): 0.981238
+  Weighted Median Validation R²: 0.980417
+
+Architecture: [78, 18, 83, 83]
+  Median Training R² (h298): 0.980370
+  Median Training R² (u298_atom): 0.982260
+  Median Validation R² (h298): 0.980173
+  Median Validation R² (u298_atom): 0.980383
+  Weighted Median Validation R²: 0.980278
+
+Architecture: [119, 91, 55, 64, 92]
+  Median Training R² (h298): 0.981006
+  Median Training R² (u298_atom): 0.980458
+  Median Validation R² (h298): 0.980805
+  Median Validation R² (u298_atom): 0.980305
+  Weighted Median Validation R²: 0.980555
+
+Architecture: [89]
+  Median Training R² (h298): 0.984774
+  Median Training R² (u298_atom): 0.980028
+  Median Validation R² (h298): 0.983967
+  Median Validation R² (u298_atom): 0.979835
+  Weighted Median Validation R²: 0.981901
+
+Architecture: [39, 30, 50, 56, 78, 64]
+  Median Training R² (h298): 0.980166
+  Median Training R² (u298_atom): 0.984450
+  Median Validation R² (h298): 0.980064
+  Median Validation R² (u298_atom): 0.984564
+  Weighted Median Validation R²: 0.982314
+
+Architecture: [27, 38, 33, 87, 43, 67, 42, 33]
+  Median Training R² (h298): 0.980197
+  Median Training R² (u298_atom): 0.981869
+  Median Validation R² (h298): 0.978449
+  Median Validation R² (u298_atom): 0.981068
+  Weighted Median Validation R²: 0.979759
+

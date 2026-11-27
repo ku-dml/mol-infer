@@ -1,0 +1,62 @@
+Targets: alpha, r2
+Architecture: [119, 91, 55, 64, 92]
+
+=== Median runs ===
+Runs are sorted by Testing R2_avg (average over all targets). The median is the average of the two middle runs; all scores below are averaged over these runs.
+Middle run: Iteration 7, Fold 4, Testing R2_avg: 0.9001882233786441
+Middle run: Iteration 3, Fold 2, Testing R2_avg: 0.9006218345849772
+
+=== Middle run 1: Iteration 7, Fold 4 ===
+Training R2 per target: [0.9596432489300898, 0.8997328931384436]
+Testing R2 per target: [0.9258965493919622, 0.874479897365326]
+Check - Training R2 from weights: [0.9596432504949565, 0.8997328913709666]
+Check - Testing R2 from weights: [0.9258965522085689, 0.8744799052051904]
+Training R2_avg: 0.9296880710342668
+Testing R2_avg: 0.9001882233786441
+Training MAE per target: [1.0816716206080015, 62.06225915643227]
+Testing MAE per target: [1.270316429296661, 72.09235052268833]
+Training MAE_avg: 31.571965388520134
+Testing MAE_avg: 36.681333475992496
+Training NMAE per target: [0.00930950701960583, 0.021417979872950473]
+Testing NMAE per target: [0.010933096043520623, 0.02487941195625326]
+Training NMAE_avg: 0.015363743446278152
+Testing NMAE_avg: 0.01790625399988694
+
+=== Middle run 2: Iteration 3, Fold 2 ===
+Training R2 per target: [0.9487885772243, 0.8991150424408804]
+Testing R2 per target: [0.9514384001631795, 0.849805269006775]
+Check - Training R2 from weights: [0.9487885792159466, 0.8991150679778804]
+Check - Testing R2 from weights: [0.9514384109458789, 0.8498053090611476]
+Training R2_avg: 0.9239518098325902
+Testing R2_avg: 0.9006218345849772
+Training MAE per target: [1.159327783796069, 62.647485080379575]
+Testing MAE per target: [1.1895686990913947, 73.33757050060038]
+Training MAE_avg: 31.90340643208782
+Testing MAE_avg: 37.26356959984589
+Training NMAE per target: [0.009977861982925114, 0.021619944113869236]
+Testing NMAE per target: [0.010238133222234226, 0.02530914327423658]
+Training NMAE_avg: 0.015798903048397175
+Testing NMAE_avg: 0.017773638248235402
+
+####### Median = average of the middle runs above #######
+
+=== R2 (normalized target space) ===
+Median Training R2 per target: [0.9542159130771949, 0.899423967789662]
+Median Testing R2 per target: [0.9386674747775708, 0.8621425831860505]
+Median Training R2_avg: 0.9268199404334285
+Median Testing R2_avg: 0.9004050289818106
+
+=== MAE / NMAE (original units) ===
+Median Training MAE per target: [1.1204997022020353, 62.35487211840592]
+Median Testing MAE per target: [1.2299425641940278, 72.71496051164436]
+Median Training MAE_avg: 31.737685910303977
+Median Testing MAE_avg: 36.97245153791919
+
+Median Training NMAE per target: [0.009643684501265473, 0.021518961993409854]
+Median Testing NMAE per target: [0.010585614632877424, 0.025094277615244923]
+Median Training NMAE_avg: 0.015581323247337664
+Median Testing NMAE_avg: 0.017839946124061173
+
+=== Weights and biases of the middle runs ===
+median1 (Iteration 7, Fold 4): /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median1_alpha_r2_20desc_weights.txt, /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median1_alpha_r2_20desc_biases.txt
+median2 (Iteration 3, Fold 2): /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median2_alpha_r2_20desc_weights.txt, /home/azam/Prediction_Phase/ANN_Result/Result/qm9_median2_alpha_r2_20desc_biases.txt

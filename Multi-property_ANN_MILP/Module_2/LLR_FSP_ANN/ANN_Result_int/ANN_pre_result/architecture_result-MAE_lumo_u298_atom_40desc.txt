@@ -1,0 +1,70 @@
+Architecture: [94, 82, 75, 62, 87]
+  Median Training R² (lumo): 0.924387
+  Median Training R² (u298_atom): 0.989817
+  Median Validation R² (lumo): 0.848888
+  Median Validation R² (u298_atom): 0.986035
+  Weighted Median Validation R²: 0.917461
+
+Architecture: [114, 122, 58, 103]
+  Median Training R² (lumo): 0.928629
+  Median Training R² (u298_atom): 0.990539
+  Median Validation R² (lumo): 0.849847
+  Median Validation R² (u298_atom): 0.988299
+  Weighted Median Validation R²: 0.919073
+
+Architecture: [78, 117, 23, 25, 18]
+  Median Training R² (lumo): 0.914082
+  Median Training R² (u298_atom): 0.989843
+  Median Validation R² (lumo): 0.859405
+  Median Validation R² (u298_atom): 0.988733
+  Weighted Median Validation R²: 0.924069
+
+Architecture: [101, 111, 123, 103, 66, 101, 29]
+  Median Training R² (lumo): 0.933947
+  Median Training R² (u298_atom): 0.991073
+  Median Validation R² (lumo): 0.844661
+  Median Validation R² (u298_atom): 0.987657
+  Weighted Median Validation R²: 0.916159
+
+Architecture: [31, 119, 73, 61, 45, 101]
+  Median Training R² (lumo): 0.915970
+  Median Training R² (u298_atom): 0.986841
+  Median Validation R² (lumo): 0.854944
+  Median Validation R² (u298_atom): 0.981946
+  Weighted Median Validation R²: 0.918445
+
+Architecture: [78, 18, 83, 83]
+  Median Training R² (lumo): 0.905829
+  Median Training R² (u298_atom): 0.989321
+  Median Validation R² (lumo): 0.861790
+  Median Validation R² (u298_atom): 0.986936
+  Weighted Median Validation R²: 0.924363
+
+Architecture: [119, 91, 55, 64, 92]
+  Median Training R² (lumo): 0.926462
+  Median Training R² (u298_atom): 0.990655
+  Median Validation R² (lumo): 0.850072
+  Median Validation R² (u298_atom): 0.987778
+  Weighted Median Validation R²: 0.918925
+
+Architecture: [89]
+  Median Training R² (lumo): 0.870181
+  Median Training R² (u298_atom): 0.979052
+  Median Validation R² (lumo): 0.857919
+  Median Validation R² (u298_atom): 0.976732
+  Weighted Median Validation R²: 0.917325
+
+Architecture: [39, 30, 50, 56, 78, 64]
+  Median Training R² (lumo): 0.905681
+  Median Training R² (u298_atom): 0.987484
+  Median Validation R² (lumo): 0.861629
+  Median Validation R² (u298_atom): 0.984202
+  Weighted Median Validation R²: 0.922915
+
+Architecture: [27, 38, 33, 87, 43, 67, 42, 33]
+  Median Training R² (lumo): 0.903111
+  Median Training R² (u298_atom): 0.987826
+  Median Validation R² (lumo): 0.863026
+  Median Validation R² (u298_atom): 0.985565
+  Weighted Median Validation R²: 0.924295
+
