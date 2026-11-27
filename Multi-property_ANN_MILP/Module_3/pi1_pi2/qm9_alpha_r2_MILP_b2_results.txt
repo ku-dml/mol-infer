@@ -6,5 +6,5 @@ input_data:
   - model: ANN
     prefix: ./tests/alpha-r2/data/qm9
     property_names: [alpha, r2]
-    target_value_lower_bound: [387, 19162]
-    target_value_upper_bound: [457, 20900]
+    target_value_lower_bound: [300, 15000]
+    target_value_upper_bound: [550, 20000]

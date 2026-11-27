@@ -6,5 +6,5 @@ input_data:
   - model: ANN
     prefix: ./tests/alpha-r2-zpve-cv/data/qm9
     property_names: [alpha, r2, zpve, cv]
-    target_value_lower_bound: [378.1, 12499.2, 0.589, 144.6]
-    target_value_upper_bound: [494.3, 15396.9, 0.842, 182.4]
+    target_value_lower_bound: [336, 11392, 0.588, 164]
+    target_value_upper_bound: [457, 16393, 0.788, 205]

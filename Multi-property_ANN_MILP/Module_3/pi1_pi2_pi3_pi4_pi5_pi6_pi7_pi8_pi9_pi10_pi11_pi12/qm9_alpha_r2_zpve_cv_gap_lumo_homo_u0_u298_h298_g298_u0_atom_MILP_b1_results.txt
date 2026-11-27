@@ -6,5 +6,5 @@ input_data:
   - model: ANN
     prefix: ./tests/alpha-r2-zpve-cv-gap-lumo-homo-u0-u298-h298-g298-u0_atom/data/qm9
     property_names: [alpha, r2, zpve, cv, gap, lumo, homo, u0, u298, h298, g298, u0_atom]
-    target_value_lower_bound: [228, 6852, 0.486, 113, 0.457, 0.003, -0.158, -490, -450, -445, -373, -2934]
-    target_value_upper_bound: [298, 8590, 0.638, 135, 0.69, 0.153, -0.011, -172, -132, -127, -56, -1603]
+    target_value_lower_bound: [140, 4568, 0.421, 96, 0.502, 0.165, -0.162, -522, -506, -504, -551, -1600]
+    target_value_upper_bound: [261, 9569, 0.621, 137, 0.802, 0.365, 0.038, -121, -105, -103, -150, 0]

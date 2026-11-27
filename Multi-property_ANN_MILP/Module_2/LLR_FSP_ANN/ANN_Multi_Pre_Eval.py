@@ -17,7 +17,22 @@ The original experimental settings are preserved while the output dimension is g
 - MSE loss
 - rho = 0.98 and maxitr = 10000
 - Equal-weight weighted-sum Optuna score for any number of targets
-- Combined statistics = average of per-target median values (Eq. (3))
+- Combined statistics = median of flattened per-target values
+
+CHANGES (training, Optuna, seeds and all R2 calculations are NOT changed):
+1. MAE back-transform: predictions are converted back with the min / range of
+   ALL molecules of the unnormalized (11k) file, i.e. the same min / range used
+   to make the normalized file. (Before, the min / range of the ~10k matched
+   molecules was used, which shifted every prediction and gave wrong MAE.)
+2. NMAE = MAE / (max - min) over the same 11k unnormalized file.
+3. MAE / NMAE are also stored for every one of the 50 final-CV folds, and the
+   results file additionally reports the individual scores (R2, MAE, NMAE per
+   target) of the selected folds:
+     - the median-closest fold (L1), as selected before, and
+     - the two middle runs (50 runs sorted by Testing R2_avg = average of the
+       per-target Testing R2); their average is written in the
+       "Median = average of the middle runs above" block (same format as
+       ANN_Multi_Eval.py, so collect.py / collect_R2.py can read it).
 """
 
 import os
@@ -198,9 +213,9 @@ def objective(
     fold_test_r2_scores = []
 
     for train_index, test_index in kf.split(X_all):
-        X_train_fold, X_test_fold = X_all[train_index], X_all[test_index]
+        X_train_fold, X_val_fold = X_all[train_index], X_all[test_index]
         y_train_fold_norm = y_norm_all[train_index]
-        y_test_fold_norm = y_norm_all[test_index]
+        y_val_fold_norm = y_norm_all[test_index]
 
         # Release Keras/TensorFlow state from the previous fold before
         # constructing a new model. This prevents model/graph accumulation.
@@ -237,11 +252,11 @@ def objective(
             if early_stop_reached(r2_scores_train, rho):
                 break
 
-        y_test_pred_norm = model(X_test_fold, training=False).numpy()
+        y_val_pred_norm = model(X_val_fold, training=False).numpy()
         r2_scores_test = [
             r2_score(
-                y_test_fold_norm[:, i],
-                y_test_pred_norm[:, i],
+                y_val_fold_norm[:, i],
+                y_val_pred_norm[:, i],
             )
             for i in range(num_targets)
         ]
@@ -258,7 +273,7 @@ def objective(
         # Explicitly release fold-specific TensorFlow objects.
         del model
         del y_train_pred_norm
-        del y_test_pred_norm
+        del y_val_pred_norm
         tf.keras.backend.clear_session()
         gc.collect()
 
@@ -296,11 +311,11 @@ def objective(
             )
         for i, property_name in enumerate(properties):
             file.write(
-                f"  Median Testing R² ({property_name}): "
+                f"  Median Validation R² ({property_name}): "
                 f"{median_test_scores[i]:.6f}\n"
             )
         file.write(
-            "  Weighted Median Testing R²: "
+            "  Weighted Median Validation R²: "
             f"{weighted_median_test_score:.6f}\n\n"
         )
 
@@ -375,13 +390,13 @@ def learn_ANN_eval(
     fold_test_nmae = []
 
     for iteration in range(10):
-        for fold, (train_index, test_index) in enumerate(kf.split(X_all)):
+        for fold, (train_index, val_index) in enumerate(kf.split(X_all)):
             X_tr_fold = X_all[train_index]
-            X_test_fold = X_all[test_index]
+            X_val_fold = X_all[val_index]
             y_tr_fold_norm = y_norm_all[train_index]
-            y_test_fold_norm = y_norm_all[test_index]
+            y_val_fold_norm = y_norm_all[val_index]
             y_tr_fold_orig = y_orig_all[train_index]
-            y_test_fold_orig = y_orig_all[test_index]
+            y_val_fold_orig = y_orig_all[val_index]
 
             # Release Keras/TensorFlow state from the previous fold before
             # constructing a new model. This prevents model/graph accumulation.
@@ -418,20 +433,22 @@ def learn_ANN_eval(
                 if early_stop_reached(train_r2, rho):
                     break
 
-            y_test_pred_norm = model(X_test_fold, training=False).numpy()
+            y_val_pred_norm = model(X_val_fold, training=False).numpy()
             test_r2 = [
                 r2_score(
-                    y_test_fold_norm[:, d],
-                    y_test_pred_norm[:, d],
+                    y_val_fold_norm[:, d],
+                    y_val_pred_norm[:, d],
                 )
                 for d in range(num_targets)
             ]
 
             final_train_r2_scores.append(train_r2)
             final_test_r2_scores.append(test_r2)
-            # Combined R² for this fold: average across all target properties.
-            combined_train_r2 = float(np.mean(np.asarray(train_r2)))
-            combined_test_r2 = float(np.mean(np.asarray(test_r2)))
+            # Combined R² for this fold: median across all target properties.
+            # For one target, this is the target R² itself; for two targets,
+            # the median is equal to their arithmetic average.
+            combined_train_r2 = float(np.median(np.asarray(train_r2)))
+            combined_test_r2 = float(np.median(np.asarray(test_r2)))
 
             cv_fold_records.append(
                 {
@@ -446,14 +463,14 @@ def learn_ANN_eval(
 
             # Back-transform predictions and compute MAE/NMAE
             y_tr_pred_orig = y_tr_pred_norm * y_range + y_min
-            y_test_pred_orig = y_test_pred_norm * y_range + y_min
+            y_val_pred_orig = y_val_pred_norm * y_range + y_min
 
             mae_train = np.mean(
                 np.abs(y_tr_pred_orig - y_tr_fold_orig),
                 axis=0,
             )
             mae_test = np.mean(
-                np.abs(y_test_pred_orig - y_test_fold_orig),
+                np.abs(y_val_pred_orig - y_val_fold_orig),
                 axis=0,
             )
 
@@ -464,6 +481,14 @@ def learn_ANN_eval(
             fold_test_mae.append(mae_test)
             fold_train_nmae.append(nmae_train)
             fold_test_nmae.append(nmae_test)
+
+            # NEW: keep the scores of this fold for the selected-fold report
+            cv_fold_records[-1].update({
+                "train_mae": [float(v) for v in mae_train],
+                "test_mae": [float(v) for v in mae_test],
+                "train_nmae": [float(v) for v in nmae_train],
+                "test_nmae": [float(v) for v in nmae_test],
+            })
 
             write_weights_biases(
                 model,
@@ -484,9 +509,9 @@ def learn_ANN_eval(
             # prediction arrays before the next model is created.
             del model
             del y_tr_pred_norm
-            del y_test_pred_norm
+            del y_val_pred_norm
             del y_tr_pred_orig
-            del y_test_pred_orig
+            del y_val_pred_orig
             tf.keras.backend.clear_session()
             gc.collect()
 
@@ -503,16 +528,27 @@ def learn_ANN_eval(
         axis=0,
     )
 
-    # Combined R² (Eq. (3)): average of the per-target median R² values
-    median_train_r2_combined = np.mean(median_train_r2_per_dimension)
-    median_test_r2_combined = np.mean(median_test_r2_per_dimension)
+    # Combined R²: exactly the original flattened-median definition
+    flat_train_r2 = [
+        score
+        for sublist in final_train_r2_scores
+        for score in sublist
+    ]
+    flat_test_r2 = [
+        score
+        for sublist in final_test_r2_scores
+        for score in sublist
+    ]
+
+    median_train_r2_combined = np.median(flat_train_r2)
+    median_test_r2_combined = np.median(flat_test_r2)
 
     # ---------- MEDIAN-CLOSEST REAL FOLD (same L1 technique as previous code) ----------
     # No retraining and no change to any R2/MAE/NMAE calculation.
     # All 50 original final-CV weights/biases remain saved in WB_DIR.
     # This only identifies the real fold closest to the per-target median
-    # Testing R2 vector and copies that fold's existing files to RESULT_DIR.
-    median_testing_vector = np.asarray(
+    # Validation R2 vector and copies that fold's existing files to RESULT_DIR.
+    median_validation_vector = np.asarray(
         median_test_r2_per_dimension,
         dtype=float,
     )
@@ -523,7 +559,7 @@ def learn_ANN_eval(
     for idx, r2_vec in enumerate(final_test_r2_scores):
         r2_vec = np.asarray(r2_vec, dtype=float)
         l1_score = float(
-            np.sum(np.abs(r2_vec - median_testing_vector))
+            np.sum(np.abs(r2_vec - median_validation_vector))
         )
         if l1_score < median_closest_l1:
             median_closest_l1 = l1_score
@@ -562,7 +598,7 @@ def learn_ANN_eval(
     )
     with open(median_info_file, "w", encoding="utf-8") as file:
         file.write(
-            f"Median Testing R2 per target: "
+            f"Median Validation R2 per target: "
             f"{median_test_r2_per_dimension}\n"
         )
         file.write(
@@ -572,7 +608,7 @@ def learn_ANN_eval(
             f"Selected Fold: {median_closest_fold}\n"
         )
         file.write(
-            f"Selected Fold Testing R2 per target: "
+            f"Selected Fold Validation R2 per target: "
             f"{median_closest_test_r2}\n"
         )
         file.write(
@@ -593,7 +629,7 @@ def learn_ANN_eval(
 
     print("\n===== MEDIAN-CLOSEST FINAL-CV FOLD (L1) =====")
     print(
-        "Median Testing R2 per target: "
+        "Median Validation R2 per target: "
         f"{median_test_r2_per_dimension}"
     )
     print(
@@ -601,7 +637,7 @@ def learn_ANN_eval(
         f"{median_closest_iteration}, {median_closest_fold}"
     )
     print(
-        "Selected Fold Testing R2 per target: "
+        "Selected Fold Validation R2 per target: "
         f"{median_closest_test_r2}"
     )
     print(f"L1 closeness score: {median_closest_l1}")
@@ -619,15 +655,54 @@ def learn_ANN_eval(
     median_train_nmae = np.median(train_nmae_arr, axis=0)
     median_test_nmae = np.median(test_nmae_arr, axis=0)
 
-    # Combined MAE/NMAE: average of the per-target median values
-    median_train_mae_combined = np.mean(median_train_mae)
-    median_test_mae_combined = np.mean(median_test_mae)
-    median_train_nmae_combined = np.mean(median_train_nmae)
-    median_test_nmae_combined = np.mean(median_test_nmae)
+    median_train_mae_combined = np.median(train_mae_arr.flatten())
+    median_test_mae_combined = np.median(test_mae_arr.flatten())
+    median_train_nmae_combined = np.median(train_nmae_arr.flatten())
+    median_test_nmae_combined = np.median(test_nmae_arr.flatten())
+
+    # ---------- NEW: individual scores of the selected folds ----------
+    # Per run: R2_avg / MAE_avg / NMAE_avg = average over all target properties.
+    for record in cv_fold_records:
+        for key in ("train_r2", "test_r2", "train_mae", "test_mae",
+                    "train_nmae", "test_nmae"):
+            record[key] = [float(v) for v in record[key]]
+            record[key + "_avg"] = float(np.mean(record[key]))
+
+    # (a) median-closest fold (L1), selected above
+    median_closest_record = cv_fold_records[median_closest_idx]
+
+    # (b) two middle runs: 50 runs sorted by Testing R2_avg; median = average
+    #     of the two middle runs (the single middle run for an odd number).
+    test_r2_avg_all = np.array([r["test_r2_avg"] for r in cv_fold_records])
+    order = np.argsort(test_r2_avg_all, kind="stable")
+    n_runs = len(cv_fold_records)
+    if n_runs % 2 == 0:
+        middle_idx = [int(order[n_runs // 2 - 1]), int(order[n_runs // 2])]
+    else:
+        middle_idx = [int(order[n_runs // 2])]
+    middle_runs = [cv_fold_records[k] for k in middle_idx]
+
+    middle_scores = {}
+    for key in ("train_r2", "test_r2", "train_mae", "test_mae",
+                "train_nmae", "test_nmae", "train_r2_avg", "test_r2_avg",
+                "train_mae_avg", "test_mae_avg", "train_nmae_avg",
+                "test_nmae_avg"):
+        values = np.mean([np.asarray(r[key], dtype=float)
+                          for r in middle_runs], axis=0)
+        middle_scores[key] = (values.tolist() if np.ndim(values)
+                              else float(values))
+
+    print("===== SELECTED FOLDS =====")
+    for r in middle_runs:
+        print(f"Middle run: Iteration {r['iteration']}, Fold {r['fold']}, "
+              f"Testing R2_avg: {r['test_r2_avg']}")
+    print(f"Median (middle runs) Testing R2 per target: {middle_scores['test_r2']}")
+    print(f"Median (middle runs) Testing MAE per target: {middle_scores['test_mae']}")
+    print(f"Median (middle runs) Testing NMAE per target: {middle_scores['test_nmae']}")
 
     print(
         f"Best architecture: {best_architecture} "
-        f"with Median Testing R2 score: {best_trial.value}"
+        f"with Median Validation R2 score: {best_trial.value}"
     )
     print(
         "\n================ FINAL MEDIAN RESULTS "
@@ -639,36 +714,36 @@ def learn_ANN_eval(
         f"{median_train_r2_per_dimension}"
     )
     print(
-        "Median Testing R2 per target (norm): "
+        "Median Validation R2 per target (norm): "
         f"{median_test_r2_per_dimension}"
     )
     print(
-        "Median combined Train R2 (norm, average): "
+        "Median combined Train R2 (norm, flattened): "
         f"{median_train_r2_combined}"
     )
     print(
-        "Median combined Testing R2 (norm, average): "
+        "Median combined Validation R2 (norm, flattened): "
         f"{median_test_r2_combined}"
     )
     print("------------------------------------------------------")
     print(f"Median Train MAE  (orig units): {median_train_mae}")
-    print(f"Median Testing MAE  (orig units): {median_test_mae}")
+    print(f"Median Validation MAE  (orig units): {median_test_mae}")
     print(
         "Median combined Train MAE (orig units): "
         f"{median_train_mae_combined}"
     )
     print(
-        "Median combined Testing MAE (orig units): "
+        "Median combined Validation MAE (orig units): "
         f"{median_test_mae_combined}"
     )
     print(f"Median Train NMAE: {median_train_nmae}")
-    print(f"Median Testing NMAE: {median_test_nmae}")
+    print(f"Median Validation NMAE: {median_test_nmae}")
     print(
         "Median combined Train NMAE: "
         f"{median_train_nmae_combined}"
     )
     print(
-        "Median combined Testing NMAE: "
+        "Median combined Validation NMAE: "
         f"{median_test_nmae_combined}"
     )
     print("=====================================================================\n")
@@ -730,6 +805,10 @@ def learn_ANN_eval(
         "median_closest_weights_file": median_weights_file,
         "median_closest_biases_file": median_biases_file,
         "median_closest_info_file": median_info_file,
+        # NEW: selected folds
+        "median_closest_record": median_closest_record,
+        "middle_runs": middle_runs,
+        "middle_scores": middle_scores,
     }
 
 
@@ -1053,10 +1132,28 @@ def main(args):
     y_orig_all = merged_orig[y_orig_columns].values
 
     # ----- Global min/range for original targets -----
-    y_min = y_orig_all.min(axis=0)
-    y_max = y_orig_all.max(axis=0)
+    # CHANGED: min / range over ALL molecules of the unnormalized (11k) file,
+    # i.e. the same values used to make the normalized file. Used for the
+    # back-transform of the predictions AND as the NMAE denominator.
+    full_orig = target_orig_df[properties].values.astype(float)
+    y_min = full_orig.min(axis=0)
+    y_max = full_orig.max(axis=0)
     y_range = y_max - y_min
     y_range[y_range == 0] = 1.0
+
+    # Information only: range of the matched (~10k) molecules, and a check
+    # that the normalized file was made with this min / range.
+    y_orig_all = y_orig_all.astype(float)
+    y_range_10k = y_orig_all.max(axis=0) - y_orig_all.min(axis=0)
+    print(f"Molecules used (intersection): {len(y_orig_all)}")
+    for j, p in enumerate(properties):
+        print(f"  {p}: 11k range (back-transform and NMAE) {y_range[j]:.6g} | "
+              f"range of these ~10k molecules {y_range_10k[j]:.6g}")
+    worst = float(np.max(np.abs((y_orig_all - y_min) / y_range
+                                - y_norm_all.astype(float))))
+    print(f"Normalization check (max |y_norm - (y_orig - min)/range|): {worst:.2e}"
+          + ("  OK" if worst < 1e-6 else "  *** MISMATCH: normalized and original "
+             "files do not agree - MAE/NMAE not reliable ***"))
 
     available_descriptors = feature_df_filtered.shape[1] - 1
     excessive_counts = [
@@ -1198,15 +1295,15 @@ def write_results_to_files(results, properties, base_tag):
             f"{results['median_train_r2_per_dim']}\n"
         )
         file.write(
-            "Median Testing R2 per target: "
+            "Median Validation R2 per target: "
             f"{results['median_test_r2_per_dim']}\n"
         )
         file.write(
-            "Median combined Train R2 (average): "
+            "Median combined Train R2 (flattened): "
             f"{results['median_train_r2_combined']}\n"
         )
         file.write(
-            "Median combined Testing R2 (average): "
+            "Median combined Validation R2 (flattened): "
             f"{results['median_test_r2_combined']}\n\n"
         )
         file.write("=== MAE / NMAE (original units) ===\n")
@@ -1215,7 +1312,7 @@ def write_results_to_files(results, properties, base_tag):
             f"{results['median_train_mae']}\n"
         )
         file.write(
-            "Median Testing MAE (orig units): "
+            "Median Validation MAE (orig units): "
             f"{results['median_test_mae']}\n"
         )
         file.write(
@@ -1223,29 +1320,29 @@ def write_results_to_files(results, properties, base_tag):
             f"{results['median_train_mae_combined']}\n"
         )
         file.write(
-            "Median combined Testing MAE (orig units): "
+            "Median combined Validation MAE (orig units): "
             f"{results['median_test_mae_combined']}\n\n"
         )
         file.write(
             f"Median Train NMAE: {results['median_train_nmae']}\n"
         )
         file.write(
-            f"Median Testing NMAE: {results['median_test_nmae']}\n"
+            f"Median Validation NMAE: {results['median_test_nmae']}\n"
         )
         file.write(
             "Median combined Train NMAE: "
             f"{results['median_train_nmae_combined']}\n"
         )
         file.write(
-            "Median combined Testing NMAE: "
+            "Median combined Validation NMAE: "
             f"{results['median_test_nmae_combined']}\n"
         )
 
         file.write("\n=== Median-closest final-CV model (L1) ===\n")
         file.write(
             "Selection: minimum L1 distance between each fold's "
-            "per-target Testing R2 vector and the per-target "
-            "median Testing R2 vector.\n"
+            "per-target Validation R2 vector and the per-target "
+            "median Validation R2 vector.\n"
         )
         file.write(
             f"Selected Iteration: "
@@ -1255,7 +1352,7 @@ def write_results_to_files(results, properties, base_tag):
             f"Selected Fold: {results['median_closest_fold']}\n"
         )
         file.write(
-            f"Selected Fold Testing R2 per target: "
+            f"Selected Fold Validation R2 per target: "
             f"{results['median_closest_test_r2']}\n"
         )
         file.write(
@@ -1270,6 +1367,59 @@ def write_results_to_files(results, properties, base_tag):
             f"Median-closest biases: "
             f"{results['median_closest_biases_file']}\n"
         )
+
+        # ---------- NEW: individual scores of the selected folds ----------
+        def write_fold(r):
+            file.write(f"Training R2 per target: {r['train_r2']}\n")
+            file.write(f"Testing R2 per target: {r['test_r2']}\n")
+            file.write(f"Training R2_avg: {r['train_r2_avg']}\n")
+            file.write(f"Testing R2_avg: {r['test_r2_avg']}\n")
+            file.write(f"Training MAE per target: {r['train_mae']}\n")
+            file.write(f"Testing MAE per target: {r['test_mae']}\n")
+            file.write(f"Training MAE_avg: {r['train_mae_avg']}\n")
+            file.write(f"Testing MAE_avg: {r['test_mae_avg']}\n")
+            file.write(f"Training NMAE per target: {r['train_nmae']}\n")
+            file.write(f"Testing NMAE per target: {r['test_nmae']}\n")
+            file.write(f"Training NMAE_avg: {r['train_nmae_avg']}\n")
+            file.write(f"Testing NMAE_avg: {r['test_nmae_avg']}\n\n")
+
+        r = results["median_closest_record"]
+        file.write("\n=== Scores of the median-closest fold (L1): "
+                   f"Iteration {r['iteration']}, Fold {r['fold']} ===\n")
+        write_fold(r)
+
+        file.write("NMAE = MAE / (max - min) over all molecules of the 11k "
+                   "unnormalized file\n\n")
+        file.write("=== Median runs ===\n")
+        file.write("Runs are sorted by Testing R2_avg (average over all "
+                   "targets). The median is the average of the two middle "
+                   "runs; all scores below are averaged over these runs.\n")
+        for r in results["middle_runs"]:
+            file.write(f"Middle run: Iteration {r['iteration']}, "
+                       f"Fold {r['fold']}, "
+                       f"Testing R2_avg: {r['test_r2_avg']}\n")
+        file.write("\n")
+        for k, r in enumerate(results["middle_runs"], start=1):
+            file.write(f"=== Middle run {k}: Iteration {r['iteration']}, "
+                       f"Fold {r['fold']} ===\n")
+            write_fold(r)
+
+        m = results["middle_scores"]
+        file.write("####### Median = average of the middle runs above #######\n\n")
+        file.write("=== R2 (normalized target space) ===\n")
+        file.write(f"Median Training R2 per target: {m['train_r2']}\n")
+        file.write(f"Median Testing R2 per target: {m['test_r2']}\n")
+        file.write(f"Median Training R2_avg: {m['train_r2_avg']}\n")
+        file.write(f"Median Testing R2_avg: {m['test_r2_avg']}\n\n")
+        file.write("=== MAE / NMAE (original units) ===\n")
+        file.write(f"Median Training MAE per target: {m['train_mae']}\n")
+        file.write(f"Median Testing MAE per target: {m['test_mae']}\n")
+        file.write(f"Median Training MAE_avg: {m['train_mae_avg']}\n")
+        file.write(f"Median Testing MAE_avg: {m['test_mae_avg']}\n\n")
+        file.write(f"Median Training NMAE per target: {m['train_nmae']}\n")
+        file.write(f"Median Testing NMAE per target: {m['test_nmae']}\n")
+        file.write(f"Median Training NMAE_avg: {m['train_nmae_avg']}\n")
+        file.write(f"Median Testing NMAE_avg: {m['test_nmae_avg']}\n")
 
 
 # ==========================================================
